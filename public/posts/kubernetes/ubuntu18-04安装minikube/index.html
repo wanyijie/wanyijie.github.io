@@ -7,7 +7,7 @@
 <meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="" />
 <meta property="og:description" content=" 使用kvm2 ,检查命令看到关键字即可： egrep --color &#39;vmx|svm&#39; /proc/cpuinfo 安装kvm依赖：  apt install libvirt-clients libvirt-daemon-system qemu-kvm systemctl enable libvirtd.service systemctl start libvirtd.service curl -LO https://storage.googleapis.com/minikube/releases/latest/docker-machine-driver-kvm2 install docker-machine-driver-kvm2 /usr/local/bin/ 下载minikube, google的存储，下载失败多尝试几下成功后速度很快：  curl -Lo minikube https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64 &amp;&amp; chmod &#43;x minikube cp minikube /usr/local/bin &amp;&amp; rm minikub 设置minikube使用的虚拟化环境， 启动miniKube环境：  minikube start --vm-driver kvm2 " />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://xiluo.gitee.io/public/posts/kubernetes/ubuntu18-04%E5%AE%89%E8%A3%85minikube/" /><meta property="article:section" content="posts" />
+<meta property="og:url" content="https://xilluo.gitee.io/public/posts/kubernetes/ubuntu18-04%E5%AE%89%E8%A3%85minikube/" /><meta property="article:section" content="posts" />
 
 
 

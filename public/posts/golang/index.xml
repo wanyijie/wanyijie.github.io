@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>golang on A great computer technology Site</title>
-    <link>https://xiluo.gitee.io/public/posts/golang/</link>
+    <link>https://xilluo.gitee.io/public/posts/golang/</link>
     <description>Recent content in golang on A great computer technology Site</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="https://xiluo.gitee.io/public/posts/golang/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language><atom:link href="https://xilluo.gitee.io/public/posts/golang/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title></title>
-      <link>https://xiluo.gitee.io/public/posts/golang/a-global-proxy-for-go-modules/</link>
+      <link>https://xilluo.gitee.io/public/posts/golang/a-global-proxy-for-go-modules/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://xiluo.gitee.io/public/posts/golang/a-global-proxy-for-go-modules/</guid>
+      <guid>https://xilluo.gitee.io/public/posts/golang/a-global-proxy-for-go-modules/</guid>
       <description>First, you will need to enable the Go Modules feature and configure Go to use the proxy. bash:
 export GOPROXY=https://goproxy.io Or powershell:
 $env:GOPROXY = &amp;quot;https://goproxy.io&amp;quot; Now, when you build and run your applications, go will fetch dependencies via goproxy.io.
@@ -21,19 +21,19 @@ Private proxy#Started#./goproxy -listen=0.0.0.0:80 -cacheDir=/data Use doc
     
     <item>
       <title></title>
-      <link>https://xiluo.gitee.io/public/posts/golang/cgo-install/</link>
+      <link>https://xilluo.gitee.io/public/posts/golang/cgo-install/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://xiluo.gitee.io/public/posts/golang/cgo-install/</guid>
+      <guid>https://xilluo.gitee.io/public/posts/golang/cgo-install/</guid>
       <description>最近运行一个项目用到了Cgo,下载安装还折腾了一会儿，这里记录一下方便自己和同样的人 我是windows,Linux安装c++很方便，window下安装安装微软的c++编译器很臃肿，和visual studio配套的，安装mingw-w64会比较轻量，我遇到的问题在于安装程序不好下载，我上传到网盘了，下载直接安装。 https://pan.baidu.com/s/14i4td4zRMz4aC1rX_UdfXQ</description>
     </item>
     
     <item>
       <title></title>
-      <link>https://xiluo.gitee.io/public/posts/golang/golang-%E5%87%BD%E6%95%B0%E5%92%8C%E9%97%AD%E5%8C%85/</link>
+      <link>https://xilluo.gitee.io/public/posts/golang/golang-%E5%87%BD%E6%95%B0%E5%92%8C%E9%97%AD%E5%8C%85/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://xiluo.gitee.io/public/posts/golang/golang-%E5%87%BD%E6%95%B0%E5%92%8C%E9%97%AD%E5%8C%85/</guid>
+      <guid>https://xilluo.gitee.io/public/posts/golang/golang-%E5%87%BD%E6%95%B0%E5%92%8C%E9%97%AD%E5%8C%85/</guid>
       <description>接触golang有些时间了，以前磕磕碰碰的勉强写过几个小程序，最近工作又亲近golang，就想着再回头巩固一下，曾经遇到过几次的问题又再次遇到了，golang的函数定义格式是这样的：
 func function_name( [parameter list] ) [return_types] { 函数体 } 函数体之上的哪一行总共分为三个部分，依次是声明关键字，函数名和参数，返回值。函数名和参数是一个整体所以归为一组方便识别的，有时会遇到一些异类的形式，今天就遇到这样的：
 func fib() func() int { a, b := 0, 1 return func() int { a, b = b, a+b return a } } 比常见的多了一段，让人有点蒙圈了，再回顾到闭包的知识点才解决此困惑，说一下我自己对闭包的总结，闭包就是函数返回一个匿名函数，看一个例子：

@@ -7,7 +7,7 @@
 <meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="" />
 <meta property="og:description" content="deploy elasticsearch persistent volume#cat pv-master.yaml kind: PersistentVolume apiVersion: v1 metadata: name: efk-master-volume labels: type: localspec: storageClassName: elasticsearch-master capacity: storage: 10Gi accessModes: - ReadWriteOnce hostPath: path: &quot;/mnt/data/efk-master&quot; mkdir -p /mnt/data/efk-master &amp;&amp; kubectl create -f pv-master.yaml data#cat pv-data.yaml kind: PersistentVolume apiVersion: v1 metadata: name: efk-data-volume labels: type: local spec: storageClassName: elasticsearch-data capacity: storage: 5Gi accessModes: - ReadWriteOnce hostPath: path: &quot;/mnt/data/efk-data&quot; mkdir -p /mnt/data/efk-data &amp;&amp; kubectl create -f pv-data." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://xiluo.gitee.io/public/posts/kubernetes/fluented-install/" /><meta property="article:section" content="posts" />
+<meta property="og:url" content="https://xilluo.gitee.io/public/posts/kubernetes/fluented-install/" /><meta property="article:section" content="posts" />
 
 
 

@@ -9,7 +9,7 @@
 <meta property="og:description" content="大概步骤# 获取镜像 ./sonobuoy images pull &ndash;e2e-repo-config custom-repos.yaml -dry-run 参考下面的脚本通过gcr.azk8s.cn代理地址下载gcr镜像上传到私有仓库 执行任务会在kubenetes里面创建pod启动任务 ./sonobuoy run &ndash;sonobuoy-image 172.20.8.7/library/sonobuoy:v0.17.2
 &ndash;kube-conformance-image 172.20.8.7/library/conformance:v1.15.10 等运行剩一个pod，大概几个小时的时间，检查结果 ./sonobuoy status 通过之后收集数据 results=$(./sonobuoy retrieve) ./sonobuoy results $results  #get command sonobuoy docker run -d --rm --name=sonobuoy sonobuoy/sonobuoy:v0.16 sleep 120 docker cp sonobuoy:/sonobuoy ./ # 私有仓库 registry=172.20.8.7 getImage(){ image=$1 docker pull $image docker $image tag ${registry}/library/${image##*/} docker push ${registry}/library/${image##*/} } kubeVersion=v1.15.10 getImage gcr.azk8s.cn/heptio-images/sonobuoy-plugin-systemd-logs:latest getImage gcr.azk8s.cn/google-containers/conformance:$kubeVersion ./sonobuoy run --sonobuoy-image 172.20.8.7/library/sonobuoy:v0.16\ --kube-conformance-image 172." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://xiluo.gitee.io/public/posts/kubernetes/kubernetes-conformance-tests/" /><meta property="article:section" content="posts" />
+<meta property="og:url" content="https://xilluo.gitee.io/public/posts/kubernetes/kubernetes-conformance-tests/" /><meta property="article:section" content="posts" />
 
 
 

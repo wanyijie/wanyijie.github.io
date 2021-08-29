@@ -13,7 +13,7 @@
  predicates 策略:
  PodFitsPorts：同 PodFitsHostPorts PodFitsHostPorts：检查是否有 Host Ports 冲突 PodFitsResources：检查 Node 的资源是否充足，包括允许的 Pod 数量、CPU、内存、GPU 个数以及其他的 OpaqueIntResources HostName：检查 pod.Spec.NodeName 是否与候选节点一致 MatchNodeSelector：检查候选节点的 pod.Spec.NodeSelector 是否匹配 NoVolumeZoneConflict：检查 volume zone 是否冲突 MaxEBSVolumeCount：检查 AWS EBS Volume 数量是否过多（默认不超过 39） MaxGCEPDVolumeCount：检查 GCE PD Volume 数量是否过多（默认不超过 16） MaxAzureDiskVolumeCount：检查 Azure Disk Volume 数量是否过多（默认不超过 16） MatchInterPodAffinity：检查是否匹配 Pod 的亲和性要求 NoDiskConflict：检查是否存在 Volume 冲突，仅限于 GCE PD、AWS EBS、Ceph RBD 以及 ISCSI GeneralPredicates：分为 noncriticalPredicates 和 EssentialPredicates。noncriticalPredicates 中包含 PodFitsResources，EssentialPredicates 中包含 PodFitsHost，PodFitsHostPorts 和 PodSelectorMatches。 PodToleratesNodeTaints：检查 Pod 是否容忍 Node Taints CheckNodeMemoryPressure：检查 Pod 是否可以调度到 MemoryPressure 的节点上 CheckNodeDiskPressure：检查 Pod 是否可以调度到 DiskPressure 的节点上 NoVolumeNodeConflict：检查节点是否满足 Pod 所引用的 Volume 的条件" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://xiluo.gitee.io/public/posts/kubernetes/kube-scheduler-%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86/" /><meta property="article:section" content="posts" />
+<meta property="og:url" content="https://xilluo.gitee.io/public/posts/kubernetes/kube-scheduler-%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86/" /><meta property="article:section" content="posts" />
 
 
 

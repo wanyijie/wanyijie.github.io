@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>mysql on A great computer technology Site</title>
-    <link>https://xiluo.gitee.io/public/posts/mysql/</link>
+    <link>https://xilluo.gitee.io/public/posts/mysql/</link>
     <description>Recent content in mysql on A great computer technology Site</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="https://xiluo.gitee.io/public/posts/mysql/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language><atom:link href="https://xilluo.gitee.io/public/posts/mysql/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title></title>
-      <link>https://xiluo.gitee.io/public/posts/mysql/rds-mysql-%E5%BF%AB%E9%80%9F%E7%BB%93%E6%9D%9F%E8%BF%9B%E7%A8%8B/</link>
+      <link>https://xilluo.gitee.io/public/posts/mysql/rds-mysql-%E5%BF%AB%E9%80%9F%E7%BB%93%E6%9D%9F%E8%BF%9B%E7%A8%8B/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://xiluo.gitee.io/public/posts/mysql/rds-mysql-%E5%BF%AB%E9%80%9F%E7%BB%93%E6%9D%9F%E8%BF%9B%E7%A8%8B/</guid>
+      <guid>https://xilluo.gitee.io/public/posts/mysql/rds-mysql-%E5%BF%AB%E9%80%9F%E7%BB%93%E6%9D%9F%E8%BF%9B%E7%A8%8B/</guid>
       <description>RDS 默认管理员也没有super权限，数据库在执行DDL语句时没有super权限是不能结束进程会报异常：
  you are not owner for thread ******* show 不是sql语句也不能处理输出，很多连接的时候我想到想到是使用excel来生成结束进程的kill命令，关键在于一个函数：在一单元格前后加上字符：
 =&amp;quot;kill &amp;quot;&amp;amp;B2&amp;amp;&amp;quot;;&amp;quot; </description>

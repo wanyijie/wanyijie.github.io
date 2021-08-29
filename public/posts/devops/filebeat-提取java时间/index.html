@@ -11,7 +11,7 @@ PUT _ingest/pipeline/get_java_time { &quot;description&quot;: &quot;get java tim
 定义 ingest pipeline, 注意时间格式:#参考：grok-patterns
 PUT _ingest/pipeline/get_java_time { &quot;description&quot;: &quot;get java time&quot;, &quot;processors&quot;: [ { &quot;grok&quot;: { &quot;field&quot;: &quot;message&quot;, &quot;patterns&quot;: [&quot;%{TIMESTAMP_ISO8601:logtime}&quot;] } } ] } 设置 mapping，明确时间格式，其它可以自行推断#PUT /filebeat-test { &quot;mappings&quot;: { &quot;properties&quot;: { &quot;logtime&quot;: { &quot;type&quot;: &quot;date&quot;, &quot;format&quot;: &quot;yyyy-MM-dd HH:mm:ss.SSS&quot;} } } } 写入log:#PUT filebeat-test/_doc/1?pipeline=get_java_time { &quot;log&quot;: { &quot;offset&quot;: 0, &quot;file&quot;: { &quot;path&quot;: &quot;/jsonfile/98f01b2565052a41ca90cf94442b4bde85e77547547da008c64b90956f723653/98f01b2565052a41ca90cf94442b4bde85e77547547da008c64b90956f723653-json.log&quot; } }, &quot;input&quot;: { &quot;type&quot;: &quot;container&quot; }, &quot;fields&quot;: { &quot;stack&quot;: &quot;test&quot;, &quot;tenant&quot;: &quot;default&quot;, &quot;log_source&quot;: &quot;test&quot;, &quot;log_topic&quot;: &quot;target_index&quot;, &quot;environment&quot;: &quot;192." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://xiluo.gitee.io/public/posts/devops/filebeat-%E6%8F%90%E5%8F%96java%E6%97%B6%E9%97%B4/" /><meta property="article:section" content="posts" />
+<meta property="og:url" content="https://xilluo.gitee.io/public/posts/devops/filebeat-%E6%8F%90%E5%8F%96java%E6%97%B6%E9%97%B4/" /><meta property="article:section" content="posts" />
 
 
 

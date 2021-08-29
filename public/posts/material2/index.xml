@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>mererial2 on A great computer technology Site</title>
-    <link>https://xiluo.gitee.io/public/posts/material2/</link>
+    <link>https://xilluo.gitee.io/public/posts/material2/</link>
     <description>Recent content in mererial2 on A great computer technology Site</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="https://xiluo.gitee.io/public/posts/material2/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language><atom:link href="https://xilluo.gitee.io/public/posts/material2/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title></title>
-      <link>https://xiluo.gitee.io/public/posts/material2/angular-material-%E4%B8%BB%E4%BD%93%E5%8C%96%E8%87%AA%E5%AE%9A%E4%B9%89%E7%BB%84%E4%BB%B6/</link>
+      <link>https://xilluo.gitee.io/public/posts/material2/angular-material-%E4%B8%BB%E4%BD%93%E5%8C%96%E8%87%AA%E5%AE%9A%E4%B9%89%E7%BB%84%E4%BB%B6/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://xiluo.gitee.io/public/posts/material2/angular-material-%E4%B8%BB%E4%BD%93%E5%8C%96%E8%87%AA%E5%AE%9A%E4%B9%89%E7%BB%84%E4%BB%B6/</guid>
+      <guid>https://xilluo.gitee.io/public/posts/material2/angular-material-%E4%B8%BB%E4%BD%93%E5%8C%96%E8%87%AA%E5%AE%9A%E4%B9%89%E7%BB%84%E4%BB%B6/</guid>
       <description>Theming your custom components#主体化自定义的组件#In order to style your own components with Angular Material&amp;rsquo;s tooling, the component&amp;rsquo;s styles must be defined with Sass.
 为了使用Angular Material的工具设计自己的组件，组件的样式必须用Sass定义。
 Using @mixin to automatically apply a theme#使用@mixin自动应用主题#Why using @mixin#The advantage of using a @mixin function is that when you change your theme, every file that uses it will be automatically updated. Calling the @mixin with a different theme argument allows multiple themes within the app or component.</description>
@@ -19,10 +19,10 @@ Using @mixin to automatically apply a theme#使用@mixin自动应用主题#
     
     <item>
       <title></title>
-      <link>https://xiluo.gitee.io/public/posts/material2/angular-material%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E4%B8%BB%E9%A2%98%E5%8C%96/</link>
+      <link>https://xilluo.gitee.io/public/posts/material2/angular-material%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E4%B8%BB%E9%A2%98%E5%8C%96/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://xiluo.gitee.io/public/posts/material2/angular-material%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E4%B8%BB%E9%A2%98%E5%8C%96/</guid>
+      <guid>https://xilluo.gitee.io/public/posts/material2/angular-material%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E4%B8%BB%E9%A2%98%E5%8C%96/</guid>
       <description>Theming your Angular Material app#将您的Angular Material应用程序主题化#What is a theme?#什么是主题？#A theme is the set of colors that will be applied to the Angular Material components. The library&amp;rsquo;s approach to theming is based on the guidance from the Material Design spec.
 主题是将应用于 Angular Material 组件的一组颜色。库的主题化方法基于Material设计规范的指导。
 In Angular Material, a theme is created by composing multiple palettes. In particular, a theme consists of:</description>
@@ -30,10 +30,10 @@ In Angular Material, a theme is created by composing multiple palettes. In parti
     
     <item>
       <title></title>
-      <link>https://xiluo.gitee.io/public/posts/material2/material-%E5%8E%9F%E7%90%86%E5%9B%BE/</link>
+      <link>https://xilluo.gitee.io/public/posts/material2/material-%E5%8E%9F%E7%90%86%E5%9B%BE/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://xiluo.gitee.io/public/posts/material2/material-%E5%8E%9F%E7%90%86%E5%9B%BE/</guid>
+      <guid>https://xilluo.gitee.io/public/posts/material2/material-%E5%8E%9F%E7%90%86%E5%9B%BE/</guid>
       <description>Angular Material comes packaged with Angular CLI schematics to make creating Material applications easier.
 Angular Material附带Angular CLI原理图，使创建Material应用程序变得更加简单。
 Install Schematics#安装原理图#Schematics come packaged with Angular Material, so once you have installed the npm package, they will be available via the Angular CLI.

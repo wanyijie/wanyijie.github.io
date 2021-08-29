@@ -2,9 +2,9 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>About on A great computer technology Site</title>
-    <link>https://wangyijie.github.io/public/about/</link>
+    <link>https://xiluo.gitee.io/public/about/</link>
     <description>Recent content in About on A great computer technology Site</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="https://wangyijie.github.io/public/about/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language><atom:link href="https://xiluo.gitee.io/public/about/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

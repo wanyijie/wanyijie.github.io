@@ -9,7 +9,7 @@ go get github.com/xilu0/transfer for im in `kubeadm config images list`;do trans
 <meta property="og:description" content="install upgrade tool kubeadm#apt install -y kubeadm kubeadm config images list k8s.gcr.io/kube-apiserver:v1.19.4 k8s.gcr.io/kube-controller-manager:v1.19.4 k8s.gcr.io/kube-scheduler:v1.19.4 k8s.gcr.io/kube-proxy:v1.19.4 k8s.gcr.io/pause:3.2 k8s.gcr.io/etcd:3.4.13-0 k8s.gcr.io/coredns:1.7.0 transfer gcr images to docker hub#open https://katacoda.com/courses/ubuntu/playground
 go get github.com/xilu0/transfer for im in `kubeadm config images list`;do transfer --user=heishui --password=&quot;$repopass&quot; --image=$im;done upgrade kubernetes cluster#kubeadm upgrade plan kubeadm upgrade apply v1.19.4 upgrade components#apt install -y kubectl kubelet " />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://wangyijie.github.io/public/posts/kubernetes/upgrade-kubernetes-to-1-19-4/" /><meta property="article:section" content="posts" />
+<meta property="og:url" content="https://xiluo.gitee.io/public/posts/kubernetes/upgrade-kubernetes-to-1-19-4/" /><meta property="article:section" content="posts" />
 
 
 

@@ -9,7 +9,7 @@
 <meta property="og:description" content="我们在编写kubernetes资源清单的时候有很多细节不易记住，特别对于还不熟练的同学，寻找参考摸板是一件麻烦的事，下面介绍两种获取参考帮助的手段，足够大家无往不利
  kubectl get &ndash;export kubectl get -o yaml &ndash;export 我们编写清单可以在集群找一个现成的资源摸板,然后修改我们想要的信息在以此创建新的资源，这能解决大部分需要了， kubectl get -o yaml &ndash;export 命令获得的资源内容就一个完美的摸板，-o yaml 用的比较多，&ndash;export 关注的可能就比较少，它的作用是把资源在当前集群的一些个性化数据过滤掉，给你一个清爽的摸板，去感受一下吧！ kubectl explain 有时我们通过上面的方法能找到的摸板可能没有我们要的配置，这时需要去别处寻找参考，或者去查看api文档，其实都可以不用，kubectl explain 可以根据资源路径给对应资源的子对象，就是其可以包含的字段或对象，比如看一个我不知道configMap卷怎么写的栗子：  [root@Registry ~]# kubectl explain deployments.spec.template.spec.volumes.configMap RESOURCE: configMap &lt;Object&gt; DESCRIPTION: ConfigMap represents a configMap that should populate this volume Adapts a ConfigMap into a volume. FIELDS: defaultMode	&lt;integer&gt; Optional: mode bits to use on created files by default. Must be a value between 0 and 0777." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://wangyijie.github.io/public/posts/kubernetes/kubernetes-%E8%B5%84%E6%BA%90%E7%BC%96%E6%8E%92%E5%B8%AE%E5%8A%A9/" /><meta property="article:section" content="posts" />
+<meta property="og:url" content="https://xiluo.gitee.io/public/posts/kubernetes/kubernetes-%E8%B5%84%E6%BA%90%E7%BC%96%E6%8E%92%E5%B8%AE%E5%8A%A9/" /><meta property="article:section" content="posts" />
 
 
 

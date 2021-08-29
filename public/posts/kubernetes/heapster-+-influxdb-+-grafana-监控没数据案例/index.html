@@ -17,7 +17,7 @@ curl http://172.21.11.108:8086/query?pretty=true --data-urlencode &quot;db=k8s&q
 验证方法#influxdb没有图形界面了，命令工具也不易安装，curl最方便，不过格式需要注意，我参照了许多才找到合适的，记录个例子：
 curl http://172.21.11.108:8086/query?pretty=true --data-urlencode &quot;db=k8s&quot; --data-urlencode &quot;q=SELECT * FROM \&quot;cpu/usage\&quot; WHERE (\&quot;type\&quot; = &#39;pod&#39; AND \&quot;namespace_name\&quot; =~ /^blue$/) AND time &gt;= now() - 30m&quot; " />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://wangyijie.github.io/public/posts/kubernetes/heapster-&#43;-influxdb-&#43;-grafana-%E7%9B%91%E6%8E%A7%E6%B2%A1%E6%95%B0%E6%8D%AE%E6%A1%88%E4%BE%8B/" /><meta property="article:section" content="posts" />
+<meta property="og:url" content="https://xiluo.gitee.io/public/posts/kubernetes/heapster-&#43;-influxdb-&#43;-grafana-%E7%9B%91%E6%8E%A7%E6%B2%A1%E6%95%B0%E6%8D%AE%E6%A1%88%E4%BE%8B/" /><meta property="article:section" content="posts" />
 
 
 

@@ -13,7 +13,7 @@ apiserver 配置: --feature-gates=PodPriority=true --runtime-config=scheduling.k
 apiVersion: v1 kind: PriorityClass metadata: name: high-priority value: 1000000 globalDefault: false description: &quot;This priority class should be used for XYZ service pods only.&quot; 其中value 为 32 位整数的优先级，该值越大，优先级越高 globalDefault 用于未配置 PriorityClassName 的 Pod，整个集群中应该只有一个 PriorityClass 将其设置为 true 然后，在 PodSpec 中通过 PriorityClassName 设置 Pod 的优先级：
 apiVersion: v1 kind: Pod metadata: name: nginx labels: env: test spec: containers: - name: nginx image: nginx imagePullPolicy: IfNotPresent priorityClassName: high-priority " />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://wangyijie.github.io/public/posts/kubernetes/kubernetes%E4%BC%98%E5%85%88%E7%BA%A7%E8%B0%83%E5%BA%A6/" /><meta property="article:section" content="posts" />
+<meta property="og:url" content="https://xiluo.gitee.io/public/posts/kubernetes/kubernetes%E4%BC%98%E5%85%88%E7%BA%A7%E8%B0%83%E5%BA%A6/" /><meta property="article:section" content="posts" />
 
 
 

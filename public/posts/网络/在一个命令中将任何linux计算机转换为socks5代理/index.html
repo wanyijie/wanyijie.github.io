@@ -17,7 +17,7 @@ ssh -f -N -D 0.0.0.0:1080 user@ip 要使用它，只需让您的软件在您的L
 访问控制可以通过实现iptables。例如，要仅允许来自ip的1.2.3.4人员使用SOCKS5代理，请添加以下iptables规则：
 iptables -A INPUT --src 1.2.3.4 -p tcp --dport 1080 -j ACCEPT iptables -A INPUT -p tcp --dport 1080 -j REJECT 第一条规则说，允许任何人1.2.3.4连接到端口1080，另一条规则说，拒绝其他所有人连接到端口1080。" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://wangyijie.github.io/public/posts/%E7%BD%91%E7%BB%9C/%E5%9C%A8%E4%B8%80%E4%B8%AA%E5%91%BD%E4%BB%A4%E4%B8%AD%E5%B0%86%E4%BB%BB%E4%BD%95linux%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%BD%AC%E6%8D%A2%E4%B8%BAsocks5%E4%BB%A3%E7%90%86/" /><meta property="article:section" content="posts" />
+<meta property="og:url" content="https://xiluo.gitee.io/public/posts/%E7%BD%91%E7%BB%9C/%E5%9C%A8%E4%B8%80%E4%B8%AA%E5%91%BD%E4%BB%A4%E4%B8%AD%E5%B0%86%E4%BB%BB%E4%BD%95linux%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%BD%AC%E6%8D%A2%E4%B8%BAsocks5%E4%BB%A3%E7%90%86/" /><meta property="article:section" content="posts" />
 
 
 

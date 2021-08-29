@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="自动化是指运用技术，在减少人工协助的情况下执行各项任务。面临重复性任务的任何行业都可利用自动化，但自动化在制造、机器人和汽车行业以及技术世界中更加普及，例如在 IT 系统和业务决策软件中。
+IT 自动化#一种通过执行重复进程集合来取代对 IT 系统的手动操作的指令系统，例如，利用标准运行环境（SOE）来自动进行置备。
+业务自动化#使业务流程管理（BPM）、业务规则管理（BRM）和业务优化与现代应用开发的方向保持一致，从而应对市场的变化。
+机器人流程自动化#WorkFusion 和 Blue Prism 等提供的软件赋予程序有限的决策制定能力，例如本页上的聊天机器人。
+面向新手的 RPA
+工业自动化#在实现工厂自动化的过程中，缩短制造流程中人类劳动的工时，通常缩减到人类工作者只需操控控制面板或其他人机界面（HMI） 的程度。
+人工智能#基于规则的软件，执行通常通过人类介入来完成的任务。
+AI 指南
+机器学习#利用预测模型执行任务的自适应算法，无需明确的指令，并可在完成每一任务时自动修改算法。
+深度学习#利用多种自适应算法、自动化软件和程序执行一项固定的重复性任务，例如从原始图像中提取细微的细节。
+为什么要自动化？#自动化可以助力企业实现数字变革。当前，Airbnb 和 Amazon 等企业正引领着颠覆性的变革浪潮。他们要应对各种各样的挑战，不仅要为员工和合作伙伴提供支持、发展新的客户，还要以更快的速度提供新颖的创新产品与服务。
+他们不仅想要成为行业的颠覆者，并且势在必行。
+自动化的作用十分关键，它不仅能够管理、改变和调整您的 IT 基础架构，还会影响企业的流程运作方式。利用自动化来简化变革，您就能把更多时间和精力投入到创新之中。采取自动化的企业能够更快地完成工作。自动化能够解放 IT 员工，让他们能够节省时间，去关注并解决更重要的问题，随后，再将这些事务也优化精简，交由自动化处理。
+我们可以说得更细一点：
+ IT 运维是一项艰难的工作。要在采用新系统的同时保留原来的系统和流程，更是难上加难。 各种要求和需求的增长速度，远远超过 IT 和业务能力的进步。 DevOps等新的方法正在推动文化变革。 技术虚拟化、云和容器等规模太大，无法完全靠手动完成。 这时我们就需要自动化。  自动化的优势#自动化并不意味着完全取代人工。虽然自动化可以免除一些人工介入的工序，但自动化的重点和优势其实在于提高生产率、一致性和效率。这是自动化的悖论，因为当您高效运用自动化时，人工介入的重要性会提高，但频率会降低。">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="" />
+<meta property="og:description" content="自动化是指运用技术，在减少人工协助的情况下执行各项任务。面临重复性任务的任何行业都可利用自动化，但自动化在制造、机器人和汽车行业以及技术世界中更加普及，例如在 IT 系统和业务决策软件中。
+IT 自动化#一种通过执行重复进程集合来取代对 IT 系统的手动操作的指令系统，例如，利用标准运行环境（SOE）来自动进行置备。
+业务自动化#使业务流程管理（BPM）、业务规则管理（BRM）和业务优化与现代应用开发的方向保持一致，从而应对市场的变化。
+机器人流程自动化#WorkFusion 和 Blue Prism 等提供的软件赋予程序有限的决策制定能力，例如本页上的聊天机器人。
+面向新手的 RPA
+工业自动化#在实现工厂自动化的过程中，缩短制造流程中人类劳动的工时，通常缩减到人类工作者只需操控控制面板或其他人机界面（HMI） 的程度。
+人工智能#基于规则的软件，执行通常通过人类介入来完成的任务。
+AI 指南
+机器学习#利用预测模型执行任务的自适应算法，无需明确的指令，并可在完成每一任务时自动修改算法。
+深度学习#利用多种自适应算法、自动化软件和程序执行一项固定的重复性任务，例如从原始图像中提取细微的细节。
+为什么要自动化？#自动化可以助力企业实现数字变革。当前，Airbnb 和 Amazon 等企业正引领着颠覆性的变革浪潮。他们要应对各种各样的挑战，不仅要为员工和合作伙伴提供支持、发展新的客户，还要以更快的速度提供新颖的创新产品与服务。
+他们不仅想要成为行业的颠覆者，并且势在必行。
+自动化的作用十分关键，它不仅能够管理、改变和调整您的 IT 基础架构，还会影响企业的流程运作方式。利用自动化来简化变革，您就能把更多时间和精力投入到创新之中。采取自动化的企业能够更快地完成工作。自动化能够解放 IT 员工，让他们能够节省时间，去关注并解决更重要的问题，随后，再将这些事务也优化精简，交由自动化处理。
+我们可以说得更细一点：
+ IT 运维是一项艰难的工作。要在采用新系统的同时保留原来的系统和流程，更是难上加难。 各种要求和需求的增长速度，远远超过 IT 和业务能力的进步。 DevOps等新的方法正在推动文化变革。 技术虚拟化、云和容器等规模太大，无法完全靠手动完成。 这时我们就需要自动化。  自动化的优势#自动化并不意味着完全取代人工。虽然自动化可以免除一些人工介入的工序，但自动化的重点和优势其实在于提高生产率、一致性和效率。这是自动化的悖论，因为当您高效运用自动化时，人工介入的重要性会提高，但频率会降低。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://wangyijie.github.io/public/posts/cicd/%E4%BB%80%E4%B9%88%E6%98%AF%E8%87%AA%E5%8A%A8%E5%8C%96/" /><meta property="article:section" content="posts" />
+
+
+
+<title>什么是自动化？ | A great computer technology Site</title>
+<link rel="manifest" href="/public/manifest.json">
+<link rel="icon" href="/public/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/public/book.min.8599444fcc48ee6b435b5b62c955ab7d914fa1e2a453df90c4b97cc9769665d1.css" integrity="sha256-hZlET8xI7mtDW1tiyVWrfZFPoeKkU9&#43;QxLl8yXaWZdE=" crossorigin="anonymous">
+  <script defer src="/public/flexsearch.min.js"></script>
+  <script defer src="/public/en.search.min.49d7ffe0cc6a09481193582a484d1dfccfe14d6d173d2de804b6e37d7c5a9f57.js" integrity="sha256-Sdf/4MxqCUgRk1gqSE0d/M/hTW0XPS3oBLbjfXxan1c=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/public/"><span>A great computer technology Site</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/public/posts/" >
+        Posts
+      </a>
+      
+<ul>
+  
+  <li>
+    <a href="/public/posts/angluar-cli/" >
+        angular
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/ansible/" >
+        ansible
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/cicd/" >
+        CICD
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/cloud/" >
+        cloude
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/container/" >
+        container
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/devops/" >
+        DevOps
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/english/" >
+        English
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/golang/" >
+        golang
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/istio/" >
+        istio
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/kubernetes/" >
+        Kubernetes
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" >
+        mechine leaning
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/material2/" >
+        mererial2
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E7%9B%91%E6%8E%A7/" >
+        monitor
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/mysql/" >
+        mysql
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E7%BD%91%E7%BB%9C/" >
+        networking
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E6%97%A5%E8%AE%B0%E6%9C%AC/" >
+        notes
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/postgresql/" >
+        postgresql
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/django/" >
+        python
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E5%AE%89%E5%85%A8/" >
+        safe
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E8%AF%97%E8%AF%8D/" >
+        shi chi
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E7%AB%99%E7%82%B9%E5%8F%AF%E9%9D%A0%E6%80%A7%E5%B7%A5%E7%A8%8B/" >
+        SRE
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E6%96%87%E5%AD%A6/" >
+        wenxue
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E9%9A%8F%E7%AC%94/" >
+        write somethings
+      </a>
+  </li>
+  
+</ul>
+
+  </li>
+  
+  <li>
+    <a href="/public/about/" >
+        About
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var a=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(b){localStorage.setItem("menu.scrollTop",a.scrollTop)}),a.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/public/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>什么是自动化？</strong>
+
+  <label for="toc-control">
+    
+    <img src="/public/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#it-自动化">IT 自动化</a></li>
+        <li><a href="#业务自动化">业务自动化</a></li>
+        <li><a href="#机器人流程自动化">机器人流程自动化</a></li>
+        <li><a href="#工业自动化">工业自动化</a></li>
+        <li><a href="#人工智能">人工智能</a></li>
+        <li><a href="#机器学习">机器学习</a></li>
+        <li><a href="#深度学习">深度学习</a></li>
+        <li><a href="#为什么要自动化">为什么要自动化？</a></li>
+      </ul>
+    </li>
+    <li><a href="#自动化的优势">自动化的优势</a>
+      <ul>
+        <li><a href="#优点">优点</a></li>
+        <li><a href="#挑战">挑战</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+<article class="markdown">
+  <h1>
+    <a href="/public/posts/cicd/%E4%BB%80%E4%B9%88%E6%98%AF%E8%87%AA%E5%8A%A8%E5%8C%96/">什么是自动化？</a>
+  </h1>
+  
+
+
+  
+
+  
+
+
+
+<p>自动化是指运用技术，在减少人工协助的情况下执行各项任务。面临重复性任务的任何行业都可利用自动化，但自动化在制造、机器人和<a href="https://www.redhat.com/zh/open-source-stories/road-to-ai">汽车</a>行业以及技术世界中更加普及，例如在 IT 系统和业务决策软件中。</p>
+<h3 id="it-自动化">
+  IT 自动化
+  <a class="anchor" href="#it-%e8%87%aa%e5%8a%a8%e5%8c%96">#</a>
+</h3>
+<p>一种通过执行重复进程集合来取代对 IT 系统的手动操作的指令系统，例如，利用<a href="https://www.redhat.com/zh/topics/management/what-is-an-soe">标准运行环境（SOE）</a>来自动进行置备。</p>
+<h3 id="业务自动化">
+  业务自动化
+  <a class="anchor" href="#%e4%b8%9a%e5%8a%a1%e8%87%aa%e5%8a%a8%e5%8c%96">#</a>
+</h3>
+<p>使<a href="https://www.redhat.com/zh/topics/automation/what-is-business-process-management">业务流程管理（BPM）</a>、业务规则管理（BRM）和<a href="https://www.redhat.com/zh/topics/automation/business-optimization">业务优化</a>与现代应用开发的方向保持一致，从而应对市场的变化。</p>
+<h3 id="机器人流程自动化">
+  机器人流程自动化
+  <a class="anchor" href="#%e6%9c%ba%e5%99%a8%e4%ba%ba%e6%b5%81%e7%a8%8b%e8%87%aa%e5%8a%a8%e5%8c%96">#</a>
+</h3>
+<p><a href="https://www.redhat.com/zh/resources/intelligent-automation-solution-workfusion-partner-solution-brief">WorkFusion</a> 和 <a href="https://www.redhat.com/zh/resources/red-hat-process-automation-manager-blue-prism-brief">Blue Prism</a> 等提供的软件赋予程序有限的决策制定能力，例如本页上的聊天机器人。</p>
+<p><a href="https://enterprisersproject.com/article/2020/6/rpa-robotic-process-automation-beginners">面向新手的 RPA</a></p>
+<h3 id="工业自动化">
+  工业自动化
+  <a class="anchor" href="#%e5%b7%a5%e4%b8%9a%e8%87%aa%e5%8a%a8%e5%8c%96">#</a>
+</h3>
+<p>在实现工厂自动化的过程中，缩短制造流程中人类劳动的工时，通常缩减到人类工作者只需操控控制面板或其他人机界面（HMI） 的程度。</p>
+<h3 id="人工智能">
+  人工智能
+  <a class="anchor" href="#%e4%ba%ba%e5%b7%a5%e6%99%ba%e8%83%bd">#</a>
+</h3>
+<p>基于规则的软件，执行通常通过人类介入来完成的任务。</p>
+<p><a href="https://enterprisersproject.com/ai-executives-guide">AI 指南</a></p>
+<h3 id="机器学习">
+  机器学习
+  <a class="anchor" href="#%e6%9c%ba%e5%99%a8%e5%ad%a6%e4%b9%a0">#</a>
+</h3>
+<p>利用预测模型执行任务的自适应算法，无需明确的指令，并可在完成每一任务时自动修改算法。</p>
+<h3 id="深度学习">
+  深度学习
+  <a class="anchor" href="#%e6%b7%b1%e5%ba%a6%e5%ad%a6%e4%b9%a0">#</a>
+</h3>
+<p>利用多种自适应算法、自动化软件和程序执行一项固定的重复性任务，例如<a href="https://www.redhat.com/zh/creating-chris">从原始图像中提取细微的细节</a>。</p>
+<h3 id="为什么要自动化">
+  为什么要自动化？
+  <a class="anchor" href="#%e4%b8%ba%e4%bb%80%e4%b9%88%e8%a6%81%e8%87%aa%e5%8a%a8%e5%8c%96">#</a>
+</h3>
+<p>自动化可以助力企业实现数字变革。当前，Airbnb 和 Amazon 等企业正引领着颠覆性的变革浪潮。他们要应对各种各样的挑战，不仅要为员工和合作伙伴提供支持、发展新的客户，还要以更快的速度提供新颖的创新产品与服务。</p>
+<p>他们不仅想要成为行业的颠覆者，并且<em>势在必行</em>。</p>
+<p>自动化的作用十分关键，它不仅能够管理、改变和调整您的 IT 基础架构，还会影响企业的流程运作方式。利用自动化来简化变革，您就能把更多时间和精力投入到创新之中。采取自动化的企业能够更快地完成工作。自动化能够解放 IT 员工，让他们能够节省时间，去关注并解决更重要的问题，随后，再将这些事务也优化精简，交由自动化处理。</p>
+<p>我们可以说得更细一点：</p>
+<ul>
+<li>IT 运维是一项艰难的工作。要在采用新系统的同时保留原来的系统和流程，更是难上加难。</li>
+<li>各种要求和需求的增长速度，远远超过 IT 和业务能力的进步。</li>
+<li>DevOps等新的方法正在推动文化变革。</li>
+<li>技术虚拟化、云和容器等规模太大，无法完全靠手动完成。</li>
+<li>这时我们就需要自动化。</li>
+</ul>
+<h2 id="自动化的优势">
+  自动化的优势
+  <a class="anchor" href="#%e8%87%aa%e5%8a%a8%e5%8c%96%e7%9a%84%e4%bc%98%e5%8a%bf">#</a>
+</h2>
+<p>自动化并不意味着完全取代人工。虽然自动化可以免除一些人工介入的工序，但自动化的重点和优势其实在于提高生产率、一致性和效率。这是<a href="https://www.theatlantic.com/business/archive/2016/01/automation-paradox/424437/">自动化的悖论</a>，因为当您高效运用自动化时，人工介入的重要性会提高，但频率会降低。</p>
+<p>实际上，自动化并不是减少工作的法宝，而是旨在让经验更丰富的 IT 员工将精力投入到更重要的问题和解决方案上，而不是困于周而复始的琐碎日常任务。</p>
+<h3 id="优点">
+  优点
+  <a class="anchor" href="#%e4%bc%98%e7%82%b9">#</a>
+</h3>
+<ul>
+<li>**更高的生产效率。**您的员工可以将更多时间投入到对业务影响更大的事务上。重复性工作则交由软件来处理。</li>
+<li>**更加可靠。**减少人工干预，您就能减少出错频率和问题。所有相同的工作流都会以相同的方式完成，每时每刻，稳定安心。这样，您就可以准确掌握进程、测试、更新和工作流等作业的开始时间和持续时长，并且信赖最终的结果。</li>
+<li>**监管更容易。**人员数量越多，出现知识差距的几率就越高。知识差距越多，您手下的人员就很可能完全不认识另一部门的人员，也不知道具体情况。但把一切事务编写成代码，就意味着能够更好的掌控。</li>
+</ul>
+<h3 id="挑战">
+  挑战
+  <a class="anchor" href="#%e6%8c%91%e6%88%98">#</a>
+</h3>
+<ul>
+<li>**成本。**制定富有成效的自动化解决方案需要时间和精力。作为您值得信赖的合作伙伴，红帽将帮助您卸下重担，节省成本，加快运行速度。</li>
+<li>**范围。**自动化并不等于智能。有些自动化的对象和构建方式可能会容易超出范围，暴露破绽。将自动化限制于某些层面或职能，可以免除这样的担忧。请记住：自动化的智能与安全程度取决实施方式。</li>
+</ul>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function a(c){const a=window.getSelection(),b=document.createRange();b.selectNodeContents(c),a.removeAllRanges(),a.addRange(b)}document.querySelectorAll("pre code").forEach(b=>{b.addEventListener("click",function(c){a(b.parentElement),navigator.clipboard&&navigator.clipboard.writeText(b.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#it-自动化">IT 自动化</a></li>
+        <li><a href="#业务自动化">业务自动化</a></li>
+        <li><a href="#机器人流程自动化">机器人流程自动化</a></li>
+        <li><a href="#工业自动化">工业自动化</a></li>
+        <li><a href="#人工智能">人工智能</a></li>
+        <li><a href="#机器学习">机器学习</a></li>
+        <li><a href="#深度学习">深度学习</a></li>
+        <li><a href="#为什么要自动化">为什么要自动化？</a></li>
+      </ul>
+    </li>
+    <li><a href="#自动化的优势">自动化的优势</a>
+      <ul>
+        <li><a href="#优点">优点</a></li>
+        <li><a href="#挑战">挑战</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

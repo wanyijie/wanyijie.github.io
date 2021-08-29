@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="在本文中，我们将演示如何使用OPA执行最细粒度的安全策略。请注意，本文是一个系列的一部分，我们将基于“OPA作为代码介绍”和“集成OPA到Kubernetes”中获得的知识进行。如果你还没有这样做，请浏览本系列中已发表的文章。
+https://www.magalix.com/blog/introducing-policy-as-code-the-open-policy-agent-opa https://www.magalix.com/blog/integrating-open-policy-agent-opa-with-kubernetes-a-deep-dive-tutorial
+你可能已经熟悉Pod安全策略，可以在其中对Pod应用非常特定的安全控制。例如，使用Linux内核功能，使用主机命名空间、网络、端口或文件系统，以及其他许多功能。使用OPA，你还可以对pods施加类似的控制，在本实验室中，我们将创建一个OPA策略，不允许在pods中创建有特权的容器。特权容器对主机的访问级别比非特权容器高。
+为什么使用OPA而不是原生的Pod安全策略？#使用Pod安全策略来执行我们的安全策略并没有什么问题。然而，根据定义，PSP只能应用于pods。它们不能处理其他Kubernetes资源，如Ingresses、Deployments、Services等。OPA的强大之处在于它可以应用于任何Kubernetes资源。OPA作为一个许可控制器部署到Kubernetes，它拦截发送到API服务器的API调用，并验证和/或修改它们。相应地，你可以有一个统一的OPA策略，适用于系统的不同组件，而不仅仅是pods。例如，有一种策略，强制用户在其服务中使用公司的域，并确保用户只从公司的镜像存储库中提取镜像。请注意，我们使用的OPA是使用kube-mgmt部署的，而不是OPA Gatekeeper。
+Rego的策略代码#在本文中，我们假设你已经熟悉了OPA和Rego语言。我们还假设你有一个正在运行的Kubernetes集群，该集群部署了OPA和kube-mgmt容器。有关安装说明，请参阅我们的前一篇文章。我们的no-priv-pod.rego文件如下所示：
+package kubernetes.admission deny[msg] { c := input_containers[_] c.securityContext.privileged msg := sprintf(&quot;Privileged container is not allowed: %v, securityContext: %v&quot;, [c.name, c.securityContext]) } input_containers[c] { c := input.request.object.spec.containers[_] } input_containers[c] { c := input.request.object.spec.initContainers[_] } 让我们简要地浏览一下这个文件：
+第1行：包含package。注意，你必须使用kubernetes.admission让政策工作。
+第2行：Deny是默认对象，它将包含我们需要执行的策略。如果所包含的代码计算结果为true，则将违反策略。
+第3行：我们定义了一个变量，它将容纳pod中的所有容器，并从稍后定义的input_containers[c]接收值。
+第4行：如果pod包含“privileged”属性，则该语句为true。
+第5行：当用户尝试运行特权容器时显示给他们的消息。它包括容器名称和违规的安全上下文。
+第7-9行：input_containers[c]函数从请求对象中提取容器。注意，使用了_字符来遍历数组中的所有容器。在Rego中，你不需要定义循环—下划线字符将自动为你完成此操作。
+第10-12行：我们再次为init容器定义函数。请注意，在Rego中，可以多次定义同一个函数。这样做是为了克服Rego函数中不能返回多个输出的限制。当调用函数名时，将执行两个函数，并使用AND操作符组合输出。因此，在我们的例子中，在一个或多个位置中存在一个有特权的容器将违反策略。
+部署策略#OPA会在opa命名空间的ConfigMaps中找到它的策略。要将我们的代码应用到ConfigMap中，我们运行以下命令：
+kubectl create configmap no-priv-pods &ndash;from-file=no-priv-pod.rego kube-mgmt边车（sidecar）容器在opa命名空间中持续监视API服务器，以便你只需创建ConfigMap就可以部署策略。
+运行策略
+让我们通过尝试部署一个特权容器来确保我们的策略是有效的：
+kubectl -n default apply -f - &lt;&lt;EOT apiVersion: v1 kind: Pod metadata: name: nginx-privileged labels: app: nginx-privileged spec: containers: - name: nginx image: nginx securityContext: privileged: true #false EOT Error from server (Privileged container is not allowed: nginx, securityContext: {&ldquo;privileged&rdquo;: true}): error when creating &ldquo;STDIN&rdquo;: admission webhook &ldquo;validating-webhook.">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="" />
+<meta property="og:description" content="在本文中，我们将演示如何使用OPA执行最细粒度的安全策略。请注意，本文是一个系列的一部分，我们将基于“OPA作为代码介绍”和“集成OPA到Kubernetes”中获得的知识进行。如果你还没有这样做，请浏览本系列中已发表的文章。
+https://www.magalix.com/blog/introducing-policy-as-code-the-open-policy-agent-opa https://www.magalix.com/blog/integrating-open-policy-agent-opa-with-kubernetes-a-deep-dive-tutorial
+你可能已经熟悉Pod安全策略，可以在其中对Pod应用非常特定的安全控制。例如，使用Linux内核功能，使用主机命名空间、网络、端口或文件系统，以及其他许多功能。使用OPA，你还可以对pods施加类似的控制，在本实验室中，我们将创建一个OPA策略，不允许在pods中创建有特权的容器。特权容器对主机的访问级别比非特权容器高。
+为什么使用OPA而不是原生的Pod安全策略？#使用Pod安全策略来执行我们的安全策略并没有什么问题。然而，根据定义，PSP只能应用于pods。它们不能处理其他Kubernetes资源，如Ingresses、Deployments、Services等。OPA的强大之处在于它可以应用于任何Kubernetes资源。OPA作为一个许可控制器部署到Kubernetes，它拦截发送到API服务器的API调用，并验证和/或修改它们。相应地，你可以有一个统一的OPA策略，适用于系统的不同组件，而不仅仅是pods。例如，有一种策略，强制用户在其服务中使用公司的域，并确保用户只从公司的镜像存储库中提取镜像。请注意，我们使用的OPA是使用kube-mgmt部署的，而不是OPA Gatekeeper。
+Rego的策略代码#在本文中，我们假设你已经熟悉了OPA和Rego语言。我们还假设你有一个正在运行的Kubernetes集群，该集群部署了OPA和kube-mgmt容器。有关安装说明，请参阅我们的前一篇文章。我们的no-priv-pod.rego文件如下所示：
+package kubernetes.admission deny[msg] { c := input_containers[_] c.securityContext.privileged msg := sprintf(&quot;Privileged container is not allowed: %v, securityContext: %v&quot;, [c.name, c.securityContext]) } input_containers[c] { c := input.request.object.spec.containers[_] } input_containers[c] { c := input.request.object.spec.initContainers[_] } 让我们简要地浏览一下这个文件：
+第1行：包含package。注意，你必须使用kubernetes.admission让政策工作。
+第2行：Deny是默认对象，它将包含我们需要执行的策略。如果所包含的代码计算结果为true，则将违反策略。
+第3行：我们定义了一个变量，它将容纳pod中的所有容器，并从稍后定义的input_containers[c]接收值。
+第4行：如果pod包含“privileged”属性，则该语句为true。
+第5行：当用户尝试运行特权容器时显示给他们的消息。它包括容器名称和违规的安全上下文。
+第7-9行：input_containers[c]函数从请求对象中提取容器。注意，使用了_字符来遍历数组中的所有容器。在Rego中，你不需要定义循环—下划线字符将自动为你完成此操作。
+第10-12行：我们再次为init容器定义函数。请注意，在Rego中，可以多次定义同一个函数。这样做是为了克服Rego函数中不能返回多个输出的限制。当调用函数名时，将执行两个函数，并使用AND操作符组合输出。因此，在我们的例子中，在一个或多个位置中存在一个有特权的容器将违反策略。
+部署策略#OPA会在opa命名空间的ConfigMaps中找到它的策略。要将我们的代码应用到ConfigMap中，我们运行以下命令：
+kubectl create configmap no-priv-pods &ndash;from-file=no-priv-pod.rego kube-mgmt边车（sidecar）容器在opa命名空间中持续监视API服务器，以便你只需创建ConfigMap就可以部署策略。
+运行策略
+让我们通过尝试部署一个特权容器来确保我们的策略是有效的：
+kubectl -n default apply -f - &lt;&lt;EOT apiVersion: v1 kind: Pod metadata: name: nginx-privileged labels: app: nginx-privileged spec: containers: - name: nginx image: nginx securityContext: privileged: true #false EOT Error from server (Privileged container is not allowed: nginx, securityContext: {&ldquo;privileged&rdquo;: true}): error when creating &ldquo;STDIN&rdquo;: admission webhook &ldquo;validating-webhook." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://wangyijie.github.io/public/posts/%E5%AE%89%E5%85%A8/kubernetes-opaopen-policy-agent/" /><meta property="article:section" content="posts" />
+
+
+
+<title>Kubernetes Opa(open Policy Agent) | A great computer technology Site</title>
+<link rel="manifest" href="/public/manifest.json">
+<link rel="icon" href="/public/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/public/book.min.8599444fcc48ee6b435b5b62c955ab7d914fa1e2a453df90c4b97cc9769665d1.css" integrity="sha256-hZlET8xI7mtDW1tiyVWrfZFPoeKkU9&#43;QxLl8yXaWZdE=" crossorigin="anonymous">
+  <script defer src="/public/flexsearch.min.js"></script>
+  <script defer src="/public/en.search.min.49d7ffe0cc6a09481193582a484d1dfccfe14d6d173d2de804b6e37d7c5a9f57.js" integrity="sha256-Sdf/4MxqCUgRk1gqSE0d/M/hTW0XPS3oBLbjfXxan1c=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/public/"><span>A great computer technology Site</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/public/posts/" >
+        Posts
+      </a>
+      
+<ul>
+  
+  <li>
+    <a href="/public/posts/angluar-cli/" >
+        angular
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/ansible/" >
+        ansible
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/cicd/" >
+        CICD
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/cloud/" >
+        cloude
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/container/" >
+        container
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/devops/" >
+        DevOps
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/english/" >
+        English
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/golang/" >
+        golang
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/istio/" >
+        istio
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/kubernetes/" >
+        Kubernetes
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" >
+        mechine leaning
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/material2/" >
+        mererial2
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E7%9B%91%E6%8E%A7/" >
+        monitor
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/mysql/" >
+        mysql
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E7%BD%91%E7%BB%9C/" >
+        networking
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E6%97%A5%E8%AE%B0%E6%9C%AC/" >
+        notes
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/postgresql/" >
+        postgresql
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/django/" >
+        python
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E5%AE%89%E5%85%A8/" >
+        safe
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E8%AF%97%E8%AF%8D/" >
+        shi chi
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E7%AB%99%E7%82%B9%E5%8F%AF%E9%9D%A0%E6%80%A7%E5%B7%A5%E7%A8%8B/" >
+        SRE
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E6%96%87%E5%AD%A6/" >
+        wenxue
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E9%9A%8F%E7%AC%94/" >
+        write somethings
+      </a>
+  </li>
+  
+</ul>
+
+  </li>
+  
+  <li>
+    <a href="/public/about/" >
+        About
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var a=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(b){localStorage.setItem("menu.scrollTop",a.scrollTop)}),a.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/public/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Kubernetes Opa(open Policy Agent)</strong>
+
+  <label for="toc-control">
+    
+    <img src="/public/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents"></nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+<article class="markdown">
+  <h1>
+    <a href="/public/posts/%E5%AE%89%E5%85%A8/kubernetes-opaopen-policy-agent/">Kubernetes Opa(open Policy Agent)</a>
+  </h1>
+  
+
+
+  
+
+  
+
+
+
+<p>在本文中，我们将演示如何使用OPA执行最细粒度的安全策略。请注意，本文是一个系列的一部分，我们将基于“OPA作为代码介绍”和“集成OPA到Kubernetes”中获得的知识进行。如果你还没有这样做，请浏览本系列中已发表的文章。</p>
+<p><a href="https://www.magalix.com/blog/introducing-policy-as-code-the-open-policy-agent-opa">https://www.magalix.com/blog/introducing-policy-as-code-the-open-policy-agent-opa</a>
+<a href="https://www.magalix.com/blog/integrating-open-policy-agent-opa-with-kubernetes-a-deep-dive-tutorial">https://www.magalix.com/blog/integrating-open-policy-agent-opa-with-kubernetes-a-deep-dive-tutorial</a></p>
+<p>你可能已经熟悉Pod安全策略，可以在其中对Pod应用非常特定的安全控制。例如，使用Linux内核功能，使用主机命名空间、网络、端口或文件系统，以及其他许多功能。使用OPA，你还可以对pods施加类似的控制，在本实验室中，我们将创建一个OPA策略，不允许在pods中创建有特权的容器。特权容器对主机的访问级别比非特权容器高。</p>
+<h1 id="为什么使用opa而不是原生的pod安全策略">
+  为什么使用OPA而不是原生的Pod安全策略？
+  <a class="anchor" href="#%e4%b8%ba%e4%bb%80%e4%b9%88%e4%bd%bf%e7%94%a8opa%e8%80%8c%e4%b8%8d%e6%98%af%e5%8e%9f%e7%94%9f%e7%9a%84pod%e5%ae%89%e5%85%a8%e7%ad%96%e7%95%a5">#</a>
+</h1>
+<p>使用Pod安全策略来执行我们的安全策略并没有什么问题。然而，根据定义，PSP只能应用于pods。它们不能处理其他Kubernetes资源，如Ingresses、Deployments、Services等。OPA的强大之处在于它可以应用于任何Kubernetes资源。OPA作为一个许可控制器部署到Kubernetes，它拦截发送到API服务器的API调用，并验证和/或修改它们。相应地，你可以有一个统一的OPA策略，适用于系统的不同组件，而不仅仅是pods。例如，有一种策略，强制用户在其服务中使用公司的域，并确保用户只从公司的镜像存储库中提取镜像。请注意，我们使用的OPA是使用kube-mgmt部署的，而不是OPA Gatekeeper。</p>
+<h1 id="rego的策略代码">
+  Rego的策略代码
+  <a class="anchor" href="#rego%e7%9a%84%e7%ad%96%e7%95%a5%e4%bb%a3%e7%a0%81">#</a>
+</h1>
+<p>在本文中，我们假设你已经熟悉了OPA和Rego语言。我们还假设你有一个正在运行的Kubernetes集群，该集群部署了OPA和kube-mgmt容器。有关安装说明，请参阅我们的前一篇文章。我们的no-priv-pod.rego文件如下所示：</p>
+<pre tabindex="0"><code>package kubernetes.admission
+deny[msg] {
+  c := input_containers[_]
+  c.securityContext.privileged
+  msg := sprintf(&quot;Privileged container is not allowed: %v, securityContext: %v&quot;, [c.name, c.securityContext])
+}
+input_containers[c] {
+  c := input.request.object.spec.containers[_]
+}
+input_containers[c] {
+  c := input.request.object.spec.initContainers[_]
+}
+</code></pre><p>让我们简要地浏览一下这个文件：</p>
+<p>第1行：包含package。注意，你必须使用kubernetes.admission让政策工作。</p>
+<p>第2行：Deny是默认对象，它将包含我们需要执行的策略。如果所包含的代码计算结果为true，则将违反策略。</p>
+<p>第3行：我们定义了一个变量，它将容纳pod中的所有容器，并从稍后定义的input_containers[c]接收值。</p>
+<p>第4行：如果pod包含“privileged”属性，则该语句为true。</p>
+<p>第5行：当用户尝试运行特权容器时显示给他们的消息。它包括容器名称和违规的安全上下文。</p>
+<p>第7-9行：input_containers[c]函数从请求对象中提取容器。注意，使用了_字符来遍历数组中的所有容器。在Rego中，你不需要定义循环—下划线字符将自动为你完成此操作。</p>
+<p>第10-12行：我们再次为init容器定义函数。请注意，在Rego中，可以多次定义同一个函数。这样做是为了克服Rego函数中不能返回多个输出的限制。当调用函数名时，将执行两个函数，并使用AND操作符组合输出。因此，在我们的例子中，在一个或多个位置中存在一个有特权的容器将违反策略。</p>
+<h1 id="部署策略">
+  部署策略
+  <a class="anchor" href="#%e9%83%a8%e7%bd%b2%e7%ad%96%e7%95%a5">#</a>
+</h1>
+<p>OPA会在opa命名空间的ConfigMaps中找到它的策略。要将我们的代码应用到ConfigMap中，我们运行以下命令：</p>
+<p>kubectl create configmap no-priv-pods &ndash;from-file=no-priv-pod.rego
+kube-mgmt边车（sidecar）容器在opa命名空间中持续监视API服务器，以便你只需创建ConfigMap就可以部署策略。</p>
+<p>运行策略</p>
+<p>让我们通过尝试部署一个特权容器来确保我们的策略是有效的：</p>
+<pre tabindex="0"><code>kubectl -n default apply -f - &lt;&lt;EOT
+apiVersion: v1
+kind: Pod
+metadata:
+ name: nginx-privileged
+ labels:
+  app: nginx-privileged
+spec:
+ containers:
+ - name: nginx
+  image: nginx
+  securityContext:
+   privileged: true #false
+EOT
+</code></pre><p>Error from server (Privileged container is not allowed: nginx, securityContext: {&ldquo;privileged&rdquo;: true}): error when creating &ldquo;STDIN&rdquo;: admission webhook &ldquo;validating-webhook.openpolicyagent.org&rdquo; denied the request: Privileged container is not allowed: nginx, securityContext: {&ldquo;privileged&rdquo;: true}
+请注意，我们有意将pod部署到默认命名空间，因为我们的admission webhook将忽略在opa命名空间或kube-system中创建的任何资源。</p>
+<p>总结</p>
+<p>OPA是一种通用的、平台无感的策略实施工具，可以通过多种方式与Kubernetes集成。</p>
+<p>你可以使用OPA策略来模拟Pod安全策略，以防止在集群上调度特权容器。</p>
+<p>因为OPA可以与其他Kubernetes资源一起工作，而不仅仅是Pods，所以建议使用它来创建跨越所有相关资源的集群级策略文档。</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function a(c){const a=window.getSelection(),b=document.createRange();b.selectNodeContents(c),a.removeAllRanges(),a.addRange(b)}document.querySelectorAll("pre code").forEach(b=>{b.addEventListener("click",function(c){a(b.parentElement),navigator.clipboard&&navigator.clipboard.writeText(b.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents"></nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

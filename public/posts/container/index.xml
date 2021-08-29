@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>container on A great computer technology Site</title>
+    <link>https://wangyijie.github.io/public/posts/container/</link>
+    <description>Recent content in container on A great computer technology Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="https://wangyijie.github.io/public/posts/container/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title></title>
+      <link>https://wangyijie.github.io/public/posts/container/introduction-to-containers/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.github.io/public/posts/container/introduction-to-containers/</guid>
+      <description>Introduction to Containers#If you understand Linux, you probably already have 85% of the knowledge you need to understand containers. If you understand how processes, mounts, networks , shells and daemons work - commands like ps, mount, ip addr, bash, httpd and mysqld - then you just need to understand a few extra primitives to become an expert with containers. Remember that all of the things that you already know today still apply: from security and performance to storage and networking, containers are just a different way of packaging and delivering Linux applications.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.github.io/public/posts/container/jdk%E5%AF%B9docker%E5%AE%B9%E5%99%A8%E7%9A%84%E6%94%AF%E6%8C%81/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.github.io/public/posts/container/jdk%E5%AF%B9docker%E5%AE%B9%E5%99%A8%E7%9A%84%E6%94%AF%E6%8C%81/</guid>
+      <description>java8及java9#Java 8u131及以上版本开始支持了Docker的cpu和memory限制。
+cpu limit#即如果没有显式指定-XX:ParalllelGCThreads 或者 -XX:CICompilerCount, 那么JVM使用docker的cpu限制。如果docker有指定cpu limit，jvm参数也有指定-XX:ParalllelGCThreads 或者 -XX:CICompilerCount，那么以指定的参数为准。
+memory limit#在java8u131+及java9，需要加上-XX:+UnlockExperimentalVMOptions -XX:+UseCGroupMemoryLimitForHeap才能使得Xmx感知docker的memory limit。
+查看参数默认值
+java -XX:+UnlockDiagnosticVMOptions -XX:+UnlockExperimentalVMOptions -XX:+PrintFlagsFinal 部分输出
+bool UseCGroupMemoryLimitForHeap = false {experimental} {default}  可以看到在java9，UseCGroupMemoryLimitForHeap参数还是实验性的，默认关闭。
+ java10#bool UseCGroupMemoryLimitForHeap = false {experimental} {default}  java10，UseCGroupMemoryLimitForHeap还是experimental，不过标记为废弃。
+ 不过java10新引入了1个参数
+int ActiveProcessorCount = -1 {product} {default}  ActiveProcessorCount可以用来指定cpu的个数
+ java11#java11正式移除UseCGroupMemoryLimitForHeap，代码改动见8194086: Remove deprecated experimental flag UseCGroupMemoryLimitForHeap
+同时引入1个新参数</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.github.io/public/posts/container/overview-of-the-docker-architecture/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.github.io/public/posts/container/overview-of-the-docker-architecture/</guid>
+      <description>In this text we&amp;rsquo;re going to be talking about Docker architecture. And Docker is the container implementation that is supported by Red Hat and is used by OpenShift. So Docker uses a client-server architecture, and the client will run our command-line tool, which is known as docker, so all of our requests that we&amp;rsquo;re going to make are running on the client server. And then we&amp;rsquo;ll also have another server, which is running the Docker service, and that has a daemon on it that&amp;rsquo;s responsible for all of the building and running and downloading images.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.github.io/public/posts/container/podman-error-with-centos7/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.github.io/public/posts/container/podman-error-with-centos7/</guid>
+      <description>system info:## podman info host: BuildahVersion: 1.14.2 CgroupVersion: v1 Conmon: package: conmon-2.0.13-1.1.el7.x86_64 path: /usr/bin/conmon version: &#39;conmon version 2.0.13, commit: eab756c90e2bdfa6fecf6616845ddcd9d3e339cb&#39; Distribution: distribution: &#39;&amp;quot;centos&amp;quot;&#39; version: &amp;quot;7&amp;quot; MemFree: 408485888 MemTotal: 952160256 OCIRuntime: name: runc package: runc-1.0.0-15.1.el7.x86_64 path: /usr/bin/runc version: |- runc version 1.0.0-rc10 commit: 67b92f062188d9cb6472b428855432c9f35efcf5 spec: 1.0.1-dev SwapFree: 0 SwapTotal: 0 arch: amd64 cpus: 1 eventlogger: journald hostname: test-server kernel: 3.10.0-1062.12.1.el7.x86_64 os: linux rootless: false uptime: 51m 16.22s registries: search: - registry.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.github.io/public/posts/container/windows-server-%E5%AE%B9%E5%99%A8-os-%E4%B8%8E%E4%B8%BB%E6%9C%BA-os-%E7%9A%84%E5%85%BC%E5%AE%B9%E6%80%A7/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.github.io/public/posts/container/windows-server-%E5%AE%B9%E5%99%A8-os-%E4%B8%8E%E4%B8%BB%E6%9C%BA-os-%E7%9A%84%E5%85%BC%E5%AE%B9%E6%80%A7/</guid>
+      <description>Windows Server 容器并非在所有主机 OS 版本间都兼容。 例如： 使用 Windows Server 1709 版本生成的 Windows Server 容器在运行 Windows Server 2016 版本的主机上无效。 使用 Windows Server 2016 生成的 Windows Server 容器仅在运行 Windows Server 1709 版本的主机上以 Hyper-V 隔离模式工作。 因为 Windows Server 容器使用 Windows Server 2016 生成，所以在运行 Windows Server 2016 的主机上以进程隔离模式运行时，可能需要确保容器 OS 和主机 OS 的版本相同。 https://docs.microsoft.com/zh-cn/virtualization/windowscontainers/deploy-containers/version-compatibility?tabs=windows-server-1909%2Cwindows-10-1909</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.github.io/public/posts/container/%E9%95%9C%E5%83%8F%E5%86%85%E5%AE%B9%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD%E5%B7%A5%E5%85%B7-reg/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.github.io/public/posts/container/%E9%95%9C%E5%83%8F%E5%86%85%E5%AE%B9%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD%E5%B7%A5%E5%85%B7-reg/</guid>
+      <description>Docker registry v2 command line client and repo listing generator with security checks.
+Table of Contents
+ Installation  Binaries Via Go   Usage  Auth List Repositories and Tags Get a Manifest Get the Digest Download a Layer Delete an Image Vulnerability Reports Generating Static Website for a Registry Using Self-Signed Certs with a Registry   Contributing  Installation#Binaries#For installation instructions from binaries please visit the Releases Page.</description>
+    </item>
+    
+  </channel>
+</rss>

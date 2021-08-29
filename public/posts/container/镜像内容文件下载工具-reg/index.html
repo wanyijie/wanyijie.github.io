@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Docker registry v2 command line client and repo listing generator with security checks.
+Table of Contents
+ Installation  Binaries Via Go   Usage  Auth List Repositories and Tags Get a Manifest Get the Digest Download a Layer Delete an Image Vulnerability Reports Generating Static Website for a Registry Using Self-Signed Certs with a Registry   Contributing  Installation#Binaries#For installation instructions from binaries please visit the Releases Page.">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="" />
+<meta property="og:description" content="Docker registry v2 command line client and repo listing generator with security checks.
+Table of Contents
+ Installation  Binaries Via Go   Usage  Auth List Repositories and Tags Get a Manifest Get the Digest Download a Layer Delete an Image Vulnerability Reports Generating Static Website for a Registry Using Self-Signed Certs with a Registry   Contributing  Installation#Binaries#For installation instructions from binaries please visit the Releases Page." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://wangyijie.github.io/public/posts/container/%E9%95%9C%E5%83%8F%E5%86%85%E5%AE%B9%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD%E5%B7%A5%E5%85%B7-reg/" /><meta property="article:section" content="posts" />
+
+
+
+<title>镜像内容文件下载工具 Reg | A great computer technology Site</title>
+<link rel="manifest" href="/public/manifest.json">
+<link rel="icon" href="/public/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/public/book.min.8599444fcc48ee6b435b5b62c955ab7d914fa1e2a453df90c4b97cc9769665d1.css" integrity="sha256-hZlET8xI7mtDW1tiyVWrfZFPoeKkU9&#43;QxLl8yXaWZdE=" crossorigin="anonymous">
+  <script defer src="/public/flexsearch.min.js"></script>
+  <script defer src="/public/en.search.min.49d7ffe0cc6a09481193582a484d1dfccfe14d6d173d2de804b6e37d7c5a9f57.js" integrity="sha256-Sdf/4MxqCUgRk1gqSE0d/M/hTW0XPS3oBLbjfXxan1c=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/public/"><span>A great computer technology Site</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/public/posts/" >
+        Posts
+      </a>
+      
+<ul>
+  
+  <li>
+    <a href="/public/posts/angluar-cli/" >
+        angular
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/ansible/" >
+        ansible
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/cicd/" >
+        CICD
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/cloud/" >
+        cloude
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/container/" >
+        container
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/devops/" >
+        DevOps
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/english/" >
+        English
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/golang/" >
+        golang
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/istio/" >
+        istio
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/kubernetes/" >
+        Kubernetes
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" >
+        mechine leaning
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/material2/" >
+        mererial2
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E7%9B%91%E6%8E%A7/" >
+        monitor
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/mysql/" >
+        mysql
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E7%BD%91%E7%BB%9C/" >
+        networking
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E6%97%A5%E8%AE%B0%E6%9C%AC/" >
+        notes
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/postgresql/" >
+        postgresql
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/django/" >
+        python
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E5%AE%89%E5%85%A8/" >
+        safe
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E8%AF%97%E8%AF%8D/" >
+        shi chi
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E7%AB%99%E7%82%B9%E5%8F%AF%E9%9D%A0%E6%80%A7%E5%B7%A5%E7%A8%8B/" >
+        SRE
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E6%96%87%E5%AD%A6/" >
+        wenxue
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E9%9A%8F%E7%AC%94/" >
+        write somethings
+      </a>
+  </li>
+  
+</ul>
+
+  </li>
+  
+  <li>
+    <a href="/public/about/" >
+        About
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var a=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(b){localStorage.setItem("menu.scrollTop",a.scrollTop)}),a.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/public/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>镜像内容文件下载工具 Reg</strong>
+
+  <label for="toc-control">
+    
+    <img src="/public/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#httpsgithubcomgenuinetoolsreginstallationinstallation"><a href="https://github.com/genuinetools/reg#installation"></a>Installation</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#httpsgithubcomgenuinetoolsregusageusage"><a href="https://github.com/genuinetools/reg#usage"></a>Usage</a>
+      <ul>
+        <li><a href="#httpsgithubcomgenuinetoolsregauthauth"><a href="https://github.com/genuinetools/reg#auth"></a>Auth</a></li>
+        <li><a href="#httpsgithubcomgenuinetoolsreglist-repositories-and-tagslist-repositories-and-tags"><a href="https://github.com/genuinetools/reg#list-repositories-and-tags"></a>List Repositories and Tags</a></li>
+        <li><a href="#httpsgithubcomgenuinetoolsregget-a-manifestget-a-manifest"><a href="https://github.com/genuinetools/reg#get-a-manifest"></a>Get a Manifest</a></li>
+        <li><a href="#httpsgithubcomgenuinetoolsregget-the-digestget-the-digest"><a href="https://github.com/genuinetools/reg#get-the-digest"></a>Get the Digest</a></li>
+        <li><a href="#httpsgithubcomgenuinetoolsregdownload-a-layerdownload-a-layer"><a href="https://github.com/genuinetools/reg#download-a-layer"></a>Download a Layer</a></li>
+        <li><a href="#httpsgithubcomgenuinetoolsregdelete-an-imagedelete-an-image"><a href="https://github.com/genuinetools/reg#delete-an-image"></a>Delete an Image</a></li>
+        <li><a href="#httpsgithubcomgenuinetoolsregvulnerability-reportsvulnerability-reports"><a href="https://github.com/genuinetools/reg#vulnerability-reports"></a>Vulnerability Reports</a></li>
+        <li><a href="#httpsgithubcomgenuinetoolsreggenerating-static-website-for-a-registrygenerating-static-website-for-a-registry"><a href="https://github.com/genuinetools/reg#generating-static-website-for-a-registry"></a>Generating Static Website for a Registry</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+<article class="markdown">
+  <h1>
+    <a href="/public/posts/container/%E9%95%9C%E5%83%8F%E5%86%85%E5%AE%B9%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD%E5%B7%A5%E5%85%B7-reg/">镜像内容文件下载工具 Reg</a>
+  </h1>
+  
+
+
+  
+
+  
+
+
+
+<p>Docker registry v2 command line client and repo listing generator with security checks.</p>
+<p><strong>Table of Contents</strong></p>
+<ul>
+<li><a href="https://github.com/genuinetools/reg#installation">Installation</a>
+<ul>
+<li><a href="https://github.com/genuinetools/reg#binaries">Binaries</a></li>
+<li><a href="https://github.com/genuinetools/reg#via-go">Via Go</a></li>
+</ul>
+</li>
+<li><a href="https://github.com/genuinetools/reg#usage">Usage</a>
+<ul>
+<li><a href="https://github.com/genuinetools/reg#auth">Auth</a></li>
+<li><a href="https://github.com/genuinetools/reg#list-repositories-and-tags">List Repositories and Tags</a></li>
+<li><a href="https://github.com/genuinetools/reg#get-a-manifest">Get a Manifest</a></li>
+<li><a href="https://github.com/genuinetools/reg#get-the-digest">Get the Digest</a></li>
+<li><a href="https://github.com/genuinetools/reg#download-a-layer">Download a Layer</a></li>
+<li><a href="https://github.com/genuinetools/reg#delete-an-image">Delete an Image</a></li>
+<li><a href="https://github.com/genuinetools/reg#vulnerability-reports">Vulnerability Reports</a></li>
+<li><a href="https://github.com/genuinetools/reg#generating-static-website-for-a-registry">Generating Static Website for a Registry</a></li>
+<li><a href="https://github.com/genuinetools/reg#using-self-signed-certs-with-a-registry">Using Self-Signed Certs with a Registry</a></li>
+</ul>
+</li>
+<li><a href="https://github.com/genuinetools/reg#contributing">Contributing</a></li>
+</ul>
+<h2 id="httpsgithubcomgenuinetoolsreginstallationinstallation">
+  <a href="https://github.com/genuinetools/reg#installation"></a>Installation
+  <a class="anchor" href="#httpsgithubcomgenuinetoolsreginstallationinstallation">#</a>
+</h2>
+<h4 id="httpsgithubcomgenuinetoolsregbinariesbinaries">
+  <a href="https://github.com/genuinetools/reg#binaries"></a>Binaries
+  <a class="anchor" href="#httpsgithubcomgenuinetoolsregbinariesbinaries">#</a>
+</h4>
+<p>For installation instructions from binaries please visit the <a href="https://github.com/genuinetools/reg/releases">Releases Page</a>.</p>
+<h4 id="httpsgithubcomgenuinetoolsregvia-govia-go">
+  <a href="https://github.com/genuinetools/reg#via-go"></a>Via Go
+  <a class="anchor" href="#httpsgithubcomgenuinetoolsregvia-govia-go">#</a>
+</h4>
+<pre tabindex="0"><code class="language-text-shell-session" data-lang="text-shell-session">$ go get github.com/genuinetools/reg
+</code></pre><h2 id="httpsgithubcomgenuinetoolsregusageusage">
+  <a href="https://github.com/genuinetools/reg#usage"></a>Usage
+  <a class="anchor" href="#httpsgithubcomgenuinetoolsregusageusage">#</a>
+</h2>
+<pre tabindex="0"><code class="language-text-shell-session" data-lang="text-shell-session">$ reg -h
+reg -  Docker registry v2 client.
+
+Usage: reg &lt;command&gt;
+
+Flags:
+
+  --auth-url           alternate URL for registry authentication (ex. auth.docker.io) (default: &lt;none&gt;)
+  -d                   enable debug logging (default: false)
+  -f, --force-non-ssl  force allow use of non-ssl (default: false)
+  -k, --insecure       do not verify tls certificates (default: false)
+  -p, --password       password for the registry (default: &lt;none&gt;)
+  --skip-ping          skip pinging the registry while establishing connection (default: false)
+  --timeout            timeout for HTTP requests (default: 1m0s)
+  -u, --username       username for the registry (default: &lt;none&gt;)
+
+Commands:
+
+  digest    Get the digest for a repository.
+  layer     Download a layer for a repository.
+  ls        List all repositories.
+  manifest  Get the json manifest for a repository.
+  rm        Delete a specific reference of a repository.
+  server    Run a static UI server for a registry.
+  tags      Get the tags for a repository.
+  vulns     Get a vulnerability report for a repository from a CoreOS Clair server.
+  version   Show the version information.
+</code></pre><p><strong>NOTE:</strong> Be aware that <code>reg ls</code> doesn&rsquo;t work with <code>hub.docker.com</code> as it has a different API than the <a href="https://github.com/docker/distribution">OSS Docker Registry</a>.</p>
+<h3 id="httpsgithubcomgenuinetoolsregauthauth">
+  <a href="https://github.com/genuinetools/reg#auth"></a>Auth
+  <a class="anchor" href="#httpsgithubcomgenuinetoolsregauthauth">#</a>
+</h3>
+<p><code>reg</code> will automatically try to parse your docker config credentials, but if not present, you can pass through flags directly.</p>
+<h3 id="httpsgithubcomgenuinetoolsreglist-repositories-and-tagslist-repositories-and-tags">
+  <a href="https://github.com/genuinetools/reg#list-repositories-and-tags"></a>List Repositories and Tags
+  <a class="anchor" href="#httpsgithubcomgenuinetoolsreglist-repositories-and-tagslist-repositories-and-tags">#</a>
+</h3>
+<p><strong>Repositories</strong></p>
+<pre tabindex="0"><code class="language-text-shell-session" data-lang="text-shell-session"># this command might take a while if you have hundreds of images like I do
+$ reg ls r.j3ss.co
+Repositories for r.j3ss.co
+REPO                  TAGS
+awscli                latest
+beeswithmachineguns   latest
+camlistore            latest
+chrome                beta, latest, stable
+...
+</code></pre><p><strong>Tags</strong></p>
+<pre tabindex="0"><code class="language-text-shell-session" data-lang="text-shell-session">$ reg tags r.j3ss.co/tor-browser
+alpha
+hardened
+latest
+stable
+
+# or for an offical image
+$ reg tags debian
+6
+6.0
+6.0.10
+6.0.8
+6.0.9
+7
+7-slim
+7.10
+7.11
+7.11-slim
+...
+</code></pre><h3 id="httpsgithubcomgenuinetoolsregget-a-manifestget-a-manifest">
+  <a href="https://github.com/genuinetools/reg#get-a-manifest"></a>Get a Manifest
+  <a class="anchor" href="#httpsgithubcomgenuinetoolsregget-a-manifestget-a-manifest">#</a>
+</h3>
+<pre tabindex="0"><code class="language-text-shell-session" data-lang="text-shell-session">$ reg manifest r.j3ss.co/htop
+{
+   &quot;schemaVersion&quot;: 1,
+   &quot;name&quot;: &quot;htop&quot;,
+   &quot;tag&quot;: &quot;latest&quot;,
+   &quot;architecture&quot;: &quot;amd64&quot;,
+   &quot;fsLayers&quot;: [
+     {
+       &quot;blobSum&quot;: &quot;sha256:a3ed95caeb02ffe68cdd9fd84406680ae93d633cb16422d00e8a7c22955b46d4&quot;
+     },
+     ....
+   ],
+   &quot;history&quot;: [
+     ....
+   ]
+ }
+</code></pre><h3 id="httpsgithubcomgenuinetoolsregget-the-digestget-the-digest">
+  <a href="https://github.com/genuinetools/reg#get-the-digest"></a>Get the Digest
+  <a class="anchor" href="#httpsgithubcomgenuinetoolsregget-the-digestget-the-digest">#</a>
+</h3>
+<pre tabindex="0"><code class="language-text-shell-session" data-lang="text-shell-session">$ reg digest r.j3ss.co/htop
+sha256:791158756cc0f5b27ef8c5c546284568fc9b7f4cf1429fb736aff3ee2d2e340f
+</code></pre><h3 id="httpsgithubcomgenuinetoolsregdownload-a-layerdownload-a-layer">
+  <a href="https://github.com/genuinetools/reg#download-a-layer"></a>Download a Layer
+  <a class="anchor" href="#httpsgithubcomgenuinetoolsregdownload-a-layerdownload-a-layer">#</a>
+</h3>
+<pre tabindex="0"><code class="language-text-shell-session" data-lang="text-shell-session">$ reg layer -o r.j3ss.co/chrome@sha256:a3ed95caeb02ffe68cdd9fd84406680ae93d633cb16422d00e8a7c22955b46d4
+OR
+$ reg layer r.j3ss.co/chrome@sha256:a3ed95caeb0.. &gt; layer.tar
+</code></pre><h3 id="httpsgithubcomgenuinetoolsregdelete-an-imagedelete-an-image">
+  <a href="https://github.com/genuinetools/reg#delete-an-image"></a>Delete an Image
+  <a class="anchor" href="#httpsgithubcomgenuinetoolsregdelete-an-imagedelete-an-image">#</a>
+</h3>
+<pre tabindex="0"><code class="language-text-shell-session" data-lang="text-shell-session">$ reg rm r.j3ss.co/chrome@sha256:a3ed95caeb02ffe68cdd9fd84406680ae93d633cb16422d00e8a7c22955b46d4
+Deleted chrome@sha256:a3ed95caeb02ffe68cdd9fd84406680ae93d633cb16422d00e8a7c22955b46d4
+</code></pre><h3 id="httpsgithubcomgenuinetoolsregvulnerability-reportsvulnerability-reports">
+  <a href="https://github.com/genuinetools/reg#vulnerability-reports"></a>Vulnerability Reports
+  <a class="anchor" href="#httpsgithubcomgenuinetoolsregvulnerability-reportsvulnerability-reports">#</a>
+</h3>
+<pre tabindex="0"><code class="language-text-shell-session" data-lang="text-shell-session">$ reg vulns --clair https://clair.j3ss.co r.j3ss.co/chrome
+Found 32 vulnerabilities
+CVE-2015-5180: [Low]
+
+https://security-tracker.debian.org/tracker/CVE-2015-5180
+-----------------------------------------
+CVE-2016-9401: [Low]
+popd in bash might allow local users to bypass the restricted shell and cause a use-after-free via a crafted address.
+https://security-tracker.debian.org/tracker/CVE-2016-9401
+-----------------------------------------
+CVE-2016-3189: [Low]
+Use-after-free vulnerability in bzip2recover in bzip2 1.0.6 allows remote attackers to cause a denial of service (crash) via a crafted bzip2 file, related to block ends set to before the start of the block.
+https://security-tracker.debian.org/tracker/CVE-2016-3189
+-----------------------------------------
+CVE-2011-3389: [Medium]
+The SSL protocol, as used in certain configurations in Microsoft Windows and Microsoft Internet Explorer, Mozilla Firefox, Google Chrome, Opera, and other products, encrypts data by using CBC mode with chained initialization vectors, which allows man-in-the-middle attackers to obtain plaintext HTTP headers via a blockwise chosen-boundary attack (BCBA) on an HTTPS session, in conjunction with JavaScript code that uses (1) the HTML5 WebSocket API, (2) the Java URLConnection API, or (3) the Silverlight WebClient API, aka a &quot;BEAST&quot; attack.
+https://security-tracker.debian.org/tracker/CVE-2011-3389
+-----------------------------------------
+CVE-2016-5318: [Medium]
+Stack-based buffer overflow in the _TIFFVGetField function in libtiff 4.0.6 and earlier allows remote attackers to crash the application via a crafted tiff.
+https://security-tracker.debian.org/tracker/CVE-2016-5318
+-----------------------------------------
+CVE-2016-9318: [Medium]
+libxml2 2.9.4 and earlier, as used in XMLSec 1.2.23 and earlier and other products, does not offer a flag directly indicating that the current document may be read but other files may not be opened, which makes it easier for remote attackers to conduct XML External Entity (XXE) attacks via a crafted document.
+https://security-tracker.debian.org/tracker/CVE-2016-9318
+-----------------------------------------
+CVE-2015-7554: [High]
+The _TIFFVGetField function in tif_dir.c in libtiff 4.0.6 allows attackers to cause a denial of service (invalid memory write and crash) or possibly have unspecified other impact via crafted field data in an extension tag in a TIFF image.
+https://security-tracker.debian.org/tracker/CVE-2015-7554
+-----------------------------------------
+Unknown: 2
+Negligible: 23
+Low: 3
+Medium: 3
+High: 1
+</code></pre><h3 id="httpsgithubcomgenuinetoolsreggenerating-static-website-for-a-registrygenerating-static-website-for-a-registry">
+  <a href="https://github.com/genuinetools/reg#generating-static-website-for-a-registry"></a>Generating Static Website for a Registry
+  <a class="anchor" href="#httpsgithubcomgenuinetoolsreggenerating-static-website-for-a-registrygenerating-static-website-for-a-registry">#</a>
+</h3>
+<p><code>reg</code> bundles a HTTP server that periodically generates a static website with a list of registry images and serves it to the web.</p>
+<p>It will run vulnerability scanning if you have a <a href="https://github.com/coreos/clair">CoreOS Clair</a> server set up and pass the url with the <code>--clair</code> flag.</p>
+<p>It is possible to run <code>reg server</code> just as a one time static generator. <code>--once</code> flag makes the <code>server</code> command exit after it builds the HTML listing.</p>
+<p>There is a demo at <a href="https://r.j3ss.co/">r.j3ss.co</a>.</p>
+<p><strong>Usage:</strong></p>
+<pre tabindex="0"><code class="language-text-shell-session" data-lang="text-shell-session">$ reg server -h
+Usage: reg server [OPTIONS]
+
+Run a static UI server for a registry.
+
+Flags:
+
+  -u, --username       username for the registry (default: &lt;none&gt;)
+  --listen-address     address to listen on (default: &lt;none&gt;)
+  --asset-path         Path to assets and templates (default: &lt;none&gt;)
+  -f, --force-non-ssl  force allow use of non-ssl (default: false)
+  --once               generate the templates once and then exit (default: false)
+  --skip-ping          skip pinging the registry while establishing connection (default: false)
+  --timeout            timeout for HTTP requests (default: 1m0s)
+  --cert               path to ssl cert (default: &lt;none&gt;)
+  -d                   enable debug logging (default: false)
+  --key                path to ssl key (default: &lt;none&gt;)
+  --port               port for server to run on (default: 8080)
+  -r, --registry       URL to the private registry (ex. r.j3ss.co) (default: &lt;none&gt;)
+  --clair              url to clair instance (default: &lt;none&gt;)
+  -k, --insecure       do not verify tls certificates (default: false)
+  --interval           interval to generate new index.html's at (default: 1h0m0s)
+  -p, --password       password for the registry (default: &lt;none&gt;)
+</code></pre><p><strong>Screenshots:</strong></p>
+<p>[图片上传失败&hellip;(image-9e17d8-1585106582654)]</p>
+<p>[图片上传失败&hellip;(image-318ad5-1585106582654)]</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function a(c){const a=window.getSelection(),b=document.createRange();b.selectNodeContents(c),a.removeAllRanges(),a.addRange(b)}document.querySelectorAll("pre code").forEach(b=>{b.addEventListener("click",function(c){a(b.parentElement),navigator.clipboard&&navigator.clipboard.writeText(b.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#httpsgithubcomgenuinetoolsreginstallationinstallation"><a href="https://github.com/genuinetools/reg#installation"></a>Installation</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#httpsgithubcomgenuinetoolsregusageusage"><a href="https://github.com/genuinetools/reg#usage"></a>Usage</a>
+      <ul>
+        <li><a href="#httpsgithubcomgenuinetoolsregauthauth"><a href="https://github.com/genuinetools/reg#auth"></a>Auth</a></li>
+        <li><a href="#httpsgithubcomgenuinetoolsreglist-repositories-and-tagslist-repositories-and-tags"><a href="https://github.com/genuinetools/reg#list-repositories-and-tags"></a>List Repositories and Tags</a></li>
+        <li><a href="#httpsgithubcomgenuinetoolsregget-a-manifestget-a-manifest"><a href="https://github.com/genuinetools/reg#get-a-manifest"></a>Get a Manifest</a></li>
+        <li><a href="#httpsgithubcomgenuinetoolsregget-the-digestget-the-digest"><a href="https://github.com/genuinetools/reg#get-the-digest"></a>Get the Digest</a></li>
+        <li><a href="#httpsgithubcomgenuinetoolsregdownload-a-layerdownload-a-layer"><a href="https://github.com/genuinetools/reg#download-a-layer"></a>Download a Layer</a></li>
+        <li><a href="#httpsgithubcomgenuinetoolsregdelete-an-imagedelete-an-image"><a href="https://github.com/genuinetools/reg#delete-an-image"></a>Delete an Image</a></li>
+        <li><a href="#httpsgithubcomgenuinetoolsregvulnerability-reportsvulnerability-reports"><a href="https://github.com/genuinetools/reg#vulnerability-reports"></a>Vulnerability Reports</a></li>
+        <li><a href="#httpsgithubcomgenuinetoolsreggenerating-static-website-for-a-registrygenerating-static-website-for-a-registry"><a href="https://github.com/genuinetools/reg#generating-static-website-for-a-registry"></a>Generating Static Website for a Registry</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

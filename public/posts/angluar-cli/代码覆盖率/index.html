@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Code Coverage#代码覆盖率#With the Angular CLI we can run unit tests as well as create code coverage reports. Code coverage reports allow us to see any parts of our code base that may not be properly tested by our unit tests.
+用Angular CLI我们能运行单元测试并创建代码覆盖率报告。代码覆盖率报告允许我们看到我们的代码库中的任何部分可能无法通过我们的单元测试。
+To generate a coverage report run the following command in the root of your project
+生成一个覆盖率报告运行下面的命令在项目的根
+ng test --watch=false --code-coverage Once the tests complete a new /coverage folder will appear in the project.">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="" />
+<meta property="og:description" content="Code Coverage#代码覆盖率#With the Angular CLI we can run unit tests as well as create code coverage reports. Code coverage reports allow us to see any parts of our code base that may not be properly tested by our unit tests.
+用Angular CLI我们能运行单元测试并创建代码覆盖率报告。代码覆盖率报告允许我们看到我们的代码库中的任何部分可能无法通过我们的单元测试。
+To generate a coverage report run the following command in the root of your project
+生成一个覆盖率报告运行下面的命令在项目的根
+ng test --watch=false --code-coverage Once the tests complete a new /coverage folder will appear in the project." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://wangyijie.github.io/public/posts/angluar-cli/%E4%BB%A3%E7%A0%81%E8%A6%86%E7%9B%96%E7%8E%87/" /><meta property="article:section" content="posts" />
+
+
+
+<title>代码覆盖率 | A great computer technology Site</title>
+<link rel="manifest" href="/public/manifest.json">
+<link rel="icon" href="/public/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/public/book.min.8599444fcc48ee6b435b5b62c955ab7d914fa1e2a453df90c4b97cc9769665d1.css" integrity="sha256-hZlET8xI7mtDW1tiyVWrfZFPoeKkU9&#43;QxLl8yXaWZdE=" crossorigin="anonymous">
+  <script defer src="/public/flexsearch.min.js"></script>
+  <script defer src="/public/en.search.min.49d7ffe0cc6a09481193582a484d1dfccfe14d6d173d2de804b6e37d7c5a9f57.js" integrity="sha256-Sdf/4MxqCUgRk1gqSE0d/M/hTW0XPS3oBLbjfXxan1c=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/public/"><span>A great computer technology Site</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/public/posts/" >
+        Posts
+      </a>
+      
+<ul>
+  
+  <li>
+    <a href="/public/posts/angluar-cli/" >
+        angular
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/ansible/" >
+        ansible
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/cicd/" >
+        CICD
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/cloud/" >
+        cloude
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/container/" >
+        container
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/devops/" >
+        DevOps
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/english/" >
+        English
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/golang/" >
+        golang
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/istio/" >
+        istio
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/kubernetes/" >
+        Kubernetes
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" >
+        mechine leaning
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/material2/" >
+        mererial2
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E7%9B%91%E6%8E%A7/" >
+        monitor
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/mysql/" >
+        mysql
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E7%BD%91%E7%BB%9C/" >
+        networking
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E6%97%A5%E8%AE%B0%E6%9C%AC/" >
+        notes
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/postgresql/" >
+        postgresql
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/django/" >
+        python
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E5%AE%89%E5%85%A8/" >
+        safe
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E8%AF%97%E8%AF%8D/" >
+        shi chi
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E7%AB%99%E7%82%B9%E5%8F%AF%E9%9D%A0%E6%80%A7%E5%B7%A5%E7%A8%8B/" >
+        SRE
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E6%96%87%E5%AD%A6/" >
+        wenxue
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E9%9A%8F%E7%AC%94/" >
+        write somethings
+      </a>
+  </li>
+  
+</ul>
+
+  </li>
+  
+  <li>
+    <a href="/public/about/" >
+        About
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var a=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(b){localStorage.setItem("menu.scrollTop",a.scrollTop)}),a.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/public/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>代码覆盖率</strong>
+
+  <label for="toc-control">
+    
+    <img src="/public/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#code-coverage-enforcement">Code Coverage Enforcement</a></li>
+    <li><a href="#代码覆盖率实施">代码覆盖率实施</a></li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+<article class="markdown">
+  <h1>
+    <a href="/public/posts/angluar-cli/%E4%BB%A3%E7%A0%81%E8%A6%86%E7%9B%96%E7%8E%87/">代码覆盖率</a>
+  </h1>
+  
+
+
+  
+
+  
+
+
+
+<h1 id="code-coverage">
+  Code Coverage
+  <a class="anchor" href="#code-coverage">#</a>
+</h1>
+<h1 id="代码覆盖率">
+  代码覆盖率
+  <a class="anchor" href="#%e4%bb%a3%e7%a0%81%e8%a6%86%e7%9b%96%e7%8e%87">#</a>
+</h1>
+<p>With the Angular CLI we can run unit tests as well as create code coverage reports. Code coverage reports allow us to see any parts of our code base that may not be properly tested by our unit tests.<br>
+用Angular CLI我们能运行单元测试并创建代码覆盖率报告。代码覆盖率报告允许我们看到我们的代码库中的任何部分可能无法通过我们的单元测试。</p>
+<p>To generate a coverage report run the following command in the root of your project<br>
+生成一个覆盖率报告运行下面的命令在项目的根</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ng test --watch<span style="color:#f92672">=</span>false --code-coverage
+</code></pre></div><p>Once the tests complete a new <code>/coverage</code> folder will appear in the project. In your Finder or Windows Explorer open the <code>index.html</code> file. You should see a report with your source code and code coverage values.<br>
+一次测试完成一个新的 <code>/coverage</code> 文件夹将出现在项目。 在你的检测器或资源管理器中打开 <code>index.html</code> 文件，你应该看到一个报告里面是你的源代码和代码覆盖值。</p>
+<p>Using the code coverage percentages we can estimate how much of our code is tested. It is up to your team to determine how much code should be unit tested.<br>
+使用代码覆盖检测器我们能估算多少代是被测试过的。</p>
+<h2 id="code-coverage-enforcement">
+  Code Coverage Enforcement
+  <a class="anchor" href="#code-coverage-enforcement">#</a>
+</h2>
+<h2 id="代码覆盖率实施">
+  代码覆盖率实施
+  <a class="anchor" href="#%e4%bb%a3%e7%a0%81%e8%a6%86%e7%9b%96%e7%8e%87%e5%ae%9e%e6%96%bd">#</a>
+</h2>
+<p>If your team decides on a set minimum amount to be unit tested you can enforce this minimum with the Angular CLI. For example our team would like the code base to have a minimum of 80% code coverage. To enable this open the <code>karma.conf.js</code> and add the following in the <code>coverageIstanbulReporter:</code> key<br>
+如果你的团队决定在设置一个最小限度账户为单元测试，你能强制这个最小限度。 列如我们的团队将基于代码有一个百分之八十的修小代码覆盖率。要启用此操作，打开 <code>karma.conf.js</code> 添加如下在<code>coverageIstanbulReporter:</code> 键</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">coverageIstanbulReporter</span><span style="color:#f92672">:</span> {
+  <span style="color:#a6e22e">reports</span><span style="color:#f92672">:</span> [ <span style="color:#e6db74">&#39;html&#39;</span>, <span style="color:#e6db74">&#39;lcovonly&#39;</span> ],
+  <span style="color:#a6e22e">fixWebpackSourcePaths</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>,
+  <span style="color:#a6e22e">thresholds</span><span style="color:#f92672">:</span> {
+    <span style="color:#a6e22e">statements</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">80</span>,
+    <span style="color:#a6e22e">lines</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">80</span>,
+    <span style="color:#a6e22e">branches</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">80</span>,
+    <span style="color:#a6e22e">functions</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">80</span>
+  }
+}
+</code></pre></div><p>The <code>thresholds</code> property will enforce a minimum of 80% code coverage when the unit tests are run in the project.<br>
+<code>thresholds</code> 属性将强制百分之八十代码覆盖率的一个小值当单元测试运行在这个项目</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function a(c){const a=window.getSelection(),b=document.createRange();b.selectNodeContents(c),a.removeAllRanges(),a.addRange(b)}document.querySelectorAll("pre code").forEach(b=>{b.addEventListener("click",function(c){a(b.parentElement),navigator.clipboard&&navigator.clipboard.writeText(b.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#code-coverage-enforcement">Code Coverage Enforcement</a></li>
+    <li><a href="#代码覆盖率实施">代码覆盖率实施</a></li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

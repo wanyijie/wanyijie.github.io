@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="软件测试包括不同的测试实践，比如单元测试、集成测试、UAT测试和可访问性测试等。每种测试实践在软件开发生命周期(SDLC)中都有重要的地位和作用。
+在不同类型的测试中，一些测试有助于改善应用程序的性能，比如性能测试、压力测试和负载测试。虽然这些测试的目的是改善系统性能，但是每种测试实践都有不同的策略。因此，测试应用程序的性能时，了解这些测试实践之间的区别并执行合适的测试显得至关重要。
+质量保证工程师常常为选择合适的性能测试以改善应用程序的行为而感到困惑。有许多测试实践可以改善应用程序的性能，比如性能测试、负载测试和压力测试。
+虽然这几种测试的共同目的是改善应用程序的行为，但并非每种测试在每种情况下都可以进行。这几种测试存在几处差异，质量保证团队要有所了解，以便在合适场景下进行合适类型的测试。
+一、什么是性能测试?有什么好处?
+性能测试是重要的软件测试类型之一，有助于确定应用程序在工作负载下的性能，比如响应能力、可扩展性、可靠性、速度和稳定性等。性能测试对发现错误毫无帮助，但可以消除性能瓶颈，并改善整个应用程序的性能。
+性能测试的好处
+有助于评估软件的稳定性
+确保在开发生命周期的早期阶段发现性能缺陷
+帮助团队了解应用程序在正常负载下如何运行
+确保找出差异并消除差异
+帮助验证应用程序的功能特性
+二、什么是压力测试?有什么好处?
+压力测试是属于性能测试的一种测试类型，有助于检测应用程序的断点，并确定应用程序所能处理的最大负载。
+换句话说，压力测试可以确定应用程序在繁重工作负载下的稳健性和错误处理能力。压力测试是通过考虑更多的数据和许多用户来进行的，旨在确定系统在压力下的行为。
+压力测试的好处
+有助于验证系统压力过大时数据会不会受到破坏
+确保发现缺陷和同步问题
+验证故障期间的传递和错误消息传递功能
+通过克服软件故障的风险来确保交付可靠的软件
+三、什么是负载测试?有什么好处?
+负载测试是一种软件测试，有助于确定应用程序在实际负载情形下的行为。在这种类型的测试中，应用程序在多个用户环境下进行测试。
+负载测试的目的是开发一种在意外的极端负载情形下保持稳定的应用程序。这种测试方法又叫耐久测试。可以通过选择合适的自动化工具轻松执行这种测试。
+负载测试的好处
+帮助提高客户满意度
+确保降低故障成本
+确保提高应用程序的可扩展性
+有助于在部署到生产环境之前确定与性能有关的瓶颈
+确保尽量减少系统停机错误
+结束语
+在SDLC流程中，每个测试实践都必不可少，尤其是为了提高客户满意度，交付响应能力、可扩展性、可靠性、速度和稳定性等方面有所保证的应用程序，质量保证工程师需要根据场景，执行性能测试、负载测或压力测试。
+然而，要交付符合性能度量指标的应用程序，应充分利用独立质量保证测试服务提供商提供的性能测试服务。">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="" />
+<meta property="og:description" content="软件测试包括不同的测试实践，比如单元测试、集成测试、UAT测试和可访问性测试等。每种测试实践在软件开发生命周期(SDLC)中都有重要的地位和作用。
+在不同类型的测试中，一些测试有助于改善应用程序的性能，比如性能测试、压力测试和负载测试。虽然这些测试的目的是改善系统性能，但是每种测试实践都有不同的策略。因此，测试应用程序的性能时，了解这些测试实践之间的区别并执行合适的测试显得至关重要。
+质量保证工程师常常为选择合适的性能测试以改善应用程序的行为而感到困惑。有许多测试实践可以改善应用程序的性能，比如性能测试、负载测试和压力测试。
+虽然这几种测试的共同目的是改善应用程序的行为，但并非每种测试在每种情况下都可以进行。这几种测试存在几处差异，质量保证团队要有所了解，以便在合适场景下进行合适类型的测试。
+一、什么是性能测试?有什么好处?
+性能测试是重要的软件测试类型之一，有助于确定应用程序在工作负载下的性能，比如响应能力、可扩展性、可靠性、速度和稳定性等。性能测试对发现错误毫无帮助，但可以消除性能瓶颈，并改善整个应用程序的性能。
+性能测试的好处
+有助于评估软件的稳定性
+确保在开发生命周期的早期阶段发现性能缺陷
+帮助团队了解应用程序在正常负载下如何运行
+确保找出差异并消除差异
+帮助验证应用程序的功能特性
+二、什么是压力测试?有什么好处?
+压力测试是属于性能测试的一种测试类型，有助于检测应用程序的断点，并确定应用程序所能处理的最大负载。
+换句话说，压力测试可以确定应用程序在繁重工作负载下的稳健性和错误处理能力。压力测试是通过考虑更多的数据和许多用户来进行的，旨在确定系统在压力下的行为。
+压力测试的好处
+有助于验证系统压力过大时数据会不会受到破坏
+确保发现缺陷和同步问题
+验证故障期间的传递和错误消息传递功能
+通过克服软件故障的风险来确保交付可靠的软件
+三、什么是负载测试?有什么好处?
+负载测试是一种软件测试，有助于确定应用程序在实际负载情形下的行为。在这种类型的测试中，应用程序在多个用户环境下进行测试。
+负载测试的目的是开发一种在意外的极端负载情形下保持稳定的应用程序。这种测试方法又叫耐久测试。可以通过选择合适的自动化工具轻松执行这种测试。
+负载测试的好处
+帮助提高客户满意度
+确保降低故障成本
+确保提高应用程序的可扩展性
+有助于在部署到生产环境之前确定与性能有关的瓶颈
+确保尽量减少系统停机错误
+结束语
+在SDLC流程中，每个测试实践都必不可少，尤其是为了提高客户满意度，交付响应能力、可扩展性、可靠性、速度和稳定性等方面有所保证的应用程序，质量保证工程师需要根据场景，执行性能测试、负载测或压力测试。
+然而，要交付符合性能度量指标的应用程序，应充分利用独立质量保证测试服务提供商提供的性能测试服务。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://wangyijie.github.io/public/posts/devops/%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95vs%E5%8E%8B%E5%8A%9B%E6%B5%8B%E8%AF%95/" /><meta property="article:section" content="posts" />
+
+
+
+<title>性能测试vs压力测试 | A great computer technology Site</title>
+<link rel="manifest" href="/public/manifest.json">
+<link rel="icon" href="/public/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/public/book.min.8599444fcc48ee6b435b5b62c955ab7d914fa1e2a453df90c4b97cc9769665d1.css" integrity="sha256-hZlET8xI7mtDW1tiyVWrfZFPoeKkU9&#43;QxLl8yXaWZdE=" crossorigin="anonymous">
+  <script defer src="/public/flexsearch.min.js"></script>
+  <script defer src="/public/en.search.min.49d7ffe0cc6a09481193582a484d1dfccfe14d6d173d2de804b6e37d7c5a9f57.js" integrity="sha256-Sdf/4MxqCUgRk1gqSE0d/M/hTW0XPS3oBLbjfXxan1c=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/public/"><span>A great computer technology Site</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/public/posts/" >
+        Posts
+      </a>
+      
+<ul>
+  
+  <li>
+    <a href="/public/posts/angluar-cli/" >
+        angular
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/ansible/" >
+        ansible
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/cicd/" >
+        CICD
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/cloud/" >
+        cloude
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/container/" >
+        container
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/devops/" >
+        DevOps
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/english/" >
+        English
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/golang/" >
+        golang
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/istio/" >
+        istio
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/kubernetes/" >
+        Kubernetes
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" >
+        mechine leaning
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/material2/" >
+        mererial2
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E7%9B%91%E6%8E%A7/" >
+        monitor
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/mysql/" >
+        mysql
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E7%BD%91%E7%BB%9C/" >
+        networking
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E6%97%A5%E8%AE%B0%E6%9C%AC/" >
+        notes
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/postgresql/" >
+        postgresql
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/django/" >
+        python
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E5%AE%89%E5%85%A8/" >
+        safe
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E8%AF%97%E8%AF%8D/" >
+        shi chi
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E7%AB%99%E7%82%B9%E5%8F%AF%E9%9D%A0%E6%80%A7%E5%B7%A5%E7%A8%8B/" >
+        SRE
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E6%96%87%E5%AD%A6/" >
+        wenxue
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E9%9A%8F%E7%AC%94/" >
+        write somethings
+      </a>
+  </li>
+  
+</ul>
+
+  </li>
+  
+  <li>
+    <a href="/public/about/" >
+        About
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var a=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(b){localStorage.setItem("menu.scrollTop",a.scrollTop)}),a.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/public/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>性能测试vs压力测试</strong>
+
+  <label for="toc-control">
+    
+    <img src="/public/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents"></nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+<article class="markdown">
+  <h1>
+    <a href="/public/posts/devops/%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95vs%E5%8E%8B%E5%8A%9B%E6%B5%8B%E8%AF%95/">性能测试vs压力测试</a>
+  </h1>
+  
+
+
+  
+
+  
+
+
+
+<p>软件测试包括不同的测试实践，比如单元测试、集成测试、UAT测试和可访问性测试等。每种测试实践在软件开发生命周期(SDLC)中都有重要的地位和作用。</p>
+<p>在不同类型的测试中，一些测试有助于改善应用程序的性能，比如性能测试、压力测试和负载测试。虽然这些测试的目的是改善系统性能，但是每种测试实践都有不同的策略。因此，测试应用程序的性能时，了解这些测试实践之间的区别并执行合适的测试显得至关重要。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/6000429-cad2ce36edb77a65.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="test" /></p>
+<p>质量保证工程师常常为选择合适的性能测试以改善应用程序的行为而感到困惑。有许多测试实践可以改善应用程序的性能，比如性能测试、负载测试和压力测试。</p>
+<p>虽然这几种测试的共同目的是改善应用程序的行为，但并非每种测试在每种情况下都可以进行。这几种测试存在几处差异，质量保证团队要有所了解，以便在合适场景下进行合适类型的测试。</p>
+<p>一、什么是性能测试?有什么好处?</p>
+<p>性能测试是重要的软件测试类型之一，有助于确定应用程序在工作负载下的性能，比如响应能力、可扩展性、可靠性、速度和稳定性等。性能测试对发现错误毫无帮助，但可以消除性能瓶颈，并改善整个应用程序的性能。</p>
+<p>性能测试的好处</p>
+<p>有助于评估软件的稳定性</p>
+<p>确保在开发生命周期的早期阶段发现性能缺陷</p>
+<p>帮助团队了解应用程序在正常负载下如何运行</p>
+<p>确保找出差异并消除差异</p>
+<p>帮助验证应用程序的功能特性</p>
+<p>二、什么是压力测试?有什么好处?</p>
+<p>压力测试是属于性能测试的一种测试类型，有助于检测应用程序的断点，并确定应用程序所能处理的最大负载。</p>
+<p>换句话说，压力测试可以确定应用程序在繁重工作负载下的稳健性和错误处理能力。压力测试是通过考虑更多的数据和许多用户来进行的，旨在确定系统在压力下的行为。</p>
+<p>压力测试的好处</p>
+<p>有助于验证系统压力过大时数据会不会受到破坏</p>
+<p>确保发现缺陷和同步问题</p>
+<p>验证故障期间的传递和错误消息传递功能</p>
+<p>通过克服软件故障的风险来确保交付可靠的软件</p>
+<p>三、什么是负载测试?有什么好处?</p>
+<p>负载测试是一种软件测试，有助于确定应用程序在实际负载情形下的行为。在这种类型的测试中，应用程序在多个用户环境下进行测试。</p>
+<p>负载测试的目的是开发一种在意外的极端负载情形下保持稳定的应用程序。这种测试方法又叫耐久测试。可以通过选择合适的自动化工具轻松执行这种测试。</p>
+<p>负载测试的好处</p>
+<p>帮助提高客户满意度</p>
+<p>确保降低故障成本</p>
+<p>确保提高应用程序的可扩展性</p>
+<p>有助于在部署到生产环境之前确定与性能有关的瓶颈</p>
+<p>确保尽量减少系统停机错误</p>
+<p>结束语</p>
+<p>在SDLC流程中，每个测试实践都必不可少，尤其是为了提高客户满意度，交付响应能力、可扩展性、可靠性、速度和稳定性等方面有所保证的应用程序，质量保证工程师需要根据场景，执行性能测试、负载测或压力测试。</p>
+<p>然而，要交付符合性能度量指标的应用程序，应充分利用独立质量保证测试服务提供商提供的性能测试服务。</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function a(c){const a=window.getSelection(),b=document.createRange();b.selectNodeContents(c),a.removeAllRanges(),a.addRange(b)}document.querySelectorAll("pre code").forEach(b=>{b.addEventListener("click",function(c){a(b.parentElement),navigator.clipboard&&navigator.clipboard.writeText(b.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents"></nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Library support in Angular CLI 6#库支持在 Angular CLI 6#Angular CLI v6 comes with library support via ng-packagr plugged into the build system we use in Angular CLI, together with schematics for generating a library.
+Angular CLI v6通过插入到我们在Angular CLI中使用的构建系统中的ng-packagr提供库支持，以及用于生成库的原理图。
+Generating a library#生成库#You can create a library in a existing workspace by running the following commands:
+您可以通过运行以下命令在现有工作区中创建库：
+ng generate library my-lib You should now have a library inside projects/my-lib.">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="" />
+<meta property="og:description" content="Library support in Angular CLI 6#库支持在 Angular CLI 6#Angular CLI v6 comes with library support via ng-packagr plugged into the build system we use in Angular CLI, together with schematics for generating a library.
+Angular CLI v6通过插入到我们在Angular CLI中使用的构建系统中的ng-packagr提供库支持，以及用于生成库的原理图。
+Generating a library#生成库#You can create a library in a existing workspace by running the following commands:
+您可以通过运行以下命令在现有工作区中创建库：
+ng generate library my-lib You should now have a library inside projects/my-lib." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://wangyijie.github.io/public/posts/angluar-cli/angular-cli-6-%E5%BA%93%E6%94%AF%E6%8C%81/" /><meta property="article:section" content="posts" />
+
+
+
+<title>Angular CLI 6 库支持 | A great computer technology Site</title>
+<link rel="manifest" href="/public/manifest.json">
+<link rel="icon" href="/public/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/public/book.min.8599444fcc48ee6b435b5b62c955ab7d914fa1e2a453df90c4b97cc9769665d1.css" integrity="sha256-hZlET8xI7mtDW1tiyVWrfZFPoeKkU9&#43;QxLl8yXaWZdE=" crossorigin="anonymous">
+  <script defer src="/public/flexsearch.min.js"></script>
+  <script defer src="/public/en.search.min.49d7ffe0cc6a09481193582a484d1dfccfe14d6d173d2de804b6e37d7c5a9f57.js" integrity="sha256-Sdf/4MxqCUgRk1gqSE0d/M/hTW0XPS3oBLbjfXxan1c=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/public/"><span>A great computer technology Site</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/public/posts/" >
+        Posts
+      </a>
+      
+<ul>
+  
+  <li>
+    <a href="/public/posts/angluar-cli/" >
+        angular
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/ansible/" >
+        ansible
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/cicd/" >
+        CICD
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/cloud/" >
+        cloude
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/container/" >
+        container
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/devops/" >
+        DevOps
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/english/" >
+        English
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/golang/" >
+        golang
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/istio/" >
+        istio
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/kubernetes/" >
+        Kubernetes
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" >
+        mechine leaning
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/material2/" >
+        mererial2
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E7%9B%91%E6%8E%A7/" >
+        monitor
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/mysql/" >
+        mysql
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E7%BD%91%E7%BB%9C/" >
+        networking
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E6%97%A5%E8%AE%B0%E6%9C%AC/" >
+        notes
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/postgresql/" >
+        postgresql
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/django/" >
+        python
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E5%AE%89%E5%85%A8/" >
+        safe
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E8%AF%97%E8%AF%8D/" >
+        shi chi
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E7%AB%99%E7%82%B9%E5%8F%AF%E9%9D%A0%E6%80%A7%E5%B7%A5%E7%A8%8B/" >
+        SRE
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E6%96%87%E5%AD%A6/" >
+        wenxue
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E9%9A%8F%E7%AC%94/" >
+        write somethings
+      </a>
+  </li>
+  
+</ul>
+
+  </li>
+  
+  <li>
+    <a href="/public/about/" >
+        About
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var a=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(b){localStorage.setItem("menu.scrollTop",a.scrollTop)}),a.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/public/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Angular CLI 6 库支持</strong>
+
+  <label for="toc-control">
+    
+    <img src="/public/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#generating-a-library">Generating a library</a></li>
+    <li><a href="#生成库">生成库</a></li>
+    <li><a href="#building-your-library">Building your library</a></li>
+    <li><a href="#构建你的库">构建你的库</a></li>
+    <li><a href="#using-your-library-inside-your-apps">Using your library inside your apps</a></li>
+    <li><a href="#在应用中使用库">在应用中使用库</a></li>
+    <li><a href="#publishing-your-library">Publishing your library</a></li>
+    <li><a href="#发布你的库">发布你的库</a></li>
+    <li><a href="#why-do-i-need-to-build-the-library-everytime-i-make-changes">Why do I need to build the library everytime I make changes?</a></li>
+    <li><a href="#每当我进行更改时为什么需要构建库">每当我进行更改时，为什么需要构建库？</a></li>
+    <li><a href="#note-for-upgraded-projects">Note for upgraded projects</a></li>
+    <li><a href="#升级项目的注意事项">升级项目的注意事项</a></li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+<article class="markdown">
+  <h1>
+    <a href="/public/posts/angluar-cli/angular-cli-6-%E5%BA%93%E6%94%AF%E6%8C%81/">Angular CLI 6 库支持</a>
+  </h1>
+  
+
+
+  
+
+  
+
+
+
+<h1 id="library-support-in-angular-cli-6">
+  Library support in Angular CLI 6
+  <a class="anchor" href="#library-support-in-angular-cli-6">#</a>
+</h1>
+<h1 id="库支持在-angular-cli-6">
+  库支持在 Angular CLI 6
+  <a class="anchor" href="#%e5%ba%93%e6%94%af%e6%8c%81%e5%9c%a8-angular-cli-6">#</a>
+</h1>
+<p>Angular CLI v6 comes with library support via <a href="https://github.com/dherges/ng-packagr">ng-packagr</a>
+plugged into the build system we use in Angular CLI, together with schematics for generating a
+library.<br>
+Angular CLI v6通过插入到我们在Angular CLI中使用的构建系统中的<a href="https://github.com/dherges/ng-packagr">ng-packagr</a>提供库支持，以及用于生成库的原理图。</p>
+<h2 id="generating-a-library">
+  Generating a library
+  <a class="anchor" href="#generating-a-library">#</a>
+</h2>
+<h2 id="生成库">
+  生成库
+  <a class="anchor" href="#%e7%94%9f%e6%88%90%e5%ba%93">#</a>
+</h2>
+<p>You can create a library in a existing workspace by running the following commands:<br>
+您可以通过运行以下命令在现有工作区中创建库：</p>
+<pre tabindex="0"><code>ng generate library my-lib
+</code></pre><p>You should now have a library inside <code>projects/my-lib</code>.
+It contains a component and a service inside a NgModule.<br>
+你现在应该在 <code>projects/my-lib</code> 中有一个库。它包含一个组件和一个NgModule内的服务。</p>
+<h2 id="building-your-library">
+  Building your library
+  <a class="anchor" href="#building-your-library">#</a>
+</h2>
+<h2 id="构建你的库">
+  构建你的库
+  <a class="anchor" href="#%e6%9e%84%e5%bb%ba%e4%bd%a0%e7%9a%84%e5%ba%93">#</a>
+</h2>
+<p>You can build this library via <code>ng build my-lib</code>, and also unit test it and lint it by replacing
+<code>build</code> with <code>test</code> or <code>lint</code>.<br>
+您可以通过 <code>ng build my-lib</code> 来构建这个库，并且还可以通过用test或lint替换构建来对其进行单元测试并对其进行测试</p>
+<h2 id="using-your-library-inside-your-apps">
+  Using your library inside your apps
+  <a class="anchor" href="#using-your-library-inside-your-apps">#</a>
+</h2>
+<h2 id="在应用中使用库">
+  在应用中使用库
+  <a class="anchor" href="#%e5%9c%a8%e5%ba%94%e7%94%a8%e4%b8%ad%e4%bd%bf%e7%94%a8%e5%ba%93">#</a>
+</h2>
+<p>Before you use your library, it&rsquo;s important to understand the mental model of how libraries are
+used in general.<br>
+在使用库之前，了解库一般使用的心理模型很重要。</p>
+<p>When you want to use a library from <code>npm</code>, you must:
+当你想从npm使用一个库时，你必须：</p>
+<ul>
+<li>install the library into node_modules via <code>npm install library-name</code><br>
+通过 <code>npm install library-name</code> 将库安装到node_modules中</li>
+<li>import it in your application by name <code>import { something } from 'library-name';</code><br>
+通过 <code>import { something } from 'library-name';</code> 将库安装到node_modules中</li>
+</ul>
+<p>This works because importing a library in Angular CLI looks for a mapping between library name
+and location on disk.<br>
+这是有效的，因为在Angular CLI中导入库会查找本地磁盘上库名声带库和位置之间的映射。</p>
+<p>Angular CLI first looks in your tsconfig paths, then in the node_modules folder.<br>
+Angular CLI首先在您的tsconfig路径中查找，然后在node_modules文件夹中查找。</p>
+<p>When you build your own libraries it doesn&rsquo;t go into node_modules so we use the tsconfig paths
+to tell the build system where it is.
+Generating a library automatically adds its path to the tsconfig file.<br>
+当您构建自己的库时，它不会进入node_modules，因此我们使用tsconfig路径来告诉构建系统它在哪里。生成库自动将其路径添加到tsconfig文件。</p>
+<p>Using your own library follows a similar pattern:<br>
+使用你自己的库遵循类似的模式：</p>
+<ul>
+<li>build the library via <code>ng build my-lib</code><br>
+通过 <code>ng build my-li</code> b构建库</li>
+<li>import it in your application by name <code>import { something } from 'my-lib';</code><br>
+通过<code>import { something } from 'my-lib';</code> 导入到应用程序中;</li>
+</ul>
+<p>It&rsquo;s important to note that your app can never use your library before it is built.<br>
+请注意，您的应用在构建之前不能使用您的库。</p>
+<p>For instance, if you clone your git repository and run <code>npm install</code>, your editor will show
+the <code>my-lib</code> imports as missing.
+This is because you haven&rsquo;t yet built your library.<br>
+例如，如果你克隆你的git仓库并运行npm install，你的编辑器会显示缺少my-lib导入。这是因为你还没有建立你的图书馆。</p>
+<p>Another common problem is changes to your library not being reflected in your app.
+This is often because your app is using an old build of your library.
+If this happens just rebuild your library.<br>
+另一个常见问题是您的库的更改没有反映在您的应用程序中。这通常是因为你的应用程序正在使用你的库的旧版本。如果发生这种情况只是重建你的图书馆。</p>
+<h2 id="publishing-your-library">
+  Publishing your library
+  <a class="anchor" href="#publishing-your-library">#</a>
+</h2>
+<h2 id="发布你的库">
+  发布你的库
+  <a class="anchor" href="#%e5%8f%91%e5%b8%83%e4%bd%a0%e7%9a%84%e5%ba%93">#</a>
+</h2>
+<p>To publish your library follow these steps:<br>
+要发布您的库，请按照以下步骤操作</p>
+<pre tabindex="0"><code>ng build my-lib --prod
+cd dist/my-lib
+npm publish
+</code></pre><p>If you&rsquo;ve never published a package in npm before, you will need to create a user account.
+You can read more about publishing on npm here:
+<a href="https://docs.npmjs.com/getting-started/publishing-npm-packages">https://docs.npmjs.com/getting-started/publishing-npm-packages</a><br>
+如果您以前从未在npm发布过软件包，则需要创建一个用户帐户。你可以在这里阅读更多关于npm的发布：https://docs.npmjs.com/getting-started/publishing-npm-packages</p>
+<p>The <code>--prod</code> flag should be used when building to publish because it will completely clean the build
+directory for the library beforehand, removing old code leftover code from previous versions.<br>
+构建发布时应使用 <code>--prod</code> 标志，因为它会事先完全清除库的构建目录，从旧版本中删除旧的代码剩余代码。</p>
+<h2 id="why-do-i-need-to-build-the-library-everytime-i-make-changes">
+  Why do I need to build the library everytime I make changes?
+  <a class="anchor" href="#why-do-i-need-to-build-the-library-everytime-i-make-changes">#</a>
+</h2>
+<h2 id="每当我进行更改时为什么需要构建库">
+  每当我进行更改时，为什么需要构建库？
+  <a class="anchor" href="#%e6%af%8f%e5%bd%93%e6%88%91%e8%bf%9b%e8%a1%8c%e6%9b%b4%e6%94%b9%e6%97%b6%e4%b8%ba%e4%bb%80%e4%b9%88%e9%9c%80%e8%a6%81%e6%9e%84%e5%bb%ba%e5%ba%93">#</a>
+</h2>
+<p>Running <code>ng build my-lib</code> every time you change a file is bothersome and takes time.<br>
+每次更改文件时运行构建my-lib都很麻烦并且需要时间。</p>
+<p>Some similar setups instead add the path to the source code directly inside tsconfig.
+This makes seeing changes in your app faster.<br>
+一些类似的设置直接在tsconfig中添加源代码的路径。这可以更快地查看应用程序的更改。</p>
+<p>But doing that is risky.
+When you do that, the build system for your app is building the library as well.
+But your library is built using a different build system than your app.<br>
+但这样做是有风险的。当你这样做时，你的应用程序的构建系统也在构建这个库。但是你的库是使用与你的应用程序不同的构建系统构建的</p>
+<p>Those two build systems can build things slightly different, or support completely different
+features.<br>
+这两个构建系统可以构建稍微不同的东西，或支持完全不同的功能。</p>
+<p>This leads to subtle bugs where your published library behaves differently from the one in your
+development setup.<br>
+这会导致您发布的库的行为与开发设置中的行为不同的细微错误。
+For this reason we decided to err on the side of caution, and make the recommended usage
+the safe one.<br>
+出于这个原因，我们决定谨慎犯错，并推荐使用安全的产品。</p>
+<p>In the future we want to add watch support to building libraries so it is faster to see changes.<br>
+在将来，我们希望增加对建筑图书馆的监视支持，以便更快地查看更改。</p>
+<p>We are also planning to add internal dependency support to Angular CLI.
+This means that Angular CLI would know your app depends on your library, and automatically rebuilds
+the library when the app needs it.<br>
+我们还计划向Angular CLI添加内部依赖关系支持。这意味着Angular CLI会知道你的应用程序依赖于你的库，并在应用程序需要时自动重建库</p>
+<h2 id="note-for-upgraded-projects">
+  Note for upgraded projects
+  <a class="anchor" href="#note-for-upgraded-projects">#</a>
+</h2>
+<h2 id="升级项目的注意事项">
+  升级项目的注意事项
+  <a class="anchor" href="#%e5%8d%87%e7%ba%a7%e9%a1%b9%e7%9b%ae%e7%9a%84%e6%b3%a8%e6%84%8f%e4%ba%8b%e9%a1%b9">#</a>
+</h2>
+<p>If you are using an upgraded project, there are some additional changes you have to make to support
+monorepo (a workspace with multiple projects) setups:<br>
+如果您正在使用升级项目，则需要进行一些其他更改才能支持monorepo（具有多个项目的工作区）设置：</p>
+<ul>
+<li>in <code>angular.json</code>, change the <code>outputPath</code> to <code>dist/project-name</code> for your app
+在 <code>angular.json</code>中, 修改 <code>outputPath</code> 为 <code>dist/project-name</code> 为你的项目</li>
+<li>remove <code>baseUrl</code> in <code>src/tsconfig.app.json</code> and <code>src/tsconfig.spec.json</code>
+移除 <code>baseUrl</code> 在 <code>src/tsconfig.app.json</code> 和 <code>src/tsconfig.spec.json</code></li>
+<li>add <code>&quot;baseUrl&quot;: &quot;./&quot;</code> in <code>./tsconfig.json</code>
+添加 <code>&quot;baseUrl&quot;: &quot;./&quot;</code> 在 <code>./tsconfig.json</code></li>
+<li>change any absolute path imports in your app to be absolute from the root (including <code>src/</code>),
+or make them relative<br>
+将您的应用程序中的所有绝对路径导入更改为绝对路径（包括src /），或使它们相对</li>
+</ul>
+<p>This is necessary to support multiple projects in builds and in your editor.
+New projects come with this configuration by default.<br>
+这对于在编译和编辑器中支持多个项目是必需的。新项目默认配置此配置。</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function a(c){const a=window.getSelection(),b=document.createRange();b.selectNodeContents(c),a.removeAllRanges(),a.addRange(b)}document.querySelectorAll("pre code").forEach(b=>{b.addEventListener("click",function(c){a(b.parentElement),navigator.clipboard&&navigator.clipboard.writeText(b.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#generating-a-library">Generating a library</a></li>
+    <li><a href="#生成库">生成库</a></li>
+    <li><a href="#building-your-library">Building your library</a></li>
+    <li><a href="#构建你的库">构建你的库</a></li>
+    <li><a href="#using-your-library-inside-your-apps">Using your library inside your apps</a></li>
+    <li><a href="#在应用中使用库">在应用中使用库</a></li>
+    <li><a href="#publishing-your-library">Publishing your library</a></li>
+    <li><a href="#发布你的库">发布你的库</a></li>
+    <li><a href="#why-do-i-need-to-build-the-library-everytime-i-make-changes">Why do I need to build the library everytime I make changes?</a></li>
+    <li><a href="#每当我进行更改时为什么需要构建库">每当我进行更改时，为什么需要构建库？</a></li>
+    <li><a href="#note-for-upgraded-projects">Note for upgraded projects</a></li>
+    <li><a href="#升级项目的注意事项">升级项目的注意事项</a></li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

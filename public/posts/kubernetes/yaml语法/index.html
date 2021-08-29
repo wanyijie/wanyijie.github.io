@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="语法#除某些控制字符外，YAML语言接受整个Unicode字符集。所有可接受的字符都可以在YAML文档中使用。YAML文档可以用UTF-8，UTF-16和UTF-32编码。（虽然UTF-32不是强制性的，但如果解析器具有JSON兼容性，则必须使用它。）
+ 空格 缩进用于表示结构; 但是，绝不允许制表符作为缩进。 注释以井号（#）开头，可以从一行开始，一直持续到行尾。必须通过空格字符将注释与其他标记分开。[13]如果＃字符出现在字符串中，则它们是数字符号（#）文字。 列表成员由前导连字符（-）表示，每行一个成员，或用方括号（[ ]）括起，并用逗号 空格（, ）分隔。 关联数组使用冒号 空格（: ）以表格key：value表示，每行一个或用花括号（{ }）括起来并用逗号 空格（, ）分隔。  关联数组键可以以问号（?）为前缀，以允许明确地表示自由多字键。   字符串（标量）通常不加引号，但可以用双引号（&quot;）或单引号（&#39;）括起来。  在双引号内，特殊字符可以用反斜杠（）开头的C风格转义序列表示。根据文档，支持的唯一八进制转义是。\``\0   块标量用缩进分隔，并带有可选修饰符以保留（|）或fold（&gt;）换行符。 单个流中的多个文档由三个连字符（---）分隔。  三个句点（...）可选地结束流中的文档。   重复节点最初用＆符号（&amp;）表示，然后用星号（*）引用。 节点可以使用感叹号（!!）后跟一个字符串来标记类型或标记，该字符串可以扩展为URI。 流中的YAML文档可以在“指令”之后，该指令由百分号（%）后跟名称和空格分隔的参数组成。YAML 1.1中定义了两个指令：  ％YAML指令用于标识给定文档中的YAML版本。 ％TAG指令用作URI前缀的快捷方式。然后可以在节点类型标签中使用这些快捷方式。    YAML要求用作列表分隔符的冒号和逗号后跟空格，以便通常可以表示包含嵌入标点符号（例如5,280或http://www.jianshu.com）的标量值，而无需用引号括起来。
+YAML中保留了两个额外的sigil字符，以便将来标准化：at符号（@）和重音符号（```）。">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="" />
+<meta property="og:description" content="语法#除某些控制字符外，YAML语言接受整个Unicode字符集。所有可接受的字符都可以在YAML文档中使用。YAML文档可以用UTF-8，UTF-16和UTF-32编码。（虽然UTF-32不是强制性的，但如果解析器具有JSON兼容性，则必须使用它。）
+ 空格 缩进用于表示结构; 但是，绝不允许制表符作为缩进。 注释以井号（#）开头，可以从一行开始，一直持续到行尾。必须通过空格字符将注释与其他标记分开。[13]如果＃字符出现在字符串中，则它们是数字符号（#）文字。 列表成员由前导连字符（-）表示，每行一个成员，或用方括号（[ ]）括起，并用逗号 空格（, ）分隔。 关联数组使用冒号 空格（: ）以表格key：value表示，每行一个或用花括号（{ }）括起来并用逗号 空格（, ）分隔。  关联数组键可以以问号（?）为前缀，以允许明确地表示自由多字键。   字符串（标量）通常不加引号，但可以用双引号（&quot;）或单引号（&#39;）括起来。  在双引号内，特殊字符可以用反斜杠（）开头的C风格转义序列表示。根据文档，支持的唯一八进制转义是。\``\0   块标量用缩进分隔，并带有可选修饰符以保留（|）或fold（&gt;）换行符。 单个流中的多个文档由三个连字符（---）分隔。  三个句点（...）可选地结束流中的文档。   重复节点最初用＆符号（&amp;）表示，然后用星号（*）引用。 节点可以使用感叹号（!!）后跟一个字符串来标记类型或标记，该字符串可以扩展为URI。 流中的YAML文档可以在“指令”之后，该指令由百分号（%）后跟名称和空格分隔的参数组成。YAML 1.1中定义了两个指令：  ％YAML指令用于标识给定文档中的YAML版本。 ％TAG指令用作URI前缀的快捷方式。然后可以在节点类型标签中使用这些快捷方式。    YAML要求用作列表分隔符的冒号和逗号后跟空格，以便通常可以表示包含嵌入标点符号（例如5,280或http://www.jianshu.com）的标量值，而无需用引号括起来。
+YAML中保留了两个额外的sigil字符，以便将来标准化：at符号（@）和重音符号（```）。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://wangyijie.github.io/public/posts/kubernetes/yaml%E8%AF%AD%E6%B3%95/" /><meta property="article:section" content="posts" />
+
+
+
+<title>Yaml语法 | A great computer technology Site</title>
+<link rel="manifest" href="/public/manifest.json">
+<link rel="icon" href="/public/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/public/book.min.8599444fcc48ee6b435b5b62c955ab7d914fa1e2a453df90c4b97cc9769665d1.css" integrity="sha256-hZlET8xI7mtDW1tiyVWrfZFPoeKkU9&#43;QxLl8yXaWZdE=" crossorigin="anonymous">
+  <script defer src="/public/flexsearch.min.js"></script>
+  <script defer src="/public/en.search.min.49d7ffe0cc6a09481193582a484d1dfccfe14d6d173d2de804b6e37d7c5a9f57.js" integrity="sha256-Sdf/4MxqCUgRk1gqSE0d/M/hTW0XPS3oBLbjfXxan1c=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/public/"><span>A great computer technology Site</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/public/posts/" >
+        Posts
+      </a>
+      
+<ul>
+  
+  <li>
+    <a href="/public/posts/angluar-cli/" >
+        angular
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/ansible/" >
+        ansible
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/cicd/" >
+        CICD
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/cloud/" >
+        cloude
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/container/" >
+        container
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/devops/" >
+        DevOps
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/english/" >
+        English
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/golang/" >
+        golang
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/istio/" >
+        istio
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/kubernetes/" >
+        Kubernetes
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" >
+        mechine leaning
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/material2/" >
+        mererial2
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E7%9B%91%E6%8E%A7/" >
+        monitor
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/mysql/" >
+        mysql
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E7%BD%91%E7%BB%9C/" >
+        networking
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E6%97%A5%E8%AE%B0%E6%9C%AC/" >
+        notes
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/postgresql/" >
+        postgresql
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/django/" >
+        python
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E5%AE%89%E5%85%A8/" >
+        safe
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E8%AF%97%E8%AF%8D/" >
+        shi chi
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E7%AB%99%E7%82%B9%E5%8F%AF%E9%9D%A0%E6%80%A7%E5%B7%A5%E7%A8%8B/" >
+        SRE
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E6%96%87%E5%AD%A6/" >
+        wenxue
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E9%9A%8F%E7%AC%94/" >
+        write somethings
+      </a>
+  </li>
+  
+</ul>
+
+  </li>
+  
+  <li>
+    <a href="/public/about/" >
+        About
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var a=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(b){localStorage.setItem("menu.scrollTop",a.scrollTop)}),a.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/public/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Yaml语法</strong>
+
+  <label for="toc-control">
+    
+    <img src="/public/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#语法">语法</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+<article class="markdown">
+  <h1>
+    <a href="/public/posts/kubernetes/yaml%E8%AF%AD%E6%B3%95/">Yaml语法</a>
+  </h1>
+  
+
+
+  
+
+  
+
+
+
+<h3 id="语法">
+  语法
+  <a class="anchor" href="#%e8%af%ad%e6%b3%95">#</a>
+</h3>
+<p>除某些<a href="https://en.wikipedia.org/wiki/Control_character" title="控制角色">控制字符</a>外，YAML语言接受整个Unicode字符集。所有可接受的字符都可以在YAML文档中使用。YAML文档可以用<a href="https://en.wikipedia.org/wiki/UTF-8" title="UTF-8">UTF-8</a>，<a href="https://en.wikipedia.org/wiki/UTF-16" title="UTF-16">UTF-16</a>和<a href="https://en.wikipedia.org/wiki/UTF-32" title="UTF-32">UTF-32编码</a>。（虽然UTF-32不是强制性的，但如果解析器具有<a href="https://en.wikipedia.org/wiki/JSON" title="JSON">JSON</a>兼容性，则必须使用它。）</p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Whitespace_%28computer_science%29" title="空白（计算机科学）">空格</a> <a href="https://en.wikipedia.org/wiki/Indent_style" title="缩进风格">缩进</a>用于表示结构; 但是，绝不允许<a href="https://en.wikipedia.org/wiki/Tab_character" title="制表符">制表符</a>作为缩进。</li>
+<li>注释以<a href="https://en.wikipedia.org/wiki/Number_sign" title="数字标志">井号</a>（<code>#</code>）开头，可以从一行开始，一直持续到行尾。必须通过空格字符将注释与其他标记分开。<!-- raw HTML omitted --><a href="https://en.wikipedia.org/wiki/YAML#cite_note-13">[13]</a><!-- raw HTML omitted --> 如果＃字符出现在字符串中，则它们是数字符号（<code>#</code>）文字。</li>
+<li>列表成员由前导<a href="https://en.wikipedia.org/wiki/Hyphen-minus" title="连字号 - 减号">连字符</a>（<code>-</code>）表示，每行一个成员，或用<a href="https://en.wikipedia.org/wiki/Square_brackets" title="方括号">方括号</a>（<code>[ ]</code>）括起，并用<a href="https://en.wikipedia.org/wiki/Comma_%28punctuation%29" title="逗号（标点符号）">逗号</a> <a href="https://en.wikipedia.org/wiki/Space_%28punctuation%29" title="空格（标点符号）">空格</a>（<code>, </code>）分隔。</li>
+<li>关联数组使用<a href="https://en.wikipedia.org/wiki/Colon_%28punctuation%29" title="冒号（标点符号）">冒号</a> <a href="https://en.wikipedia.org/wiki/Space_%28punctuation%29" title="空格（标点符号）">空格</a>（<code>: </code>）以表格<em>key：value表示</em>，每行一个或用<a href="https://en.wikipedia.org/wiki/Curly_braces" title="大括号">花括号</a>（<code>{ }</code>）括起来并用<a href="https://en.wikipedia.org/wiki/Comma_%28punctuation%29" title="逗号（标点符号）">逗号</a> <a href="https://en.wikipedia.org/wiki/Space_%28punctuation%29" title="空格（标点符号）">空格</a>（<code>, </code>）分隔。
+<ul>
+<li>关联数组键可以以<a href="https://en.wikipedia.org/wiki/Question_mark" title="问号">问号</a>（<code>?</code>）为前缀，以允许明确地表示自由多字键。</li>
+</ul>
+</li>
+<li>字符串（<a href="https://en.wikipedia.org/wiki/Scalar_%28computing%29" title="标量（计算）">标量</a>）通常不加引号，但可以用<a href="https://en.wikipedia.org/wiki/Double_quote" title="双引号">双引号</a>（<code>&quot;</code>）或<a href="https://en.wikipedia.org/wiki/Single_quote" title="单引号">单引号</a>（<code>'</code>）<a href="https://en.wikipedia.org/wiki/Single_quote" title="单引号">括起来</a>。
+<ul>
+<li>在双引号内，特殊字符可以用<a href="https://en.wikipedia.org/wiki/Backslash" title="反斜杠">反斜杠</a>（）开头的<a href="https://en.wikipedia.org/wiki/C_%28programming_language%29" title="C（编程语言）">C风格</a>转义序列表示。根据文档，支持的唯一八进制转义是。<a href="https://en.wikipedia.org/wiki/Backslash" title="反斜杠"></a><code>\``\0</code></li>
+</ul>
+</li>
+<li>块标量用<a href="https://en.wikipedia.org/wiki/Indent_style" title="缩进风格">缩进</a>分隔，并带有可选修饰符以保留（<code>|</code>）或fold（<code>&gt;</code>）换行符。</li>
+<li>单个流中的多个文档由三个<a href="https://en.wikipedia.org/wiki/Hyphens" title="连字符">连字符</a>（<code>---</code>）分隔。
+<ul>
+<li>三个<a href="https://en.wikipedia.org/wiki/Full_stop" title="完全停止">句点</a>（<code>...</code>）可选地结束流中的文档。</li>
+</ul>
+</li>
+<li>重复节点最初用<a href="https://en.wikipedia.org/wiki/Ampersand" title="和号">＆符号</a>（<code>&amp;</code>）表示，然后用<a href="https://en.wikipedia.org/wiki/Asterisk" title="星号">星号</a>（<code>*</code>）引用。</li>
+<li>节点可以使用<a href="https://en.wikipedia.org/wiki/Exclamation_point" title="感叹号">感叹号</a>（<code>!!</code>）后跟一个字符串来标记类型或标记，该字符串可以扩展为URI。</li>
+<li>流中的YAML文档可以在“指令”之后，该指令由<a href="https://en.wikipedia.org/wiki/Percent_sign" title="百分号">百分号</a>（<code>%</code>）后跟名称和空格分隔的参数组成。YAML 1.1中定义了两个指令：
+<ul>
+<li>％YAML指令用于标识给定文档中的YAML版本。</li>
+<li>％TAG指令用作URI前缀的快捷方式。然后可以在节点类型标签中使用这些快捷方式。</li>
+</ul>
+</li>
+</ul>
+<p>YAML要求用作列表分隔符的冒号和逗号后跟空格，以便通常可以表示包含嵌入标点符号（例如<code>5,280</code>或<code>http://www.jianshu.com</code>）的标量值，而无需用引号括起来。</p>
+<p>YAML中保留了两个额外的<a href="https://en.wikipedia.org/wiki/Sigil_%28computer_programming%29" title="Sigil（计算机编程）">sigil</a>字符，以便将来标准化：<a href="https://en.wikipedia.org/wiki/At_sign" title="在标志">at符号</a>（<code>@</code>）和<a href="https://en.wikipedia.org/wiki/Accent_grave" title="口音坟墓">重音符号</a>（```）。</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function a(c){const a=window.getSelection(),b=document.createRange();b.selectNodeContents(c),a.removeAllRanges(),a.addRange(b)}document.querySelectorAll("pre code").forEach(b=>{b.addEventListener("click",function(c){a(b.parentElement),navigator.clipboard&&navigator.clipboard.writeText(b.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#语法">语法</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

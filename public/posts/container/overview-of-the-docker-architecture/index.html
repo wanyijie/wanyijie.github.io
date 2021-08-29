@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="In this text we&rsquo;re going to be talking about Docker architecture. And Docker is the container implementation that is supported by Red Hat and is used by OpenShift. So Docker uses a client-server architecture, and the client will run our command-line tool, which is known as docker, so all of our requests that we&rsquo;re going to make are running on the client server. And then we&rsquo;ll also have another server, which is running the Docker service, and that has a daemon on it that&rsquo;s responsible for all of the building and running and downloading images.">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="" />
+<meta property="og:description" content="In this text we&rsquo;re going to be talking about Docker architecture. And Docker is the container implementation that is supported by Red Hat and is used by OpenShift. So Docker uses a client-server architecture, and the client will run our command-line tool, which is known as docker, so all of our requests that we&rsquo;re going to make are running on the client server. And then we&rsquo;ll also have another server, which is running the Docker service, and that has a daemon on it that&rsquo;s responsible for all of the building and running and downloading images." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://wangyijie.github.io/public/posts/container/overview-of-the-docker-architecture/" /><meta property="article:section" content="posts" />
+
+
+
+<title>Overview of the Docker Architecture | A great computer technology Site</title>
+<link rel="manifest" href="/public/manifest.json">
+<link rel="icon" href="/public/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/public/book.min.8599444fcc48ee6b435b5b62c955ab7d914fa1e2a453df90c4b97cc9769665d1.css" integrity="sha256-hZlET8xI7mtDW1tiyVWrfZFPoeKkU9&#43;QxLl8yXaWZdE=" crossorigin="anonymous">
+  <script defer src="/public/flexsearch.min.js"></script>
+  <script defer src="/public/en.search.min.49d7ffe0cc6a09481193582a484d1dfccfe14d6d173d2de804b6e37d7c5a9f57.js" integrity="sha256-Sdf/4MxqCUgRk1gqSE0d/M/hTW0XPS3oBLbjfXxan1c=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/public/"><span>A great computer technology Site</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/public/posts/" >
+        Posts
+      </a>
+      
+<ul>
+  
+  <li>
+    <a href="/public/posts/angluar-cli/" >
+        angular
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/ansible/" >
+        ansible
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/cicd/" >
+        CICD
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/cloud/" >
+        cloude
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/container/" >
+        container
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/devops/" >
+        DevOps
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/english/" >
+        English
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/golang/" >
+        golang
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/istio/" >
+        istio
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/kubernetes/" >
+        Kubernetes
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" >
+        mechine leaning
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/material2/" >
+        mererial2
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E7%9B%91%E6%8E%A7/" >
+        monitor
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/mysql/" >
+        mysql
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E7%BD%91%E7%BB%9C/" >
+        networking
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E6%97%A5%E8%AE%B0%E6%9C%AC/" >
+        notes
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/postgresql/" >
+        postgresql
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/django/" >
+        python
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E5%AE%89%E5%85%A8/" >
+        safe
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E8%AF%97%E8%AF%8D/" >
+        shi chi
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E7%AB%99%E7%82%B9%E5%8F%AF%E9%9D%A0%E6%80%A7%E5%B7%A5%E7%A8%8B/" >
+        SRE
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E6%96%87%E5%AD%A6/" >
+        wenxue
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E9%9A%8F%E7%AC%94/" >
+        write somethings
+      </a>
+  </li>
+  
+</ul>
+
+  </li>
+  
+  <li>
+    <a href="/public/about/" >
+        About
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var a=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(b){localStorage.setItem("menu.scrollTop",a.scrollTop)}),a.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/public/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Overview of the Docker Architecture</strong>
+
+  <label for="toc-control">
+    
+    <img src="/public/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents"></nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+<article class="markdown">
+  <h1>
+    <a href="/public/posts/container/overview-of-the-docker-architecture/">Overview of the Docker Architecture</a>
+  </h1>
+  
+
+
+  
+
+  
+
+
+
+<p>In this text we&rsquo;re going to be talking about Docker architecture.
+And Docker is the container implementation
+that is supported by Red Hat and is used by OpenShift.
+So Docker uses a client-server architecture,
+and the client will run our command-line tool,
+which is known as docker,
+so all of our requests that we&rsquo;re going to make are running on the client server.
+And then we&rsquo;ll also have another server,
+which is running the Docker service,
+and that has a daemon on it that&rsquo;s responsible for all of the building
+and running and downloading images.
+And we&rsquo;ll get into all of that in a little bit.
+But essentially, we have these two separate servers
+and they can actually be running on the same host.
+In the classroom, in the demonstrations I&rsquo;ll show you in later videos,
+ours is actually running on the same host
+so we have a client and server running together,
+which is not necessarily the best way to do it if you&rsquo;re production
+but for the sake of development that&rsquo;s an OK architecture.
+So I&rsquo;ll talk a little bit about some of the core elements of Docker
+and some of the resources that they use.
+So we are in about containers, right?
+Containers are segregated user space environments for running our applications.
+These are the primary objects in Docker and almost all of
+the commands will somehow reference containers in some capacity,
+that&rsquo;s like our working item.
+We also have images. And images are templates for containers,
+so you&rsquo;ll have &ndash; they&rsquo;re sort of like a definition for containers.
+So we can have one template and from that we can create,
+you know, five, ten, a thousand containers.
+All those are based on that template.
+So this is a really powerful tool that we can use to recreate containers
+and we can version control images and we can add all of the libraries
+and configuration files we need to run our application.
+So where do we get the images from?
+Well, the images are stored in different registries,
+and registries can be something that you have that&rsquo;s private
+and local on your own machine, you can use public registries,
+DockerHub is one of the most popular ones.
+Red Hat also has their own image registry
+and these are already preconfigured and you can pull from them
+and you can also go to DockerHub as a web site
+and you can pull down the images from there.
+So as I mentioned before, up here we have our client,
+and we have our host, and we have our registry.
+So the client is where you&rsquo;re going to do things like run all these Docker commands,
+and we&rsquo;ll get a little bit more into the commands when we start doing demonstration
+but for now let&rsquo;s stick with docket pull.
+This is going to pull an image for us locally
+and we have Docker run.
+Now on the host, we have our Docker daemon,
+and the daemon is going to be responding to any of the commands
+that are run on the client.
+So anything like docker run,
+that&rsquo;s going to go to the daemon, docker pull, that&rsquo;s going to go here.
+So let&rsquo;s say we do a docker pull, and we want to pull down an image for MySQL,
+so we want to create our own database container.
+So the first thing we&rsquo;ll run is docker pull mysql.
+So what happens there is you run docker pull,
+it goes to the docker daemon and it says OK, I need an image.
+And the first thing it&rsquo;s going to do is it&rsquo;s going to take a look
+at our local image repository,
+so on this host it&rsquo;ll say, do I have a MySQL image.
+And if it doesn&rsquo;t it&rsquo;ll say OK, let&rsquo;s send this off,
+I want to go look at one of these public registries.
+Let&rsquo;s say that this is DockerHub,
+and in this registry we&rsquo;ll find our little MySQL image,
+which as I mentioned before, that&rsquo;s just a simple template
+that includes all the things we need in order to run a MySQL environment.
+So it&rsquo;ll take that image and it&rsquo;ll bring it back
+and drop it right into our image repository
+so that&rsquo;s available for any future containers that we may want to run.
+So now we have our MySQL image.
+OK, so let&rsquo;s talk about what happens when we run docker run.
+So if you do docker run, it&rsquo;s going to go to the daemon and it&rsquo;s going to say OK,
+I want to run a MySQL container.
+It&rsquo;s then going to go look at our image and say
+there is a MySQL image, and let&rsquo;s create a container based on that image,
+so it&rsquo;s going to run our own MySQL container.
+And we could run this five, ten, a thousand times,
+and we can just keep creating new containers
+over and over again based on that one specific image.
+So as I mentioned before, containers aren&rsquo;t necessarily a new concept.
+However, Docker was one of the first implementations to make this
+really user-friendly and easy, and it does so by using
+basic features that are already available in the Linux kernel.
+So first, it uses namespaces, it uses control groups, and it uses SELinux.
+And so namespaces are generally used to isolate processes,
+to protect system resources and what Docker does is it
+creates a namespace for each individual containers,
+so you have container A over here, you have container B over here,
+and the namespace will protect these processes
+so they&rsquo;re not going to interact with each other unnecessarily.
+We have control groups and control groups create partition
+to the set of processes and that is essentially protecting the host machine
+from the container consuming too many resources.
+So if you have the host down here at the bottom,
+we have the containers that are going to be isolated
+so that they are not borrowing too many resources
+that could potentially cause a failure to the host.
+We have SELinux and SELinux is there to protect access between
+both the containers and the containers to the host.
+So just to refresh, namespaces are there to protect
+the containers interactions between each other,
+cgroups are to protect the containers interaction to the host,
+and SELinux is there to protect access between
+both the containers and the containers to the host.</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function a(c){const a=window.getSelection(),b=document.createRange();b.selectNodeContents(c),a.removeAllRanges(),a.addRange(b)}document.querySelectorAll("pre code").forEach(b=>{b.addEventListener("click",function(c){a(b.parentElement),navigator.clipboard&&navigator.clipboard.writeText(b.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents"></nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

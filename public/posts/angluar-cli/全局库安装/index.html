@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Global Library Installation#全局库安装#Some javascript libraries need to be added to the global scope and loaded as if they were in a script tag. We can do this using the scripts and styles options of the build target in angular.json.
+一些JavaScript库需要被添加到全局范围并加载，就好像它们在脚本标签中一样，我们可以使用angular.json中构建目标的脚本和样式选项来完成此操作。
+As an example, to use Bootstrap 4 this is what you need to do:
+例如，要使用Bootstrap 4，您需要执行以下操作：
+First install Bootstrap from npm: 首先从 npm 安装Bootstrap：">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="" />
+<meta property="og:description" content="Global Library Installation#全局库安装#Some javascript libraries need to be added to the global scope and loaded as if they were in a script tag. We can do this using the scripts and styles options of the build target in angular.json.
+一些JavaScript库需要被添加到全局范围并加载，就好像它们在脚本标签中一样，我们可以使用angular.json中构建目标的脚本和样式选项来完成此操作。
+As an example, to use Bootstrap 4 this is what you need to do:
+例如，要使用Bootstrap 4，您需要执行以下操作：
+First install Bootstrap from npm: 首先从 npm 安装Bootstrap：" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://wangyijie.github.io/public/posts/angluar-cli/%E5%85%A8%E5%B1%80%E5%BA%93%E5%AE%89%E8%A3%85/" /><meta property="article:section" content="posts" />
+
+
+
+<title>全局库安装 | A great computer technology Site</title>
+<link rel="manifest" href="/public/manifest.json">
+<link rel="icon" href="/public/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/public/book.min.8599444fcc48ee6b435b5b62c955ab7d914fa1e2a453df90c4b97cc9769665d1.css" integrity="sha256-hZlET8xI7mtDW1tiyVWrfZFPoeKkU9&#43;QxLl8yXaWZdE=" crossorigin="anonymous">
+  <script defer src="/public/flexsearch.min.js"></script>
+  <script defer src="/public/en.search.min.49d7ffe0cc6a09481193582a484d1dfccfe14d6d173d2de804b6e37d7c5a9f57.js" integrity="sha256-Sdf/4MxqCUgRk1gqSE0d/M/hTW0XPS3oBLbjfXxan1c=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/public/"><span>A great computer technology Site</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/public/posts/" >
+        Posts
+      </a>
+      
+<ul>
+  
+  <li>
+    <a href="/public/posts/angluar-cli/" >
+        angular
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/ansible/" >
+        ansible
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/cicd/" >
+        CICD
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/cloud/" >
+        cloude
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/container/" >
+        container
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/devops/" >
+        DevOps
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/english/" >
+        English
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/golang/" >
+        golang
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/istio/" >
+        istio
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/kubernetes/" >
+        Kubernetes
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" >
+        mechine leaning
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/material2/" >
+        mererial2
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E7%9B%91%E6%8E%A7/" >
+        monitor
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/mysql/" >
+        mysql
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E7%BD%91%E7%BB%9C/" >
+        networking
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E6%97%A5%E8%AE%B0%E6%9C%AC/" >
+        notes
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/postgresql/" >
+        postgresql
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/django/" >
+        python
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E5%AE%89%E5%85%A8/" >
+        safe
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E8%AF%97%E8%AF%8D/" >
+        shi chi
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E7%AB%99%E7%82%B9%E5%8F%AF%E9%9D%A0%E6%80%A7%E5%B7%A5%E7%A8%8B/" >
+        SRE
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E6%96%87%E5%AD%A6/" >
+        wenxue
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E9%9A%8F%E7%AC%94/" >
+        write somethings
+      </a>
+  </li>
+  
+</ul>
+
+  </li>
+  
+  <li>
+    <a href="/public/about/" >
+        About
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var a=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(b){localStorage.setItem("menu.scrollTop",a.scrollTop)}),a.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/public/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>全局库安装</strong>
+
+  <label for="toc-control">
+    
+    <img src="/public/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents"></nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+<article class="markdown">
+  <h1>
+    <a href="/public/posts/angluar-cli/%E5%85%A8%E5%B1%80%E5%BA%93%E5%AE%89%E8%A3%85/">全局库安装</a>
+  </h1>
+  
+
+
+  
+
+  
+
+
+
+<h1 id="global-library-installation">
+  Global Library Installation
+  <a class="anchor" href="#global-library-installation">#</a>
+</h1>
+<h1 id="全局库安装">
+  全局库安装
+  <a class="anchor" href="#%e5%85%a8%e5%b1%80%e5%ba%93%e5%ae%89%e8%a3%85">#</a>
+</h1>
+<p>Some javascript libraries need to be added to the global scope and loaded as if
+they were in a script tag.
+We can do this using the <code>scripts</code> and <code>styles</code> options of the build target in <code>angular.json</code>.<br>
+一些JavaScript库需要被添加到全局范围并加载，就好像它们在脚本标签中一样，我们可以使用angular.json中构建目标的脚本和样式选项来完成此操作。</p>
+<p>As an example, to use <a href="https://getbootstrap.com/docs/4.0/getting-started/introduction/">Bootstrap 4</a>
+this is what you need to do:<br>
+例如，要使用<a href="https://getbootstrap.com/docs/4.0/getting-started/introduction/">Bootstrap 4</a>，您需要执行以下操作：</p>
+<p>First install Bootstrap from <code>npm</code>:
+首先从 <code>npm</code> 安装Bootstrap：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">npm install jquery --save
+npm install popper.js --save
+npm install bootstrap --save
+</code></pre></div><p>Then add the needed script files to <code>scripts</code>:
+然后将所需的脚本文件添加到 <code>scripts</code> 中:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json"><span style="color:#e6db74">&#34;scripts&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> [
+  <span style="color:#e6db74">&#34;node_modules/jquery/dist/jquery.slim.js&#34;</span>,
+  <span style="color:#e6db74">&#34;node_modules/popper.js/dist/umd/popper.js&#34;</span>,
+  <span style="color:#e6db74">&#34;node_modules/bootstrap/dist/js/bootstrap.js&#34;</span>
+]<span style="color:#960050;background-color:#1e0010">,</span>
+</code></pre></div><p>Finally add the Bootstrap CSS to the <code>styles</code> array:<br>
+最后，将Bootstrap CSS添加到 <code>styles</code> 数组中：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json"><span style="color:#e6db74">&#34;styles&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> [
+  <span style="color:#e6db74">&#34;node_modules/bootstrap/dist/css/bootstrap.css&#34;</span>,
+  <span style="color:#e6db74">&#34;src/styles.css&#34;</span>
+]<span style="color:#960050;background-color:#1e0010">,</span>
+</code></pre></div><p>Restart <code>ng serve</code> if you&rsquo;re running it, and Bootstrap 4 should be working on your app.
+如果您正在运行它，请重新启动服务，并且Bootstrap 4应该在您的应用程序上运行。</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function a(c){const a=window.getSelection(),b=document.createRange();b.selectNodeContents(c),a.removeAllRanges(),a.addRange(b)}document.querySelectorAll("pre code").forEach(b=>{b.addEventListener("click",function(c){a(b.parentElement),navigator.clipboard&&navigator.clipboard.writeText(b.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents"></nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

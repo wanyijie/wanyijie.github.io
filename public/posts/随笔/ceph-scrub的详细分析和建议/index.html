@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="前言#关于scrub这块一直想写一篇文章的，这个在很久前，就做过一次测试，当时是看这个scrub到底有多大的影响，当时看到的是磁盘读占很高，启动deep-scrub后会有大量的读,前端可能会出现 slow request,这个是当时测试看到的现象，一个比较简单的处理办法就是直接给scrub关掉了，当然关掉了就无法检测底层到底有没有对象不一致的问题 关于这个scrub生产上是否开启，仁者见仁，智者见智，就是选择的问题了，这里不做讨论，个人觉得开和关都有各自的道理，本篇是讲述的如果想开启的情况下如何把scrub给控制住
+最近在ceph群里看到一段大致这样的讨论：
+ scrub是个坑 小文件多的场景一定要把scrub关掉 单pg的文件量达到一定规模，scrub一开就会有slow request 这个问题解决不了
+ 上面的说法有没有问题呢？在一般情况下来看，确实如此，但是我们是否能尝试去解决下这个问题，或者缓解下呢？那么我们就来尝试下
+scrub的一些追踪#下面的一些追踪并不涉及代码，仅仅从配置和日志的观测来看看scrub到底干了什么
+环境准备#我的环境为了便于观测，配置的是一个pg的存储池，然后往这个pg里面put了100个对象，然后对这个pg做deep-scrub，deep-scrub比scrub对磁盘的压力要大些，所以本篇主要是去观测的deep-scrub
+开启对pg目录的访问的监控#使用的是inotifywait，我想看下deep-scrub的时候，pg里面的对象到底接收了哪些请求
+inotifywait -m 1.0_head
+|
+|
+在给osd.0开启debug_osd=20后观测chunky相关的日志
+|
+|
+截取关键部分看下，如图 我们看下上面的文件访问监控里面这些对象在什么位置
+|
+|
+看上去是不是很有规律，这个地方在ceph里面会有个chunk的概念，在做scrub的时候，ceph会对这个chunk进行加锁，这个可以在很多地方看到这个，这个也就是为什么有slow request，并不一定是你的磁盘慢了，而是加了锁，就没法读的
+ osd scrub chunk min
+Description: The minimal number of object store chunks to scrub during single operation. Ceph blocks writes to single chunk during scrub. Type: 32-bit Integer Default: 5">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="" />
+<meta property="og:description" content="前言#关于scrub这块一直想写一篇文章的，这个在很久前，就做过一次测试，当时是看这个scrub到底有多大的影响，当时看到的是磁盘读占很高，启动deep-scrub后会有大量的读,前端可能会出现 slow request,这个是当时测试看到的现象，一个比较简单的处理办法就是直接给scrub关掉了，当然关掉了就无法检测底层到底有没有对象不一致的问题 关于这个scrub生产上是否开启，仁者见仁，智者见智，就是选择的问题了，这里不做讨论，个人觉得开和关都有各自的道理，本篇是讲述的如果想开启的情况下如何把scrub给控制住
+最近在ceph群里看到一段大致这样的讨论：
+ scrub是个坑 小文件多的场景一定要把scrub关掉 单pg的文件量达到一定规模，scrub一开就会有slow request 这个问题解决不了
+ 上面的说法有没有问题呢？在一般情况下来看，确实如此，但是我们是否能尝试去解决下这个问题，或者缓解下呢？那么我们就来尝试下
+scrub的一些追踪#下面的一些追踪并不涉及代码，仅仅从配置和日志的观测来看看scrub到底干了什么
+环境准备#我的环境为了便于观测，配置的是一个pg的存储池，然后往这个pg里面put了100个对象，然后对这个pg做deep-scrub，deep-scrub比scrub对磁盘的压力要大些，所以本篇主要是去观测的deep-scrub
+开启对pg目录的访问的监控#使用的是inotifywait，我想看下deep-scrub的时候，pg里面的对象到底接收了哪些请求
+inotifywait -m 1.0_head
+|
+|
+在给osd.0开启debug_osd=20后观测chunky相关的日志
+|
+|
+截取关键部分看下，如图 我们看下上面的文件访问监控里面这些对象在什么位置
+|
+|
+看上去是不是很有规律，这个地方在ceph里面会有个chunk的概念，在做scrub的时候，ceph会对这个chunk进行加锁，这个可以在很多地方看到这个，这个也就是为什么有slow request，并不一定是你的磁盘慢了，而是加了锁，就没法读的
+ osd scrub chunk min
+Description: The minimal number of object store chunks to scrub during single operation. Ceph blocks writes to single chunk during scrub. Type: 32-bit Integer Default: 5" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://wangyijie.github.io/public/posts/%E9%9A%8F%E7%AC%94/ceph-scrub%E7%9A%84%E8%AF%A6%E7%BB%86%E5%88%86%E6%9E%90%E5%92%8C%E5%BB%BA%E8%AE%AE/" /><meta property="article:section" content="posts" />
+
+
+
+<title>Ceph Scrub的详细分析和建议 | A great computer technology Site</title>
+<link rel="manifest" href="/public/manifest.json">
+<link rel="icon" href="/public/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/public/book.min.8599444fcc48ee6b435b5b62c955ab7d914fa1e2a453df90c4b97cc9769665d1.css" integrity="sha256-hZlET8xI7mtDW1tiyVWrfZFPoeKkU9&#43;QxLl8yXaWZdE=" crossorigin="anonymous">
+  <script defer src="/public/flexsearch.min.js"></script>
+  <script defer src="/public/en.search.min.49d7ffe0cc6a09481193582a484d1dfccfe14d6d173d2de804b6e37d7c5a9f57.js" integrity="sha256-Sdf/4MxqCUgRk1gqSE0d/M/hTW0XPS3oBLbjfXxan1c=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/public/"><span>A great computer technology Site</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/public/posts/" >
+        Posts
+      </a>
+      
+<ul>
+  
+  <li>
+    <a href="/public/posts/angluar-cli/" >
+        angular
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/ansible/" >
+        ansible
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/cicd/" >
+        CICD
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/cloud/" >
+        cloude
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/container/" >
+        container
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/devops/" >
+        DevOps
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/english/" >
+        English
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/golang/" >
+        golang
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/istio/" >
+        istio
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/kubernetes/" >
+        Kubernetes
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" >
+        mechine leaning
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/material2/" >
+        mererial2
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E7%9B%91%E6%8E%A7/" >
+        monitor
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/mysql/" >
+        mysql
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E7%BD%91%E7%BB%9C/" >
+        networking
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E6%97%A5%E8%AE%B0%E6%9C%AC/" >
+        notes
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/postgresql/" >
+        postgresql
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/django/" >
+        python
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E5%AE%89%E5%85%A8/" >
+        safe
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E8%AF%97%E8%AF%8D/" >
+        shi chi
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E7%AB%99%E7%82%B9%E5%8F%AF%E9%9D%A0%E6%80%A7%E5%B7%A5%E7%A8%8B/" >
+        SRE
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E6%96%87%E5%AD%A6/" >
+        wenxue
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E9%9A%8F%E7%AC%94/" >
+        write somethings
+      </a>
+  </li>
+  
+</ul>
+
+  </li>
+  
+  <li>
+    <a href="/public/about/" >
+        About
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var a=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(b){localStorage.setItem("menu.scrollTop",a.scrollTop)}),a.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/public/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Ceph Scrub的详细分析和建议</strong>
+
+  <label for="toc-control">
+    
+    <img src="/public/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#前言">前言</a></li>
+    <li><a href="#scrub的一些追踪">scrub的一些追踪</a>
+      <ul>
+        <li><a href="#环境准备">环境准备</a></li>
+        <li><a href="#另外一个重要参数">另外一个重要参数</a></li>
+        <li><a href="#默认情况下的scrub和修改后的对比">默认情况下的scrub和修改后的对比</a></li>
+      </ul>
+    </li>
+    <li><a href="#总结">总结</a></li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+<article class="markdown">
+  <h1>
+    <a href="/public/posts/%E9%9A%8F%E7%AC%94/ceph-scrub%E7%9A%84%E8%AF%A6%E7%BB%86%E5%88%86%E6%9E%90%E5%92%8C%E5%BB%BA%E8%AE%AE/">Ceph Scrub的详细分析和建议</a>
+  </h1>
+  
+
+
+  
+
+  
+
+
+
+<h2 id="前言">
+  前言
+  <a class="anchor" href="#%e5%89%8d%e8%a8%80">#</a>
+</h2>
+<p>关于scrub这块一直想写一篇文章的，这个在很久前，就做过一次测试，当时是看这个scrub到底有多大的影响，当时看到的是磁盘读占很高，启动deep-scrub后会有大量的读,前端可能会出现 slow request,这个是当时测试看到的现象，一个比较简单的处理办法就是直接给scrub关掉了，当然关掉了就无法检测底层到底有没有对象不一致的问题
+关于这个scrub生产上是否开启，仁者见仁，智者见智，就是选择的问题了，这里不做讨论，个人觉得开和关都有各自的道理，本篇是讲述的如果想开启的情况下如何把scrub给控制住</p>
+<p>最近在ceph群里看到一段大致这样的讨论：</p>
+<blockquote>
+<p>scrub是个坑
+小文件多的场景一定要把scrub关掉
+单pg的文件量达到一定规模，scrub一开就会有slow request
+这个问题解决不了</p>
+</blockquote>
+<p>上面的说法有没有问题呢？在一般情况下来看，确实如此，但是我们是否能尝试去解决下这个问题，或者缓解下呢？那么我们就来尝试下</p>
+<h2 id="scrub的一些追踪">
+  scrub的一些追踪
+  <a class="anchor" href="#scrub%e7%9a%84%e4%b8%80%e4%ba%9b%e8%bf%bd%e8%b8%aa">#</a>
+</h2>
+<p>下面的一些追踪并不涉及代码，仅仅从配置和日志的观测来看看scrub到底干了什么</p>
+<h3 id="环境准备">
+  环境准备
+  <a class="anchor" href="#%e7%8e%af%e5%a2%83%e5%87%86%e5%a4%87">#</a>
+</h3>
+<p>我的环境为了便于观测，配置的是一个pg的存储池，然后往这个pg里面put了100个对象，然后对这个pg做deep-scrub，deep-scrub比scrub对磁盘的压力要大些，所以本篇主要是去观测的deep-scrub</p>
+<h4 id="开启对pg目录的访问的监控">
+  开启对pg目录的访问的监控
+  <a class="anchor" href="#%e5%bc%80%e5%90%af%e5%af%b9pg%e7%9b%ae%e5%bd%95%e7%9a%84%e8%ae%bf%e9%97%ae%e7%9a%84%e7%9b%91%e6%8e%a7">#</a>
+</h4>
+<p>使用的是inotifywait，我想看下deep-scrub的时候，pg里面的对象到底接收了哪些请求</p>
+<p>inotifywait -m 1.0_head</p>
+<p>|</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>|</p>
+<p>在给osd.0开启debug_osd=20后观测chunky相关的日志</p>
+<p>|</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>|</p>
+<p>截取关键部分看下，如图
+<img src="https://upload-images.jianshu.io/upload_images/6000429-700ad0fcbe0a860b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="a100" /></p>
+<p>我们看下上面的文件访问监控里面这些对象在什么位置</p>
+<p>|</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>|</p>
+<p>看上去是不是很有规律，这个地方在ceph里面会有个chunk的概念，在做scrub的时候，ceph会对这个chunk进行加锁，这个可以在很多地方看到这个，这个也就是为什么有slow request，并不一定是你的磁盘慢了，而是加了锁，就没法读的</p>
+<blockquote>
+<p>osd scrub chunk min</p>
+<p>Description: The minimal number of object store chunks to scrub during single operation. Ceph blocks writes to single chunk during scrub.
+Type: 32-bit Integer
+Default: 5</p>
+</blockquote>
+<p>从配置文件上面看说是会锁住写，没有提及读的锁定的问题，那么我们下面验证下这个问题，到底deep-scrub，是不是会引起读的slow request</p>
+<p>上面的环境100个对象，现在把100个对象的大小调整为100M一个，并且chunk设置为100个对象的，也就是我把我这个环境所有的对象认为是一个大的chunk，然后去用rados读取这个对象，来看下会发生什么</p>
+<p>|</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>|</p>
+<p>使用ceph -w监控</p>
+<p>|</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>|</p>
+<p>我从deep scrub 一开始就进行a40对象的get rados -p rbd get a40 a40，直接就卡着不返回，在pg内对象不变的情况下，对pg做scrub的顺序是不变的，我专门挑了我这个scrub顺序下最后一个scrub的对象来做get，还是出现了slow request ，这个可以证明上面的推断，也就是在做scrub的时候，对scub的chunk的对象的读取请求也会卡死，现在我把我的scrub的chunk弄成1看下会发生什么</p>
+<p>配置参数改成</p>
+<p>|</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>|</p>
+<p>|</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>|</p>
+<p>使用五个请求同时去get a9,循环的去做</p>
+<p>然后做deep scrub，这一次并没有出现slow request 的情况</p>
+<h3 id="另外一个重要参数">
+  另外一个重要参数
+  <a class="anchor" href="#%e5%8f%a6%e5%a4%96%e4%b8%80%e4%b8%aa%e9%87%8d%e8%a6%81%e5%8f%82%e6%95%b0">#</a>
+</h3>
+<p>再看看这个参数osd_scrub_sleep = 0</p>
+<blockquote>
+<p>osd scrub sleep</p>
+<p>Description: Time to sleep before scrubbing next group of chunks. Increasing this value will slow down whole scrub operation while client operations will be less impacted.
+Type: Float
+Default: 0</p>
+</blockquote>
+<p>可以看到还有scrub group这个概念，从数据上分析这个group 是3，也就是3个chunks
+我们来设置下</p>
+<blockquote>
+<p>osd_scrub_sleep = 5</p>
+</blockquote>
+<p>然后再次做deep-scrub,然后看下日志的内容</p>
+<p>|</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>|</p>
+<p>可以看到1s做一个对象的deep-scrub，然后在做了3个对象后就停止了5s</p>
+<h3 id="默认情况下的scrub和修改后的对比">
+  默认情况下的scrub和修改后的对比
+  <a class="anchor" href="#%e9%bb%98%e8%ae%a4%e6%83%85%e5%86%b5%e4%b8%8b%e7%9a%84scrub%e5%92%8c%e4%bf%ae%e6%94%b9%e5%90%8e%e7%9a%84%e5%af%b9%e6%af%94">#</a>
+</h3>
+<p>我们来计算下在修改前后的情况对比，我们来模拟pg里面有10000个对象的情况小文件 测试的文件都是1K的，这个可以根据自己的文件模型进行测试</p>
+<p>假设是海量对象的场景，那么算下来单pg 1w左右对象左右也算比较多了，我们就模拟10000个对象的场景的deep-scrub</p>
+<p>|</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>|</p>
+<p>使用上面的脚本统计每秒scrub的对象数目</p>
+<p>|</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>|</p>
+<p>可以看到1s 会扫300个对象左右，差不多40s钟就扫完了一个pg，默认25个对象一个trunk</p>
+<p>这里可以打个比喻，在一条长为40m的马路上，一个汽车以1m/s速度前进，中间会有人来回穿，如果穿梭的人只有一两个可能没什么问题，但是一旦有40个人在这个区间进行穿梭的时候，可想而知碰撞的概率会有多大了</p>
+<p>或者同一个文件被连续请求40次，那么对应到这里就是40个人在同一个位置不停的穿马路，这样撞上的概率是不是非常的大了？</p>
+<p>上面说了这么多，那么我想如果整个看下来，应该知道怎么处理了
+我们看下这样的全部为1的情况下，会出现什么情况</p>
+<p>|</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>|</p>
+<p>这里减少chunk大小，相当于减少上面例子当中汽车的长度，原来25米的大卡车，变成1米的自行车了</p>
+<p>|</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>|</p>
+<p>上面从日志里面截取部分的日志，这个是什么意思呢，是每秒钟扫描3个对象，然后休息3s再进行下一个，这个是不是已经把速度压到非常低了？还有上面做测试scrub sleep例子里面好像是1s 会scrub 1个对象，这里怎么就成了1s会scrub 3 个对象了，这个跟scrub的对象大小有关，对象越大，scrub的时间就相对长一点，这个测试里面的对象是1K的，基本算非常小了，也就是1s会扫描3个对象，然后根据你的设置的sleep值等待进入下一组的scrub</p>
+<p>在上面的环境下默认每秒钟会对300左右的对象进行scrub，以25个对象的锁定窗口移动，无法写入和读取，而参数修改后每秒有3个对象被scrub，以1个对象的锁定窗口移动，这个单位时间锁定的对象的数目已经降低到一个非常低的程度了，如果你有生产环境又想去开scrub，不妨尝试下降低chunk，增加sleep</p>
+<p>这个的影响就是扫描的速度而已，而如果你想加快扫描速度，就去调整sleep参数来控制这个扫描的速度了，这个就不在这里赘述了</p>
+<p>本篇讲述的是一个PG上开启deep-scrub以后的影响，默认的是到了最大的intelval以后就会开启自动开启scrub了，所以我建议的是不用系统自带的时间控制，而是自己去分析的scrub的时间戳和对象数目，然后计算好以后，可以是每天晚上，扫描指定个数的PG，然后等一轮全做完以后，中间就是自定义的一段时间的不扫描期，这个可以自己定义，是一个月或者两个月扫一轮都行，这个会在后面单独写一篇文章来讲述这个</p>
+<h2 id="总结">
+  总结
+  <a class="anchor" href="#%e6%80%bb%e7%bb%93">#</a>
+</h2>
+<p>关于scrub，你需要了解，scrub什么时候会发生，发生以后会对你的osd产生多少的负载，每秒钟会扫描多少对象，如何去降低这个影响，这些问题就是本篇的来源了，很多问题是能从参数上进行解决的，关键是你要知道它们到底在干嘛</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function a(c){const a=window.getSelection(),b=document.createRange();b.selectNodeContents(c),a.removeAllRanges(),a.addRange(b)}document.querySelectorAll("pre code").forEach(b=>{b.addEventListener("click",function(c){a(b.parentElement),navigator.clipboard&&navigator.clipboard.writeText(b.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#前言">前言</a></li>
+    <li><a href="#scrub的一些追踪">scrub的一些追踪</a>
+      <ul>
+        <li><a href="#环境准备">环境准备</a></li>
+        <li><a href="#另外一个重要参数">另外一个重要参数</a></li>
+        <li><a href="#默认情况下的scrub和修改后的对比">默认情况下的scrub和修改后的对比</a></li>
+      </ul>
+    </li>
+    <li><a href="#总结">总结</a></li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

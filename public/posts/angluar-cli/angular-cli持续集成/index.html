@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Continuous Integration#持续集成#One of the best ways to keep your project bug free is through a test suite, but it&rsquo;s easy to forget to run tests all the time.
+保持项目缺陷肃清的最好方法之一是通过测试套件，但忘记随时运行测试很容易。
+That&rsquo;s where Continuous Integration (CI) servers come in. You can set up your project repository so that your tests run on every commit and pull request.
+这就是持续集成（CI）服务器的用武之地。您可以设置您的项目存储库，以便您的测试可以在每次提交和提交请求时运行。
+There are paid CI services like Circle CI and Travis CI, and you can also host your own for free using Jenkins and others.">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="" />
+<meta property="og:description" content="Continuous Integration#持续集成#One of the best ways to keep your project bug free is through a test suite, but it&rsquo;s easy to forget to run tests all the time.
+保持项目缺陷肃清的最好方法之一是通过测试套件，但忘记随时运行测试很容易。
+That&rsquo;s where Continuous Integration (CI) servers come in. You can set up your project repository so that your tests run on every commit and pull request.
+这就是持续集成（CI）服务器的用武之地。您可以设置您的项目存储库，以便您的测试可以在每次提交和提交请求时运行。
+There are paid CI services like Circle CI and Travis CI, and you can also host your own for free using Jenkins and others." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://wangyijie.github.io/public/posts/angluar-cli/angular-cli%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90/" /><meta property="article:section" content="posts" />
+
+
+
+<title>Angular Cli持续集成 | A great computer technology Site</title>
+<link rel="manifest" href="/public/manifest.json">
+<link rel="icon" href="/public/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/public/book.min.8599444fcc48ee6b435b5b62c955ab7d914fa1e2a453df90c4b97cc9769665d1.css" integrity="sha256-hZlET8xI7mtDW1tiyVWrfZFPoeKkU9&#43;QxLl8yXaWZdE=" crossorigin="anonymous">
+  <script defer src="/public/flexsearch.min.js"></script>
+  <script defer src="/public/en.search.min.49d7ffe0cc6a09481193582a484d1dfccfe14d6d173d2de804b6e37d7c5a9f57.js" integrity="sha256-Sdf/4MxqCUgRk1gqSE0d/M/hTW0XPS3oBLbjfXxan1c=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/public/"><span>A great computer technology Site</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/public/posts/" >
+        Posts
+      </a>
+      
+<ul>
+  
+  <li>
+    <a href="/public/posts/angluar-cli/" >
+        angular
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/ansible/" >
+        ansible
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/cicd/" >
+        CICD
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/cloud/" >
+        cloude
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/container/" >
+        container
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/devops/" >
+        DevOps
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/english/" >
+        English
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/golang/" >
+        golang
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/istio/" >
+        istio
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/kubernetes/" >
+        Kubernetes
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" >
+        mechine leaning
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/material2/" >
+        mererial2
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E7%9B%91%E6%8E%A7/" >
+        monitor
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/mysql/" >
+        mysql
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E7%BD%91%E7%BB%9C/" >
+        networking
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E6%97%A5%E8%AE%B0%E6%9C%AC/" >
+        notes
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/postgresql/" >
+        postgresql
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/django/" >
+        python
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E5%AE%89%E5%85%A8/" >
+        safe
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E8%AF%97%E8%AF%8D/" >
+        shi chi
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E7%AB%99%E7%82%B9%E5%8F%AF%E9%9D%A0%E6%80%A7%E5%B7%A5%E7%A8%8B/" >
+        SRE
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E6%96%87%E5%AD%A6/" >
+        wenxue
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E9%9A%8F%E7%AC%94/" >
+        write somethings
+      </a>
+  </li>
+  
+</ul>
+
+  </li>
+  
+  <li>
+    <a href="/public/about/" >
+        About
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var a=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(b){localStorage.setItem("menu.scrollTop",a.scrollTop)}),a.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/public/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Angular Cli持续集成</strong>
+
+  <label for="toc-control">
+    
+    <img src="/public/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#update-test-configuration">Update test configuration</a></li>
+    <li><a href="#更新测试配置">更新测试配置</a></li>
+    <li><a href="#using-circle-ci">Using Circle CI</a></li>
+    <li><a href="#使用-circle-ci">使用 Circle CI</a></li>
+    <li><a href="#我们在这里做了几件事">We&rsquo;re doing a few things here:<br>
+我们在这里做了几件事:</a></li>
+    <li><a href="#using-travis-ci">Using Travis CI</a></li>
+    <li><a href="#使用-travis-ci">使用 Travis CI</a></li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+<article class="markdown">
+  <h1>
+    <a href="/public/posts/angluar-cli/angular-cli%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90/">Angular Cli持续集成</a>
+  </h1>
+  
+
+
+  
+
+  
+
+
+
+<h1 id="continuous-integration">
+  Continuous Integration
+  <a class="anchor" href="#continuous-integration">#</a>
+</h1>
+<h1 id="持续集成">
+  持续集成
+  <a class="anchor" href="#%e6%8c%81%e7%bb%ad%e9%9b%86%e6%88%90">#</a>
+</h1>
+<p>One of the best ways to keep your project bug free is through a test suite, but it&rsquo;s easy to forget
+to run tests all the time.<br>
+保持项目缺陷肃清的最好方法之一是通过测试套件，但忘记随时运行测试很容易。</p>
+<p>That&rsquo;s where Continuous Integration (CI) servers come in.
+You can set up your project repository so that your tests run on every commit and pull request.<br>
+这就是持续集成（CI）服务器的用武之地。您可以设置您的项目存储库，以便您的测试可以在每次提交和提交请求时运行。</p>
+<p>There are paid CI services like <a href="https://circleci.com/">Circle CI</a> and
+<a href="https://travis-ci.com/">Travis CI</a>, and you can also host your own for free using
+<a href="https://jenkins.io/">Jenkins</a> and others.<br>
+有付费的CI服务，如<a href="https://circleci.com/">Circle CI</a>和<a href="https://travis-ci.com/">Travis CI</a>，您也可以使用<a href="https://jenkins.io/">Jenkins</a>和其他人免费托管项目的服务。</p>
+<p>Even though Circle CI and Travis CI are paid services, they are provided free for open source
+projects.
+You can create a public project on GitHub and add these services without paying.<br>
+尽管Circle CI和Travis CI是有偿服务，但它们是免费提供给开源项目的。您可以在GitHub上创建一个公共项目并添加这些服务而无需付费。<br>
+We&rsquo;re going to see how to update your test configuration to run in CI environments, and how to
+set up Circle CI and Travis CI.<br>
+我们将看到如何更新测试配置以在CI环境中运行，以及如何设置Circle CI和Travis CI。</p>
+<h2 id="update-test-configuration">
+  Update test configuration
+  <a class="anchor" href="#update-test-configuration">#</a>
+</h2>
+<h2 id="更新测试配置">
+  更新测试配置
+  <a class="anchor" href="#%e6%9b%b4%e6%96%b0%e6%b5%8b%e8%af%95%e9%85%8d%e7%bd%ae">#</a>
+</h2>
+<p>Even though <code>ng test</code> and <code>ng e2e</code> already run on your environment, they need to be adjusted to
+run in CI environments.<br>
+即使 <code>ng test</code> 和 <code>ng e2e</code> 已经在您的环境中运行，它们也需要进行调整才能在CI环境中运行。</p>
+<p>When using Chrome in CI environments it has to be started without sandboxing.
+We can achieve that by editing our test configs.<br>
+在CI环境中使用Chrome时，必须在不使用沙箱的情况下启动。我们可以通过编辑我们的测试配置来实现这一点。</p>
+<p>In <code>karma.conf.js</code>, add a custom launcher called <code>ChromeNoSandbox</code> below <code>browsers</code>:<br>
+在 <code>karma.conf.js</code> 中, 添加一个自定义启动 <code>ChromeNoSandbox</code> 在 <code>browsers</code>:</p>
+<pre tabindex="0"><code>browsers: ['Chrome'],
+customLaunchers: {
+  ChromeNoSandbox: {
+    base: 'Chrome',
+    flags: ['--no-sandbox']
+  }
+},
+</code></pre><p>Create a new file in the root of your project called <code>protractor-ci.conf.js</code>, that extends
+the original <code>protractor.conf.js</code>:<br>
+在项目根目录创建一个文件命名为 <code>protractor-ci.conf.js</code>, 扩展内 <code>protractor.conf.js</code>:</p>
+<pre tabindex="0"><code>const config = require('./protractor.conf').config;
+
+config.capabilities = {
+  browserName: 'chrome',
+  chromeOptions: {
+    args: ['--no-sandbox']
+  }
+};
+
+exports.config = config;
+</code></pre><p>Now you can run the following commands to use the <code>--no-sandbox</code> flag:<br>
+现在可以运行以下命令来使用 <code>--no-sandbox</code> 标志:</p>
+<pre tabindex="0"><code>ng test --single-run --no-progress --browser=ChromeNoSandbox
+ng e2e --no-progress --config=protractor-ci.conf.js
+</code></pre><p>For CI environments it&rsquo;s also a good idea to disable progress reporting (via <code>--no-progress</code>)
+to avoid spamming the server log with progress messages.<br>
+对于CI环境，禁用进度报告 (via <code>--no-progress</code>) 也是一个好主意，以避免使用进度消息来垃圾邮件服务器日志。</p>
+<h2 id="using-circle-ci">
+  Using Circle CI
+  <a class="anchor" href="#using-circle-ci">#</a>
+</h2>
+<h2 id="使用-circle-ci">
+  使用 Circle CI
+  <a class="anchor" href="#%e4%bd%bf%e7%94%a8-circle-ci">#</a>
+</h2>
+<p>Create a folder called <code>.circleci</code> at the project root, and inside of it create a file called
+<code>config.yml</code>:<br>
+在项目根目录下创建一个名为 <code>.circleci</code> 的文件夹，并在其中创建一个名为 <code>config.yml</code> 的文件：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">version</span>: <span style="color:#ae81ff">2</span>
+<span style="color:#f92672">jobs</span>:
+  <span style="color:#f92672">build</span>:
+    <span style="color:#f92672">working_directory</span>: <span style="color:#ae81ff">~/my-project</span>
+    <span style="color:#f92672">docker</span>:
+      - <span style="color:#f92672">image</span>: <span style="color:#ae81ff">circleci/node:8-browsers</span>
+    <span style="color:#f92672">steps</span>:
+      - <span style="color:#ae81ff">checkout</span>
+      - <span style="color:#f92672">restore_cache</span>:
+          <span style="color:#f92672">key</span>: <span style="color:#ae81ff">my-project-{{ .Branch }}-{{ checksum &#34;package.json&#34; }}</span>
+      - <span style="color:#f92672">run</span>: <span style="color:#ae81ff">npm install</span>
+      - <span style="color:#f92672">save_cache</span>:
+          <span style="color:#f92672">key</span>: <span style="color:#ae81ff">my-project-{{ .Branch }}-{{ checksum &#34;package.json&#34; }}</span>
+          <span style="color:#f92672">paths</span>:
+            - <span style="color:#e6db74">&#34;node_modules&#34;</span>
+      - <span style="color:#f92672">run</span>: <span style="color:#ae81ff">xvfb-run -a npm run test -- --single-run --no-progress --browser=ChromeNoSandbox</span>
+      - <span style="color:#f92672">run</span>: <span style="color:#ae81ff">xvfb-run -a npm run e2e -- --no-progress --config=protractor-ci.conf.js</span>
+
+</code></pre></div><h2 id="我们在这里做了几件事">
+  We&rsquo;re doing a few things here:<br>
+我们在这里做了几件事:
+  <a class="anchor" href="#%e6%88%91%e4%bb%ac%e5%9c%a8%e8%bf%99%e9%87%8c%e5%81%9a%e4%ba%86%e5%87%a0%e4%bb%b6%e4%ba%8b">#</a>
+</h2>
+<ul>
+<li><code>node_modules</code> is cached.<br>
+缓存 <code>node_modules</code>.</li>
+<li><a href="https://docs.npmjs.com/cli/run-script">npm run</a> is used to run <code>ng</code> because <code>@angular/cli</code> is
+not installed globally. The double dash (<code>--</code>) is needed to pass arguments into the npm script.<br>
+<a href="https://docs.npmjs.com/cli/run-script">npm run</a>用于运行 <code>ng</code>，因为 <code>@angular/cli</code> 没有全局安装。 需要双短划线（ <code>--</code> ）将参数传递给npm脚本。</li>
+<li><code>xvfb-run</code> is used to run <code>npm run</code> to run a command using a virtual screen, which is needed by
+Chrome.<br>
+<code>xvfb-run</code> 用于运行 <code>npm run</code> 以使用Chrome需要的虚拟屏幕运行命令。</li>
+</ul>
+<p>Commit your changes and push them to your repository.<br>
+提交更改并将其推送到您的存储库。</p>
+<p>Next you&rsquo;ll need to <a href="https://circleci.com/docs/2.0/first-steps/">sign up for Circle CI</a> and
+<a href="https://circleci.com/add-projects">add your project</a>.
+Your project should start building.<br>
+接下来，您需要注册Circle CI并添加您的项目。你的项目应该开始建设。</p>
+<p>Be sure to check out the <a href="https://circleci.com/docs/2.0/">Circle CI docs</a> if you want to know more.<br>
+如果您想了解更多信息，请务必查看<a href="https://circleci.com/docs/2.0/">Circle CI docs</a>文档。</p>
+<h2 id="using-travis-ci">
+  Using Travis CI
+  <a class="anchor" href="#using-travis-ci">#</a>
+</h2>
+<h2 id="使用-travis-ci">
+  使用 Travis CI
+  <a class="anchor" href="#%e4%bd%bf%e7%94%a8-travis-ci">#</a>
+</h2>
+<p>Create a file called <code>.travis.yml</code> at the project root:
+在项目根目录下创建一个名为.travis.yml的文件：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">dist</span>: <span style="color:#ae81ff">trusty</span>
+<span style="color:#f92672">sudo</span>: <span style="color:#66d9ef">false</span>
+
+<span style="color:#f92672">language</span>: <span style="color:#ae81ff">node_js</span>
+<span style="color:#f92672">node_js</span>:
+  - <span style="color:#e6db74">&#34;8&#34;</span>
+  
+<span style="color:#f92672">addons</span>:
+  <span style="color:#f92672">apt</span>:
+    <span style="color:#f92672">sources</span>:
+      - <span style="color:#ae81ff">google-chrome</span>
+    <span style="color:#f92672">packages</span>:
+      - <span style="color:#ae81ff">google-chrome-stable</span>
+
+<span style="color:#f92672">cache</span>:
+  <span style="color:#f92672">directories</span>:
+     - <span style="color:#ae81ff">./node_modules</span>
+
+<span style="color:#f92672">install</span>:
+  - <span style="color:#ae81ff">npm install</span>
+
+<span style="color:#f92672">script</span>:
+  <span style="color:#75715e"># Use Chromium instead of Chrome.</span>
+  - <span style="color:#ae81ff">export CHROME_BIN=chromium-browser</span>
+  - <span style="color:#ae81ff">xvfb-run -a npm run test -- --single-run --no-progress --browser=ChromeNoSandbox</span>
+  - <span style="color:#ae81ff">xvfb-run -a npm run e2e -- --no-progress --config=protractor-ci.conf.js</span>
+
+</code></pre></div><p>Although the syntax is different, we&rsquo;re mostly doing the same steps as were done in the
+Circle CI config.
+The only difference is that Travis doesn&rsquo;t come with Chrome, so we use Chromium instead.<br>
+虽然语法不同，但我们主要执行与Circle CI配置中完成的相同步骤。唯一的区别是Travis没有配备Chrome，所以我们使用Chromium。</p>
+<p>Commit your changes and push them to your repository.<br>
+提交更改并将其推送到您的存储库。</p>
+<p>Next you&rsquo;ll need to <a href="https://travis-ci.org/auth">sign up for Travis CI</a> and
+<a href="https://travis-ci.org/profile">add your project</a>.
+You&rsquo;ll need to push a new commit to trigger a build.<br>
+接下来，您需要注册 <a href="https://travis-ci.org/auth">Travis CI</a> 并 <a href="https://travis-ci.org/profile">添加您的项目</a> 。您需要推送新的提交来触发构建。</p>
+<p>Be sure to check out the <a href="https://docs.travis-ci.com/">Travis CI docs</a> if you want to know more.<br>
+如果您想了解更多信息，请务必查看<a href="https://docs.travis-ci.com/">Travis CI文档</a>。</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function a(c){const a=window.getSelection(),b=document.createRange();b.selectNodeContents(c),a.removeAllRanges(),a.addRange(b)}document.querySelectorAll("pre code").forEach(b=>{b.addEventListener("click",function(c){a(b.parentElement),navigator.clipboard&&navigator.clipboard.writeText(b.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#update-test-configuration">Update test configuration</a></li>
+    <li><a href="#更新测试配置">更新测试配置</a></li>
+    <li><a href="#using-circle-ci">Using Circle CI</a></li>
+    <li><a href="#使用-circle-ci">使用 Circle CI</a></li>
+    <li><a href="#我们在这里做了几件事">We&rsquo;re doing a few things here:<br>
+我们在这里做了几件事:</a></li>
+    <li><a href="#using-travis-ci">Using Travis CI</a></li>
+    <li><a href="#使用-travis-ci">使用 Travis CI</a></li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>write somethings on A great computer technology Site</title>
+    <link>https://wangyijie.github.io/public/posts/%E9%9A%8F%E7%AC%94/</link>
+    <description>Recent content in write somethings on A great computer technology Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="https://wangyijie.github.io/public/posts/%E9%9A%8F%E7%AC%94/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title></title>
+      <link>https://wangyijie.github.io/public/posts/%E9%9A%8F%E7%AC%94/ceph-scrub%E7%9A%84%E8%AF%A6%E7%BB%86%E5%88%86%E6%9E%90%E5%92%8C%E5%BB%BA%E8%AE%AE/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.github.io/public/posts/%E9%9A%8F%E7%AC%94/ceph-scrub%E7%9A%84%E8%AF%A6%E7%BB%86%E5%88%86%E6%9E%90%E5%92%8C%E5%BB%BA%E8%AE%AE/</guid>
+      <description>前言#关于scrub这块一直想写一篇文章的，这个在很久前，就做过一次测试，当时是看这个scrub到底有多大的影响，当时看到的是磁盘读占很高，启动deep-scrub后会有大量的读,前端可能会出现 slow request,这个是当时测试看到的现象，一个比较简单的处理办法就是直接给scrub关掉了，当然关掉了就无法检测底层到底有没有对象不一致的问题 关于这个scrub生产上是否开启，仁者见仁，智者见智，就是选择的问题了，这里不做讨论，个人觉得开和关都有各自的道理，本篇是讲述的如果想开启的情况下如何把scrub给控制住
+最近在ceph群里看到一段大致这样的讨论：
+ scrub是个坑 小文件多的场景一定要把scrub关掉 单pg的文件量达到一定规模，scrub一开就会有slow request 这个问题解决不了
+ 上面的说法有没有问题呢？在一般情况下来看，确实如此，但是我们是否能尝试去解决下这个问题，或者缓解下呢？那么我们就来尝试下
+scrub的一些追踪#下面的一些追踪并不涉及代码，仅仅从配置和日志的观测来看看scrub到底干了什么
+环境准备#我的环境为了便于观测，配置的是一个pg的存储池，然后往这个pg里面put了100个对象，然后对这个pg做deep-scrub，deep-scrub比scrub对磁盘的压力要大些，所以本篇主要是去观测的deep-scrub
+开启对pg目录的访问的监控#使用的是inotifywait，我想看下deep-scrub的时候，pg里面的对象到底接收了哪些请求
+inotifywait -m 1.0_head
+|
+|
+在给osd.0开启debug_osd=20后观测chunky相关的日志
+|
+|
+截取关键部分看下，如图 我们看下上面的文件访问监控里面这些对象在什么位置
+|
+|
+看上去是不是很有规律，这个地方在ceph里面会有个chunk的概念，在做scrub的时候，ceph会对这个chunk进行加锁，这个可以在很多地方看到这个，这个也就是为什么有slow request，并不一定是你的磁盘慢了，而是加了锁，就没法读的
+ osd scrub chunk min
+Description: The minimal number of object store chunks to scrub during single operation. Ceph blocks writes to single chunk during scrub. Type: 32-bit Integer Default: 5</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.github.io/public/posts/%E9%9A%8F%E7%AC%94/excel-%E5%90%88%E5%B9%B6%E8%A1%A8%E6%A0%BC/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.github.io/public/posts/%E9%9A%8F%E7%AC%94/excel-%E5%90%88%E5%B9%B6%E8%A1%A8%E6%A0%BC/</guid>
+      <description>前提： 要合并的表格表格列数相同 在要合并的表格放一个文件内，建一个新的空表格：   3.打开表格：
+4.鼠标放到左下角的sheet导航栏上右键选择查看源码：  把后面的代码贴入文本框中点顶部菜单栏的运行即可：   脚本
+  Sub 合并当前目录下所有工作簿的全部工作表() Dim MyPath, MyName, AWbName Dim Wb As Workbook, WbN As String Dim G As Long Dim Num As Long Dim BOX As String Application.ScreenUpdating = False MyPath = ActiveWorkbook.Path MyName = Dir(MyPath &amp;amp; &amp;quot;\&amp;quot; &amp;amp; &amp;quot;*.xlsx&amp;quot;) AWbName = ActiveWorkbook.Name Num = 0 Do While MyName &amp;lt;&amp;gt; &amp;quot;&amp;quot; If MyName &amp;lt;&amp;gt; AWbName Then Set Wb = Workbooks.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.github.io/public/posts/%E9%9A%8F%E7%AC%94/git%E6%8E%A8%E9%80%81%E8%A6%86%E7%9B%96%E6%97%A7%E4%BB%93%E5%BA%93/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.github.io/public/posts/%E9%9A%8F%E7%AC%94/git%E6%8E%A8%E9%80%81%E8%A6%86%E7%9B%96%E6%97%A7%E4%BB%93%E5%BA%93/</guid>
+      <description>使用 git push origin master &amp;ndash;force#PS D:\src\angular6\material&amp;gt; git remote add origin https://github.com/getfirstcn/hsd-devops.git PS D:\src\angular6\material&amp;gt; git push origin master --force fatal: HttpRequestException encountered. 发送请求时出错。 Username for &#39;https://github.com&#39;: 785471184@qq.com Password for &#39;https://785471184@qq.com@github.com&#39;: Counting objects: 489, done. Delta compression using up to 8 threads. Compressing objects: 100% (470/470), done. Writing objects: 100% (489/489), 244.28 KiB | 0 bytes/s, done. Total 489 (delta 270), reused 0 (delta 0) remote: Resolving deltas: 100% (270/270), done.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.github.io/public/posts/%E9%9A%8F%E7%AC%94/linux-shell%E6%B5%8F%E8%A7%88%E5%99%A8%E7%BB%88%E7%AB%AF%E6%B5%8F%E8%A7%88%E5%99%A8w3m%E5%8F%82%E8%80%83%E5%8F%82%E6%95%B0/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.github.io/public/posts/%E9%9A%8F%E7%AC%94/linux-shell%E6%B5%8F%E8%A7%88%E5%99%A8%E7%BB%88%E7%AB%AF%E6%B5%8F%E8%A7%88%E5%99%A8w3m%E5%8F%82%E8%80%83%E5%8F%82%E6%95%B0/</guid>
+      <description>W3m#w3m是一个基于文本的网页浏览器，支持多种操作系统，在命令行终端可以很好的支持中文。即使在没有鼠标支持的情况下也可以检查网页的输出。本文列出常用的快捷键。
+页面操作#SPC,C-v 向下翻页 b,ESC v 向上翻页 l,C-f 焦点向右 h,C-b 焦点向左 j,C-n 焦点向下 k,C-p 焦点向上 J 向下滚动一行 K 向上滚动一行 ^,C-a 到行首 $,C-e 到行尾 w 到下一个单词 W 到上一个单词
+ 右移一屏 &amp;lt; 左移一屏 . 屏幕右移一列 , 屏幕左移一列 g,M-&amp;lt; 到首行 G,M-&amp;gt; 到末行 ESC g 到指定行 Z 当前行居中 z 当前列居中 TAB 转到下个超链接 C-u,ESC TAB 到上个超链接 [ 到第一个超链接 ] 到最後一个超链接  超链接操作# RET 打开超链接 a, ESC RET 链接另存为 u 查看链接url i 查看图片url I 查看图片 ESC I 图片另存为 标记rul字符串为锚点 ESC : 标记ID串为锚点 c 查看当前页面的URL = 显示当前页面属性 C-g 查看当前行号 C-h 查看历史记录 F 提交表单 M 用外部浏览器打开当前页面 (use 2M and 3M to invoke second and third browser) ESC M 用外部浏览器打开链接 (use 2ESC M and 3ESC M to invoke second and third browser   文件/流 操作#U 打开URL V 打开文件 @ 执行外部命令并导入</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.github.io/public/posts/%E9%9A%8F%E7%AC%94/top-%E5%91%BD%E4%BB%A4%E8%A7%A3%E9%87%8A/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.github.io/public/posts/%E9%9A%8F%E7%AC%94/top-%E5%91%BD%E4%BB%A4%E8%A7%A3%E9%87%8A/</guid>
+      <description>VIRT：virtual memory usage 虚拟内存 1、进程“需要的”虚拟内存大小，包括进程使用的库、代码、数据等 2、假如进程申请100m的内存，但实际只使用了10m，那么它会增长100m，而不是实际的使用量
+RES：resident memory usage 常驻内存 1、进程当前使用的内存大小，但不包括swap out 2、包含其他进程的共享 3、如果申请100m的内存，实际使用10m，它只增长10m，与VIRT相反 4、关于库占用内存的情况，它只统计加载的库文件所占内存大小
+SHR：shared memory 共享内存 1、除了自身进程的共享内存，也包括其他进程的共享内存 2、虽然进程只使用了几个共享库的函数，但它包含了整个共享库的大小 3、计算某个进程所占的物理内存大小公式：RES – SHR 4、swap out后，它将会降下来
+DATA 1、数据占用的内存。如果top没有显示，按f键可以显示出来。 2、真正的该程序要求的数据空间，是真正在运行中要使用的。
+top 运行中可以通过 top 的内部命令对进程的显示方式进行控制。内部命令如下： s – 改变画面更新频率 l – 关闭或开启第一部分第一行 top 信息的表示 t – 关闭或开启第一部分第二行 Tasks 和第三行 Cpus 信息的表示 m – 关闭或开启第一部分第四行 Mem 和 第五行 Swap 信息的表示 N – 以 PID 的大小的顺序排列表示进程列表 P – 以 CPU 占用率大小的顺序排列进程列表 M – 以内存占用率大小的顺序排列进程列表 h – 显示帮助 n – 设置在进程列表所显示进程的数量 q – 退出 top s – 改变画面更新周期</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.github.io/public/posts/%E9%9A%8F%E7%AC%94/window-linux-%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%88%9B%E5%BB%BAzip%E5%8E%8B%E7%BC%A9%E5%8C%85/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.github.io/public/posts/%E9%9A%8F%E7%AC%94/window-linux-%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%88%9B%E5%BB%BAzip%E5%8E%8B%E7%BC%A9%E5%8C%85/</guid>
+      <description>linux#zip -r test.zip ./
+[root@ip-172-31-28-124 ec2-user]# cd /opt/ [root@ip-172-31-28-124 opt]# ls [root@ip-172-31-28-124 opt]# mkdir test [root@ip-172-31-28-124 opt]# ls test [root@ip-172-31-28-124 opt]# echo 123 &amp;gt;&amp;gt; test/test.txt [root@ip-172-31-28-124 opt]# ls test [root@ip-172-31-28-124 opt]# zip -r test.zip . adding: test/ (stored 0%) adding: test/test.txt (stored 0%) [root@ip-172-31-28-124 opt]# ls test test.zip [root@ip-172-31-28-124 opt]# rm -rf test [root@ip-172-31-28-124 opt]# unzip test.zip  Archive: test.zip creating: test/ extracting: test/test.txt [root@ip-172-31-28-124 opt]# ls test test.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.github.io/public/posts/%E9%9A%8F%E7%AC%94/windows%E5%88%86%E5%B1%8F%E6%9C%BA%E5%B7%A7%E5%BF%AB%E6%8D%B7%E6%96%B9%E5%BC%8F/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.github.io/public/posts/%E9%9A%8F%E7%AC%94/windows%E5%88%86%E5%B1%8F%E6%9C%BA%E5%B7%A7%E5%BF%AB%E6%8D%B7%E6%96%B9%E5%BC%8F/</guid>
+      <description>不说废话 windows + 上下左右即可任意分屏，最多四屏幕，还可以左右移动窗口的位置
+还有些程序不支持四分之一显示，二分一应该都可以
+如果开始分屏的窗口位置不对，windows + 左右移动一下就会变得规整</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.github.io/public/posts/%E9%9A%8F%E7%AC%94/%E4%BA%91%E5%8E%9F%E7%94%9F/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.github.io/public/posts/%E9%9A%8F%E7%AC%94/%E4%BA%91%E5%8E%9F%E7%94%9F/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.github.io/public/posts/%E9%9A%8F%E7%AC%94/%E4%BC%A0%E7%BB%9F%E6%9C%8D%E8%A3%85/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.github.io/public/posts/%E9%9A%8F%E7%AC%94/%E4%BC%A0%E7%BB%9F%E6%9C%8D%E8%A3%85/</guid>
+      <description>襌衣：又称“单衣”，流行于秦汉时期，是一种作为上层人士平日所穿的单层罩衣 缝掖：即儒服，大袖单衣，古儒者所服。亦指儒者，儒服为章甫之冠，缝掖之衣 青衿：青色交领的深衣。周朝学子和北齐、北周、隋唐、两宋国子生的常服 道服：即是道袍指道教徒穿在外面的长袍。可以分为大褂、得罗、戒衣、法衣、花衣、衲衣等六种服装，均取肥大宽松，以寓包藏乾坤、隔断尘凡之意 短褐：又称“竖褐”、“裋褐”，以劳作方便为目的的便服。与常服和礼服相区别 剑服：剑士的服装 中衣：祭服、朝服的裹衣 深衣：深藏不露，雍容典雅，华夏之礼服
+便服 常服 礼服</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.github.io/public/posts/%E9%9A%8F%E7%AC%94/%E5%8D%A1%E8%B7%AF%E9%87%8C/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.github.io/public/posts/%E9%9A%8F%E7%AC%94/%E5%8D%A1%E8%B7%AF%E9%87%8C/</guid>
+      <description>1卡路里(cal)=4.1858518焦耳(J) 卡路里（简称卡，缩写为cal），由英文[Calorie])音译而来，其定义为在1个大气压下，将1克水提升1摄氏度所需要的热量；卡路里（calorie）是能量单位，现在仍被广泛使用在营养计量和健身手册上，国际标准的能量单位是焦耳（joule）。作为食物热量的法定单位，在欧洲普遍使用焦耳，美国则采用卡路里。虽然焦耳是中国大陆与台湾地区的法定单位，然而由于沿袭传统，卡路里在中国大陆与台湾地区仍然被广泛的使用
+卡路里，是一个能量单位。我们往往将卡路里与食品联系在一起，但实际上它们适用于含有能量的任何物质。
+简单地说，1卡路里的能量或热量可将1克水在一个大气压下的温度升高1摄氏度。1卡路里约等于4.186焦耳(焦耳是物理学中常用的能量单位)。 我们大多数人把卡路里与我们吃的或喝的东西联系在一起，就比如“这瓶汽水含有200卡路里”。实际上，食品包装上列出的卡路里是大卡，也被记做大写字母C，相当于将1000克水在1大气压下由14.5摄氏度提升到15.5摄氏度所需的热量，约等于4186焦耳的内能。 (1000卡路里=1大卡)。所以，实际上这听汽水含有20万卡路里(但不要担心，这一点也适用于锻炼——当练习图上说你慢跑2公里燃烧100卡路里时，它的意思是10万卡路里)。在英文中，“calorie”（首字母小写）表示卡路里，约等于4.186焦耳，“Calorie”（首字母大写）表示大卡，约等于4186焦耳。
+由于后来科学家发现水在不同温度下的比热容不同，所以衍生了以下不同的定义：
+营养学用的“15度卡路里”：将1克水在1大气压下由14.5℃提升到15.5℃所需的热量，约等于4.1855焦耳。
+“4度卡路里”：将1克水在1大气压下由3.5℃提升到4.5℃所需的热量。
+“平均卡路里”：将1克水在1大气压下由0℃提升到100℃所需的每度热量平均数，约等于4.190焦耳。
+International Steam Table（国际蒸汽表）的卡路里，相约4.1868焦耳。
+热力学和化学使用的“热化学卡路里”，相约4.184焦耳。
+一般所说的卡路里还分为两种：
+大卡，也被记做大写字母C，最常见于食品标注，相当于将1000克水在1大气压下由14.5℃提升到15.5℃所需的热量，约等于4186焦耳的内能。
+小卡，也被记做cal，较多见于科研文档中，1000小卡=1大卡（1 Calorie）
+功能#编辑
+热量作用#正如电脑要耗电，卡车要耗油，人体的日常活动也要消耗热量。热量除了给人在从事运动，日常工作和生活所需要的能量外，同样也提供人体生命活动所需要的能量，血液循环，呼吸，消化吸收等等。减肥人士可以通过运动可以来消耗脂肪，可以达到加速消耗卡路里以达到健康瘦身的效果。
+热量来源#热量来自于 碳水化合物，脂肪，蛋白质
+碳水化合物产生热能 = 4千卡/克
+蛋白质产生热量 = 4 千卡/克
+脂肪产生热量 = 9 千卡/克。
+热量的单位#千卡 Kilocalorie， 1千卡 =1大卡
+1 千卡 = 4.184 千焦耳
+1 千卡： 是能使出1升水上升摄氏1度的热量。
+需要热量#成人每日需要的热量 =人体基础代谢的需要的基本热量 + 体力活动所需要的热量 + 消化食物所需要的热量。
+消化食物所需要的热量 =10% x （人体基础代谢的需要的最低热量 +体力活动所需要的热量）</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.github.io/public/posts/%E9%9A%8F%E7%AC%94/%E5%AD%A6%E4%B8%8D%E5%8F%AF%E5%B7%A7/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.github.io/public/posts/%E9%9A%8F%E7%AC%94/%E5%AD%A6%E4%B8%8D%E5%8F%AF%E5%B7%A7/</guid>
+      <description>人更容易学会只有一条路径不能超前探索的技能，比如游泳，溜冰这类的，因为这些技能必须按部就班的练习，不会游泳就不能去深水，浅水反复摸索找到技巧不需要多久，溜冰也是不会就滑不起来，不熟不敢滑快，这些约束了人必须按部就班的练习，弹琴，绘画就不易学好，因为想怎么画都可以，反而很多人不能按部就班的练习。
+在没有基础，不理解的情况下看一些东西，很多是无效的，浪费了时间。 很多学习着急的看了后面的就没有耐心在按部就班的学习，前面的基础没做好，后面的学习就会很困难，困难又使人沮丧一字半途而废。 在学校有老师把握教课的节奏所以一些人还能被灌输，顺势的学到一些东西，如果是自主的去学，能学好的人我感觉很少。
+仁义的人喜欢高大、壮美；温和的人喜欢细微、巧妙；聪明的人喜欢跳跃、起伏；感性的人喜欢好事成双</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.github.io/public/posts/%E9%9A%8F%E7%AC%94/%E7%AC%94%E8%AE%B0%E6%9C%AC%E8%A7%A6%E6%91%B8%E6%9D%BF%E6%93%8D%E4%BD%9C%E6%8A%80%E5%B7%A7/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.github.io/public/posts/%E9%9A%8F%E7%AC%94/%E7%AC%94%E8%AE%B0%E6%9C%AC%E8%A7%A6%E6%91%B8%E6%9D%BF%E6%93%8D%E4%BD%9C%E6%8A%80%E5%B7%A7/</guid>
+      <description>最初打游戏一直是鼠标控，不习惯使用笔记本触摸板，最近工作经常外出服务，鼠标有些累赘，刻意学习一下触摸板： 一、用单指触摸触摸板并移动相当于移动鼠标。
+二、单击左键相当于点击鼠标左键；单击右键相当于点击鼠标右键。
+三、单指双击触摸板相当于鼠标左键双击；双指同时单击触摸板相当于单击鼠标右键。
+四、双指在触摸板上上下、左右滑动，可以滚动浏览网页和文档；双指张开、闭合可以实现放大、缩小（看照片、文档时）。
+五、三个手指同时点击可以快速打开搜索界面；三个手指向上滑动可以显示虚拟桌面。
+六、三个手指向下滑动可以隐藏桌面打开的应用程序；三个手指左右滑动可以快速切换任务。
+七、四个手指同时单击可以快速打开操作中心。
+以上操作若无法实现，可以进入触控板的设置界面，勾选对应功能，即可启用。</description>
+    </item>
+    
+  </channel>
+</rss>

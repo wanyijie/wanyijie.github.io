@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="架构#Istio 服务网格逻辑上分为数据平面和控制平面。 • 数据平面由一组以 sidecar 方式部署的智能代理（Envoy）组成。这些代理可以调节和控制微服务及 Mixer 之间所有的网络通信。 • 控制平面负责管理和配置代理来路由流量。此外控制平面配置 Mixer 以实施策略和收集遥测数据。
+Envoy#Istio 使用 Envoy 代理的扩展版本，Envoy 是以 C&#43;&#43; 开发的高性能代理，用于调解服务网格中所有服务的所有入站和出站流量。Envoy 的许多内置功能被 istio 发扬光大，例如： • 动态服务发现 • 负载均衡 • TLS 终止 • HTTP/2 &amp; gRPC 代理 • 熔断器 • 健康检查、基于百分比流量拆分的灰度发布 • 故障注入 • 丰富的度量指标 Envoy 被部署为 sidecar，和对应服务在同一个 Kubernetes pod 中。这允许 Istio 将大量关于流量行为的信号作为属性提取出来，而这些属性又可以在 Mixer 中用于执行策略决策，并发送给监控系统，以提供整个网格行为的信息。 Sidecar 代理模型还可以将 Istio 的功能添加到现有部署中，而无需重新构建或重写代码。
+Mixer 交际家#Mixer 是一个独立于平台的组件，负责在服务网格上执行访问控制和使用策略，并从 Envoy 代理和其他服务收集遥测数据。代理提取请求级属性，发送到 Mixer 进行评估。在 Istio 中能够集成各种生态的基础设施后端系统，它通过即插即用的适配器集，通过标准的配置模型，使 Istio 能够方便地与现有的服务进行集成。适配器对 Mixer 的功能进行了扩展，并将特定的接口暴露给监控、日志、追踪、配额管理及其他功能。适配器是按需加载的，并按照运维人员的配置在运行时发挥作用。">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="" />
+<meta property="og:description" content="架构#Istio 服务网格逻辑上分为数据平面和控制平面。 • 数据平面由一组以 sidecar 方式部署的智能代理（Envoy）组成。这些代理可以调节和控制微服务及 Mixer 之间所有的网络通信。 • 控制平面负责管理和配置代理来路由流量。此外控制平面配置 Mixer 以实施策略和收集遥测数据。
+Envoy#Istio 使用 Envoy 代理的扩展版本，Envoy 是以 C&#43;&#43; 开发的高性能代理，用于调解服务网格中所有服务的所有入站和出站流量。Envoy 的许多内置功能被 istio 发扬光大，例如： • 动态服务发现 • 负载均衡 • TLS 终止 • HTTP/2 &amp; gRPC 代理 • 熔断器 • 健康检查、基于百分比流量拆分的灰度发布 • 故障注入 • 丰富的度量指标 Envoy 被部署为 sidecar，和对应服务在同一个 Kubernetes pod 中。这允许 Istio 将大量关于流量行为的信号作为属性提取出来，而这些属性又可以在 Mixer 中用于执行策略决策，并发送给监控系统，以提供整个网格行为的信息。 Sidecar 代理模型还可以将 Istio 的功能添加到现有部署中，而无需重新构建或重写代码。
+Mixer 交际家#Mixer 是一个独立于平台的组件，负责在服务网格上执行访问控制和使用策略，并从 Envoy 代理和其他服务收集遥测数据。代理提取请求级属性，发送到 Mixer 进行评估。在 Istio 中能够集成各种生态的基础设施后端系统，它通过即插即用的适配器集，通过标准的配置模型，使 Istio 能够方便地与现有的服务进行集成。适配器对 Mixer 的功能进行了扩展，并将特定的接口暴露给监控、日志、追踪、配额管理及其他功能。适配器是按需加载的，并按照运维人员的配置在运行时发挥作用。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://wangyijie.github.io/public/posts/istio/istio%E4%BF%97%E8%AF%AD%E5%92%8C%E7%BB%84%E4%BB%B6%E6%A6%82%E6%8B%AC/" /><meta property="article:section" content="posts" />
+
+
+
+<title>Istio俗语和组件概括 | A great computer technology Site</title>
+<link rel="manifest" href="/public/manifest.json">
+<link rel="icon" href="/public/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/public/book.min.8599444fcc48ee6b435b5b62c955ab7d914fa1e2a453df90c4b97cc9769665d1.css" integrity="sha256-hZlET8xI7mtDW1tiyVWrfZFPoeKkU9&#43;QxLl8yXaWZdE=" crossorigin="anonymous">
+  <script defer src="/public/flexsearch.min.js"></script>
+  <script defer src="/public/en.search.min.49d7ffe0cc6a09481193582a484d1dfccfe14d6d173d2de804b6e37d7c5a9f57.js" integrity="sha256-Sdf/4MxqCUgRk1gqSE0d/M/hTW0XPS3oBLbjfXxan1c=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/public/"><span>A great computer technology Site</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/public/posts/" >
+        Posts
+      </a>
+      
+<ul>
+  
+  <li>
+    <a href="/public/posts/angluar-cli/" >
+        angular
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/ansible/" >
+        ansible
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/cicd/" >
+        CICD
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/cloud/" >
+        cloude
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/container/" >
+        container
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/devops/" >
+        DevOps
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/english/" >
+        English
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/golang/" >
+        golang
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/istio/" >
+        istio
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/kubernetes/" >
+        Kubernetes
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" >
+        mechine leaning
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/material2/" >
+        mererial2
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E7%9B%91%E6%8E%A7/" >
+        monitor
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/mysql/" >
+        mysql
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E7%BD%91%E7%BB%9C/" >
+        networking
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E6%97%A5%E8%AE%B0%E6%9C%AC/" >
+        notes
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/postgresql/" >
+        postgresql
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/django/" >
+        python
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E5%AE%89%E5%85%A8/" >
+        safe
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E8%AF%97%E8%AF%8D/" >
+        shi chi
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E7%AB%99%E7%82%B9%E5%8F%AF%E9%9D%A0%E6%80%A7%E5%B7%A5%E7%A8%8B/" >
+        SRE
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E6%96%87%E5%AD%A6/" >
+        wenxue
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E9%9A%8F%E7%AC%94/" >
+        write somethings
+      </a>
+  </li>
+  
+</ul>
+
+  </li>
+  
+  <li>
+    <a href="/public/about/" >
+        About
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var a=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(b){localStorage.setItem("menu.scrollTop",a.scrollTop)}),a.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/public/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Istio俗语和组件概括</strong>
+
+  <label for="toc-control">
+    
+    <img src="/public/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents"></nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+<article class="markdown">
+  <h1>
+    <a href="/public/posts/istio/istio%E4%BF%97%E8%AF%AD%E5%92%8C%E7%BB%84%E4%BB%B6%E6%A6%82%E6%8B%AC/">Istio俗语和组件概括</a>
+  </h1>
+  
+
+
+  
+
+  
+
+
+
+<h1 id="架构">
+  架构
+  <a class="anchor" href="#%e6%9e%b6%e6%9e%84">#</a>
+</h1>
+<p>Istio 服务网格逻辑上分为数据平面和控制平面。
+• 数据平面由一组以 sidecar 方式部署的智能代理（Envoy）组成。这些代理可以调节和控制微服务及 Mixer 之间所有的网络通信。
+• 控制平面负责管理和配置代理来路由流量。此外控制平面配置 Mixer 以实施策略和收集遥测数据。</p>
+<h1 id="envoy">
+  Envoy
+  <a class="anchor" href="#envoy">#</a>
+</h1>
+<p>Istio 使用 Envoy 代理的扩展版本，Envoy 是以 C++ 开发的高性能代理，用于调解服务网格中所有服务的所有入站和出站流量。Envoy 的许多内置功能被 istio 发扬光大，例如：
+• 动态服务发现
+• 负载均衡
+• TLS 终止
+• HTTP/2 &amp; gRPC 代理
+• 熔断器
+• 健康检查、基于百分比流量拆分的灰度发布
+• 故障注入
+• 丰富的度量指标
+Envoy 被部署为 sidecar，和对应服务在同一个 Kubernetes pod 中。这允许 Istio 将大量关于流量行为的信号作为属性提取出来，而这些属性又可以在 Mixer 中用于执行策略决策，并发送给监控系统，以提供整个网格行为的信息。
+Sidecar 代理模型还可以将 Istio 的功能添加到现有部署中，而无需重新构建或重写代码。</p>
+<h1 id="mixer---交际家">
+  Mixer   交际家
+  <a class="anchor" href="#mixer---%e4%ba%a4%e9%99%85%e5%ae%b6">#</a>
+</h1>
+<p>Mixer 是一个独立于平台的组件，负责在服务网格上执行访问控制和使用策略，并从 Envoy 代理和其他服务收集遥测数据。代理提取请求级属性，发送到 Mixer 进行评估。在 Istio 中能够集成各种生态的基础设施后端系统，它通过即插即用的适配器集，通过标准的配置模型，使 Istio 能够方便地与现有的服务进行集成。适配器对 Mixer 的功能进行了扩展，并将特定的接口暴露给监控、日志、追踪、配额管理及其他功能。适配器是按需加载的，并按照运维人员的配置在运行时发挥作用。</p>
+<h1 id="pilot--领航员飞行员">
+  pilot  领航员,飞行员
+  <a class="anchor" href="#pilot--%e9%a2%86%e8%88%aa%e5%91%98%e9%a3%9e%e8%a1%8c%e5%91%98">#</a>
+</h1>
+<p>Pilot 为 Envoy sidecar 提供服务发现功能，为智能路由（例如 A/B 测试、金丝雀部署等）和弹性（超时、重试、熔断器等）提供流量管理功能。它将控制流量行为的高级路由规则转换为特定于 Envoy 的配置，并在运行时将它们传播到 sidecar。
+Pilot 负责管理代理的配置，并将服务的通信策略分发至 Istio mesh 中所有的 Envoy 实例。它能够接受高级别的规则（例如发布策略），将其解释为低级别的 Envoy 配置，并将配置分发至 sidecar，而且不会导致停机或是重新部署。
+Pilot 将平台特定的服务发现机制抽象化并将其合成为符合 Envoy 数据平面 API 的任何 sidecar 都可以使用的标准格式。这种松散耦合使得 Istio 能够在多种环境下运行（例如，Kubernetes、Consul、Nomad），同时保持用于流量管理的相同操作界面。</p>
+<h1 id="citadel---城堡">
+  citadel   城堡
+  <a class="anchor" href="#citadel---%e5%9f%8e%e5%a0%a1">#</a>
+</h1>
+<p>Citadel 通过内置身份和凭证管理赋能强大的服务间和最终用户身份验证。可用于升级服务网格中未加密的流量，并为运维人员提供基于服务标识而不是网络控制的强制执行策略的能力。Istio 支持基于角色的访问控制，以控制谁可以访问您的服务，而不是基于不稳定的三层或四层网络标识。
+citadel为跨 mesh 的服务与服务之间的通信进行证书签名与轮换，提供双向认证与双向授权功能。Envoy 通过 Citadel 证书，在每个调用中以透明的方式注入双向的TLS，通过自动化的身份与凭证管理，对流量进行安全管理与加密。Citadel 符合 Istio 的整体设计，只需少量的服务代码（甚至完全不需要服务代码）即可配置认证与授权功能，并且能够无缝地支持多个集群与平台。</p>
+<h1 id="galley----游艇战舰">
+  galley    游艇,战舰
+  <a class="anchor" href="#galley----%e6%b8%b8%e8%89%87%e6%88%98%e8%88%b0">#</a>
+</h1>
+<p>Galley 为 Istio 提供配置管理服务, 代表其他的 Istio 控制平面组件，用来验证用户编写的 Istio API 配置。随着时间的推移，Galley 将接管 Istio 获取配置、 处理和分配组件的顶级责任。它将负责将其他的 Istio 组件与从底层平台（例如 Kubernetes）获取用户配置的细节中隔离开来。</p>
+<h1 id="sidecar-injector-边车">
+  sidecar-injector 边车
+  <a class="anchor" href="#sidecar-injector-%e8%be%b9%e8%bd%a6">#</a>
+</h1>
+<p>Envoy 作为 sidecar 部署在系统中，对所有流入与流出的网络请求进行拦截，实现各种网络策略，并与 Istio 控制面板集成。Istio 利用了 Envoy 内建的大量特性，例如服务发现与负载均衡、流量拆分、故障注入（fault injection）、熔断器以及分阶段发布等功能。</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function a(c){const a=window.getSelection(),b=document.createRange();b.selectNodeContents(c),a.removeAllRanges(),a.addRange(b)}document.querySelectorAll("pre code").forEach(b=>{b.addEventListener("click",function(c){a(b.parentElement),navigator.clipboard&&navigator.clipboard.writeText(b.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents"></nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

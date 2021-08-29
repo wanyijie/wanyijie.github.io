@@ -1,0 +1,1542 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="deploy elasticsearch persistent volume#cat pv-master.yaml kind: PersistentVolume apiVersion: v1 metadata: name: efk-master-volume labels: type: localspec: storageClassName: elasticsearch-master capacity: storage: 10Gi accessModes: - ReadWriteOnce hostPath: path: &quot;/mnt/data/efk-master&quot; mkdir -p /mnt/data/efk-master &amp;&amp; kubectl create -f pv-master.yaml data#cat pv-data.yaml kind: PersistentVolume apiVersion: v1 metadata: name: efk-data-volume labels: type: local spec: storageClassName: elasticsearch-data capacity: storage: 5Gi accessModes: - ReadWriteOnce hostPath: path: &quot;/mnt/data/efk-data&quot; mkdir -p /mnt/data/efk-data &amp;&amp; kubectl create -f pv-data.">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="" />
+<meta property="og:description" content="deploy elasticsearch persistent volume#cat pv-master.yaml kind: PersistentVolume apiVersion: v1 metadata: name: efk-master-volume labels: type: localspec: storageClassName: elasticsearch-master capacity: storage: 10Gi accessModes: - ReadWriteOnce hostPath: path: &quot;/mnt/data/efk-master&quot; mkdir -p /mnt/data/efk-master &amp;&amp; kubectl create -f pv-master.yaml data#cat pv-data.yaml kind: PersistentVolume apiVersion: v1 metadata: name: efk-data-volume labels: type: local spec: storageClassName: elasticsearch-data capacity: storage: 5Gi accessModes: - ReadWriteOnce hostPath: path: &quot;/mnt/data/efk-data&quot; mkdir -p /mnt/data/efk-data &amp;&amp; kubectl create -f pv-data." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://wangyijie.github.io/public/posts/kubernetes/fluented-install/" /><meta property="article:section" content="posts" />
+
+
+
+<title>Fluented Install | A great computer technology Site</title>
+<link rel="manifest" href="/public/manifest.json">
+<link rel="icon" href="/public/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/public/book.min.8599444fcc48ee6b435b5b62c955ab7d914fa1e2a453df90c4b97cc9769665d1.css" integrity="sha256-hZlET8xI7mtDW1tiyVWrfZFPoeKkU9&#43;QxLl8yXaWZdE=" crossorigin="anonymous">
+  <script defer src="/public/flexsearch.min.js"></script>
+  <script defer src="/public/en.search.min.49d7ffe0cc6a09481193582a484d1dfccfe14d6d173d2de804b6e37d7c5a9f57.js" integrity="sha256-Sdf/4MxqCUgRk1gqSE0d/M/hTW0XPS3oBLbjfXxan1c=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/public/"><span>A great computer technology Site</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/public/posts/" >
+        Posts
+      </a>
+      
+<ul>
+  
+  <li>
+    <a href="/public/posts/angluar-cli/" >
+        angular
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/ansible/" >
+        ansible
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/cicd/" >
+        CICD
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/cloud/" >
+        cloude
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/container/" >
+        container
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/devops/" >
+        DevOps
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/english/" >
+        English
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/golang/" >
+        golang
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/istio/" >
+        istio
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/kubernetes/" >
+        Kubernetes
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" >
+        mechine leaning
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/material2/" >
+        mererial2
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E7%9B%91%E6%8E%A7/" >
+        monitor
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/mysql/" >
+        mysql
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E7%BD%91%E7%BB%9C/" >
+        networking
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E6%97%A5%E8%AE%B0%E6%9C%AC/" >
+        notes
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/postgresql/" >
+        postgresql
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/django/" >
+        python
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E5%AE%89%E5%85%A8/" >
+        safe
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E8%AF%97%E8%AF%8D/" >
+        shi chi
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E7%AB%99%E7%82%B9%E5%8F%AF%E9%9D%A0%E6%80%A7%E5%B7%A5%E7%A8%8B/" >
+        SRE
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E6%96%87%E5%AD%A6/" >
+        wenxue
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E9%9A%8F%E7%AC%94/" >
+        write somethings
+      </a>
+  </li>
+  
+</ul>
+
+  </li>
+  
+  <li>
+    <a href="/public/about/" >
+        About
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var a=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(b){localStorage.setItem("menu.scrollTop",a.scrollTop)}),a.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/public/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Fluented Install</strong>
+
+  <label for="toc-control">
+    
+    <img src="/public/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#deploy-elasticsearch-persistent-volume">deploy elasticsearch persistent volume</a>
+      <ul>
+        <li><a href="#data">data</a></li>
+      </ul>
+    </li>
+    <li><a href="#deploy-elasticsearch">deploy elasticsearch</a>
+      <ul>
+        <li><a href="#template">template</a></li>
+      </ul>
+    </li>
+    <li><a href="#deploy-fluent-bit">deploy fluent bit</a></li>
+    <li><a href="#template-1">template</a></li>
+    <li><a href="#deploy-kibana">deploy kibana</a>
+      <ul>
+        <li><a href="#template-2">template</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+<article class="markdown">
+  <h1>
+    <a href="/public/posts/kubernetes/fluented-install/">Fluented Install</a>
+  </h1>
+  
+
+
+  
+
+  
+
+
+
+<h2 id="deploy-elasticsearch-persistent-volume">
+  deploy elasticsearch persistent volume
+  <a class="anchor" href="#deploy-elasticsearch-persistent-volume">#</a>
+</h2>
+<pre tabindex="0"><code>cat pv-master.yaml
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name: efk-master-volume
+  labels:
+    type: localspec:
+  storageClassName: elasticsearch-master
+  capacity:
+    storage: 10Gi
+  accessModes:
+    - ReadWriteOnce
+  hostPath:
+    path: &quot;/mnt/data/efk-master&quot;
+mkdir -p /mnt/data/efk-master &amp;&amp; kubectl create -f pv-master.yaml
+</code></pre><h3 id="data">
+  data
+  <a class="anchor" href="#data">#</a>
+</h3>
+<pre tabindex="0"><code>cat pv-data.yaml
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name: efk-data-volume
+  labels:
+    type: local
+spec:
+  storageClassName: elasticsearch-data
+  capacity:
+    storage: 5Gi
+  accessModes:
+    - ReadWriteOnce
+  hostPath:
+    path: &quot;/mnt/data/efk-data&quot;
+mkdir -p /mnt/data/efk-data &amp;&amp; kubectl create -f pv-data.yaml
+</code></pre><h2 id="deploy-elasticsearch">
+  deploy elasticsearch
+  <a class="anchor" href="#deploy-elasticsearch">#</a>
+</h2>
+<p>kubectl create namespace logs
+helm install elasticsearch stable/elasticsearch &ndash;namespace=logs<br>
+&ndash;set client.replicas=1<br>
+&ndash;set master.replicas=1<br>
+&ndash;set cluster.env.MINIMUM_MASTER_NODES=1<br>
+&ndash;set cluster.env.RECOVER_AFTER_MASTER_NODES=1<br>
+&ndash;set cluster.env.EXPECTED_MASTER_NODES=1<br>
+&ndash;set data.replicas=1<br>
+&ndash;set data.heapSize=300m<br>
+&ndash;set master.persistence.storageClass=elasticsearch-master<br>
+&ndash;set master.persistence.size=5Gi<br>
+&ndash;set data.persistence.storageClass=elasticsearch-data<br>
+&ndash;set data.persistence.size=5Gi</p>
+<h3 id="template">
+  template
+  <a class="anchor" href="#template">#</a>
+</h3>
+<pre tabindex="0"><code>---
+# Source: elasticsearch/templates/client-serviceaccount.yaml
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  labels:
+    app: elasticsearch
+    chart: elasticsearch-1.32.4
+    component: &quot;client&quot;
+    heritage: Helm
+    release: elasticsearch
+  name: elasticsearch-client
+---
+# Source: elasticsearch/templates/data-serviceaccount.yaml
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  labels:
+    app: elasticsearch
+    chart: elasticsearch-1.32.4
+    component: &quot;data&quot;
+    heritage: Helm
+    release: elasticsearch
+  name: elasticsearch-data
+---
+# Source: elasticsearch/templates/master-serviceaccount.yaml
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  labels:
+    app: elasticsearch
+    chart: elasticsearch-1.32.4
+    component: &quot;master&quot;
+    heritage: Helm
+    release: elasticsearch
+  name: elasticsearch-master
+---
+# Source: elasticsearch/templates/configmap.yaml
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: elasticsearch
+  labels:
+    app: elasticsearch
+    chart: &quot;elasticsearch-1.32.4&quot;
+    release: &quot;elasticsearch&quot;
+    heritage: &quot;Helm&quot;
+data:
+  elasticsearch.yml: |-
+    cluster.name: elasticsearch
+
+    node.data: ${NODE_DATA:true}
+    node.master: ${NODE_MASTER:true}
+    node.ingest: ${NODE_INGEST:true}
+    node.name: ${HOSTNAME}
+    network.host: 0.0.0.0
+    # see https://github.com/kubernetes/kubernetes/issues/3595
+    bootstrap.memory_lock: ${BOOTSTRAP_MEMORY_LOCK:false}
+
+    discovery:
+      zen:
+        ping.unicast.hosts: ${DISCOVERY_SERVICE:}
+        minimum_master_nodes: ${MINIMUM_MASTER_NODES:2}
+
+    # see https://github.com/elastic/elasticsearch-definitive-guide/pull/679
+    processors: ${PROCESSORS:}
+
+    # avoid split-brain w/ a minimum consensus of two masters plus a data node
+    gateway.expected_master_nodes: ${EXPECTED_MASTER_NODES:2}
+    gateway.expected_data_nodes: ${EXPECTED_DATA_NODES:1}
+    gateway.recover_after_time: ${RECOVER_AFTER_TIME:5m}
+    gateway.recover_after_master_nodes: ${RECOVER_AFTER_MASTER_NODES:2}
+    gateway.recover_after_data_nodes: ${RECOVER_AFTER_DATA_NODES:1}
+  log4j2.properties: |-
+    status = error
+    appender.console.type = Console
+    appender.console.name = console
+    appender.console.layout.type = PatternLayout
+    appender.console.layout.pattern = [%d{ISO8601}][%-5p][%-25c{1.}] %marker%m%n
+    rootLogger.level = info
+    rootLogger.appenderRef.console.ref = console
+    logger.searchguard.name = com.floragunn
+    logger.searchguard.level = info
+
+  data-pre-stop-hook.sh: |-
+    #!/bin/bash
+    exec &amp;&gt; &gt;(tee -a &quot;/var/log/elasticsearch-hooks.log&quot;)
+    NODE_NAME=${HOSTNAME}
+    echo &quot;Prepare to migrate data of the node ${NODE_NAME}&quot;
+    echo &quot;Move all data from node ${NODE_NAME}&quot;
+    curl -s -XPUT -H 'Content-Type: application/json' 'elasticsearch-client:9200/_cluster/settings' -d &quot;{
+      \&quot;transient\&quot; :{
+          \&quot;cluster.routing.allocation.exclude._name\&quot; : \&quot;${NODE_NAME}\&quot;
+      }
+    }&quot;
+    echo &quot;&quot;
+
+    while true ; do
+      echo -e &quot;Wait for node ${NODE_NAME} to become empty&quot;
+      SHARDS_ALLOCATION=$(curl -s -XGET 'http://elasticsearch-client:9200/_cat/shards')
+      if ! echo &quot;${SHARDS_ALLOCATION}&quot; | grep -E &quot;${NODE_NAME}&quot;; then
+        break
+      fi
+      sleep 1
+    done
+    echo &quot;Node ${NODE_NAME} is ready to shutdown&quot;
+  data-post-start-hook.sh: |-
+    #!/bin/bash
+    exec &amp;&gt; &gt;(tee -a &quot;/var/log/elasticsearch-hooks.log&quot;)
+    NODE_NAME=${HOSTNAME}
+    CLUSTER_SETTINGS=$(curl -s -XGET &quot;http://elasticsearch-client:9200/_cluster/settings&quot;)
+    if echo &quot;${CLUSTER_SETTINGS}&quot; | grep -E &quot;${NODE_NAME}&quot;; then
+      echo &quot;Activate node ${NODE_NAME}&quot;
+      curl -s -XPUT -H 'Content-Type: application/json' &quot;http://elasticsearch-client:9200/_cluster/settings&quot; -d &quot;{
+        \&quot;transient\&quot; :{
+            \&quot;cluster.routing.allocation.exclude._name\&quot; : null
+        }
+      }&quot;
+    fi
+    echo &quot;Node ${NODE_NAME} is ready to be used&quot;
+---
+# Source: elasticsearch/templates/tests/test-configmap.yaml
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: elasticsearch-test
+  labels:
+    app: elasticsearch
+    chart: &quot;elasticsearch-1.32.4&quot;
+    heritage: &quot;Helm&quot;
+    release: &quot;elasticsearch&quot;
+data:
+  run.sh: |-
+    @test &quot;Test Access and Health&quot; {
+      curl -D - http://elasticsearch-client:9200
+      curl -D - http://elasticsearch-client:9200/_cluster/health?wait_for_status=green
+    }
+---
+# Source: elasticsearch/templates/client-svc.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: elasticsearch
+    chart: elasticsearch-1.32.4
+    component: &quot;client&quot;
+    heritage: Helm
+    release: elasticsearch
+  name: elasticsearch-client
+
+spec:
+  ports:
+    - name: http
+      port: 9200
+      targetPort: http
+  selector:
+    app: elasticsearch
+    component: &quot;client&quot;
+    release: elasticsearch
+  type: ClusterIP
+---
+# Source: elasticsearch/templates/master-svc.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: elasticsearch
+    chart: elasticsearch-1.32.4
+    component: &quot;master&quot;
+    heritage: Helm
+    release: elasticsearch
+  name: elasticsearch-discovery
+spec:
+  clusterIP: None
+  ports:
+    - port: 9300
+      targetPort: transport
+  selector:
+    app: elasticsearch
+    component: &quot;master&quot;
+    release: elasticsearch
+---
+# Source: elasticsearch/templates/client-deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: elasticsearch
+    chart: elasticsearch-1.32.4
+    component: &quot;client&quot;
+    heritage: Helm
+    release: elasticsearch
+  name: elasticsearch-client
+spec:
+  selector:
+    matchLabels:
+      app: elasticsearch
+      component: &quot;client&quot;
+      release: elasticsearch
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: elasticsearch
+        component: &quot;client&quot;
+        release: elasticsearch
+      annotations:
+        checksum/config: 9648c9871ce1de6ddcb85de48e3ef7619e585522c065e42dc5795ae9a9e66f95
+    spec:
+      serviceAccountName: elasticsearch-client
+      securityContext:
+        fsGroup: 1000
+      affinity:
+        podAntiAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+          - weight: 1
+            podAffinityTerm:
+              topologyKey: kubernetes.io/hostname
+              labelSelector:
+                matchLabels:
+                  app: &quot;elasticsearch&quot;
+                  release: &quot;elasticsearch&quot;
+                  component: &quot;client&quot;
+      initContainers:
+      # see https://www.elastic.co/guide/en/elasticsearch/reference/current/vm-max-map-count.html
+      # and https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-configuration-memory.html#mlockall
+      - name: &quot;sysctl&quot;
+        image: &quot;busybox:latest&quot;
+        imagePullPolicy: &quot;Always&quot;
+        resources:
+            {}
+        command: [&quot;sysctl&quot;, &quot;-w&quot;, &quot;vm.max_map_count=262144&quot;]
+        securityContext:
+          privileged: true
+      containers:
+      - name: elasticsearch
+        env:
+        - name: NODE_DATA
+          value: &quot;false&quot;
+        - name: NODE_MASTER
+          value: &quot;false&quot;
+        - name: DISCOVERY_SERVICE
+          value: elasticsearch-discovery
+        - name: PROCESSORS
+          valueFrom:
+            resourceFieldRef:
+              resource: limits.cpu
+        - name: ES_JAVA_OPTS
+          value: &quot;-Djava.net.preferIPv4Stack=true -Xms512m -Xmx512m  &quot;
+        - name: EXPECTED_MASTER_NODES
+          value: &quot;1&quot;
+        - name: MINIMUM_MASTER_NODES
+          value: &quot;1&quot;
+        - name: RECOVER_AFTER_MASTER_NODES
+          value: &quot;1&quot;
+        resources:
+            limits:
+              cpu: &quot;1&quot;
+            requests:
+              cpu: 25m
+              memory: 512Mi
+        readinessProbe:
+          httpGet:
+            path: /_cluster/health
+            port: 9200
+          initialDelaySeconds: 5
+        livenessProbe:
+          httpGet:
+            path: /_cluster/health?local=true
+            port: 9200
+          initialDelaySeconds: 90
+        image: &quot;docker.elastic.co/elasticsearch/elasticsearch-oss:6.8.6&quot;
+        imagePullPolicy: &quot;IfNotPresent&quot;
+        ports:
+        - containerPort: 9200
+          name: http
+        - containerPort: 9300
+          name: transport
+        volumeMounts:
+        - mountPath: /usr/share/elasticsearch/config/elasticsearch.yml
+          name: config
+          subPath: elasticsearch.yml
+      volumes:
+      - name: config
+        configMap:
+          name: elasticsearch
+---
+# Source: elasticsearch/templates/data-statefulset.yaml
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  labels:
+    app: elasticsearch
+    chart: elasticsearch-1.32.4
+    component: &quot;data&quot;
+    heritage: Helm
+    release: elasticsearch
+  name: elasticsearch-data
+spec:
+  selector:
+    matchLabels:
+      app: elasticsearch
+      component: &quot;data&quot;
+      release: elasticsearch
+      role: data
+  serviceName: elasticsearch-data
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: elasticsearch
+        component: &quot;data&quot;
+        release: elasticsearch
+        role: data
+    spec:
+      serviceAccountName: elasticsearch-data
+      securityContext:
+        fsGroup: 1000
+      affinity:
+        podAntiAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+          - weight: 1
+            podAffinityTerm:
+              topologyKey: kubernetes.io/hostname
+              labelSelector:
+                matchLabels:
+                  app: &quot;elasticsearch&quot;
+                  release: &quot;elasticsearch&quot;
+                  component: &quot;data&quot;
+      initContainers:
+      # see https://www.elastic.co/guide/en/elasticsearch/reference/current/vm-max-map-count.html
+      # and https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-configuration-memory.html#mlockall
+      - name: &quot;sysctl&quot;
+        image: &quot;busybox:latest&quot;
+        imagePullPolicy: &quot;Always&quot;
+        resources:
+            {}
+        command: [&quot;sysctl&quot;, &quot;-w&quot;, &quot;vm.max_map_count=262144&quot;]
+        securityContext:
+          privileged: true
+      - name: &quot;chown&quot;
+        image: &quot;docker.elastic.co/elasticsearch/elasticsearch-oss:6.8.6&quot;
+        imagePullPolicy: &quot;IfNotPresent&quot;
+        resources:
+            {}
+        command:
+        - /bin/bash
+        - -c
+        - &gt;
+          set -e;
+          set -x;
+          chown elasticsearch:elasticsearch /usr/share/elasticsearch/data;
+          for datadir in $(find /usr/share/elasticsearch/data -mindepth 1 -maxdepth 1 -not -name &quot;.snapshot&quot;); do
+            chown -R elasticsearch:elasticsearch $datadir;
+          done;
+          chown elasticsearch:elasticsearch /usr/share/elasticsearch/logs;
+          for logfile in $(find /usr/share/elasticsearch/logs -mindepth 1 -maxdepth 1 -not -name &quot;.snapshot&quot;); do
+            chown -R elasticsearch:elasticsearch $logfile;
+          done
+        securityContext:
+          runAsUser: 0
+        volumeMounts:
+        - mountPath: /usr/share/elasticsearch/data
+          name: data
+      containers:
+      - name: elasticsearch
+        env:
+        - name: DISCOVERY_SERVICE
+          value: elasticsearch-discovery
+        - name: NODE_MASTER
+          value: &quot;false&quot;
+        - name: PROCESSORS
+          valueFrom:
+            resourceFieldRef:
+              resource: limits.cpu
+        - name: ES_JAVA_OPTS
+          value: &quot;-Djava.net.preferIPv4Stack=true -Xms300m -Xmx300m  &quot;
+        - name: EXPECTED_MASTER_NODES
+          value: &quot;1&quot;
+        - name: MINIMUM_MASTER_NODES
+          value: &quot;1&quot;
+        - name: RECOVER_AFTER_MASTER_NODES
+          value: &quot;1&quot;
+        image: &quot;docker.elastic.co/elasticsearch/elasticsearch-oss:6.8.6&quot;
+        imagePullPolicy: &quot;IfNotPresent&quot;
+        ports:
+        - containerPort: 9300
+          name: transport
+
+        resources:
+            limits:
+              cpu: &quot;1&quot;
+            requests:
+              cpu: 25m
+              memory: 1536Mi
+        readinessProbe:
+          httpGet:
+            path: /_cluster/health?local=true
+            port: 9200
+          initialDelaySeconds: 5
+        volumeMounts:
+        - mountPath: /usr/share/elasticsearch/data
+          name: data
+        - mountPath: /usr/share/elasticsearch/config/elasticsearch.yml
+          name: config
+          subPath: elasticsearch.yml
+        - name: config
+          mountPath: /data-pre-stop-hook.sh
+          subPath: data-pre-stop-hook.sh
+        - name: config
+          mountPath: /data-post-start-hook.sh
+          subPath: data-post-start-hook.sh
+        lifecycle:
+          preStop:
+            exec:
+              command: [&quot;/bin/bash&quot;,&quot;/data-pre-stop-hook.sh&quot;]
+          postStart:
+            exec:
+              command: [&quot;/bin/bash&quot;,&quot;/data-post-start-hook.sh&quot;]
+      terminationGracePeriodSeconds: 3600
+      volumes:
+      - name: config
+        configMap:
+          name: elasticsearch
+  podManagementPolicy: OrderedReady
+  updateStrategy:
+    type: OnDelete
+  volumeClaimTemplates:
+  - metadata:
+      name: data
+    spec:
+      accessModes:
+        - &quot;ReadWriteOnce&quot;
+      storageClassName: &quot;elasticsearch-data&quot;
+      resources:
+        requests:
+          storage: &quot;5Gi&quot;
+---
+# Source: elasticsearch/templates/master-statefulset.yaml
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  labels:
+    app: elasticsearch
+    chart: elasticsearch-1.32.4
+    component: &quot;master&quot;
+    heritage: Helm
+    release: elasticsearch
+  name: elasticsearch-master
+spec:
+  selector:
+    matchLabels:
+      app: elasticsearch
+      component: &quot;master&quot;
+      release: elasticsearch
+      role: master
+  serviceName: elasticsearch-master
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: elasticsearch
+        component: &quot;master&quot;
+        release: elasticsearch
+        role: master
+    spec:
+      serviceAccountName: elasticsearch-master
+      securityContext:
+        fsGroup: 1000
+      affinity:
+        podAntiAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+          - weight: 1
+            podAffinityTerm:
+              topologyKey: kubernetes.io/hostname
+              labelSelector:
+                matchLabels:
+                  app: &quot;elasticsearch&quot;
+                  release: &quot;elasticsearch&quot;
+                  component: &quot;master&quot;
+      initContainers:
+      # see https://www.elastic.co/guide/en/elasticsearch/reference/current/vm-max-map-count.html
+      # and https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-configuration-memory.html#mlockall
+      - name: &quot;sysctl&quot;
+        image: &quot;busybox:latest&quot;
+        imagePullPolicy: &quot;Always&quot;
+        resources:
+            {}
+        command: [&quot;sysctl&quot;, &quot;-w&quot;, &quot;vm.max_map_count=262144&quot;]
+        securityContext:
+          privileged: true
+      - name: &quot;chown&quot;
+        image: &quot;docker.elastic.co/elasticsearch/elasticsearch-oss:6.8.6&quot;
+        imagePullPolicy: &quot;IfNotPresent&quot;
+        resources:
+            {}
+        command:
+        - /bin/bash
+        - -c
+        - &gt;
+          set -e;
+          set -x;
+          chown elasticsearch:elasticsearch /usr/share/elasticsearch/data;
+          for datadir in $(find /usr/share/elasticsearch/data -mindepth 1 -maxdepth 1 -not -name &quot;.snapshot&quot;); do
+            chown -R elasticsearch:elasticsearch $datadir;
+          done;
+          chown elasticsearch:elasticsearch /usr/share/elasticsearch/logs;
+          for logfile in $(find /usr/share/elasticsearch/logs -mindepth 1 -maxdepth 1 -not -name &quot;.snapshot&quot;); do
+            chown -R elasticsearch:elasticsearch $logfile;
+          done
+        securityContext:
+          runAsUser: 0
+        volumeMounts:
+        - mountPath: /usr/share/elasticsearch/data
+          name: data
+      containers:
+      - name: elasticsearch
+        env:
+        - name: NODE_DATA
+          value: &quot;false&quot;
+        - name: DISCOVERY_SERVICE
+          value: elasticsearch-discovery
+        - name: PROCESSORS
+          valueFrom:
+            resourceFieldRef:
+              resource: limits.cpu
+        - name: ES_JAVA_OPTS
+          value: &quot;-Djava.net.preferIPv4Stack=true -Xms512m -Xmx512m  &quot;
+        - name: EXPECTED_MASTER_NODES
+          value: &quot;1&quot;
+        - name: MINIMUM_MASTER_NODES
+          value: &quot;1&quot;
+        - name: RECOVER_AFTER_MASTER_NODES
+          value: &quot;1&quot;
+        resources:
+            limits:
+              cpu: &quot;1&quot;
+            requests:
+              cpu: 25m
+              memory: 512Mi
+        readinessProbe:
+          httpGet:
+            path: /_cluster/health?local=true
+            port: 9200
+          initialDelaySeconds: 5
+        image: &quot;docker.elastic.co/elasticsearch/elasticsearch-oss:6.8.6&quot;
+        imagePullPolicy: &quot;IfNotPresent&quot;
+        ports:
+        - containerPort: 9300
+          name: transport
+
+        volumeMounts:
+        - mountPath: /usr/share/elasticsearch/data
+          name: data
+        - mountPath: /usr/share/elasticsearch/config/elasticsearch.yml
+          name: config
+          subPath: elasticsearch.yml
+      volumes:
+      - name: config
+        configMap:
+          name: elasticsearch
+  podManagementPolicy: OrderedReady
+  updateStrategy:
+    type: OnDelete
+  volumeClaimTemplates:
+  - metadata:
+      name: data
+    spec:
+      accessModes:
+        - &quot;ReadWriteOnce&quot;
+      storageClassName: &quot;elasticsearch-master&quot;
+      resources:
+        requests:
+          storage: &quot;5Gi&quot;
+---
+# Source: elasticsearch/templates/tests/test.yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: elasticsearch-test
+  labels:
+    app: elasticsearch
+    chart: &quot;elasticsearch-1.32.4&quot;
+    heritage: &quot;Helm&quot;
+    release: &quot;elasticsearch&quot;
+  annotations:
+    &quot;helm.sh/hook&quot;: test-success
+spec:
+  initContainers:
+    - name: test-framework
+      image: &quot;dduportal/bats:0.4.0&quot;
+      command:
+      - &quot;bash&quot;
+      - &quot;-c&quot;
+      - |
+        set -ex
+        # copy bats to tools dir
+        cp -R /usr/local/libexec/ /tools/bats/
+      volumeMounts:
+      - mountPath: /tools
+        name: tools
+  containers:
+    - name: elasticsearch-test
+      image: &quot;dduportal/bats:0.4.0&quot;
+      command: [&quot;/tools/bats/bats&quot;, &quot;-t&quot;, &quot;/tests/run.sh&quot;]
+      volumeMounts:
+      - mountPath: /tests
+        name: tests
+        readOnly: true
+      - mountPath: /tools
+        name: tools
+  volumes:
+  - name: tests
+    configMap:
+      name: elasticsearch-test
+  - name: tools
+    emptyDir: {}
+  restartPolicy: Never
+</code></pre><h2 id="deploy-fluent-bit">
+  deploy fluent bit
+  <a class="anchor" href="#deploy-fluent-bit">#</a>
+</h2>
+<p>helm install fluent-bit stable/fluent-bit &ndash;namespace=logs &ndash;set backend.type=es &ndash;set backend.es.host=elasticsearch-client</p>
+<h2 id="template-1">
+  template
+  <a class="anchor" href="#template-1">#</a>
+</h2>
+<pre tabindex="0"><code>.es.host=elasticsearch-client
+---
+# Source: fluent-bit/templates/serviceaccount.yaml
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  labels:
+    app: fluent-bit
+    chart: fluent-bit-2.8.16
+    heritage: Helm
+    release: fluent-bit
+  name: fluent-bit
+---
+# Source: fluent-bit/templates/secret.yaml
+apiVersion: v1
+kind: Secret
+metadata:
+  name: &quot;fluent-bit-es-tls-secret&quot;
+  labels:
+    app: fluent-bit
+    chart: fluent-bit-2.8.16
+    heritage: Helm
+    release: fluent-bit
+type: Opaque
+data:
+  es-tls-ca.crt: &quot;&quot;
+---
+# Source: fluent-bit/templates/config.yaml
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: fluent-bit-config
+  labels:
+    app: fluent-bit
+    chart: fluent-bit-2.8.16
+    heritage: Helm
+    release: fluent-bit
+data:
+  fluent-bit-service.conf: |
+    [SERVICE]
+        Flush        1
+        Daemon       Off
+        Log_Level    info
+        Parsers_File parsers.conf
+
+  fluent-bit-input.conf: |
+    [INPUT]
+        Name              tail
+        Path              /var/log/containers/*.log
+        Parser            docker
+        Tag               kube.*
+        Refresh_Interval  5
+        Mem_Buf_Limit     5MB
+        Skip_Long_Lines   On
+
+
+  fluent-bit-filter.conf: |
+    [FILTER]
+        Name                kubernetes
+        Match               kube.*
+        Kube_Tag_Prefix     kube.var.log.containers.
+        Kube_URL            https://kubernetes.default.svc:443
+        Kube_CA_File        /var/run/secrets/kubernetes.io/serviceaccount/ca.crt
+        Kube_Token_File     /var/run/secrets/kubernetes.io/serviceaccount/token
+        Merge_Log           On
+        K8S-Logging.Parser  On
+        K8S-Logging.Exclude On
+
+
+  fluent-bit-output.conf: |
+
+    [OUTPUT]
+        Name  es
+        Match *
+        Host  elasticsearch-client
+        Port  9200
+        Logstash_Format On
+        Retry_Limit False
+        Type  flb_type
+        Time_Key @timestamp
+        Replace_Dots On
+        Logstash_Prefix kubernetes_cluster
+
+
+
+
+
+
+  fluent-bit.conf: |
+    @INCLUDE fluent-bit-service.conf
+    @INCLUDE fluent-bit-input.conf
+    @INCLUDE fluent-bit-filter.conf
+    @INCLUDE fluent-bit-output.conf
+
+  parsers.conf: |
+---
+# Source: fluent-bit/templates/tests/test-configmap.yaml
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: fluent-bit-test
+  labels:
+    app: fluent-bit
+    chart: &quot;fluent-bit-2.8.16&quot;
+    heritage: &quot;Helm&quot;
+    release: &quot;fluent-bit&quot;
+data:
+  run.sh: |-
+    @test &quot;Test Elasticssearch Indices&quot; {
+      url=&quot;http://elasticsearch-client:9200/_cat/indices?format=json&quot;
+      body=$(curl $url)
+
+      result=$(echo $body | jq -cr '.[] | select(.index | contains(&quot;kubernetes_cluster&quot;))')
+      [ &quot;$result&quot; != &quot;&quot; ]
+
+      result=$(echo $body | jq -cr '.[] | select((.index | contains(&quot;kubernetes_cluster&quot;)) and (.health != &quot;green&quot;))')
+      [ &quot;$result&quot; == &quot;&quot; ]
+    }
+
+  fluentd.conf: |-
+    &lt;source&gt;
+      @type forward
+      bind 0.0.0.0
+      port 24284
+      shared_key
+    &lt;/source&gt;
+
+    &lt;match **&gt;
+      @type stdout
+    &lt;/match&gt;
+---
+# Source: fluent-bit/templates/cluster-role.yaml
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    app: fluent-bit
+    chart: fluent-bit-2.8.16
+    heritage: Helm
+    release: fluent-bit
+  name: fluent-bit
+rules:
+  - apiGroups:
+      - &quot;&quot;
+    resources:
+      - pods
+    verbs:
+      - get
+---
+# Source: fluent-bit/templates/cluster-rolebinding.yaml
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  labels:
+    app: fluent-bit
+    chart: fluent-bit-2.8.16
+    heritage: Helm
+    release: fluent-bit
+  name: fluent-bit
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: fluent-bit
+subjects:
+  - kind: ServiceAccount
+    name: fluent-bit
+    namespace: logs
+---
+# Source: fluent-bit/templates/daemonset.yaml
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: fluent-bit
+  labels:
+    app: fluent-bit
+    chart: fluent-bit-2.8.16
+    heritage: Helm
+    release: fluent-bit
+spec:
+  selector:
+    matchLabels:
+      app: fluent-bit
+      release: fluent-bit
+  updateStrategy:
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: fluent-bit
+        release: fluent-bit
+      annotations:
+        checksum/config: d101fcf28e011075e57f8582773e26107826ecceb2812b4c2366016b328e368a
+    spec:
+      hostNetwork: false
+      dnsPolicy: ClusterFirst
+      serviceAccountName: fluent-bit
+      containers:
+      - name: fluent-bit
+        image: &quot;fluent/fluent-bit:1.3.7&quot;
+        imagePullPolicy: &quot;Always&quot;
+        env:
+          []
+        resources:
+          {}
+        volumeMounts:
+        - name: varlog
+          mountPath: /var/log
+        - name: varlibdockercontainers
+          mountPath: /var/lib/docker/containers
+          readOnly: true
+        - name: config
+          mountPath: /fluent-bit/etc/fluent-bit.conf
+          subPath: fluent-bit.conf
+        - name: config
+          mountPath: /fluent-bit/etc/fluent-bit-service.conf
+          subPath: fluent-bit-service.conf
+        - name: config
+          mountPath: /fluent-bit/etc/fluent-bit-input.conf
+          subPath: fluent-bit-input.conf
+        - name: config
+          mountPath: /fluent-bit/etc/fluent-bit-filter.conf
+          subPath: fluent-bit-filter.conf
+        - name: config
+          mountPath: /fluent-bit/etc/fluent-bit-output.conf
+          subPath: fluent-bit-output.conf
+
+      terminationGracePeriodSeconds: 10
+
+      volumes:
+      - name: varlog
+        hostPath:
+          path: /var/log
+      - name: varlibdockercontainers
+        hostPath:
+          path: /var/lib/docker/containers
+      - name: config
+        configMap:
+          name: fluent-bit-config
+---
+# Source: fluent-bit/templates/tests/test.yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: fluent-bit-test
+  labels:
+    app: fluent-bit
+    chart: &quot;fluent-bit-2.8.16&quot;
+    heritage: &quot;Helm&quot;
+    release: &quot;fluent-bit&quot;
+  annotations:
+    &quot;helm.sh/hook&quot;: test-success
+spec:
+  initContainers:
+    - name: test-framework
+      image: &quot;dduportal/bats:0.4.0&quot;
+      command:
+      - &quot;bash&quot;
+      - &quot;-c&quot;
+      - |
+        set -ex
+        # copy bats to tools dir
+        cp -R /usr/local/libexec/ /tools/bats/
+      volumeMounts:
+      - mountPath: /tools
+        name: tools
+  containers:
+    - name: fluent-bit-test
+      image: &quot;dwdraju/alpine-curl-jq&quot;
+      command: [&quot;/tools/bats/bats&quot;, &quot;-t&quot;, &quot;/tests/run.sh&quot;]
+      volumeMounts:
+        - mountPath: /tests
+          name: tests
+          readOnly: true
+        - mountPath: /tools
+          name: tools
+  volumes:
+  - name: tests
+    configMap:
+      name: fluent-bit-test
+  - name: tools
+    emptyDir: {}
+  restartPolicy: Never
+</code></pre><h2 id="deploy-kibana">
+  deploy kibana
+  <a class="anchor" href="#deploy-kibana">#</a>
+</h2>
+<p>helm install kibana stable/kibana &ndash;namespace=logs &ndash;set env.ELASTICSEARCH_HOSTS=http://elasticsearch-client:9200 &ndash;set service.type=NodePort &ndash;set service.nodePort=31000
+kubectl &ndash;namespace=logs get pods -l &ldquo;app=kibana&rdquo;
+export NODE_PORT=$(kubectl get &ndash;namespace logs -o jsonpath=&quot;{.spec.ports[0].nodePort}&quot; services kibana)
+export NODE_IP=$(kubectl get nodes &ndash;namespace logs -o jsonpath=&quot;{.items[0].status.addresses[0].address}&quot;)
+echo http://$NODE_IP:$NODE_PORT</p>
+<h3 id="template-2">
+  template
+  <a class="anchor" href="#template-2">#</a>
+</h3>
+<pre tabindex="0"><code>---
+# Source: kibana/templates/configmap.yaml
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: kibana
+  labels:
+    app: kibana
+    chart: &quot;kibana-3.2.6&quot;
+    release: kibana
+    heritage: Helm
+data:
+  kibana.yml: |
+    elasticsearch.hosts: http://elasticsearch:9200
+    server.host: &quot;0&quot;
+    server.name: kibana
+---
+# Source: kibana/templates/tests/test-configmap.yaml
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: kibana-test
+  labels:
+    app: kibana
+    chart: &quot;kibana-3.2.6&quot;
+    heritage: &quot;Helm&quot;
+    release: &quot;kibana&quot;
+data:
+  run.sh: |-
+    @test &quot;Test Status&quot; {
+      url=&quot;http://kibana:443/api/status&quot;
+
+      # retry for 1 minute
+      run curl -s -o /dev/null -I -w &quot;%{http_code}&quot; --retry 30 --retry-delay 2 $url
+
+      code=$(curl -s -o /dev/null -I -w &quot;%{http_code}&quot; $url)
+      body=$(curl $url)
+      if [ &quot;$code&quot; == &quot;503&quot; ]
+      then
+        skip &quot;Kibana Unavailable (503), can't get status - see pod logs: $body&quot;
+      fi
+
+      result=$(echo $body | jq -cr '.status.statuses[]')
+      [ &quot;$result&quot; != &quot;&quot; ]
+
+      result=$(echo $body | jq -cr '.status.statuses[] | select(.state != &quot;green&quot;)')
+      [ &quot;$result&quot; == &quot;&quot; ]
+    }
+---
+# Source: kibana/templates/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: kibana
+    chart: kibana-3.2.6
+    release: kibana
+    heritage: Helm
+  name: kibana
+spec:
+  type: NodePort
+  ports:
+    - port: 443
+      targetPort: 5601
+      protocol: TCP
+
+      nodePort: 31000
+
+  selector:
+    app: kibana
+    release: kibana
+---
+# Source: kibana/templates/deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: kibana
+    chart: &quot;kibana-3.2.6&quot;
+    heritage: Helm
+    release: kibana
+  name: kibana
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: kibana
+      release: kibana
+  revisionHistoryLimit: 3
+  template:
+    metadata:
+      annotations:
+        checksum/config: 4f6afe69a2710fe67fee2348ad3aec4692d74d4005449338e5598c00dd54695d
+      labels:
+        app: kibana
+        release: &quot;kibana&quot;
+    spec:
+      serviceAccountName: default
+      containers:
+      - name: kibana
+        image: &quot;docker.elastic.co/kibana/kibana-oss:6.7.0&quot;
+        imagePullPolicy: IfNotPresent
+        env:
+        - name: &quot;ELASTICSEARCH_HOSTS&quot;
+          value: &quot;http://elasticsearch-client:9200&quot;
+        ports:
+        - containerPort: 5601
+          name: kibana
+          protocol: TCP
+        resources:
+          {}
+        volumeMounts:
+        - name: kibana
+          mountPath: &quot;/usr/share/kibana/config/kibana.yml&quot;
+          subPath: kibana.yml
+      tolerations:
+        []
+      volumes:
+        - name: kibana
+          configMap:
+            name: kibana
+---
+# Source: kibana/templates/tests/test.yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: kibana-test
+  labels:
+    app: kibana
+    chart: &quot;kibana-3.2.6&quot;
+    heritage: &quot;Helm&quot;
+    release: &quot;kibana&quot;
+  annotations:
+    &quot;helm.sh/hook&quot;: test-success
+spec:
+  initContainers:
+    - name: test-framework
+      image: &quot;dduportal/bats:0.4.0&quot;
+      command:
+      - &quot;bash&quot;
+      - &quot;-c&quot;
+      - |
+        set -ex
+        # copy bats to tools dir
+        cp -R /usr/local/libexec/ /tools/bats/
+      volumeMounts:
+      - mountPath: /tools
+        name: tools
+  containers:
+    - name: kibana-test
+      image: &quot;dwdraju/alpine-curl-jq&quot;
+      command: [&quot;/tools/bats/bats&quot;, &quot;-t&quot;, &quot;/tests/run.sh&quot;]
+      volumeMounts:
+        - mountPath: /tests
+          name: tests
+          readOnly: true
+        - mountPath: /tools
+          name: tools
+  volumes:
+  - name: tests
+    configMap:
+      name: kibana-test
+  - name: tools
+    emptyDir: {}
+  restartPolicy: Never
+</code></pre></article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function a(c){const a=window.getSelection(),b=document.createRange();b.selectNodeContents(c),a.removeAllRanges(),a.addRange(b)}document.querySelectorAll("pre code").forEach(b=>{b.addEventListener("click",function(c){a(b.parentElement),navigator.clipboard&&navigator.clipboard.writeText(b.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#deploy-elasticsearch-persistent-volume">deploy elasticsearch persistent volume</a>
+      <ul>
+        <li><a href="#data">data</a></li>
+      </ul>
+    </li>
+    <li><a href="#deploy-elasticsearch">deploy elasticsearch</a>
+      <ul>
+        <li><a href="#template">template</a></li>
+      </ul>
+    </li>
+    <li><a href="#deploy-fluent-bit">deploy fluent bit</a></li>
+    <li><a href="#template-1">template</a></li>
+    <li><a href="#deploy-kibana">deploy kibana</a>
+      <ul>
+        <li><a href="#template-2">template</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

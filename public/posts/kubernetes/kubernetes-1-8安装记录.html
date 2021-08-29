@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>kubernetes 1.8安装记录</title>
+    <style type="text/css" media="all">
+      body {
+        margin: 0;
+        font-family: "Helvetica Neue", Helvetica, Arial, "Hiragino Sans GB", sans-serif;
+        font-size: 14px;
+        line-height: 20px;
+        color: #777;
+        background-color: white;
+      }
+      .container {
+        width: 700px;
+        margin-right: auto;
+        margin-left: auto;
+      }
+
+      .post {
+        font-family: Georgia, "Times New Roman", Times, "SimSun", serif;
+        position: relative;
+        padding: 70px;
+        bottom: 0;
+        overflow-y: auto;
+        font-size: 16px;
+        font-weight: normal;
+        line-height: 25px;
+        color: #515151;
+      }
+
+      .post h1{
+        font-size: 50px;
+        font-weight: 500;
+        line-height: 60px;
+        margin-bottom: 40px;
+        color: inherit;
+      }
+
+      .post p {
+        margin: 0 0 35px 0;
+      }
+
+      .post img {
+        border: 1px solid #D9D9D9;
+      }
+
+      .post a {
+        color: #28A1C5;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="post">
+        <h1 class="title">kubernetes 1.8安装记录</h1>
+        <div class="show-content">
+          <h1>v1.8.0简介：</h1><p>关于Kubernetes 1.8版包括新功能和增强功能，以及修复的问题，请慢慢看下面的链接</p><p>https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG.md#external-dependencies<br></p><h1>安装kubeadmin：</h1><p>为了快速见证新功能，我们选择kubeadmin这个工具来创建集群，官方的工具虽然还在内测阶段，但各种服务的配置方式，可以做为自定义部署的参考，kubeadmin是多基于容器的，只要把每个容器的配置都熟悉了，自定义部署也是非常容易的，所以说这个kubeadmin可供细研究也可快速完成集群环境的搭建，里面有些需要注意的地方，参照这篇文章可以直接解决一些问题，省去一些搜索工作。</p><h2>先决条件：</h2><p>1.关闭系统的交换分区，2.sysctl net.bridge.bridge-nf-call-iptables=1（打开iptables管理网桥的功能），等等就是还有不关键的</p><h1>通讯端口：<br>
+</h1><div class="image-package">
+<img src="http://upload-images.jianshu.io/upload_images/6000429-9aadd6be32115660.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" data-original-src="http://upload-images.jianshu.io/upload_images/6000429-9aadd6be32115660.png?imageMogr2/auto-orient/strip" data-image-slug="9aadd6be32115660" data-width="519" data-height="283"><br><div class="image-caption"></div>
+</div><div class="image-package">
+<img src="http://upload-images.jianshu.io/upload_images/6000429-d963111e64f71cbb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" data-original-src="http://upload-images.jianshu.io/upload_images/6000429-d963111e64f71cbb.png?imageMogr2/auto-orient/strip" data-image-slug="d963111e64f71cbb" data-width="323" data-height="223"><br><div class="image-caption"></div>
+</div><h2>安装ebtables ethtool<br>
+</h2><blockquote><p>yum install ebtables ethtool<br></p></blockquote><h1>安装docker</h1><p>官方建议的1.12刚好是centos源带的，所以不必去找新版的源<br></p><blockquote><p>yum install -y docker  &amp;&amp; systemctl enable docker &amp;&amp; systemctl start docker</p></blockquote><h2>安装kubeadm, kubelet and kubectl</h2><p>阿里源地址：http://mirrors.aliyun.com/kubernetes/yum/</p><p>我编译的包上传网盘了，链接：http://pan.baidu.com/s/1bp51D7p 密码：jtie<br></p><p>要自己编译rpm包可以看这个项目：https://github.com/kubernetes/release.git</p><blockquote>
+<p>cd rpm  #进入rpm目录执行脚本会创建docker完成编译，包输出到当前目录的output里面，要有docker环境<br></p>
+<p>./docker-build.sh</p>
+</blockquote><p><br></p><blockquote>
+<p>cat &lt; /etc/yum.repos.d/kubernetes.repo<br></p>
+<p>[kubernetes]</p>
+<p>name=Kubernetes</p>
+<p>baseurl=https://packages.cloud.google.com/yum/repos/kubernetes-el7-x86_64</p>
+<p>enabled=1</p>
+<p>gpgcheck=1</p>
+<p>repo_gpgcheck=1</p>
+<p>gpgkey=https://packages.cloud.google.com/yum/doc/yum-key.gpg</p>
+<p>https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg</p>
+<p>EOF</p>
+<p>setenforce 0</p>
+<p>yum install -y kubelet kubeadm kubectl</p>
+<p>systemctl enable kubelet &amp;&amp; systemctl start kubelet</p>
+</blockquote><h2>关闭selinux</h2><blockquote><p>setenforce 0<br></p></blockquote><h2>把iptables管理网桥流量的配置写入配置文件，随kubelet启动</h2><blockquote>
+<p>cat &lt;  /etc/sysctl.d/k8s.conf<br></p>
+<p>net.bridge.bridge-nf-call-ip6tables = 1</p>
+<p>net.bridge.bridge-nf-call-iptables = 1</p>
+<p>EOF</p>
+<p>sysctl --system</p>
+</blockquote><h1>创建集群：</h1><p>执行命令初始化，有多个IP的主机最好指定宣告地址，支持后续的网络方案一般都要指定容器网段，还可以指定域名<br></p><blockquote><p>kubeadm init --apiserver-advertise-address=172.19.7.112 --pod-network-cidr=10.244.0.0/16 --service-dns-domain="heishui.io"</p></blockquote><h1>安装网络：</h1><p>网络有很多方案，各有特色，有些方案还很复杂，官方最新引入的Cilium很完美，但条件太苛刻不成熟；思科支持的Contiv；詹博背书的Contrail；coros 主导开发的Flannel；Kube-router项目似乎开发很活跃，以后关注一下，很针对kubenetes;Calico综合很好；OpenVSwitch在云计算项目中很流行，这里我选择flannel,简单功能性能也不错，coros对kubernetes支持很给力，和Google很铁有前途的。</p><blockquote><p>kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/v0.9.0/Documentation/kube-flannel.yml</p></blockquote><h1>让主节点可以运行业务：</h1><blockquote><p>kubectl taint nodes --all node-role.kubernetes.io/master-<br></p></blockquote><h2>加入节点：</h2><blockquote><p>kubeadm join --token 146d14.c80b331449030770 172.19.7.112:6443 --discovery-token-ca-cert-hash sha256:f3b608648306dcd4eb0a854ea36dcdffb08f717e09ac176562a3d520256e8c5f<br></p></blockquote><h2>将API服务器代理到本地主机:</h2><blockquote><p>kubectl --kubeconfig ./admin.conf proxy<br></p></blockquote><h2>故障排除：</h2><p>请求不到版本文件，隐晦的问题，看下下面怎么搭梯子<br></p><div class="image-package">
+<img src="http://upload-images.jianshu.io/upload_images/6000429-e94dca0a593cb740.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" data-original-src="http://upload-images.jianshu.io/upload_images/6000429-e94dca0a593cb740.png?imageMogr2/auto-orient/strip" data-image-slug="e94dca0a593cb740" data-width="1540" data-height="53"><br><div class="image-caption"></div>
+</div><h2>登云梯：</h2><p>vpn就不说了，怕麻烦就买vpn,这里说的方法是通过ssh代理socks隧道，socks协议长城都拦不住，国外备个云主机执行下面的命令即可实现代理上网,由于墙内dns都配合政府搞污染，可能你需要配置国外的dns,  8.8.8.8没有争议</p><blockquote><p>ssh -f -N -D 127.0.0.1:1080 root@your_host_ip<br></p></blockquote><p>执行这条命令之后你的网络就已经出国了</p><h2>找不到网络插件：</h2><p>这里有一个bug，需要取消一些kubelet的环境变量，不然初始化会提示找不到网络插件</p><p>编辑文件/etc/systemd/system/kubelet.service.d/10-kubeadm.conf,去掉KUBELET_NETWORK_ARGS，让其使用默认值<br></p><h2>有镜像不能下载：<br>
+</h2><p>一个办法是在dockerhub包括国内镜像源上找同样版本的镜像，下载之后改下名字即可，名字在你发现错误的地方已经有了<br></p><div class="image-package">
+<img src="http://upload-images.jianshu.io/upload_images/6000429-a5529893c8b0eaaa.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" data-original-src="http://upload-images.jianshu.io/upload_images/6000429-a5529893c8b0eaaa.png?imageMogr2/auto-orient/strip" data-image-slug="a5529893c8b0eaaa" data-width="1583" data-height="173"><br><div class="image-caption"></div>
+</div><h1>镜像：</h1><p>下面这些都是创建集群必须，我把镜像打包放百度云盘，链接：http://pan.baidu.com/s/1jH8uYqU 密码：tosd</p><p>漏了一个pase,链接：http://pan.baidu.com/s/1cErk9C 密码：auo6<br></p><p>可以下载tag，或许就不用外网：</p><blockquote><p>docker tag 790ec863918a docker.io/cloudnativelabs/kube-router:latest<br></p></blockquote><blockquote>
+<p>docker tag ed645752b229 gcr.io/google_containers/kube-controller-manager-amd64:v1.8.0</p>
+<p>docker tag 0e8dfbdff483 gcr.io/google_containers/kube-apiserver-amd64:v1.8.0</p>
+<p>docker tag 758acd37d575 gcr.io/google_containers/kube-scheduler-amd64:v1.8.0</p>
+<p>docker tag fd5fddfa4be3 gcr.io/google_containers/kube-proxy-amd64:v1.8.0</p>
+<p>docker tag fed89e8b4248 gcr.io/google_containers/k8s-dns-sidecar-amd64:1.14.5</p>
+<p>docker tag 512cd7425a73 gcr.io/google_containers/k8s-dns-kube-dns-amd64:1.14.5</p>
+<p>docker tag 459944ce8cc4 gcr.io/google_containers/k8s-dns-dnsmasq-nanny-amd64:1.14.5</p>
+<p>docker tag 4c600a64a18a quay.io/coreos/flannel:v0.9.0-amd64</p>
+<p>docker tag 54511612f1c4 docker.io/busybox:latest</p>
+<p>docker tag 243830dae7dd gcr.io/google_containers/etcd-amd64:3.0.17</p>
+<p>docker tag 99e59f495ffa gcr.io/google_containers/pause-amd64:3.0</p>
+</blockquote><div class="image-package">
+<img src="http://upload-images.jianshu.io/upload_images/6000429-15e6541b015b8ad6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" data-original-src="http://upload-images.jianshu.io/upload_images/6000429-15e6541b015b8ad6.png?imageMogr2/auto-orient/strip" data-image-slug="15e6541b015b8ad6" data-width="896" data-height="228"><br><div class="image-caption"></div>
+</div><p>有问题可以到qq群（666455513）里面留言，仅限于容器交流<br></p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

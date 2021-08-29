@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Include AngularFire#包含 AngularFire#Firebase is a mobile and web application platform with tools and infrastructure designed to help developers build high-quality apps. AngularFire2 is the official Angular library to use Firebase in your apps.
+Firebase是一个移动和Web应用程序平台，其中包含旨在帮助开发人员构建高品质应用程序的工具和基础结构。 AngularFire2是在您的应用中使用Firebase的官方Angular库。
+Create new project#创建新项目#Create a new project and navigate into the project. 创建一个新项目并导航到项目中。
+$ ng new my-app $ cd my-app Install dependencies#安装依赖#In the new project you need to install the required dependencies.">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="" />
+<meta property="og:description" content="Include AngularFire#包含 AngularFire#Firebase is a mobile and web application platform with tools and infrastructure designed to help developers build high-quality apps. AngularFire2 is the official Angular library to use Firebase in your apps.
+Firebase是一个移动和Web应用程序平台，其中包含旨在帮助开发人员构建高品质应用程序的工具和基础结构。 AngularFire2是在您的应用中使用Firebase的官方Angular库。
+Create new project#创建新项目#Create a new project and navigate into the project. 创建一个新项目并导航到项目中。
+$ ng new my-app $ cd my-app Install dependencies#安装依赖#In the new project you need to install the required dependencies." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://wangyijie.github.io/public/posts/angluar-cli/angular-%E9%85%8D%E7%BD%AE-angularfire/" /><meta property="article:section" content="posts" />
+
+
+
+<title>Angular 配置 Angular Fire | A great computer technology Site</title>
+<link rel="manifest" href="/public/manifest.json">
+<link rel="icon" href="/public/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/public/book.min.8599444fcc48ee6b435b5b62c955ab7d914fa1e2a453df90c4b97cc9769665d1.css" integrity="sha256-hZlET8xI7mtDW1tiyVWrfZFPoeKkU9&#43;QxLl8yXaWZdE=" crossorigin="anonymous">
+  <script defer src="/public/flexsearch.min.js"></script>
+  <script defer src="/public/en.search.min.49d7ffe0cc6a09481193582a484d1dfccfe14d6d173d2de804b6e37d7c5a9f57.js" integrity="sha256-Sdf/4MxqCUgRk1gqSE0d/M/hTW0XPS3oBLbjfXxan1c=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/public/"><span>A great computer technology Site</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/public/posts/" >
+        Posts
+      </a>
+      
+<ul>
+  
+  <li>
+    <a href="/public/posts/angluar-cli/" >
+        angular
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/ansible/" >
+        ansible
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/cicd/" >
+        CICD
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/cloud/" >
+        cloude
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/container/" >
+        container
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/devops/" >
+        DevOps
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/english/" >
+        English
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/golang/" >
+        golang
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/istio/" >
+        istio
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/kubernetes/" >
+        Kubernetes
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" >
+        mechine leaning
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/material2/" >
+        mererial2
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E7%9B%91%E6%8E%A7/" >
+        monitor
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/mysql/" >
+        mysql
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E7%BD%91%E7%BB%9C/" >
+        networking
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E6%97%A5%E8%AE%B0%E6%9C%AC/" >
+        notes
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/postgresql/" >
+        postgresql
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/django/" >
+        python
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E5%AE%89%E5%85%A8/" >
+        safe
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E8%AF%97%E8%AF%8D/" >
+        shi chi
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E7%AB%99%E7%82%B9%E5%8F%AF%E9%9D%A0%E6%80%A7%E5%B7%A5%E7%A8%8B/" >
+        SRE
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E6%96%87%E5%AD%A6/" >
+        wenxue
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E9%9A%8F%E7%AC%94/" >
+        write somethings
+      </a>
+  </li>
+  
+</ul>
+
+  </li>
+  
+  <li>
+    <a href="/public/about/" >
+        About
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var a=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(b){localStorage.setItem("menu.scrollTop",a.scrollTop)}),a.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/public/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Angular 配置 Angular Fire</strong>
+
+  <label for="toc-control">
+    
+    <img src="/public/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+<article class="markdown">
+  <h1>
+    <a href="/public/posts/angluar-cli/angular-%E9%85%8D%E7%BD%AE-angularfire/">Angular 配置 Angular Fire</a>
+  </h1>
+  
+
+
+  
+
+  
+
+
+
+<h1 id="include-angularfire">
+  Include AngularFire
+  <a class="anchor" href="#include-angularfire">#</a>
+</h1>
+<h1 id="包含-angularfire">
+  包含 AngularFire
+  <a class="anchor" href="#%e5%8c%85%e5%90%ab-angularfire">#</a>
+</h1>
+<p><a href="https://firebase.google.com/">Firebase</a> is a mobile and web application platform with tools and infrastructure designed
+to help developers build high-quality apps. <a href="https://github.com/angular/angularfire2">AngularFire2</a> is the official
+Angular library to use Firebase in your apps.<br>
+Firebase是一个移动和Web应用程序平台，其中包含旨在帮助开发人员构建高品质应用程序的工具和基础结构。 AngularFire2是在您的应用中使用Firebase的官方Angular库。</p>
+<h4 id="create-new-project">
+  Create new project
+  <a class="anchor" href="#create-new-project">#</a>
+</h4>
+<h4 id="创建新项目">
+  创建新项目
+  <a class="anchor" href="#%e5%88%9b%e5%bb%ba%e6%96%b0%e9%a1%b9%e7%9b%ae">#</a>
+</h4>
+<p>Create a new project and navigate into the project.
+创建一个新项目并导航到项目中。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ ng new my-app
+$ cd my-app
+</code></pre></div><h4 id="install-dependencies">
+  Install dependencies
+  <a class="anchor" href="#install-dependencies">#</a>
+</h4>
+<h4 id="安装依赖">
+  安装依赖
+  <a class="anchor" href="#%e5%ae%89%e8%a3%85%e4%be%9d%e8%b5%96">#</a>
+</h4>
+<p>In the new project you need to install the required dependencies.<br>
+在新项目中，您需要安装所需的依赖关系。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ npm install --save angularfire2 firebase
+</code></pre></div><h4 id="get-firebase-configuration-details">
+  Get Firebase configuration details
+  <a class="anchor" href="#get-firebase-configuration-details">#</a>
+</h4>
+<h4 id="获得-firebase-配置纤细">
+  获得 Firebase 配置纤细
+  <a class="anchor" href="#%e8%8e%b7%e5%be%97-firebase-%e9%85%8d%e7%bd%ae%e7%ba%a4%e7%bb%86">#</a>
+</h4>
+<p>In order to connect AngularFire to Firebase you need to get the configuration details.<br>
+为了将AngularFire连接到Firebase，您需要获取配置详细信息</p>
+<p>Firebase offers an easy way to get this, by showing a JavaScript object that you can copy and paste.<br>
+通过显示可以复制和粘贴的JavaScript对象，Firebase提供了一种简单的方法来获取此信息。</p>
+<ul>
+<li>Log in to the <a href="https://firebase.google.com">Firebase</a> console.<br>
+登录到Firebase控制台。</li>
+<li>Create New Project or open an existing one.<br>
+创建新项目或打开一个存在的</li>
+<li>Click <code>Add Firebase to your web app</code>.<br>
+点击 <code>Add Firebase to your web app</code>.</li>
+<li>From the modal window that pops up you copy the <code>config</code> object.<br>
+从弹出的模式窗口中复制配置对象</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">config</span> <span style="color:#f92672">=</span> {
+    <span style="color:#a6e22e">apiKey</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;your-api-key&#34;</span>,
+    <span style="color:#a6e22e">authDomain</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;your-auth-domain&#34;</span>,
+    <span style="color:#a6e22e">databaseURL</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;your-database-url&#34;</span>,
+    <span style="color:#a6e22e">storageBucket</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;your-storage-bucket&#34;</span>,
+    <span style="color:#a6e22e">messagingSenderId</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;your-message-sender-id&#34;</span>
+  };
+</code></pre></div><h4 id="configure-the-environment">
+  Configure the Environment
+  <a class="anchor" href="#configure-the-environment">#</a>
+</h4>
+<h4 id="配置环境">
+  配置环境
+  <a class="anchor" href="#%e9%85%8d%e7%bd%ae%e7%8e%af%e5%a2%83">#</a>
+</h4>
+<p>These configuration details need to be stored in our app, one way to do this using the <code>environment</code>. This allows you to
+use different credentials in development and production.<br>
+这些配置细节需要存储在我们的应用程序中，一种使用 <code>environment</code> 来做到这一点的方法，这使您可以在开发和生产中使用不同的凭证。</p>
+<p>Open <code>src/environments/environment.ts</code> and add a key <code>firebase</code> to the exported constant:<br>
+打开 <code>src/environments/environment.ts</code> 并向导出的常量添加一个键的 <code>firebase</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">environment</span> <span style="color:#f92672">=</span> {
+  <span style="color:#a6e22e">production</span>: <span style="color:#66d9ef">false</span>,
+  <span style="color:#a6e22e">firebase</span><span style="color:#f92672">:</span> {
+    <span style="color:#a6e22e">apiKey</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;your-api-key&#39;</span>,
+    <span style="color:#a6e22e">authDomain</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;your-auth-domain&#39;</span>,
+    <span style="color:#a6e22e">databaseURL</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;your-database-url&#39;</span>,
+    <span style="color:#a6e22e">storageBucket</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;your-storage-bucket&#39;</span>,
+  }
+};
+</code></pre></div><p>To define the keys for production you need to update
+<code>src/environments/environment.prod.ts</code>.<br>
+要定义生产密钥，您需要更新 <code>src/environments/environment.prod.ts</code>.</p>
+<h4 id="import-and-load-firebasemodule">
+  Import and load FirebaseModule
+  <a class="anchor" href="#import-and-load-firebasemodule">#</a>
+</h4>
+<h4 id="导入和加载-firebasemodule">
+  导入和加载 FirebaseModule
+  <a class="anchor" href="#%e5%af%bc%e5%85%a5%e5%92%8c%e5%8a%a0%e8%bd%bd-firebasemodule">#</a>
+</h4>
+<p>The final step is to import <code>AngularFireModule</code> and initialize it using the parameters from the <code>environment</code>.<br>
+最后一步是导入 <code>AngularFireModule</code> 并使用 <code>environment</code> 中的参数对其进行初始化.</p>
+<p>Open <code>src/app/app.module.ts</code> and add the following lines on the top of the file, with the other imports:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">AngularFireModule</span> } <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#39;angularfire2&#39;</span>;
+<span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">environment</span> } <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#39;../environments/environment&#39;</span>;
+</code></pre></div><p>To initialize AngularFire add the following line to the <code>imports</code> array inside the <code>NgModule</code>:<br>
+要初始化 <code>AngularFire</code>，将以下行添加到 <code>NgModule</code> 内的 <code>imports</code> 数组中：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="color:#66d9ef">@NgModule</span>({
+  <span style="color:#75715e">// declarations
+</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">imports</span><span style="color:#f92672">:</span> [
+    <span style="color:#75715e">// BrowserModule, etc
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">AngularFireModule</span>.<span style="color:#a6e22e">initializeApp</span>(<span style="color:#a6e22e">environment</span>.<span style="color:#a6e22e">firebase</span>),
+  ]
+  <span style="color:#75715e">// providers
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">// bootstrap
+</span><span style="color:#75715e"></span>})
+</code></pre></div><h4 id="congratulations-you-can-now-use-firebase-in-your-angular-app">
+  Congratulations, you can now use Firebase in your Angular app!
+  <a class="anchor" href="#congratulations-you-can-now-use-firebase-in-your-angular-app">#</a>
+</h4>
+<h4 id="恭喜您现在可以在您的angular应用中使用firebase">
+  恭喜，您现在可以在您的Angular应用中使用Firebase！
+  <a class="anchor" href="#%e6%81%ad%e5%96%9c%e6%82%a8%e7%8e%b0%e5%9c%a8%e5%8f%af%e4%bb%a5%e5%9c%a8%e6%82%a8%e7%9a%84angular%e5%ba%94%e7%94%a8%e4%b8%ad%e4%bd%bf%e7%94%a8firebase">#</a>
+</h4>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function a(c){const a=window.getSelection(),b=document.createRange();b.selectNodeContents(c),a.removeAllRanges(),a.addRange(b)}document.querySelectorAll("pre code").forEach(b=>{b.addEventListener("click",function(c){a(b.parentElement),navigator.clipboard&&navigator.clipboard.writeText(b.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

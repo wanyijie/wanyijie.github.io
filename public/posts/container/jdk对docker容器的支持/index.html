@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="java8及java9#Java 8u131及以上版本开始支持了Docker的cpu和memory限制。
+cpu limit#即如果没有显式指定-XX:ParalllelGCThreads 或者 -XX:CICompilerCount, 那么JVM使用docker的cpu限制。如果docker有指定cpu limit，jvm参数也有指定-XX:ParalllelGCThreads 或者 -XX:CICompilerCount，那么以指定的参数为准。
+memory limit#在java8u131&#43;及java9，需要加上-XX:&#43;UnlockExperimentalVMOptions -XX:&#43;UseCGroupMemoryLimitForHeap才能使得Xmx感知docker的memory limit。
+查看参数默认值
+java -XX:&#43;UnlockDiagnosticVMOptions -XX:&#43;UnlockExperimentalVMOptions -XX:&#43;PrintFlagsFinal 部分输出
+bool UseCGroupMemoryLimitForHeap = false {experimental} {default}  可以看到在java9，UseCGroupMemoryLimitForHeap参数还是实验性的，默认关闭。
+ java10#bool UseCGroupMemoryLimitForHeap = false {experimental} {default}  java10，UseCGroupMemoryLimitForHeap还是experimental，不过标记为废弃。
+ 不过java10新引入了1个参数
+int ActiveProcessorCount = -1 {product} {default}  ActiveProcessorCount可以用来指定cpu的个数
+ java11#java11正式移除UseCGroupMemoryLimitForHeap，代码改动见8194086: Remove deprecated experimental flag UseCGroupMemoryLimitForHeap
+同时引入1个新参数">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="" />
+<meta property="og:description" content="java8及java9#Java 8u131及以上版本开始支持了Docker的cpu和memory限制。
+cpu limit#即如果没有显式指定-XX:ParalllelGCThreads 或者 -XX:CICompilerCount, 那么JVM使用docker的cpu限制。如果docker有指定cpu limit，jvm参数也有指定-XX:ParalllelGCThreads 或者 -XX:CICompilerCount，那么以指定的参数为准。
+memory limit#在java8u131&#43;及java9，需要加上-XX:&#43;UnlockExperimentalVMOptions -XX:&#43;UseCGroupMemoryLimitForHeap才能使得Xmx感知docker的memory limit。
+查看参数默认值
+java -XX:&#43;UnlockDiagnosticVMOptions -XX:&#43;UnlockExperimentalVMOptions -XX:&#43;PrintFlagsFinal 部分输出
+bool UseCGroupMemoryLimitForHeap = false {experimental} {default}  可以看到在java9，UseCGroupMemoryLimitForHeap参数还是实验性的，默认关闭。
+ java10#bool UseCGroupMemoryLimitForHeap = false {experimental} {default}  java10，UseCGroupMemoryLimitForHeap还是experimental，不过标记为废弃。
+ 不过java10新引入了1个参数
+int ActiveProcessorCount = -1 {product} {default}  ActiveProcessorCount可以用来指定cpu的个数
+ java11#java11正式移除UseCGroupMemoryLimitForHeap，代码改动见8194086: Remove deprecated experimental flag UseCGroupMemoryLimitForHeap
+同时引入1个新参数" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://wangyijie.github.io/public/posts/container/jdk%E5%AF%B9docker%E5%AE%B9%E5%99%A8%E7%9A%84%E6%94%AF%E6%8C%81/" /><meta property="article:section" content="posts" />
+
+
+
+<title>Jdk对docker容器的支持 | A great computer technology Site</title>
+<link rel="manifest" href="/public/manifest.json">
+<link rel="icon" href="/public/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/public/book.min.8599444fcc48ee6b435b5b62c955ab7d914fa1e2a453df90c4b97cc9769665d1.css" integrity="sha256-hZlET8xI7mtDW1tiyVWrfZFPoeKkU9&#43;QxLl8yXaWZdE=" crossorigin="anonymous">
+  <script defer src="/public/flexsearch.min.js"></script>
+  <script defer src="/public/en.search.min.49d7ffe0cc6a09481193582a484d1dfccfe14d6d173d2de804b6e37d7c5a9f57.js" integrity="sha256-Sdf/4MxqCUgRk1gqSE0d/M/hTW0XPS3oBLbjfXxan1c=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/public/"><span>A great computer technology Site</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/public/posts/" >
+        Posts
+      </a>
+      
+<ul>
+  
+  <li>
+    <a href="/public/posts/angluar-cli/" >
+        angular
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/ansible/" >
+        ansible
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/cicd/" >
+        CICD
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/cloud/" >
+        cloude
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/container/" >
+        container
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/devops/" >
+        DevOps
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/english/" >
+        English
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/golang/" >
+        golang
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/istio/" >
+        istio
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/kubernetes/" >
+        Kubernetes
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" >
+        mechine leaning
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/material2/" >
+        mererial2
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E7%9B%91%E6%8E%A7/" >
+        monitor
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/mysql/" >
+        mysql
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E7%BD%91%E7%BB%9C/" >
+        networking
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E6%97%A5%E8%AE%B0%E6%9C%AC/" >
+        notes
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/postgresql/" >
+        postgresql
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/django/" >
+        python
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E5%AE%89%E5%85%A8/" >
+        safe
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E8%AF%97%E8%AF%8D/" >
+        shi chi
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E7%AB%99%E7%82%B9%E5%8F%AF%E9%9D%A0%E6%80%A7%E5%B7%A5%E7%A8%8B/" >
+        SRE
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E6%96%87%E5%AD%A6/" >
+        wenxue
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E9%9A%8F%E7%AC%94/" >
+        write somethings
+      </a>
+  </li>
+  
+</ul>
+
+  </li>
+  
+  <li>
+    <a href="/public/about/" >
+        About
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var a=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(b){localStorage.setItem("menu.scrollTop",a.scrollTop)}),a.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/public/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Jdk对docker容器的支持</strong>
+
+  <label for="toc-control">
+    
+    <img src="/public/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#java8及java9">java8及java9</a>
+      <ul>
+        <li><a href="#cpu-limit">cpu limit</a></li>
+        <li><a href="#memory-limit">memory limit</a></li>
+      </ul>
+    </li>
+    <li><a href="#java10">java10</a></li>
+    <li><a href="#java11">java11</a></li>
+    <li><a href="#小结">小结</a></li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+<article class="markdown">
+  <h1>
+    <a href="/public/posts/container/jdk%E5%AF%B9docker%E5%AE%B9%E5%99%A8%E7%9A%84%E6%94%AF%E6%8C%81/">Jdk对docker容器的支持</a>
+  </h1>
+  
+
+
+  
+
+  
+
+
+
+<h2 id="java8及java9">
+  java8及java9
+  <a class="anchor" href="#java8%e5%8f%8ajava9">#</a>
+</h2>
+<p>Java 8u131及以上版本开始支持了Docker的cpu和memory限制。</p>
+<h3 id="cpu-limit">
+  cpu limit
+  <a class="anchor" href="#cpu-limit">#</a>
+</h3>
+<p>即如果没有显式指定-XX:ParalllelGCThreads 或者 -XX:CICompilerCount, 那么JVM使用docker的cpu限制。如果docker有指定cpu limit，jvm参数也有指定-XX:ParalllelGCThreads 或者 -XX:CICompilerCount，那么以指定的参数为准。</p>
+<h3 id="memory-limit">
+  memory limit
+  <a class="anchor" href="#memory-limit">#</a>
+</h3>
+<p>在java8u131+及java9，需要加上-XX:+UnlockExperimentalVMOptions -XX:+UseCGroupMemoryLimitForHeap才能使得Xmx感知docker的memory limit。</p>
+<p><em><strong>查看参数默认值</strong></em></p>
+<pre tabindex="0"><code>java -XX:+UnlockDiagnosticVMOptions -XX:+UnlockExperimentalVMOptions -XX:+PrintFlagsFinal
+</code></pre><p>部分输出</p>
+<pre tabindex="0"><code>bool UseCGroupMemoryLimitForHeap = false {experimental} {default}
+</code></pre><blockquote>
+<p>可以看到在java9，UseCGroupMemoryLimitForHeap参数还是实验性的，默认关闭。</p>
+</blockquote>
+<h2 id="java10">
+  java10
+  <a class="anchor" href="#java10">#</a>
+</h2>
+<pre tabindex="0"><code>bool UseCGroupMemoryLimitForHeap = false {experimental} {default}
+</code></pre><blockquote>
+<p>java10，UseCGroupMemoryLimitForHeap还是experimental，不过标记为废弃。</p>
+</blockquote>
+<p>不过java10新引入了1个参数</p>
+<pre tabindex="0"><code>int ActiveProcessorCount = -1 {product} {default}
+</code></pre><blockquote>
+<p>ActiveProcessorCount可以用来指定cpu的个数</p>
+</blockquote>
+<h2 id="java11">
+  java11
+  <a class="anchor" href="#java11">#</a>
+</h2>
+<p>java11正式移除UseCGroupMemoryLimitForHeap，代码改动见<a href="http://hg.openjdk.java.net/jdk/jdk/rev/48b6b247eb7a">8194086: Remove deprecated experimental flag UseCGroupMemoryLimitForHeap</a></p>
+<p>同时引入1个新参数</p>
+<pre tabindex="0"><code>bool UseContainerSupport = true {product} {default}
+</code></pre><blockquote>
+<p>UseContainerSupport默认为true，可以使用-Xlog:os+container=trace参数来查看详情。
+即使使用-XX:-UseContainerSupport禁用了容器支持，-XX:ActiveProcessorCount如果有指定，该参数值仍然会被使用。</p>
+</blockquote>
+<h2 id="小结">
+  小结
+  <a class="anchor" href="#%e5%b0%8f%e7%bb%93">#</a>
+</h2>
+<table>
+<thead>
+<tr>
+<th>参数/版本</th>
+<th>-XX:+UseCGroupMemoryLimitForHeap</th>
+<th>-XX:ActiveProcessorCount</th>
+<th>-XX:+UseContainerSupport</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>java9</td>
+<td>experimental，默认false</td>
+<td>无</td>
+<td>无</td>
+</tr>
+<tr>
+<td>java10</td>
+<td>experimental，默认false</td>
+<td>-1</td>
+<td>无</td>
+</tr>
+<tr>
+<td>java11</td>
+<td>移除</td>
+<td>-1</td>
+<td>product，默认true</td>
+</tr>
+</tbody>
+</table>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function a(c){const a=window.getSelection(),b=document.createRange();b.selectNodeContents(c),a.removeAllRanges(),a.addRange(b)}document.querySelectorAll("pre code").forEach(b=>{b.addEventListener("click",function(c){a(b.parentElement),navigator.clipboard&&navigator.clipboard.writeText(b.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#java8及java9">java8及java9</a>
+      <ul>
+        <li><a href="#cpu-limit">cpu limit</a></li>
+        <li><a href="#memory-limit">memory limit</a></li>
+      </ul>
+    </li>
+    <li><a href="#java10">java10</a></li>
+    <li><a href="#java11">java11</a></li>
+    <li><a href="#小结">小结</a></li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

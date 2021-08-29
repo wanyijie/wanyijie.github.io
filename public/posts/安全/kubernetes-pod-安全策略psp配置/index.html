@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Kubernetes Pod 安全策略(PSP)配置 默认情况下，Kubernetes 允许创建一个有特权容器的 Pod，这些容器很可能会危机系统安全，而 Pod 安全策略（PSP）则通过确保请求者有权限按配置来创建 Pod，从而来保护集群免受特权 Pod 的影响。
+PodSecurityPolicy 是 Kubernetes API 对象，你可以在不对 Kubernetes 进行任何修改的情况下创建它们，但是，默认情况下不会强制执行我们创建的一些策略，我们需要一个准入控制器、kube-controller-manager 配置以及 RBAC 权限配置，下面我们就来对这些配置进行一一说明。 Kubernetes Pod 安全策略(PSP)配置 kubernetes psp Admission Controller Admission Controller（准入控制器）拦截对 kube-apiserver 的请求，拦截发生在请求的对象被持久化之前，但是在请求被验证和授权之后。这样我们就可以查看请求对象的来源，并验证需要的内容是否正确。通过将它们添加到 kube-apiserver 的enable-admission-plugins参数中来启用准入控制器。在1.10版本之前，使用现在已经弃用的admision-control参数，另外需要注意准入控制器的顺序很重要。 将PodSecurityPolicy添加到 kube-apiserver 上的enabled-admission-plugins参数中，然后重启 kube-apiserver： enable-admission-plugins=NamespaceLifecycle,LimitRanger,ServiceAccount,DefaultStorageClass,DefaultTolerationSeconds,MutatingAdmissionWebhook,ValidatingAdmissionWebhook,ResourceQuota,PodSecurityPolicy  其他插件来自 Kubernetes 文档中推荐的一些插件列表。
+PodSecurityPolicy 已经添加到上面的列表中了，现在 PSP 的控制器已经启用了，但是我们集群中现在缺少一些安全策略，那么新的 Pod 创建就会失败。 比如现在我们创建一个 Nginx 的 Deployment，YAML 文件内容如下所示：（nginx.yaml）  apiVersion: apps/v1 kind: Deployment metadata: name: nginx-deploy namespace: default labels: app: nginx spec: replicas: 1 selector: matchLabels: app: nginx template: metadata: labels: app: nginx spec: containers: - name: nginx image: nginx:1.">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="" />
+<meta property="og:description" content="Kubernetes Pod 安全策略(PSP)配置 默认情况下，Kubernetes 允许创建一个有特权容器的 Pod，这些容器很可能会危机系统安全，而 Pod 安全策略（PSP）则通过确保请求者有权限按配置来创建 Pod，从而来保护集群免受特权 Pod 的影响。
+PodSecurityPolicy 是 Kubernetes API 对象，你可以在不对 Kubernetes 进行任何修改的情况下创建它们，但是，默认情况下不会强制执行我们创建的一些策略，我们需要一个准入控制器、kube-controller-manager 配置以及 RBAC 权限配置，下面我们就来对这些配置进行一一说明。 Kubernetes Pod 安全策略(PSP)配置 kubernetes psp Admission Controller Admission Controller（准入控制器）拦截对 kube-apiserver 的请求，拦截发生在请求的对象被持久化之前，但是在请求被验证和授权之后。这样我们就可以查看请求对象的来源，并验证需要的内容是否正确。通过将它们添加到 kube-apiserver 的enable-admission-plugins参数中来启用准入控制器。在1.10版本之前，使用现在已经弃用的admision-control参数，另外需要注意准入控制器的顺序很重要。 将PodSecurityPolicy添加到 kube-apiserver 上的enabled-admission-plugins参数中，然后重启 kube-apiserver： enable-admission-plugins=NamespaceLifecycle,LimitRanger,ServiceAccount,DefaultStorageClass,DefaultTolerationSeconds,MutatingAdmissionWebhook,ValidatingAdmissionWebhook,ResourceQuota,PodSecurityPolicy  其他插件来自 Kubernetes 文档中推荐的一些插件列表。
+PodSecurityPolicy 已经添加到上面的列表中了，现在 PSP 的控制器已经启用了，但是我们集群中现在缺少一些安全策略，那么新的 Pod 创建就会失败。 比如现在我们创建一个 Nginx 的 Deployment，YAML 文件内容如下所示：（nginx.yaml）  apiVersion: apps/v1 kind: Deployment metadata: name: nginx-deploy namespace: default labels: app: nginx spec: replicas: 1 selector: matchLabels: app: nginx template: metadata: labels: app: nginx spec: containers: - name: nginx image: nginx:1." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://wangyijie.github.io/public/posts/%E5%AE%89%E5%85%A8/kubernetes-pod-%E5%AE%89%E5%85%A8%E7%AD%96%E7%95%A5psp%E9%85%8D%E7%BD%AE/" /><meta property="article:section" content="posts" />
+
+
+
+<title>Kubernetes Pod 安全策略( Psp)配置 | A great computer technology Site</title>
+<link rel="manifest" href="/public/manifest.json">
+<link rel="icon" href="/public/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/public/book.min.8599444fcc48ee6b435b5b62c955ab7d914fa1e2a453df90c4b97cc9769665d1.css" integrity="sha256-hZlET8xI7mtDW1tiyVWrfZFPoeKkU9&#43;QxLl8yXaWZdE=" crossorigin="anonymous">
+  <script defer src="/public/flexsearch.min.js"></script>
+  <script defer src="/public/en.search.min.49d7ffe0cc6a09481193582a484d1dfccfe14d6d173d2de804b6e37d7c5a9f57.js" integrity="sha256-Sdf/4MxqCUgRk1gqSE0d/M/hTW0XPS3oBLbjfXxan1c=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/public/"><span>A great computer technology Site</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/public/posts/" >
+        Posts
+      </a>
+      
+<ul>
+  
+  <li>
+    <a href="/public/posts/angluar-cli/" >
+        angular
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/ansible/" >
+        ansible
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/cicd/" >
+        CICD
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/cloud/" >
+        cloude
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/container/" >
+        container
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/devops/" >
+        DevOps
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/english/" >
+        English
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/golang/" >
+        golang
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/istio/" >
+        istio
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/kubernetes/" >
+        Kubernetes
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" >
+        mechine leaning
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/material2/" >
+        mererial2
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E7%9B%91%E6%8E%A7/" >
+        monitor
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/mysql/" >
+        mysql
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E7%BD%91%E7%BB%9C/" >
+        networking
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E6%97%A5%E8%AE%B0%E6%9C%AC/" >
+        notes
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/postgresql/" >
+        postgresql
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/django/" >
+        python
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E5%AE%89%E5%85%A8/" >
+        safe
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E8%AF%97%E8%AF%8D/" >
+        shi chi
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E7%AB%99%E7%82%B9%E5%8F%AF%E9%9D%A0%E6%80%A7%E5%B7%A5%E7%A8%8B/" >
+        SRE
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E6%96%87%E5%AD%A6/" >
+        wenxue
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E9%9A%8F%E7%AC%94/" >
+        write somethings
+      </a>
+  </li>
+  
+</ul>
+
+  </li>
+  
+  <li>
+    <a href="/public/about/" >
+        About
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var a=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(b){localStorage.setItem("menu.scrollTop",a.scrollTop)}),a.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/public/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Kubernetes Pod 安全策略( Psp)配置</strong>
+
+  <label for="toc-control">
+    
+    <img src="/public/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents"></nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+<article class="markdown">
+  <h1>
+    <a href="/public/posts/%E5%AE%89%E5%85%A8/kubernetes-pod-%E5%AE%89%E5%85%A8%E7%AD%96%E7%95%A5psp%E9%85%8D%E7%BD%AE/">Kubernetes Pod 安全策略( Psp)配置</a>
+  </h1>
+  
+
+
+  
+
+  
+
+
+
+<p>Kubernetes Pod 安全策略(PSP)配置
+默认情况下，Kubernetes 允许创建一个有特权容器的 Pod，这些容器很可能会危机系统安全，而 Pod 安全策略（PSP）则通过确保请求者有权限按配置来创建 Pod，从而来保护集群免受特权 Pod 的影响。</p>
+<pre><code>PodSecurityPolicy 是 Kubernetes API 对象，你可以在不对 Kubernetes 进行任何修改的情况下创建它们，但是，默认情况下不会强制执行我们创建的一些策略，我们需要一个准入控制器、kube-controller-manager 配置以及 RBAC 权限配置，下面我们就来对这些配置进行一一说明。
+
+Kubernetes Pod 安全策略(PSP)配置
+
+kubernetes psp
+
+Admission Controller
+
+Admission Controller（准入控制器）拦截对 kube-apiserver 的请求，拦截发生在请求的对象被持久化之前，但是在请求被验证和授权之后。这样我们就可以查看请求对象的来源，并验证需要的内容是否正确。通过将它们添加到 kube-apiserver 的enable-admission-plugins参数中来启用准入控制器。在1.10版本之前，使用现在已经弃用的admision-control参数，另外需要注意准入控制器的顺序很重要。
+
+将PodSecurityPolicy添加到 kube-apiserver 上的enabled-admission-plugins参数中，然后重启 kube-apiserver：
+
+enable-admission-plugins=NamespaceLifecycle,LimitRanger,ServiceAccount,DefaultStorageClass,DefaultTolerationSeconds,MutatingAdmissionWebhook,ValidatingAdmissionWebhook,ResourceQuota,PodSecurityPolicy
+</code></pre>
+<p>其他插件来自 Kubernetes 文档中推荐的一些插件列表。</p>
+<pre><code>PodSecurityPolicy 已经添加到上面的列表中了，现在 PSP 的控制器已经启用了，但是我们集群中现在缺少一些安全策略，那么新的 Pod 创建就会失败。
+
+比如现在我们创建一个 Nginx 的 Deployment，YAML 文件内容如下所示：（nginx.yaml）
+</code></pre>
+<pre tabindex="0"><code>apiVersion: apps/v1
+kind: Deployment
+metadata:
+ name: nginx-deploy
+ namespace: default
+ labels:
+ app: nginx
+spec:
+ replicas: 1
+ selector:
+   matchLabels:
+   app: nginx
+ template:
+   metadata:
+     labels:
+       app: nginx
+   spec:
+     containers:
+     - name: nginx
+       image: nginx:1.15.4
+</code></pre><p>然后直接创建上面的 Deployment：</p>
+<pre><code>$ kubectl apply -f nginx.yaml
+</code></pre>
+<p>deployment.apps/nginx-deploy created
+我们可以看到 Deployment 已经创建成功了，现在检查下 default 命名空间下面的 pod、replicaset、deployment：</p>
+<pre><code>$ kubectl get po,rs,deploy -l app=nginx
+</code></pre>
+<p>NAME READY STATUS RESTARTS AGE
+NAME DESIRED CURRENT READY AGE
+replicaset.extensions/nginx-deploy-77f7d4c6b4 1 0 0 40s
+NAME READY UP-TO-DATE AVAILABLE AGE
+deployment.extensions/nginx-deploy 0/1 0 0 40s
+可以看到 replicaset 和 deployment 都创建成功了，但是 replicaset 控制器却并没有创建 Pod，这个时候就需要使用 ServiceAccount 了。</p>
+<pre><code>ServiceAccount Controller Manager
+
+一般来说用户很少会直接创建 Pod，通过是通过 Deployment、StatefulSet、Job 或者 DasemonSet 这些控制器来创建 Pod 的，我们这里需要配置 kube-controller-manager 来为其包含的每个控制器使用单独的 ServiceAccount，我们可以通过在其命令启动参数中添加如下标志来实现：
+
+use-service-account-credentials=true
+一般情况下上面这个标志在大多数安装工具（如 kubeadm）中都是默认开启的，所以不需要单独配置了。
+
+当 kube-controller-manager 开启上面的标志后，它将使用由 Kubernetes 自动生成的以下 ServiceAccount:
+
+$ kubectl get serviceaccount -n kube-system | egrep -o '[A-Za-z0-9-]+-controller'
+</code></pre>
+<p>attachdetach-controller
+calico-kube-controller
+certificate-controller
+clusterrole-aggregation-controller
+cronjob-controller
+daemon-set-controller
+deployment-controller
+disruption-controller
+endpoint-controller
+expand-controller
+job-controller
+namespace-controller
+node-controller
+pv-protection-controller
+pvc-protection-controller
+replicaset-controller
+replication-controller
+resourcequota-controller
+service-account-controller
+service-controller
+statefulset-controller
+ttl-controller
+这些 ServiceAccount 指定了哪个控制器可以解析哪些策略的配置。</p>
+<pre><code>策略
+
+PodSecurityPolicy 对象提供了一种声明式的方式，用于表达我们运行用户和 ServiceAccount 在我们的集群中创建的内容。我们可以查看策略文档来了解如何设置。在我们当前示例中，我们将创建2个策略，第一个是提供限制访问的“默认”策略，保证使用特权设置（例如使用 hostNetwork）无法创建 Pod。第二种是一个“提升”的许可策略，允许将特权设置用于某些 Pod，例如在 kube-system 命名空间下面创建的 Pod 有权限。
+
+首先，创建一个限制性策略，作为默认策略：(psp-restrictive.yaml)
+</code></pre>
+<pre tabindex="0"><code>apiVersion: policy/v1beta1
+kind: PodSecurityPolicy
+metadata:
+ name: restrictive
+spec:
+ privileged: false
+ hostNetwork: false
+ allowPrivilegeEscalation: false
+ defaultAllowPrivilegeEscalation: false
+ hostPID: false
+ hostIPC: false
+ runAsUser:
+ rule: RunAsAny
+ fsGroup:
+ rule: RunAsAny
+ seLinux:
+ rule: RunAsAny
+ supplementalGroups:
+ rule: RunAsAny
+ volumes:
+ - 'configMap'
+ - 'downwardAPI'
+ - 'emptyDir'
+ - 'persistentVolumeClaim'
+ - 'secret'
+ - 'projected'
+ allowedCapabilities:
+ - '*'
+</code></pre><pre><code>直接创建上面的 psp 对象：
+
+$ kubectl apply -f psp-restrictive.yaml
+</code></pre>
+<p>podsecuritypolicy.policy/restrictive configured
+虽然限制性的访问对于大多数 Pod 创建是足够的了，但是对于需要提升访问权限的 Pod 来说，就需要一些允许策略了，例如，kube-proxy 就需要启用 hostNetwork:</p>
+<pre><code>$ kubectl get pods -n kube-system -l k8s-app=kube-proxy
+</code></pre>
+<p>NAME READY STATUS RESTARTS AGE
+kube-proxy-4z4vf 1/1 Running 0 18d
+$ kubectl get pods -n kube-system kube-proxy-4z4vf -o yaml |grep hostNetwork
+hostNetwork: true
+这就需要创建一个用于提升创建权限的许可策略了：(psp-permissive.yaml)</p>
+<pre tabindex="0"><code>apiVersion: policy/v1beta1
+kind: PodSecurityPolicy
+metadata:
+ name: permissive
+spec:
+ privileged: true
+ hostNetwork: true
+ hostIPC: true
+ hostPID: true
+ seLinux:
+ rule: RunAsAny
+ supplementalGroups:
+ rule: RunAsAny
+ runAsUser:
+ rule: RunAsAny
+ fsGroup:
+ rule: RunAsAny
+ hostPorts:
+ - min: 0
+ max: 65535
+ volumes:
+ - '*'
+</code></pre><pre><code>同样直接创建上面的 psp 对象：
+
+$ kubectl apply -f psp-permissive.yaml
+</code></pre>
+<p>podsecuritypolicy.policy/permissive configured
+$ kubectl get psp
+NAME PRIV CAPS SELINUX RUNASUSER FSGROUP SUPGROUP READONLYROOTFS VOLUMES
+permissive true RunAsAny RunAsAny RunAsAny RunAsAny false *
+restrictive false * RunAsAny RunAsAny RunAsAny RunAsAny false configMap,downwardAPI,emptyDir,persistentVolumeClaim,secret,projected
+现在配置都已经就绪了，但是我们需要引入到 Kubernetes 授权，这样才可以确定请求 Pod 创建的用户或者 ServiceAccount 是否解决了限制性或许可性策略，这就需要用到 RBAC 了。</p>
+<pre><code>RBAC
+
+在我们启用 Pod 安全策略的时候，可能会对 RBAC 引起混淆。它确定了一个账户可以使用的策略，使用集群范围的 ClusterRoleBinding 可以为 ServiceAccount（例如 replicaset-controller）提供对限制性策略的访问权限。使用命名空间范围的 RoleBinding，可以启用对许可策略的访问，这样可以在特定的命名空间（如 kube-system）中进行操作。下面演示了 daemonset-controller 创建 kube-proxy Pod 的解析路径：
+
+Kubernetes Pod 安全策略(PSP)配置
+
+rbac flow
+
+上面的流程图可以帮助我们从概念上去了解策略解决方案，当然实际上的代码执行路径不一定就完全就是这样的，这只是一个简单的演示。
+
+首先创建允许使用restrictive策略的 ClusterRole。然后创建一个 ClusterRoleBinding，将restrictive策略和系统中所有的控制器 ServiceAccount 进行绑定:(psp-restrictive-rbac.yaml)
+</code></pre>
+<pre tabindex="0"><code>kind: ClusterRole
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+ name: psp-restrictive
+rules:
+- apiGroups:
+ - extensions
+ resources:
+ - podsecuritypolicies
+ resourceNames:
+ - restrictive
+ verbs:
+ - use
+-
+kind: ClusterRoleBinding
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+ name: psp-default
+subjects:
+- kind: Group
+ name: system:serviceaccounts
+ namespace: kube-system
+roleRef:
+ kind: ClusterRole
+ name: psp-restrictive
+ apiGroup: rbac.authorization.k8s.io
+</code></pre><pre><code>直接创建上面的 RBAC 相关的资源对象：
+
+$ kubectl apply -f psp-restrictive-rbac.yaml
+</code></pre>
+<p>clusterrole.rbac.authorization.k8s.io/psp-restrictive created
+clusterrolebinding.rbac.authorization.k8s.io/psp-default created
+然后现在我们再重新创建上面我们的定义的 Deployment：</p>
+<pre><code>$ kubectl  -f nginx.yaml
+</code></pre>
+<p>deployment.apps &ldquo;nginx-deploy&rdquo; deleted
+$ kubectl apply -f nginx.yaml
+deployment.apps/nginx-deploy created
+创建完成后同样查看下 default 命名空间下面我们创建的一些资源对象：</p>
+<pre><code>$ kubectl get po,rs,deploy -l app=nginx
+</code></pre>
+<p>NAME READY STATUS RESTARTS AGE
+pod/nginx-deploy-77f7d4c6b4-njfdl 1/1 Running 0 13s
+NAME DESIRED CURRENT READY AGE
+replicaset.extensions/nginx-deploy-77f7d4c6b4 1 1 1 13s
+NAME READY UP-TO-DATE AVAILABLE AGE
+deployment.extensions/nginx-deploy 1/1 1 1 13s
+我们可以看到 Pods 被成功创建了，但是，如果我们尝试做一些策略不允许的事情，正常来说就应该被拒绝了。首先删除上面的这个 Deployment：</p>
+<pre><code>$ kubectl  -f nginx.yaml
+</code></pre>
+<p>deployment.apps &ldquo;nginx-deploy&rdquo; deleted
+现在我们在 nginx-deploy 基础上添加hostNetwork: true来使用 hostNetwork 这个特权：（nginx-hostnetwork.yaml）</p>
+<pre tabindex="0"><code>apiVersion: apps/v1
+kind: Deployment
+metadata:
+ name: nginx-hostnetwork-deploy
+ namespace: default
+ labels:
+ app: nginx
+spec:
+ replicas: 1
+ selector:
+ matchLabels:
+ app: nginx
+ template:
+ metadata:
+ labels:
+ app: nginx
+ spec:
+ containers:
+ - name: nginx
+ image: nginx:1.15.4
+ hostNetwork: true # 注意添加hostNetwork
+</code></pre><pre><code>然后直接创建上面的 Deployment 这个资源对象：
+
+$ kubectl apply -f nginx-hostnetwork.yaml
+</code></pre>
+<p>deployment.apps/nginx-hostnetwork-deploy created
+创建完成后同样查看 default 这个命名空间下面的一些资源对象：</p>
+<pre><code>$ kubectl get po,rs,deploy -l app=nginx
+</code></pre>
+<p>NAME READY STATUS RESTARTS AGE
+NAME DESIRED CURRENT READY AGE
+replicaset.extensions/nginx-hostnetwork-deploy-74c8fbd687 1 0 0 44s
+NAME READY UP-TO-DATE AVAILABLE AGE
+deployment.extensions/nginx-hostnetwork-deploy 0/1 0 0 44s
+现在我们发现 ReplicaSet 又没有创建 Pod 了，可以使用kubectl describe命令去查看这里我们创建的 ReplicaSet 资源对象来了解更多的信息：</p>
+<pre><code>$ kubectl describe rs nginx-hostnetwork-deploy-74c8fbd687
+</code></pre>
+<p>Name: nginx-hostnetwork-deploy-74c8fbd687
+&hellip;&hellip;
+Events:</p>
+<table>
+<thead>
+<tr>
+<th>Type Reason Age From Message</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Warning FailedCreate 80s (x15 over 2m42s) replicaset-controller Error creating: pods &ldquo;nginx-hostnetwork-deploy-74c8fbd687-&rdquo; is forbidden: unable to validate against any pod security policy: [spec.securityContext.hostNetwork: Invalid value: true: Host network is not allowed to be used]</td>
+</tr>
+<tr>
+<td>我们可以看到很明显 Hostnetwork 不被允许使用，但是在某些情况下，我们的确有在某个命名空间（比如 kube-system）下面创建使用 hostNetwork 的 Pod，这里就需要我们创建一个允许执行的 ClusterRole，然后为特定的命名空间创建一个 RoleBinding，将这里的 ClusterRole 和相关的控制器 ServiceAccount 进行绑定:(psp-permissive-rbac.yaml)</td>
+</tr>
+</tbody>
+</table>
+<pre tabindex="0"><code>kind: ClusterRole
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+ name: psp-permissive
+rules:
+- apiGroups:
+ - extensions
+ resources:
+ - podsecuritypolicies
+ resourceNames:
+ - permissive
+ verbs:
+ - use
+-
+apiVersion: rbac.authorization.k8s.io/v1beta1
+kind: RoleBinding
+metadata:
+ name: psp-permissive
+ namespace: kube-system
+roleRef:
+ apiGroup: rbac.authorization.k8s.io
+ kind: ClusterRole
+ name: psp-permissive
+subjects:
+- kind: ServiceAccount
+ name: daemon-set-controller
+ namespace: kube-system
+- kind: ServiceAccount
+ name: replicaset-controller
+ namespace: kube-system
+- kind: ServiceAccount
+ name: job-controller
+ namespace: kube-system
+</code></pre><pre><code>然后直接创建上面的 RBAC 相关的资源对象：
+
+$ kubectl apply -f psp-permissive-rbac.yaml
+</code></pre>
+<p>clusterrole.rbac.authorization.k8s.io/psp-permissive created
+rolebinding.rbac.authorization.k8s.io/psp-permissive created
+现在，我们就可以在 kube-system 这个命名空间下面使用 hostNetwork 来创建 Pod 了，将上面的 nginx 资源清单更改成 kube-system 命名空间下面：</p>
+<pre tabindex="0"><code>apiVersion: apps/v1
+kind: Deployment
+metadata:
+ name: nginx-hostnetwork-deploy
+ namespace: kube-system
+ labels:
+ app: nginx
+spec:
+ replicas: 1
+ selector:
+ matchLabels:
+ app: nginx
+ template:
+ metadata:
+ labels:
+ app: nginx
+ spec:
+ containers:
+ - name: nginx
+ image: nginx:1.15.4
+ hostNetwork: true
+</code></pre><p>重新创建这个 Deployment：</p>
+<pre><code>$ kubectl apply -f nginx-hostnetwork.yaml
+</code></pre>
+<p>deployment.apps/nginx-hostnetwork-deploy created
+创建完成后同样查看下对应的资源对象创建情况：</p>
+<pre><code>$ kubectl get po,rs,deploy -n kube-system -l app=nginx
+</code></pre>
+<p>NAME READY STATUS RESTARTS AGE
+pod/nginx-hostnetwork-deploy-74c8fbd687-7x8px 1/1 Running 0 2m1s
+NAME DESIRED CURRENT READY AGE
+replicaset.extensions/nginx-hostnetwork-deploy-74c8fbd687 1 1 1 2m1s
+NAME READY UP-TO-DATE AVAILABLE AGE
+deployment.extensions/nginx-hostnetwork-deploy 1/1 1 1 2m1s
+现在我们可以看到 Pod 在 kube-system 这个命名空间下面创建成功了。</p>
+<pre><code>特定应用的 ServiceAccount
+
+如果我们现在有这样的一个需求，在某个命名空间下面要强制执行我们创建的 restrictive（限制性）策略，但是这个命名空间下面的某个应用需要使用 permissive（许可）策略，那么应该怎么办呢？在当前模型中，我们只有集群级别和命名空间级别的解析。为了给某个应用提供单独的许可策略，我们可以为应用的 ServiceAccount 提供使用 permissive 这个 ClusterRole 的能力。
+
+比如，还是在默认的命名空间下面创建一个名为 specialsa 的 ServiceAccount:
+
+$ kubectl create serviceaccount specialsa
+</code></pre>
+<p>serviceaccount/specialsa created
+然后创建一个 RoleBinding 将 specialsa 绑定到上面的 psp-permissive 这个 CluterRole 上:(specialsa-psp.yaml)</p>
+<pre tabindex="0"><code>apiVersion: rbac.authorization.k8s.io/v1beta1
+kind: RoleBinding
+metadata:
+ name: specialsa-psp-permissive
+ namespace: default
+roleRef:
+ apiGroup: rbac.authorization.k8s.io
+ kind: ClusterRole
+ name: psp-permissive
+subjects:
+- kind: ServiceAccount
+ name: specialsa
+ namespace: default
+</code></pre><p>创建上面的 RoleBinding 对象：</p>
+<pre><code>$ kubectl apply -f specialsa-psp.yaml
+</code></pre>
+<p>rolebinding.rbac.authorization.k8s.io/specialsa-psp-permissive created
+然后为我们上面的 Deployment 添加上 serviceAccount 属性:(nginx-hostnetwork-sa.yaml)</p>
+<pre tabindex="0"><code>apiVersion: apps/v1
+kind: Deployment
+metadata:
+ name: nginx-hostnetwork-deploy
+ namespace: default
+ labels:
+ app: nginx
+spec:
+ replicas: 1
+ selector:
+ matchLabels:
+ app: nginx
+ template:
+ metadata:
+ labels:
+ app: nginx
+ spec:
+ containers:
+ - name: nginx
+ image: nginx:1.15.4
+ hostNetwork: true
+ serviceAccount: specialsa # 注意这里使用的sa的权限绑定
+</code></pre><p>然后直接创建即可:</p>
+<pre><code>$ kubectl apply -f nginx-hostnetwork-sa.yaml
+</code></pre>
+<p>deployment.apps/nginx-hostnetwork-deploy configured
+这个时候我们查看 default 这个命名空间下面带有 hostNetwork 的 Pod 也创建成功了:</p>
+<pre><code>$ kubectl get po,rs,deploy -l app=nginx
+</code></pre>
+<p>NAME READY STATUS RESTARTS AGE
+pod/nginx-hostnetwork-deploy-6c85dfbf95-hqt8j 1/1 Running 0 65s
+NAME DESIRED CURRENT READY AGE
+replicaset.extensions/nginx-hostnetwork-deploy-6c85dfbf95 1 1 1 65s
+replicaset.extensions/nginx-hostnetwork-deploy-74c8fbd687 0 0 0 31m
+NAME READY UP-TO-DATE AVAILABLE AGE
+deployment.extensions/nginx-hostnetwork-deploy 1/1 1 1 31m</p>
+<p>上面我们描述了 Pod 安全策略是一种通过使用 PSP 授权策略来保护 k8s 集群中的 Pod 的创建过程的方法。</p>
+<pre><code>参考资料
+</code></pre>
+<p><a href="https://kubernetes.io/docs/concepts/policy/pod-security-policy/#policy-reference">https://kubernetes.io/docs/concepts/policy/pod-security-policy/#policy-reference</a></p>
+<p><a href="https://octetz.com/posts/setting-up-psps">https://octetz.com/posts/setting-up-psps</a></p>
+<p><a href="https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/#is-there-a-recommended-set-of-admission-controllers-to-use">https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/#is-there-a-recommended-set-of-admission-controllers-to-use</a></p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function a(c){const a=window.getSelection(),b=document.createRange();b.selectNodeContents(c),a.removeAllRanges(),a.addRange(b)}document.querySelectorAll("pre code").forEach(b=>{b.addEventListener("click",function(c){a(b.parentElement),navigator.clipboard&&navigator.clipboard.writeText(b.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents"></nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

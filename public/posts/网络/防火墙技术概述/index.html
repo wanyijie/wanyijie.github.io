@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="一、防火墙技术概述#随着互联网的普及和发展，尤其是Internet的广泛使用，使计算机应用更加广泛与深入。同时，我们不得不注意到，网络虽然功能强大，也有其脆弱易受到攻击的一面。据美国FBI统计，美国每年因网络安全问题所造成的经济损失高达75亿美元，而全求平均每20秒钟就发生一起Internet计算机侵入事件。在我国，每年因黑客入侵、计算机病毒的破坏也造成了巨大的经济损失。人们在利用网络的优越性的同时，对网络安全问题也决不能忽视。如何建立比较安全的网络体系，值得我们关注研究。
+二、防火墙的概念# 防火墙是设置在被保护网络和外部网络之间的一道屏障，以防止发生不可预测的、潜在破坏性的侵入。防火墙是指设置在不同网络(如可信任的企业内部网和不可信的公共网)或网络安全域之间的一系列部件的组合。它是不同网络或网络安全域之间信息的唯一出入口，能根据企业的安全政策控制(允许、拒绝、监测)出入网络的信息流，且本身具有较强的抗攻击能力。防火墙提供信息安全服务，是实现网络和信息安全的基础设施。在逻辑上，防火墙是一个分离器，一个限制器，也是一个分析器，它有效地监控了内部网络和互联网之间的任何活动，保证了内部网络的安全。目前的防火墙技术无论从技术上还是从产品发展历程上，都经历了五个发展历程。
+第一代防火墙技术几乎与路由器同时出现，采用了包过滤（ Packet filter）技术。由贝尔实验室的 Dave Presotto 和 Howard Trickey 推出了第二代防火墙，即电路层防火墙，同时提出了第三代防火墙— 应用层防火墙（代理防火墙）的初步结构。 1992 年，USC 信息科学院的 BobBraden 开发出了基于动态包过滤（Dynamic packet filter）技术的第四代防火墙 ，后来演变为目前所说的状态监视（Stateful inspection）技术。1994 年，以色列的 CheckPoint 公司开发出了第一个采用这种技术的商业化的产品。 1998年，NAI 公司推出了一种自适应代理（Adaptive proxy）技术，并在其产品 Gauntlet Firewall for NT 中得以实现，给代理类型的防火墙赋予了全 新的意义，可以称之为第五代防火墙。但传统的防火墙并没有解决目前网络中主要的安全问题。目前网络安全的三大主要问题是:以拒绝访问(DDOS)为主要代表的网络攻击，以蠕虫(Worm)为主要代表的病毒传播和以垃圾电子邮件(SPAM)为代表的内容控制。这三大安全问题占据网络安全问题九成以上。而这三大问题，传统防火墙都无能为力。主要有以下三个原因: 一是传统防火墙的计算能力的限制。传统的防火墙是以高强度的检查为代价，检查的强度越高，计算的代价越大。二是传统防火墙的访问控制机制是一个简单的过滤机制。它是一个简单的条件过滤器，不具有智能功能，无法检测复杂的攻击。三是传统的防火墙无法区分识别善意和恶意的行为。该特征决定了传统的防火墙无法解决恶意的攻击行为。现在防火墙正在向分布、智能的方向发展，其中智能防火墙可以很好的解决上面的问题。智能防火墙是相对传统的防火墙而言的，从技术特征上智能防火墙是利用统计、记忆、概率和决策的智能方法来对数据进行识别，并达到访问控制的目的。新的数学方法，消除了匹配检查所需要的海量计算，高效发现网络行为的特征值，直接进行访问控制。由于这些方法多是人工智能学科采用的方法，因此，又称为智能防火墙。
+三、防火墙的功能#防火墙的主要功能主要为：
+** 1．包过滤**# 包过滤是一种网络的数据安全保护机制，它可用来控制流出和流入网络的数据，它通常由定义的各条数据安全规则所组成，防火墙设置可基于源地址、源端口、目的地址、目的端口、协议和时间;可根据地址簿进行设置规则。
+2．地址转换#网络地址变换是将内部网络或外部网络的IP地址转换，可分为源地址转换SourceNAT(SNAT)和目的地址转换 Destination NAT(DNAT)。SNAT 用于对内部网络地址进行转换，对外部网络隐藏起内部网络的结构，避免受到来自外部其他网络的非授权访问或恶意攻击。并将有限的 IP 地址动态或静态的与内部 IP 地址对应起来，用来缓解地址空间的短缺问题，节省资源，降低成本。DNAT 主要用于外网主机访问内网主机。
+3．认证和应用代理# 认证指防火墙对访问网络者合法身分的确定。代理指防火墙内置用户认证数据库;提供 HTTP、FTP和 SMTP代理功能，并可对这三种协议进行访问控制；同时支持 URL 过滤功能。">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="" />
+<meta property="og:description" content="一、防火墙技术概述#随着互联网的普及和发展，尤其是Internet的广泛使用，使计算机应用更加广泛与深入。同时，我们不得不注意到，网络虽然功能强大，也有其脆弱易受到攻击的一面。据美国FBI统计，美国每年因网络安全问题所造成的经济损失高达75亿美元，而全求平均每20秒钟就发生一起Internet计算机侵入事件。在我国，每年因黑客入侵、计算机病毒的破坏也造成了巨大的经济损失。人们在利用网络的优越性的同时，对网络安全问题也决不能忽视。如何建立比较安全的网络体系，值得我们关注研究。
+二、防火墙的概念# 防火墙是设置在被保护网络和外部网络之间的一道屏障，以防止发生不可预测的、潜在破坏性的侵入。防火墙是指设置在不同网络(如可信任的企业内部网和不可信的公共网)或网络安全域之间的一系列部件的组合。它是不同网络或网络安全域之间信息的唯一出入口，能根据企业的安全政策控制(允许、拒绝、监测)出入网络的信息流，且本身具有较强的抗攻击能力。防火墙提供信息安全服务，是实现网络和信息安全的基础设施。在逻辑上，防火墙是一个分离器，一个限制器，也是一个分析器，它有效地监控了内部网络和互联网之间的任何活动，保证了内部网络的安全。目前的防火墙技术无论从技术上还是从产品发展历程上，都经历了五个发展历程。
+第一代防火墙技术几乎与路由器同时出现，采用了包过滤（ Packet filter）技术。由贝尔实验室的 Dave Presotto 和 Howard Trickey 推出了第二代防火墙，即电路层防火墙，同时提出了第三代防火墙— 应用层防火墙（代理防火墙）的初步结构。 1992 年，USC 信息科学院的 BobBraden 开发出了基于动态包过滤（Dynamic packet filter）技术的第四代防火墙 ，后来演变为目前所说的状态监视（Stateful inspection）技术。1994 年，以色列的 CheckPoint 公司开发出了第一个采用这种技术的商业化的产品。 1998年，NAI 公司推出了一种自适应代理（Adaptive proxy）技术，并在其产品 Gauntlet Firewall for NT 中得以实现，给代理类型的防火墙赋予了全 新的意义，可以称之为第五代防火墙。但传统的防火墙并没有解决目前网络中主要的安全问题。目前网络安全的三大主要问题是:以拒绝访问(DDOS)为主要代表的网络攻击，以蠕虫(Worm)为主要代表的病毒传播和以垃圾电子邮件(SPAM)为代表的内容控制。这三大安全问题占据网络安全问题九成以上。而这三大问题，传统防火墙都无能为力。主要有以下三个原因: 一是传统防火墙的计算能力的限制。传统的防火墙是以高强度的检查为代价，检查的强度越高，计算的代价越大。二是传统防火墙的访问控制机制是一个简单的过滤机制。它是一个简单的条件过滤器，不具有智能功能，无法检测复杂的攻击。三是传统的防火墙无法区分识别善意和恶意的行为。该特征决定了传统的防火墙无法解决恶意的攻击行为。现在防火墙正在向分布、智能的方向发展，其中智能防火墙可以很好的解决上面的问题。智能防火墙是相对传统的防火墙而言的，从技术特征上智能防火墙是利用统计、记忆、概率和决策的智能方法来对数据进行识别，并达到访问控制的目的。新的数学方法，消除了匹配检查所需要的海量计算，高效发现网络行为的特征值，直接进行访问控制。由于这些方法多是人工智能学科采用的方法，因此，又称为智能防火墙。
+三、防火墙的功能#防火墙的主要功能主要为：
+** 1．包过滤**# 包过滤是一种网络的数据安全保护机制，它可用来控制流出和流入网络的数据，它通常由定义的各条数据安全规则所组成，防火墙设置可基于源地址、源端口、目的地址、目的端口、协议和时间;可根据地址簿进行设置规则。
+2．地址转换#网络地址变换是将内部网络或外部网络的IP地址转换，可分为源地址转换SourceNAT(SNAT)和目的地址转换 Destination NAT(DNAT)。SNAT 用于对内部网络地址进行转换，对外部网络隐藏起内部网络的结构，避免受到来自外部其他网络的非授权访问或恶意攻击。并将有限的 IP 地址动态或静态的与内部 IP 地址对应起来，用来缓解地址空间的短缺问题，节省资源，降低成本。DNAT 主要用于外网主机访问内网主机。
+3．认证和应用代理# 认证指防火墙对访问网络者合法身分的确定。代理指防火墙内置用户认证数据库;提供 HTTP、FTP和 SMTP代理功能，并可对这三种协议进行访问控制；同时支持 URL 过滤功能。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://wangyijie.github.io/public/posts/%E7%BD%91%E7%BB%9C/%E9%98%B2%E7%81%AB%E5%A2%99%E6%8A%80%E6%9C%AF%E6%A6%82%E8%BF%B0/" /><meta property="article:section" content="posts" />
+
+
+
+<title>防火墙技术概述 | A great computer technology Site</title>
+<link rel="manifest" href="/public/manifest.json">
+<link rel="icon" href="/public/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/public/book.min.8599444fcc48ee6b435b5b62c955ab7d914fa1e2a453df90c4b97cc9769665d1.css" integrity="sha256-hZlET8xI7mtDW1tiyVWrfZFPoeKkU9&#43;QxLl8yXaWZdE=" crossorigin="anonymous">
+  <script defer src="/public/flexsearch.min.js"></script>
+  <script defer src="/public/en.search.min.49d7ffe0cc6a09481193582a484d1dfccfe14d6d173d2de804b6e37d7c5a9f57.js" integrity="sha256-Sdf/4MxqCUgRk1gqSE0d/M/hTW0XPS3oBLbjfXxan1c=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/public/"><span>A great computer technology Site</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/public/posts/" >
+        Posts
+      </a>
+      
+<ul>
+  
+  <li>
+    <a href="/public/posts/angluar-cli/" >
+        angular
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/ansible/" >
+        ansible
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/cicd/" >
+        CICD
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/cloud/" >
+        cloude
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/container/" >
+        container
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/devops/" >
+        DevOps
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/english/" >
+        English
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/golang/" >
+        golang
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/istio/" >
+        istio
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/kubernetes/" >
+        Kubernetes
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" >
+        mechine leaning
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/material2/" >
+        mererial2
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E7%9B%91%E6%8E%A7/" >
+        monitor
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/mysql/" >
+        mysql
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E7%BD%91%E7%BB%9C/" >
+        networking
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E6%97%A5%E8%AE%B0%E6%9C%AC/" >
+        notes
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/postgresql/" >
+        postgresql
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/django/" >
+        python
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E5%AE%89%E5%85%A8/" >
+        safe
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E8%AF%97%E8%AF%8D/" >
+        shi chi
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E7%AB%99%E7%82%B9%E5%8F%AF%E9%9D%A0%E6%80%A7%E5%B7%A5%E7%A8%8B/" >
+        SRE
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E6%96%87%E5%AD%A6/" >
+        wenxue
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E9%9A%8F%E7%AC%94/" >
+        write somethings
+      </a>
+  </li>
+  
+</ul>
+
+  </li>
+  
+  <li>
+    <a href="/public/about/" >
+        About
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var a=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(b){localStorage.setItem("menu.scrollTop",a.scrollTop)}),a.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/public/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>防火墙技术概述</strong>
+
+  <label for="toc-control">
+    
+    <img src="/public/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#1包过滤">** 1．包过滤**</a></li>
+    <li><a href="#2地址转换"><strong>2．地址转换</strong></a></li>
+    <li><a href="#3认证和应用代理"><strong>3．认证和应用代理</strong></a></li>
+    <li><a href="#4透明和路由"><strong>4．透明和路由</strong></a></li>
+    <li><a href="#5入侵检测功能"><strong>5.入侵检测功能</strong></a>
+      <ul>
+        <li><a href="#1反端口扫描"><strong>（1）反端口扫描</strong></a></li>
+        <li><a href="#2检测拒绝服务攻击"><strong>（2）检测拒绝服务攻击</strong></a></li>
+        <li><a href="#3检测多种缓冲区溢出攻击-buffer-overflow"><strong>（3）检测多种缓冲区溢出攻击 (Buffer Overflow)</strong></a></li>
+        <li><a href="#4检测-cgiiis-服务器入侵"><strong>（4）检测 CGI/IIS 服务器入侵</strong></a></li>
+        <li><a href="#5检测后门木马及其网络蠕虫"><strong>（5）检测后门、木马及其网络蠕虫</strong></a></li>
+        <li><a href="#6其他功能"><strong>（6）其他功能</strong></a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li><a href="#1包过滤防火墙"><strong>1.包过滤防火墙</strong></a></li>
+    <li><a href="#2应用级代理防火墙"><strong>2.应用级代理防火墙</strong></a></li>
+    <li><a href="#3状态包检测防火墙"><strong>3.状态包检测防火墙</strong></a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#1安全策略功能"><strong>1.安全策略功能</strong></a></li>
+    <li><a href="#2多级过滤技术"><strong>2.多级过滤技术</strong></a></li>
+    <li><a href="#3功能扩展"><strong>3.功能扩展</strong></a></li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+<article class="markdown">
+  <h1>
+    <a href="/public/posts/%E7%BD%91%E7%BB%9C/%E9%98%B2%E7%81%AB%E5%A2%99%E6%8A%80%E6%9C%AF%E6%A6%82%E8%BF%B0/">防火墙技术概述</a>
+  </h1>
+  
+
+
+  
+
+  
+
+
+
+<h1 id="一防火墙技术概述">
+  <strong>一、防火墙技术概述</strong>
+  <a class="anchor" href="#%e4%b8%80%e9%98%b2%e7%81%ab%e5%a2%99%e6%8a%80%e6%9c%af%e6%a6%82%e8%bf%b0">#</a>
+</h1>
+<p>随着互联网的普及和发展，尤其是Internet的广泛使用，使计算机应用更加广泛与深入。同时，我们不得不注意到，网络虽然功能强大，也有其脆弱易受到攻击的一面。据美国FBI统计，美国每年因网络安全问题所造成的经济损失高达75亿美元，而全求平均每20秒钟就发生一起Internet计算机侵入事件。在我国，每年因黑客入侵、计算机病毒的破坏也造成了巨大的经济损失。人们在利用网络的优越性的同时，对网络安全问题也决不能忽视。如何建立比较安全的网络体系，值得我们关注研究。</p>
+<h1 id="二防火墙的概念">
+  <strong>二、防火墙的概念</strong>
+  <a class="anchor" href="#%e4%ba%8c%e9%98%b2%e7%81%ab%e5%a2%99%e7%9a%84%e6%a6%82%e5%bf%b5">#</a>
+</h1>
+<p> 防火墙是设置在被保护网络和外部网络之间的一道屏障，以防止发生不可预测的、潜在破坏性的侵入。防火墙是指设置在不同网络(如可信任的企业内部网和不可信的公共网)或网络安全域之间的一系列部件的组合。它是不同网络或网络安全域之间信息的唯一出入口，能根据企业的安全政策控制(允许、拒绝、监测)出入网络的信息流，且本身具有较强的抗攻击能力。防火墙提供信息安全服务，是实现网络和信息安全的基础设施。在逻辑上，防火墙是一个分离器，一个限制器，也是一个分析器，它有效地监控了内部网络和互联网之间的任何活动，保证了内部网络的安全。目前的防火墙技术无论从技术上还是从产品发展历程上，都经历了五个发展历程。</p>
+<p>第一代防火墙技术几乎与路由器同时出现，采用了包过滤（ Packet filter）技术。由贝尔实验室的 Dave Presotto 和 Howard Trickey 推出了第二代防火墙，即电路层防火墙，同时提出了第三代防火墙— 应用层防火墙（代理防火墙）的初步结构。 1992 年，USC 信息科学院的 BobBraden 开发出了基于动态包过滤（Dynamic packet filter）技术的第四代防火墙 ，后来演变为目前所说的状态监视（Stateful inspection）技术。1994 年，以色列的 CheckPoint 公司开发出了第一个采用这种技术的商业化的产品。 1998年，NAI 公司推出了一种自适应代理（Adaptive proxy）技术，并在其产品 Gauntlet Firewall for NT 中得以实现，给代理类型的防火墙赋予了全 新的意义，可以称之为第五代防火墙。但传统的防火墙并没有解决目前网络中主要的安全问题。目前网络安全的三大主要问题是:以拒绝访问(DDOS)为主要代表的网络攻击，以蠕虫(Worm)为主要代表的病毒传播和以垃圾电子邮件(SPAM)为代表的内容控制。这三大安全问题占据网络安全问题九成以上。而这三大问题，传统防火墙都无能为力。主要有以下三个原因: 一是传统防火墙的计算能力的限制。传统的防火墙是以高强度的检查为代价，检查的强度越高，计算的代价越大。二是传统防火墙的访问控制机制是一个简单的过滤机制。它是一个简单的条件过滤器，不具有智能功能，无法检测复杂的攻击。三是传统的防火墙无法区分识别善意和恶意的行为。该特征决定了传统的防火墙无法解决恶意的攻击行为。现在防火墙正在向分布、智能的方向发展，其中智能防火墙可以很好的解决上面的问题。智能防火墙是相对传统的防火墙而言的，从技术特征上智能防火墙是利用统计、记忆、概率和决策的智能方法来对数据进行识别，并达到访问控制的目的。新的数学方法，消除了匹配检查所需要的海量计算，高效发现网络行为的特征值，直接进行访问控制。由于这些方法多是人工智能学科采用的方法，因此，又称为智能防火墙。</p>
+<h1 id="三防火墙的功能">
+  <strong>三、防火墙的功能</strong>
+  <a class="anchor" href="#%e4%b8%89%e9%98%b2%e7%81%ab%e5%a2%99%e7%9a%84%e5%8a%9f%e8%83%bd">#</a>
+</h1>
+<p>防火墙的主要功能主要为：</p>
+<h2 id="1包过滤">
+  ** 1．包过滤**
+  <a class="anchor" href="#1%e5%8c%85%e8%bf%87%e6%bb%a4">#</a>
+</h2>
+<p> 包过滤是一种网络的数据安全保护机制，它可用来控制流出和流入网络的数据，它通常由定义的各条数据安全规则所组成，防火墙设置可基于源地址、源端口、目的地址、目的端口、协议和时间;可根据地址簿进行设置规则。</p>
+<h2 id="2地址转换">
+  <strong>2．地址转换</strong>
+  <a class="anchor" href="#2%e5%9c%b0%e5%9d%80%e8%bd%ac%e6%8d%a2">#</a>
+</h2>
+<p>网络地址变换是将内部网络或外部网络的IP地址转换，可分为源地址转换SourceNAT(SNAT)和目的地址转换 Destination NAT(DNAT)。SNAT 用于对内部网络地址进行转换，对外部网络隐藏起内部网络的结构，避免受到来自外部其他网络的非授权访问或恶意攻击。并将有限的 IP 地址动态或静态的与内部 IP 地址对应起来，用来缓解地址空间的短缺问题，节省资源，降低成本。DNAT 主要用于外网主机访问内网主机。</p>
+<h2 id="3认证和应用代理">
+  <strong>3．认证和应用代理</strong>
+  <a class="anchor" href="#3%e8%ae%a4%e8%af%81%e5%92%8c%e5%ba%94%e7%94%a8%e4%bb%a3%e7%90%86">#</a>
+</h2>
+<p> 认证指防火墙对访问网络者合法身分的确定。代理指防火墙内置用户认证数据库;提供 HTTP、FTP和 SMTP代理功能，并可对这三种协议进行访问控制；同时支持 URL 过滤功能。</p>
+<h2 id="4透明和路由">
+  <strong>4．透明和路由</strong>
+  <a class="anchor" href="#4%e9%80%8f%e6%98%8e%e5%92%8c%e8%b7%af%e7%94%b1">#</a>
+</h2>
+<p>指防火墙将网关隐藏在公共系统之后使其免遭直接攻击。隐蔽智能网关提供了对互联网服务进行几乎透明的访问， 同时阻止了外部未授权访问者对专用网络的非法访问;防火墙还支持路由方式，提供静态路由功能，支持内部多个子网之间的安全访问。</p>
+<h2 id="5入侵检测功能">
+  <strong>5.入侵检测功能</strong>
+  <a class="anchor" href="#5%e5%85%a5%e4%be%b5%e6%a3%80%e6%b5%8b%e5%8a%9f%e8%83%bd">#</a>
+</h2>
+<p>入侵检测技术就是一种主动保护自己免受黑客攻击的一种网络安全技术，包括以下内容:</p>
+<h3 id="1反端口扫描">
+  <strong>（1）反端口扫描</strong>
+  <a class="anchor" href="#1%e5%8f%8d%e7%ab%af%e5%8f%a3%e6%89%ab%e6%8f%8f">#</a>
+</h3>
+<p>端口扫描就是指黑客通过远程端口扫描的工具，从中发现主机的哪些非常用端口是打开的;是否支持 FTP、 服务；且 FTP 服务是否支持 Web “匿名”，以及 IIS 版本，是否有可以被成功攻破的 IIS 漏洞，进而对内部网络的主机进行攻击。 顾名思义反端口扫描就是防范端口扫描的方法，目前常用的方法有:关闭闲置和有潜在危险的端口；检查各端口，有端口扫描的症状时，立即屏蔽该端口，多数防火墙设备采用的都是这种反端口扫描方式。</p>
+<h3 id="2检测拒绝服务攻击">
+  <strong>（2）检测拒绝服务攻击</strong>
+  <a class="anchor" href="#2%e6%a3%80%e6%b5%8b%e6%8b%92%e7%bb%9d%e6%9c%8d%e5%8a%a1%e6%94%bb%e5%87%bb">#</a>
+</h3>
+<p>拒绝服务(DoS)攻击就是利用合理的服务请求来占用过多的服务资源，从而使合法用户无法得到服务的响应，其攻击方式有很多种;而分布式的拒绝服务攻击(DDoS)攻击手段则是在传统的 DoS 攻击基础之上产生 的一类攻击方式，分布式的拒绝服务攻击(DDoS)。其原理很简单，就是利用更多的受控主机同时发起进攻，以比 DoS 更大的规模(或者说以更高于受攻主机处理能力的进攻能力)来进攻受害者。现在的防火墙设备通常都可检测 Synflod、 Land、Ping of Death、TearDrop、ICMP flood 和 UDPflod 等多种 DOS/DDOS 攻击。</p>
+<h3 id="3检测多种缓冲区溢出攻击-buffer-overflow">
+  <strong>（3）检测多种缓冲区溢出攻击 (Buffer Overflow)</strong>
+  <a class="anchor" href="#3%e6%a3%80%e6%b5%8b%e5%a4%9a%e7%a7%8d%e7%bc%93%e5%86%b2%e5%8c%ba%e6%ba%a2%e5%87%ba%e6%94%bb%e5%87%bb-buffer-overflow">#</a>
+</h3>
+<p>缓冲区溢出 (Buffer Overflow)攻击指利用软件的弱点将任意数据添加进某个程序中，造成缓冲区的溢出，从而破坏程序的堆栈，使程序转而执行其它指令，以达到攻击的目的。更为严重的是，可以利用它执行非授权指令，甚至可以取得系统特权，进而进行各种非法操作，防火墙设备可检测对 FTP、Telnet、SSH、RPC 和 SMTP 等服务的远程堆栈溢出入侵。</p>
+<h3 id="4检测-cgiiis-服务器入侵">
+  <strong>（4）检测 CGI/IIS 服务器入侵</strong>
+  <a class="anchor" href="#4%e6%a3%80%e6%b5%8b-cgiiis-%e6%9c%8d%e5%8a%a1%e5%99%a8%e5%85%a5%e4%be%b5">#</a>
+</h3>
+<p>CGI 就是 Common Gateway Inter——face 的 简称。是 World Wide Web 主机和 CGI 程序间传输资讯的定义。IIS 就是 Internet Information server 的简称，也就是微软的 Internet 信息服务器。防火墙设备可检测包括针对 Unicode、ASP 源码泄漏、PHF、NPH、pfdisPlay.cgi 等已知上百种的有安全隐患的 CGI/IIS 进行的探测和攻击方式。</p>
+<h3 id="5检测后门木马及其网络蠕虫">
+  <strong>（5）检测后门、木马及其网络蠕虫</strong>
+  <a class="anchor" href="#5%e6%a3%80%e6%b5%8b%e5%90%8e%e9%97%a8%e6%9c%a8%e9%a9%ac%e5%8f%8a%e5%85%b6%e7%bd%91%e7%bb%9c%e8%a0%95%e8%99%ab">#</a>
+</h3>
+<p>后门程序是指采用某种方法定义出一个特殊的端口并依靠某种程序在机器启动之前自动加载到内存， 强行控制机器打开那个特殊的端口的程序。木马程序的全称是“特洛依木马”它们是指寻找后门，窃取计算机的密码的一类程序。网络蠕虫病毒分为 2 类，一种是面向企业用户和局域网而一言，这种病毒利用系统漏洞，主动进行攻击，可以对整个互联网造成瘫痪性的后果，以“红色代码”，“尼姆达”，以及最新的“sql 蠕虫王”为代表。另外一种是针对个人用户的，通过网络(主要是电子邮件，恶意网页形式)迅速传播的蠕虫病毒，以爱虫病毒，求职信病毒为例。防火墙设备可检测试图穿透防火墙系统的木马控制端和客户端程序;检测试图穿透防火墙系统的蠕虫程序。</p>
+<h3 id="6其他功能">
+  <strong>（6）其他功能</strong>
+  <a class="anchor" href="#6%e5%85%b6%e4%bb%96%e5%8a%9f%e8%83%bd">#</a>
+</h3>
+<h4 id="1ip-地址mac-地址绑定">
+  <strong>（1）IP 地址/MAC 地址绑定</strong>
+  <a class="anchor" href="#1ip-%e5%9c%b0%e5%9d%80mac-%e5%9c%b0%e5%9d%80%e7%bb%91%e5%ae%9a">#</a>
+</h4>
+<p>可支持任一网络接口的 IP 地址和 MAC 地址的绑定，从而禁止用户随意修改 IP 地址。</p>
+<h4 id="2审计">
+  <strong>（2）审计</strong>
+  <a class="anchor" href="#2%e5%ae%a1%e8%ae%a1">#</a>
+</h4>
+<p>要求对使用身份标识和认证的机制，文件的创建，修改，系统管理的所有操作以及其他有关安全事件进行记录，以便系统管理员进行安全跟踪。一般防火墙设备可以提供三种日志审计功能:系统管理日志、流量日志和入侵日志。</p>
+<h4 id="3特殊站点封禁">
+  <strong>（3）特殊站点封禁</strong>
+  <a class="anchor" href="#3%e7%89%b9%e6%ae%8a%e7%ab%99%e7%82%b9%e5%b0%81%e7%a6%81">#</a>
+</h4>
+<p>内置特殊站点数据库，用户可选择是否封禁色情、反动和暴力等特殊站点。</p>
+<h1 id="四防火墙的原理及分类">
+  <strong>四、防火墙的原理及分类</strong>
+  <a class="anchor" href="#%e5%9b%9b%e9%98%b2%e7%81%ab%e5%a2%99%e7%9a%84%e5%8e%9f%e7%90%86%e5%8f%8a%e5%88%86%e7%b1%bb">#</a>
+</h1>
+<p>国际计算机安全委员会 ICSA 将防火墙分成三大类:包过滤防火墙，应用级代理服务器以及状态包检测防火墙。</p>
+<h2 id="1包过滤防火墙">
+  <strong>1.包过滤防火墙</strong>
+  <a class="anchor" href="#1%e5%8c%85%e8%bf%87%e6%bb%a4%e9%98%b2%e7%81%ab%e5%a2%99">#</a>
+</h2>
+<p>包过滤防火墙就是把接收到的每个数据包同预先设定的包过滤规则相比较，从而决定是否阻塞或通过。过滤规则是基于网络层 IP 包包头信息的比较。包过滤防火墙工作在网络层，IP 包的包头中包含源、目的 IP 地址， 封装协议类型(TCP，UDP，ICMP 或 IP Tunnel)，TCP/UDP 端口号，ICMP 消息类型， TCP 包头中的 ACK 等等。如果接收的数据包与允许转发的规则相匹配，则数据包按正常情况处理；如果与拒绝转发的规则相匹配，则防火墙丢弃数据包；如果没有匹配规则，则按缺省情况处理。包过滤防火墙是速度最快的防火墙，这是因为它处于网络层，并且只是粗略的检查连接的正确性，所以在一般的传统路由器上就可以实现，对用户来说都是透明的。但是它的安全程度较低，很容易暴露内部网络，使之遭受攻击。例如，HTTP。通常是使用 80 端口。包过滤防火墙的维护比较困难，定义过滤规则也比较复杂，因为任何一条过滤规则的不完善都会给网络黑客造成可乘之机。同时，包过滤防火墙一般无法提供完善的日志。</p>
+<h2 id="2应用级代理防火墙">
+  <strong>2.应用级代理防火墙</strong>
+  <a class="anchor" href="#2%e5%ba%94%e7%94%a8%e7%ba%a7%e4%bb%a3%e7%90%86%e9%98%b2%e7%81%ab%e5%a2%99">#</a>
+</h2>
+<p>应用级代理技术通过在 OSI 的最高层检查每一个 IP 包，从而实现安全策略。 代理技术与包过滤技术完全不同，包过滤技术在网络层控制所有的信息流，而代 理技术一直处理到应用层，在应用层实现防火墙功能。它的代理功能，就是在防火墙处终止客户连接并初始化一个新的连接到受保护的内部网络。这一内建代理机制提供额外的安全，这是因为它将内部和外部网络隔离开来，使网络外部的黑客在防火墙内部网络上进行探测变得困难，更重要的是能够让网络管理员对网络服务进行全面的控制。但是，这将花费更多的处理时间，并且由于代理防火墙支持的应用有限，每一种应用都需要安装和配置不同的应用代理程序。此外，代理服务也对过往的数据包进行分析、注册登记，形成报告，同时当发现被攻击迹象时会向网络管理员发出警报，并保留攻击痕迹。应用代理型防火墙是内部网与外部网的隔离点，起着监视和隔绝应用层通信流的作用。同时 常结合入过滤器的功能。它工作在 OSI 模型的最高层，掌握着应用系统中可用作安全决策的全部信息。</p>
+<h2 id="3状态包检测防火墙">
+  <strong>3.状态包检测防火墙</strong>
+  <a class="anchor" href="#3%e7%8a%b6%e6%80%81%e5%8c%85%e6%a3%80%e6%b5%8b%e9%98%b2%e7%81%ab%e5%a2%99">#</a>
+</h2>
+<p>状态检测防火墙采用了状态检测<a href="http://baike.baidu.com/view/150853.htm"><!-- raw HTML omitted -->包过滤<!-- raw HTML omitted --></a>的技术，是传统包过滤上的功能扩展。状态检测防火墙在<a href="http://baike.baidu.com/view/239600.htm">网络层</a>有一个检查引擎截获<a href="http://baike.baidu.com/view/25880.htm">数据包</a>并抽取出与<a href="http://baike.baidu.com/view/239619.htm">应用层</a>状态有关的信息，并以此为依据决定对该连接是接受还是拒绝。这种技术提供了高度安全的解决方案，同时具有较好的适应性和扩展性。状态检测防火墙一般也包括一些代理级的服务，它们提供附加的对特定应用程序数据内容的支持。<a href="http://baike.baidu.com/view/3897158.htm">状态检测技术</a>最适合提供对UDP协议的有限支持。它将所有通过防火墙的UDP分组均视为一个虚连接，当反向应答分组送达时，就认为一个虚拟连接已经建立。状态检测防火墙克服了<a href="http://baike.baidu.com/view/16565.htm">包过滤防火墙</a>和应用代理服务器的局限性，不仅仅检测“to”和“from”的地址，而且不要求每个访问的应用都有代理。</p>
+<p>这是第三代<a href="http://baike.baidu.com/view/297226.htm">防火墙技术</a>，能对<a href="http://baike.baidu.com/view/538641.htm">网络通信</a>的各层实行检测。同<a href="http://baike.baidu.com/view/3026687.htm">包过滤技术</a>一样，它能够检测通过IP地址、<a href="http://baike.baidu.com/view/642103.htm">端口号</a>以及TCP标记，过滤进出的数据包。它允许受信任的客户机和不受信任的<a href="http://baike.baidu.com/view/23880.htm">主机</a>建立直接连接，不依靠与<a href="http://baike.baidu.com/view/239619.htm">应用层</a>有关的代理，而是依靠某种算法来识别进出的应用层数据，这些算法通过己知合法数据包的模式来比较进出数据包，这样从理论上就能比应用级代理在过滤数据包上更有效。状态监视器的监视模块支持多种协议和应用程序，可方便地实现应用和服务的扩充。此外，它还可监测RPC和UDP端口信息，而<a href="http://baike.baidu.com/view/150853.htm">包过滤</a>和代理都不支持此类端口。这样，通过对各层进行监测，状态监视器实现<a href="http://baike.baidu.com/view/17495.htm">网络安全</a>的目的。目前，多使用状态监测防火墙，它对用户透明，在OSI最高层上加密数据，而无需修改客户端程序，也无需对每个需在防火墙上运行的服务额外增加一个代理。</p>
+<h1 id="五防火墙的配置硬件连接与实施">
+  <strong>五、防火墙的配置硬件连接与实施</strong>
+  <a class="anchor" href="#%e4%ba%94%e9%98%b2%e7%81%ab%e5%a2%99%e7%9a%84%e9%85%8d%e7%bd%ae%e7%a1%ac%e4%bb%b6%e8%bf%9e%e6%8e%a5%e4%b8%8e%e5%ae%9e%e6%96%bd">#</a>
+</h1>
+<p>一般来说硬件防火墙和路由交换设备一样具备多个以太接口，速度根据档次 与价格不同而在百兆与千兆之间有所区别。</p>
+<p> 对于中小企业来说一般出口带宽都在 100M 以内，所以我们选择 100M 相关产 品即可。网络拓扑图中防火墙的位置很关键，一般介于内网与外网互连中间区域，针对外网访问数据进行过滤和监控。如果防火墙上有 WAN 接口，那么直接将 WAN 接口连接外网即可，如果所有接口都标记为 LAN 接口，那么按照常规标准选择最后一个 LAN 接口作为外网连接端 口。相应的其他 LAN 接口连接内网各个网络设备。</p>
+<h1 id="六防火墙的特色配置">
+  <strong>六、防火墙的特色配置</strong>
+  <a class="anchor" href="#%e5%85%ad%e9%98%b2%e7%81%ab%e5%a2%99%e7%9a%84%e7%89%b9%e8%89%b2%e9%85%8d%e7%bd%ae">#</a>
+</h1>
+<p>从外观上看防火墙和传统的路由器交换机没有太大的差别，一部分防火墙具备 CONSOLE 接口通过超级终端的方式初始化配置，而另外一部分则直接通过默 认的 LAN 接口和管理地址访问进行配置。与路由器交换机不同的是在防火墙配置中我们需要划分多个不同权限不同 优先级别的区域，另外还需要针对相应接口隶属的区域进行配置，例如 1 接口划 分到 A 区域，2 接口划分到 B 区域等等，通过不同区域的访问权限差别来实现防火墙保护功能。默认情况下防火墙会自动建立 trust 信任区，untrust 非信任区，DMZ 堡垒主机区以及 LOCAL 本地区域。相应的本地区域优先级最高，其次是 trust 信任区，DMZ 堡垒主机区，最低的是 untrust 非信任区域。</p>
+<p>在实际设置时我们必须将端口划分到某区域后才能对其进行各个访问操 作，否则默认将阻止对该接口的任何数据通讯。 除此之外防火墙的其他相关配置与路由交换设备差不多，无外乎通过超级 终端下的命令行参数进行配置或者通过 WEB 管理界面配置。</p>
+<h1 id="七防火墙包过滤技术发展趋势">
+  <strong>七、防火墙包过滤技术发展趋势</strong>
+  <a class="anchor" href="#%e4%b8%83%e9%98%b2%e7%81%ab%e5%a2%99%e5%8c%85%e8%bf%87%e6%bb%a4%e6%8a%80%e6%9c%af%e5%8f%91%e5%b1%95%e8%b6%8b%e5%8a%bf">#</a>
+</h1>
+<p>针对传统防火墙不能解决的问题，及新的网络攻击的出现，防火墙技术也出现了新的发展趋势。主要可以从包过滤技术、防火墙体系结构和防火墙系统管理三方面来体现。</p>
+<h2 id="1安全策略功能">
+  <strong>1.安全策略功能</strong>
+  <a class="anchor" href="#1%e5%ae%89%e5%85%a8%e7%ad%96%e7%95%a5%e5%8a%9f%e8%83%bd">#</a>
+</h2>
+<p>一些防火墙厂商把在 AAA 系统上运用的用户认证及其服务扩展到防火墙中，使其拥有可以支持基于用户角色的安全策略功能。该功能在无线网络应用中非常必要。具有用户身份验证的防火墙通常是采用应用级网关技术的，包过滤技术的防火墙不具有。用户身份验证功能越强，它的安全级别越高，但它给网络通信带来的负面影响也越大，因为用户身份验证需要时间，特别是加密型的用户身份验证。</p>
+<h2 id="2多级过滤技术">
+  <strong>2.多级过滤技术</strong>
+  <a class="anchor" href="#2%e5%a4%9a%e7%ba%a7%e8%bf%87%e6%bb%a4%e6%8a%80%e6%9c%af">#</a>
+</h2>
+<p>所谓多级过滤技术，是指防火墙采用多级过滤措施，并辅以鉴别手段。在分组过滤(网络层)一级，过滤掉所有的源路由分组和假冒的 IP 源地址；在传输层 一级，遵循过滤规则，过滤掉所有禁止出或/和入的协议和有害数据包如 nuke 包、圣诞树包等；在应用网关(应用层)一级，能利用 FTP、SMTP 等各种网关，控制和监测 Internet 提供的所用通用服务。这是针对以上各种已有防火墙技术的 不足而产生的一种综合型过滤技术，它可以弥补以上各种单独过滤技术的不足。这种过滤技术在分层上非常清楚，每种过滤技术对应于不同的网络层，从这个概念出发，又有很多内容可以扩展，为将来的防火墙技术发展打下基础。</p>
+<h2 id="3功能扩展">
+  <strong>3.功能扩展</strong>
+  <a class="anchor" href="#3%e5%8a%9f%e8%83%bd%e6%89%a9%e5%b1%95">#</a>
+</h2>
+<p>功能扩展是指一种集成多种功能的设计趋势，包括 VPN、AAA、PKI、IPSec 等附加功能，甚至防病毒、入侵检测这样的主流功能，都被集成到防火墙产品中了，很多时候我们已经无法分辨这样的产品到底是以防火墙为主，还是以某个功能为主了，即其已经逐渐向我们普遍称之为 IPS （入侵防御系统）的产品转化了。</p>
+<p>有些防火墙集成了防病毒功能，通常被称之为“病毒防火墙”，当然目前主要还是在个人防火墙中体现，因为它是纯软件形式，更容易实现。这种防火墙技术可以有效地防止病毒在网络中的传播，比等待攻击的发生更加积极。拥有病毒防护功能的防火墙可以大大减少公司的损失。</p>
+<h1 id="八防火墙的体系结构发展趋势">
+  <strong>八、防火墙的体系结构发展趋势</strong>
+  <a class="anchor" href="#%e5%85%ab%e9%98%b2%e7%81%ab%e5%a2%99%e7%9a%84%e4%bd%93%e7%b3%bb%e7%bb%93%e6%9e%84%e5%8f%91%e5%b1%95%e8%b6%8b%e5%8a%bf">#</a>
+</h1>
+<p> 随着网络应用的增加，对网络带宽提出了更高的要求。这意味着防火墙要能够以非常高的速率处理数据。另外，在以后几年里，多媒体应用将会越来越普遍，它要求数据穿过防火墙所带来的延迟要足够小。为了满足这种需要，一些防火墙制造商开发了基于ASIC的防火墙和基于网络处理器的防火墙。从执行速度的角度看来，基于网络处理器的防火墙也是基于软件的解决方案，它需要在很大程度上依赖于软件的性能，但是由于这类防火墙中有一些专门用于处理数据层面任务的引擎，从而减轻了CPU的负担，该类防火墙的性能要比传统防火墙的性能好许多。与基于ASIC的纯硬件防火墙相比，基于网络处理器的防火墙具有软件色彩，因而更加具有灵活性。基于ASIC 的防火墙使用专门的硬件处理网络数据流，比起前两种类型的防火墙具有更好的性能。但是纯硬件的 ASIC 防火墙缺乏可编程性，这就使得它缺乏灵活性，从而跟不上防火墙功能的快速发展。理想的解决方案是增加ASIC芯片的可编程性，使其与软件更好地配合。这样的防火墙就可以 同时满足来自灵活性和运行性能的要求。</p>
+<h1 id="九防火墙的系统管理发展趋势">
+  <strong>九、防火墙的系统管理发展趋势</strong>
+  <a class="anchor" href="#%e4%b9%9d%e9%98%b2%e7%81%ab%e5%a2%99%e7%9a%84%e7%b3%bb%e7%bb%9f%e7%ae%a1%e7%90%86%e5%8f%91%e5%b1%95%e8%b6%8b%e5%8a%bf">#</a>
+</h1>
+<p>(1)集中式管理，分布式和分层的安全结构。(2)强大的审计功能和自动日志分析功能。(3)网络安全产品的系统化 纵观防火墙技术的发展，黑客入侵系统技术的不断进步以及网络病毒朝智能化和多样化发展，对防火墙技术的同步发展提出了更高的要求。防火墙技术只有不断向主动型和智能型等方向发展，才能更好的满足人们对防火墙技术日益增长的需求。</p>
+<p>随着 Internet （因特网），和 Intranet（企业内部网） 技术的发展,网络的安全已经显得越来越重要, 网络病毒对企业造成的危害已经相当广泛和严重,其中也会涉及到是否构成犯罪行为的问题，相应的病毒防范技术也发展到了网络层面,并且愈来愈有与黑客技术和漏洞相结合的趋势。新型防火墙技术产生,就是为了解决来自企业网络内和外的攻击；克服传统“边界防火墙”的缺点,集成了 IDS 、VPN 和防病毒等安全技术,实现从网络到服务器以及客户端全方位的安全解决方案,满足企业实际 应用和发展的安全要求。防火墙目的在于为用户提供信息的保密，认证和完整性保护机制，使网络中的服务，数据以及系统免受侵扰和破坏。</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function a(c){const a=window.getSelection(),b=document.createRange();b.selectNodeContents(c),a.removeAllRanges(),a.addRange(b)}document.querySelectorAll("pre code").forEach(b=>{b.addEventListener("click",function(c){a(b.parentElement),navigator.clipboard&&navigator.clipboard.writeText(b.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#1包过滤">** 1．包过滤**</a></li>
+    <li><a href="#2地址转换"><strong>2．地址转换</strong></a></li>
+    <li><a href="#3认证和应用代理"><strong>3．认证和应用代理</strong></a></li>
+    <li><a href="#4透明和路由"><strong>4．透明和路由</strong></a></li>
+    <li><a href="#5入侵检测功能"><strong>5.入侵检测功能</strong></a>
+      <ul>
+        <li><a href="#1反端口扫描"><strong>（1）反端口扫描</strong></a></li>
+        <li><a href="#2检测拒绝服务攻击"><strong>（2）检测拒绝服务攻击</strong></a></li>
+        <li><a href="#3检测多种缓冲区溢出攻击-buffer-overflow"><strong>（3）检测多种缓冲区溢出攻击 (Buffer Overflow)</strong></a></li>
+        <li><a href="#4检测-cgiiis-服务器入侵"><strong>（4）检测 CGI/IIS 服务器入侵</strong></a></li>
+        <li><a href="#5检测后门木马及其网络蠕虫"><strong>（5）检测后门、木马及其网络蠕虫</strong></a></li>
+        <li><a href="#6其他功能"><strong>（6）其他功能</strong></a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li><a href="#1包过滤防火墙"><strong>1.包过滤防火墙</strong></a></li>
+    <li><a href="#2应用级代理防火墙"><strong>2.应用级代理防火墙</strong></a></li>
+    <li><a href="#3状态包检测防火墙"><strong>3.状态包检测防火墙</strong></a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#1安全策略功能"><strong>1.安全策略功能</strong></a></li>
+    <li><a href="#2多级过滤技术"><strong>2.多级过滤技术</strong></a></li>
+    <li><a href="#3功能扩展"><strong>3.功能扩展</strong></a></li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

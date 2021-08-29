@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Linked libraries#链接库#While working on a library, it is common to use npm link to avoid reinstalling the library on every build.
+在库工作时，它通常使用 [npm link] 避免在每次构建时重复安装库。
+While this is very useful there are a few caveats to keep in mind.
+虽然这是非常有用的, 有几个告诫要牢记。
+The library needs to be AOT compatible#库需要 AOT 兼容#Angular CLI does static analysis even without the --aot flag in order to detect lazy-loade routes.">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="" />
+<meta property="og:description" content="Linked libraries#链接库#While working on a library, it is common to use npm link to avoid reinstalling the library on every build.
+在库工作时，它通常使用 [npm link] 避免在每次构建时重复安装库。
+While this is very useful there are a few caveats to keep in mind.
+虽然这是非常有用的, 有几个告诫要牢记。
+The library needs to be AOT compatible#库需要 AOT 兼容#Angular CLI does static analysis even without the --aot flag in order to detect lazy-loade routes." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://wangyijie.github.io/public/posts/angluar-cli/angular-cli-%E9%93%BE%E6%8E%A5%E5%BA%93/" /><meta property="article:section" content="posts" />
+
+
+
+<title>Angular CLI 链接库 | A great computer technology Site</title>
+<link rel="manifest" href="/public/manifest.json">
+<link rel="icon" href="/public/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/public/book.min.8599444fcc48ee6b435b5b62c955ab7d914fa1e2a453df90c4b97cc9769665d1.css" integrity="sha256-hZlET8xI7mtDW1tiyVWrfZFPoeKkU9&#43;QxLl8yXaWZdE=" crossorigin="anonymous">
+  <script defer src="/public/flexsearch.min.js"></script>
+  <script defer src="/public/en.search.min.49d7ffe0cc6a09481193582a484d1dfccfe14d6d173d2de804b6e37d7c5a9f57.js" integrity="sha256-Sdf/4MxqCUgRk1gqSE0d/M/hTW0XPS3oBLbjfXxan1c=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/public/"><span>A great computer technology Site</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/public/posts/" >
+        Posts
+      </a>
+      
+<ul>
+  
+  <li>
+    <a href="/public/posts/angluar-cli/" >
+        angular
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/ansible/" >
+        ansible
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/cicd/" >
+        CICD
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/cloud/" >
+        cloude
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/container/" >
+        container
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/devops/" >
+        DevOps
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/english/" >
+        English
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/golang/" >
+        golang
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/istio/" >
+        istio
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/kubernetes/" >
+        Kubernetes
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" >
+        mechine leaning
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/material2/" >
+        mererial2
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E7%9B%91%E6%8E%A7/" >
+        monitor
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/mysql/" >
+        mysql
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E7%BD%91%E7%BB%9C/" >
+        networking
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E6%97%A5%E8%AE%B0%E6%9C%AC/" >
+        notes
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/postgresql/" >
+        postgresql
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/django/" >
+        python
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E5%AE%89%E5%85%A8/" >
+        safe
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E8%AF%97%E8%AF%8D/" >
+        shi chi
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E7%AB%99%E7%82%B9%E5%8F%AF%E9%9D%A0%E6%80%A7%E5%B7%A5%E7%A8%8B/" >
+        SRE
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E6%96%87%E5%AD%A6/" >
+        wenxue
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E9%9A%8F%E7%AC%94/" >
+        write somethings
+      </a>
+  </li>
+  
+</ul>
+
+  </li>
+  
+  <li>
+    <a href="/public/about/" >
+        About
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var a=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(b){localStorage.setItem("menu.scrollTop",a.scrollTop)}),a.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/public/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Angular CLI 链接库</strong>
+
+  <label for="toc-control">
+    
+    <img src="/public/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#the-library-needs-to-be-aot-compatible">The library needs to be AOT compatible</a></li>
+    <li><a href="#库需要-aot-兼容">库需要 AOT 兼容</a></li>
+    <li><a href="#the-library-still-needs-to-be-rebuilt-on-every-change">The library still needs to be rebuilt on every change</a></li>
+    <li><a href="#每次改变库仍热需要重构">每次改变库仍热需要重构</a></li>
+    <li><a href="#use-typesscript-path-mapping-for-peer-dependencies">Use TypesScript path mapping for Peer Dependencies</a></li>
+    <li><a href="#使用-typesscript-路径映射每个依赖">使用 TypesScript 路径映射每个依赖</a></li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+<article class="markdown">
+  <h1>
+    <a href="/public/posts/angluar-cli/angular-cli-%E9%93%BE%E6%8E%A5%E5%BA%93/">Angular CLI 链接库</a>
+  </h1>
+  
+
+
+  
+
+  
+
+
+
+<h1 id="linked-libraries">
+  Linked libraries
+  <a class="anchor" href="#linked-libraries">#</a>
+</h1>
+<h1 id="链接库">
+  链接库
+  <a class="anchor" href="#%e9%93%be%e6%8e%a5%e5%ba%93">#</a>
+</h1>
+<p>While working on a library, it is common to use <a href="https://docs.npmjs.com/cli/link">npm link</a> to
+avoid reinstalling the library on every build.<br>
+在库工作时，它通常使用 [npm link] 避免在每次构建时重复安装库。</p>
+<p>While this is very useful there are a few caveats to keep in mind.<br>
+虽然这是非常有用的, 有几个告诫要牢记。</p>
+<h2 id="the-library-needs-to-be-aot-compatible">
+  The library needs to be AOT compatible
+  <a class="anchor" href="#the-library-needs-to-be-aot-compatible">#</a>
+</h2>
+<h2 id="库需要-aot-兼容">
+  库需要 AOT 兼容
+  <a class="anchor" href="#%e5%ba%93%e9%9c%80%e8%a6%81-aot-%e5%85%bc%e5%ae%b9">#</a>
+</h2>
+<p>Angular CLI does static analysis even without the <code>--aot</code> flag in order to detect lazy-loade routes.
+If your library is not AOT compatible, you will likely get a static analysis error.<br>
+Angular CLI 静态分析即使没有 <code>--aot</code> 标记，为了惰加载路由。假如你的库不是AOT兼容，你将获得一个静态分析错误。</p>
+<h2 id="the-library-still-needs-to-be-rebuilt-on-every-change">
+  The library still needs to be rebuilt on every change
+  <a class="anchor" href="#the-library-still-needs-to-be-rebuilt-on-every-change">#</a>
+</h2>
+<h2 id="每次改变库仍热需要重构">
+  每次改变库仍热需要重构
+  <a class="anchor" href="#%e6%af%8f%e6%ac%a1%e6%94%b9%e5%8f%98%e5%ba%93%e4%bb%8d%e7%83%ad%e9%9c%80%e8%a6%81%e9%87%8d%e6%9e%84">#</a>
+</h2>
+<p>Angular libraries are usually built using TypeScript and thus require to be built before they
+are published.
+For simple cases, a linked library might work even without a build step, but this is the exception
+rather than the norm.<br>
+Angular的库经常使用Typescript构建，因此要求构建之前他们已经发布过。对于简单案例，即使没有生成步骤, 链接库也可能工作, 但这是例外
+而不是规范。</p>
+<p>If a library is not being built using its own build step, then it is being compiled by the
+Angular CLI build system and there is no guarantee that it will be correctly built.
+Even if it works on development it might not work when deployed.<br>
+如果库未使用自己的构建步骤生成, 则由
+Angular CLI 构建系统, 并不能保证它将被正确构建。即使它对开发起作用, 部署时也可能不起作用。</p>
+<p>When linking a library remember to have your build step running in watch mode and the library&rsquo;s
+<code>package.json</code> pointing at the correct entry points (e.g. &lsquo;main&rsquo; should point at a <code>.js</code> file, not
+a <code>.ts</code> file).<br>
+链接库时, 请记住在监视模式和库包中运行生成步骤. json 指向正确的入口点 (例如, <code>main</code> 应该指向 <code>.js</code> 文件, 而不是 <code>.ts</code> 文件)。</p>
+<h2 id="use-typesscript-path-mapping-for-peer-dependencies">
+  Use TypesScript path mapping for Peer Dependencies
+  <a class="anchor" href="#use-typesscript-path-mapping-for-peer-dependencies">#</a>
+</h2>
+<h2 id="使用-typesscript-路径映射每个依赖">
+  使用 TypesScript 路径映射每个依赖
+  <a class="anchor" href="#%e4%bd%bf%e7%94%a8-typesscript-%e8%b7%af%e5%be%84%e6%98%a0%e5%b0%84%e6%af%8f%e4%b8%aa%e4%be%9d%e8%b5%96">#</a>
+</h2>
+<p>Angular libraries should list all <code>@angular/*</code> dependencies as
+<a href="https://nodejs.org/en/blog/npm/peer-dependencies/">Peer Dependencies</a>.
+This insures that, when modules ask for Angular, they all get the exact same module.
+If a library lists <code>@angular/core</code> in <code>dependencies</code> instead of <code>peerDependencies</code> then it might
+get a <em>different</em> Angular module instead, which will cause your application to break.<br>
+库应将所有角度/依赖项列出为对等依赖项。这保证, 当模块要求角, 他们都得到完全相同的模块。如果库在依赖项中列出了角度/核心而不是 peerDependencies, 那么它可能会得到一个不同的角度模块, 这将导致应用程序中断。</p>
+<p>While developing a library, you&rsquo;ll need to have all of your peer dependencies also installed
+via <code>devDependencies</code> - otherwise you could not compile.
+A linked library will then have it&rsquo;s own set of Angular libraries that it is using for building,
+located in it&rsquo;s <code>node_modules</code> folder.
+This can cause problems while building or running your application.<br>
+在开发库时, 您还需要通过 devDependencies 安装所有的对等依赖项, 否则您无法编译。链接库将有自己的一组用于构建的 <code>angular</code>库, 位于其 <code>node_modules</code> 文件夹中。这可能会导致生成或运行应用程序时出现问题</p>
+<p>To get around this problem you can use the TypeScript
+<a href="https://www.typescriptlang.org/docs/handbook/module-resolution.html#path-mapping">path mapping</a>.
+With it, you can tell TypeScript that it should load some modules from a specific location.<br>
+要解决此问题, 可以使用文稿<a href="https://www.typescriptlang.org/docs/handbook/module-resolution.html#path-mapping">路径映射</a>。通过它, 您可以告诉文稿它应该从特定位置加载一些模块。</p>
+<p>You should list all the peer dependencies that your library uses in <code>./tsconfig.json</code>, pointing
+them at the local copy in the apps <code>node_modules</code> folder.
+This ensures that you all will always load the local copies of the modules your library asks for.<br>
+您应该列出库在 <code>.tsconfig</code> 中使用的所有对等依赖项, 并将它们指向应用程序 <code>node_modules</code> 文件夹中的本地副本。这将确保您始终加载库要求的模块的本地副本。</p>
+<pre tabindex="0"><code>{
+  &quot;compilerOptions&quot;: {
+    // ...
+    // Note: these paths are relative to `baseUrl` path.
+    &quot;paths&quot;: {
+      &quot;@angular/*&quot;: [
+        &quot;../node_modules/@angular/*&quot;
+      ]
+    }
+  }
+}
+</code></pre></article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function a(c){const a=window.getSelection(),b=document.createRange();b.selectNodeContents(c),a.removeAllRanges(),a.addRange(b)}document.querySelectorAll("pre code").forEach(b=>{b.addEventListener("click",function(c){a(b.parentElement),navigator.clipboard&&navigator.clipboard.writeText(b.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#the-library-needs-to-be-aot-compatible">The library needs to be AOT compatible</a></li>
+    <li><a href="#库需要-aot-兼容">库需要 AOT 兼容</a></li>
+    <li><a href="#the-library-still-needs-to-be-rebuilt-on-every-change">The library still needs to be rebuilt on every change</a></li>
+    <li><a href="#每次改变库仍热需要重构">每次改变库仍热需要重构</a></li>
+    <li><a href="#use-typesscript-path-mapping-for-peer-dependencies">Use TypesScript path mapping for Peer Dependencies</a></li>
+    <li><a href="#使用-typesscript-路径映射每个依赖">使用 TypesScript 路径映射每个依赖</a></li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

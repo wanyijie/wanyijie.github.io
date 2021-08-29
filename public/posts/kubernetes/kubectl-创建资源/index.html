@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="最近去参加了CKA考试，在速度上吃亏，以往喜欢复制粘贴修改摸板，在时间紧张的情况下这种方式的效率问题暴露了，导致考试时间紧张，没用时间解决难题，考试会要求创建各种类型的资源，所以这准备练习命令创建资源，提高操作效率： 如果能从命令行直接创建符合目的的资源就直接使用，如果命令参数不满足需求，可以通过**&ndash;dry-run -o yaml** 参数输出摸板不实际创建资源，下面是各种资源的创建示列，多数可以合并使用：
+ 创建pod 加**&ndash;restart=Never**参数创建出来的资源就是pod  kubectl run busybox --image=busybox --dry-run -o yaml --restart=Never 创建cronjob 加**&ndash;schedule=**参数创建出来的资源就是cronjob  kubectl run busybox --image=busybox --dry-run -o yaml --schedule=&#34;* * * * *&#34; 创建job 加**&ndash;restart=OnFailure**参数创建出来的资源就是jod  kubectl run busybox --image=busybox --dry-run -o yaml --restart=OnFailure 创建deployment 加**&ndash;restart=Aalways**参数创建出来的资源就是pod,这是默认参数可以不指明  kubectl run busybox --image=busybox --dry-run -o yaml --restart=Aalways 创建使用ENV: 使用 &ndash;env, 多个环境变量重复参数指定  kubectl run nginx --image=nginx --dry-run -o yaml --env=&#34;dir=/mnt&#34; --env=&#34;port=80&#34; 创建资源限制及请求  kubectl run nginx --image=nginx --dry-run -o yaml --limits=&#34;cpu=100m,memory=256m&#34; --requests=&#34;cpu=100m,memory=100M&#34;  创建指定label 留意对象资源和列表资源在命令行参数中的表示规律，重复使用参数，用逗号分隔  kubectl run nginx --image=nginx --dry-run -o yaml --labels=&#34;app=nginx,owner=wangyijie,form=cmft&#34; 指定多个启动参数 在最后以 &ndash; 开头可以以空格分隔指定多个命令参数  kubectl run nginx --image=nginx --dry-run -o yaml --schedule=&#34;* * * * *&#34; --restart=OnFailure --labels=&#34;job=who&#34; -- bash echo 123 9.">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="" />
+<meta property="og:description" content="最近去参加了CKA考试，在速度上吃亏，以往喜欢复制粘贴修改摸板，在时间紧张的情况下这种方式的效率问题暴露了，导致考试时间紧张，没用时间解决难题，考试会要求创建各种类型的资源，所以这准备练习命令创建资源，提高操作效率： 如果能从命令行直接创建符合目的的资源就直接使用，如果命令参数不满足需求，可以通过**&ndash;dry-run -o yaml** 参数输出摸板不实际创建资源，下面是各种资源的创建示列，多数可以合并使用：
+ 创建pod 加**&ndash;restart=Never**参数创建出来的资源就是pod  kubectl run busybox --image=busybox --dry-run -o yaml --restart=Never 创建cronjob 加**&ndash;schedule=**参数创建出来的资源就是cronjob  kubectl run busybox --image=busybox --dry-run -o yaml --schedule=&#34;* * * * *&#34; 创建job 加**&ndash;restart=OnFailure**参数创建出来的资源就是jod  kubectl run busybox --image=busybox --dry-run -o yaml --restart=OnFailure 创建deployment 加**&ndash;restart=Aalways**参数创建出来的资源就是pod,这是默认参数可以不指明  kubectl run busybox --image=busybox --dry-run -o yaml --restart=Aalways 创建使用ENV: 使用 &ndash;env, 多个环境变量重复参数指定  kubectl run nginx --image=nginx --dry-run -o yaml --env=&#34;dir=/mnt&#34; --env=&#34;port=80&#34; 创建资源限制及请求  kubectl run nginx --image=nginx --dry-run -o yaml --limits=&#34;cpu=100m,memory=256m&#34; --requests=&#34;cpu=100m,memory=100M&#34;  创建指定label 留意对象资源和列表资源在命令行参数中的表示规律，重复使用参数，用逗号分隔  kubectl run nginx --image=nginx --dry-run -o yaml --labels=&#34;app=nginx,owner=wangyijie,form=cmft&#34; 指定多个启动参数 在最后以 &ndash; 开头可以以空格分隔指定多个命令参数  kubectl run nginx --image=nginx --dry-run -o yaml --schedule=&#34;* * * * *&#34; --restart=OnFailure --labels=&#34;job=who&#34; -- bash echo 123 9." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://wangyijie.github.io/public/posts/kubernetes/kubectl-%E5%88%9B%E5%BB%BA%E8%B5%84%E6%BA%90/" /><meta property="article:section" content="posts" />
+
+
+
+<title>Kubectl 创建资源 | A great computer technology Site</title>
+<link rel="manifest" href="/public/manifest.json">
+<link rel="icon" href="/public/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/public/book.min.8599444fcc48ee6b435b5b62c955ab7d914fa1e2a453df90c4b97cc9769665d1.css" integrity="sha256-hZlET8xI7mtDW1tiyVWrfZFPoeKkU9&#43;QxLl8yXaWZdE=" crossorigin="anonymous">
+  <script defer src="/public/flexsearch.min.js"></script>
+  <script defer src="/public/en.search.min.49d7ffe0cc6a09481193582a484d1dfccfe14d6d173d2de804b6e37d7c5a9f57.js" integrity="sha256-Sdf/4MxqCUgRk1gqSE0d/M/hTW0XPS3oBLbjfXxan1c=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/public/"><span>A great computer technology Site</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/public/posts/" >
+        Posts
+      </a>
+      
+<ul>
+  
+  <li>
+    <a href="/public/posts/angluar-cli/" >
+        angular
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/ansible/" >
+        ansible
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/cicd/" >
+        CICD
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/cloud/" >
+        cloude
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/container/" >
+        container
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/devops/" >
+        DevOps
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/english/" >
+        English
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/golang/" >
+        golang
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/istio/" >
+        istio
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/kubernetes/" >
+        Kubernetes
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" >
+        mechine leaning
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/material2/" >
+        mererial2
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E7%9B%91%E6%8E%A7/" >
+        monitor
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/mysql/" >
+        mysql
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E7%BD%91%E7%BB%9C/" >
+        networking
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E6%97%A5%E8%AE%B0%E6%9C%AC/" >
+        notes
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/postgresql/" >
+        postgresql
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/django/" >
+        python
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E5%AE%89%E5%85%A8/" >
+        safe
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E8%AF%97%E8%AF%8D/" >
+        shi chi
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E7%AB%99%E7%82%B9%E5%8F%AF%E9%9D%A0%E6%80%A7%E5%B7%A5%E7%A8%8B/" >
+        SRE
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E6%96%87%E5%AD%A6/" >
+        wenxue
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E9%9A%8F%E7%AC%94/" >
+        write somethings
+      </a>
+  </li>
+  
+</ul>
+
+  </li>
+  
+  <li>
+    <a href="/public/about/" >
+        About
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var a=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(b){localStorage.setItem("menu.scrollTop",a.scrollTop)}),a.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/public/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Kubectl 创建资源</strong>
+
+  <label for="toc-control">
+    
+    <img src="/public/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents"></nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+<article class="markdown">
+  <h1>
+    <a href="/public/posts/kubernetes/kubectl-%E5%88%9B%E5%BB%BA%E8%B5%84%E6%BA%90/">Kubectl 创建资源</a>
+  </h1>
+  
+
+
+  
+
+  
+
+
+
+<p>最近去参加了CKA考试，在速度上吃亏，以往喜欢复制粘贴修改摸板，在时间紧张的情况下这种方式的效率问题暴露了，导致考试时间紧张，没用时间解决难题，考试会要求创建各种类型的资源，所以这准备练习命令创建资源，提高操作效率：
+如果能从命令行直接创建符合目的的资源就直接使用，如果命令参数不满足需求，可以通过**&ndash;dry-run -o yaml** 参数输出摸板不实际创建资源，下面是各种资源的创建示列，多数可以合并使用：</p>
+<ol>
+<li>创建pod
+加**&ndash;restart=Never**参数创建出来的资源就是pod</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#ae81ff">kubectl run busybox  --image=busybox --dry-run  -o yaml  --restart=Never</span>
+</code></pre></div><ol start="2">
+<li>创建cronjob
+加**&ndash;schedule=<!-- raw HTML omitted -->**参数创建出来的资源就是cronjob</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#ae81ff">kubectl run busybox  --image=busybox --dry-run  -o yaml  --schedule=&#34;* * * * *&#34;</span>
+</code></pre></div><ol start="3">
+<li>创建job
+加**&ndash;restart=OnFailure**参数创建出来的资源就是jod</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#ae81ff">kubectl run busybox  --image=busybox --dry-run  -o yaml  --restart=OnFailure</span>
+</code></pre></div><ol start="4">
+<li>创建deployment
+加**&ndash;restart=Aalways**参数创建出来的资源就是pod,这是默认参数可以不指明</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#ae81ff">kubectl run busybox  --image=busybox --dry-run  -o yaml  --restart=Aalways</span>
+</code></pre></div><ol start="5">
+<li>创建使用ENV:
+使用 &ndash;env, 多个环境变量重复参数指定</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#ae81ff">kubectl run nginx --image=nginx --dry-run -o yaml  --env=&#34;dir=/mnt&#34; --env=&#34;port=80&#34;</span>
+</code></pre></div><ol start="6">
+<li>创建资源限制及请求</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#ae81ff">kubectl run nginx --image=nginx --dry-run -o yaml --limits=&#34;cpu=100m,memory=256m&#34; --requests=&#34;cpu=100m,memory=100M&#34;  </span>
+</code></pre></div><ol start="7">
+<li>创建指定label
+留意对象资源和列表资源在命令行参数中的表示规律，重复使用参数，用逗号分隔</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#ae81ff">kubectl run nginx --image=nginx --dry-run -o yaml --labels=&#34;app=nginx,owner=wangyijie,form=cmft&#34;</span>
+</code></pre></div><ol start="8">
+<li>指定多个启动参数
+在最后以 <strong>&ndash;</strong> 开头可以以空格分隔指定多个命令参数</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#ae81ff">kubectl run nginx --image=nginx --dry-run -o yaml --schedule=&#34;* * * * *&#34; --restart=OnFailure --labels=&#34;job=who&#34; -- bash echo 123</span>
+</code></pre></div><p>9.创建服务
+使用&ndash;expose参数会创建一个同名的服务, 更多服务选项可以是kubectl expose deployment</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#ae81ff">kubectl run nginx --image=ngin --expose  --port=80</span>
+</code></pre></div><ol start="10">
+<li>遗憾是没用创建DeamonSet和StatefulSet的参数，建议用快速github搜索摸板或者在系统中获取，kube-system下有daemonset的部署
+<img src="https://upload-images.jianshu.io/upload_images/6000429-55a2f0301649e32d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="search from githu" /></li>
+</ol>
+<p>还有更关键的是在pod摸板中默写各种资源的属性配置</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function a(c){const a=window.getSelection(),b=document.createRange();b.selectNodeContents(c),a.removeAllRanges(),a.addRange(b)}document.querySelectorAll("pre code").forEach(b=>{b.addEventListener("click",function(c){a(b.parentElement),navigator.clipboard&&navigator.clipboard.writeText(b.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents"></nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

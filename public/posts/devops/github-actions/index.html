@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Getting started with a workflow#To help you get started, this guide shows you some basic examples. For the full GitHub Actions documentation on workflows, see &ldquo;Configuring workflows.&rdquo;
+Customizing when workflow runs are triggered#  Set your workflow to run on push events to the master and release/* branches
+on: push: branches: - master - release/*   Set your workflow to run on pull_request events that target the master branch">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="" />
+<meta property="og:description" content="Getting started with a workflow#To help you get started, this guide shows you some basic examples. For the full GitHub Actions documentation on workflows, see &ldquo;Configuring workflows.&rdquo;
+Customizing when workflow runs are triggered#  Set your workflow to run on push events to the master and release/* branches
+on: push: branches: - master - release/*   Set your workflow to run on pull_request events that target the master branch" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://wangyijie.github.io/public/posts/devops/github-actions/" /><meta property="article:section" content="posts" />
+
+
+
+<title>Github Actions | A great computer technology Site</title>
+<link rel="manifest" href="/public/manifest.json">
+<link rel="icon" href="/public/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/public/book.min.8599444fcc48ee6b435b5b62c955ab7d914fa1e2a453df90c4b97cc9769665d1.css" integrity="sha256-hZlET8xI7mtDW1tiyVWrfZFPoeKkU9&#43;QxLl8yXaWZdE=" crossorigin="anonymous">
+  <script defer src="/public/flexsearch.min.js"></script>
+  <script defer src="/public/en.search.min.49d7ffe0cc6a09481193582a484d1dfccfe14d6d173d2de804b6e37d7c5a9f57.js" integrity="sha256-Sdf/4MxqCUgRk1gqSE0d/M/hTW0XPS3oBLbjfXxan1c=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/public/"><span>A great computer technology Site</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/public/posts/" >
+        Posts
+      </a>
+      
+<ul>
+  
+  <li>
+    <a href="/public/posts/angluar-cli/" >
+        angular
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/ansible/" >
+        ansible
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/cicd/" >
+        CICD
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/cloud/" >
+        cloude
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/container/" >
+        container
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/devops/" >
+        DevOps
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/english/" >
+        English
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/golang/" >
+        golang
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/istio/" >
+        istio
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/kubernetes/" >
+        Kubernetes
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" >
+        mechine leaning
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/material2/" >
+        mererial2
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E7%9B%91%E6%8E%A7/" >
+        monitor
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/mysql/" >
+        mysql
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E7%BD%91%E7%BB%9C/" >
+        networking
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E6%97%A5%E8%AE%B0%E6%9C%AC/" >
+        notes
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/postgresql/" >
+        postgresql
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/django/" >
+        python
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E5%AE%89%E5%85%A8/" >
+        safe
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E8%AF%97%E8%AF%8D/" >
+        shi chi
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E7%AB%99%E7%82%B9%E5%8F%AF%E9%9D%A0%E6%80%A7%E5%B7%A5%E7%A8%8B/" >
+        SRE
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E6%96%87%E5%AD%A6/" >
+        wenxue
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E9%9A%8F%E7%AC%94/" >
+        write somethings
+      </a>
+  </li>
+  
+</ul>
+
+  </li>
+  
+  <li>
+    <a href="/public/about/" >
+        About
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var a=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(b){localStorage.setItem("menu.scrollTop",a.scrollTop)}),a.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/public/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Github Actions</strong>
+
+  <label for="toc-control">
+    
+    <img src="/public/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#getting-started-with-a-workflow">Getting started with a workflow</a>
+      <ul>
+        <li><a href="#customizing-when-workflow-runs-are-triggered">Customizing when workflow runs are triggered</a></li>
+        <li><a href="#running-your-jobs-on-different-operating-systems">Running your jobs on different operating systems</a></li>
+        <li><a href="#using-an-action">Using an action</a></li>
+        <li><a href="#running-a-command">Running a command</a></li>
+        <li><a href="#running-a-job-across-a-matrix-of-operating-systems-and-runtime-versions">Running a job across a matrix of operating systems and runtime versions</a></li>
+        <li><a href="#running-steps-or-jobs-conditionally">Running steps or jobs conditionally</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+<article class="markdown">
+  <h1>
+    <a href="/public/posts/devops/github-actions/">Github Actions</a>
+  </h1>
+  
+
+
+  
+
+  
+
+
+
+<h2 id="getting-started-with-a-workflow">
+  Getting started with a workflow
+  <a class="anchor" href="#getting-started-with-a-workflow">#</a>
+</h2>
+<p>To help you get started, this guide shows you some basic examples. For the full GitHub Actions documentation on workflows, see &ldquo;<a href="https://help.github.com/articles/configuring-workflows">Configuring workflows</a>.&rdquo;</p>
+<h3 id="customizing-when-workflow-runs-are-triggered">
+  Customizing when workflow runs are triggered
+  <a class="anchor" href="#customizing-when-workflow-runs-are-triggered">#</a>
+</h3>
+<ul>
+<li>
+<p>Set your workflow to run on push events to the <code>master</code> and <code>release/*</code> branches</p>
+<pre tabindex="0"><code class="language-source-yaml" data-lang="source-yaml">on:
+  push:
+    branches:
+    - master
+    - release/*
+</code></pre></li>
+<li>
+<p>Set your workflow to run on <code>pull_request</code> events that target the <code>master</code> branch</p>
+<pre tabindex="0"><code class="language-source-yaml" data-lang="source-yaml">on:
+  pull_request:
+    branches:
+    - master
+</code></pre></li>
+<li>
+<p>Set your workflow to run every day of the week from Monday to Friday at 2:00 UTC</p>
+<pre tabindex="0"><code class="language-source-yaml" data-lang="source-yaml">on:
+  schedule:
+  - cron: &quot;0 2 * * 1-5&quot;
+</code></pre></li>
+</ul>
+<p>For more information, see &ldquo;<a href="https://help.github.com/articles/events-that-trigger-workflows">Events that trigger workflows</a>.&rdquo;</p>
+<h3 id="running-your-jobs-on-different-operating-systems">
+  Running your jobs on different operating systems
+  <a class="anchor" href="#running-your-jobs-on-different-operating-systems">#</a>
+</h3>
+<p>GitHub Actions provides hosted runners for Linux, Windows, and macOS.</p>
+<p>To set the operating system for your job, specify the operating system using <code>runs-on</code>:</p>
+<pre tabindex="0"><code class="language-source-yaml" data-lang="source-yaml">jobs:
+  my_job:
+    name: deploy to staging
+    runs-on: ubuntu-18.04
+</code></pre><p>The available virtual machine types are:</p>
+<ul>
+<li><code>ubuntu-latest</code>, <code>ubuntu-18.04</code>, or <code>ubuntu-16.04</code></li>
+<li><code>windows-latest</code> or <code>windows-2019</code></li>
+<li><code>macos-latest</code> or <code>macos-10.15</code></li>
+</ul>
+<p>For more information, see &ldquo;<a href="https://help.github.com/articles/virtual-environments-for-github-actions">Virtual environments for GitHub Actions</a>.&rdquo;</p>
+<h3 id="using-an-action">
+  Using an action
+  <a class="anchor" href="#using-an-action">#</a>
+</h3>
+<p>Actions are reusable units of code that can be built and distributed by anyone on GitHub. You can find a variety of actions in <a href="https://github.com/marketplace?type=actions">GitHub Marketplace</a>, and also in the official <a href="https://github.com/actions/">Actions repository</a>.</p>
+<p>To use an action, you must specify the repository that contains the action. We also recommend that you specify a Git tag to ensure you are using a released version of the action.</p>
+<pre tabindex="0"><code class="language-source-yaml" data-lang="source-yaml">- name: Setup Node
+  uses: actions/setup-node@v1
+  with:
+    node-version: '10.x'
+</code></pre><p>For more information, see &ldquo;<a href="https://help.github.com/articles/workflow-syntax-for-github-actions#jobsjob_idstepsuses">Workflow syntax for GitHub Actions</a>.&rdquo;</p>
+<h3 id="running-a-command">
+  Running a command
+  <a class="anchor" href="#running-a-command">#</a>
+</h3>
+<p>You can run commands on the job&rsquo;s virtual machine.</p>
+<pre tabindex="0"><code class="language-source-yaml" data-lang="source-yaml">- name: Install Dependencies
+  run: npm install
+</code></pre><p>For more information, see &ldquo;<a href="https://help.github.com/articles/workflow-syntax-for-github-actions#jobsjob_idstepsrun">Workflow syntax for GitHub Actions</a>.&rdquo;</p>
+<h3 id="running-a-job-across-a-matrix-of-operating-systems-and-runtime-versions">
+  Running a job across a matrix of operating systems and runtime versions
+  <a class="anchor" href="#running-a-job-across-a-matrix-of-operating-systems-and-runtime-versions">#</a>
+</h3>
+<p>You can automatically run a job across a set of different values, such as different versions of code libraries or operating systems.</p>
+<p>For example, this job uses a matrix strategy to run across 3 versions of Node and 3 operating systems:</p>
+<pre tabindex="0"><code class="language-source-yaml" data-lang="source-yaml">jobs:
+  test:
+    name: Test on node ${{ matrix.node_version }} and ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        node_version: ['8', '10', '12']
+        os: [ubuntu-latest, windows-latest, macOS-latest]
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Use Node.js ${{ matrix.node_version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node_version }}
+
+    - name: npm install, build and test
+      run: |
+        npm install
+        npm run build --if-present
+        npm test
+</code></pre><p>For more information, see &ldquo;<a href="https://help.github.com/articles/workflow-syntax-for-github-actions#jobsjob_idstrategy">Workflow syntax for GitHub Actions</a>.&rdquo;</p>
+<h3 id="running-steps-or-jobs-conditionally">
+  Running steps or jobs conditionally
+  <a class="anchor" href="#running-steps-or-jobs-conditionally">#</a>
+</h3>
+<p>GitHub Actions supports conditions on steps and jobs using data present in your workflow context.</p>
+<p>For example, to run a step only as part of a push and not in a pull_request, you can specify a condition in the <code>if:</code> property based on the event name:</p>
+<pre tabindex="0"><code class="language-source-yaml" data-lang="source-yaml">steps:
+- run: npm publish
+  if: github.event == 'push'
+</code></pre><p>For more information, see &ldquo;<a href="https://help.github.com/articles/contexts-and-expression-syntax-for-github-actions">Contexts and expression syntax for GitHub Actions</a>.&rdquo;</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function a(c){const a=window.getSelection(),b=document.createRange();b.selectNodeContents(c),a.removeAllRanges(),a.addRange(b)}document.querySelectorAll("pre code").forEach(b=>{b.addEventListener("click",function(c){a(b.parentElement),navigator.clipboard&&navigator.clipboard.writeText(b.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#getting-started-with-a-workflow">Getting started with a workflow</a>
+      <ul>
+        <li><a href="#customizing-when-workflow-runs-are-triggered">Customizing when workflow runs are triggered</a></li>
+        <li><a href="#running-your-jobs-on-different-operating-systems">Running your jobs on different operating systems</a></li>
+        <li><a href="#using-an-action">Using an action</a></li>
+        <li><a href="#running-a-command">Running a command</a></li>
+        <li><a href="#running-a-job-across-a-matrix-of-operating-systems-and-runtime-versions">Running a job across a matrix of operating systems and runtime versions</a></li>
+        <li><a href="#running-steps-or-jobs-conditionally">Running steps or jobs conditionally</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>istio on A great computer technology Site</title>
+    <link>https://wangyijie.github.io/public/posts/istio/</link>
+    <description>Recent content in istio on A great computer technology Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="https://wangyijie.github.io/public/posts/istio/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title></title>
+      <link>https://wangyijie.github.io/public/posts/istio/istio%E4%BF%97%E8%AF%AD%E5%92%8C%E7%BB%84%E4%BB%B6%E6%A6%82%E6%8B%AC/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.github.io/public/posts/istio/istio%E4%BF%97%E8%AF%AD%E5%92%8C%E7%BB%84%E4%BB%B6%E6%A6%82%E6%8B%AC/</guid>
+      <description>架构#Istio 服务网格逻辑上分为数据平面和控制平面。 • 数据平面由一组以 sidecar 方式部署的智能代理（Envoy）组成。这些代理可以调节和控制微服务及 Mixer 之间所有的网络通信。 • 控制平面负责管理和配置代理来路由流量。此外控制平面配置 Mixer 以实施策略和收集遥测数据。
+Envoy#Istio 使用 Envoy 代理的扩展版本，Envoy 是以 C++ 开发的高性能代理，用于调解服务网格中所有服务的所有入站和出站流量。Envoy 的许多内置功能被 istio 发扬光大，例如： • 动态服务发现 • 负载均衡 • TLS 终止 • HTTP/2 &amp;amp; gRPC 代理 • 熔断器 • 健康检查、基于百分比流量拆分的灰度发布 • 故障注入 • 丰富的度量指标 Envoy 被部署为 sidecar，和对应服务在同一个 Kubernetes pod 中。这允许 Istio 将大量关于流量行为的信号作为属性提取出来，而这些属性又可以在 Mixer 中用于执行策略决策，并发送给监控系统，以提供整个网格行为的信息。 Sidecar 代理模型还可以将 Istio 的功能添加到现有部署中，而无需重新构建或重写代码。
+Mixer 交际家#Mixer 是一个独立于平台的组件，负责在服务网格上执行访问控制和使用策略，并从 Envoy 代理和其他服务收集遥测数据。代理提取请求级属性，发送到 Mixer 进行评估。在 Istio 中能够集成各种生态的基础设施后端系统，它通过即插即用的适配器集，通过标准的配置模型，使 Istio 能够方便地与现有的服务进行集成。适配器对 Mixer 的功能进行了扩展，并将特定的接口暴露给监控、日志、追踪、配额管理及其他功能。适配器是按需加载的，并按照运维人员的配置在运行时发挥作用。</description>
+    </item>
+    
+  </channel>
+</rss>

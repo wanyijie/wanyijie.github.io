@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="DevOps has seen explosive growth recently, as organizations look to deliver releases and features faster by automating operations with an Infrastructure as Code approach. This shift in the industry is making for some very interesting transformations, both in how organizations deploy applications and what is expected from IT operations.
+DevOps plays a big role, not just in the delivery of infrastructure, but in the application deployment process itself. Many times, DevOps and development go hand in hand, with infrastructure deployed for the sole purpose of developing an application pipeline.">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="" />
+<meta property="og:description" content="DevOps has seen explosive growth recently, as organizations look to deliver releases and features faster by automating operations with an Infrastructure as Code approach. This shift in the industry is making for some very interesting transformations, both in how organizations deploy applications and what is expected from IT operations.
+DevOps plays a big role, not just in the delivery of infrastructure, but in the application deployment process itself. Many times, DevOps and development go hand in hand, with infrastructure deployed for the sole purpose of developing an application pipeline." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://wangyijie.github.io/public/posts/cicd/nginx-and-devops-methodologies-go-hand-in-hand/" /><meta property="article:section" content="posts" />
+
+
+
+<title>Nginx and Dev Ops Methodologies Go Hand in Hand | A great computer technology Site</title>
+<link rel="manifest" href="/public/manifest.json">
+<link rel="icon" href="/public/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/public/book.min.8599444fcc48ee6b435b5b62c955ab7d914fa1e2a453df90c4b97cc9769665d1.css" integrity="sha256-hZlET8xI7mtDW1tiyVWrfZFPoeKkU9&#43;QxLl8yXaWZdE=" crossorigin="anonymous">
+  <script defer src="/public/flexsearch.min.js"></script>
+  <script defer src="/public/en.search.min.49d7ffe0cc6a09481193582a484d1dfccfe14d6d173d2de804b6e37d7c5a9f57.js" integrity="sha256-Sdf/4MxqCUgRk1gqSE0d/M/hTW0XPS3oBLbjfXxan1c=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/public/"><span>A great computer technology Site</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/public/posts/" >
+        Posts
+      </a>
+      
+<ul>
+  
+  <li>
+    <a href="/public/posts/angluar-cli/" >
+        angular
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/ansible/" >
+        ansible
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/cicd/" >
+        CICD
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/cloud/" >
+        cloude
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/container/" >
+        container
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/devops/" >
+        DevOps
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/english/" >
+        English
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/golang/" >
+        golang
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/istio/" >
+        istio
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/kubernetes/" >
+        Kubernetes
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" >
+        mechine leaning
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/material2/" >
+        mererial2
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E7%9B%91%E6%8E%A7/" >
+        monitor
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/mysql/" >
+        mysql
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E7%BD%91%E7%BB%9C/" >
+        networking
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E6%97%A5%E8%AE%B0%E6%9C%AC/" >
+        notes
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/postgresql/" >
+        postgresql
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/django/" >
+        python
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E5%AE%89%E5%85%A8/" >
+        safe
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E8%AF%97%E8%AF%8D/" >
+        shi chi
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E7%AB%99%E7%82%B9%E5%8F%AF%E9%9D%A0%E6%80%A7%E5%B7%A5%E7%A8%8B/" >
+        SRE
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E6%96%87%E5%AD%A6/" >
+        wenxue
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E9%9A%8F%E7%AC%94/" >
+        write somethings
+      </a>
+  </li>
+  
+</ul>
+
+  </li>
+  
+  <li>
+    <a href="/public/about/" >
+        About
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var a=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(b){localStorage.setItem("menu.scrollTop",a.scrollTop)}),a.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/public/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Nginx and Dev Ops Methodologies Go Hand in Hand</strong>
+
+  <label for="toc-control">
+    
+    <img src="/public/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#blue-green-deployments">Blue-Green Deployments</a></li>
+    <li><a href="#canary-releases">Canary Releases</a></li>
+    <li><a href="#conclusion">Conclusion</a></li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+<article class="markdown">
+  <h1>
+    <a href="/public/posts/cicd/nginx-and-devops-methodologies-go-hand-in-hand/">Nginx and Dev Ops Methodologies Go Hand in Hand</a>
+  </h1>
+  
+
+
+  
+
+  
+
+
+
+<p>DevOps has seen explosive growth recently, as organizations look to deliver releases and features faster by automating operations with an Infrastructure as Code approach. This shift in the industry is making for some very interesting transformations, both in how organizations deploy applications and what is expected from IT operations.</p>
+<p>DevOps plays a big role, not just in the delivery of infrastructure, but in the application deployment process itself. Many times, DevOps and development go hand in hand, with infrastructure deployed for the sole purpose of developing an application pipeline. The lifecycle of an application has become nimbler with the adoption of modern deployment methodologies, and NGINX can provide flexibility to enhance this process.</p>
+<p>Hardware appliances for application delivery are traditionally fairly static and don’t lend themselves well to the agility that is required when utilizing a pipeline for application deployment. Being able to define the delivery needs of a specific application as part of the development and iteration process enhances the DevOps process.</p>
+<h2 id="blue-green-deployments">
+  Blue-Green Deployments
+  <a class="anchor" href="#blue-green-deployments">#</a>
+</h2>
+<p>One of the approaches to building an application environment that makes development more agile is blue‑green deployment. A blue‑green deployment essentially requires running two production environments at the same time. The goal is to keep the environments as close to identical as possible, but with only one of them live at any given time. The environment that isn’t live is used for staging and testing.</p>
+<p>For the sake of this discussion, let’s call the live environment blue and the staging environment green. Once the testing of application updates in the green environment is deemed successful, green becomes the live environment and blue becomes the new staging environment ready for the next iteration of changes to the app. If something goes wrong soon after the green environment goes live, you can easily roll back to the blue environment because you know it was production‑ready before the switch.</p>
+<p>The lightweight and agile nature of NGINX makes it a great tool for controlling application delivery in a blue‑green environment. Both the switch between environments and the required changes to the app‑delivery configuration can be rolled into the pipeline process itself. As detailed on the <a href="https://www.nginx.com/blog/introducing-ask-nginx/#blue-green">NGINX blog</a>, with NGINX Plus you can use the key‑value store to implement blue‑green deployment.</p>
+<h2 id="canary-releases">
+  Canary Releases
+  <a class="anchor" href="#canary-releases">#</a>
+</h2>
+<p>Canary release is another approach that NGINX is well suited for. Named after the <a href="https://www.smithsonianmag.com/smart-news/story-real-canary-coal-mine-180961570/">old mining trick</a> for detecting the presence of dangerous gases in coal mines, a canary deployment exposes application updates to a small subset of users – the “canaries” who test whether the updates work correctly. There are many ways to choose your canaries – perhaps they are from a specific country, or hit the system during a specific time period in the middle of the night. Canary releases limit any possible repercussions to a smaller number of users while still providing feedback about when the update is ready to be released to the masses.</p>
+<p>You can easily perform a canary release with NGINX and NGINX Plus using the <a href="https://nginx.org/en/docs/http/ngx_http_split_clients_module.html?_ga=2.59690347.774045537.1575698247-2108688350.1575698247">Split Clients</a> module. For details, see the <a href="https://www.nginx.com/blog/nginx-plus-backend-upgrades-application-version/#application-canary-release">NGINX blog</a>.</p>
+<h2 id="conclusion">
+  Conclusion
+  <a class="anchor" href="#conclusion">#</a>
+</h2>
+<p>Both of these use cases highlight the flexibility that is required for modern application deployment. Developers need tools that can keep up with the pipeline methodologies used in the current development landscape. Integrating NGINX with existing CI/CD tool chains can arm developers and operations teams with another way to accelerate agility.</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function a(c){const a=window.getSelection(),b=document.createRange();b.selectNodeContents(c),a.removeAllRanges(),a.addRange(b)}document.querySelectorAll("pre code").forEach(b=>{b.addEventListener("click",function(c){a(b.parentElement),navigator.clipboard&&navigator.clipboard.writeText(b.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#blue-green-deployments">Blue-Green Deployments</a></li>
+    <li><a href="#canary-releases">Canary Releases</a></li>
+    <li><a href="#conclusion">Conclusion</a></li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

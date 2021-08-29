@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="接触golang有些时间了，以前磕磕碰碰的勉强写过几个小程序，最近工作又亲近golang，就想着再回头巩固一下，曾经遇到过几次的问题又再次遇到了，golang的函数定义格式是这样的：
+func function_name( [parameter list] ) [return_types] { 函数体 } 函数体之上的哪一行总共分为三个部分，依次是声明关键字，函数名和参数，返回值。函数名和参数是一个整体所以归为一组方便识别的，有时会遇到一些异类的形式，今天就遇到这样的：
+func fib() func() int { a, b := 0, 1 return func() int { a, b = b, a&#43;b return a } } 比常见的多了一段，让人有点蒙圈了，再回顾到闭包的知识点才解决此困惑，说一下我自己对闭包的总结，闭包就是函数返回一个匿名函数，看一个例子：
+package main import &quot;fmt&quot; func returnNum() func() (int, int) { return func() (int, int) { return 0, 1 } } func main() { q := returnNum() a, b := q() fmt.Println(a, b) } 在强类型语言里面，函数返回值类型是不可少的，闭包误导人的地方就在于它的返回值定义，返回一个匿名函数，函数得注明返回值，返回值和函数名之间习惯上会加空格，这就造成闭包的形式有别于普通函数，上面这个闭包双返回值也是有些耐人寻味的。少见多怪，主要还是因为我是个业余玩家。 ####还有方法：结构体方法，对象方法也是初学者不易理解的。">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="" />
+<meta property="og:description" content="接触golang有些时间了，以前磕磕碰碰的勉强写过几个小程序，最近工作又亲近golang，就想着再回头巩固一下，曾经遇到过几次的问题又再次遇到了，golang的函数定义格式是这样的：
+func function_name( [parameter list] ) [return_types] { 函数体 } 函数体之上的哪一行总共分为三个部分，依次是声明关键字，函数名和参数，返回值。函数名和参数是一个整体所以归为一组方便识别的，有时会遇到一些异类的形式，今天就遇到这样的：
+func fib() func() int { a, b := 0, 1 return func() int { a, b = b, a&#43;b return a } } 比常见的多了一段，让人有点蒙圈了，再回顾到闭包的知识点才解决此困惑，说一下我自己对闭包的总结，闭包就是函数返回一个匿名函数，看一个例子：
+package main import &quot;fmt&quot; func returnNum() func() (int, int) { return func() (int, int) { return 0, 1 } } func main() { q := returnNum() a, b := q() fmt.Println(a, b) } 在强类型语言里面，函数返回值类型是不可少的，闭包误导人的地方就在于它的返回值定义，返回一个匿名函数，函数得注明返回值，返回值和函数名之间习惯上会加空格，这就造成闭包的形式有别于普通函数，上面这个闭包双返回值也是有些耐人寻味的。少见多怪，主要还是因为我是个业余玩家。 ####还有方法：结构体方法，对象方法也是初学者不易理解的。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://wangyijie.github.io/public/posts/golang/golang-%E5%87%BD%E6%95%B0%E5%92%8C%E9%97%AD%E5%8C%85/" /><meta property="article:section" content="posts" />
+
+
+
+<title>Golang 函数和闭包 | A great computer technology Site</title>
+<link rel="manifest" href="/public/manifest.json">
+<link rel="icon" href="/public/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/public/book.min.8599444fcc48ee6b435b5b62c955ab7d914fa1e2a453df90c4b97cc9769665d1.css" integrity="sha256-hZlET8xI7mtDW1tiyVWrfZFPoeKkU9&#43;QxLl8yXaWZdE=" crossorigin="anonymous">
+  <script defer src="/public/flexsearch.min.js"></script>
+  <script defer src="/public/en.search.min.49d7ffe0cc6a09481193582a484d1dfccfe14d6d173d2de804b6e37d7c5a9f57.js" integrity="sha256-Sdf/4MxqCUgRk1gqSE0d/M/hTW0XPS3oBLbjfXxan1c=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/public/"><span>A great computer technology Site</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/public/posts/" >
+        Posts
+      </a>
+      
+<ul>
+  
+  <li>
+    <a href="/public/posts/angluar-cli/" >
+        angular
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/ansible/" >
+        ansible
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/cicd/" >
+        CICD
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/cloud/" >
+        cloude
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/container/" >
+        container
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/devops/" >
+        DevOps
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/english/" >
+        English
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/golang/" >
+        golang
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/istio/" >
+        istio
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/kubernetes/" >
+        Kubernetes
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" >
+        mechine leaning
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/material2/" >
+        mererial2
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E7%9B%91%E6%8E%A7/" >
+        monitor
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/mysql/" >
+        mysql
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E7%BD%91%E7%BB%9C/" >
+        networking
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E6%97%A5%E8%AE%B0%E6%9C%AC/" >
+        notes
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/postgresql/" >
+        postgresql
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/django/" >
+        python
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E5%AE%89%E5%85%A8/" >
+        safe
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E8%AF%97%E8%AF%8D/" >
+        shi chi
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E7%AB%99%E7%82%B9%E5%8F%AF%E9%9D%A0%E6%80%A7%E5%B7%A5%E7%A8%8B/" >
+        SRE
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E6%96%87%E5%AD%A6/" >
+        wenxue
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E9%9A%8F%E7%AC%94/" >
+        write somethings
+      </a>
+  </li>
+  
+</ul>
+
+  </li>
+  
+  <li>
+    <a href="/public/about/" >
+        About
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var a=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(b){localStorage.setItem("menu.scrollTop",a.scrollTop)}),a.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/public/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Golang 函数和闭包</strong>
+
+  <label for="toc-control">
+    
+    <img src="/public/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents"></nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+<article class="markdown">
+  <h1>
+    <a href="/public/posts/golang/golang-%E5%87%BD%E6%95%B0%E5%92%8C%E9%97%AD%E5%8C%85/">Golang 函数和闭包</a>
+  </h1>
+  
+
+
+  
+
+  
+
+
+
+<p>接触golang有些时间了，以前磕磕碰碰的勉强写过几个小程序，最近工作又亲近golang，就想着再回头巩固一下，曾经遇到过几次的问题又再次遇到了，golang的函数定义格式是这样的：</p>
+<pre tabindex="0"><code>func function_name( [parameter list] ) [return_types] {
+   函数体
+}
+</code></pre><p>函数体之上的哪一行总共分为三个部分，依次是声明关键字，函数名和参数，返回值。函数名和参数是一个整体所以归为一组方便识别的，有时会遇到一些异类的形式，今天就遇到这样的：</p>
+<pre tabindex="0"><code>func fib() func() int {
+	a, b := 0, 1
+	return func() int {
+		a, b = b, a+b
+		return a
+	}
+}
+</code></pre><p>比常见的多了一段，让人有点蒙圈了，再回顾到<strong>闭包</strong>的知识点才解决此困惑，说一下我自己对闭包的总结，闭包就是函数返回一个<strong>匿名函数</strong>，看一个例子：</p>
+<pre tabindex="0"><code>package main
+
+import &quot;fmt&quot;
+
+func returnNum() func() (int, int)  {
+	return func() (int, int) {
+		return 0, 1
+	}
+}
+func main()  {
+	q := returnNum()
+	a, b := q()
+	
+	fmt.Println(a, b)
+}
+</code></pre><p>在强类型语言里面，函数返回值类型是不可少的，闭包误导人的地方就在于它的返回值定义，返回一个匿名函数，函数得注明返回值，返回值和函数名之间习惯上会加空格，这就造成闭包的形式有别于普通函数，上面这个闭包<strong>双返回值</strong>也是有些耐人寻味的。少见多怪，主要还是因为我是个业余玩家。
+####还有方法：结构体方法，对象方法也是初学者不易理解的。</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function a(c){const a=window.getSelection(),b=document.createRange();b.selectNodeContents(c),a.removeAllRanges(),a.addRange(b)}document.querySelectorAll("pre code").forEach(b=>{b.addEventListener("click",function(c){a(b.parentElement),navigator.clipboard&&navigator.clipboard.writeText(b.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents"></nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

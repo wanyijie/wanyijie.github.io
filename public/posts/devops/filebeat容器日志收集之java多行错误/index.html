@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="背景：#java日志出现错误的时候日志不再是一条一行，可能出来换行，这不适应默认的日志采集方式，正确的做法是使用规则确定行的开始，到下一个开始才是一行的结束，主流的日志收集插件都支持多行的配置定义。现在多用容器运行服务，日志输出到标准输出，这样使用日志采集工具去采集通过docker存储的日志文件，日志包含在json文本中，采集策略得对于调整。 在filebeat中使用container解析器，设置多行合并参数即可，细节如下：
+开始流程：#filebeat配置: filebeat.yml#filebeat.config.inputs: enabled: true path: inputs.d/*.yml reload.enabled: true reload.period: 10s filebeat.config.modules.path: ${path.config}/modules.d/*.yml output.elasticsearch: enabled: false hosts: &#39;127.0.0.1:9200&#39; username: &#39;${ELASTICSEARCH_USERNAME:}&#39; password: &#39;${ELASTICSEARCH_PASSWORD:}&#39; output.file: enabled: false path: &#34;/tmp/filebeat&#34; filename: filebeat output.console: pretty: true enabled: true 日志收集配置： cat inputs.d/java.yml#- type: container multiline.pattern: &#39;^2020-07-15&#39; multiline.negate: true multiline.match: after json.message_key: log # json.keys_under_root: false overwrite_keys: true paths: - /var/log/err.log 日志示例：/var/log/err.log#{&quot;log&quot;:&quot;2020-07-15 03:15:35 [INFO ] [main] org.">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="" />
+<meta property="og:description" content="背景：#java日志出现错误的时候日志不再是一条一行，可能出来换行，这不适应默认的日志采集方式，正确的做法是使用规则确定行的开始，到下一个开始才是一行的结束，主流的日志收集插件都支持多行的配置定义。现在多用容器运行服务，日志输出到标准输出，这样使用日志采集工具去采集通过docker存储的日志文件，日志包含在json文本中，采集策略得对于调整。 在filebeat中使用container解析器，设置多行合并参数即可，细节如下：
+开始流程：#filebeat配置: filebeat.yml#filebeat.config.inputs: enabled: true path: inputs.d/*.yml reload.enabled: true reload.period: 10s filebeat.config.modules.path: ${path.config}/modules.d/*.yml output.elasticsearch: enabled: false hosts: &#39;127.0.0.1:9200&#39; username: &#39;${ELASTICSEARCH_USERNAME:}&#39; password: &#39;${ELASTICSEARCH_PASSWORD:}&#39; output.file: enabled: false path: &#34;/tmp/filebeat&#34; filename: filebeat output.console: pretty: true enabled: true 日志收集配置： cat inputs.d/java.yml#- type: container multiline.pattern: &#39;^2020-07-15&#39; multiline.negate: true multiline.match: after json.message_key: log # json.keys_under_root: false overwrite_keys: true paths: - /var/log/err.log 日志示例：/var/log/err.log#{&quot;log&quot;:&quot;2020-07-15 03:15:35 [INFO ] [main] org." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://wangyijie.github.io/public/posts/devops/filebeat%E5%AE%B9%E5%99%A8%E6%97%A5%E5%BF%97%E6%94%B6%E9%9B%86%E4%B9%8Bjava%E5%A4%9A%E8%A1%8C%E9%94%99%E8%AF%AF/" /><meta property="article:section" content="posts" />
+
+
+
+<title>Filebeat容器日志收集之java多行错误 | A great computer technology Site</title>
+<link rel="manifest" href="/public/manifest.json">
+<link rel="icon" href="/public/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/public/book.min.8599444fcc48ee6b435b5b62c955ab7d914fa1e2a453df90c4b97cc9769665d1.css" integrity="sha256-hZlET8xI7mtDW1tiyVWrfZFPoeKkU9&#43;QxLl8yXaWZdE=" crossorigin="anonymous">
+  <script defer src="/public/flexsearch.min.js"></script>
+  <script defer src="/public/en.search.min.49d7ffe0cc6a09481193582a484d1dfccfe14d6d173d2de804b6e37d7c5a9f57.js" integrity="sha256-Sdf/4MxqCUgRk1gqSE0d/M/hTW0XPS3oBLbjfXxan1c=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/public/"><span>A great computer technology Site</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/public/posts/" >
+        Posts
+      </a>
+      
+<ul>
+  
+  <li>
+    <a href="/public/posts/angluar-cli/" >
+        angular
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/ansible/" >
+        ansible
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/cicd/" >
+        CICD
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/cloud/" >
+        cloude
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/container/" >
+        container
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/devops/" >
+        DevOps
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/english/" >
+        English
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/golang/" >
+        golang
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/istio/" >
+        istio
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/kubernetes/" >
+        Kubernetes
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" >
+        mechine leaning
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/material2/" >
+        mererial2
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E7%9B%91%E6%8E%A7/" >
+        monitor
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/mysql/" >
+        mysql
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E7%BD%91%E7%BB%9C/" >
+        networking
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E6%97%A5%E8%AE%B0%E6%9C%AC/" >
+        notes
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/postgresql/" >
+        postgresql
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/django/" >
+        python
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E5%AE%89%E5%85%A8/" >
+        safe
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E8%AF%97%E8%AF%8D/" >
+        shi chi
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E7%AB%99%E7%82%B9%E5%8F%AF%E9%9D%A0%E6%80%A7%E5%B7%A5%E7%A8%8B/" >
+        SRE
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E6%96%87%E5%AD%A6/" >
+        wenxue
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E9%9A%8F%E7%AC%94/" >
+        write somethings
+      </a>
+  </li>
+  
+</ul>
+
+  </li>
+  
+  <li>
+    <a href="/public/about/" >
+        About
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var a=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(b){localStorage.setItem("menu.scrollTop",a.scrollTop)}),a.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/public/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Filebeat容器日志收集之java多行错误</strong>
+
+  <label for="toc-control">
+    
+    <img src="/public/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#filebeat配置-filebeatyml">filebeat配置: filebeat.yml</a></li>
+    <li><a href="#日志收集配置-cat-inputsdjavayml">日志收集配置： cat inputs.d/java.yml</a></li>
+    <li><a href="#日志示例varlogerrlog">日志示例：/var/log/err.log</a></li>
+    <li><a href="#启动运行filebeat--e--strictpermsfalse">启动运行：filebeat -e -strict.perms=false</a></li>
+    <li><a href="#采集后七条日志变成了两条">采集后七条日志变成了两条</a></li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+<article class="markdown">
+  <h1>
+    <a href="/public/posts/devops/filebeat%E5%AE%B9%E5%99%A8%E6%97%A5%E5%BF%97%E6%94%B6%E9%9B%86%E4%B9%8Bjava%E5%A4%9A%E8%A1%8C%E9%94%99%E8%AF%AF/">Filebeat容器日志收集之java多行错误</a>
+  </h1>
+  
+
+
+  
+
+  
+
+
+
+<h1 id="背景">
+  背景：
+  <a class="anchor" href="#%e8%83%8c%e6%99%af">#</a>
+</h1>
+<p>java日志出现错误的时候日志不再是一条一行，可能出来换行，这不适应默认的日志采集方式，正确的做法是使用规则确定行的开始，到下一个开始才是一行的结束，主流的日志收集插件都支持多行的配置定义。现在多用容器运行服务，日志输出到标准输出，这样使用日志采集工具去采集通过docker存储的日志文件，日志包含在json文本中，采集策略得对于调整。
+在filebeat中使用container解析器，设置多行合并参数即可，细节如下：</p>
+<h1 id="开始流程">
+  开始流程：
+  <a class="anchor" href="#%e5%bc%80%e5%a7%8b%e6%b5%81%e7%a8%8b">#</a>
+</h1>
+<h2 id="filebeat配置-filebeatyml">
+  filebeat配置: filebeat.yml
+  <a class="anchor" href="#filebeat%e9%85%8d%e7%bd%ae-filebeatyml">#</a>
+</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">filebeat.config.inputs</span>:
+  <span style="color:#f92672">enabled</span>: <span style="color:#66d9ef">true</span>
+  <span style="color:#f92672">path</span>: <span style="color:#ae81ff">inputs.d/*.yml</span>
+  <span style="color:#f92672">reload.enabled</span>: <span style="color:#66d9ef">true</span>
+  <span style="color:#f92672">reload.period</span>: <span style="color:#ae81ff">10s</span>
+<span style="color:#f92672">filebeat.config.modules.path</span>: <span style="color:#ae81ff">${path.config}/modules.d/*.yml</span>
+<span style="color:#f92672">output.elasticsearch</span>:
+  <span style="color:#f92672">enabled</span>: <span style="color:#66d9ef">false</span>
+  <span style="color:#f92672">hosts</span>: <span style="color:#e6db74">&#39;127.0.0.1:9200&#39;</span>
+  <span style="color:#f92672">username</span>: <span style="color:#e6db74">&#39;${ELASTICSEARCH_USERNAME:}&#39;</span>
+  <span style="color:#f92672">password</span>: <span style="color:#e6db74">&#39;${ELASTICSEARCH_PASSWORD:}&#39;</span>
+<span style="color:#f92672">output.file</span>:
+  <span style="color:#f92672">enabled</span>: <span style="color:#66d9ef">false</span>
+  <span style="color:#f92672">path</span>: <span style="color:#e6db74">&#34;/tmp/filebeat&#34;</span>
+  <span style="color:#f92672">filename</span>: <span style="color:#ae81ff">filebeat</span>
+<span style="color:#f92672">output.console</span>:
+  <span style="color:#f92672">pretty</span>: <span style="color:#66d9ef">true</span>
+  <span style="color:#f92672">enabled</span>: <span style="color:#66d9ef">true</span>
+</code></pre></div><h2 id="日志收集配置-cat-inputsdjavayml">
+  日志收集配置： cat inputs.d/java.yml
+  <a class="anchor" href="#%e6%97%a5%e5%bf%97%e6%94%b6%e9%9b%86%e9%85%8d%e7%bd%ae-cat-inputsdjavayml">#</a>
+</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yml" data-lang="yml">- <span style="color:#f92672">type</span>: <span style="color:#ae81ff">container</span>
+  <span style="color:#f92672">multiline.pattern</span>: <span style="color:#e6db74">&#39;^2020-07-15&#39;</span>
+  <span style="color:#f92672">multiline.negate</span>: <span style="color:#66d9ef">true</span>
+  <span style="color:#f92672">multiline.match</span>: <span style="color:#ae81ff">after</span>
+  <span style="color:#f92672">json.message_key</span>: <span style="color:#ae81ff">log</span>
+ <span style="color:#75715e"># json.keys_under_root: false</span>
+  <span style="color:#f92672">overwrite_keys</span>: <span style="color:#66d9ef">true</span>
+  <span style="color:#f92672">paths</span>:
+    - <span style="color:#ae81ff">/var/log/err.log</span>
+
+</code></pre></div><h2 id="日志示例varlogerrlog">
+  日志示例：/var/log/err.log
+  <a class="anchor" href="#%e6%97%a5%e5%bf%97%e7%a4%ba%e4%be%8bvarlogerrlog">#</a>
+</h2>
+<pre tabindex="0"><code>{&quot;log&quot;:&quot;2020-07-15 03:15:35 [INFO ] [main] org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'shiroProperyConfig' of type [com.wwtx.chinesemedicine.service.config.propery.ShiroProperyConfig$$EnhancerBySpringCGLIB$$b7434c17] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)\n&quot;,&quot;stream&quot;:&quot;stdout&quot;,&quot;time&quot;:&quot;2020-07-15T03:15:35.819881438Z&quot;}
+{&quot;log&quot;:&quot;Logging initialized using 'class org.apache.ibatis.logging.stdout.StdOutImpl' adapter.\n&quot;,&quot;stream&quot;:&quot;stdout&quot;,&quot;time&quot;:&quot;2020-07-15T03:15:35.968119304Z&quot;}
+{&quot;log&quot;:&quot;2020-07-15 03:15:36 [INFO ] [main] org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)\n&quot;,&quot;stream&quot;:&quot;stdout&quot;,&quot;time&quot;:&quot;2020-07-15T03:15:36.428202427Z&quot;}
+{&quot;log&quot;:&quot;Registered plugin: 'AbstractSqlParserHandler(sqlParserList=null, sqlParserFilter=null)'\n&quot;,&quot;stream&quot;:&quot;stdout&quot;,&quot;time&quot;:&quot;2020-07-15T03:15:36.51131214Z&quot;}
+{&quot;log&quot;:&quot;Parsed mapper file: 'class path resource [mapper/ArticlesHitsMapper.xml]'\n&quot;,&quot;stream&quot;:&quot;stdout&quot;,&quot;time&quot;:&quot;2020-07-15T03:15:36.877433778Z&quot;}
+{&quot;log&quot;:&quot;[com.wwtx.chinesemedicine.service.dao.ArticlesDao.selectById] Has been loaded by XML or SqlProvider or Mybatis's Annotation, so ignoring this injection for [class com.baomidou.mybatisplus.core.injector.methods.SelectById]\n&quot;,&quot;stream&quot;:&quot;stdout&quot;,&quot;time&quot;:&quot;2020-07-15T03:15:36.963122274Z&quot;}
+{&quot;log&quot;:&quot;Parsed mapper file: 'class path resource [mapper/ArticlesMapper.xml]'\n&quot;,&quot;stream&quot;:&quot;stdout&quot;,&quot;time&quot;:&quot;2020-07-15T03:15:36.99978738Z&quot;}
+
+</code></pre><h2 id="启动运行filebeat--e--strictpermsfalse">
+  启动运行：filebeat -e -strict.perms=false
+  <a class="anchor" href="#%e5%90%af%e5%8a%a8%e8%bf%90%e8%a1%8cfilebeat--e--strictpermsfalse">#</a>
+</h2>
+<h2 id="采集后七条日志变成了两条">
+  采集后七条日志变成了两条
+  <a class="anchor" href="#%e9%87%87%e9%9b%86%e5%90%8e%e4%b8%83%e6%9d%a1%e6%97%a5%e5%bf%97%e5%8f%98%e6%88%90%e4%ba%86%e4%b8%a4%e6%9d%a1">#</a>
+</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+  <span style="color:#f92672">&#34;@timestamp&#34;</span>: <span style="color:#e6db74">&#34;2020-07-15T03:15:35.819Z&#34;</span>,
+  <span style="color:#f92672">&#34;@metadata&#34;</span>: {
+    <span style="color:#f92672">&#34;beat&#34;</span>: <span style="color:#e6db74">&#34;filebeat&#34;</span>,
+    <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;_doc&#34;</span>,
+    <span style="color:#f92672">&#34;version&#34;</span>: <span style="color:#e6db74">&#34;7.8.0&#34;</span>
+  },
+  <span style="color:#f92672">&#34;input&#34;</span>: {
+    <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;container&#34;</span>
+  },
+  <span style="color:#f92672">&#34;ecs&#34;</span>: {
+    <span style="color:#f92672">&#34;version&#34;</span>: <span style="color:#e6db74">&#34;1.5.0&#34;</span>
+  },
+  <span style="color:#f92672">&#34;host&#34;</span>: {
+    <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;1b6f43203770&#34;</span>
+  },
+  <span style="color:#f92672">&#34;agent&#34;</span>: {
+    <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;1b6f43203770&#34;</span>,
+    <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;filebeat&#34;</span>,
+    <span style="color:#f92672">&#34;version&#34;</span>: <span style="color:#e6db74">&#34;7.8.0&#34;</span>,
+    <span style="color:#f92672">&#34;hostname&#34;</span>: <span style="color:#e6db74">&#34;1b6f43203770&#34;</span>,
+    <span style="color:#f92672">&#34;ephemeral_id&#34;</span>: <span style="color:#e6db74">&#34;ebaa6a78-bb7f-4399-89ca-baad22b8e535&#34;</span>,
+    <span style="color:#f92672">&#34;id&#34;</span>: <span style="color:#e6db74">&#34;d00521ba-c888-4bed-a7fb-ae20731871e9&#34;</span>
+  },
+  <span style="color:#f92672">&#34;log&#34;</span>: {
+    <span style="color:#f92672">&#34;offset&#34;</span>: <span style="color:#ae81ff">0</span>,
+    <span style="color:#f92672">&#34;file&#34;</span>: {
+      <span style="color:#f92672">&#34;path&#34;</span>: <span style="color:#e6db74">&#34;/var/log/err.log&#34;</span>
+    },
+    <span style="color:#f92672">&#34;flags&#34;</span>: [
+      <span style="color:#e6db74">&#34;multiline&#34;</span>
+    ]
+  },
+  <span style="color:#f92672">&#34;stream&#34;</span>: <span style="color:#e6db74">&#34;stdout&#34;</span>,
+  <span style="color:#f92672">&#34;json&#34;</span>: {},
+  <span style="color:#f92672">&#34;message&#34;</span>: <span style="color:#e6db74">&#34;2020-07-15 03:15:35 [INFO ] [main] org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean &#39;shiroProperyConfig&#39; of type [com.wwtx.chinesemedicine.service.config.propery.ShiroProperyConfig$$EnhancerBySpringCGLIB$$b7434c17] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)\nLogging initialized using &#39;class org.apache.ibatis.logging.stdout.StdOutImpl&#39; adapter.&#34;</span>
+}
+{
+  <span style="color:#f92672">&#34;@timestamp&#34;</span>: <span style="color:#e6db74">&#34;2020-07-15T03:15:36.428Z&#34;</span>,
+  <span style="color:#f92672">&#34;@metadata&#34;</span>: {
+    <span style="color:#f92672">&#34;beat&#34;</span>: <span style="color:#e6db74">&#34;filebeat&#34;</span>,
+    <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;_doc&#34;</span>,
+    <span style="color:#f92672">&#34;version&#34;</span>: <span style="color:#e6db74">&#34;7.8.0&#34;</span>
+  },
+  <span style="color:#f92672">&#34;input&#34;</span>: {
+    <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;container&#34;</span>
+  },
+  <span style="color:#f92672">&#34;ecs&#34;</span>: {
+    <span style="color:#f92672">&#34;version&#34;</span>: <span style="color:#e6db74">&#34;1.5.0&#34;</span>
+  },
+  <span style="color:#f92672">&#34;host&#34;</span>: {
+    <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;1b6f43203770&#34;</span>
+  },
+  <span style="color:#f92672">&#34;agent&#34;</span>: {
+    <span style="color:#f92672">&#34;hostname&#34;</span>: <span style="color:#e6db74">&#34;1b6f43203770&#34;</span>,
+    <span style="color:#f92672">&#34;ephemeral_id&#34;</span>: <span style="color:#e6db74">&#34;ebaa6a78-bb7f-4399-89ca-baad22b8e535&#34;</span>,
+    <span style="color:#f92672">&#34;id&#34;</span>: <span style="color:#e6db74">&#34;d00521ba-c888-4bed-a7fb-ae20731871e9&#34;</span>,
+    <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;1b6f43203770&#34;</span>,
+    <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;filebeat&#34;</span>,
+    <span style="color:#f92672">&#34;version&#34;</span>: <span style="color:#e6db74">&#34;7.8.0&#34;</span>
+  },
+  <span style="color:#f92672">&#34;log&#34;</span>: {
+    <span style="color:#f92672">&#34;file&#34;</span>: {
+      <span style="color:#f92672">&#34;path&#34;</span>: <span style="color:#e6db74">&#34;/var/log/err.log&#34;</span>
+    },
+    <span style="color:#f92672">&#34;flags&#34;</span>: [
+      <span style="color:#e6db74">&#34;multiline&#34;</span>
+    ],
+    <span style="color:#f92672">&#34;offset&#34;</span>: <span style="color:#ae81ff">605</span>
+  },
+  <span style="color:#f92672">&#34;stream&#34;</span>: <span style="color:#e6db74">&#34;stdout&#34;</span>,
+  <span style="color:#f92672">&#34;json&#34;</span>: {},
+  <span style="color:#f92672">&#34;message&#34;</span>: <span style="color:#e6db74">&#34;2020-07-15 03:15:36 [INFO ] [main] org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean &#39;org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker&#39; of type [org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)\nRegistered plugin: &#39;AbstractSqlParserHandler(sqlParserList=null, sqlParserFilter=null)&#39;\nParsed mapper file: &#39;class path resource [mapper/ArticlesHitsMapper.xml]&#39;\n[com.wwtx.chinesemedicine.service.dao.ArticlesDao.selectById] Has been loaded by XML or SqlProvider or Mybatis&#39;s Annotation, so ignoring this injection for [class com.baomidou.mybatisplus.core.injector.methods.SelectById]\nParsed mapper file: &#39;class path resource [mapper/ArticlesMapper.xml]&#39;&#34;</span>
+}
+</code></pre></div></article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function a(c){const a=window.getSelection(),b=document.createRange();b.selectNodeContents(c),a.removeAllRanges(),a.addRange(b)}document.querySelectorAll("pre code").forEach(b=>{b.addEventListener("click",function(c){a(b.parentElement),navigator.clipboard&&navigator.clipboard.writeText(b.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#filebeat配置-filebeatyml">filebeat配置: filebeat.yml</a></li>
+    <li><a href="#日志收集配置-cat-inputsdjavayml">日志收集配置： cat inputs.d/java.yml</a></li>
+    <li><a href="#日志示例varlogerrlog">日志示例：/var/log/err.log</a></li>
+    <li><a href="#启动运行filebeat--e--strictpermsfalse">启动运行：filebeat -e -strict.perms=false</a></li>
+    <li><a href="#采集后七条日志变成了两条">采集后七条日志变成了两条</a></li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

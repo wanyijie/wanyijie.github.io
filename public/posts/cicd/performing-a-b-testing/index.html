@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="When you are testing changes to an application, there are some factors you can measure only in a production environment rather than a development test bed. Examples include the effect of UI changes on user behavior and the impact on overall performance. A common testing method is A/B testing – also known as split testing – in which a (usually small) proportion of users is directed to the new version of an application while most users continue to use the current version.">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="" />
+<meta property="og:description" content="When you are testing changes to an application, there are some factors you can measure only in a production environment rather than a development test bed. Examples include the effect of UI changes on user behavior and the impact on overall performance. A common testing method is A/B testing – also known as split testing – in which a (usually small) proportion of users is directed to the new version of an application while most users continue to use the current version." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://wangyijie.github.io/public/posts/cicd/performing-a-b-testing/" /><meta property="article:section" content="posts" />
+
+
+
+<title>Performing a B Testing | A great computer technology Site</title>
+<link rel="manifest" href="/public/manifest.json">
+<link rel="icon" href="/public/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/public/book.min.8599444fcc48ee6b435b5b62c955ab7d914fa1e2a453df90c4b97cc9769665d1.css" integrity="sha256-hZlET8xI7mtDW1tiyVWrfZFPoeKkU9&#43;QxLl8yXaWZdE=" crossorigin="anonymous">
+  <script defer src="/public/flexsearch.min.js"></script>
+  <script defer src="/public/en.search.min.49d7ffe0cc6a09481193582a484d1dfccfe14d6d173d2de804b6e37d7c5a9f57.js" integrity="sha256-Sdf/4MxqCUgRk1gqSE0d/M/hTW0XPS3oBLbjfXxan1c=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/public/"><span>A great computer technology Site</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/public/posts/" >
+        Posts
+      </a>
+      
+<ul>
+  
+  <li>
+    <a href="/public/posts/angluar-cli/" >
+        angular
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/ansible/" >
+        ansible
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/cicd/" >
+        CICD
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/cloud/" >
+        cloude
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/container/" >
+        container
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/devops/" >
+        DevOps
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/english/" >
+        English
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/golang/" >
+        golang
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/istio/" >
+        istio
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/kubernetes/" >
+        Kubernetes
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" >
+        mechine leaning
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/material2/" >
+        mererial2
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E7%9B%91%E6%8E%A7/" >
+        monitor
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/mysql/" >
+        mysql
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E7%BD%91%E7%BB%9C/" >
+        networking
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E6%97%A5%E8%AE%B0%E6%9C%AC/" >
+        notes
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/postgresql/" >
+        postgresql
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/django/" >
+        python
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E5%AE%89%E5%85%A8/" >
+        safe
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E8%AF%97%E8%AF%8D/" >
+        shi chi
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E7%AB%99%E7%82%B9%E5%8F%AF%E9%9D%A0%E6%80%A7%E5%B7%A5%E7%A8%8B/" >
+        SRE
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E6%96%87%E5%AD%A6/" >
+        wenxue
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E9%9A%8F%E7%AC%94/" >
+        write somethings
+      </a>
+  </li>
+  
+</ul>
+
+  </li>
+  
+  <li>
+    <a href="/public/about/" >
+        About
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var a=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(b){localStorage.setItem("menu.scrollTop",a.scrollTop)}),a.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/public/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Performing a B Testing</strong>
+
+  <label for="toc-control">
+    
+    <img src="/public/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#why-do-abtestinghttpswwwnginxcomblogperforming-a-b-testing-nginx-pluswhy-do-abnbsptesting">Why Do A/B Testing?<a href="https://www.nginx.com/blog/performing-a-b-testing-nginx-plus/#Why-Do-A/B%C2%A0Testing"></a></a></li>
+    <li><a href="#using-nginx-and-nginxplus-for-abtestinghttpswwwnginxcomblogperforming-a-b-testing-nginx-plususing-nginx-and-nginxnbspplus-for-abnbsptesting">Using NGINX and NGINX Plus for A/B Testing<a href="https://www.nginx.com/blog/performing-a-b-testing-nginx-plus/#Using-NGINX-and-NGINX%C2%A0Plus-for-A/B%C2%A0Testing"></a></a>
+      <ul>
+        <li><a href="#using-thesplit_clientsmethod">Using the <code>split_clients</code> Method</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+<article class="markdown">
+  <h1>
+    <a href="/public/posts/cicd/performing-a-b-testing/">Performing a B Testing</a>
+  </h1>
+  
+
+
+  
+
+  
+
+
+
+<p>When you are testing changes to an application, there are some factors you can measure only in a production environment rather than a development test bed. Examples include the effect of UI changes on user behavior and the impact on overall performance. A common testing method is <em>A/B testing</em> – also known as <em>split testing</em> – in which a (usually small) proportion of users is directed to the new version of an application while most users continue to use the current version.</p>
+<p>In this blog post we’ll explore why it is important to perform A/B testing when deploying new versions of your web application and how to use <a href="https://nginx.org/en">NGINX</a> and <a href="https://www.nginx.com/products/nginx/">NGINX Plus</a> to control which version of an application users see. Configuration examples illustrate how you can use NGINX and NGINX Plus directives, parameters, and variables to achieve accurate and measurable A/B testing.</p>
+Why Do A/B Testing?<h2 id="why-do-abtestinghttpswwwnginxcomblogperforming-a-b-testing-nginx-pluswhy-do-abnbsptesting">
+  <a href="https://www.nginx.com/blog/performing-a-b-testing-nginx-plus/#Why-Do-A/B&amp;nbsp;Testing"></a>
+  <a class="anchor" href="#why-do-abtestinghttpswwwnginxcomblogperforming-a-b-testing-nginx-pluswhy-do-abnbsptesting">#</a>
+</h2>
+<p>As we mentioned, A/B testing enables you to measure the difference in application performance or effectiveness between two versions. Perhaps your development team wants to change the visual arrangement of buttons in the UI or overhaul the entire shopping cart process, but wants to compare the close rate of transactions to make sure the change has the desired business impact. Using A/B testing you can send a defined percent of the traffic to the new version and the remaining to the old version and measure the effectiveness of both versions of the application.</p>
+<p>Or perhaps your concern is less the effect on user behavior and more related to the performance impact. Let’s say you plan to deploy a huge set of changes to your web application and don’t feel that testing within your quality assurance environment truly captures the possible effect on performance in production. In this case, an A/B deployment allows you to expose the new version to a small, defined percentage of visitors to measure the performance impact of the changes, and gradually increase the percentage until eventually you roll out the changed application to all users.</p>
+Using NGINX and NGINX Plus for A/B Testing<h2 id="using-nginx-and-nginxplus-for-abtestinghttpswwwnginxcomblogperforming-a-b-testing-nginx-plususing-nginx-and-nginxnbspplus-for-abnbsptesting">
+  <a href="https://www.nginx.com/blog/performing-a-b-testing-nginx-plus/#Using-NGINX-and-NGINX&amp;nbsp;Plus-for-A/B&amp;nbsp;Testing"></a>
+  <a class="anchor" href="#using-nginx-and-nginxplus-for-abtestinghttpswwwnginxcomblogperforming-a-b-testing-nginx-plususing-nginx-and-nginxnbspplus-for-abnbsptesting">#</a>
+</h2>
+<p>NGINX and NGINX Plus provide a couple methods for controlling where web application traffic is sent. The first method is available in both products, whereas the second is available in NGINX Plus only.</p>
+<p>Both methods choose the destination of a request based on the values of one or more NGINX variables that capture characteristics of the client (such as its IP address) or of the request URI (such as a named argument), but the differences between them make them suitable for different A/B‑testing use cases:</p>
+<ul>
+<li>The <code>split_clients</code> method chooses the destination of a request based on a hash of the variable values extracted from the request. The set of all possible hash values is divided up among the application versions, and you can assign a different proportion of the set to each application. The choice of destination ends up being randomized.</li>
+<li>The <code>sticky</code> <code>route</code> method provides you much greater control over the destination of each request. The choice of application is based on the variable values themselves (not a hash), so you can set explicitly which application receives requests that have certain variable values. You can also use regular expressions to base the decision on just portions of a variable value, and can preferentially choose one variable over another as the basis for the decision.</li>
+</ul>
+<h3 id="using-thesplit_clientsmethod">
+  Using the <code>split_clients</code> Method
+  <a class="anchor" href="#using-thesplit_clientsmethod">#</a>
+</h3>
+<p>In this method, the <a href="https://nginx.org/en/docs/http/ngx_http_split_clients_module.html#split_clients"><code>split_clients</code></a> configuration block sets a variable for each request that determines which upstream group the <a href="https://nginx.org/en/docs/http/ngx_http_proxy_module.html#proxy_pass"><code>proxy_pass</code></a> directive sends the request to. In the sample configuration below, the value of the <code>$appversion</code> variable determines where the <code>proxy_pass</code> directive sends a request. The <a href="https://nginx.org/en/docs/http/ngx_http_split_clients_module.html#split_clients"><code>split_clients</code></a> block uses a hash function to dynamically set the variable’s value to one of two upstream group names, either <strong>version_1a</strong> or <strong>version_1b</strong>.</p>
+<pre tabindex="0"><code>http {
+    # ...
+    # application version 1a 
+    upstream version_1a {
+        server 10.0.0.100:3001;
+        server 10.0.0.101:3001;
+    }
+
+    # application version 1b
+    upstream version_1b {
+        server 10.0.0.104:6002;
+        server 10.0.0.105:6002;
+    }
+
+    split_clients &quot;${arg_token}&quot; $appversion {
+        95%     version_1a;
+        *       version_1b;
+    }
+
+    server {
+        # ...
+        listen 80;
+        location / {
+            proxy_set_header Host $host;
+            proxy_pass http://$appversion;
+        }
+    }
+}
+</code></pre></article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function a(c){const a=window.getSelection(),b=document.createRange();b.selectNodeContents(c),a.removeAllRanges(),a.addRange(b)}document.querySelectorAll("pre code").forEach(b=>{b.addEventListener("click",function(c){a(b.parentElement),navigator.clipboard&&navigator.clipboard.writeText(b.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#why-do-abtestinghttpswwwnginxcomblogperforming-a-b-testing-nginx-pluswhy-do-abnbsptesting">Why Do A/B Testing?<a href="https://www.nginx.com/blog/performing-a-b-testing-nginx-plus/#Why-Do-A/B%C2%A0Testing"></a></a></li>
+    <li><a href="#using-nginx-and-nginxplus-for-abtestinghttpswwwnginxcomblogperforming-a-b-testing-nginx-plususing-nginx-and-nginxnbspplus-for-abnbsptesting">Using NGINX and NGINX Plus for A/B Testing<a href="https://www.nginx.com/blog/performing-a-b-testing-nginx-plus/#Using-NGINX-and-NGINX%C2%A0Plus-for-A/B%C2%A0Testing"></a></a>
+      <ul>
+        <li><a href="#using-thesplit_clientsmethod">Using the <code>split_clients</code> Method</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

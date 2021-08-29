@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="kubeadm 默认证书为一年，一年过期后，会导致api service不可用，使用过程中会出现：x509: certificate has expired or is not yet valid.
+方案一 通过修改kubeadm 调整证书过期时间
+一、使用kubadm 更新证书#1. 查看证书有效期#kubeadm alpha certs check-expiration 2. 重新签发证书#kubeadm alpha certs renew admin.conf kubeadm alpha certs renew scheduler.conf kubeadm alpha certs renew controller-manager.conf 3. 重启控制平面使生效#重启kubelet会自动重新创建核心组件
+systemctl restart kubelet 4. 验证#kubeadm alpha certs check-expiration
+二、创建长期有效期证书#自己创建这四个文件需要的证书，替换四个文件使用的内嵌证书。我们自己创建的证书的有效期为50年，不再有过期的风险。步骤如下：
+生成证书：#cd /etc/kubernetes mkdir cert cd cert/ cat &gt; ca-config.">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="" />
+<meta property="og:description" content="kubeadm 默认证书为一年，一年过期后，会导致api service不可用，使用过程中会出现：x509: certificate has expired or is not yet valid.
+方案一 通过修改kubeadm 调整证书过期时间
+一、使用kubadm 更新证书#1. 查看证书有效期#kubeadm alpha certs check-expiration 2. 重新签发证书#kubeadm alpha certs renew admin.conf kubeadm alpha certs renew scheduler.conf kubeadm alpha certs renew controller-manager.conf 3. 重启控制平面使生效#重启kubelet会自动重新创建核心组件
+systemctl restart kubelet 4. 验证#kubeadm alpha certs check-expiration
+二、创建长期有效期证书#自己创建这四个文件需要的证书，替换四个文件使用的内嵌证书。我们自己创建的证书的有效期为50年，不再有过期的风险。步骤如下：
+生成证书：#cd /etc/kubernetes mkdir cert cd cert/ cat &gt; ca-config." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://wangyijie.github.io/public/posts/kubernetes/kubernetes%E8%AF%81%E4%B9%A6%E7%BB%AD%E6%9C%9F/" /><meta property="article:section" content="posts" />
+
+
+
+<title>Kubernetes证书续期 | A great computer technology Site</title>
+<link rel="manifest" href="/public/manifest.json">
+<link rel="icon" href="/public/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/public/book.min.8599444fcc48ee6b435b5b62c955ab7d914fa1e2a453df90c4b97cc9769665d1.css" integrity="sha256-hZlET8xI7mtDW1tiyVWrfZFPoeKkU9&#43;QxLl8yXaWZdE=" crossorigin="anonymous">
+  <script defer src="/public/flexsearch.min.js"></script>
+  <script defer src="/public/en.search.min.49d7ffe0cc6a09481193582a484d1dfccfe14d6d173d2de804b6e37d7c5a9f57.js" integrity="sha256-Sdf/4MxqCUgRk1gqSE0d/M/hTW0XPS3oBLbjfXxan1c=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/public/"><span>A great computer technology Site</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/public/posts/" >
+        Posts
+      </a>
+      
+<ul>
+  
+  <li>
+    <a href="/public/posts/angluar-cli/" >
+        angular
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/ansible/" >
+        ansible
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/cicd/" >
+        CICD
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/cloud/" >
+        cloude
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/container/" >
+        container
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/devops/" >
+        DevOps
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/english/" >
+        English
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/golang/" >
+        golang
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/istio/" >
+        istio
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/kubernetes/" >
+        Kubernetes
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" >
+        mechine leaning
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/material2/" >
+        mererial2
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E7%9B%91%E6%8E%A7/" >
+        monitor
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/mysql/" >
+        mysql
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E7%BD%91%E7%BB%9C/" >
+        networking
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E6%97%A5%E8%AE%B0%E6%9C%AC/" >
+        notes
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/postgresql/" >
+        postgresql
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/django/" >
+        python
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E5%AE%89%E5%85%A8/" >
+        safe
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E8%AF%97%E8%AF%8D/" >
+        shi chi
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E7%AB%99%E7%82%B9%E5%8F%AF%E9%9D%A0%E6%80%A7%E5%B7%A5%E7%A8%8B/" >
+        SRE
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E6%96%87%E5%AD%A6/" >
+        wenxue
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E9%9A%8F%E7%AC%94/" >
+        write somethings
+      </a>
+  </li>
+  
+</ul>
+
+  </li>
+  
+  <li>
+    <a href="/public/about/" >
+        About
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var a=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(b){localStorage.setItem("menu.scrollTop",a.scrollTop)}),a.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/public/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Kubernetes证书续期</strong>
+
+  <label for="toc-control">
+    
+    <img src="/public/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#1-查看证书有效期">1. 查看证书有效期</a></li>
+    <li><a href="#2-重新签发证书">2. 重新签发证书</a></li>
+    <li><a href="#3-重启控制平面使生效">3. 重启控制平面使生效</a></li>
+    <li><a href="#4-验证">4. 验证</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#生成证书">生成证书：</a>
+      <ul>
+        <li><a href="#生成admin证书">生成admin证书</a></li>
+        <li><a href="#生成controller-manager证书">生成controller-manager证书</a></li>
+        <li><a href="#生成scheduler证书">生成scheduler证书</a></li>
+        <li><a href="#放置到正确的位置">放置到正确的位置</a></li>
+      </ul>
+    </li>
+    <li><a href="#替换内嵌证书为刚刚生成的证书可以用如下脚本">替换内嵌证书为刚刚生成的证书，可以用如下脚本：</a></li>
+    <li><a href="#由于schedule的证书文件没有挂载到pod内所以我们还需要手动修改etckubernetesmanifests文件夹内kube-scheduleryaml文件添加挂载主机目录的volume">由于schedule的证书文件没有挂载到pod内，所以我们还需要手动修改#/etc/kubernetes/manifests文件夹内kube-scheduler.yaml文件，添加挂载主机目录的#volume</a></li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+<article class="markdown">
+  <h1>
+    <a href="/public/posts/kubernetes/kubernetes%E8%AF%81%E4%B9%A6%E7%BB%AD%E6%9C%9F/">Kubernetes证书续期</a>
+  </h1>
+  
+
+
+  
+
+  
+
+
+
+<p>kubeadm 默认证书为一年，一年过期后，会导致api service不可用，使用过程中会出现：x509: certificate has expired or is not yet valid.</p>
+<p>方案一 通过修改kubeadm 调整证书过期时间</p>
+<h1 id="一使用kubadm-更新证书">
+  一、使用kubadm 更新证书
+  <a class="anchor" href="#%e4%b8%80%e4%bd%bf%e7%94%a8kubadm-%e6%9b%b4%e6%96%b0%e8%af%81%e4%b9%a6">#</a>
+</h1>
+<h2 id="1-查看证书有效期">
+  1. 查看证书有效期
+  <a class="anchor" href="#1-%e6%9f%a5%e7%9c%8b%e8%af%81%e4%b9%a6%e6%9c%89%e6%95%88%e6%9c%9f">#</a>
+</h2>
+<pre tabindex="0"><code>kubeadm alpha certs check-expiration
+</code></pre><h2 id="2-重新签发证书">
+  2. 重新签发证书
+  <a class="anchor" href="#2-%e9%87%8d%e6%96%b0%e7%ad%be%e5%8f%91%e8%af%81%e4%b9%a6">#</a>
+</h2>
+<pre tabindex="0"><code>kubeadm  alpha certs renew admin.conf
+kubeadm  alpha certs renew scheduler.conf 
+kubeadm  alpha certs renew controller-manager.conf
+</code></pre><h2 id="3-重启控制平面使生效">
+  3. 重启控制平面使生效
+  <a class="anchor" href="#3-%e9%87%8d%e5%90%af%e6%8e%a7%e5%88%b6%e5%b9%b3%e9%9d%a2%e4%bd%bf%e7%94%9f%e6%95%88">#</a>
+</h2>
+<p>重启kubelet会自动重新创建核心组件</p>
+<pre tabindex="0"><code>systemctl restart kubelet
+</code></pre><h2 id="4-验证">
+  4. 验证
+  <a class="anchor" href="#4-%e9%aa%8c%e8%af%81">#</a>
+</h2>
+<p><code>kubeadm alpha certs check-expiration</code></p>
+<h1 id="二创建长期有效期证书">
+  二、创建长期有效期证书
+  <a class="anchor" href="#%e4%ba%8c%e5%88%9b%e5%bb%ba%e9%95%bf%e6%9c%9f%e6%9c%89%e6%95%88%e6%9c%9f%e8%af%81%e4%b9%a6">#</a>
+</h1>
+<p>自己创建这四个文件需要的证书，替换四个文件使用的内嵌证书。我们自己创建的证书的有效期为50年，不再有过期的风险。步骤如下：</p>
+<h2 id="生成证书">
+  生成证书：
+  <a class="anchor" href="#%e7%94%9f%e6%88%90%e8%af%81%e4%b9%a6">#</a>
+</h2>
+<pre tabindex="0"><code>cd /etc/kubernetes
+mkdir cert
+cd cert/
+cat &gt; ca-config.json &lt;&lt; EOF
+{
+  &quot;signing&quot;: {
+    &quot;default&quot;: {
+      &quot;expiry&quot;: &quot;438000h&quot;
+    },
+    &quot;profiles&quot;: {
+      &quot;kubernetes&quot;: {
+        &quot;usages&quot;: [
+            &quot;signing&quot;,
+            &quot;key encipherment&quot;,
+            &quot;server auth&quot;,
+            &quot;client auth&quot;
+        ],
+        &quot;expiry&quot;: &quot;438000h&quot;
+      }
+    }
+  }
+}
+EOF
+cat &gt; admin-csr.json &lt;&lt; EOF
+{
+  &quot;CN&quot;: &quot;kubernetes-admin&quot;,
+  &quot;key&quot;: {
+    &quot;algo&quot;: &quot;rsa&quot;,
+    &quot;size&quot;: 2048
+  },
+  &quot;names&quot;: [
+    {
+      &quot;C&quot;: &quot;CN&quot;,
+      &quot;ST&quot;: &quot;Guangdong&quot;,
+      &quot;L&quot;: &quot;Shenzhen&quot;,
+      &quot;O&quot;: &quot;system:masters&quot;,
+      &quot;OU&quot;: &quot;Wise2C&quot;
+    }
+  ]
+}
+EOF
+
+cat &gt; controller-manager-csr.json &lt;&lt; EOF
+{
+  &quot;CN&quot;: &quot;system:kube-controller-manager&quot;,
+  &quot;key&quot;: {
+    &quot;algo&quot;: &quot;rsa&quot;,
+    &quot;size&quot;: 2048
+  }
+}
+EOF
+
+cat &gt; scheduler-csr.json &lt;&lt; EOF
+{
+  &quot;CN&quot;: &quot;system:scheduler&quot;,
+  &quot;key&quot;: {
+    &quot;algo&quot;: &quot;rsa&quot;,
+    &quot;size&quot;: 2048
+  }
+}
+EOF
+</code></pre><h3 id="生成admin证书">
+  生成admin证书
+  <a class="anchor" href="#%e7%94%9f%e6%88%90admin%e8%af%81%e4%b9%a6">#</a>
+</h3>
+<pre tabindex="0"><code>cfssl gencert -ca=/etc/kubernetes/pki/ca.crt -ca-key=/etc/kubernetes/pki/ca.key -config=ca-config.json -profile=kubernetes admin-csr.json | cfssljson -bare admin
+</code></pre><h3 id="生成controller-manager证书">
+  生成controller-manager证书
+  <a class="anchor" href="#%e7%94%9f%e6%88%90controller-manager%e8%af%81%e4%b9%a6">#</a>
+</h3>
+<pre tabindex="0"><code>cfssl gencert -ca=/etc/kubernetes/pki/ca.crt -ca-key=/etc/kubernetes/pki/ca.key -config=ca-config.json -profile=kubernetes controller-manager-csr.json | cfssljson -bare controller-manager
+</code></pre><h3 id="生成scheduler证书">
+  生成scheduler证书
+  <a class="anchor" href="#%e7%94%9f%e6%88%90scheduler%e8%af%81%e4%b9%a6">#</a>
+</h3>
+<pre tabindex="0"><code>cfssl gencert -ca=/etc/kubernetes/pki/ca.crt -ca-key=/etc/kubernetes/pki/ca.key -config=ca-config.json -profile=kubernetes scheduler-csr.json | cfssljson -bare scheduler
+</code></pre><h3 id="放置到正确的位置">
+  放置到正确的位置
+  <a class="anchor" href="#%e6%94%be%e7%bd%ae%e5%88%b0%e6%ad%a3%e7%a1%ae%e7%9a%84%e4%bd%8d%e7%bd%ae">#</a>
+</h3>
+<pre tabindex="0"><code>cp *.pem /etc/kubernetes/pki/
+</code></pre><h2 id="替换内嵌证书为刚刚生成的证书可以用如下脚本">
+  替换内嵌证书为刚刚生成的证书，可以用如下脚本：
+  <a class="anchor" href="#%e6%9b%bf%e6%8d%a2%e5%86%85%e5%b5%8c%e8%af%81%e4%b9%a6%e4%b8%ba%e5%88%9a%e5%88%9a%e7%94%9f%e6%88%90%e7%9a%84%e8%af%81%e4%b9%a6%e5%8f%af%e4%bb%a5%e7%94%a8%e5%a6%82%e4%b8%8b%e8%84%9a%e6%9c%ac">#</a>
+</h2>
+<pre tabindex="0"><code>#!/bin/bash
+cd /etc/kubernetes/
+
+sed -i.bak 's#client-certificate-data:.*$#client-certificate: /etc/kubernetes/pki/admin.pem#g' admin.conf
+sed -i 's#client-key-data:.*$#client-key: /etc/kubernetes/pki/admin-key.pem#g' admin.conf
+
+sed -i.bak 's#client-certificate-data:.*$#client-certificate: /etc/kubernetes/pki/controller-manager.pem#g' controller-manager.conf 
+sed -i 's#client-key-data:.*$#client-key: /etc/kubernetes/pki/controller-manager-key.pem#g' controller-manager.conf
+</code></pre><h2 id="由于schedule的证书文件没有挂载到pod内所以我们还需要手动修改etckubernetesmanifests文件夹内kube-scheduleryaml文件添加挂载主机目录的volume">
+  由于schedule的证书文件没有挂载到pod内，所以我们还需要手动修改#/etc/kubernetes/manifests文件夹内kube-scheduler.yaml文件，添加挂载主机目录的#volume
+  <a class="anchor" href="#%e7%94%b1%e4%ba%8eschedule%e7%9a%84%e8%af%81%e4%b9%a6%e6%96%87%e4%bb%b6%e6%b2%a1%e6%9c%89%e6%8c%82%e8%bd%bd%e5%88%b0pod%e5%86%85%e6%89%80%e4%bb%a5%e6%88%91%e4%bb%ac%e8%bf%98%e9%9c%80%e8%a6%81%e6%89%8b%e5%8a%a8%e4%bf%ae%e6%94%b9etckubernetesmanifests%e6%96%87%e4%bb%b6%e5%a4%b9%e5%86%85kube-scheduleryaml%e6%96%87%e4%bb%b6%e6%b7%bb%e5%8a%a0%e6%8c%82%e8%bd%bd%e4%b8%bb%e6%9c%ba%e7%9b%ae%e5%bd%95%e7%9a%84volume">#</a>
+</h2>
+<pre tabindex="0"><code>sed -i.bak 's#client-certificate-data:.*$#client-certificate: /etc/kubernetes/pki/scheduler.pem#g' scheduler.conf 
+sed -i 's#client-key-data:.*$#client-key: /etc/kubernetes/pki/scheduler-key.pem#g' scheduler.conf
+</code></pre></article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function a(c){const a=window.getSelection(),b=document.createRange();b.selectNodeContents(c),a.removeAllRanges(),a.addRange(b)}document.querySelectorAll("pre code").forEach(b=>{b.addEventListener("click",function(c){a(b.parentElement),navigator.clipboard&&navigator.clipboard.writeText(b.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#1-查看证书有效期">1. 查看证书有效期</a></li>
+    <li><a href="#2-重新签发证书">2. 重新签发证书</a></li>
+    <li><a href="#3-重启控制平面使生效">3. 重启控制平面使生效</a></li>
+    <li><a href="#4-验证">4. 验证</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#生成证书">生成证书：</a>
+      <ul>
+        <li><a href="#生成admin证书">生成admin证书</a></li>
+        <li><a href="#生成controller-manager证书">生成controller-manager证书</a></li>
+        <li><a href="#生成scheduler证书">生成scheduler证书</a></li>
+        <li><a href="#放置到正确的位置">放置到正确的位置</a></li>
+      </ul>
+    </li>
+    <li><a href="#替换内嵌证书为刚刚生成的证书可以用如下脚本">替换内嵌证书为刚刚生成的证书，可以用如下脚本：</a></li>
+    <li><a href="#由于schedule的证书文件没有挂载到pod内所以我们还需要手动修改etckubernetesmanifests文件夹内kube-scheduleryaml文件添加挂载主机目录的volume">由于schedule的证书文件没有挂载到pod内，所以我们还需要手动修改#/etc/kubernetes/manifests文件夹内kube-scheduler.yaml文件，添加挂载主机目录的#volume</a></li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

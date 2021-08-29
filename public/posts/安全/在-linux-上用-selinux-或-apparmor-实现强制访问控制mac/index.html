@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="为了解决标准的“用户-组-其他/读-写-执行”权限以及访问控制列表[1]的限制以及加强安全机制，美国国家安全局（NSA）设计出一个灵活的强制访问控制（MAC）方法 SELinux（Security Enhanced Linux 的缩写），来限制标准的权限之外的种种权限，在仍然允许对这个控制模型后续修改的情况下，让进程尽可能以最小权限访问或在系统对象（如文件，文件夹，网络端口等）上执行其他操作。
+
+SELinux 和 AppArmor 加固 Linux 安全
+另一个流行并且被广泛使用的 MAC 是 AppArmor，相比于 SELinux 它提供更多的特性，包括一个学习模式，可以让系统“学习”一个特定应用的行为，以及通过配置文件设置限制实现安全的应用使用。
+在 CentOS 7 中，SELinux 合并进了内核并且默认启用强制模式（下一节会介绍这方面更多的内容），与之不同的是，openSUSE 和 Ubuntu 使用的是 AppArmor 。
+在这篇文章中我们会解释 SELinux 和 AppArmor 的本质，以及如何在你选择的发行版上使用这两个工具之一并从中获益。
+SELINUX 介绍以及如何在 CENTOS 7 中使用#Security Enhanced Linux 可以以两种不同模式运行：
+ 强制：这种情况下，SELinux 基于 SELinux 策略规则拒绝访问，策略规则是一套控制安全引擎的规则。 宽容：这种情况下，SELinux 不拒绝访问，但如果在强制模式下会被拒绝的操作会被记录下来。  SELinux 也能被禁用。尽管这不是它的一个操作模式，不过也是一种选择。但学习如何使用这个工具强过只是忽略它。时刻牢记这一点！
+使用 getenforce 命令来显示 SELinux 的当前模式。如果你想要更改模式，使用 setenforce 0（设置为宽容模式）或 setenforce 1（强制模式）。
+因为这些设置重启后就失效了，你需要编辑 /etc/selinux/config 配置文件并设置 SELINUX 变量为 enforcing、permissive 或 disabled ，保存设置让其重启后也有效：">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="" />
+<meta property="og:description" content="为了解决标准的“用户-组-其他/读-写-执行”权限以及访问控制列表[1]的限制以及加强安全机制，美国国家安全局（NSA）设计出一个灵活的强制访问控制（MAC）方法 SELinux（Security Enhanced Linux 的缩写），来限制标准的权限之外的种种权限，在仍然允许对这个控制模型后续修改的情况下，让进程尽可能以最小权限访问或在系统对象（如文件，文件夹，网络端口等）上执行其他操作。
+
+SELinux 和 AppArmor 加固 Linux 安全
+另一个流行并且被广泛使用的 MAC 是 AppArmor，相比于 SELinux 它提供更多的特性，包括一个学习模式，可以让系统“学习”一个特定应用的行为，以及通过配置文件设置限制实现安全的应用使用。
+在 CentOS 7 中，SELinux 合并进了内核并且默认启用强制模式（下一节会介绍这方面更多的内容），与之不同的是，openSUSE 和 Ubuntu 使用的是 AppArmor 。
+在这篇文章中我们会解释 SELinux 和 AppArmor 的本质，以及如何在你选择的发行版上使用这两个工具之一并从中获益。
+SELINUX 介绍以及如何在 CENTOS 7 中使用#Security Enhanced Linux 可以以两种不同模式运行：
+ 强制：这种情况下，SELinux 基于 SELinux 策略规则拒绝访问，策略规则是一套控制安全引擎的规则。 宽容：这种情况下，SELinux 不拒绝访问，但如果在强制模式下会被拒绝的操作会被记录下来。  SELinux 也能被禁用。尽管这不是它的一个操作模式，不过也是一种选择。但学习如何使用这个工具强过只是忽略它。时刻牢记这一点！
+使用 getenforce 命令来显示 SELinux 的当前模式。如果你想要更改模式，使用 setenforce 0（设置为宽容模式）或 setenforce 1（强制模式）。
+因为这些设置重启后就失效了，你需要编辑 /etc/selinux/config 配置文件并设置 SELINUX 变量为 enforcing、permissive 或 disabled ，保存设置让其重启后也有效：" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://wangyijie.github.io/public/posts/%E5%AE%89%E5%85%A8/%E5%9C%A8-linux-%E4%B8%8A%E7%94%A8-selinux-%E6%88%96-apparmor-%E5%AE%9E%E7%8E%B0%E5%BC%BA%E5%88%B6%E8%AE%BF%E9%97%AE%E6%8E%A7%E5%88%B6mac/" /><meta property="article:section" content="posts" />
+
+
+
+<title>在 Linux 上用 Selinux 或 App Armor 实现强制访问控制（ Mac) | A great computer technology Site</title>
+<link rel="manifest" href="/public/manifest.json">
+<link rel="icon" href="/public/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/public/book.min.8599444fcc48ee6b435b5b62c955ab7d914fa1e2a453df90c4b97cc9769665d1.css" integrity="sha256-hZlET8xI7mtDW1tiyVWrfZFPoeKkU9&#43;QxLl8yXaWZdE=" crossorigin="anonymous">
+  <script defer src="/public/flexsearch.min.js"></script>
+  <script defer src="/public/en.search.min.49d7ffe0cc6a09481193582a484d1dfccfe14d6d173d2de804b6e37d7c5a9f57.js" integrity="sha256-Sdf/4MxqCUgRk1gqSE0d/M/hTW0XPS3oBLbjfXxan1c=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/public/"><span>A great computer technology Site</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/public/posts/" >
+        Posts
+      </a>
+      
+<ul>
+  
+  <li>
+    <a href="/public/posts/angluar-cli/" >
+        angular
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/ansible/" >
+        ansible
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/cicd/" >
+        CICD
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/cloud/" >
+        cloude
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/container/" >
+        container
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/devops/" >
+        DevOps
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/english/" >
+        English
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/golang/" >
+        golang
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/istio/" >
+        istio
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/kubernetes/" >
+        Kubernetes
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" >
+        mechine leaning
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/material2/" >
+        mererial2
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E7%9B%91%E6%8E%A7/" >
+        monitor
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/mysql/" >
+        mysql
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E7%BD%91%E7%BB%9C/" >
+        networking
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E6%97%A5%E8%AE%B0%E6%9C%AC/" >
+        notes
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/postgresql/" >
+        postgresql
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/django/" >
+        python
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E5%AE%89%E5%85%A8/" >
+        safe
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E8%AF%97%E8%AF%8D/" >
+        shi chi
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E7%AB%99%E7%82%B9%E5%8F%AF%E9%9D%A0%E6%80%A7%E5%B7%A5%E7%A8%8B/" >
+        SRE
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E6%96%87%E5%AD%A6/" >
+        wenxue
+      </a>
+  </li>
+  
+  <li>
+    <a href="/public/posts/%E9%9A%8F%E7%AC%94/" >
+        write somethings
+      </a>
+  </li>
+  
+</ul>
+
+  </li>
+  
+  <li>
+    <a href="/public/about/" >
+        About
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var a=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(b){localStorage.setItem("menu.scrollTop",a.scrollTop)}),a.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/public/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>在 Linux 上用 Selinux 或 App Armor 实现强制访问控制（ Mac)</strong>
+
+  <label for="toc-control">
+    
+    <img src="/public/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#selinux-介绍以及如何在-centos-7-中使用">SELINUX 介绍以及如何在 CENTOS 7 中使用</a></li>
+        <li><a href="#apparmor-介绍以及如何在-opensuse-和-ubuntu-上使用它">APPARMOR 介绍以及如何在 OPENSUSE 和 UBUNTU 上使用它</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+<article class="markdown">
+  <h1>
+    <a href="/public/posts/%E5%AE%89%E5%85%A8/%E5%9C%A8-linux-%E4%B8%8A%E7%94%A8-selinux-%E6%88%96-apparmor-%E5%AE%9E%E7%8E%B0%E5%BC%BA%E5%88%B6%E8%AE%BF%E9%97%AE%E6%8E%A7%E5%88%B6mac/">在 Linux 上用 Selinux 或 App Armor 实现强制访问控制（ Mac)</a>
+  </h1>
+  
+
+
+  
+
+  
+
+
+
+<p>为了解决标准的“用户-组-其他/读-写-执行”权限以及<a href="http://www.tecmint.com/secure-files-using-acls-in-linux/">访问控制列表</a>[1]的限制以及加强安全机制，美国国家安全局（NSA）设计出一个灵活的<!-- raw HTML omitted -->强制访问控制（MAC）方法 SELinux（Security Enhanced Linux
+的缩写），来限制标准的权限之外的种种权限，在仍然允许对这个控制模型后续修改的情况下，让进程尽可能以最小权限访问或在系统对象（如文件，文件夹，网络端口等）上执行其他操作。</p>
+<p><a href="https://blog.upall.cn/wp-content/uploads/2019/01/1547447507-9776-073624pkk9ua9scsguw6hg.png"><img src="https://upload-images.jianshu.io/upload_images/6000429-00b3e2edb32ec492.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="MAC" /></a></p>
+<p><em>SELinux 和 AppArmor 加固 Linux 安全</em></p>
+<p>另一个流行并且被广泛使用的 MAC 是 AppArmor，相比于 SELinux 它提供更多的特性，包括一个学习模式，可以让系统“学习”一个特定应用的行为，以及通过配置文件设置限制实现安全的应用使用。</p>
+<p>在 CentOS 7 中，SELinux 合并进了内核并且默认启用强制模式（下一节会介绍这方面更多的内容），与之不同的是，openSUSE 和 Ubuntu 使用的是 AppArmor 。</p>
+<p>在这篇文章中我们会解释 SELinux 和 AppArmor 的本质，以及如何在你选择的发行版上使用这两个工具之一并从中获益。</p>
+<h3 id="selinux-介绍以及如何在-centos-7-中使用">
+  SELINUX 介绍以及如何在 CENTOS 7 中使用
+  <a class="anchor" href="#selinux-%e4%bb%8b%e7%bb%8d%e4%bb%a5%e5%8f%8a%e5%a6%82%e4%bd%95%e5%9c%a8-centos-7-%e4%b8%ad%e4%bd%bf%e7%94%a8">#</a>
+</h3>
+<p>Security Enhanced Linux 可以以两种不同模式运行：</p>
+<ul>
+<li>强制：这种情况下，SELinux 基于 SELinux 策略规则拒绝访问，策略规则是一套控制安全引擎的规则。</li>
+<li>宽容：这种情况下，SELinux 不拒绝访问，但如果在强制模式下会被拒绝的操作会被记录下来。</li>
+</ul>
+<p>SELinux 也能被禁用。尽管这不是它的一个操作模式，不过也是一种选择。但学习如何使用这个工具强过只是忽略它。时刻牢记这一点！</p>
+<p>使用 <code>getenforce</code> 命令来显示 SELinux 的当前模式。如果你想要更改模式，使用 <code>setenforce 0</code>（设置为宽容模式）或 <code>setenforce 1</code>（强制模式）。</p>
+<p>因为这些设置重启后就失效了，你需要编辑 <code>/etc/selinux/config</code> 配置文件并设置 <code>SELINUX</code> 变量为 <code>enforcing</code>、<code>permissive</code>
+或 <code>disabled</code> ，保存设置让其重启后也有效：</p>
+<p><a href="https://blog.upall.cn/wp-content/uploads/2019/01/1547447514-4144-073624oq3xuj6qdi44ldo4.png"><img src="https://upload-images.jianshu.io/upload_images/6000429-f93ad2570ecd9379.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image" /></a></p>
+<p><em>如何启用和禁用 SELinux 模式</em></p>
+<p>还有一点要注意，如果 <code>getenforce</code> 返回 Disabled，你得编辑 <code>/etc/selinux/config</code> 配置文件为你想要的操作模式并重启。否则你无法利用 <code>setenforce</code>
+设置（或切换）操作模式。</p>
+<p><code>setenforce</code> 的典型用法之一包括在 SELinux 模式之间切换（从强制到宽容或相反）来定位一个应用是否行为不端或没有像预期一样工作。如果它在你将 SELinux
+设置为宽容模式正常工作，你就可以确定你遇到的是 SELinux 权限问题。</p>
+<p>有两种我们使用 SELinux 可能需要解决的典型案例：</p>
+<ul>
+<li>改变一个守护进程监听的默认端口。</li>
+<li>给一个虚拟主机设置 /var/www/html 以外的文档根路径值。</li>
+</ul>
+<p>让我们用以下例子来看看这两种情况。</p>
+<h4 id="例-1更改-sshd-守护进程的默认端口">
+  例 1：更改 SSHD 守护进程的默认端口
+  <a class="anchor" href="#%e4%be%8b-1%e6%9b%b4%e6%94%b9-sshd-%e5%ae%88%e6%8a%a4%e8%bf%9b%e7%a8%8b%e7%9a%84%e9%bb%98%e8%ae%a4%e7%ab%af%e5%8f%a3">#</a>
+</h4>
+<p>大部分系统管理员为了加强服务器安全首先要做的事情之一就是更改 SSH 守护进程监听的端口，主要是为了阻止端口扫描和外部攻击。要达到这个目的，我们要更改 <code>/etc/ssh/sshd_config</code> 中的 Port
+值为以下值（我们在这里使用端口 9999 为例）：
+<code>Port 9999</code>
+在尝试重启服务并检查它的状态之后，我们会看到它启动失败：
+<code>systemctl restart sshd</code>
+<code># systemctl status sshd</code></p>
+<p><em>检查 SSH 服务状态</em></p>
+<p>如果我们看看 <code>/var/log/audit/audit.log</code>，就会看到 sshd 被 SELinux 阻止在端口 9999 上启动，因为它是 JBoss 管理服务的保留端口（SELinux
+日志信息包含了词语“AVC”，所以应该很容易把它同其他信息区分开来）：
+<code>cat</code> <code>/var/log/audit/audit``.log |</code> <code>grep</code> <code>AVC |</code> <code>tail</code> <code>-1</code>
+<em>检查 Linux 审计日志</em></p>
+<p>在这种情况下大部分人可能会禁用 SELinux，但我们不这么做。我们会看到有个让 SELinux 和监听其他端口的 sshd 和谐共处的方法。首先确保你有 <code>policycoreutils-python</code>
+这个包，执行：
+<code>yum</code> <code>install</code> <code>policycoreutils-python</code>
+查看 SELinux 允许 sshd 监听的端口列表。在接下来的图片中我们还能看到端口 9999 是为其他服务保留的，所以我们暂时无法用它来运行其他服务：
+<code>semanage port -l |</code> <code>grep</code> <code>ssh</code>
+当然我们可以给 SSH 选择其他端口，但如果我们确定我们不会使用这台机器跑任何 JBoss 相关的服务，我们就可以修改 SELinux 已存在的规则，转而给 SSH 分配那个端口：
+<code>semanage port -m -t ssh_port_t -p tcp 9999</code>
+这之后，我们就可以用前一个 <code>semanage</code> 命令检查端口是否正确分配了，即使用 <code>-lC</code> 参数（list custom 的简称）：
+<code>semanage port -lC</code>
+<code># semanage port -l | grep ssh</code></p>
+<p><a href="https://blog.upall.cn/wp-content/uploads/2019/01/1547447512-3201-073625snwg5wl5abwoq0qo.png"><img src="https://upload-images.jianshu.io/upload_images/6000429-47d9fa80ec58295c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image" /></a></p>
+<p><em>给 SSH 分配端口</em></p>
+<p>我们现在可以重启 SSH 服务并通过端口 9999 连接了。注意这个更改重启之后依然有效。</p>
+<h4 id="例-2给一个虚拟主机设置-varwwwhtml-以外的文档根路径">
+  例 2：给一个虚拟主机设置 /VAR/WWW/HTML 以外的文档根路径
+  <a class="anchor" href="#%e4%be%8b-2%e7%bb%99%e4%b8%80%e4%b8%aa%e8%99%9a%e6%8b%9f%e4%b8%bb%e6%9c%ba%e8%ae%be%e7%bd%ae-varwwwhtml-%e4%bb%a5%e5%a4%96%e7%9a%84%e6%96%87%e6%a1%a3%e6%a0%b9%e8%b7%af%e5%be%84">#</a>
+</h4>
+<p>如果你需要用除 <code>/var/www/html</code> 以外目录作为文档根目录<a href="http://www.tecmint.com/apache-virtual-hosting-in-centos/">设置一个Apache 虚拟主机</a>[2]（也就是说，比如 <code>/websrv/sites/gabriel/public_html</code>）：
+<code>DocumentRoot “``/websrv/sites/gabriel/public_html``”</code>
+Apache 会拒绝提供内容，因为 <code>index.html</code> 已经被标记为了 <code>default_t SELinux</code> 类型，Apache 无法访问它：
+<code>wget http:``//localhost/index``.html</code>
+<code># ls -lZ /websrv/sites/gabriel/public_html/index.html</code>
+<a href="https://blog.upall.cn/wp-content/uploads/2019/01/1547447512-8904-073625tljelkssveasnigv.png"><img src="https://upload-images.jianshu.io/upload_images/6000429-66cb0584230114bd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image" /></a>
+<em>被标记为 default_t SELinux 类型</em>
+和之前的例子一样，你可以用以下命令验证这是不是 SELinux 相关的问题：
+<code>cat</code> <code>/var/log/audit/audit``.log |</code> <code>grep</code> <code>AVC |</code> <code>tail</code> <code>-1</code>
+<a href="https://blog.upall.cn/wp-content/uploads/2019/01/1547447519-5496-073626ao3v1wilyjnryo3l.png"><img src="https://upload-images.jianshu.io/upload_images/6000429-747ef05da98e3575.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image" /></a>
+<em>检查日志确定是不是 SELinux 的问题</em>
+要将 <code>/websrv/sites/gabriel/public_html</code> 整个目录内容标记为 <code>httpd_sys_content_t</code>，执行：
+<code>semanage fcontext -a -t httpd_sys_content_t</code> <code>&quot;/websrv/sites/gabriel/public_html(/.*)?&quot;</code>
+上面这个命令会赋予 Apache 对那个目录以及其内容的读取权限。
+最后，要应用这条策略（并让更改的标记立即生效），执行：
+<code>restorecon -R -``v</code> <code>/websrv/sites/gabriel/public_html</code>
+现在你应该可以访问这个目录了：
+<code>wget http:``//localhost/index``.html</code>
+<a href="https://blog.upall.cn/wp-content/uploads/2019/01/1547447518-4113-073626opngu2uaa4anatjb.png"><img src="https://upload-images.jianshu.io/upload_images/6000429-612ba2485696fddf.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image" /></a></p>
+<p><em>访问 Apache 目录</em></p>
+<p>要获取关于 SELinux 的更多信息，参阅 Fedora 22 中的 <a href="https://docs.fedoraproject.org/en-US/Fedora/22/html/SELinux_Users_and_Administrators_Guide/index.html">SELinux 用户及管理员指南</a>[3]。</p>
+<h3 id="apparmor-介绍以及如何在-opensuse-和-ubuntu-上使用它">
+  APPARMOR 介绍以及如何在 OPENSUSE 和 UBUNTU 上使用它
+  <a class="anchor" href="#apparmor-%e4%bb%8b%e7%bb%8d%e4%bb%a5%e5%8f%8a%e5%a6%82%e4%bd%95%e5%9c%a8-opensuse-%e5%92%8c-ubuntu-%e4%b8%8a%e4%bd%bf%e7%94%a8%e5%ae%83">#</a>
+</h3>
+<p>AppArmor 的操作是基于写在纯文本文件中的规则定义，该文件中含有允许权限和访问控制规则。安全配置文件用来限制应用程序如何与系统中的进程和文件进行交互。</p>
+<p>系统初始就提供了一系列的配置文件，但其它的也可以由应用程序在安装的时候设置或由系统管理员手动设置。</p>
+<p>像 SELinux 一样，AppArmor 以两种模式运行。在 <!-- raw HTML omitted -->强制
+<!-- raw HTML omitted -->enforce<!-- raw HTML omitted --><!-- raw HTML omitted -->  模式下，应用被赋予它们运行所需要的最小权限，但在 <!-- raw HTML omitted -->抱怨
+<!-- raw HTML omitted -->complain<!-- raw HTML omitted --><!-- raw HTML omitted -->  模式下 AppArmor 允许一个应用执行受限的操作并将操作造成的“抱怨”记录到日志里（<code>/var/log/kern.log</code>，<code>/var/log/audit/audit.log</code>，和其它放在
+<code>/var/log/apparmor</code> 中的日志）。</p>
+<p>日志中会显示配置文件在强制模式下运行时会产生错误的记录，它们中带有 <code>audit</code> 这个词。因此，你可以在 AppArmor 的 <!-- raw HTML omitted -->强制
+<!-- raw HTML omitted -->enforce<!-- raw HTML omitted --><!-- raw HTML omitted -->  模式下运行之前，先在 <!-- raw HTML omitted -->抱怨
+<!-- raw HTML omitted -->complain<!-- raw HTML omitted --><!-- raw HTML omitted -->  模式下尝试运行一个应用并调整它的行为。</p>
+<p>可以用这个命令显示 AppArmor 的当前状态：</p>
+<p><code>sudo</code> <code>apparmor_status</code>
+<a href="https://blog.upall.cn/wp-content/uploads/2019/01/1547447527-3701-073627hzhvxq7rqbbcljh0.png"><img src="https://upload-images.jianshu.io/upload_images/6000429-c31fb4d0256d4094.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image" /></a></p>
+<p><em>查看 AppArmor 的状态</em></p>
+<p>上面的图片指明配置 <code>/sbin/dhclient</code>，<code>/usr/sbin/</code>，和 <code>/usr/sbin/tcpdump</code> 等处在强制 模式下（在 Ubuntu 下默认就是这样的）。</p>
+<p>因为不是所有的应用都包含相关的 AppArmor 配置，apparmor-profiles 包给其它没有提供限制的包提供了配置。默认它们配置在抱怨模式下运行，以便系统管理员能够测试并选择一个所需要的配置。</p>
+<p>我们将会利用 apparmor-profiles，因为写一份我们自己的配置已经超出了 LFCS <a href="http://www.tecmint.com/sed-command-to-create-edit-and-manipulate-files-in-linux/">认证</a>[4]的范围了。但是，由于配置都是纯文本文件，你可以查看并学习它们，为以后创建自己的配置做准备。</p>
+<p>AppArmor 配置保存在 <code>/etc/apparmor.d</code> 中。让我们来看看这个文件夹在安装 apparmor-profiles 之前和之后有什么不同：
+<code>ls</code> <code>/etc/apparmor``.d</code>
+<a href="https://blog.upall.cn/wp-content/uploads/2019/01/1547447526-3076-073627iauc5udkc1acxcaa.png"><img src="https://upload-images.jianshu.io/upload_images/6000429-f981e302d5d5e100.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image" /></a></p>
+<p><em>查看 AppArmor 文件夹内容</em></p>
+<p>如果你再次执行 <code>sudo apparmor_status</code>，你会在抱怨模式看到更长的配置文件列表。你现在可以执行下列操作。</p>
+<p>将当前在强制模式下的配置文件切换到 <!-- raw HTML omitted -->抱怨模式：
+<code>sudo</code> <code>aa-complain</code> <code>/path/to/file</code>
+以及相反的操作（抱怨 –&gt; 强制）：
+<code>sudo</code> <code>aa-enforce</code> <code>/path/to/file</code>
+上面这些例子是允许使用通配符的。举个例子：
+<code>sudo</code> <code>aa-complain</code> <code>/etc/apparmor``.d/*</code>
+会将 <code>/etc/apparmor.d</code> 中的所有配置文件设置为 <!-- raw HTML omitted -->抱怨
+<!-- raw HTML omitted -->complain<!-- raw HTML omitted --><!-- raw HTML omitted -->  模式，反之
+<code>sudo</code> <code>aa-enforce</code> <code>/etc/apparmor``.d/*</code>
+会将所有配置文件设置为 <!-- raw HTML omitted -->强制
+<!-- raw HTML omitted -->enforce<!-- raw HTML omitted --><!-- raw HTML omitted -->  模式。
+要完全禁用一个配置，在 <code>/etc/apparmor.d/disabled</code> 目录中创建一个符号链接：
+<code>sudo</code> <code>ln</code> <code>-s</code> <code>/etc/apparmor``.d``/profile``.name</code> <code>/etc/apparmor``.d``/disable/</code></p>
+<p>要获取关于 AppArmor 的更多信息，参阅<a href="http://wiki.apparmor.net/index.php/Main_Page">官方的AppArmor wiki</a>[5] 以及 <a href="https://help.ubuntu.com/community/AppArmor">Ubuntu 提供的</a>[6]文档。</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function a(c){const a=window.getSelection(),b=document.createRange();b.selectNodeContents(c),a.removeAllRanges(),a.addRange(b)}document.querySelectorAll("pre code").forEach(b=>{b.addEventListener("click",function(c){a(b.parentElement),navigator.clipboard&&navigator.clipboard.writeText(b.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#selinux-介绍以及如何在-centos-7-中使用">SELINUX 介绍以及如何在 CENTOS 7 中使用</a></li>
+        <li><a href="#apparmor-介绍以及如何在-opensuse-和-ubuntu-上使用它">APPARMOR 介绍以及如何在 OPENSUSE 和 UBUNTU 上使用它</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

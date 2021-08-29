@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>docker compose 网络</title>
+    <style type="text/css" media="all">
+      body {
+        margin: 0;
+        font-family: "Helvetica Neue", Helvetica, Arial, "Hiragino Sans GB", sans-serif;
+        font-size: 14px;
+        line-height: 20px;
+        color: #777;
+        background-color: white;
+      }
+      .container {
+        width: 700px;
+        margin-right: auto;
+        margin-left: auto;
+      }
+
+      .post {
+        font-family: Georgia, "Times New Roman", Times, "SimSun", serif;
+        position: relative;
+        padding: 70px;
+        bottom: 0;
+        overflow-y: auto;
+        font-size: 16px;
+        font-weight: normal;
+        line-height: 25px;
+        color: #515151;
+      }
+
+      .post h1{
+        font-size: 50px;
+        font-weight: 500;
+        line-height: 60px;
+        margin-bottom: 40px;
+        color: inherit;
+      }
+
+      .post p {
+        margin: 0 0 35px 0;
+      }
+
+      .post img {
+        border: 1px solid #D9D9D9;
+      }
+
+      .post a {
+        color: #28A1C5;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="post">
+        <h1 class="title">docker compose 网络</h1>
+        <div class="show-content">
+          <h1><b>单个网络</b></h1><p><b>注意</b>：本文档仅适用于版本2或更高版本的compose文件格式。compose version1不支持网络功能。<br></p><p>默认情况下，Compose为您的应用程序设置单个网络。服务的每个容器都加入默认网络，并且可以由该网络上的其他容器访问，并且可由他们发现与容器名称相同的主机名。<br></p><p><b>注意</b>：您的应用程序的网络名称基于“项目名称”，就是基于它所在的目录的名称。您可以使用<b>--project-name</b>标签或COMPOSE_PROJECT_NAME 环境变量覆盖项目名称。<br></p><p>例如，假设您的应用程序位于名为myapp的目录中，并且您的docker-compose.yml如下所示：</p><blockquote>
+<p><i>version: "3"<br></i></p>
+<p><i>services:</i></p>
+<p><i>       web:</i></p>
+<p><i>            build: .</i></p>
+<p><i>            ports:</i></p>
+<p><i>            - "8000:8000"</i></p>
+<p><i>      db:</i></p>
+<p><i>            image: postgres</i></p>
+<p><i>            ports:</i></p>
+<p><i>            - "8001:5432"</i></p>
+</blockquote><p>当您运行docker-compose时，会发生以下情况：<br></p><blockquote>
+<p>1.创建一个名为myapp_default的网络。<br></p>
+<p>2.使用“web”服务的配置创建一个容器。它加入一个叫myapp_default网络，在里面的名称是web。</p>
+<p>3.使用”db“服务的配置创建一个容器。它加入一个叫myapp_default网络，在里面的名称是db。<br></p>
+</blockquote><p>每个容器现在可以查找主机名"web"或"db"并获取相应容器的IP地址。例如，Web的应用程序可以连接到URL postgres：// db：5432并开始使用Postgres数据库。<br></p><p>请注意<b>主机端口</b>和<b>容器端口</b>之间的区别。在上述示例中，对于db，主机端口为8001，容器端口为5432（默认为postgres端口）。服务到服务的网络通信使用<b>容器端口</b>。当定义<b>主机端口</b>时，服务也可以在群外访问。</p><p>在Web容器中，您的db的连接字符串看起来像postgres：// db：5432，从主机，连接字符串看起来像postgres：// {DOCKER_IP}：8001。<br></p><h1>多主机网络<br>
+</h1><p>将Compose应用程序部署到Swarm群集时，可以使用内置的overlay驱动来启用多主机之间的容器通信，而不会对Compose文件或应用程序代码进行任何更改。<br></p><p>默认情况下，群集将使用Overlay驱动，但如果您愿意，可以明确指定它。您可以使用顶级网络键（key）指定自己的网络，而不是使用默认的应用网络。这样可以创建更复杂的拓扑结构，并指定自定义网络驱动程序和选项。您还可以使用它将服务连接到由Compose管理的外部创建的网络。</p><p>每个服务都可以指定使用服务级网络key连接的网络，这是一个名称引用顶级<b>networks</b>键下的条目的列表。<br></p><p>这是一个定义两个自定义网络的“compose”文件示例。代理服务与数据库服务隔离，因为它们不共享一个共同的网络 - 只有<b>app</b>可以与两者通信。<br></p><blockquote>
+<p>version: "3"<br></p>
+<p>services:</p>
+<p>   proxy:</p>
+<p>   build: ./proxy</p>
+<p>   networks:</p>
+<p>     - frontend</p>
+<p>  app:</p>
+<p>      build: ./app</p>
+<p>    networks:</p>
+<p>   - frontend</p>
+<p>   - backend</p>
+<p>  db:</p>
+<p>    image: postgres</p>
+<p>    networks:</p>
+<p>    - backend</p>
+<p> networks:</p>
+<p>   frontend:</p>
+<p>     driver: custom-driver-1</p>
+<p>   backend:</p>
+<p>     driver: custom-driver-2</p>
+<p>     driver_opts:</p>
+<p>       foo: "1"</p>
+<p>       bar: "2"</p>
+</blockquote>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

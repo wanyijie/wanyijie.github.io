@@ -89,3 +89,7 @@ OPA是一种通用的、平台无感的策略实施工具，可以通过多种�
 你可以使用OPA策略来模拟Pod安全策略，以防止在集群上调度特权容器。
 
 因为OPA可以与其他Kubernetes资源一起工作，而不仅仅是Pods，所以建议使用它来创建跨越所有相关资源的集群级策略文档。
+
+<script src="https://utteranc.es/client.js" repo="wanyijie/blog" issue-term="pathname" label="web"
+      theme="github-light" crossorigin="anonymous" async>
+      </script>

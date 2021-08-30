@@ -88,3 +88,7 @@ DevOps 可以实现这一点。这样，在创建记录可跟踪更改的日志�
 #### 自动化系统和服务配置管理功能。
 
 这样可以确保遵守安全策略，避免出现人为错误。审核和补救操作也应实现自动化。
+
+<script src="https://utteranc.es/client.js" repo="wanyijie/blog" issue-term="pathname" label="web"
+      theme="github-light" crossorigin="anonymous" async>
+      </script>

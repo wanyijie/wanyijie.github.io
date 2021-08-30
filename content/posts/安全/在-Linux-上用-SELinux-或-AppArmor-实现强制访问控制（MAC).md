@@ -151,3 +151,7 @@ AppArmor 配置保存在 `/etc/apparmor.d` 中。让我们来看看这个文�
 `sudo` `ln` `-s` `/etc/apparmor``.d``/profile``.name` `/etc/apparmor``.d``/disable/`
 
 要获取关于 AppArmor 的更多信息，参阅[官方的AppArmor wiki](http://wiki.apparmor.net/index.php/Main_Page)[5] 以及 [Ubuntu 提供的](https://help.ubuntu.com/community/AppArmor)[6]文档。
+
+<script src="https://utteranc.es/client.js" repo="wanyijie/blog" issue-term="pathname" label="web"
+      theme="github-light" crossorigin="anonymous" async>
+      </script>

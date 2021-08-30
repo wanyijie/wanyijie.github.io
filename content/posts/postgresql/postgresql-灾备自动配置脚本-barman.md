@@ -1,3 +1,12 @@
+---
+summary: "postgreql版本：12+ barman版本：2.+"
+tags:
+    - Kubernetes
+categories:
+    - Development
+    - Opetration
+---
+
 # 前置条件：
 postgreql版本：12+
 barman版本：2.+

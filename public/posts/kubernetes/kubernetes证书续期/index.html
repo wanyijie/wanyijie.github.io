@@ -5,19 +5,19 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="kubeadm 默认证书为一年，一年过期后，会导致api service不可用，使用过程中会出现：x509: certificate has expired or is not yet valid.
 方案一 通过修改kubeadm 调整证书过期时间
-一、使用kubadm 更新证书#1. 查看证书有效期#kubeadm alpha certs check-expiration 2. 重新签发证书#kubeadm alpha certs renew admin.conf kubeadm alpha certs renew scheduler.conf kubeadm alpha certs renew controller-manager.conf 3. 重启控制平面使生效#重启kubelet会自动重新创建核心组件
-systemctl restart kubelet 4. 验证#kubeadm alpha certs check-expiration
+一、使用kubadm 更新证书#1. 查看证书有效期#kubeadm alpha certs check-expiration2. 重新签发证书#kubeadm alpha certs renew admin.confkubeadm alpha certs renew scheduler.conf kubeadm alpha certs renew controller-manager.conf3. 重启控制平面使生效#重启kubelet会自动重新创建核心组件
+systemctl restart kubelet4. 验证#kubeadm alpha certs check-expiration
 二、创建长期有效期证书#自己创建这四个文件需要的证书，替换四个文件使用的内嵌证书。我们自己创建的证书的有效期为50年，不再有过期的风险。步骤如下：
-生成证书：#cd /etc/kubernetes mkdir cert cd cert/ cat &gt; ca-config.">
+生成证书：#cd /etc/kubernetesmkdir certcd cert/cat &gt; ca-config.">
 <meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="" />
 <meta property="og:description" content="kubeadm 默认证书为一年，一年过期后，会导致api service不可用，使用过程中会出现：x509: certificate has expired or is not yet valid.
 方案一 通过修改kubeadm 调整证书过期时间
-一、使用kubadm 更新证书#1. 查看证书有效期#kubeadm alpha certs check-expiration 2. 重新签发证书#kubeadm alpha certs renew admin.conf kubeadm alpha certs renew scheduler.conf kubeadm alpha certs renew controller-manager.conf 3. 重启控制平面使生效#重启kubelet会自动重新创建核心组件
-systemctl restart kubelet 4. 验证#kubeadm alpha certs check-expiration
+一、使用kubadm 更新证书#1. 查看证书有效期#kubeadm alpha certs check-expiration2. 重新签发证书#kubeadm alpha certs renew admin.confkubeadm alpha certs renew scheduler.conf kubeadm alpha certs renew controller-manager.conf3. 重启控制平面使生效#重启kubelet会自动重新创建核心组件
+systemctl restart kubelet4. 验证#kubeadm alpha certs check-expiration
 二、创建长期有效期证书#自己创建这四个文件需要的证书，替换四个文件使用的内嵌证书。我们自己创建的证书的有效期为50年，不再有过期的风险。步骤如下：
-生成证书：#cd /etc/kubernetes mkdir cert cd cert/ cat &gt; ca-config." />
+生成证书：#cd /etc/kubernetesmkdir certcd cert/cat &gt; ca-config." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://xilluo.gitee.io/public/posts/kubernetes/kubernetes%E8%AF%81%E4%B9%A6%E7%BB%AD%E6%9C%9F/" /><meta property="article:section" content="posts" />
+<meta property="og:url" content="https://wangyijie.github.io.io/public/posts/kubernetes/kubernetes%E8%AF%81%E4%B9%A6%E7%BB%AD%E6%9C%9F/" /><meta property="article:section" content="posts" />
 
 
 
@@ -26,7 +26,7 @@ systemctl restart kubelet 4. 验证#kubeadm alpha certs check-expiration
 <link rel="icon" href="/public/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/public/book.min.8599444fcc48ee6b435b5b62c955ab7d914fa1e2a453df90c4b97cc9769665d1.css" integrity="sha256-hZlET8xI7mtDW1tiyVWrfZFPoeKkU9&#43;QxLl8yXaWZdE=" crossorigin="anonymous">
   <script defer src="/public/flexsearch.min.js"></script>
-  <script defer src="/public/en.search.min.49d7ffe0cc6a09481193582a484d1dfccfe14d6d173d2de804b6e37d7c5a9f57.js" integrity="sha256-Sdf/4MxqCUgRk1gqSE0d/M/hTW0XPS3oBLbjfXxan1c=" crossorigin="anonymous"></script>
+  <script defer src="/public/en.search.min.4bb5e7466a3eccb9a8f15179e75eb3db494fa9b6c697cb9d01e041d5deefcdac.js" integrity="sha256-S7XnRmo&#43;zLmo8VF5516z20lPqbbGl8udAeBB1d7vzaw=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book

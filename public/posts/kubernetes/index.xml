@@ -2,87 +2,87 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Kubernetes on A great computer technology Site</title>
-    <link>https://xilluo.gitee.io/public/posts/kubernetes/</link>
+    <link>https://wangyijie.github.io.io/public/posts/kubernetes/</link>
     <description>Recent content in Kubernetes on A great computer technology Site</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="https://xilluo.gitee.io/public/posts/kubernetes/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language><atom:link href="https://wangyijie.github.io.io/public/posts/kubernetes/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title></title>
-      <link>https://xilluo.gitee.io/public/posts/kubernetes/containerd-%E6%9E%B6%E6%9E%84%E5%92%8C%E6%B5%81%E7%A8%8B%E5%9B%BE/</link>
+      <link>https://wangyijie.github.io.io/public/posts/kubernetes/containerd-%E6%9E%B6%E6%9E%84%E5%92%8C%E6%B5%81%E7%A8%8B%E5%9B%BE/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://xilluo.gitee.io/public/posts/kubernetes/containerd-%E6%9E%B6%E6%9E%84%E5%92%8C%E6%B5%81%E7%A8%8B%E5%9B%BE/</guid>
+      <guid>https://wangyijie.github.io.io/public/posts/kubernetes/containerd-%E6%9E%B6%E6%9E%84%E5%92%8C%E6%B5%81%E7%A8%8B%E5%9B%BE/</guid>
       <description>推荐一个套完善的容器课程</description>
     </item>
     
     <item>
       <title></title>
-      <link>https://xilluo.gitee.io/public/posts/kubernetes/coredns%E9%85%8D%E7%BD%AE%E7%A7%81%E6%9C%89dns%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%92%8C%E4%B8%8A%E6%B8%B8dns%E6%9C%8D%E5%8A%A1%E5%99%A8/</link>
+      <link>https://wangyijie.github.io.io/public/posts/kubernetes/coredns%E9%85%8D%E7%BD%AE%E7%A7%81%E6%9C%89dns%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%92%8C%E4%B8%8A%E6%B8%B8dns%E6%9C%8D%E5%8A%A1%E5%99%A8/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://xilluo.gitee.io/public/posts/kubernetes/coredns%E9%85%8D%E7%BD%AE%E7%A7%81%E6%9C%89dns%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%92%8C%E4%B8%8A%E6%B8%B8dns%E6%9C%8D%E5%8A%A1%E5%99%A8/</guid>
+      <guid>https://wangyijie.github.io.io/public/posts/kubernetes/coredns%E9%85%8D%E7%BD%AE%E7%A7%81%E6%9C%89dns%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%92%8C%E4%B8%8A%E6%B8%B8dns%E6%9C%8D%E5%8A%A1%E5%99%A8/</guid>
       <description>从 Kubernetes 1.6 开始，可以通过为 kube-dns 提供 ConfigMap 来实现对存根域以及上游名称服务器的自定义指定。例如，下面的配置插入了一个单独的私有根 DNS 服务器和两个上游 DNS 服务器。</description>
     </item>
     
     <item>
       <title></title>
-      <link>https://xilluo.gitee.io/public/posts/kubernetes/docker-%E9%95%9C%E5%83%8F%E5%A4%8D%E5%88%B6%E5%B7%A5%E5%85%B7skopeo/</link>
+      <link>https://wangyijie.github.io.io/public/posts/kubernetes/docker-%E9%95%9C%E5%83%8F%E5%A4%8D%E5%88%B6%E5%B7%A5%E5%85%B7skopeo/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://xilluo.gitee.io/public/posts/kubernetes/docker-%E9%95%9C%E5%83%8F%E5%A4%8D%E5%88%B6%E5%B7%A5%E5%85%B7skopeo/</guid>
+      <guid>https://wangyijie.github.io.io/public/posts/kubernetes/docker-%E9%95%9C%E5%83%8F%E5%A4%8D%E5%88%B6%E5%B7%A5%E5%85%B7skopeo/</guid>
       <description>docker image move tools skopeo command example</description>
     </item>
     
     <item>
       <title></title>
-      <link>https://xilluo.gitee.io/public/posts/kubernetes/fluented-install/</link>
+      <link>https://wangyijie.github.io.io/public/posts/kubernetes/fluented-install/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://xilluo.gitee.io/public/posts/kubernetes/fluented-install/</guid>
-      <description>deploy elasticsearch persistent volume#cat pv-master.yaml kind: PersistentVolume apiVersion: v1 metadata: name: efk-master-volume labels: type: localspec: storageClassName: elasticsearch-master capacity: storage: 10Gi accessModes: - ReadWriteOnce hostPath: path: &amp;quot;/mnt/data/efk-master&amp;quot; mkdir -p /mnt/data/efk-master &amp;amp;&amp;amp; kubectl create -f pv-master.yaml data#cat pv-data.yaml kind: PersistentVolume apiVersion: v1 metadata: name: efk-data-volume labels: type: local spec: storageClassName: elasticsearch-data capacity: storage: 5Gi accessModes: - ReadWriteOnce hostPath: path: &amp;quot;/mnt/data/efk-data&amp;quot; mkdir -p /mnt/data/efk-data &amp;amp;&amp;amp; kubectl create -f pv-data.</description>
+      <guid>https://wangyijie.github.io.io/public/posts/kubernetes/fluented-install/</guid>
+      <description>deploy elasticsearch persistent volume#cat pv-master.yamlkind: PersistentVolumeapiVersion: v1metadata:name: efk-master-volumelabels:type: localspec:storageClassName: elasticsearch-mastercapacity:storage: 10GiaccessModes:- ReadWriteOncehostPath:path: &amp;quot;/mnt/data/efk-master&amp;quot;mkdir -p /mnt/data/efk-master &amp;amp;&amp;amp; kubectl create -f pv-master.yamldata#cat pv-data.yamlkind: PersistentVolumeapiVersion: v1metadata:name: efk-data-volumelabels:type: localspec:storageClassName: elasticsearch-datacapacity:storage: 5GiaccessModes:- ReadWriteOncehostPath:path: &amp;quot;/mnt/data/efk-data&amp;quot;mkdir -p /mnt/data/efk-data &amp;amp;&amp;amp; kubectl create -f pv-data.</description>
     </item>
     
     <item>
       <title></title>
-      <link>https://xilluo.gitee.io/public/posts/kubernetes/gcr-proxy-cache/</link>
+      <link>https://wangyijie.github.io.io/public/posts/kubernetes/gcr-proxy-cache/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://xilluo.gitee.io/public/posts/kubernetes/gcr-proxy-cache/</guid>
+      <guid>https://wangyijie.github.io.io/public/posts/kubernetes/gcr-proxy-cache/</guid>
       <description>GCR Proxy Cache 帮助#GCR Proxy Cache服务器相当于一台GCR镜像服务器，国内用户可以经由该服务器从gcr.io下载镜像。
-使用GCR Proxy Cache从gcr.io下载镜像#docker pull gcr.azk8s.cn/google_containers/&amp;lt;imagename&amp;gt;:&amp;lt;version&amp;gt; 例子#docker pull gcr.azk8s.cn/google_containers/pause-amd64:3.0 docker pull gcr.azk8s.cn/google_containers/kubedns-amd64:1.7 </description>
+使用GCR Proxy Cache从gcr.io下载镜像#docker pull gcr.azk8s.cn/google_containers/&amp;lt;imagename&amp;gt;:&amp;lt;version&amp;gt;例子#docker pull gcr.azk8s.cn/google_containers/pause-amd64:3.0docker pull gcr.azk8s.cn/google_containers/kubedns-amd64:1.7</description>
     </item>
     
     <item>
       <title></title>
-      <link>https://xilluo.gitee.io/public/posts/kubernetes/get-kubernetes-images-quickly/</link>
+      <link>https://wangyijie.github.io.io/public/posts/kubernetes/get-kubernetes-images-quickly/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://xilluo.gitee.io/public/posts/kubernetes/get-kubernetes-images-quickly/</guid>
+      <guid>https://wangyijie.github.io.io/public/posts/kubernetes/get-kubernetes-images-quickly/</guid>
       <description>open:#https://katacoda.com/courses/kubernetes/playground
 check images#kubeadm config images list W0601 03:36:09.535740 16500 configset.go:202] WARNING: kubeadm cannot validate component configs for API groups [kubelet.config.k8s.io kubeproxy.config.k8s.io] k8s.gcr.io/kube-apiserver:v1.18.3 k8s.gcr.io/kube-controller-manager:v1.18.3 k8s.gcr.io/kube-scheduler:v1.18.3 k8s.gcr.io/kube-proxy:v1.18.3 k8s.gcr.io/pause:3.2 k8s.gcr.io/etcd:3.4.3-0 k8s.gcr.io/coredns:1.6.7
-exceute script#docker login --username=hi30567721@aliyun.com --password=youpass registry.cn-shenzhen.aliyuncs.com for i in `kubeadm config images list | grep k8s.gcr.io` do echo $i; docker pull $i docker tag $i registry.cn-shenzhen.aliyuncs.com/wangyijie/${i##*/} docker push registry.cn-shenzhen.aliyuncs.com/wangyijie/${i##*/} done </description>
+exceute script#docker login --username=hi30567721@aliyun.com --password=youpass registry.cn-shenzhen.aliyuncs.comfor i in `kubeadm config images list | grep k8s.gcr.io`do echo $i; docker pull $idocker tag $i registry.cn-shenzhen.aliyuncs.com/wangyijie/${i##*/}docker push registry.cn-shenzhen.aliyuncs.com/wangyijie/${i##*/}done</description>
     </item>
     
     <item>
       <title></title>
-      <link>https://xilluo.gitee.io/public/posts/kubernetes/heapster-&#43;-influxdb-&#43;-grafana-%E7%9B%91%E6%8E%A7%E6%B2%A1%E6%95%B0%E6%8D%AE%E6%A1%88%E4%BE%8B/</link>
+      <link>https://wangyijie.github.io.io/public/posts/kubernetes/heapster-&#43;-influxdb-&#43;-grafana-%E7%9B%91%E6%8E%A7%E6%B2%A1%E6%95%B0%E6%8D%AE%E6%A1%88%E4%BE%8B/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://xilluo.gitee.io/public/posts/kubernetes/heapster-&#43;-influxdb-&#43;-grafana-%E7%9B%91%E6%8E%A7%E6%B2%A1%E6%95%B0%E6%8D%AE%E6%A1%88%E4%BE%8B/</guid>
+      <guid>https://wangyijie.github.io.io/public/posts/kubernetes/heapster-&#43;-influxdb-&#43;-grafana-%E7%9B%91%E6%8E%A7%E6%B2%A1%E6%95%B0%E6%8D%AE%E6%A1%88%E4%BE%8B/</guid>
       <description>现象#通过grafana查看部分容器没有监控数据
 关键信息#通过查看influxdb发现异常日志
-[write] 2019/04/25 09:56:05 write failed for shard 170: max-series-per-database limit exceeded: db=k8s (1000000/1000000) dropped=2111 [httpd] 172.16.3.10 - root [25/Apr/2019:09:56:05 +0000] &amp;quot;POST /write?consistency=&amp;amp;db=k8s&amp;amp;precision=&amp;amp;rp=default HTTP/1.1&amp;quot; 400 115 &amp;quot;-&amp;quot; &amp;quot;heapster/v1.5.1&amp;quot; 579d5b31-6740-11e9-8057-000000000000 156302 日志提示有序列超出了最大数限制： 查看文档有对应的参数： ##解决方法： 添加环境变量覆盖参数：
- - image: registry-vpc.cn-shenzhen.aliyuncs.com/acs/heapster-influxdb-amd64:v1.1.1 imagePullPolicy: IfNotPresent name: influxdb env: - name: INFLUXDB_DATA_MAX_SERIES_PER_DATABASE value: &amp;quot;0&amp;quot; - name: INFLUXDB_DATA_MAX_VALUES_PER_TAG value: &amp;quot;0&amp;quot; 变量值需加引号
+[write] 2019/04/25 09:56:05 write failed for shard 170: max-series-per-database limit exceeded: db=k8s (1000000/1000000) dropped=2111[httpd] 172.16.3.10 - root [25/Apr/2019:09:56:05 +0000] &amp;quot;POST /write?consistency=&amp;amp;db=k8s&amp;amp;precision=&amp;amp;rp=default HTTP/1.1&amp;quot; 400 115 &amp;quot;-&amp;quot; &amp;quot;heapster/v1.5.1&amp;quot; 579d5b31-6740-11e9-8057-000000000000 156302日志提示有序列超出了最大数限制： 查看文档有对应的参数： ##解决方法： 添加环境变量覆盖参数：
+ - image: registry-vpc.cn-shenzhen.aliyuncs.com/acs/heapster-influxdb-amd64:v1.1.1imagePullPolicy: IfNotPresentname: influxdbenv:- name: INFLUXDB_DATA_MAX_SERIES_PER_DATABASEvalue: &amp;quot;0&amp;quot;- name: INFLUXDB_DATA_MAX_VALUES_PER_TAGvalue: &amp;quot;0&amp;quot;变量值需加引号
 验证方法#influxdb没有图形界面了，命令工具也不易安装，curl最方便，不过格式需要注意，我参照了许多才找到合适的，记录个例子：
-curl http://172.21.11.108:8086/query?pretty=true --data-urlencode &amp;quot;db=k8s&amp;quot; --data-urlencode &amp;quot;q=SELECT * FROM \&amp;quot;cpu/usage\&amp;quot; WHERE (\&amp;quot;type\&amp;quot; = &#39;pod&#39; AND \&amp;quot;namespace_name\&amp;quot; =~ /^blue$/) AND time &amp;gt;= now() - 30m&amp;quot; </description>
+curl http://172.21.11.108:8086/query?pretty=true --data-urlencode &amp;quot;db=k8s&amp;quot; --data-urlencode &amp;quot;q=SELECT * FROM \&amp;quot;cpu/usage\&amp;quot; WHERE (\&amp;quot;type\&amp;quot; = &#39;pod&#39; AND \&amp;quot;namespace_name\&amp;quot; =~ /^blue$/) AND time &amp;gt;= now() - 30m&amp;quot;</description>
     </item>
     
     <item>
       <title></title>
-      <link>https://xilluo.gitee.io/public/posts/kubernetes/kube-scheduler-%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86/</link>
+      <link>https://wangyijie.github.io.io/public/posts/kubernetes/kube-scheduler-%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://xilluo.gitee.io/public/posts/kubernetes/kube-scheduler-%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86/</guid>
+      <guid>https://wangyijie.github.io.io/public/posts/kubernetes/kube-scheduler-%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86/</guid>
       <description>kube-scheduler 调度分为两个阶段，predicate 和 priority:
  predicate：过滤不符合条件的节点 priority：优先级排序，选择优先级最高的节点
  predicates 策略:
@@ -91,99 +91,99 @@ curl http://172.21.11.108:8086/query?pretty=true --data-urlencode &amp;quot;db=k
     
     <item>
       <title></title>
-      <link>https://xilluo.gitee.io/public/posts/kubernetes/kubectl-%E5%88%9B%E5%BB%BA%E8%B5%84%E6%BA%90/</link>
+      <link>https://wangyijie.github.io.io/public/posts/kubernetes/kubectl-%E5%88%9B%E5%BB%BA%E8%B5%84%E6%BA%90/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://xilluo.gitee.io/public/posts/kubernetes/kubectl-%E5%88%9B%E5%BB%BA%E8%B5%84%E6%BA%90/</guid>
+      <guid>https://wangyijie.github.io.io/public/posts/kubernetes/kubectl-%E5%88%9B%E5%BB%BA%E8%B5%84%E6%BA%90/</guid>
       <description>最近去参加了CKA考试，在速度上吃亏，以往喜欢复制粘贴修改摸板，在时间紧张的情况下这种方式的效率问题暴露了，导致考试时间紧张，没用时间解决难题，考试会要求创建各种类型的资源，所以这准备练习命令创建资源，提高操作效率： 如果能从命令行直接创建符合目的的资源就直接使用，如果命令参数不满足需求，可以通过**&amp;ndash;dry-run -o yaml** 参数输出摸板不实际创建资源，下面是各种资源的创建示列，多数可以合并使用：
  创建pod 加**&amp;ndash;restart=Never**参数创建出来的资源就是pod  kubectl run busybox --image=busybox --dry-run -o yaml --restart=Never 创建cronjob 加**&amp;ndash;schedule=**参数创建出来的资源就是cronjob  kubectl run busybox --image=busybox --dry-run -o yaml --schedule=&amp;#34;* * * * *&amp;#34; 创建job 加**&amp;ndash;restart=OnFailure**参数创建出来的资源就是jod  kubectl run busybox --image=busybox --dry-run -o yaml --restart=OnFailure 创建deployment 加**&amp;ndash;restart=Aalways**参数创建出来的资源就是pod,这是默认参数可以不指明  kubectl run busybox --image=busybox --dry-run -o yaml --restart=Aalways 创建使用ENV: 使用 &amp;ndash;env, 多个环境变量重复参数指定  kubectl run nginx --image=nginx --dry-run -o yaml --env=&amp;#34;dir=/mnt&amp;#34; --env=&amp;#34;port=80&amp;#34; 创建资源限制及请求  kubectl run nginx --image=nginx --dry-run -o yaml --limits=&amp;#34;cpu=100m,memory=256m&amp;#34; --requests=&amp;#34;cpu=100m,memory=100M&amp;#34;  创建指定label 留意对象资源和列表资源在命令行参数中的表示规律，重复使用参数，用逗号分隔  kubectl run nginx --image=nginx --dry-run -o yaml --labels=&amp;#34;app=nginx,owner=wangyijie,form=cmft&amp;#34; 指定多个启动参数 在最后以 &amp;ndash; 开头可以以空格分隔指定多个命令参数  kubectl run nginx --image=nginx --dry-run -o yaml --schedule=&amp;#34;* * * * *&amp;#34; --restart=OnFailure --labels=&amp;#34;job=who&amp;#34; -- bash echo 123 9.</description>
     </item>
     
     <item>
       <title></title>
-      <link>https://xilluo.gitee.io/public/posts/kubernetes/kubelet%E5%88%9B%E5%BB%BA%E5%AE%B9%E5%99%A8%E7%9A%84%E6%AD%A5%E9%AA%A4/</link>
+      <link>https://wangyijie.github.io.io/public/posts/kubernetes/kubelet%E5%88%9B%E5%BB%BA%E5%AE%B9%E5%99%A8%E7%9A%84%E6%AD%A5%E9%AA%A4/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://xilluo.gitee.io/public/posts/kubernetes/kubelet%E5%88%9B%E5%BB%BA%E5%AE%B9%E5%99%A8%E7%9A%84%E6%AD%A5%E9%AA%A4/</guid>
+      <guid>https://wangyijie.github.io.io/public/posts/kubernetes/kubelet%E5%88%9B%E5%BB%BA%E5%AE%B9%E5%99%A8%E7%9A%84%E6%AD%A5%E9%AA%A4/</guid>
       <description> Kubelet 通过 CRI 接口（gRPC）调用 dockershim，请求创建一个容器，CRI 即容器运行时接口（Container Runtime Interface），这一步中，Kubelet 可以视作一个简单的 CRI Client，而 dockershim 就是接收请求的 Server。目前 dockershim 的代码其实是内嵌在 Kubelet 中的，所以接收调用的凑巧就是 Kubelet 进程； dockershim 收到请求后，转化成 对应 Docker Daemon 的请求，发到 Docker Daemon 上请求创建一个容器。 Docker Daemon 早在 1.12 版本中就已经将针对容器的操作移到另一个守护进程——containerd 中了，因此 Docker Daemon 仍然不直接创建容器，而是要请求 containerd 创建一个容器； containerd 收到请求后，并不会自己直接去操作容器，而是创建一个叫做 containerd-shim 的进程，让 containerd-shim 去操作容器。这是因为容器进程需要一个父进程来做诸如收集状态，维持 stdin 等 fd 打开等工作。而假如这个父进程就是 containerd，那每次 containerd 挂掉或升级，整个宿主机上所有的容器都得退出了。而引入了 containerd-shim 就规避了这个问题（containerd 和 shim 并不是父子进程关系）； 创建容器有设置 namespaces 和 cgroups，挂载 root filesystem 等操作，而这些事该怎么做已经有了公开的规范了，那就是 OCI（Open Container Initiative，开放容器标准）。它的一个参考实现叫做 runC。于是，containerd-shim 在这一步需要调用 runC 这个命令行工具，来启动容器； runC 启动完容器后本身会直接退出，containerd-shim 则会成为容器进程的父进程，负责收集容器进程的状态，上报给 containerd，并在容器中 pid 为 1 的进程退出后接管容器中的子进程进行清理，确保不会出现僵尸进程。  </description>
     </item>
     
     <item>
       <title></title>
-      <link>https://xilluo.gitee.io/public/posts/kubernetes/kubernetes-api-%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99/</link>
+      <link>https://wangyijie.github.io.io/public/posts/kubernetes/kubernetes-api-%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://xilluo.gitee.io/public/posts/kubernetes/kubernetes-api-%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99/</guid>
+      <guid>https://wangyijie.github.io.io/public/posts/kubernetes/kubernetes-api-%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99/</guid>
       <description>对于云计算系统，系统API实际上处于系统设计的统领地位。Kubernetes集群系统每支持一项新功能，引入一项新技术，一定会新引入对应的API对象，支持对该功能的管理操作。理解掌握的API，就好比抓住了K8s系统的牛鼻子。Kubernetes系统API的设计有以下几条原则：
  所有API应该是声明式的。声明式的操作，相对于命令式操作，对于重复操作的效果是稳定的，这对于容易出现数据丢失或重复的分布式环境来说是很重要的。另外，声明式操作更容易被用户使用，可以使系统向用户隐藏实现的细节，同时也保留了系统未来持续优化的可能性。此外，声明式的API还隐含了所有的API对象都是名词性质的，例如Service、Volume这些API都是名词，这些名词描述了用户所期望得到的一个目标对象。 API对象是彼此互补而且可组合的。这实际上鼓励API对象尽量实现面向对象设计时的要求，即“高内聚，松耦合”，对业务相关的概念有一个合适的分解，提高分解出来的对象的可重用性。 高层API以操作意图为基础设计。如何能够设计好API，跟如何能用面向对象的方法设计好应用系统有相通的地方，高层设计一定是从业务出发，而不是过早的从技术实现出发。因此，针对Kubernetes的高层API设计，一定是以K8s的业务为基础出发，也就是以系统调度管理容器的操作意图为基础设计。 低层API根据高层API的控制需要设计。设计实现低层API的目的，是为了被高层API使用，考虑减少冗余、提高重用性的目的，低层API的设计也要以需求为基础，要尽量抵抗受技术实现影响的诱惑。 尽量避免简单封装，不要有在外部API无法显式知道的内部隐藏的机制。简单的封装，实际没有提供新的功能，反而增加了对所封装API的依赖性。内部隐藏的机制也是非常不利于系统维护的设计方式，例如StatefulSet和ReplicaSet，本来就是两种Pod集合，那么Kubernetes就用不同API对象来定义它们，而不会说只用同一个ReplicaSet，内部通过特殊的算法再来区分这个ReplicaSet是有状态的还是无状态。 API操作复杂度与对象数量成正比。这一条主要是从系统性能角度考虑，要保证整个系统随着系统规模的扩大，性能不会迅速变慢到无法使用，那么最低的限定就是API的操作复杂度不能超过O(N)，N是对象的数量，否则系统就不具备水平伸缩性了。 API对象状态不能依赖于网络连接状态。由于众所周知，在分布式环境下，网络连接断开是经常发生的事情，因此要保证API对象状态能应对网络的不稳定，API对象的状态就不能依赖于网络连接状态。 尽量避免让操作机制依赖于全局状态，因为在分布式系统中要保证全局状态的同步是非常困难的。  </description>
     </item>
     
     <item>
       <title></title>
-      <link>https://xilluo.gitee.io/public/posts/kubernetes/kubernetes-conformance-tests/</link>
+      <link>https://wangyijie.github.io.io/public/posts/kubernetes/kubernetes-conformance-tests/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://xilluo.gitee.io/public/posts/kubernetes/kubernetes-conformance-tests/</guid>
+      <guid>https://wangyijie.github.io.io/public/posts/kubernetes/kubernetes-conformance-tests/</guid>
       <description>大概步骤# 获取镜像 ./sonobuoy images pull &amp;ndash;e2e-repo-config custom-repos.yaml -dry-run 参考下面的脚本通过gcr.azk8s.cn代理地址下载gcr镜像上传到私有仓库 执行任务会在kubenetes里面创建pod启动任务 ./sonobuoy run &amp;ndash;sonobuoy-image 172.20.8.7/library/sonobuoy:v0.17.2
-&amp;ndash;kube-conformance-image 172.20.8.7/library/conformance:v1.15.10 等运行剩一个pod，大概几个小时的时间，检查结果 ./sonobuoy status 通过之后收集数据 results=$(./sonobuoy retrieve) ./sonobuoy results $results  #get command sonobuoy docker run -d --rm --name=sonobuoy sonobuoy/sonobuoy:v0.16 sleep 120 docker cp sonobuoy:/sonobuoy ./ # 私有仓库 registry=172.20.8.7 getImage(){ image=$1 docker pull $image docker $image tag ${registry}/library/${image##*/} docker push ${registry}/library/${image##*/} } kubeVersion=v1.15.10 getImage gcr.azk8s.cn/heptio-images/sonobuoy-plugin-systemd-logs:latest getImage gcr.azk8s.cn/google-containers/conformance:$kubeVersion ./sonobuoy run --sonobuoy-image 172.20.8.7/library/sonobuoy:v0.16\ --kube-conformance-image 172.</description>
+&amp;ndash;kube-conformance-image 172.20.8.7/library/conformance:v1.15.10 等运行剩一个pod，大概几个小时的时间，检查结果 ./sonobuoy status 通过之后收集数据 results=$(./sonobuoy retrieve) ./sonobuoy results $results  #get command sonobuoydocker run -d --rm --name=sonobuoy sonobuoy/sonobuoy:v0.16 sleep 120docker cp sonobuoy:/sonobuoy ./# 私有仓库registry=172.20.8.7getImage(){image=$1docker pull $imagedocker $image tag ${registry}/library/${image##*/}docker push ${registry}/library/${image##*/}}kubeVersion=v1.15.10getImage gcr.azk8s.cn/heptio-images/sonobuoy-plugin-systemd-logs:latestgetImage gcr.azk8s.cn/google-containers/conformance:$kubeVersion./sonobuoy run --sonobuoy-image 172.20.8.7/library/sonobuoy:v0.16\--kube-conformance-image 172.</description>
     </item>
     
     <item>
       <title></title>
-      <link>https://xilluo.gitee.io/public/posts/kubernetes/kubernetes-etcd%E6%95%B0%E6%8D%AE%E7%AE%A1%E7%90%86/</link>
+      <link>https://wangyijie.github.io.io/public/posts/kubernetes/kubernetes-etcd%E6%95%B0%E6%8D%AE%E7%AE%A1%E7%90%86/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://xilluo.gitee.io/public/posts/kubernetes/kubernetes-etcd%E6%95%B0%E6%8D%AE%E7%AE%A1%E7%90%86/</guid>
+      <guid>https://wangyijie.github.io.io/public/posts/kubernetes/kubernetes-etcd%E6%95%B0%E6%8D%AE%E7%AE%A1%E7%90%86/</guid>
       <description>一次使用helm安装spinnaker这个部署系统，对helm不熟悉，由于卡住超时了，随着又再次执行安装，我是在自己的电脑上弄了个10G内存的虚拟机安装的kubernetes,结果安装了两次spinnaker导致资源不足系统异常缓慢，kube-apiserver响应不过来不停的失败重启，kube-apiserver不能存活我就没办法管理pods了，所以想到去数据源etcd把spinnaker的容器信息先删掉，把集群恢复之后再重新安装，为了操作etcd我翻了些文章才找到方法，相关的资料比较少，所以自己也记录一下。 我是使用kubeadm工具安装的集群，要解除集群的资源占用要先把一些容器停掉，把kube-apiserver的编排文件从/etc/kubernetes/manifests/目录下先移出来，kubelet检查到会停止相应的pods,没有了kube-apiserver集群不会再创建新的pods,这时kubectl不可用了，使用docker命令把spinnaker项目的容器都删掉系统资源就能空闲出来。这时etcd还是正常的，用docker工具直接进入etcd。
 操作etcd有命令行工具etcdctl，有两个api版本互不兼容的，系统默认的v2版本，kubernetes集群使用的是v3版本，v2版本下是看不到v3版本的数据的，我也是找了些资料才了解这个情况。 使用环境变量定义api版本 export ETCDCTL_API=3 etcd有目录结构类似linux文件系统，获取所有key看一看： etcdctl get / --prefix --keys-only 一看就可以大概理解kubenetes的数据结构了，查询命名空间下所有部署的数据： etcdctl get /registry/deployments/default --prefix --keys-only 把想删除的删掉，列如： etcdctl del /registry/deployments/default/elevated-dragonfly-spinn-front50 删除deployments，pods这可以了，稍微减少一些资源，让kube-apiserver可以正常工作即可，其它资源还可以使用kubectl工具删除 删掉些资源后退出etcd把kube-apiserver的编排文件放回/etc/kubernetes/manifests目录，服务会再次启动，然后再清理重新部署。 ##总结： etcd组织的数据结构清晰，查找操作简便，从数据层面去维护集群也很容易，保护好数据就有一切</description>
     </item>
     
     <item>
       <title></title>
-      <link>https://xilluo.gitee.io/public/posts/kubernetes/kubernetes-pause-role/</link>
+      <link>https://wangyijie.github.io.io/public/posts/kubernetes/kubernetes-pause-role/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://xilluo.gitee.io/public/posts/kubernetes/kubernetes-pause-role/</guid>
+      <guid>https://wangyijie.github.io.io/public/posts/kubernetes/kubernetes-pause-role/</guid>
       <description>相信熟悉kubernetes的朋友都知道，kubernetes启动 Pod 里定义的容器之前，kubelet 会先启动一个 infra 容器，并执行 /pause 让 infra 容器的主进程永远挂起。 这个容器存在的目的其实是维持住整个 Pod 的各种 namespace，真正的业务容器只要加入 infra 容器的 network 等 namespace 就能实现对应 namespace 的共享。而 infra 容器创造的这个共享环境则被抽象为 PodSandbox。每次 kubelet 在创建 Pod 时，就会先调用 CRI 的 RunPodSandbox 接口启动一个沙箱环境，再调用 CreateContainer 在沙箱中创建容器。 pause很小，这有时可以加快pod的启动速度</description>
     </item>
     
     <item>
       <title></title>
-      <link>https://xilluo.gitee.io/public/posts/kubernetes/kubernetes-%E7%BD%91%E7%BB%9C%E6%96%B9%E6%A1%88%E5%8F%8A-lvs%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86/</link>
+      <link>https://wangyijie.github.io.io/public/posts/kubernetes/kubernetes-%E7%BD%91%E7%BB%9C%E6%96%B9%E6%A1%88%E5%8F%8A-lvs%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://xilluo.gitee.io/public/posts/kubernetes/kubernetes-%E7%BD%91%E7%BB%9C%E6%96%B9%E6%A1%88%E5%8F%8A-lvs%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86/</guid>
+      <guid>https://wangyijie.github.io.io/public/posts/kubernetes/kubernetes-%E7%BD%91%E7%BB%9C%E6%96%B9%E6%A1%88%E5%8F%8A-lvs%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86/</guid>
       <description></description>
     </item>
     
     <item>
       <title></title>
-      <link>https://xilluo.gitee.io/public/posts/kubernetes/kubernetes-%E8%B5%84%E6%BA%90%E7%BC%96%E6%8E%92%E5%B8%AE%E5%8A%A9/</link>
+      <link>https://wangyijie.github.io.io/public/posts/kubernetes/kubernetes-%E8%B5%84%E6%BA%90%E7%BC%96%E6%8E%92%E5%B8%AE%E5%8A%A9/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://xilluo.gitee.io/public/posts/kubernetes/kubernetes-%E8%B5%84%E6%BA%90%E7%BC%96%E6%8E%92%E5%B8%AE%E5%8A%A9/</guid>
+      <guid>https://wangyijie.github.io.io/public/posts/kubernetes/kubernetes-%E8%B5%84%E6%BA%90%E7%BC%96%E6%8E%92%E5%B8%AE%E5%8A%A9/</guid>
       <description>我们在编写kubernetes资源清单的时候有很多细节不易记住，特别对于还不熟练的同学，寻找参考摸板是一件麻烦的事，下面介绍两种获取参考帮助的手段，足够大家无往不利
- kubectl get &amp;ndash;export kubectl get -o yaml &amp;ndash;export 我们编写清单可以在集群找一个现成的资源摸板,然后修改我们想要的信息在以此创建新的资源，这能解决大部分需要了， kubectl get -o yaml &amp;ndash;export 命令获得的资源内容就一个完美的摸板，-o yaml 用的比较多，&amp;ndash;export 关注的可能就比较少，它的作用是把资源在当前集群的一些个性化数据过滤掉，给你一个清爽的摸板，去感受一下吧！ kubectl explain 有时我们通过上面的方法能找到的摸板可能没有我们要的配置，这时需要去别处寻找参考，或者去查看api文档，其实都可以不用，kubectl explain 可以根据资源路径给对应资源的子对象，就是其可以包含的字段或对象，比如看一个我不知道configMap卷怎么写的栗子：  [root@Registry ~]# kubectl explain deployments.spec.template.spec.volumes.configMap RESOURCE: configMap &amp;lt;Object&amp;gt; DESCRIPTION: ConfigMap represents a configMap that should populate this volume Adapts a ConfigMap into a volume. FIELDS: defaultMode	&amp;lt;integer&amp;gt; Optional: mode bits to use on created files by default. Must be a value between 0 and 0777.</description>
+ kubectl get &amp;ndash;export kubectl get -o yaml &amp;ndash;export 我们编写清单可以在集群找一个现成的资源摸板,然后修改我们想要的信息在以此创建新的资源，这能解决大部分需要了， kubectl get -o yaml &amp;ndash;export 命令获得的资源内容就一个完美的摸板，-o yaml 用的比较多，&amp;ndash;export 关注的可能就比较少，它的作用是把资源在当前集群的一些个性化数据过滤掉，给你一个清爽的摸板，去感受一下吧！ kubectl explain 有时我们通过上面的方法能找到的摸板可能没有我们要的配置，这时需要去别处寻找参考，或者去查看api文档，其实都可以不用，kubectl explain 可以根据资源路径给对应资源的子对象，就是其可以包含的字段或对象，比如看一个我不知道configMap卷怎么写的栗子：  [root@Registry ~]# kubectl explain deployments.spec.template.spec.volumes.configMapRESOURCE: configMap &amp;lt;Object&amp;gt;DESCRIPTION:ConfigMap represents a configMap that should populate this volumeAdapts a ConfigMap into a volume.FIELDS:defaultMode	&amp;lt;integer&amp;gt;Optional: mode bits to use on created files by default. Must be a valuebetween 0 and 0777.</description>
     </item>
     
     <item>
       <title></title>
-      <link>https://xilluo.gitee.io/public/posts/kubernetes/kubernetes%E4%BC%98%E5%85%88%E7%BA%A7%E8%B0%83%E5%BA%A6/</link>
+      <link>https://wangyijie.github.io.io/public/posts/kubernetes/kubernetes%E4%BC%98%E5%85%88%E7%BA%A7%E8%B0%83%E5%BA%A6/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://xilluo.gitee.io/public/posts/kubernetes/kubernetes%E4%BC%98%E5%85%88%E7%BA%A7%E8%B0%83%E5%BA%A6/</guid>
+      <guid>https://wangyijie.github.io.io/public/posts/kubernetes/kubernetes%E4%BC%98%E5%85%88%E7%BA%A7%E8%B0%83%E5%BA%A6/</guid>
       <description>从 v1.8 开始，kube-scheduler 支持定义 Pod 的优先级，从而保证高优先级的 Pod 优先调度。并从 v1.11 开始默认开启。 注：在 v1.8-v1.10 版本中的开启方法为
-apiserver 配置: --feature-gates=PodPriority=true --runtime-config=scheduling.k8s.io/v1alpha1=true kube-scheduler 配置: --feature-gates=PodPriority=true 在指定 Pod 的优先级之前需要先定义一个 PriorityClass（非 namespace 资源），如
-apiVersion: v1 kind: PriorityClass metadata: name: high-priority value: 1000000 globalDefault: false description: &amp;quot;This priority class should be used for XYZ service pods only.&amp;quot; 其中value 为 32 位整数的优先级，该值越大，优先级越高 globalDefault 用于未配置 PriorityClassName 的 Pod，整个集群中应该只有一个 PriorityClass 将其设置为 true 然后，在 PodSpec 中通过 PriorityClassName 设置 Pod 的优先级：
-apiVersion: v1 kind: Pod metadata: name: nginx labels: env: test spec: containers: - name: nginx image: nginx imagePullPolicy: IfNotPresent priorityClassName: high-priority </description>
+apiserver 配置: --feature-gates=PodPriority=true --runtime-config=scheduling.k8s.io/v1alpha1=truekube-scheduler 配置:--feature-gates=PodPriority=true在指定 Pod 的优先级之前需要先定义一个 PriorityClass（非 namespace 资源），如
+apiVersion: v1kind: PriorityClassmetadata:name: high-priorityvalue: 1000000globalDefault: falsedescription: &amp;quot;This priority class should be used for XYZ service pods only.&amp;quot;其中value 为 32 位整数的优先级，该值越大，优先级越高 globalDefault 用于未配置 PriorityClassName 的 Pod，整个集群中应该只有一个 PriorityClass 将其设置为 true 然后，在 PodSpec 中通过 PriorityClassName 设置 Pod 的优先级：
+apiVersion: v1kind: Podmetadata:name: nginxlabels:env: testspec:containers:- name: nginximage: nginximagePullPolicy: IfNotPresentpriorityClassName: high-priority</description>
     </item>
     
     <item>
       <title></title>
-      <link>https://xilluo.gitee.io/public/posts/kubernetes/kubernetes%E7%9F%A5%E8%AF%86%E7%82%B9/</link>
+      <link>https://wangyijie.github.io.io/public/posts/kubernetes/kubernetes%E7%9F%A5%E8%AF%86%E7%82%B9/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://xilluo.gitee.io/public/posts/kubernetes/kubernetes%E7%9F%A5%E8%AF%86%E7%82%B9/</guid>
+      <guid>https://wangyijie.github.io.io/public/posts/kubernetes/kubernetes%E7%9F%A5%E8%AF%86%E7%82%B9/</guid>
       <description>考cka需要整理kubernetes的知识，看了linux基金会的课程，感觉有点贵，赚钱不容易得到刀刃上，所以看下目录帮助熟悉学习目标即可
 Kubernetes 基础课程 （LFS258)
 Chapter 1. Course Introduction# Welcome 1.1. Before You Begin 1.2. Course Introduction 1.3. Course Objectives 1.4. Course Formatting 安排 1.5. Course Completion 1.6. Course Timing 1.7.a. Exercises-Lab Environment 1.7.b. Exercises-Labs 1.7.c. Exercises - Knowledge Check 1.8. Course Resources 1.9. Class Forum Guidelines 1.10. Course Support 1.11. Course Audience and Requirements 1.12. Software Environment 1.13. Which Distribution to Choose? 1.14. Red Hat Family 1.15. SUSE Family 1.</description>
@@ -191,62 +191,62 @@ Chapter 1. Course Introduction# Welcome 1.1. Before You Begin 1.2. Course Int
     
     <item>
       <title></title>
-      <link>https://xilluo.gitee.io/public/posts/kubernetes/kubernetes%E8%AF%81%E4%B9%A6%E7%BB%AD%E6%9C%9F/</link>
+      <link>https://wangyijie.github.io.io/public/posts/kubernetes/kubernetes%E8%AF%81%E4%B9%A6%E7%BB%AD%E6%9C%9F/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://xilluo.gitee.io/public/posts/kubernetes/kubernetes%E8%AF%81%E4%B9%A6%E7%BB%AD%E6%9C%9F/</guid>
+      <guid>https://wangyijie.github.io.io/public/posts/kubernetes/kubernetes%E8%AF%81%E4%B9%A6%E7%BB%AD%E6%9C%9F/</guid>
       <description>kubeadm 默认证书为一年，一年过期后，会导致api service不可用，使用过程中会出现：x509: certificate has expired or is not yet valid.
 方案一 通过修改kubeadm 调整证书过期时间
-一、使用kubadm 更新证书#1. 查看证书有效期#kubeadm alpha certs check-expiration 2. 重新签发证书#kubeadm alpha certs renew admin.conf kubeadm alpha certs renew scheduler.conf kubeadm alpha certs renew controller-manager.conf 3. 重启控制平面使生效#重启kubelet会自动重新创建核心组件
-systemctl restart kubelet 4. 验证#kubeadm alpha certs check-expiration
+一、使用kubadm 更新证书#1. 查看证书有效期#kubeadm alpha certs check-expiration2. 重新签发证书#kubeadm alpha certs renew admin.confkubeadm alpha certs renew scheduler.conf kubeadm alpha certs renew controller-manager.conf3. 重启控制平面使生效#重启kubelet会自动重新创建核心组件
+systemctl restart kubelet4. 验证#kubeadm alpha certs check-expiration
 二、创建长期有效期证书#自己创建这四个文件需要的证书，替换四个文件使用的内嵌证书。我们自己创建的证书的有效期为50年，不再有过期的风险。步骤如下：
-生成证书：#cd /etc/kubernetes mkdir cert cd cert/ cat &amp;gt; ca-config.</description>
+生成证书：#cd /etc/kubernetesmkdir certcd cert/cat &amp;gt; ca-config.</description>
     </item>
     
     <item>
       <title></title>
-      <link>https://xilluo.gitee.io/public/posts/kubernetes/metrics-server-%E9%83%A8%E7%BD%B2/</link>
+      <link>https://wangyijie.github.io.io/public/posts/kubernetes/metrics-server-%E9%83%A8%E7%BD%B2/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://xilluo.gitee.io/public/posts/kubernetes/metrics-server-%E9%83%A8%E7%BD%B2/</guid>
+      <guid>https://wangyijie.github.io.io/public/posts/kubernetes/metrics-server-%E9%83%A8%E7%BD%B2/</guid>
       <description>heapster已经不在维护，转由metrics-server 替代，没安装metrics-server pod命令和自动调度不能正常工作 项目地址：https://github.com/kubernetes-incubator/metrics-server 部署后可能不能正常收集数据，尝试添加下面的启动参数，kubelet-insecure-tls用于kubelet使用证书不满足认证添加，kubelet-preferred-address-types指名访问kubelet的地址类型，分别有：InternalIP,ExternalIP,Hostname
-- /metrics-server - --v=2 - --kubelet-insecure-tls - --kubelet-preferred-address-types=InternalIP </description>
+- /metrics-server- --v=2- --kubelet-insecure-tls- --kubelet-preferred-address-types=InternalIP</description>
     </item>
     
     <item>
       <title></title>
-      <link>https://xilluo.gitee.io/public/posts/kubernetes/skiffold/</link>
+      <link>https://wangyijie.github.io.io/public/posts/kubernetes/skiffold/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://xilluo.gitee.io/public/posts/kubernetes/skiffold/</guid>
-      <description>调试可用的配置，花了不少时间踩坑，拿走不谢！#apiVersion: skaffold/v1beta8 kind: Config - name: profile-prod # a unique profile name. patches: activation: - env: ENV=production kubeContext: minikube command: deploy - env: ENV=develop kubeContext: minikube command: dev build: artifacts: - image: axd-register jibMaven: module: axd-register args: - -DskipTests - image: axd-gateway jibMaven: module: axd-gateway args: - -DskipTests - image: axd-activity-provider jibMaven: module: axd-gateway args: - -DskipTests - image: axd-auth-provider jibMaven: module: axd-auth-provider args: - -DskipTests - image: axd-basic-provider jibMaven: module: axd-basic-provider args: - -DskipTests - image: axd-book-provider jibMaven: module: axd-book-provider args: - -DskipTests - image: axd-manager-provider jibMaven: module: axd-manager-provider args: - -DskipTests - image: axd-merchant-provider jibMaven: module: axd-merchant-provider args: - -DskipTests - image: axd-mq-provider jibMaven: module: axd-mq-provider args: - -DskipTests - image: axd-order-provider jibMaven: module: axd-order-provider args: - -DskipTests - image: axd-push-provider jibMaven: module: axd-push-provider args: - -DskipTests - image: axd-user-provider jibMaven: module: axd-user-provider args: - -DskipTests # optional profile to run the jib build on Google Cloud Build deploy: kubectl: manifests: - axd-register/k8s.</description>
+      <guid>https://wangyijie.github.io.io/public/posts/kubernetes/skiffold/</guid>
+      <description>调试可用的配置，花了不少时间踩坑，拿走不谢！#apiVersion: skaffold/v1beta8kind: Config- name: profile-prod # a unique profile name.patches:activation:- env: ENV=productionkubeContext: minikubecommand: deploy- env: ENV=developkubeContext: minikubecommand: devbuild:artifacts:- image: axd-registerjibMaven:module: axd-registerargs:- -DskipTests- image: axd-gatewayjibMaven:module: axd-gatewayargs:- -DskipTests- image: axd-activity-providerjibMaven:module: axd-gatewayargs:- -DskipTests- image: axd-auth-providerjibMaven:module: axd-auth-providerargs:- -DskipTests- image: axd-basic-providerjibMaven:module: axd-basic-providerargs:- -DskipTests- image: axd-book-providerjibMaven:module: axd-book-providerargs:- -DskipTests- image: axd-manager-providerjibMaven:module: axd-manager-providerargs:- -DskipTests- image: axd-merchant-providerjibMaven:module: axd-merchant-providerargs:- -DskipTests- image: axd-mq-providerjibMaven:module: axd-mq-providerargs:- -DskipTests- image: axd-order-providerjibMaven:module: axd-order-providerargs:- -DskipTests- image: axd-push-providerjibMaven:module: axd-push-providerargs:- -DskipTests- image: axd-user-providerjibMaven:module: axd-user-providerargs:- -DskipTests# optional profile to run the jib build on Google Cloud Builddeploy:kubectl:manifests:- axd-register/k8s.</description>
     </item>
     
     <item>
       <title></title>
-      <link>https://xilluo.gitee.io/public/posts/kubernetes/ubuntu18-04%E5%AE%89%E8%A3%85minikube/</link>
+      <link>https://wangyijie.github.io.io/public/posts/kubernetes/ubuntu18-04%E5%AE%89%E8%A3%85minikube/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://xilluo.gitee.io/public/posts/kubernetes/ubuntu18-04%E5%AE%89%E8%A3%85minikube/</guid>
-      <description> 使用kvm2 ,检查命令看到关键字即可： egrep --color &#39;vmx|svm&#39; /proc/cpuinfo 安装kvm依赖：  apt install libvirt-clients libvirt-daemon-system qemu-kvm systemctl enable libvirtd.service systemctl start libvirtd.service curl -LO https://storage.googleapis.com/minikube/releases/latest/docker-machine-driver-kvm2 install docker-machine-driver-kvm2 /usr/local/bin/ 下载minikube, google的存储，下载失败多尝试几下成功后速度很快：  curl -Lo minikube https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64 &amp;amp;&amp;amp; chmod +x minikube cp minikube /usr/local/bin &amp;amp;&amp;amp; rm minikub 设置minikube使用的虚拟化环境， 启动miniKube环境：  minikube start --vm-driver kvm2 </description>
+      <guid>https://wangyijie.github.io.io/public/posts/kubernetes/ubuntu18-04%E5%AE%89%E8%A3%85minikube/</guid>
+      <description> 使用kvm2 ,检查命令看到关键字即可： egrep --color &#39;vmx|svm&#39; /proc/cpuinfo 安装kvm依赖：  apt install libvirt-clients libvirt-daemon-system qemu-kvmsystemctl enable libvirtd.servicesystemctl start libvirtd.servicecurl -LO https://storage.googleapis.com/minikube/releases/latest/docker-machine-driver-kvm2 install docker-machine-driver-kvm2 /usr/local/bin/下载minikube, google的存储，下载失败多尝试几下成功后速度很快：  curl -Lo minikube https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64 &amp;amp;&amp;amp; chmod +x minikubecp minikube /usr/local/bin &amp;amp;&amp;amp; rm minikub设置minikube使用的虚拟化环境， 启动miniKube环境：  minikube start --vm-driver kvm2</description>
     </item>
     
     <item>
       <title></title>
-      <link>https://xilluo.gitee.io/public/posts/kubernetes/upgrade-kubernetes-to-1-19-4/</link>
+      <link>https://wangyijie.github.io.io/public/posts/kubernetes/upgrade-kubernetes-to-1-19-4/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://xilluo.gitee.io/public/posts/kubernetes/upgrade-kubernetes-to-1-19-4/</guid>
-      <description>install upgrade tool kubeadm#apt install -y kubeadm kubeadm config images list k8s.gcr.io/kube-apiserver:v1.19.4 k8s.gcr.io/kube-controller-manager:v1.19.4 k8s.gcr.io/kube-scheduler:v1.19.4 k8s.gcr.io/kube-proxy:v1.19.4 k8s.gcr.io/pause:3.2 k8s.gcr.io/etcd:3.4.13-0 k8s.gcr.io/coredns:1.7.0 transfer gcr images to docker hub#open https://katacoda.com/courses/ubuntu/playground
-go get github.com/xilu0/transfer for im in `kubeadm config images list`;do transfer --user=heishui --password=&amp;quot;$repopass&amp;quot; --image=$im;done upgrade kubernetes cluster#kubeadm upgrade plan kubeadm upgrade apply v1.19.4 upgrade components#apt install -y kubectl kubelet </description>
+      <guid>https://wangyijie.github.io.io/public/posts/kubernetes/upgrade-kubernetes-to-1-19-4/</guid>
+      <description>install upgrade tool kubeadm#apt install -y kubeadmkubeadm config images listk8s.gcr.io/kube-apiserver:v1.19.4k8s.gcr.io/kube-controller-manager:v1.19.4k8s.gcr.io/kube-scheduler:v1.19.4k8s.gcr.io/kube-proxy:v1.19.4k8s.gcr.io/pause:3.2k8s.gcr.io/etcd:3.4.13-0k8s.gcr.io/coredns:1.7.0transfer gcr images to docker hub#open https://katacoda.com/courses/ubuntu/playground
+go get github.com/xilu0/transferfor im in `kubeadm config images list`;do transfer --user=heishui --password=&amp;quot;$repopass&amp;quot; --image=$im;doneupgrade kubernetes cluster#kubeadm upgrade plankubeadm upgrade apply v1.19.4upgrade components#apt install -y kubectl kubelet</description>
     </item>
     
     <item>
       <title></title>
-      <link>https://xilluo.gitee.io/public/posts/kubernetes/yaml%E8%AF%AD%E6%B3%95/</link>
+      <link>https://wangyijie.github.io.io/public/posts/kubernetes/yaml%E8%AF%AD%E6%B3%95/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://xilluo.gitee.io/public/posts/kubernetes/yaml%E8%AF%AD%E6%B3%95/</guid>
+      <guid>https://wangyijie.github.io.io/public/posts/kubernetes/yaml%E8%AF%AD%E6%B3%95/</guid>
       <description>语法#除某些控制字符外，YAML语言接受整个Unicode字符集。所有可接受的字符都可以在YAML文档中使用。YAML文档可以用UTF-8，UTF-16和UTF-32编码。（虽然UTF-32不是强制性的，但如果解析器具有JSON兼容性，则必须使用它。）
  空格 缩进用于表示结构; 但是，绝不允许制表符作为缩进。 注释以井号（#）开头，可以从一行开始，一直持续到行尾。必须通过空格字符将注释与其他标记分开。[13]如果＃字符出现在字符串中，则它们是数字符号（#）文字。 列表成员由前导连字符（-）表示，每行一个成员，或用方括号（[ ]）括起，并用逗号 空格（, ）分隔。 关联数组使用冒号 空格（: ）以表格key：value表示，每行一个或用花括号（{ }）括起来并用逗号 空格（, ）分隔。  关联数组键可以以问号（?）为前缀，以允许明确地表示自由多字键。   字符串（标量）通常不加引号，但可以用双引号（&amp;quot;）或单引号（&#39;）括起来。  在双引号内，特殊字符可以用反斜杠（）开头的C风格转义序列表示。根据文档，支持的唯一八进制转义是。\``\0   块标量用缩进分隔，并带有可选修饰符以保留（|）或fold（&amp;gt;）换行符。 单个流中的多个文档由三个连字符（---）分隔。  三个句点（...）可选地结束流中的文档。   重复节点最初用＆符号（&amp;amp;）表示，然后用星号（*）引用。 节点可以使用感叹号（!!）后跟一个字符串来标记类型或标记，该字符串可以扩展为URI。 流中的YAML文档可以在“指令”之后，该指令由百分号（%）后跟名称和空格分隔的参数组成。YAML 1.1中定义了两个指令：  ％YAML指令用于标识给定文档中的YAML版本。 ％TAG指令用作URI前缀的快捷方式。然后可以在节点类型标签中使用这些快捷方式。    YAML要求用作列表分隔符的冒号和逗号后跟空格，以便通常可以表示包含嵌入标点符号（例如5,280或http://www.jianshu.com）的标量值，而无需用引号括起来。
 YAML中保留了两个额外的sigil字符，以便将来标准化：at符号（@）和重音符号（```）。</description>
@@ -254,39 +254,39 @@ YAML中保留了两个额外的sigil字符，以便将来标准化：at符号（
     
     <item>
       <title></title>
-      <link>https://xilluo.gitee.io/public/posts/kubernetes/%E5%9B%BD%E5%86%85cka%E8%80%83%E8%AF%95%E6%80%BB%E7%BB%93/</link>
+      <link>https://wangyijie.github.io.io/public/posts/kubernetes/%E5%9B%BD%E5%86%85cka%E8%80%83%E8%AF%95%E6%80%BB%E7%BB%93/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://xilluo.gitee.io/public/posts/kubernetes/%E5%9B%BD%E5%86%85cka%E8%80%83%E8%AF%95%E6%80%BB%E7%BB%93/</guid>
+      <guid>https://wangyijie.github.io.io/public/posts/kubernetes/%E5%9B%BD%E5%86%85cka%E8%80%83%E8%AF%95%E6%80%BB%E7%BB%93/</guid>
       <description>这里没用透露考题，签有保密协议的，君子慎独，不欺暗室 深圳的考点在八卦岭地铁站附近的八卦二路616号四楼，试题是中文，使用考试中心的电脑考试，那边的电脑不能上google,我用google登录linux基金会的网站还遇到了麻烦，考官很开明，只要不违背考试原则都可以 在一个web终端考试，只有一个终端，复制进出没用影响，最好熟悉下tmux这个终端管理工具，我就得益于它快速切换终端使用explain查看接口文档 感觉试题难度一般，但时间有点紧，有文档有不敢去翻，翻翻时间过去了，所以要熟悉命令，命令是最快的，可以帮助节省时间解决难题，多数时候个把难题就决定着过不过，还有就是要熟悉常见资源熟悉的默写，我在这里吃了大亏，平时惯于复制粘贴，关键石刻心里没底默写不出现，找参考复制浪费了时间，要查文档最好用搜索，我试过记住文档的知识布局，结果还是不易快速找到，一些资源参考github仓库搜索效率比官方文档还高，主要是快 我还不知道这次又没用通过，三小时做下来还有点累，心累，做的我都怕了，考完后再来一遍也没用把握通过</description>
     </item>
     
     <item>
       <title></title>
-      <link>https://xilluo.gitee.io/public/posts/kubernetes/%E5%9F%BA%E4%BA%8Ekubernetes-ingress-%E8%93%9D%E7%BB%BF%E5%92%8C%E9%87%91%E4%B8%9D%E9%9B%80%E9%83%A8%E7%BD%B2/</link>
+      <link>https://wangyijie.github.io.io/public/posts/kubernetes/%E5%9F%BA%E4%BA%8Ekubernetes-ingress-%E8%93%9D%E7%BB%BF%E5%92%8C%E9%87%91%E4%B8%9D%E9%9B%80%E9%83%A8%E7%BD%B2/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://xilluo.gitee.io/public/posts/kubernetes/%E5%9F%BA%E4%BA%8Ekubernetes-ingress-%E8%93%9D%E7%BB%BF%E5%92%8C%E9%87%91%E4%B8%9D%E9%9B%80%E9%83%A8%E7%BD%B2/</guid>
+      <guid>https://wangyijie.github.io.io/public/posts/kubernetes/%E5%9F%BA%E4%BA%8Ekubernetes-ingress-%E8%93%9D%E7%BB%BF%E5%92%8C%E9%87%91%E4%B8%9D%E9%9B%80%E9%83%A8%E7%BD%B2/</guid>
       <description>一个ingress host可以配置多个后端服务,通过添加删除服务实现蓝绿部署，将不同版本的服务入口一起配上，通过使用权重注解可以实现流量分配，权重50的含义是将流量的百分之 50 引入到新服务的 pod 里面
 ingress.aliyun.weight/new-nginx: &amp;quot;50&amp;quot;  </description>
     </item>
     
     <item>
       <title></title>
-      <link>https://xilluo.gitee.io/public/posts/kubernetes/%E5%9F%BA%E4%BA%8Ekubernetes-service%E5%AE%9E%E7%8E%B0%E9%87%91%E4%B8%9D%E9%9B%80%E8%93%9D%E7%BB%BF%E5%8F%91%E5%B8%83/</link>
+      <link>https://wangyijie.github.io.io/public/posts/kubernetes/%E5%9F%BA%E4%BA%8Ekubernetes-service%E5%AE%9E%E7%8E%B0%E9%87%91%E4%B8%9D%E9%9B%80%E8%93%9D%E7%BB%BF%E5%8F%91%E5%B8%83/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://xilluo.gitee.io/public/posts/kubernetes/%E5%9F%BA%E4%BA%8Ekubernetes-service%E5%AE%9E%E7%8E%B0%E9%87%91%E4%B8%9D%E9%9B%80%E8%93%9D%E7%BB%BF%E5%8F%91%E5%B8%83/</guid>
+      <guid>https://wangyijie.github.io.io/public/posts/kubernetes/%E5%9F%BA%E4%BA%8Ekubernetes-service%E5%AE%9E%E7%8E%B0%E9%87%91%E4%B8%9D%E9%9B%80%E8%93%9D%E7%BB%BF%E5%8F%91%E5%B8%83/</guid>
       <description>服务匹配部署是在template下的labels,选择一个labels即可，一个服务可以对应多个部署，部署的副本越多分的流量比例越大哦，以此来实现金丝雀发布，同理也可以做蓝绿部署，就是在部署的template labels上交换添加移除标签的事
 apiVersion: extensions/v1beta1 kind: Deployment metadata: labels: run: old-nginx name: old-nginx spec: replicas: 1 selector: matchLabels: run: old-nginx template: metadata: labels: run: old-nginx app: nginx spec: containers: - image: registry.cn-hangzhou.aliyuncs.com/xianlu/old-nginx imagePullPolicy: Always name: old-nginx ports: - containerPort: 80 protocol: TCP restartPolicy: Always#apiVersion: extensions/v1beta1 kind: Deployment metadata: labels: run: new-nginx name: new-nginx spec: replicas: 1 selector: matchLabels: run: new-nginx template: metadata: labels: run: new-nginx app: nginx spec: containers: - image: registry.</description>
     </item>
     
     <item>
       <title></title>
-      <link>https://xilluo.gitee.io/public/posts/kubernetes/%E5%AE%B9%E5%99%A8%E7%9A%84%E5%8E%9F%E7%90%86/</link>
+      <link>https://wangyijie.github.io.io/public/posts/kubernetes/%E5%AE%B9%E5%99%A8%E7%9A%84%E5%8E%9F%E7%90%86/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://xilluo.gitee.io/public/posts/kubernetes/%E5%AE%B9%E5%99%A8%E7%9A%84%E5%8E%9F%E7%90%86/</guid>
+      <guid>https://wangyijie.github.io.io/public/posts/kubernetes/%E5%AE%B9%E5%99%A8%E7%9A%84%E5%8E%9F%E7%90%86/</guid>
       <description>现在容器运行时已经很多，有些原理差别大了，以最熟悉的dcoker为列，特殊的特别了解
 容器的组成#control-group + namespace + image
 namespace 的种类# mount, 2. uts, 3. pid, 4. network, 5. user, 6. ipc, 7. cgroup
@@ -297,12 +297,12 @@ image 原理#分层文件系统或联合文件系统，有mergedir, workdir, 
     
     <item>
       <title></title>
-      <link>https://xilluo.gitee.io/public/posts/kubernetes/%E9%80%9A%E8%BF%87hub-docker%E5%8A%A0git%E8%8E%B7%E5%8F%96kubernetes%E9%95%9C%E5%83%8F/</link>
+      <link>https://wangyijie.github.io.io/public/posts/kubernetes/%E9%80%9A%E8%BF%87hub-docker%E5%8A%A0git%E8%8E%B7%E5%8F%96kubernetes%E9%95%9C%E5%83%8F/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://xilluo.gitee.io/public/posts/kubernetes/%E9%80%9A%E8%BF%87hub-docker%E5%8A%A0git%E8%8E%B7%E5%8F%96kubernetes%E9%95%9C%E5%83%8F/</guid>
+      <guid>https://wangyijie.github.io.io/public/posts/kubernetes/%E9%80%9A%E8%BF%87hub-docker%E5%8A%A0git%E8%8E%B7%E5%8F%96kubernetes%E9%95%9C%E5%83%8F/</guid>
       <description>使用工具kubeadm安装kubernetes集群是需要的镜像默认放在google容器仓库中，国内不便直接下载，这里记录通过hub.docker加git获取kubernetes镜像： 1.登陆注册dockerID和github账户 2.dockerhub和github上的公开仓库创建都是没有限制的，在github创建一个仓库，里面放放入自己Dockerfile，列入：
-from gcr.io/google_containers/kube-scheduler-amd64:v1.9.2 label maintainer=&amp;quot;785471184@qq.com&amp;quot;  这次我是使用应该仓库构建多个镜像，github上用目录分开存放，dockerhub上用tag来区分不同的仓库，如果不闲玛法可以一个镜像创建一个仓库。 dockerhub有普通仓库和自带构建仓库，普仓库我们可以登录后把本地镜像push上去，自动构建仓库支持对接github和bitbucket版本控制系统自动化构建，我要用github仓库自动构建，那就创建自动构建仓库，跟图： 不要点下面那个很大的创建仓库图标，那里只是创建普通仓库的入口，从那里开始不能配置自动构建的，我也被坑一阵，留意！ 这里有一点值得提醒，如果你的仓库是在组织下而不是在个人名下，那dockerhub默认是不能访问组织仓库，这时候需要去到github上删除组织仓库的第三方访问限制： 选择仓库创建： 默认是在仓库的根目录检查Dockerfile文件，我这里是要用一个仓库构建多个镜像，所有创建了子目录，把Dockerfile放在子目录里面，指定Dockerfile位置，中间有个激活自动构建的单选框，可以选择也可以不选需要的时候自己来点一下触发按钮，记得保存： 触发构建之后可以去构建详细那里查看构建结果，如果失败了点击错误可以看到日志。 构建成功的可以就可以在tags那里看到标签，不想保留的镜像可以删除。 最后一次构建成功的Dockerfile内容还会被提取到Dockerfile栏目。 在仓库信息里面给些备注可以方便其他寻找镜像的人使用。 ok！</description>
+from gcr.io/google_containers/kube-scheduler-amd64:v1.9.2label maintainer=&amp;quot;785471184@qq.com&amp;quot; 这次我是使用应该仓库构建多个镜像，github上用目录分开存放，dockerhub上用tag来区分不同的仓库，如果不闲玛法可以一个镜像创建一个仓库。 dockerhub有普通仓库和自带构建仓库，普仓库我们可以登录后把本地镜像push上去，自动构建仓库支持对接github和bitbucket版本控制系统自动化构建，我要用github仓库自动构建，那就创建自动构建仓库，跟图： 不要点下面那个很大的创建仓库图标，那里只是创建普通仓库的入口，从那里开始不能配置自动构建的，我也被坑一阵，留意！ 这里有一点值得提醒，如果你的仓库是在组织下而不是在个人名下，那dockerhub默认是不能访问组织仓库，这时候需要去到github上删除组织仓库的第三方访问限制： 选择仓库创建： 默认是在仓库的根目录检查Dockerfile文件，我这里是要用一个仓库构建多个镜像，所有创建了子目录，把Dockerfile放在子目录里面，指定Dockerfile位置，中间有个激活自动构建的单选框，可以选择也可以不选需要的时候自己来点一下触发按钮，记得保存： 触发构建之后可以去构建详细那里查看构建结果，如果失败了点击错误可以看到日志。 构建成功的可以就可以在tags那里看到标签，不想保留的镜像可以删除。 最后一次构建成功的Dockerfile内容还会被提取到Dockerfile栏目。 在仓库信息里面给些备注可以方便其他寻找镜像的人使用。 ok！</description>
     </item>
     
   </channel>

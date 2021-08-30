@@ -7,15 +7,15 @@
 <meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="golang" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://xilluo.gitee.io/public/posts/golang/" />
+<meta property="og:url" content="https://wangyijie.github.io.io/public/posts/golang/" />
 
 <title>golang | A great computer technology Site</title>
 <link rel="manifest" href="/public/manifest.json">
 <link rel="icon" href="/public/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/public/book.min.8599444fcc48ee6b435b5b62c955ab7d914fa1e2a453df90c4b97cc9769665d1.css" integrity="sha256-hZlET8xI7mtDW1tiyVWrfZFPoeKkU9&#43;QxLl8yXaWZdE=" crossorigin="anonymous">
   <script defer src="/public/flexsearch.min.js"></script>
-  <script defer src="/public/en.search.min.49d7ffe0cc6a09481193582a484d1dfccfe14d6d173d2de804b6e37d7c5a9f57.js" integrity="sha256-Sdf/4MxqCUgRk1gqSE0d/M/hTW0XPS3oBLbjfXxan1c=" crossorigin="anonymous"></script>
-<link rel="alternate" type="application/rss+xml" href="https://xilluo.gitee.io/public/posts/golang/index.xml" title="A great computer technology Site" />
+  <script defer src="/public/en.search.min.4bb5e7466a3eccb9a8f15179e75eb3db494fa9b6c697cb9d01e041d5deefcdac.js" integrity="sha256-S7XnRmo&#43;zLmo8VF5516z20lPqbbGl8udAeBB1d7vzaw=" crossorigin="anonymous"></script>
+<link rel="alternate" type="application/rss+xml" href="https://wangyijie.github.io.io/public/posts/golang/index.xml" title="A great computer technology Site" />
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -327,10 +327,10 @@ https://github.com/alex-shpak/hugo-book
 
 
     <p>First, you will need to enable the Go Modules feature and configure Go to use the proxy. bash:
-export GOPROXY=https://goproxy.io Or powershell:
-$env:GOPROXY = &quot;https://goproxy.io&quot; Now, when you build and run your applications, go will fetch dependencies via goproxy.io.
+export GOPROXY=https://goproxy.ioOr powershell:
+$env:GOPROXY = &quot;https://goproxy.io&quot;Now, when you build and run your applications, go will fetch dependencies via goproxy.io.
 Note: This proxy can&rsquo;t fetch your private repos of course.
-Private proxy#Started#./goproxy -listen=0.0.0.0:80 -cacheDir=/data Use docker image#docker run -d -p80:8081 goproxy/goproxy Use the -v flag to persisting the proxy module data (change cacheDir to your own dir):
+Private proxy#Started#./goproxy -listen=0.0.0.0:80 -cacheDir=/dataUse docker image#docker run -d -p80:8081 goproxy/goproxyUse the -v flag to persisting the proxy module data (change cacheDir to your own dir):
         <a href="/public/posts/golang/a-global-proxy-for-go-modules/">...</a>
       
     </p>
@@ -369,9 +369,9 @@ Private proxy#Started#./goproxy -listen=0.0.0.0:80 -cacheDir=/data Use doc
 
 
     <p>接触golang有些时间了，以前磕磕碰碰的勉强写过几个小程序，最近工作又亲近golang，就想着再回头巩固一下，曾经遇到过几次的问题又再次遇到了，golang的函数定义格式是这样的：
-func function_name( [parameter list] ) [return_types] { 函数体 } 函数体之上的哪一行总共分为三个部分，依次是声明关键字，函数名和参数，返回值。函数名和参数是一个整体所以归为一组方便识别的，有时会遇到一些异类的形式，今天就遇到这样的：
-func fib() func() int { a, b := 0, 1 return func() int { a, b = b, a+b return a } } 比常见的多了一段，让人有点蒙圈了，再回顾到闭包的知识点才解决此困惑，说一下我自己对闭包的总结，闭包就是函数返回一个匿名函数，看一个例子：
-package main import &quot;fmt&quot; func returnNum() func() (int, int) { return func() (int, int) { return 0, 1 } } func main() { q := returnNum() a, b := q() fmt.Println(a, b) } 在强类型语言里面，函数返回值类型是不可少的，闭包误导人的地方就在于它的返回值定义，返回一个匿名函数，函数得注明返回值，返回值和函数名之间习惯上会加空格，这就造成闭包的形式有别于普通函数，上面这个闭包双返回值也是有些耐人寻味的。少见多怪，主要还是因为我是个业余玩家。 ####还有方法：结构体方法，对象方法也是初学者不易理解的。
+func function_name( [parameter list] ) [return_types] {函数体}函数体之上的哪一行总共分为三个部分，依次是声明关键字，函数名和参数，返回值。函数名和参数是一个整体所以归为一组方便识别的，有时会遇到一些异类的形式，今天就遇到这样的：
+func fib() func() int {a, b := 0, 1return func() int {a, b = b, a+breturn a}}比常见的多了一段，让人有点蒙圈了，再回顾到闭包的知识点才解决此困惑，说一下我自己对闭包的总结，闭包就是函数返回一个匿名函数，看一个例子：
+package mainimport &quot;fmt&quot;func returnNum() func() (int, int) {return func() (int, int) {return 0, 1}}func main() {q := returnNum()a, b := q()fmt.Println(a, b)}在强类型语言里面，函数返回值类型是不可少的，闭包误导人的地方就在于它的返回值定义，返回一个匿名函数，函数得注明返回值，返回值和函数名之间习惯上会加空格，这就造成闭包的形式有别于普通函数，上面这个闭包双返回值也是有些耐人寻味的。少见多怪，主要还是因为我是个业余玩家。 ####还有方法：结构体方法，对象方法也是初学者不易理解的。
     </p>
   </article>
   

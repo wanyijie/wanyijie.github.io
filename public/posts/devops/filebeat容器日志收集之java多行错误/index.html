@@ -9,7 +9,7 @@
 <meta property="og:description" content="背景：#java日志出现错误的时候日志不再是一条一行，可能出来换行，这不适应默认的日志采集方式，正确的做法是使用规则确定行的开始，到下一个开始才是一行的结束，主流的日志收集插件都支持多行的配置定义。现在多用容器运行服务，日志输出到标准输出，这样使用日志采集工具去采集通过docker存储的日志文件，日志包含在json文本中，采集策略得对于调整。 在filebeat中使用container解析器，设置多行合并参数即可，细节如下：
 开始流程：#filebeat配置: filebeat.yml#filebeat.config.inputs: enabled: true path: inputs.d/*.yml reload.enabled: true reload.period: 10s filebeat.config.modules.path: ${path.config}/modules.d/*.yml output.elasticsearch: enabled: false hosts: &#39;127.0.0.1:9200&#39; username: &#39;${ELASTICSEARCH_USERNAME:}&#39; password: &#39;${ELASTICSEARCH_PASSWORD:}&#39; output.file: enabled: false path: &#34;/tmp/filebeat&#34; filename: filebeat output.console: pretty: true enabled: true 日志收集配置： cat inputs.d/java.yml#- type: container multiline.pattern: &#39;^2020-07-15&#39; multiline.negate: true multiline.match: after json.message_key: log # json.keys_under_root: false overwrite_keys: true paths: - /var/log/err.log 日志示例：/var/log/err.log#{&quot;log&quot;:&quot;2020-07-15 03:15:35 [INFO ] [main] org." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://xilluo.gitee.io/public/posts/devops/filebeat%E5%AE%B9%E5%99%A8%E6%97%A5%E5%BF%97%E6%94%B6%E9%9B%86%E4%B9%8Bjava%E5%A4%9A%E8%A1%8C%E9%94%99%E8%AF%AF/" /><meta property="article:section" content="posts" />
+<meta property="og:url" content="https://wangyijie.github.io.io/public/posts/devops/filebeat%E5%AE%B9%E5%99%A8%E6%97%A5%E5%BF%97%E6%94%B6%E9%9B%86%E4%B9%8Bjava%E5%A4%9A%E8%A1%8C%E9%94%99%E8%AF%AF/" /><meta property="article:section" content="posts" />
 
 
 
@@ -18,7 +18,7 @@
 <link rel="icon" href="/public/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/public/book.min.8599444fcc48ee6b435b5b62c955ab7d914fa1e2a453df90c4b97cc9769665d1.css" integrity="sha256-hZlET8xI7mtDW1tiyVWrfZFPoeKkU9&#43;QxLl8yXaWZdE=" crossorigin="anonymous">
   <script defer src="/public/flexsearch.min.js"></script>
-  <script defer src="/public/en.search.min.49d7ffe0cc6a09481193582a484d1dfccfe14d6d173d2de804b6e37d7c5a9f57.js" integrity="sha256-Sdf/4MxqCUgRk1gqSE0d/M/hTW0XPS3oBLbjfXxan1c=" crossorigin="anonymous"></script>
+  <script defer src="/public/en.search.min.4bb5e7466a3eccb9a8f15179e75eb3db494fa9b6c697cb9d01e041d5deefcdac.js" integrity="sha256-S7XnRmo&#43;zLmo8VF5516z20lPqbbGl8udAeBB1d7vzaw=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book

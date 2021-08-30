@@ -19,7 +19,7 @@ By default, the src/assets/ folder and src/favicon.ico are copied over.
 你总能进一步复制配置资产使用项目配置文件。
 The array below does the same as the default one:" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://xilluo.gitee.io/public/posts/angluar-cli/%E9%A1%B9%E7%9B%AE%E8%B5%84%E6%BA%90%E8%AE%BE%E7%BD%AE/" /><meta property="article:section" content="posts" />
+<meta property="og:url" content="https://wangyijie.github.io.io/public/posts/angluar-cli/%E9%A1%B9%E7%9B%AE%E8%B5%84%E6%BA%90%E8%AE%BE%E7%BD%AE/" /><meta property="article:section" content="posts" />
 
 
 
@@ -28,7 +28,7 @@ The array below does the same as the default one:" />
 <link rel="icon" href="/public/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/public/book.min.8599444fcc48ee6b435b5b62c955ab7d914fa1e2a453df90c4b97cc9769665d1.css" integrity="sha256-hZlET8xI7mtDW1tiyVWrfZFPoeKkU9&#43;QxLl8yXaWZdE=" crossorigin="anonymous">
   <script defer src="/public/flexsearch.min.js"></script>
-  <script defer src="/public/en.search.min.49d7ffe0cc6a09481193582a484d1dfccfe14d6d173d2de804b6e37d7c5a9f57.js" integrity="sha256-Sdf/4MxqCUgRk1gqSE0d/M/hTW0XPS3oBLbjfXxan1c=" crossorigin="anonymous"></script>
+  <script defer src="/public/en.search.min.4bb5e7466a3eccb9a8f15179e75eb3db494fa9b6c697cb9d01e041d5deefcdac.js" integrity="sha256-S7XnRmo&#43;zLmo8VF5516z20lPqbbGl8udAeBB1d7vzaw=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -354,8 +354,8 @@ For instance, you can copy assets from a node package:<br>
 the project itself (scoped by <code>.angular-cli.json</code>). It is however possible to write assets outside
 the <code>dist/</code> build output folder during build.<br>
 因为涉及安全，CLI总是拒绝读或写它自身项目(由描述 <code>.angular-cli.json</code>)外的文件。然后它在构建的时可能写在的 <code>dist/</code> 外的。</p>
-<p>Because writing files in your project isn&rsquo;t an expected effect of <code>ng build</code>, it is disabled by
-default on every assets. In order to allow this behaviour, you need to set <code>allowOutsideOutDir</code>
+<p>Because writing files in your project isn&rsquo;t an expected effect of <code>ng build</code>, it is disabled by 
+default on every assets. In order to allow this behaviour, you need to set <code>allowOutsideOutDir</code> 
 to <code>true</code> on your asset definition, like so:<br>
 因为写文件在你的项目不是 <code>ng build</code> 预期的结果，它在资产上默认是关闭的，为了允许这种行为，你需要在你的资产定义设置 <code>allowOutsideOutDir</code> 为 <code>true</code> ，想这样：</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json"><span style="color:#e6db74">&#34;assets&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> [

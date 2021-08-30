@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>postgresql on A great computer technology Site</title>
-    <link>https://xilluo.gitee.io/public/posts/postgresql/</link>
+    <link>https://wangyijie.github.io.io/public/posts/postgresql/</link>
     <description>Recent content in postgresql on A great computer technology Site</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="https://xilluo.gitee.io/public/posts/postgresql/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language><atom:link href="https://wangyijie.github.io.io/public/posts/postgresql/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title></title>
-      <link>https://xilluo.gitee.io/public/posts/postgresql/postgresql-%E7%81%BE%E5%A4%87%E8%87%AA%E5%8A%A8%E9%85%8D%E7%BD%AE%E8%84%9A%E6%9C%AC-barman/</link>
+      <link>https://wangyijie.github.io.io/public/posts/postgresql/postgresql-%E7%81%BE%E5%A4%87%E8%87%AA%E5%8A%A8%E9%85%8D%E7%BD%AE%E8%84%9A%E6%9C%AC-barman/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://xilluo.gitee.io/public/posts/postgresql/postgresql-%E7%81%BE%E5%A4%87%E8%87%AA%E5%8A%A8%E9%85%8D%E7%BD%AE%E8%84%9A%E6%9C%AC-barman/</guid>
+      <guid>https://wangyijie.github.io.io/public/posts/postgresql/postgresql-%E7%81%BE%E5%A4%87%E8%87%AA%E5%8A%A8%E9%85%8D%E7%BD%AE%E8%84%9A%E6%9C%AC-barman/</guid>
       <description>前置条件：#postgreql版本：12+ barman版本：2.+ 运行环境：centos系列加上网
 脚本：#结合末尾的执行参数看更容易理解
-cat pg_disaster_recovery_with_barman.sh #!/bin/bash set -o nounset #遇到变量不存在，脚本报错 set -o xtrace # 打印执行命令 set -o errexit # 错误退出 set -o pipefail # 只要一个子命令失败，整个管道命令就失败，脚本就会终止执行 target=$1 # 设置本地yum源 function set_pg_repo(){ echo &amp;quot;[barman-pg] name=barman-pg-rhel7 baseurl=https://download.postgresql.org/pub/repos/yum/12/redhat/rhel-8-x86_64/ gpgcheck=0&amp;quot; &amp;gt; /etc/yum.repos.d/barman-pg.repo } function set_pg_admin_secret(){ echo &amp;quot;${pg_host}:5432:*:${pg_user}:${pg_password}&amp;quot; &amp;gt; ${HOME}/.pgpass chmod 600 ${HOME}/.pgpass } function create_pg_user_barman(){ psql -h ${pg_host} -U ${pg_user} -c &amp;quot;CREATE USER barman WITH superuser LOGIN REPLICATION createdb createrole ENCRYPTED password &#39;${pg_password}&#39;;&amp;quot; } function install_barman(){ yum install epel-release -y set_pg_repo yum install barman -y yum install postgresql12 -y } function config_barman(){ set_pg_repo install_barman set_pg_admin_secret create_pg_user_barman mkdir -p /var/lib/barman/ echo &amp;quot;${pg_host}:5432:*:barman:${pg_password}&amp;quot; &amp;gt;/var/lib/barman/.</description>
+cat pg_disaster_recovery_with_barman.sh#!/bin/bashset -o nounset #遇到变量不存在，脚本报错set -o xtrace # 打印执行命令set -o errexit # 错误退出set -o pipefail # 只要一个子命令失败，整个管道命令就失败，脚本就会终止执行target=$1# 设置本地yum源function set_pg_repo(){echo &amp;quot;[barman-pg]name=barman-pg-rhel7baseurl=https://download.postgresql.org/pub/repos/yum/12/redhat/rhel-8-x86_64/gpgcheck=0&amp;quot; &amp;gt; /etc/yum.repos.d/barman-pg.repo}function set_pg_admin_secret(){echo &amp;quot;${pg_host}:5432:*:${pg_user}:${pg_password}&amp;quot; &amp;gt; ${HOME}/.pgpasschmod 600 ${HOME}/.pgpass}function create_pg_user_barman(){psql -h ${pg_host} -U ${pg_user} -c &amp;quot;CREATE USER barman WITH superuser LOGIN REPLICATION createdb createrole ENCRYPTED password &#39;${pg_password}&#39;;&amp;quot;}function install_barman(){yum install epel-release -yset_pg_repoyum install barman -yyum install postgresql12 -y}function config_barman(){set_pg_repoinstall_barmanset_pg_admin_secretcreate_pg_user_barmanmkdir -p /var/lib/barman/echo &amp;quot;${pg_host}:5432:*:barman:${pg_password}&amp;quot; &amp;gt;/var/lib/barman/.</description>
     </item>
     
   </channel>

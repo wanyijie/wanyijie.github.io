@@ -7,15 +7,15 @@
 <meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="DevOps" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://xilluo.gitee.io/public/posts/devops/" />
+<meta property="og:url" content="https://wangyijie.github.io.io/public/posts/devops/" />
 
 <title>DevOps | A great computer technology Site</title>
 <link rel="manifest" href="/public/manifest.json">
 <link rel="icon" href="/public/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/public/book.min.8599444fcc48ee6b435b5b62c955ab7d914fa1e2a453df90c4b97cc9769665d1.css" integrity="sha256-hZlET8xI7mtDW1tiyVWrfZFPoeKkU9&#43;QxLl8yXaWZdE=" crossorigin="anonymous">
   <script defer src="/public/flexsearch.min.js"></script>
-  <script defer src="/public/en.search.min.49d7ffe0cc6a09481193582a484d1dfccfe14d6d173d2de804b6e37d7c5a9f57.js" integrity="sha256-Sdf/4MxqCUgRk1gqSE0d/M/hTW0XPS3oBLbjfXxan1c=" crossorigin="anonymous"></script>
-<link rel="alternate" type="application/rss+xml" href="https://xilluo.gitee.io/public/posts/devops/index.xml" title="A great computer technology Site" />
+  <script defer src="/public/en.search.min.4bb5e7466a3eccb9a8f15179e75eb3db494fa9b6c697cb9d01e041d5deefcdac.js" integrity="sha256-S7XnRmo&#43;zLmo8VF5516z20lPqbbGl8udAeBB1d7vzaw=" crossorigin="anonymous"></script>
+<link rel="alternate" type="application/rss+xml" href="https://wangyijie.github.io.io/public/posts/devops/index.xml" title="A great computer technology Site" />
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -327,7 +327,7 @@ https://github.com/alex-shpak/hugo-book
 
 
     <p>install docker#需要 docker-ce-18.03.+ docker-compose 1.23.+
-yum install -y http://mirror.azure.cn/docker-ce/linux/centos/7/x86_64/stable/Packages/docker-ce-cli-19.03.8-3.el7.x86_64.rpm systemctl start docker systemctl enable docker curl -o /usr/local/bin/docker-compose http://mirror.azure.cn/docker-toolbox/linux/compose/1.25.5/docker-compose-Linux-x86_64 chmod +x /usr/local/bin/docker-compose install pinpoint#cd /opt git clone https://github.com/naver/pinpoint-docker cd pinpoint-docker docker-compose pull docker-compose up -d
+yum install -y http://mirror.azure.cn/docker-ce/linux/centos/7/x86_64/stable/Packages/docker-ce-cli-19.03.8-3.el7.x86_64.rpmsystemctl start docker systemctl enable dockercurl -o /usr/local/bin/docker-compose http://mirror.azure.cn/docker-toolbox/linux/compose/1.25.5/docker-compose-Linux-x86_64 chmod +x /usr/local/bin/docker-compose install pinpoint#cd /opt git clone https://github.com/naver/pinpoint-docker cd pinpoint-docker docker-compose pull docker-compose up -d
 #访问 demo: 打开页面之后点各个连接产生访问数据 http://${your host}:8000
 web: http://${your host}:8079
 example#最后这一张图片是显示APM信息的,打开的方式是框住主页的访问数据点图,选择之后就会打开新页面#
@@ -350,7 +350,7 @@ example#最后这一张图片是显示APM信息的,打开的方式是框住�
 
     <p>日志收集可能因机器性能而产生延迟，filebeat默认10秒扫描一次文件，收集时间集中也会导致日志按时间排序混乱，container处理器会降低日志写入时间的精度，所以提取java输出日志的时间有利于排序查看日志，java日志的写入时间大多精确到微秒，可能不足以正确排序，还可以借助filebeat 记录的offset排序。 具体实现采用elasticsearch 的 ingest 节点功能，使用grok processor 从java日志中提取时间，
 定义 ingest pipeline, 注意时间格式:#参考：grok-patterns
-PUT _ingest/pipeline/get_java_time { &quot;description&quot;: &quot;get java time&quot;, &quot;processors&quot;: [ { &quot;grok&quot;: { &quot;field&quot;: &quot;message&quot;, &quot;patterns&quot;: [&quot;%{TIMESTAMP_ISO8601:logtime}&quot;] } } ] } 设置 mapping，明确时间格式，其它可以自行推断#PUT /filebeat-test { &quot;mappings&quot;: { &quot;properties&quot;: { &quot;logtime&quot;: { &quot;type&quot;: &quot;date&quot;, &quot;format&quot;: &quot;yyyy-MM-dd HH:mm:ss.SSS&quot;} } } } 写入log:#PUT filebeat-test/_doc/1?pipeline=get_java_time { &quot;log&quot;: { &quot;offset&quot;: 0, &quot;file&quot;: { &quot;path&quot;: &quot;/jsonfile/98f01b2565052a41ca90cf94442b4bde85e77547547da008c64b90956f723653/98f01b2565052a41ca90cf94442b4bde85e77547547da008c64b90956f723653-json.log&quot; } }, &quot;input&quot;: { &quot;type&quot;: &quot;container&quot; }, &quot;fields&quot;: { &quot;stack&quot;: &quot;test&quot;, &quot;tenant&quot;: &quot;default&quot;, &quot;log_source&quot;: &quot;test&quot;, &quot;log_topic&quot;: &quot;target_index&quot;, &quot;environment&quot;: &quot;192.
+PUT _ingest/pipeline/get_java_time{&quot;description&quot;: &quot;get java time&quot;, &quot;processors&quot;: [{&quot;grok&quot;: {&quot;field&quot;: &quot;message&quot;,&quot;patterns&quot;: [&quot;%{TIMESTAMP_ISO8601:logtime}&quot;]}}]}设置 mapping，明确时间格式，其它可以自行推断#PUT /filebeat-test{&quot;mappings&quot;: {&quot;properties&quot;: {&quot;logtime&quot;: { &quot;type&quot;: &quot;date&quot;, &quot;format&quot;: &quot;yyyy-MM-dd HH:mm:ss.SSS&quot;}}}}写入log:#PUT filebeat-test/_doc/1?pipeline=get_java_time{&quot;log&quot;: {&quot;offset&quot;: 0,&quot;file&quot;: {&quot;path&quot;: &quot;/jsonfile/98f01b2565052a41ca90cf94442b4bde85e77547547da008c64b90956f723653/98f01b2565052a41ca90cf94442b4bde85e77547547da008c64b90956f723653-json.log&quot;}},&quot;input&quot;: {&quot;type&quot;: &quot;container&quot;},&quot;fields&quot;: {&quot;stack&quot;: &quot;test&quot;,&quot;tenant&quot;: &quot;default&quot;,&quot;log_source&quot;: &quot;test&quot;,&quot;log_topic&quot;: &quot;target_index&quot;,&quot;environment&quot;: &quot;192.
         <a href="/public/posts/devops/filebeat-%E6%8F%90%E5%8F%96java%E6%97%B6%E9%97%B4/">...</a>
       
     </p>
@@ -393,7 +393,7 @@ PUT _ingest/pipeline/get_java_time { &quot;description&quot;: &quot;get java tim
 
     <p>Getting started with a workflow#To help you get started, this guide shows you some basic examples. For the full GitHub Actions documentation on workflows, see &ldquo;Configuring workflows.&rdquo;
 Customizing when workflow runs are triggered#  Set your workflow to run on push events to the master and release/* branches
-on: push: branches: - master - release/*   Set your workflow to run on pull_request events that target the master branch
+on:push:branches:- master- release/*  Set your workflow to run on pull_request events that target the master branch
         <a href="/public/posts/devops/github-actions/">...</a>
       
     </p>
@@ -474,7 +474,7 @@ sysctl命令被用于在内核运行时动态地修改内核的运行参数，�
 
 
     <p>The package is for el7, and there are assumptions based on el7 that are no longer true for RHEL8. For now, instead of running sudo yum install azure-cli, please follow the workaround to install azure-cli:
-$ sudo yum install python2 $ sudo yum install yum-utils $ sudo yumdownloader azure-cli $ sudo rpm -ivh --nodeps azure-cli-2.0.75-1.el7.x86_64.rpm Then edit the second line of /usr/bin/az (result of which az) to specify using python2: PYTHONPATH=/usr/lib64/az/lib/python2.
+$ sudo yum install python2$ sudo yum install yum-utils$ sudo yumdownloader azure-cli$ sudo rpm -ivh --nodeps azure-cli-2.0.75-1.el7.x86_64.rpmThen edit the second line of /usr/bin/az (result of which az) to specify using python2: PYTHONPATH=/usr/lib64/az/lib/python2.
         <a href="/public/posts/devops/redhat-rhel8-%E5%AE%89%E8%A3%85-azure-cli/">...</a>
       
     </p>

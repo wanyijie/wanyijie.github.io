@@ -7,15 +7,15 @@
 <meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="Kubernetes" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://xilluo.gitee.io/public/posts/kubernetes/" />
+<meta property="og:url" content="https://wangyijie.github.io.io/public/posts/kubernetes/" />
 
 <title>Kubernetes | A great computer technology Site</title>
 <link rel="manifest" href="/public/manifest.json">
 <link rel="icon" href="/public/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/public/book.min.8599444fcc48ee6b435b5b62c955ab7d914fa1e2a453df90c4b97cc9769665d1.css" integrity="sha256-hZlET8xI7mtDW1tiyVWrfZFPoeKkU9&#43;QxLl8yXaWZdE=" crossorigin="anonymous">
   <script defer src="/public/flexsearch.min.js"></script>
-  <script defer src="/public/en.search.min.49d7ffe0cc6a09481193582a484d1dfccfe14d6d173d2de804b6e37d7c5a9f57.js" integrity="sha256-Sdf/4MxqCUgRk1gqSE0d/M/hTW0XPS3oBLbjfXxan1c=" crossorigin="anonymous"></script>
-<link rel="alternate" type="application/rss+xml" href="https://xilluo.gitee.io/public/posts/kubernetes/index.xml" title="A great computer technology Site" />
+  <script defer src="/public/en.search.min.4bb5e7466a3eccb9a8f15179e75eb3db494fa9b6c697cb9d01e041d5deefcdac.js" integrity="sha256-S7XnRmo&#43;zLmo8VF5516z20lPqbbGl8udAeBB1d7vzaw=" crossorigin="anonymous"></script>
+<link rel="alternate" type="application/rss+xml" href="https://wangyijie.github.io.io/public/posts/kubernetes/index.xml" title="A great computer technology Site" />
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -346,7 +346,7 @@ https://github.com/alex-shpak/hugo-book
 
 
     <p>大概步骤# 获取镜像 ./sonobuoy images pull &ndash;e2e-repo-config custom-repos.yaml -dry-run 参考下面的脚本通过gcr.azk8s.cn代理地址下载gcr镜像上传到私有仓库 执行任务会在kubenetes里面创建pod启动任务 ./sonobuoy run &ndash;sonobuoy-image 172.20.8.7/library/sonobuoy:v0.17.2
-&ndash;kube-conformance-image 172.20.8.7/library/conformance:v1.15.10 等运行剩一个pod，大概几个小时的时间，检查结果 ./sonobuoy status 通过之后收集数据 results=$(./sonobuoy retrieve) ./sonobuoy results $results  #get command sonobuoy docker run -d --rm --name=sonobuoy sonobuoy/sonobuoy:v0.16 sleep 120 docker cp sonobuoy:/sonobuoy ./ # 私有仓库 registry=172.20.8.7 getImage(){ image=$1 docker pull $image docker $image tag ${registry}/library/${image##*/} docker push ${registry}/library/${image##*/} } kubeVersion=v1.15.10 getImage gcr.azk8s.cn/heptio-images/sonobuoy-plugin-systemd-logs:latest getImage gcr.azk8s.cn/google-containers/conformance:$kubeVersion ./sonobuoy run --sonobuoy-image 172.20.8.7/library/sonobuoy:v0.16\ --kube-conformance-image 172.
+&ndash;kube-conformance-image 172.20.8.7/library/conformance:v1.15.10 等运行剩一个pod，大概几个小时的时间，检查结果 ./sonobuoy status 通过之后收集数据 results=$(./sonobuoy retrieve) ./sonobuoy results $results  #get command sonobuoydocker run -d --rm --name=sonobuoy sonobuoy/sonobuoy:v0.16 sleep 120docker cp sonobuoy:/sonobuoy ./# 私有仓库registry=172.20.8.7getImage(){image=$1docker pull $imagedocker $image tag ${registry}/library/${image##*/}docker push ${registry}/library/${image##*/}}kubeVersion=v1.15.10getImage gcr.azk8s.cn/heptio-images/sonobuoy-plugin-systemd-logs:latestgetImage gcr.azk8s.cn/google-containers/conformance:$kubeVersion./sonobuoy run --sonobuoy-image 172.20.8.7/library/sonobuoy:v0.16\--kube-conformance-image 172.
         <a href="/public/posts/kubernetes/kubernetes-conformance-tests/">...</a>
       
     </p>
@@ -422,7 +422,7 @@ https://github.com/alex-shpak/hugo-book
 
 
     <p>我们在编写kubernetes资源清单的时候有很多细节不易记住，特别对于还不熟练的同学，寻找参考摸板是一件麻烦的事，下面介绍两种获取参考帮助的手段，足够大家无往不利
- kubectl get &ndash;export kubectl get -o yaml &ndash;export 我们编写清单可以在集群找一个现成的资源摸板,然后修改我们想要的信息在以此创建新的资源，这能解决大部分需要了， kubectl get -o yaml &ndash;export 命令获得的资源内容就一个完美的摸板，-o yaml 用的比较多，&ndash;export 关注的可能就比较少，它的作用是把资源在当前集群的一些个性化数据过滤掉，给你一个清爽的摸板，去感受一下吧！ kubectl explain 有时我们通过上面的方法能找到的摸板可能没有我们要的配置，这时需要去别处寻找参考，或者去查看api文档，其实都可以不用，kubectl explain 可以根据资源路径给对应资源的子对象，就是其可以包含的字段或对象，比如看一个我不知道configMap卷怎么写的栗子：  [root@Registry ~]# kubectl explain deployments.spec.template.spec.volumes.configMap RESOURCE: configMap &lt;Object&gt; DESCRIPTION: ConfigMap represents a configMap that should populate this volume Adapts a ConfigMap into a volume. FIELDS: defaultMode	&lt;integer&gt; Optional: mode bits to use on created files by default. Must be a value between 0 and 0777.
+ kubectl get &ndash;export kubectl get -o yaml &ndash;export 我们编写清单可以在集群找一个现成的资源摸板,然后修改我们想要的信息在以此创建新的资源，这能解决大部分需要了， kubectl get -o yaml &ndash;export 命令获得的资源内容就一个完美的摸板，-o yaml 用的比较多，&ndash;export 关注的可能就比较少，它的作用是把资源在当前集群的一些个性化数据过滤掉，给你一个清爽的摸板，去感受一下吧！ kubectl explain 有时我们通过上面的方法能找到的摸板可能没有我们要的配置，这时需要去别处寻找参考，或者去查看api文档，其实都可以不用，kubectl explain 可以根据资源路径给对应资源的子对象，就是其可以包含的字段或对象，比如看一个我不知道configMap卷怎么写的栗子：  [root@Registry ~]# kubectl explain deployments.spec.template.spec.volumes.configMapRESOURCE: configMap &lt;Object&gt;DESCRIPTION:ConfigMap represents a configMap that should populate this volumeAdapts a ConfigMap into a volume.FIELDS:defaultMode	&lt;integer&gt;Optional: mode bits to use on created files by default. Must be a valuebetween 0 and 0777.
         <a href="/public/posts/kubernetes/kubernetes-%E8%B5%84%E6%BA%90%E7%BC%96%E6%8E%92%E5%B8%AE%E5%8A%A9/">...</a>
       
     </p>
@@ -443,9 +443,9 @@ https://github.com/alex-shpak/hugo-book
 
 
     <p>从 v1.8 开始，kube-scheduler 支持定义 Pod 的优先级，从而保证高优先级的 Pod 优先调度。并从 v1.11 开始默认开启。 注：在 v1.8-v1.10 版本中的开启方法为
-apiserver 配置: --feature-gates=PodPriority=true --runtime-config=scheduling.k8s.io/v1alpha1=true kube-scheduler 配置: --feature-gates=PodPriority=true 在指定 Pod 的优先级之前需要先定义一个 PriorityClass（非 namespace 资源），如
-apiVersion: v1 kind: PriorityClass metadata: name: high-priority value: 1000000 globalDefault: false description: &quot;This priority class should be used for XYZ service pods only.&quot; 其中value 为 32 位整数的优先级，该值越大，优先级越高 globalDefault 用于未配置 PriorityClassName 的 Pod，整个集群中应该只有一个 PriorityClass 将其设置为 true 然后，在 PodSpec 中通过 PriorityClassName 设置 Pod 的优先级：
-apiVersion: v1 kind: Pod metadata: name: nginx labels: env: test spec: containers: - name: nginx image: nginx imagePullPolicy: IfNotPresent priorityClassName: high-priority 
+apiserver 配置: --feature-gates=PodPriority=true --runtime-config=scheduling.k8s.io/v1alpha1=truekube-scheduler 配置:--feature-gates=PodPriority=true在指定 Pod 的优先级之前需要先定义一个 PriorityClass（非 namespace 资源），如
+apiVersion: v1kind: PriorityClassmetadata:name: high-priorityvalue: 1000000globalDefault: falsedescription: &quot;This priority class should be used for XYZ service pods only.&quot;其中value 为 32 位整数的优先级，该值越大，优先级越高 globalDefault 用于未配置 PriorityClassName 的 Pod，整个集群中应该只有一个 PriorityClass 将其设置为 true 然后，在 PodSpec 中通过 PriorityClassName 设置 Pod 的优先级：
+apiVersion: v1kind: Podmetadata:name: nginxlabels:env: testspec:containers:- name: nginximage: nginximagePullPolicy: IfNotPresentpriorityClassName: high-priority
     </p>
   </article>
   
@@ -487,10 +487,10 @@ Chapter 1. Course Introduction# Welcome 1.1. Before You Begin 1.2. Course Int
 
     <p>kubeadm 默认证书为一年，一年过期后，会导致api service不可用，使用过程中会出现：x509: certificate has expired or is not yet valid.
 方案一 通过修改kubeadm 调整证书过期时间
-一、使用kubadm 更新证书#1. 查看证书有效期#kubeadm alpha certs check-expiration 2. 重新签发证书#kubeadm alpha certs renew admin.conf kubeadm alpha certs renew scheduler.conf kubeadm alpha certs renew controller-manager.conf 3. 重启控制平面使生效#重启kubelet会自动重新创建核心组件
-systemctl restart kubelet 4. 验证#kubeadm alpha certs check-expiration
+一、使用kubadm 更新证书#1. 查看证书有效期#kubeadm alpha certs check-expiration2. 重新签发证书#kubeadm alpha certs renew admin.confkubeadm alpha certs renew scheduler.conf kubeadm alpha certs renew controller-manager.conf3. 重启控制平面使生效#重启kubelet会自动重新创建核心组件
+systemctl restart kubelet4. 验证#kubeadm alpha certs check-expiration
 二、创建长期有效期证书#自己创建这四个文件需要的证书，替换四个文件使用的内嵌证书。我们自己创建的证书的有效期为50年，不再有过期的风险。步骤如下：
-生成证书：#cd /etc/kubernetes mkdir cert cd cert/ cat &gt; ca-config.
+生成证书：#cd /etc/kubernetesmkdir certcd cert/cat &gt; ca-config.
         <a href="/public/posts/kubernetes/kubernetes%E8%AF%81%E4%B9%A6%E7%BB%AD%E6%9C%9F/">...</a>
       
     </p>
@@ -511,7 +511,7 @@ systemctl restart kubelet 4. 验证#kubeadm alpha certs check-expiration
 
 
     <p>heapster已经不在维护，转由metrics-server 替代，没安装metrics-server pod命令和自动调度不能正常工作 项目地址：https://github.com/kubernetes-incubator/metrics-server 部署后可能不能正常收集数据，尝试添加下面的启动参数，kubelet-insecure-tls用于kubelet使用证书不满足认证添加，kubelet-preferred-address-types指名访问kubelet的地址类型，分别有：InternalIP,ExternalIP,Hostname
-- /metrics-server - --v=2 - --kubelet-insecure-tls - --kubelet-preferred-address-types=InternalIP 
+- /metrics-server- --v=2- --kubelet-insecure-tls- --kubelet-preferred-address-types=InternalIP
     </p>
   </article>
   

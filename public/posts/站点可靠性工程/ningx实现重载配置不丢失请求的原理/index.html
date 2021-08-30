@@ -9,7 +9,7 @@
 <meta property="og:description" content="前言#nginx启动时，会启动两个进程： 一个是Master进程和worker进程。
 改变配置后nginx做的事#1）改变了nginx配置之后，HUP signal的信号需要发送给主进程。 2）主进程首先会检测新配置的语法有效性。 3）尝试应用新的配置 1.打开日志文件，并且新分配一个socket来监听。 2.如果1失败，则回滚改变，还是会使用原有的配置。 3.如果1成功，则使用新的配置，新建一个线程。新建成功后发送一个关闭消息给旧的进程。要求旧线程优雅的关闭。 4.旧的线程 受到信号后会继续服务，当所有请求的客户端被服务后，旧线程关闭。 ———————————————— 修改配置后使用如下命令生效配置 nginx -s reload " />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://xilluo.gitee.io/public/posts/%E7%AB%99%E7%82%B9%E5%8F%AF%E9%9D%A0%E6%80%A7%E5%B7%A5%E7%A8%8B/ningx%E5%AE%9E%E7%8E%B0%E9%87%8D%E8%BD%BD%E9%85%8D%E7%BD%AE%E4%B8%8D%E4%B8%A2%E5%A4%B1%E8%AF%B7%E6%B1%82%E7%9A%84%E5%8E%9F%E7%90%86/" /><meta property="article:section" content="posts" />
+<meta property="og:url" content="https://wangyijie.github.io.io/public/posts/%E7%AB%99%E7%82%B9%E5%8F%AF%E9%9D%A0%E6%80%A7%E5%B7%A5%E7%A8%8B/ningx%E5%AE%9E%E7%8E%B0%E9%87%8D%E8%BD%BD%E9%85%8D%E7%BD%AE%E4%B8%8D%E4%B8%A2%E5%A4%B1%E8%AF%B7%E6%B1%82%E7%9A%84%E5%8E%9F%E7%90%86/" /><meta property="article:section" content="posts" />
 
 
 
@@ -18,7 +18,7 @@
 <link rel="icon" href="/public/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/public/book.min.8599444fcc48ee6b435b5b62c955ab7d914fa1e2a453df90c4b97cc9769665d1.css" integrity="sha256-hZlET8xI7mtDW1tiyVWrfZFPoeKkU9&#43;QxLl8yXaWZdE=" crossorigin="anonymous">
   <script defer src="/public/flexsearch.min.js"></script>
-  <script defer src="/public/en.search.min.49d7ffe0cc6a09481193582a484d1dfccfe14d6d173d2de804b6e37d7c5a9f57.js" integrity="sha256-Sdf/4MxqCUgRk1gqSE0d/M/hTW0XPS3oBLbjfXxan1c=" crossorigin="anonymous"></script>
+  <script defer src="/public/en.search.min.4bb5e7466a3eccb9a8f15179e75eb3db494fa9b6c697cb9d01e041d5deefcdac.js" integrity="sha256-S7XnRmo&#43;zLmo8VF5516z20lPqbbGl8udAeBB1d7vzaw=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book

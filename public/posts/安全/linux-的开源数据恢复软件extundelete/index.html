@@ -11,7 +11,7 @@ src/extundelete &ndash;help#A typical usage scenario is presented below. Note
 在利用 extundelete 恢复文件时并不依赖特定文件格式，首先extundelete会通过文件系统的inode信息（根目录的inode一般为2）来获得当前文件系统下所有文件的信息，包括存在的和已经删除的文件，这些信息包括文件名和inode。然后利用inode信息结合日志去查询该inode所在的block位置，包括直接块，间接块等信息。最后利用dd命令将这些信息备份出来，从而恢复数据文件。该工具最给力的一点就是支持ext3/ext4双格式分区恢复，基于整个磁盘的恢复功能较为强大。 注意：在实际线上恢复过程中，切勿将extundelete安装到你误删的文件所在硬盘，这样会有一定几率将需要恢复的数据彻底覆盖
 src/extundelete &ndash;help#A typical usage scenario is presented below. Note that some of the commands below require special permissions to complete. Adding &lsquo;sudo &#39; before the command is one way to ensure you have the necessary permissions. Assume you have deleted a file called /home/user/an/important/file. Also assume the output of the &lsquo;mount&rsquo; command shows this line (among others): /dev/sda3 on /home type ext3 (rw) This line shows that the /home directory is on the partition named /dev/sda3, so then run: umount /dev/sda3 and check that it is now unmounted by running the mount command again and seeing it is not listed." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://xilluo.gitee.io/public/posts/%E5%AE%89%E5%85%A8/linux-%E7%9A%84%E5%BC%80%E6%BA%90%E6%95%B0%E6%8D%AE%E6%81%A2%E5%A4%8D%E8%BD%AF%E4%BB%B6extundelete/" /><meta property="article:section" content="posts" />
+<meta property="og:url" content="https://wangyijie.github.io.io/public/posts/%E5%AE%89%E5%85%A8/linux-%E7%9A%84%E5%BC%80%E6%BA%90%E6%95%B0%E6%8D%AE%E6%81%A2%E5%A4%8D%E8%BD%AF%E4%BB%B6extundelete/" /><meta property="article:section" content="posts" />
 
 
 
@@ -20,7 +20,7 @@ src/extundelete &ndash;help#A typical usage scenario is presented below. Note
 <link rel="icon" href="/public/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/public/book.min.8599444fcc48ee6b435b5b62c955ab7d914fa1e2a453df90c4b97cc9769665d1.css" integrity="sha256-hZlET8xI7mtDW1tiyVWrfZFPoeKkU9&#43;QxLl8yXaWZdE=" crossorigin="anonymous">
   <script defer src="/public/flexsearch.min.js"></script>
-  <script defer src="/public/en.search.min.49d7ffe0cc6a09481193582a484d1dfccfe14d6d173d2de804b6e37d7c5a9f57.js" integrity="sha256-Sdf/4MxqCUgRk1gqSE0d/M/hTW0XPS3oBLbjfXxan1c=" crossorigin="anonymous"></script>
+  <script defer src="/public/en.search.min.4bb5e7466a3eccb9a8f15179e75eb3db494fa9b6c697cb9d01e041d5deefcdac.js" integrity="sha256-S7XnRmo&#43;zLmo8VF5516z20lPqbbGl8udAeBB1d7vzaw=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book

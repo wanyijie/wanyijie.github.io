@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>ansible on A great computer technology Site</title>
-    <link>https://wangyijie.github.io.io/public/posts/ansible/</link>
+    <link>https://wangyijie.github.io.io/blog/posts/ansible/</link>
     <description>Recent content in ansible on A great computer technology Site</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="https://wangyijie.github.io.io/public/posts/ansible/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language><atom:link href="https://wangyijie.github.io.io/blog/posts/ansible/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title></title>
-      <link>https://wangyijie.github.io.io/public/posts/ansible/ansible%E4%BD%BF%E7%94%A8%E4%B8%BB%E6%9C%BA%E6%B8%85%E5%8D%95/</link>
+      <link>https://wangyijie.github.io.io/blog/posts/ansible/ansible%E4%BD%BF%E7%94%A8%E4%B8%BB%E6%9C%BA%E6%B8%85%E5%8D%95/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://wangyijie.github.io.io/public/posts/ansible/ansible%E4%BD%BF%E7%94%A8%E4%B8%BB%E6%9C%BA%E6%B8%85%E5%8D%95/</guid>
+      <guid>https://wangyijie.github.io.io/blog/posts/ansible/ansible%E4%BD%BF%E7%94%A8%E4%B8%BB%E6%9C%BA%E6%B8%85%E5%8D%95/</guid>
       <description>Ansible同时针对基础架构中的多个系统。它通过选择Ansible库存中列出的系统部分来实现这一点，默认情况下将保存在该位置/etc/ansible/hosts。您可以使用命令行上的选项指定不同的清单文件。-i &amp;lt;path&amp;gt;
 此库存不仅可配置，还可以同时使用多个库存文件并从动态或云源或不同格式（YAML，ini等）中提取库存，如使用动态库存中所述。Ansible在2.4版本中引入了库存插件，使其具有灵活性和可定制性。
 主机和组#库存文件可以采用多种格式之一，具体取决于您拥有的库存插件。对于这个例子，格式/etc/ansible/hosts是类似INI的（Ansible的默认值之一），如下所示：

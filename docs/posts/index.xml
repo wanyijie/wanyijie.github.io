@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on A great computer technology Site</title>
-    <link>https://wangyijie.github.io.io/public/posts/</link>
+    <link>https://wangyijie.github.io.io/blog/posts/</link>
     <description>Recent content in Posts on A great computer technology Site</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="https://wangyijie.github.io.io/public/posts/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language><atom:link href="https://wangyijie.github.io.io/blog/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>post main page</title>
-      <link>https://wangyijie.github.io.io/public/posts/posts/</link>
+      <link>https://wangyijie.github.io.io/blog/posts/posts/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://wangyijie.github.io.io/public/posts/posts/</guid>
+      <guid>https://wangyijie.github.io.io/blog/posts/posts/</guid>
       <description>article is in the sub direcotry#</description>
     </item>
     

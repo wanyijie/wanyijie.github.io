@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>DevOps on A great computer technology Site</title>
-    <link>https://wangyijie.github.io.io/public/posts/devops/</link>
+    <link>https://wangyijie.github.io.io/blog/posts/devops/</link>
     <description>Recent content in DevOps on A great computer technology Site</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="https://wangyijie.github.io.io/public/posts/devops/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language><atom:link href="https://wangyijie.github.io.io/blog/posts/devops/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title></title>
-      <link>https://wangyijie.github.io.io/public/posts/devops/apm-pinpoint-install/</link>
+      <link>https://wangyijie.github.io.io/blog/posts/devops/apm-pinpoint-install/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://wangyijie.github.io.io/public/posts/devops/apm-pinpoint-install/</guid>
+      <guid>https://wangyijie.github.io.io/blog/posts/devops/apm-pinpoint-install/</guid>
       <description>install docker#需要 docker-ce-18.03.+ docker-compose 1.23.+
 yum install -y http://mirror.azure.cn/docker-ce/linux/centos/7/x86_64/stable/Packages/docker-ce-cli-19.03.8-3.el7.x86_64.rpmsystemctl start docker systemctl enable dockercurl -o /usr/local/bin/docker-compose http://mirror.azure.cn/docker-toolbox/linux/compose/1.25.5/docker-compose-Linux-x86_64 chmod +x /usr/local/bin/docker-compose install pinpoint#cd /opt git clone https://github.com/naver/pinpoint-docker cd pinpoint-docker docker-compose pull docker-compose up -d
 #访问 demo: 打开页面之后点各个连接产生访问数据 http://${your host}:8000
@@ -21,10 +21,10 @@ example#最后这一张图片是显示APM信息的,打开的方式是框住�
     
     <item>
       <title></title>
-      <link>https://wangyijie.github.io.io/public/posts/devops/filebeat-%E6%8F%90%E5%8F%96java%E6%97%B6%E9%97%B4/</link>
+      <link>https://wangyijie.github.io.io/blog/posts/devops/filebeat-%E6%8F%90%E5%8F%96java%E6%97%B6%E9%97%B4/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://wangyijie.github.io.io/public/posts/devops/filebeat-%E6%8F%90%E5%8F%96java%E6%97%B6%E9%97%B4/</guid>
+      <guid>https://wangyijie.github.io.io/blog/posts/devops/filebeat-%E6%8F%90%E5%8F%96java%E6%97%B6%E9%97%B4/</guid>
       <description>日志收集可能因机器性能而产生延迟，filebeat默认10秒扫描一次文件，收集时间集中也会导致日志按时间排序混乱，container处理器会降低日志写入时间的精度，所以提取java输出日志的时间有利于排序查看日志，java日志的写入时间大多精确到微秒，可能不足以正确排序，还可以借助filebeat 记录的offset排序。 具体实现采用elasticsearch 的 ingest 节点功能，使用grok processor 从java日志中提取时间，
 定义 ingest pipeline, 注意时间格式:#参考：grok-patterns
 PUT _ingest/pipeline/get_java_time{&amp;quot;description&amp;quot;: &amp;quot;get java time&amp;quot;, &amp;quot;processors&amp;quot;: [{&amp;quot;grok&amp;quot;: {&amp;quot;field&amp;quot;: &amp;quot;message&amp;quot;,&amp;quot;patterns&amp;quot;: [&amp;quot;%{TIMESTAMP_ISO8601:logtime}&amp;quot;]}}]}设置 mapping，明确时间格式，其它可以自行推断#PUT /filebeat-test{&amp;quot;mappings&amp;quot;: {&amp;quot;properties&amp;quot;: {&amp;quot;logtime&amp;quot;: { &amp;quot;type&amp;quot;: &amp;quot;date&amp;quot;, &amp;quot;format&amp;quot;: &amp;quot;yyyy-MM-dd HH:mm:ss.SSS&amp;quot;}}}}写入log:#PUT filebeat-test/_doc/1?pipeline=get_java_time{&amp;quot;log&amp;quot;: {&amp;quot;offset&amp;quot;: 0,&amp;quot;file&amp;quot;: {&amp;quot;path&amp;quot;: &amp;quot;/jsonfile/98f01b2565052a41ca90cf94442b4bde85e77547547da008c64b90956f723653/98f01b2565052a41ca90cf94442b4bde85e77547547da008c64b90956f723653-json.log&amp;quot;}},&amp;quot;input&amp;quot;: {&amp;quot;type&amp;quot;: &amp;quot;container&amp;quot;},&amp;quot;fields&amp;quot;: {&amp;quot;stack&amp;quot;: &amp;quot;test&amp;quot;,&amp;quot;tenant&amp;quot;: &amp;quot;default&amp;quot;,&amp;quot;log_source&amp;quot;: &amp;quot;test&amp;quot;,&amp;quot;log_topic&amp;quot;: &amp;quot;target_index&amp;quot;,&amp;quot;environment&amp;quot;: &amp;quot;192.</description>
@@ -32,20 +32,20 @@ PUT _ingest/pipeline/get_java_time{&amp;quot;description&amp;quot;: &amp;quot;
     
     <item>
       <title></title>
-      <link>https://wangyijie.github.io.io/public/posts/devops/filebeat%E5%AE%B9%E5%99%A8%E6%97%A5%E5%BF%97%E6%94%B6%E9%9B%86%E4%B9%8Bjava%E5%A4%9A%E8%A1%8C%E9%94%99%E8%AF%AF/</link>
+      <link>https://wangyijie.github.io.io/blog/posts/devops/filebeat%E5%AE%B9%E5%99%A8%E6%97%A5%E5%BF%97%E6%94%B6%E9%9B%86%E4%B9%8Bjava%E5%A4%9A%E8%A1%8C%E9%94%99%E8%AF%AF/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://wangyijie.github.io.io/public/posts/devops/filebeat%E5%AE%B9%E5%99%A8%E6%97%A5%E5%BF%97%E6%94%B6%E9%9B%86%E4%B9%8Bjava%E5%A4%9A%E8%A1%8C%E9%94%99%E8%AF%AF/</guid>
+      <guid>https://wangyijie.github.io.io/blog/posts/devops/filebeat%E5%AE%B9%E5%99%A8%E6%97%A5%E5%BF%97%E6%94%B6%E9%9B%86%E4%B9%8Bjava%E5%A4%9A%E8%A1%8C%E9%94%99%E8%AF%AF/</guid>
       <description>背景：#java日志出现错误的时候日志不再是一条一行，可能出来换行，这不适应默认的日志采集方式，正确的做法是使用规则确定行的开始，到下一个开始才是一行的结束，主流的日志收集插件都支持多行的配置定义。现在多用容器运行服务，日志输出到标准输出，这样使用日志采集工具去采集通过docker存储的日志文件，日志包含在json文本中，采集策略得对于调整。 在filebeat中使用container解析器，设置多行合并参数即可，细节如下：
 开始流程：#filebeat配置: filebeat.yml#filebeat.config.inputs: enabled: true path: inputs.d/*.yml reload.enabled: true reload.period: 10s filebeat.config.modules.path: ${path.config}/modules.d/*.yml output.elasticsearch: enabled: false hosts: &amp;#39;127.0.0.1:9200&amp;#39; username: &amp;#39;${ELASTICSEARCH_USERNAME:}&amp;#39; password: &amp;#39;${ELASTICSEARCH_PASSWORD:}&amp;#39; output.file: enabled: false path: &amp;#34;/tmp/filebeat&amp;#34; filename: filebeat output.console: pretty: true enabled: true 日志收集配置： cat inputs.d/java.yml#- type: container multiline.pattern: &amp;#39;^2020-07-15&amp;#39; multiline.negate: true multiline.match: after json.message_key: log # json.keys_under_root: false overwrite_keys: true paths: - /var/log/err.log 日志示例：/var/log/err.log#{&amp;quot;log&amp;quot;:&amp;quot;2020-07-15 03:15:35 [INFO ] [main] org.</description>
     </item>
     
     <item>
       <title></title>
-      <link>https://wangyijie.github.io.io/public/posts/devops/github-actions/</link>
+      <link>https://wangyijie.github.io.io/blog/posts/devops/github-actions/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://wangyijie.github.io.io/public/posts/devops/github-actions/</guid>
+      <guid>https://wangyijie.github.io.io/blog/posts/devops/github-actions/</guid>
       <description>Getting started with a workflow#To help you get started, this guide shows you some basic examples. For the full GitHub Actions documentation on workflows, see &amp;ldquo;Configuring workflows.&amp;rdquo;
 Customizing when workflow runs are triggered#  Set your workflow to run on push events to the master and release/* branches
 on:push:branches:- master- release/*  Set your workflow to run on pull_request events that target the master branch</description>
@@ -53,29 +53,29 @@ on:push:branches:- master- release/*  Set your workflow to run on pull_req
     
     <item>
       <title></title>
-      <link>https://wangyijie.github.io.io/public/posts/devops/github%E4%B8%8B%E8%BD%BD%E5%8A%A0%E9%80%9F/</link>
+      <link>https://wangyijie.github.io.io/blog/posts/devops/github%E4%B8%8B%E8%BD%BD%E5%8A%A0%E9%80%9F/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://wangyijie.github.io.io/public/posts/devops/github%E4%B8%8B%E8%BD%BD%E5%8A%A0%E9%80%9F/</guid>
+      <guid>https://wangyijie.github.io.io/blog/posts/devops/github%E4%B8%8B%E8%BD%BD%E5%8A%A0%E9%80%9F/</guid>
       <description>同步了一万多个，希望有你要的 https://gitee.com/mirrors</description>
     </item>
     
     <item>
       <title></title>
-      <link>https://wangyijie.github.io.io/public/posts/devops/knative-evening-cicd/</link>
+      <link>https://wangyijie.github.io.io/blog/posts/devops/knative-evening-cicd/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://wangyijie.github.io.io/public/posts/devops/knative-evening-cicd/</guid>
+      <guid>https://wangyijie.github.io.io/blog/posts/devops/knative-evening-cicd/</guid>
       <description>最近我考虑轻量的CICD系统，就我了解的除了云服务就jekins集合git事件比较完善一点，其实开源的cicd系统并不多，大部分半开源的，jenkins运行几下就要五六G内存，实在不亲民。
 基于knative evening 事件系统可以很容易开发一个kubernetes原生的自动部署系统，甚至可以做更多 https://knative.dev/docs/eventing/samples/helloworld/helloworld-go/</description>
     </item>
     
     <item>
       <title></title>
-      <link>https://wangyijie.github.io.io/public/posts/devops/linux-sysctl-conf-%E5%92%8C-limits-conf/</link>
+      <link>https://wangyijie.github.io.io/blog/posts/devops/linux-sysctl-conf-%E5%92%8C-limits-conf/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://wangyijie.github.io.io/public/posts/devops/linux-sysctl-conf-%E5%92%8C-limits-conf/</guid>
+      <guid>https://wangyijie.github.io.io/blog/posts/devops/linux-sysctl-conf-%E5%92%8C-limits-conf/</guid>
       <description>【sysctl.conf工作原理】
 sysctl命令被用于在内核运行时动态地修改内核的运行参数，可用的内核参数在目录/proc/sys中。它包含一些TCP/IP堆栈和虚拟内存系统的高级选项， 这可以让有经验的管理员提高引人注目的系统性能。用sysctl可以读取设置超过五百个系统变量。
 【sysctl.conf设置】
@@ -84,20 +84,20 @@ sysctl命令被用于在内核运行时动态地修改内核的运行参数，�
     
     <item>
       <title></title>
-      <link>https://wangyijie.github.io.io/public/posts/devops/redhat-rhel8-%E5%AE%89%E8%A3%85-azure-cli/</link>
+      <link>https://wangyijie.github.io.io/blog/posts/devops/redhat-rhel8-%E5%AE%89%E8%A3%85-azure-cli/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://wangyijie.github.io.io/public/posts/devops/redhat-rhel8-%E5%AE%89%E8%A3%85-azure-cli/</guid>
+      <guid>https://wangyijie.github.io.io/blog/posts/devops/redhat-rhel8-%E5%AE%89%E8%A3%85-azure-cli/</guid>
       <description>The package is for el7, and there are assumptions based on el7 that are no longer true for RHEL8. For now, instead of running sudo yum install azure-cli, please follow the workaround to install azure-cli:
 $ sudo yum install python2$ sudo yum install yum-utils$ sudo yumdownloader azure-cli$ sudo rpm -ivh --nodeps azure-cli-2.0.75-1.el7.x86_64.rpmThen edit the second line of /usr/bin/az (result of which az) to specify using python2: PYTHONPATH=/usr/lib64/az/lib/python2.</description>
     </item>
     
     <item>
       <title></title>
-      <link>https://wangyijie.github.io.io/public/posts/devops/%E4%BB%80%E4%B9%88%E6%98%AF%E7%8E%B0%E5%9C%BA%E5%8F%AF%E9%9D%A0%E6%80%A7%E5%B7%A5%E7%A8%8B/</link>
+      <link>https://wangyijie.github.io.io/blog/posts/devops/%E4%BB%80%E4%B9%88%E6%98%AF%E7%8E%B0%E5%9C%BA%E5%8F%AF%E9%9D%A0%E6%80%A7%E5%B7%A5%E7%A8%8B/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://wangyijie.github.io.io/public/posts/devops/%E4%BB%80%E4%B9%88%E6%98%AF%E7%8E%B0%E5%9C%BA%E5%8F%AF%E9%9D%A0%E6%80%A7%E5%B7%A5%E7%A8%8B/</guid>
+      <guid>https://wangyijie.github.io.io/blog/posts/devops/%E4%BB%80%E4%B9%88%E6%98%AF%E7%8E%B0%E5%9C%BA%E5%8F%AF%E9%9D%A0%E6%80%A7%E5%B7%A5%E7%A8%8B/</guid>
       <description>什么是SRE(Site Reliability Engineering)？
 从根本上说，当您要求软件工程师设计操作功能时会发生这种情况。软件工程师倾向于使用软件来解决历史上手工解决的问题。因此，当需要创建一个正式的团队来完成这项运营工作时，很自然地将“一切都视为软件问题”的方法与之一起运行。
 因此，SRE从根本上开展了一项历史上由运营团队完成的工作，但使用具有软件专业知识的工程师，并依赖于这些工程师本身就倾向于并且有能力替代人工自动化的事实。
@@ -133,10 +133,10 @@ SRE如何确保一旦启动，就能正确维护？
     
     <item>
       <title></title>
-      <link>https://wangyijie.github.io.io/public/posts/devops/%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95vs%E5%8E%8B%E5%8A%9B%E6%B5%8B%E8%AF%95/</link>
+      <link>https://wangyijie.github.io.io/blog/posts/devops/%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95vs%E5%8E%8B%E5%8A%9B%E6%B5%8B%E8%AF%95/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://wangyijie.github.io.io/public/posts/devops/%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95vs%E5%8E%8B%E5%8A%9B%E6%B5%8B%E8%AF%95/</guid>
+      <guid>https://wangyijie.github.io.io/blog/posts/devops/%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95vs%E5%8E%8B%E5%8A%9B%E6%B5%8B%E8%AF%95/</guid>
       <description>软件测试包括不同的测试实践，比如单元测试、集成测试、UAT测试和可访问性测试等。每种测试实践在软件开发生命周期(SDLC)中都有重要的地位和作用。
 在不同类型的测试中，一些测试有助于改善应用程序的性能，比如性能测试、压力测试和负载测试。虽然这些测试的目的是改善系统性能，但是每种测试实践都有不同的策略。因此，测试应用程序的性能时，了解这些测试实践之间的区别并执行合适的测试显得至关重要。
 质量保证工程师常常为选择合适的性能测试以改善应用程序的行为而感到困惑。有许多测试实践可以改善应用程序的性能，比如性能测试、负载测试和压力测试。

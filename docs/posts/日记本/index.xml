@@ -2,34 +2,34 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>notes on A great computer technology Site</title>
-    <link>https://wangyijie.github.io.io/public/posts/%E6%97%A5%E8%AE%B0%E6%9C%AC/</link>
+    <link>https://wangyijie.github.io.io/blog/posts/%E6%97%A5%E8%AE%B0%E6%9C%AC/</link>
     <description>Recent content in notes on A great computer technology Site</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="https://wangyijie.github.io.io/public/posts/%E6%97%A5%E8%AE%B0%E6%9C%AC/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language><atom:link href="https://wangyijie.github.io.io/blog/posts/%E6%97%A5%E8%AE%B0%E6%9C%AC/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title></title>
-      <link>https://wangyijie.github.io.io/public/posts/%E6%97%A5%E8%AE%B0%E6%9C%AC/2018-12-21/</link>
+      <link>https://wangyijie.github.io.io/blog/posts/%E6%97%A5%E8%AE%B0%E6%9C%AC/2018-12-21/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://wangyijie.github.io.io/public/posts/%E6%97%A5%E8%AE%B0%E6%9C%AC/2018-12-21/</guid>
+      <guid>https://wangyijie.github.io.io/blog/posts/%E6%97%A5%E8%AE%B0%E6%9C%AC/2018-12-21/</guid>
       <description>where is you from?</description>
     </item>
     
     <item>
       <title></title>
-      <link>https://wangyijie.github.io.io/public/posts/%E6%97%A5%E8%AE%B0%E6%9C%AC/2020-01-16/</link>
+      <link>https://wangyijie.github.io.io/blog/posts/%E6%97%A5%E8%AE%B0%E6%9C%AC/2020-01-16/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://wangyijie.github.io.io/public/posts/%E6%97%A5%E8%AE%B0%E6%9C%AC/2020-01-16/</guid>
+      <guid>https://wangyijie.github.io.io/blog/posts/%E6%97%A5%E8%AE%B0%E6%9C%AC/2020-01-16/</guid>
       <description></description>
     </item>
     
     <item>
       <title></title>
-      <link>https://wangyijie.github.io.io/public/posts/%E6%97%A5%E8%AE%B0%E6%9C%AC/difference-of-game-match-competition-and-contest/</link>
+      <link>https://wangyijie.github.io.io/blog/posts/%E6%97%A5%E8%AE%B0%E6%9C%AC/difference-of-game-match-competition-and-contest/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://wangyijie.github.io.io/public/posts/%E6%97%A5%E8%AE%B0%E6%9C%AC/difference-of-game-match-competition-and-contest/</guid>
+      <guid>https://wangyijie.github.io.io/blog/posts/%E6%97%A5%E8%AE%B0%E6%9C%AC/difference-of-game-match-competition-and-contest/</guid>
       <description>【1】game： 指决定胜负的比赛，游戏，通常有一定的规则，参加者必须遵守，且多以个人对抗或集体对抗形式根据一定的规则进行的比赛。
 【2】match： 多指重要的，参加队数较多的大型体育运动项目比赛，隐含势均力敌意味。
 【3】competition： 多指体育运动中的各项比赛、角逐，也指知识、技巧等方面的竞赛。
@@ -38,48 +38,48 @@
     
     <item>
       <title></title>
-      <link>https://wangyijie.github.io.io/public/posts/%E6%97%A5%E8%AE%B0%E6%9C%AC/kubernetes-flannel-%E7%BD%91%E7%BB%9C%E6%B5%81%E7%A8%8B%E7%86%9F%E7%BB%83/</link>
+      <link>https://wangyijie.github.io.io/blog/posts/%E6%97%A5%E8%AE%B0%E6%9C%AC/kubernetes-flannel-%E7%BD%91%E7%BB%9C%E6%B5%81%E7%A8%8B%E7%86%9F%E7%BB%83/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://wangyijie.github.io.io/public/posts/%E6%97%A5%E8%AE%B0%E6%9C%AC/kubernetes-flannel-%E7%BD%91%E7%BB%9C%E6%B5%81%E7%A8%8B%E7%86%9F%E7%BB%83/</guid>
+      <guid>https://wangyijie.github.io.io/blog/posts/%E6%97%A5%E8%AE%B0%E6%9C%AC/kubernetes-flannel-%E7%BD%91%E7%BB%9C%E6%B5%81%E7%A8%8B%E7%86%9F%E7%BB%83/</guid>
       <description>pod IP docker 把容器网络命名空间隐藏起来了，查看容器网络需要把对应的网络命名空间显示出来： 容器Id:10316
 把容器网络命名空间链接到主机,这样主机就可以管理容器网络 ln -s /proc/10316/ns/net /var/run/netns/10316 查看网络命名空间  ip netns 在网络命名空间内执行命令  [root@k8s01 ~]# ip netns exec 10316 ip a1: lo: &amp;lt;LOOPBACK,UP,LOWER_UP&amp;gt; mtu 65536 qdisc noqueue state UNKNOWN qlen 1link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00inet 127.0.0.1/8 scope host lovalid_lft forever preferred_lft foreverinet6 ::1/128 scope host valid_lft forever preferred_lft forever3: eth0@if40: &amp;lt;BROADCAST,MULTICAST,UP,LOWER_UP&amp;gt; mtu 1450 qdisc noqueue state UP link/ether 0a:58:0a:f4:02:f6 brd ff:ff:ff:ff:ff:ff link-netnsid 0inet 10.</description>
     </item>
     
     <item>
       <title></title>
-      <link>https://wangyijie.github.io.io/public/posts/%E6%97%A5%E8%AE%B0%E6%9C%AC/kubernetes%E6%8E%A7%E5%88%B6%E6%9C%BA%E5%88%B6%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99/</link>
+      <link>https://wangyijie.github.io.io/blog/posts/%E6%97%A5%E8%AE%B0%E6%9C%AC/kubernetes%E6%8E%A7%E5%88%B6%E6%9C%BA%E5%88%B6%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://wangyijie.github.io.io/public/posts/%E6%97%A5%E8%AE%B0%E6%9C%AC/kubernetes%E6%8E%A7%E5%88%B6%E6%9C%BA%E5%88%B6%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99/</guid>
+      <guid>https://wangyijie.github.io.io/blog/posts/%E6%97%A5%E8%AE%B0%E6%9C%AC/kubernetes%E6%8E%A7%E5%88%B6%E6%9C%BA%E5%88%B6%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99/</guid>
       <description> **控制逻辑应该只依赖于当前状态。**这是为了保证分布式系统的稳定可靠，对于经常出现局部错误的分布式系统，如果控制逻辑只依赖当前状态，那么就非常容易将一个暂时出现故障的系统恢复到正常状态，因为你只要将该系统重置到某个稳定状态，就可以自信的知道系统的所有控制逻辑会开始按照正常方式运行。 **假设任何错误的可能，并做容错处理。**在一个分布式系统中出现局部和临时错误是大概率事件。错误可能来自于物理系统故障，外部系统故障也可能来自于系统自身的代码错误，依靠自己实现的代码不会出错来保证系统稳定其实也是难以实现的，因此要设计对任何可能错误的容错处理。 **尽量避免复杂状态机，控制逻辑不要依赖无法监控的内部状态。**因为分布式系统各个子系统都是不能严格通过程序内部保持同步的，所以如果两个子系统的控制逻辑如果互相有影响，那么子系统就一定要能互相访问到影响控制逻辑的状态，否则，就等同于系统里存在不确定的控制逻辑。 **假设任何操作都可能被任何操作对象拒绝，甚至被错误解析。**由于分布式系统的复杂性以及各子系统的相对独立性，不同子系统经常来自不同的开发团队，所以不能奢望任何操作被另一个子系统以正确的方式处理，要保证出现错误的时候，操作级别的错误不会影响到系统稳定性。 **每个模块都可以在出错后自动恢复。**由于分布式系统中无法保证系统各个模块是始终连接的，因此每个模块要有自我修复的能力，保证不会因为连接不到其他模块而自我崩溃。 **每个模块都可以在必要时优雅地降级服务。**所谓优雅地降级服务，是对系统鲁棒性的要求，即要求在设计实现模块时划分清楚基本功能和高级功能，保证基本功能不会依赖高级功能，这样同时就保证了不会因为高级功能出现故障而导致整个模块崩溃。根据这种理念实现的系统，也更容易快速地增加新的高级功能，因为不必担心引入高级功能影响原有的基本功能。  </description>
     </item>
     
     <item>
       <title></title>
-      <link>https://wangyijie.github.io.io/public/posts/%E6%97%A5%E8%AE%B0%E6%9C%AC/openvpn%E5%AE%89%E8%A3%85%E5%8F%8A%E5%AE%A2%E6%88%B7%E7%AB%AF%E9%85%8D%E7%BD%AE%E5%88%9B%E5%BB%BA/</link>
+      <link>https://wangyijie.github.io.io/blog/posts/%E6%97%A5%E8%AE%B0%E6%9C%AC/openvpn%E5%AE%89%E8%A3%85%E5%8F%8A%E5%AE%A2%E6%88%B7%E7%AB%AF%E9%85%8D%E7%BD%AE%E5%88%9B%E5%BB%BA/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://wangyijie.github.io.io/public/posts/%E6%97%A5%E8%AE%B0%E6%9C%AC/openvpn%E5%AE%89%E8%A3%85%E5%8F%8A%E5%AE%A2%E6%88%B7%E7%AB%AF%E9%85%8D%E7%BD%AE%E5%88%9B%E5%BB%BA/</guid>
+      <guid>https://wangyijie.github.io.io/blog/posts/%E6%97%A5%E8%AE%B0%E6%9C%AC/openvpn%E5%AE%89%E8%A3%85%E5%8F%8A%E5%AE%A2%E6%88%B7%E7%AB%AF%E9%85%8D%E7%BD%AE%E5%88%9B%E5%BB%BA/</guid>
       <description>文档即命令行#OVPN_DATA=&amp;quot;vpn-data&amp;quot;docker volume create --name $OVPN_DATAdocker run -v $OVPN_DATA:/etc/openvpn --log-driver=none --rm # udp://112.60.90.13:1194 指定服务器地址协议端口, 默认1194dockerhub.azk8s.cn/kylemanna/openvpn ovpn_genconfig -u udp://112.60.90.13docker run -v $OVPN_DATA:/etc/openvpn -it --log-driver=none --rm dockerhub.azk8s.cn/kylemanna/openvpn ovpn_initpkidocker run -v $OVPN_DATA:/etc/openvpn -d -p 1194:1194/udp --cap-add=NET_ADMIN dockerhub.azk8s.cn/kylemanna/openvpndocker run -v $OVPN_DATA:/etc/openvpn --log-driver=none --rm -it dockerhub.azk8s.cn/kylemanna/openvpn easyrsa build-client-full wangyijie nopassdocker volume lsdocker volume inspect vpn-data cd /var/lib/docker/volumes/vpn-data/_datals pki/private/wangyijie.key docker run -v $OVPN_DATA:/etc/openvpn --log-driver=none --rm dockerhub.</description>
     </item>
     
     <item>
       <title></title>
-      <link>https://wangyijie.github.io.io/public/posts/%E6%97%A5%E8%AE%B0%E6%9C%AC/%E4%BE%BF%E6%8D%B7golang%E5%BC%80%E5%8F%91/</link>
+      <link>https://wangyijie.github.io.io/blog/posts/%E6%97%A5%E8%AE%B0%E6%9C%AC/%E4%BE%BF%E6%8D%B7golang%E5%BC%80%E5%8F%91/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://wangyijie.github.io.io/public/posts/%E6%97%A5%E8%AE%B0%E6%9C%AC/%E4%BE%BF%E6%8D%B7golang%E5%BC%80%E5%8F%91/</guid>
+      <guid>https://wangyijie.github.io.io/blog/posts/%E6%97%A5%E8%AE%B0%E6%9C%AC/%E4%BE%BF%E6%8D%B7golang%E5%BC%80%E5%8F%91/</guid>
       <description>go语言之旅：https://tour.go-zh.org/ 如何使用go编程：https://go-zh.org/doc/code.html 时效go编程：https://go-zh.org/doc/effective_go.html golang安装包下载：https://gomirrors.org/ go mod 代理地址：https://goproxy.io/
 bash## Enable the go modules feature export GO111MODULE=on # Set the GOPROXY environment variable export GOPROXY=https://goproxy.io PowerShell## Enable the go modules feature $env:GO111MODULE=on # Set the GOPROXY environment variable $env:GOPROXY=https://goproxy.io Go version &amp;gt;= 1.13#go env -w GOPROXY=https://goproxy.io, direct# Set environment variable allow bypassing the proxy for selected modulesgo env -w GOPRIVATE=*.corp.example.com</description>
     </item>
     
     <item>
       <title></title>
-      <link>https://wangyijie.github.io.io/public/posts/%E6%97%A5%E8%AE%B0%E6%9C%AC/%E6%83%85%E5%A2%83%E5%AD%A6%E4%B9%A0%E7%90%86%E8%AE%BA/</link>
+      <link>https://wangyijie.github.io.io/blog/posts/%E6%97%A5%E8%AE%B0%E6%9C%AC/%E6%83%85%E5%A2%83%E5%AD%A6%E4%B9%A0%E7%90%86%E8%AE%BA/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://wangyijie.github.io.io/public/posts/%E6%97%A5%E8%AE%B0%E6%9C%AC/%E6%83%85%E5%A2%83%E5%AD%A6%E4%B9%A0%E7%90%86%E8%AE%BA/</guid>
+      <guid>https://wangyijie.github.io.io/blog/posts/%E6%97%A5%E8%AE%B0%E6%9C%AC/%E6%83%85%E5%A2%83%E5%AD%A6%E4%B9%A0%E7%90%86%E8%AE%BA/</guid>
       <description>情境学习理论认为，学习不仅仅是一个个体性的意义建构的心理过程，而更是一个社会性的、实践性的、以差异资源为中介的参与过程。知识的意义连同学习者自身的意识与角色都是在学习者和学习情境的互动、学习者与学习者之间的互动过程生成的，因此学习情境的创设就致力于将学习者的身份和角色意识、完整的生活经验、以及认知性任务重新回归到真实的、融合的状态，由此力图解决传统学校学习的去自我、去情境的顽疾。
 正是基于对知识的社会性和情境性的主张，情境学习理论告诉我们：学习的本质就是对话，在学习的过程中所经历的就是广泛的社会协商。而“学习的快乐就是走向对话”。
 简单说来，情境学习是指在要学习的知识、技能的应用情境中进行学习的方式。也就是说，你要学习的东西将实际应用在什么情境中，那么你就应该在什么样的情境中学习这些东西。“在哪里用，就在哪里学。”譬如，你要学习做菜，就应该在厨房里学习，因为你以后炒菜就是在厨房里。再如，你要学习讨价还价的技巧，就应该在实际的销售场合学习，因为这一技巧最终是用在销售场合的。
@@ -88,10 +88,10 @@ bash## Enable the go modules feature export GO111MODULE=on # Set the GOPROXY 
     
     <item>
       <title></title>
-      <link>https://wangyijie.github.io.io/public/posts/%E6%97%A5%E8%AE%B0%E6%9C%AC/%E8%8B%B1%E8%AF%AD%E5%AD%A6%E4%B9%A0%E7%BD%91%E7%AB%99/</link>
+      <link>https://wangyijie.github.io.io/blog/posts/%E6%97%A5%E8%AE%B0%E6%9C%AC/%E8%8B%B1%E8%AF%AD%E5%AD%A6%E4%B9%A0%E7%BD%91%E7%AB%99/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://wangyijie.github.io.io/public/posts/%E6%97%A5%E8%AE%B0%E6%9C%AC/%E8%8B%B1%E8%AF%AD%E5%AD%A6%E4%B9%A0%E7%BD%91%E7%AB%99/</guid>
+      <guid>https://wangyijie.github.io.io/blog/posts/%E6%97%A5%E8%AE%B0%E6%9C%AC/%E8%8B%B1%E8%AF%AD%E5%AD%A6%E4%B9%A0%E7%BD%91%E7%AB%99/</guid>
       <description>英语学习网站对自学者来说就像是寻觅家园，一旦找到，内心会平静下来，一扫喧嚣尘世间的烦恼。现在我坐在家里阳光明媚的窗下，理理思路，给大家一一道来这些英语学习网站的妙用，希望你们也喜欢，就像我一直听的老歌，耳畔回响起美妙的音乐，我就会满血复活，忍不住和大家分享，希望你们喜欢。
 1、读书非读教材，是读真实语料
 当学生时，每每盼着老师到我们宿舍一起吃午饭，饭后她不多聊，慢悠悠地取出英文的Reader&amp;rsquo;s Digest, 一个人悄悄地读，虽然宿舍有8个女生，我们也都会安静下来，不想打扰她阅读。就这样，当别人在读三毛的《撒哈拉日记》时，我们宿舍的女生在读英文小说。

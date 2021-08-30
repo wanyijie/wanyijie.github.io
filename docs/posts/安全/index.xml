@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>safe on A great computer technology Site</title>
-    <link>https://wangyijie.github.io.io/public/posts/%E5%AE%89%E5%85%A8/</link>
+    <link>https://wangyijie.github.io.io/blog/posts/%E5%AE%89%E5%85%A8/</link>
     <description>Recent content in safe on A great computer technology Site</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="https://wangyijie.github.io.io/public/posts/%E5%AE%89%E5%85%A8/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language><atom:link href="https://wangyijie.github.io.io/blog/posts/%E5%AE%89%E5%85%A8/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title></title>
-      <link>https://wangyijie.github.io.io/public/posts/%E5%AE%89%E5%85%A8/kubernetes-opaopen-policy-agent/</link>
+      <link>https://wangyijie.github.io.io/blog/posts/%E5%AE%89%E5%85%A8/kubernetes-opaopen-policy-agent/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://wangyijie.github.io.io/public/posts/%E5%AE%89%E5%85%A8/kubernetes-opaopen-policy-agent/</guid>
+      <guid>https://wangyijie.github.io.io/blog/posts/%E5%AE%89%E5%85%A8/kubernetes-opaopen-policy-agent/</guid>
       <description>在本文中，我们将演示如何使用OPA执行最细粒度的安全策略。请注意，本文是一个系列的一部分，我们将基于“OPA作为代码介绍”和“集成OPA到Kubernetes”中获得的知识进行。如果你还没有这样做，请浏览本系列中已发表的文章。
 https://www.magalix.com/blog/introducing-policy-as-code-the-open-policy-agent-opa https://www.magalix.com/blog/integrating-open-policy-agent-opa-with-kubernetes-a-deep-dive-tutorial
 你可能已经熟悉Pod安全策略，可以在其中对Pod应用非常特定的安全控制。例如，使用Linux内核功能，使用主机命名空间、网络、端口或文件系统，以及其他许多功能。使用OPA，你还可以对pods施加类似的控制，在本实验室中，我们将创建一个OPA策略，不允许在pods中创建有特权的容器。特权容器对主机的访问级别比非特权容器高。
@@ -34,10 +34,10 @@ kubectl -n default apply -f - &amp;lt;&amp;lt;EOTapiVersion: v1kind: Podmetad
     
     <item>
       <title></title>
-      <link>https://wangyijie.github.io.io/public/posts/%E5%AE%89%E5%85%A8/kubernetes-pod-%E5%AE%89%E5%85%A8%E7%AD%96%E7%95%A5psp%E9%85%8D%E7%BD%AE/</link>
+      <link>https://wangyijie.github.io.io/blog/posts/%E5%AE%89%E5%85%A8/kubernetes-pod-%E5%AE%89%E5%85%A8%E7%AD%96%E7%95%A5psp%E9%85%8D%E7%BD%AE/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://wangyijie.github.io.io/public/posts/%E5%AE%89%E5%85%A8/kubernetes-pod-%E5%AE%89%E5%85%A8%E7%AD%96%E7%95%A5psp%E9%85%8D%E7%BD%AE/</guid>
+      <guid>https://wangyijie.github.io.io/blog/posts/%E5%AE%89%E5%85%A8/kubernetes-pod-%E5%AE%89%E5%85%A8%E7%AD%96%E7%95%A5psp%E9%85%8D%E7%BD%AE/</guid>
       <description>Kubernetes Pod 安全策略(PSP)配置 默认情况下，Kubernetes 允许创建一个有特权容器的 Pod，这些容器很可能会危机系统安全，而 Pod 安全策略（PSP）则通过确保请求者有权限按配置来创建 Pod，从而来保护集群免受特权 Pod 的影响。
 PodSecurityPolicy 是 Kubernetes API 对象，你可以在不对 Kubernetes 进行任何修改的情况下创建它们，但是，默认情况下不会强制执行我们创建的一些策略，我们需要一个准入控制器、kube-controller-manager 配置以及 RBAC 权限配置，下面我们就来对这些配置进行一一说明。Kubernetes Pod 安全策略(PSP)配置kubernetes pspAdmission ControllerAdmission Controller（准入控制器）拦截对 kube-apiserver 的请求，拦截发生在请求的对象被持久化之前，但是在请求被验证和授权之后。这样我们就可以查看请求对象的来源，并验证需要的内容是否正确。通过将它们添加到 kube-apiserver 的enable-admission-plugins参数中来启用准入控制器。在1.10版本之前，使用现在已经弃用的admision-control参数，另外需要注意准入控制器的顺序很重要。将PodSecurityPolicy添加到 kube-apiserver 上的enabled-admission-plugins参数中，然后重启 kube-apiserver：enable-admission-plugins=NamespaceLifecycle,LimitRanger,ServiceAccount,DefaultStorageClass,DefaultTolerationSeconds,MutatingAdmissionWebhook,ValidatingAdmissionWebhook,ResourceQuota,PodSecurityPolicy 其他插件来自 Kubernetes 文档中推荐的一些插件列表。
 PodSecurityPolicy 已经添加到上面的列表中了，现在 PSP 的控制器已经启用了，但是我们集群中现在缺少一些安全策略，那么新的 Pod 创建就会失败。比如现在我们创建一个 Nginx 的 Deployment，YAML 文件内容如下所示：（nginx.yaml） apiVersion: apps/v1kind: Deploymentmetadata:name: nginx-deploynamespace: defaultlabels:app: nginxspec:replicas: 1selector:matchLabels:app: nginxtemplate:metadata:labels:app: nginxspec:containers:- name: nginximage: nginx:1.</description>
@@ -45,10 +45,10 @@ PodSecurityPolicy 已经添加到上面的列表中了，现在 PSP 的控制器
     
     <item>
       <title></title>
-      <link>https://wangyijie.github.io.io/public/posts/%E5%AE%89%E5%85%A8/linux-%E7%9A%84%E5%BC%80%E6%BA%90%E6%95%B0%E6%8D%AE%E6%81%A2%E5%A4%8D%E8%BD%AF%E4%BB%B6extundelete/</link>
+      <link>https://wangyijie.github.io.io/blog/posts/%E5%AE%89%E5%85%A8/linux-%E7%9A%84%E5%BC%80%E6%BA%90%E6%95%B0%E6%8D%AE%E6%81%A2%E5%A4%8D%E8%BD%AF%E4%BB%B6extundelete/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://wangyijie.github.io.io/public/posts/%E5%AE%89%E5%85%A8/linux-%E7%9A%84%E5%BC%80%E6%BA%90%E6%95%B0%E6%8D%AE%E6%81%A2%E5%A4%8D%E8%BD%AF%E4%BB%B6extundelete/</guid>
+      <guid>https://wangyijie.github.io.io/blog/posts/%E5%AE%89%E5%85%A8/linux-%E7%9A%84%E5%BC%80%E6%BA%90%E6%95%B0%E6%8D%AE%E6%81%A2%E5%A4%8D%E8%BD%AF%E4%BB%B6extundelete/</guid>
       <description>Extundelete工具简介 Extundelete 是基于 linux 的开源数据恢复软件。如果您不小心误删除数据，并且 Linux 系统也没有与 Windows 系统下回收站类似的功能，您可以方便快速安装此工具。
 在利用 extundelete 恢复文件时并不依赖特定文件格式，首先extundelete会通过文件系统的inode信息（根目录的inode一般为2）来获得当前文件系统下所有文件的信息，包括存在的和已经删除的文件，这些信息包括文件名和inode。然后利用inode信息结合日志去查询该inode所在的block位置，包括直接块，间接块等信息。最后利用dd命令将这些信息备份出来，从而恢复数据文件。该工具最给力的一点就是支持ext3/ext4双格式分区恢复，基于整个磁盘的恢复功能较为强大。 注意：在实际线上恢复过程中，切勿将extundelete安装到你误删的文件所在硬盘，这样会有一定几率将需要恢复的数据彻底覆盖
 src/extundelete &amp;ndash;help#A typical usage scenario is presented below. Note that some of the commands below require special permissions to complete. Adding &amp;lsquo;sudo &#39; before the command is one way to ensure you have the necessary permissions. Assume you have deleted a file called /home/user/an/important/file. Also assume the output of the &amp;lsquo;mount&amp;rsquo; command shows this line (among others): /dev/sda3 on /home type ext3 (rw) This line shows that the /home directory is on the partition named /dev/sda3, so then run: umount /dev/sda3 and check that it is now unmounted by running the mount command again and seeing it is not listed.</description>
@@ -56,10 +56,10 @@ src/extundelete &amp;ndash;help#A typical usage scenario is presented below. 
     
     <item>
       <title></title>
-      <link>https://wangyijie.github.io.io/public/posts/%E5%AE%89%E5%85%A8/openssl-%E8%87%AA%E7%AD%BE%E5%90%8Dca%E9%A2%81%E5%8F%91%E5%A4%9A%E5%9F%9F%E5%90%8D%E8%AF%81%E4%B9%A6/</link>
+      <link>https://wangyijie.github.io.io/blog/posts/%E5%AE%89%E5%85%A8/openssl-%E8%87%AA%E7%AD%BE%E5%90%8Dca%E9%A2%81%E5%8F%91%E5%A4%9A%E5%9F%9F%E5%90%8D%E8%AF%81%E4%B9%A6/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://wangyijie.github.io.io/public/posts/%E5%AE%89%E5%85%A8/openssl-%E8%87%AA%E7%AD%BE%E5%90%8Dca%E9%A2%81%E5%8F%91%E5%A4%9A%E5%9F%9F%E5%90%8D%E8%AF%81%E4%B9%A6/</guid>
+      <guid>https://wangyijie.github.io.io/blog/posts/%E5%AE%89%E5%85%A8/openssl-%E8%87%AA%E7%AD%BE%E5%90%8Dca%E9%A2%81%E5%8F%91%E5%A4%9A%E5%9F%9F%E5%90%8D%E8%AF%81%E4%B9%A6/</guid>
       <description>概述#HTTPS服务是工作在SSL/TLS上的HTTP。 首先简单区分一下HTTPS，SSL ，TLS ，OpenSSL这四者的关系： SSL：（Secure Socket Layer，安全套接字层）是在客户端和服务器之间建立一条SSL安全通道的安全协议； TLS：（Transport Layer Security，传输层安全协议），用于两个应用程序之间提供保密性和数据完整性； TLS的前身是SSL； OpenSSL是TLS/SSL协议的开源实现，提供开发库和命令行程序； HTTPS是HTTP的加密版，底层使用的加密协议是TLS。 结论：SSL/TLS 是协议，OpenSSL是协议的代码实现。
 用OpenSSL配置带有SubjectAltName的ssl请求 对于多域名，只需要一个证书就可以保护非常多的域名。 SubjectAltName是X509 Version 3 (RFC 2459)的扩展，允许ssl证书指定多个可以匹配的名称。
 SubjectAltName 可以包含email 地址，ip地址，正则匹配DNS主机名，等等。 ssl这样的一个特性叫做：SubjectAlternativeName（简称：san）
@@ -72,10 +72,10 @@ SubjectAltName 可以包含email 地址，ip地址，正则匹配DNS主机名，
     
     <item>
       <title></title>
-      <link>https://wangyijie.github.io.io/public/posts/%E5%AE%89%E5%85%A8/openssl%E5%8A%A0%E5%AF%86%E6%96%87%E4%BB%B6/</link>
+      <link>https://wangyijie.github.io.io/blog/posts/%E5%AE%89%E5%85%A8/openssl%E5%8A%A0%E5%AF%86%E6%96%87%E4%BB%B6/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://wangyijie.github.io.io/public/posts/%E5%AE%89%E5%85%A8/openssl%E5%8A%A0%E5%AF%86%E6%96%87%E4%BB%B6/</guid>
+      <guid>https://wangyijie.github.io.io/blog/posts/%E5%AE%89%E5%85%A8/openssl%E5%8A%A0%E5%AF%86%E6%96%87%E4%BB%B6/</guid>
       <description>openssl是个密码工具集，提供多端接口调用方式 组成:
   代码库 libcryto ,libssl(ssl/tls) 工具集 openssl   对称加密#对称加密主要是用aes，des算法 usage:
 -in &amp;lt;file&amp;gt; input file-out &amp;lt;file&amp;gt; output file 加密后的文件存放位置-pass &amp;lt;arg&amp;gt; pass phrase source-e encrypt 指定加密算法-d decrypt 指定解密算法-a/-base64 base64 encode/decode, depending on encryption flag #使用base64编/解码-k passphrase is the next argument 指定密码-kfile passphrase is the first line of the file argument-md the next argument is the md to use to create a keyfrom a passphrase.</description>
@@ -83,10 +83,10 @@ SubjectAltName 可以包含email 地址，ip地址，正则匹配DNS主机名，
     
     <item>
       <title></title>
-      <link>https://wangyijie.github.io.io/public/posts/%E5%AE%89%E5%85%A8/%E4%BB%80%E4%B9%88%E6%98%AF-devsecops-/</link>
+      <link>https://wangyijie.github.io.io/blog/posts/%E5%AE%89%E5%85%A8/%E4%BB%80%E4%B9%88%E6%98%AF-devsecops-/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://wangyijie.github.io.io/public/posts/%E5%AE%89%E5%85%A8/%E4%BB%80%E4%B9%88%E6%98%AF-devsecops-/</guid>
+      <guid>https://wangyijie.github.io.io/blog/posts/%E5%AE%89%E5%85%A8/%E4%BB%80%E4%B9%88%E6%98%AF-devsecops-/</guid>
       <description>DevSecOps 和 DevOps 有什么区别 ?#我们知道，DevOps 不仅仅涉及开发和运维团队。而如果您想充分发挥出 DevOps 的敏捷性和响应力，就必须将IT 安全防护融入应用的整个生命周期中 。
 为什么呢？从前，安全防护只是特定团队的责任，在开发的最后阶段才会介入。当开发周期长达数月、甚至数年时，这样做没什么问题；但是现在，这种做法现在已经行不通了。采用 DevOps 可以有效推进快速频繁的开发周期（有时全程只有数周或数天），但是过时的安全措施则可能会拖累整个流程，即使最高效的 DevOps 计划也可能会放慢速度。
 DevOps安全防护DevOps安全防护
@@ -102,10 +102,10 @@ DevSecOps 强调，在 DevOps 计划刚启动时就要邀请安全团队来确�
     
     <item>
       <title></title>
-      <link>https://wangyijie.github.io.io/public/posts/%E5%AE%89%E5%85%A8/%E5%9C%A8-linux-%E4%B8%8A%E7%94%A8-selinux-%E6%88%96-apparmor-%E5%AE%9E%E7%8E%B0%E5%BC%BA%E5%88%B6%E8%AE%BF%E9%97%AE%E6%8E%A7%E5%88%B6mac/</link>
+      <link>https://wangyijie.github.io.io/blog/posts/%E5%AE%89%E5%85%A8/%E5%9C%A8-linux-%E4%B8%8A%E7%94%A8-selinux-%E6%88%96-apparmor-%E5%AE%9E%E7%8E%B0%E5%BC%BA%E5%88%B6%E8%AE%BF%E9%97%AE%E6%8E%A7%E5%88%B6mac/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://wangyijie.github.io.io/public/posts/%E5%AE%89%E5%85%A8/%E5%9C%A8-linux-%E4%B8%8A%E7%94%A8-selinux-%E6%88%96-apparmor-%E5%AE%9E%E7%8E%B0%E5%BC%BA%E5%88%B6%E8%AE%BF%E9%97%AE%E6%8E%A7%E5%88%B6mac/</guid>
+      <guid>https://wangyijie.github.io.io/blog/posts/%E5%AE%89%E5%85%A8/%E5%9C%A8-linux-%E4%B8%8A%E7%94%A8-selinux-%E6%88%96-apparmor-%E5%AE%9E%E7%8E%B0%E5%BC%BA%E5%88%B6%E8%AE%BF%E9%97%AE%E6%8E%A7%E5%88%B6mac/</guid>
       <description>为了解决标准的“用户-组-其他/读-写-执行”权限以及访问控制列表[1]的限制以及加强安全机制，美国国家安全局（NSA）设计出一个灵活的强制访问控制（MAC）方法 SELinux（Security Enhanced Linux 的缩写），来限制标准的权限之外的种种权限，在仍然允许对这个控制模型后续修改的情况下，让进程尽可能以最小权限访问或在系统对象（如文件，文件夹，网络端口等）上执行其他操作。
 
 SELinux 和 AppArmor 加固 Linux 安全
@@ -120,10 +120,10 @@ SELINUX 介绍以及如何在 CENTOS 7 中使用#Security Enhanced Linux 可�
     
     <item>
       <title></title>
-      <link>https://wangyijie.github.io.io/public/posts/%E5%AE%89%E5%85%A8/%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6/</link>
+      <link>https://wangyijie.github.io.io/blog/posts/%E5%AE%89%E5%85%A8/%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://wangyijie.github.io.io/public/posts/%E5%AE%89%E5%85%A8/%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6/</guid>
+      <guid>https://wangyijie.github.io.io/blog/posts/%E5%AE%89%E5%85%A8/%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6/</guid>
       <description>数字证书（Certificate）#在HTTPS的传输过程中，有一个非常关键的角色——数字证书，所谓数字证书，是一种用于电脑的身份识别机制。由数字证书颁发机构（CA）对使用私钥创建的签名请求文件做的签名（盖章），表示CA结构对证书持有者的认可。数字证书拥有以下几个优点：
  使用数字证书能够提高用户的可信度 数字证书中的公钥，能够与服务端的私钥配对使用，实现数据传输过程中的加密和解密 在证认使用者身份期间，使用者的敏感个人数据并不会被传输至证书持有者的网络系统上 X.509证书包含三个文件：key，csr，crt。 key是服务器上的私钥文件，用于对发送给客户端数据的加密，以及对从客户端接收到数据的解密 csr是证书签名请求文件，用于提交给证书颁发机构（CA）对证书签名 crt是由证书颁发机构（CA）签名后的证书，或者是开发者自签名的证书，包含证书持有人的信息，持有人的公钥，以及签署者的签名等信息 备注：在密码学中，X.509是一个标准，规范了公开秘钥认证、证书吊销列表、授权凭证、凭证路径验证算法等
  使用Openssl生成自签名证书#openssl是个密码工具集，提供多端接口调用方式 组成:

@@ -437,7 +437,3 @@ https://kubernetes.io/docs/concepts/policy/pod-security-policy/#policy-reference
 https://octetz.com/posts/setting-up-psps
 
 https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/#is-there-a-recommended-set-of-admission-controllers-to-use
-
-<script src="https://utteranc.es/client.js" repo="wanyijie/blog" issue-term="pathname" label="web"
-      theme="github-light" crossorigin="anonymous" async>
-      </script>

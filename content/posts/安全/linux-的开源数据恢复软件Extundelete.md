@@ -26,7 +26,3 @@ If you have deleted the directory 'important', you can run:
 Or if you have deleted everything, you can run:
 `extundelete /dev/sda3 --restore-all`
 
-
-<script src="https://utteranc.es/client.js" repo="wanyijie/blog" issue-term="pathname" label="web"
-      theme="github-light" crossorigin="anonymous" async>
-      </script>

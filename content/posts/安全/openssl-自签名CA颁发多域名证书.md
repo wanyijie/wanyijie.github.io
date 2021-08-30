@@ -93,6 +93,3 @@ openssl x509 -req -days 3650 -in san_domain_com.csr -signkey san_domain_com.key
 openssl x509 -req -days 3650 -in ca.csr -signkey ca.key
  -out ca.crt-extensions v3_req -extfile openssl.cnf
 ```
-<script src="https://utteranc.es/client.js" repo="wanyijie/blog" issue-term="pathname" label="web"
-      theme="github-light" crossorigin="anonymous" async>
-      </script>

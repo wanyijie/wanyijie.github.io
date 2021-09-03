@@ -1,4 +1,6 @@
-Ansible同时针对基础架构中的多个系统。它通过选择Ansible库存中列出的系统部分来实现这一点，默认情况下将保存在该位置`/etc/ansible/hosts`。您可以使用命令行上的选项指定不同的清单文件。`-i <path>`
+Ansible同时针对基础架构中的多个系统。它通过选择Ansible库存中列出的系统部分来实现这一点，默认情况下将保存在该位置`/etc/ansible/hosts`。您可以使用命令行上的选项指定不同的清单文件。
+<!--more-->
+`-i <path>`
 
 此库存不仅可配置，还可以同时使用多个库存文件并从动态或云源或不同格式（YAML，ini等）中提取库存，如[使用动态库存中所述](https://docs.ansible.com/ansible/latest/user_guide/intro_dynamic_inventory.html#intro-dynamic-inventory)。Ansible在2.4版本中引入了库存插件，使其具有灵活性和可定制性。
 

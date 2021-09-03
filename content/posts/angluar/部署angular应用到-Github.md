@@ -5,6 +5,8 @@ A simple way to deploy your Angular app is to use
 [GitHub Pages](https://help.github.com/articles/what-is-github-pages/).  
 部署Angular应用的一个简单方法是使用[GitHub Pages](https://help.github.com/articles/what-is-github-pages/). 如果自己做一个单页网站可以不需要自购web服务器。
 
+<!--more-->
+
 The first step is to [create a GitHub account](https://github.com/join), and then
 [create a repository](https://help.github.com/articles/create-a-repo/) for your project.
 Make a note of the user name and project name in GitHub.  

@@ -2,7 +2,7 @@
 menu:
   after:
     parent: posts
-    name: SRE
+    name: 网络
     weight: 5
-title: SRE
+title: 网络
 ---

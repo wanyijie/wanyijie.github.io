@@ -2,7 +2,7 @@
 menu:
   after:
     parent: posts
-    name: wenxue
+    name: 机器学习
     weight: 5
-title: wenxue
+title: 机器学习
 ---

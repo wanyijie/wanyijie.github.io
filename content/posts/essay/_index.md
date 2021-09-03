@@ -2,7 +2,7 @@
 menu:
   after:
     parent: posts
-    name: networking
+    name: 随笔
     weight: 5
-title: networking
+title: 随笔
 ---

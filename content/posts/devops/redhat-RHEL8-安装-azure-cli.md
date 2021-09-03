@@ -1,4 +1,6 @@
-The package is for el7, and there are assumptions based on el7 that are no longer true for RHEL8. For now, instead of running sudo yum install azure-cli, please follow the workaround to install azure-cli:
+The package is for el7, and there are assumptions based on el7 that are no longer true for RHEL8. For now, instead of running sudo yum install azure-cli, please follow the 
+workaround to install azure-cli:
+<!--more-->
 ```
 $ sudo yum install python2
 $ sudo yum install yum-utils

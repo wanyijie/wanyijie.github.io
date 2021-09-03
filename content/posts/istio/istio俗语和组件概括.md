@@ -1,3 +1,11 @@
+---
+summary: "istio概况"
+tags:
+    - istio
+categories:
+    - Development
+    - Opetration
+---
 # 架构
 Istio 服务网格逻辑上分为数据平面和控制平面。
 • 数据平面由一组以 sidecar 方式部署的智能代理（Envoy）组成。这些代理可以调节和控制微服务及 Mixer 之间所有的网络通信。

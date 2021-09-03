@@ -2,7 +2,7 @@
 menu:
   after:
     parent: posts
-    name: safe
+    name: 监控
     weight: 5
-title: safe
+title: 监控
 ---

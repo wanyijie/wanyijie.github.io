@@ -1,5 +1,5 @@
 When you are testing changes to an application, there are some factors you can measure only in a production environment rather than a development test bed. Examples include the effect of UI changes on user behavior and the impact on overall performance. A common testing method is *A/B testing* – also known as *split testing* – in which a (usually small) proportion of users is directed to the new version of an application while most users continue to use the current version.
-
+<!--more-->
 In this blog post we’ll explore why it is important to perform A/B testing when deploying new versions of your web application and how to use [NGINX](https://nginx.org/en) and [NGINX Plus](https://www.nginx.com/products/nginx/) to control which version of an application users see. Configuration examples illustrate how you can use NGINX and NGINX Plus directives, parameters, and variables to achieve accurate and measurable A/B testing.
 
 ## Why Do A/B Testing?[](https://www.nginx.com/blog/performing-a-b-testing-nginx-plus/#Why-Do-A/B&nbsp;Testing)

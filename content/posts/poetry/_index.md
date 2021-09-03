@@ -2,7 +2,7 @@
 menu:
   after:
     parent: posts
-    name: shi chi
+    name: 诗歌
     weight: 5
-title: shi chi
+title: 诗歌
 ---

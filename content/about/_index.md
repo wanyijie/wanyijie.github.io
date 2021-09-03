@@ -1,9 +1,9 @@
 ---
 menu:
   after:
-    name: about
+    name: 关于作者
     weight: 6
-title: About
+title: 关于作者
 ---
 
 # the writer: 

@@ -2,7 +2,7 @@
 menu:
   after:
     parent: posts
-    name: monitor
+    name: 日记
     weight: 5
-title: monitor
+title: 日记
 ---

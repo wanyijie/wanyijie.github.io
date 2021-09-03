@@ -2,7 +2,7 @@
 menu:
   after:
     parent: posts
-    name: write somethings
+    name: 安全
     weight: 5
-title: write somethings
+title: 安全
 ---

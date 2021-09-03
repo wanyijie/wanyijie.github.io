@@ -2,7 +2,7 @@
 menu:
   after:
     parent: posts
-    name: cloude
+    name: 云服务
     weight: 5
-title: cloude
+title: 云服务
 ---

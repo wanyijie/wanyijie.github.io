@@ -1,7 +1,7 @@
 ## Getting started with a workflow
 
 To help you get started, this guide shows you some basic examples. For the full GitHub Actions documentation on workflows, see "[Configuring workflows](https://help.github.com/articles/configuring-workflows)."
-
+<!--more-->
 ### Customizing when workflow runs are triggered
 
 *   Set your workflow to run on push events to the `master` and `release/*` branches

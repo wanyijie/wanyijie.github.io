@@ -2,7 +2,7 @@
 menu:
   after:
     parent: posts
-    name: notes
+    name: 文学
     weight: 5
-title: notes
+title: 文学
 ---

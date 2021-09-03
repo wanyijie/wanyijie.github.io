@@ -16,7 +16,7 @@
 Angular CLI v6通过插入到我们在Angular CLI中使用的构建系统中的ng-packagr提供库支持，以及用于生成库的原理图。
 Generating a library#生成库#You can create a library in a existing workspace by running the following commands:
 您可以通过运行以下命令在现有工作区中创建库：
-ng generate library my-libYou should now have a library inside projects/my-lib.</description>
+ng generate library my-lib You should now have a library inside projects/my-lib.</description>
     </item>
     
     <item>
@@ -44,7 +44,7 @@ If the library does not include typings, you can install them using npm:
 如果库不包括类型，你可以使用npm来安装它们：
 npm install d3 --save npm install @types/d3 --save-dev Then open src/tsconfig.app.json and add it to the types array:
 然后打开 src/tsconfig.app.json 并将其添加到 types 数组中:
-&amp;quot;types&amp;quot;:[&amp;quot;d3&amp;quot;]If the library you added typings for is only to be used on your e2e tests, instead use e2e/tsconfig.</description>
+&amp;quot;types&amp;quot;:[ &amp;quot;d3&amp;quot; ] If the library you added typings for is only to be used on your e2e tests, instead use e2e/tsconfig.</description>
     </item>
     
     <item>
@@ -81,7 +81,7 @@ Say we have a server running on http://localhost:3000/api and we want all calls 
 Angular CLI 支持多应用程序在一个项目中，您可以使用 .angular-cli.json 中的应用程序数组来列出要用于不同应用程序的文件和文件夹。
 By default one app is created when then new project is created and apps array looks like:
 默认情况下, 在创建新项目时创建一个应用程序, 并且 apps 数组如下所示:
-&amp;quot;apps&amp;quot;: [{&amp;quot;root&amp;quot;: &amp;quot;src&amp;quot;,...&amp;quot;main&amp;quot;: &amp;quot;main.ts&amp;quot;,&amp;quot;polyfills&amp;quot;: &amp;quot;polyfills.</description>
+&amp;quot;apps&amp;quot;: [ { &amp;quot;root&amp;quot;: &amp;quot;src&amp;quot;, ... &amp;quot;main&amp;quot;: &amp;quot;main.ts&amp;quot;, &amp;quot;polyfills&amp;quot;: &amp;quot;polyfills.</description>
     </item>
     
     <item>
@@ -122,7 +122,7 @@ npm i --save @angular/flex-layout-builds Import the Angular Flex-Layout NgModule
 Bootstrap 是一个流行的CSS框架，可以在Angular项目中使用。本指南将引导您为Angular CLI项目添加引导程序并将其配置为使用引导程序。
 Using CSS#使用CSS#Getting Started#开始#Create a new project and navigate into the project
 创建一个新项目并导航到项目中
-ng new my-appcd my-appInstalling Bootstrap#安装 Bootstrap#With the new project created and ready you will next need to install bootstrap to your project as a dependency.</description>
+ng new my-app cd my-app Installing Bootstrap#安装 Bootstrap#With the new project created and ready you will next need to install bootstrap to your project as a dependency.</description>
     </item>
     
     <item>
@@ -291,7 +291,7 @@ Then all you need to do is run ng build --prod --output-path docs --base-href PR
 Font Awesome 为您提供可立即定制的可缩放矢量图标 - 尺寸，颜色，阴影以及任何可以通过CSS强大功能进行定制的图标。
 Create a new project and navigate into the project&amp;hellip;
 创建一个新项目并导航到项目中&amp;hellip;
-ng new my-appcd my-appInstall the font-awesome library and add the dependency to package.json&amp;hellip;
+ng new my-app cd my-app Install the font-awesome library and add the dependency to package.json&amp;hellip;
 安装font-awesome库并将依赖关系添加到package.json&amp;hellip;
 npm install --save font-awesome Using CSS#使用 CSS#To add Font Awesome CSS icons to your app&amp;hellip;</description>
     </item>

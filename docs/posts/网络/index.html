@@ -12,9 +12,9 @@
 <title>networking | A great computer technology Site</title>
 <link rel="manifest" href="/blog/manifest.json">
 <link rel="icon" href="/blog/favicon.png" type="image/x-icon">
-<link rel="stylesheet" href="/blog/book.min.8599444fcc48ee6b435b5b62c955ab7d914fa1e2a453df90c4b97cc9769665d1.css" integrity="sha256-hZlET8xI7mtDW1tiyVWrfZFPoeKkU9&#43;QxLl8yXaWZdE=" crossorigin="anonymous">
+<link rel="stylesheet" href="/blog/book.min.46181bc93375ba932026e753b37c40e6ff8bb16a9ef770c78bcc663e4577b1ba.css" integrity="sha256-RhgbyTN1upMgJudTs3xA5v&#43;LsWqe93DHi8xmPkV3sbo=" crossorigin="anonymous">
   <script defer src="/blog/flexsearch.min.js"></script>
-  <script defer src="/blog/en.search.min.55158ed2791ede306408bc7be70c306acf6623f56886bcf17d6a95efaaabf9db.js" integrity="sha256-VRWO0nke3jBkCLx75wwwas9mI/VohrzxfWqV76qr&#43;ds=" crossorigin="anonymous"></script>
+  <script defer src="/blog/en.search.min.243fede94d2ab4b88ffdd9674185e2ccb65b1929b6e7ead26fe703347fb01927.js" integrity="sha256-JD/t6U0qtLiP/dlnQYXizLZbGSm25&#43;rSb&#43;cDNH&#43;wGSc=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://wangyijie.github.io.io/blog/posts/%E7%BD%91%E7%BB%9C/index.xml" title="A great computer technology Site" />
 <!--
 Made with Book Theme
@@ -348,7 +348,7 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-    <p>example#NETSTAT.EXE -abno | Select-String -Pattern Sangfor -Context 1,2 windows netstat使用-abno显示的信息最完善，建议常用 select-string 匹配文本，使用-context指定匹配文本的前后行数，例子是前面一行后面两行 谢谢！  
+    <p>example#NETSTAT.EXE -abno | Select-String -Pattern Sangfor -Context 1,2  windows netstat使用-abno显示的信息最完善，建议常用 select-string 匹配文本，使用-context指定匹配文本的前后行数，例子是前面一行后面两行 谢谢！  
     </p>
   </article>
   
@@ -366,7 +366,7 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-    <p>Set-NetFirewallProfile -Profile Private -Enabled FalseSet-NetFirewallProfile -Profile Public -Enabled FalseGet-NetFirewallProfile加域的还有一种属性，参考设置
+    <p>Set-NetFirewallProfile -Profile Private -Enabled False Set-NetFirewallProfile -Profile Public -Enabled False Get-NetFirewallProfile 加域的还有一种属性，参考设置
     </p>
   </article>
   
@@ -384,7 +384,7 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-    <p>example#netsh interface portproxy add v4tov4 listenaddress=172.20.0.2 listenport=1521 connectaddress=172.16.100.74 connectport=1521netsh interface portproxy add v4tov4 listenaddress=172.20.0.2 listenport=1433 connectaddress=172.16.100.73 connectport=1433删除#netsh interface portproxy delete v4tov4 listenport=3340 listenaddress=10.1.1.110 netsh.exe interface portproxy delete v4tov4 listenport=1521 listenaddress=172.20.0.2
+    <p>example#netsh interface portproxy add v4tov4 listenaddress=172.20.0.2 listenport=1521 connectaddress=172.16.100.74 connectport=1521 netsh interface portproxy add v4tov4 listenaddress=172.20.0.2 listenport=1433 connectaddress=172.16.100.73 connectport=1433 删除#netsh interface portproxy delete v4tov4 listenport=3340 listenaddress=10.1.1.110 netsh.exe interface portproxy delete v4tov4 listenport=1521 listenaddress=172.20.0.2
 清除所有当前的端口转发规则：#netsh interface portproxy reset
     </p>
   </article>
@@ -422,11 +422,11 @@ https://github.com/alex-shpak/hugo-book
 
 
     <p>对于那些想上网的人来说这很方便 - 你可以在一个命令中将任何Linux计算机变成SOCKS5（和SOCKS4）代理：
-ssh -N -D 0.0.0.0:1080 user@ip并且它不需要root权限。该ssh命令启动-D端口上的动态端口转发，1080并通过SOCSK5或SOCKS4协议与客户端通信，就像常规的SOCKS5代理一样！该-N选项确保ssh保持空闲状态，并且不在主机上执行任何命令。0.0.0.0允许任意地址连接，设置为127.0.0.1可以限制本机之外的主机使用代理，ip可以是远程代理主机，也可以是本机相当于把本机做为代理服务器
+ssh -N -D 0.0.0.0:1080 user@ip 并且它不需要root权限。该ssh命令启动-D端口上的动态端口转发，1080并通过SOCSK5或SOCKS4协议与客户端通信，就像常规的SOCKS5代理一样！该-N选项确保ssh保持空闲状态，并且不在主机上执行任何命令。0.0.0.0允许任意地址连接，设置为127.0.0.1可以限制本机之外的主机使用代理，ip可以是远程代理主机，也可以是本机相当于把本机做为代理服务器
 如果您还希望命令作为守护进程进入后台，则添加-f选项：
-ssh -f -N -D 0.0.0.0:1080 user@ip要使用它，只需让您的软件在您的Linux计算机的IP，端口1080上使用SOCKS5代理，并且您已完成，您的所有请求现在都会被代理.
+ssh -f -N -D 0.0.0.0:1080 user@ip 要使用它，只需让您的软件在您的Linux计算机的IP，端口1080上使用SOCKS5代理，并且您已完成，您的所有请求现在都会被代理.
 访问控制可以通过实现iptables。例如，要仅允许来自ip的1.2.3.4人员使用SOCKS5代理，请添加以下iptables规则：
-iptables -A INPUT --src 1.2.3.4 -p tcp --dport 1080 -j ACCEPTiptables -A INPUT -p tcp --dport 1080 -j REJECT第一条规则说，允许任何人1.2.3.4连接到端口1080，另一条规则说，拒绝其他所有人连接到端口1080。
+iptables -A INPUT --src 1.2.3.4 -p tcp --dport 1080 -j ACCEPT iptables -A INPUT -p tcp --dport 1080 -j REJECT 第一条规则说，允许任何人1.2.3.4连接到端口1080，另一条规则说，拒绝其他所有人连接到端口1080。
     </p>
   </article>
   
@@ -538,7 +538,18 @@ iptables -A INPUT --src 1.2.3.4 -p tcp --dport 1080 -j ACCEPTiptables -A INPUT 
     
   </main>
 
-  
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6266541561533854"
+     crossorigin="anonymous"></script>
+
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-6266541561533854"
+     data-ad-slot="9511333096"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
 </body>
 </html>
 

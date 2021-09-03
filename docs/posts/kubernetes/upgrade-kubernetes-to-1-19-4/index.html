@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="install upgrade tool kubeadm#apt install -y kubeadmkubeadm config images listk8s.gcr.io/kube-apiserver:v1.19.4k8s.gcr.io/kube-controller-manager:v1.19.4k8s.gcr.io/kube-scheduler:v1.19.4k8s.gcr.io/kube-proxy:v1.19.4k8s.gcr.io/pause:3.2k8s.gcr.io/etcd:3.4.13-0k8s.gcr.io/coredns:1.7.0transfer gcr images to docker hub#open https://katacoda.com/courses/ubuntu/playground
-go get github.com/xilu0/transferfor im in `kubeadm config images list`;do transfer --user=heishui --password=&quot;$repopass&quot; --image=$im;doneupgrade kubernetes cluster#kubeadm upgrade plankubeadm upgrade apply v1.19.4upgrade components#apt install -y kubectl kubelet">
+<meta name="description" content="install upgrade tool kubeadm#apt install -y kubeadm kubeadm config images list k8s.gcr.io/kube-apiserver:v1.19.4 k8s.gcr.io/kube-controller-manager:v1.19.4 k8s.gcr.io/kube-scheduler:v1.19.4 k8s.gcr.io/kube-proxy:v1.19.4 k8s.gcr.io/pause:3.2 k8s.gcr.io/etcd:3.4.13-0 k8s.gcr.io/coredns:1.7.0 transfer gcr images to docker hub#open https://katacoda.com/courses/ubuntu/playground
+go get github.com/xilu0/transfer for im in `kubeadm config images list`;do transfer --user=heishui --password=&quot;$repopass&quot; --image=$im;done upgrade kubernetes cluster#kubeadm upgrade plan kubeadm upgrade apply v1.19.4 upgrade components#apt install -y kubectl kubelet ">
 <meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="" />
-<meta property="og:description" content="install upgrade tool kubeadm#apt install -y kubeadmkubeadm config images listk8s.gcr.io/kube-apiserver:v1.19.4k8s.gcr.io/kube-controller-manager:v1.19.4k8s.gcr.io/kube-scheduler:v1.19.4k8s.gcr.io/kube-proxy:v1.19.4k8s.gcr.io/pause:3.2k8s.gcr.io/etcd:3.4.13-0k8s.gcr.io/coredns:1.7.0transfer gcr images to docker hub#open https://katacoda.com/courses/ubuntu/playground
-go get github.com/xilu0/transferfor im in `kubeadm config images list`;do transfer --user=heishui --password=&quot;$repopass&quot; --image=$im;doneupgrade kubernetes cluster#kubeadm upgrade plankubeadm upgrade apply v1.19.4upgrade components#apt install -y kubectl kubelet" />
+<meta property="og:description" content="install upgrade tool kubeadm#apt install -y kubeadm kubeadm config images list k8s.gcr.io/kube-apiserver:v1.19.4 k8s.gcr.io/kube-controller-manager:v1.19.4 k8s.gcr.io/kube-scheduler:v1.19.4 k8s.gcr.io/kube-proxy:v1.19.4 k8s.gcr.io/pause:3.2 k8s.gcr.io/etcd:3.4.13-0 k8s.gcr.io/coredns:1.7.0 transfer gcr images to docker hub#open https://katacoda.com/courses/ubuntu/playground
+go get github.com/xilu0/transfer for im in `kubeadm config images list`;do transfer --user=heishui --password=&quot;$repopass&quot; --image=$im;done upgrade kubernetes cluster#kubeadm upgrade plan kubeadm upgrade apply v1.19.4 upgrade components#apt install -y kubectl kubelet " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://wangyijie.github.io.io/blog/posts/kubernetes/upgrade-kubernetes-to-1-19-4/" /><meta property="article:section" content="posts" />
 
@@ -16,9 +16,9 @@ go get github.com/xilu0/transferfor im in `kubeadm config images list`;do trans
 <title>Upgrade Kubernetes to 1 19 4 | A great computer technology Site</title>
 <link rel="manifest" href="/blog/manifest.json">
 <link rel="icon" href="/blog/favicon.png" type="image/x-icon">
-<link rel="stylesheet" href="/blog/book.min.8599444fcc48ee6b435b5b62c955ab7d914fa1e2a453df90c4b97cc9769665d1.css" integrity="sha256-hZlET8xI7mtDW1tiyVWrfZFPoeKkU9&#43;QxLl8yXaWZdE=" crossorigin="anonymous">
+<link rel="stylesheet" href="/blog/book.min.46181bc93375ba932026e753b37c40e6ff8bb16a9ef770c78bcc663e4577b1ba.css" integrity="sha256-RhgbyTN1upMgJudTs3xA5v&#43;LsWqe93DHi8xmPkV3sbo=" crossorigin="anonymous">
   <script defer src="/blog/flexsearch.min.js"></script>
-  <script defer src="/blog/en.search.min.55158ed2791ede306408bc7be70c306acf6623f56886bcf17d6a95efaaabf9db.js" integrity="sha256-VRWO0nke3jBkCLx75wwwas9mI/VohrzxfWqV76qr&#43;ds=" crossorigin="anonymous"></script>
+  <script defer src="/blog/en.search.min.243fede94d2ab4b88ffdd9674185e2ccb65b1929b6e7ead26fe703347fb01927.js" integrity="sha256-JD/t6U0qtLiP/dlnQYXizLZbGSm25&#43;rSb&#43;cDNH&#43;wGSc=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -373,7 +373,18 @@ kubeadm upgrade apply v1.19.4
     
   </main>
 
-  
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6266541561533854"
+     crossorigin="anonymous"></script>
+
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-6266541561533854"
+     data-ad-slot="9511333096"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
 </body>
 </html>
 

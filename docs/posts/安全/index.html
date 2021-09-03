@@ -12,9 +12,9 @@
 <title>safe | A great computer technology Site</title>
 <link rel="manifest" href="/blog/manifest.json">
 <link rel="icon" href="/blog/favicon.png" type="image/x-icon">
-<link rel="stylesheet" href="/blog/book.min.8599444fcc48ee6b435b5b62c955ab7d914fa1e2a453df90c4b97cc9769665d1.css" integrity="sha256-hZlET8xI7mtDW1tiyVWrfZFPoeKkU9&#43;QxLl8yXaWZdE=" crossorigin="anonymous">
+<link rel="stylesheet" href="/blog/book.min.46181bc93375ba932026e753b37c40e6ff8bb16a9ef770c78bcc663e4577b1ba.css" integrity="sha256-RhgbyTN1upMgJudTs3xA5v&#43;LsWqe93DHi8xmPkV3sbo=" crossorigin="anonymous">
   <script defer src="/blog/flexsearch.min.js"></script>
-  <script defer src="/blog/en.search.min.55158ed2791ede306408bc7be70c306acf6623f56886bcf17d6a95efaaabf9db.js" integrity="sha256-VRWO0nke3jBkCLx75wwwas9mI/VohrzxfWqV76qr&#43;ds=" crossorigin="anonymous"></script>
+  <script defer src="/blog/en.search.min.243fede94d2ab4b88ffdd9674185e2ccb65b1929b6e7ead26fe703347fb01927.js" integrity="sha256-JD/t6U0qtLiP/dlnQYXizLZbGSm25&#43;rSb&#43;cDNH&#43;wGSc=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://wangyijie.github.io.io/blog/posts/%E5%AE%89%E5%85%A8/index.xml" title="A great computer technology Site" />
 <!--
 Made with Book Theme
@@ -331,7 +331,7 @@ https://www.magalix.com/blog/introducing-policy-as-code-the-open-policy-agent-op
 你可能已经熟悉Pod安全策略，可以在其中对Pod应用非常特定的安全控制。例如，使用Linux内核功能，使用主机命名空间、网络、端口或文件系统，以及其他许多功能。使用OPA，你还可以对pods施加类似的控制，在本实验室中，我们将创建一个OPA策略，不允许在pods中创建有特权的容器。特权容器对主机的访问级别比非特权容器高。
 为什么使用OPA而不是原生的Pod安全策略？#使用Pod安全策略来执行我们的安全策略并没有什么问题。然而，根据定义，PSP只能应用于pods。它们不能处理其他Kubernetes资源，如Ingresses、Deployments、Services等。OPA的强大之处在于它可以应用于任何Kubernetes资源。OPA作为一个许可控制器部署到Kubernetes，它拦截发送到API服务器的API调用，并验证和/或修改它们。相应地，你可以有一个统一的OPA策略，适用于系统的不同组件，而不仅仅是pods。例如，有一种策略，强制用户在其服务中使用公司的域，并确保用户只从公司的镜像存储库中提取镜像。请注意，我们使用的OPA是使用kube-mgmt部署的，而不是OPA Gatekeeper。
 Rego的策略代码#在本文中，我们假设你已经熟悉了OPA和Rego语言。我们还假设你有一个正在运行的Kubernetes集群，该集群部署了OPA和kube-mgmt容器。有关安装说明，请参阅我们的前一篇文章。我们的no-priv-pod.rego文件如下所示：
-package kubernetes.admissiondeny[msg] {c := input_containers[_]c.securityContext.privilegedmsg := sprintf(&quot;Privileged container is not allowed: %v, securityContext: %v&quot;, [c.name, c.securityContext])}input_containers[c] {c := input.request.object.spec.containers[_]}input_containers[c] {c := input.request.object.spec.initContainers[_]}让我们简要地浏览一下这个文件：
+package kubernetes.admission deny[msg] { c := input_containers[_] c.securityContext.privileged msg := sprintf(&quot;Privileged container is not allowed: %v, securityContext: %v&quot;, [c.name, c.securityContext]) } input_containers[c] { c := input.request.object.spec.containers[_] } input_containers[c] { c := input.request.object.spec.initContainers[_] } 让我们简要地浏览一下这个文件：
 第1行：包含package。注意，你必须使用kubernetes.admission让政策工作。
 第2行：Deny是默认对象，它将包含我们需要执行的策略。如果所包含的代码计算结果为true，则将违反策略。
 第3行：我们定义了一个变量，它将容纳pod中的所有容器，并从稍后定义的input_containers[c]接收值。
@@ -343,7 +343,7 @@ package kubernetes.admissiondeny[msg] {c := input_containers[_]c.securityCont
 kubectl create configmap no-priv-pods &ndash;from-file=no-priv-pod.rego kube-mgmt边车（sidecar）容器在opa命名空间中持续监视API服务器，以便你只需创建ConfigMap就可以部署策略。
 运行策略
 让我们通过尝试部署一个特权容器来确保我们的策略是有效的：
-kubectl -n default apply -f - &lt;&lt;EOTapiVersion: v1kind: Podmetadata:name: nginx-privilegedlabels:app: nginx-privilegedspec:containers:- name: nginximage: nginxsecurityContext:privileged: true #falseEOTError from server (Privileged container is not allowed: nginx, securityContext: {&ldquo;privileged&rdquo;: true}): error when creating &ldquo;STDIN&rdquo;: admission webhook &ldquo;validating-webhook.
+kubectl -n default apply -f - &lt;&lt;EOT apiVersion: v1 kind: Pod metadata: name: nginx-privileged labels: app: nginx-privileged spec: containers: - name: nginx image: nginx securityContext: privileged: true #false EOT Error from server (Privileged container is not allowed: nginx, securityContext: {&ldquo;privileged&rdquo;: true}): error when creating &ldquo;STDIN&rdquo;: admission webhook &ldquo;validating-webhook.
         <a href="/blog/posts/%E5%AE%89%E5%85%A8/kubernetes-opaopen-policy-agent/">...</a>
       
     </p>
@@ -364,8 +364,8 @@ kubectl -n default apply -f - &lt;&lt;EOTapiVersion: v1kind: Podmetadata:nam
 
 
     <p>Kubernetes Pod 安全策略(PSP)配置 默认情况下，Kubernetes 允许创建一个有特权容器的 Pod，这些容器很可能会危机系统安全，而 Pod 安全策略（PSP）则通过确保请求者有权限按配置来创建 Pod，从而来保护集群免受特权 Pod 的影响。
-PodSecurityPolicy 是 Kubernetes API 对象，你可以在不对 Kubernetes 进行任何修改的情况下创建它们，但是，默认情况下不会强制执行我们创建的一些策略，我们需要一个准入控制器、kube-controller-manager 配置以及 RBAC 权限配置，下面我们就来对这些配置进行一一说明。Kubernetes Pod 安全策略(PSP)配置kubernetes pspAdmission ControllerAdmission Controller（准入控制器）拦截对 kube-apiserver 的请求，拦截发生在请求的对象被持久化之前，但是在请求被验证和授权之后。这样我们就可以查看请求对象的来源，并验证需要的内容是否正确。通过将它们添加到 kube-apiserver 的enable-admission-plugins参数中来启用准入控制器。在1.10版本之前，使用现在已经弃用的admision-control参数，另外需要注意准入控制器的顺序很重要。将PodSecurityPolicy添加到 kube-apiserver 上的enabled-admission-plugins参数中，然后重启 kube-apiserver：enable-admission-plugins=NamespaceLifecycle,LimitRanger,ServiceAccount,DefaultStorageClass,DefaultTolerationSeconds,MutatingAdmissionWebhook,ValidatingAdmissionWebhook,ResourceQuota,PodSecurityPolicy 其他插件来自 Kubernetes 文档中推荐的一些插件列表。
-PodSecurityPolicy 已经添加到上面的列表中了，现在 PSP 的控制器已经启用了，但是我们集群中现在缺少一些安全策略，那么新的 Pod 创建就会失败。比如现在我们创建一个 Nginx 的 Deployment，YAML 文件内容如下所示：（nginx.yaml） apiVersion: apps/v1kind: Deploymentmetadata:name: nginx-deploynamespace: defaultlabels:app: nginxspec:replicas: 1selector:matchLabels:app: nginxtemplate:metadata:labels:app: nginxspec:containers:- name: nginximage: nginx:1.
+PodSecurityPolicy 是 Kubernetes API 对象，你可以在不对 Kubernetes 进行任何修改的情况下创建它们，但是，默认情况下不会强制执行我们创建的一些策略，我们需要一个准入控制器、kube-controller-manager 配置以及 RBAC 权限配置，下面我们就来对这些配置进行一一说明。 Kubernetes Pod 安全策略(PSP)配置 kubernetes psp Admission Controller Admission Controller（准入控制器）拦截对 kube-apiserver 的请求，拦截发生在请求的对象被持久化之前，但是在请求被验证和授权之后。这样我们就可以查看请求对象的来源，并验证需要的内容是否正确。通过将它们添加到 kube-apiserver 的enable-admission-plugins参数中来启用准入控制器。在1.10版本之前，使用现在已经弃用的admision-control参数，另外需要注意准入控制器的顺序很重要。 将PodSecurityPolicy添加到 kube-apiserver 上的enabled-admission-plugins参数中，然后重启 kube-apiserver： enable-admission-plugins=NamespaceLifecycle,LimitRanger,ServiceAccount,DefaultStorageClass,DefaultTolerationSeconds,MutatingAdmissionWebhook,ValidatingAdmissionWebhook,ResourceQuota,PodSecurityPolicy  其他插件来自 Kubernetes 文档中推荐的一些插件列表。
+PodSecurityPolicy 已经添加到上面的列表中了，现在 PSP 的控制器已经启用了，但是我们集群中现在缺少一些安全策略，那么新的 Pod 创建就会失败。 比如现在我们创建一个 Nginx 的 Deployment，YAML 文件内容如下所示：（nginx.yaml）  apiVersion: apps/v1 kind: Deployment metadata: name: nginx-deploy namespace: default labels: app: nginx spec: replicas: 1 selector: matchLabels: app: nginx template: metadata: labels: app: nginx spec: containers: - name: nginx image: nginx:1.
         <a href="/blog/posts/%E5%AE%89%E5%85%A8/kubernetes-pod-%E5%AE%89%E5%85%A8%E7%AD%96%E7%95%A5psp%E9%85%8D%E7%BD%AE/">...</a>
       
     </p>
@@ -436,7 +436,7 @@ SubjectAltName 可以包含email 地址，ip地址，正则匹配DNS主机名，
 
     <p>openssl是个密码工具集，提供多端接口调用方式 组成:
   代码库 libcryto ,libssl(ssl/tls) 工具集 openssl   对称加密#对称加密主要是用aes，des算法 usage:
--in &lt;file&gt; input file-out &lt;file&gt; output file 加密后的文件存放位置-pass &lt;arg&gt; pass phrase source-e encrypt 指定加密算法-d decrypt 指定解密算法-a/-base64 base64 encode/decode, depending on encryption flag #使用base64编/解码-k passphrase is the next argument 指定密码-kfile passphrase is the first line of the file argument-md the next argument is the md to use to create a keyfrom a passphrase.
+-in &lt;file&gt; input file -out &lt;file&gt; output file 加密后的文件存放位置 -pass &lt;arg&gt; pass phrase source -e encrypt 指定加密算法 -d decrypt 指定解密算法 -a/-base64 base64 encode/decode, depending on encryption flag #使用base64编/解码 -k passphrase is the next argument 指定密码 -kfile passphrase is the first line of the file argument -md the next argument is the md to use to create a key from a passphrase.
         <a href="/blog/posts/%E5%AE%89%E5%85%A8/openssl%E5%8A%A0%E5%AF%86%E6%96%87%E4%BB%B6/">...</a>
       
     </p>
@@ -604,7 +604,18 @@ SELINUX 介绍以及如何在 CENTOS 7 中使用#Security Enhanced Linux 可�
     
   </main>
 
-  
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6266541561533854"
+     crossorigin="anonymous"></script>
+
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-6266541561533854"
+     data-ad-slot="9511333096"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
 </body>
 </html>
 

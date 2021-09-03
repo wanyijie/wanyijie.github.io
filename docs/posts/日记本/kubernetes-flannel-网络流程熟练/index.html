@@ -4,10 +4,10 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="pod IP docker 把容器网络命名空间隐藏起来了，查看容器网络需要把对应的网络命名空间显示出来： 容器Id:10316
-把容器网络命名空间链接到主机,这样主机就可以管理容器网络 ln -s /proc/10316/ns/net /var/run/netns/10316 查看网络命名空间  ip netns 在网络命名空间内执行命令  [root@k8s01 ~]# ip netns exec 10316 ip a1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN qlen 1link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00inet 127.0.0.1/8 scope host lovalid_lft forever preferred_lft foreverinet6 ::1/128 scope host valid_lft forever preferred_lft forever3: eth0@if40: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1450 qdisc noqueue state UP link/ether 0a:58:0a:f4:02:f6 brd ff:ff:ff:ff:ff:ff link-netnsid 0inet 10.">
+把容器网络命名空间链接到主机,这样主机就可以管理容器网络 ln -s /proc/10316/ns/net /var/run/netns/10316 查看网络命名空间  ip netns 在网络命名空间内执行命令  [root@k8s01 ~]# ip netns exec 10316 ip a 1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN qlen 1 link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00 inet 127.0.0.1/8 scope host lo valid_lft forever preferred_lft forever inet6 ::1/128 scope host valid_lft forever preferred_lft forever 3: eth0@if40: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1450 qdisc noqueue state UP link/ether 0a:58:0a:f4:02:f6 brd ff:ff:ff:ff:ff:ff link-netnsid 0 inet 10.">
 <meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="" />
 <meta property="og:description" content="pod IP docker 把容器网络命名空间隐藏起来了，查看容器网络需要把对应的网络命名空间显示出来： 容器Id:10316
-把容器网络命名空间链接到主机,这样主机就可以管理容器网络 ln -s /proc/10316/ns/net /var/run/netns/10316 查看网络命名空间  ip netns 在网络命名空间内执行命令  [root@k8s01 ~]# ip netns exec 10316 ip a1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN qlen 1link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00inet 127.0.0.1/8 scope host lovalid_lft forever preferred_lft foreverinet6 ::1/128 scope host valid_lft forever preferred_lft forever3: eth0@if40: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1450 qdisc noqueue state UP link/ether 0a:58:0a:f4:02:f6 brd ff:ff:ff:ff:ff:ff link-netnsid 0inet 10." />
+把容器网络命名空间链接到主机,这样主机就可以管理容器网络 ln -s /proc/10316/ns/net /var/run/netns/10316 查看网络命名空间  ip netns 在网络命名空间内执行命令  [root@k8s01 ~]# ip netns exec 10316 ip a 1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN qlen 1 link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00 inet 127.0.0.1/8 scope host lo valid_lft forever preferred_lft forever inet6 ::1/128 scope host valid_lft forever preferred_lft forever 3: eth0@if40: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1450 qdisc noqueue state UP link/ether 0a:58:0a:f4:02:f6 brd ff:ff:ff:ff:ff:ff link-netnsid 0 inet 10." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://wangyijie.github.io.io/blog/posts/%E6%97%A5%E8%AE%B0%E6%9C%AC/kubernetes-flannel-%E7%BD%91%E7%BB%9C%E6%B5%81%E7%A8%8B%E7%86%9F%E7%BB%83/" /><meta property="article:section" content="posts" />
 
@@ -16,9 +16,9 @@
 <title>Kubernetes Flannel 网络流程熟练 | A great computer technology Site</title>
 <link rel="manifest" href="/blog/manifest.json">
 <link rel="icon" href="/blog/favicon.png" type="image/x-icon">
-<link rel="stylesheet" href="/blog/book.min.8599444fcc48ee6b435b5b62c955ab7d914fa1e2a453df90c4b97cc9769665d1.css" integrity="sha256-hZlET8xI7mtDW1tiyVWrfZFPoeKkU9&#43;QxLl8yXaWZdE=" crossorigin="anonymous">
+<link rel="stylesheet" href="/blog/book.min.46181bc93375ba932026e753b37c40e6ff8bb16a9ef770c78bcc663e4577b1ba.css" integrity="sha256-RhgbyTN1upMgJudTs3xA5v&#43;LsWqe93DHi8xmPkV3sbo=" crossorigin="anonymous">
   <script defer src="/blog/flexsearch.min.js"></script>
-  <script defer src="/blog/en.search.min.55158ed2791ede306408bc7be70c306acf6623f56886bcf17d6a95efaaabf9db.js" integrity="sha256-VRWO0nke3jBkCLx75wwwas9mI/VohrzxfWqV76qr&#43;ds=" crossorigin="anonymous"></script>
+  <script defer src="/blog/en.search.min.243fede94d2ab4b88ffdd9674185e2ccb65b1929b6e7ead26fe703347fb01927.js" integrity="sha256-JD/t6U0qtLiP/dlnQYXizLZbGSm25&#43;rSb&#43;cDNH&#43;wGSc=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -293,7 +293,7 @@ https://github.com/alex-shpak/hugo-book
 
 
 <ol>
-<li>pod IP 
+<li>pod IP
 docker 把容器网络命名空间隐藏起来了，查看容器网络需要把对应的网络命名空间显示出来：
 容器Id:10316<br>
 把容器网络命名空间链接到主机,这样主机就可以管理容器网络
@@ -398,7 +398,18 @@ default via 172.20.10.254 dev ens32 proto static metric 100
     
   </main>
 
-  
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6266541561533854"
+     crossorigin="anonymous"></script>
+
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-6266541561533854"
+     data-ad-slot="9511333096"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
 </body>
 </html>
 

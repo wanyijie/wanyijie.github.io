@@ -41,7 +41,7 @@ Description: The minimal number of object store chunks to scrub during single op
       <guid>https://wangyijie.github.io.io/blog/posts/%E9%9A%8F%E7%AC%94/excel-%E5%90%88%E5%B9%B6%E8%A1%A8%E6%A0%BC/</guid>
       <description>前提： 要合并的表格表格列数相同 在要合并的表格放一个文件内，建一个新的空表格：   3.打开表格：
 4.鼠标放到左下角的sheet导航栏上右键选择查看源码：  把后面的代码贴入文本框中点顶部菜单栏的运行即可：   脚本
-  Sub 合并当前目录下所有工作簿的全部工作表()Dim MyPath, MyName, AWbNameDim Wb As Workbook, WbN As StringDim G As LongDim Num As LongDim BOX As StringApplication.ScreenUpdating = FalseMyPath = ActiveWorkbook.PathMyName = Dir(MyPath &amp;amp; &amp;quot;\&amp;quot; &amp;amp; &amp;quot;*.xlsx&amp;quot;)AWbName = ActiveWorkbook.NameNum = 0Do While MyName &amp;lt;&amp;gt; &amp;quot;&amp;quot;If MyName &amp;lt;&amp;gt; AWbName ThenSet Wb = Workbooks.</description>
+  Sub 合并当前目录下所有工作簿的全部工作表() Dim MyPath, MyName, AWbName Dim Wb As Workbook, WbN As String Dim G As Long Dim Num As Long Dim BOX As String Application.ScreenUpdating = False MyPath = ActiveWorkbook.Path MyName = Dir(MyPath &amp;amp; &amp;quot;\&amp;quot; &amp;amp; &amp;quot;*.xlsx&amp;quot;) AWbName = ActiveWorkbook.Name Num = 0 Do While MyName &amp;lt;&amp;gt; &amp;quot;&amp;quot; If MyName &amp;lt;&amp;gt; AWbName Then Set Wb = Workbooks.</description>
     </item>
     
     <item>
@@ -50,7 +50,7 @@ Description: The minimal number of object store chunks to scrub during single op
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.github.io.io/blog/posts/%E9%9A%8F%E7%AC%94/git%E6%8E%A8%E9%80%81%E8%A6%86%E7%9B%96%E6%97%A7%E4%BB%93%E5%BA%93/</guid>
-      <description>使用 git push origin master &amp;ndash;force#PS D:\src\angular6\material&amp;gt; git remote add origin https://github.com/getfirstcn/hsd-devops.gitPS D:\src\angular6\material&amp;gt; git push origin master --forcefatal: HttpRequestException encountered.发送请求时出错。Username for &#39;https://github.com&#39;: 785471184@qq.comPassword for &#39;https://785471184@qq.com@github.com&#39;:Counting objects: 489, done.Delta compression using up to 8 threads.Compressing objects: 100% (470/470), done.Writing objects: 100% (489/489), 244.28 KiB | 0 bytes/s, done.Total 489 (delta 270), reused 0 (delta 0)remote: Resolving deltas: 100% (270/270), done.</description>
+      <description>使用 git push origin master &amp;ndash;force#PS D:\src\angular6\material&amp;gt; git remote add origin https://github.com/getfirstcn/hsd-devops.git PS D:\src\angular6\material&amp;gt; git push origin master --force fatal: HttpRequestException encountered. 发送请求时出错。 Username for &#39;https://github.com&#39;: 785471184@qq.com Password for &#39;https://785471184@qq.com@github.com&#39;: Counting objects: 489, done. Delta compression using up to 8 threads. Compressing objects: 100% (470/470), done. Writing objects: 100% (489/489), 244.28 KiB | 0 bytes/s, done. Total 489 (delta 270), reused 0 (delta 0) remote: Resolving deltas: 100% (270/270), done.</description>
     </item>
     
     <item>

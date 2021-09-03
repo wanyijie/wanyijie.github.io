@@ -13,7 +13,7 @@
       
       <guid>https://wangyijie.github.io.io/blog/posts/devops/apm-pinpoint-install/</guid>
       <description>install docker#需要 docker-ce-18.03.+ docker-compose 1.23.+
-yum install -y http://mirror.azure.cn/docker-ce/linux/centos/7/x86_64/stable/Packages/docker-ce-cli-19.03.8-3.el7.x86_64.rpmsystemctl start docker systemctl enable dockercurl -o /usr/local/bin/docker-compose http://mirror.azure.cn/docker-toolbox/linux/compose/1.25.5/docker-compose-Linux-x86_64 chmod +x /usr/local/bin/docker-compose install pinpoint#cd /opt git clone https://github.com/naver/pinpoint-docker cd pinpoint-docker docker-compose pull docker-compose up -d
+yum install -y http://mirror.azure.cn/docker-ce/linux/centos/7/x86_64/stable/Packages/docker-ce-cli-19.03.8-3.el7.x86_64.rpm systemctl start docker systemctl enable docker curl -o /usr/local/bin/docker-compose http://mirror.azure.cn/docker-toolbox/linux/compose/1.25.5/docker-compose-Linux-x86_64 chmod +x /usr/local/bin/docker-compose install pinpoint#cd /opt git clone https://github.com/naver/pinpoint-docker cd pinpoint-docker docker-compose pull docker-compose up -d
 #访问 demo: 打开页面之后点各个连接产生访问数据 http://${your host}:8000
 web: http://${your host}:8079
 example#最后这一张图片是显示APM信息的,打开的方式是框住主页的访问数据点图,选择之后就会打开新页面#</description>
@@ -27,7 +27,7 @@ example#最后这一张图片是显示APM信息的,打开的方式是框住�
       <guid>https://wangyijie.github.io.io/blog/posts/devops/filebeat-%E6%8F%90%E5%8F%96java%E6%97%B6%E9%97%B4/</guid>
       <description>日志收集可能因机器性能而产生延迟，filebeat默认10秒扫描一次文件，收集时间集中也会导致日志按时间排序混乱，container处理器会降低日志写入时间的精度，所以提取java输出日志的时间有利于排序查看日志，java日志的写入时间大多精确到微秒，可能不足以正确排序，还可以借助filebeat 记录的offset排序。 具体实现采用elasticsearch 的 ingest 节点功能，使用grok processor 从java日志中提取时间，
 定义 ingest pipeline, 注意时间格式:#参考：grok-patterns
-PUT _ingest/pipeline/get_java_time{&amp;quot;description&amp;quot;: &amp;quot;get java time&amp;quot;, &amp;quot;processors&amp;quot;: [{&amp;quot;grok&amp;quot;: {&amp;quot;field&amp;quot;: &amp;quot;message&amp;quot;,&amp;quot;patterns&amp;quot;: [&amp;quot;%{TIMESTAMP_ISO8601:logtime}&amp;quot;]}}]}设置 mapping，明确时间格式，其它可以自行推断#PUT /filebeat-test{&amp;quot;mappings&amp;quot;: {&amp;quot;properties&amp;quot;: {&amp;quot;logtime&amp;quot;: { &amp;quot;type&amp;quot;: &amp;quot;date&amp;quot;, &amp;quot;format&amp;quot;: &amp;quot;yyyy-MM-dd HH:mm:ss.SSS&amp;quot;}}}}写入log:#PUT filebeat-test/_doc/1?pipeline=get_java_time{&amp;quot;log&amp;quot;: {&amp;quot;offset&amp;quot;: 0,&amp;quot;file&amp;quot;: {&amp;quot;path&amp;quot;: &amp;quot;/jsonfile/98f01b2565052a41ca90cf94442b4bde85e77547547da008c64b90956f723653/98f01b2565052a41ca90cf94442b4bde85e77547547da008c64b90956f723653-json.log&amp;quot;}},&amp;quot;input&amp;quot;: {&amp;quot;type&amp;quot;: &amp;quot;container&amp;quot;},&amp;quot;fields&amp;quot;: {&amp;quot;stack&amp;quot;: &amp;quot;test&amp;quot;,&amp;quot;tenant&amp;quot;: &amp;quot;default&amp;quot;,&amp;quot;log_source&amp;quot;: &amp;quot;test&amp;quot;,&amp;quot;log_topic&amp;quot;: &amp;quot;target_index&amp;quot;,&amp;quot;environment&amp;quot;: &amp;quot;192.</description>
+PUT _ingest/pipeline/get_java_time { &amp;quot;description&amp;quot;: &amp;quot;get java time&amp;quot;, &amp;quot;processors&amp;quot;: [ { &amp;quot;grok&amp;quot;: { &amp;quot;field&amp;quot;: &amp;quot;message&amp;quot;, &amp;quot;patterns&amp;quot;: [&amp;quot;%{TIMESTAMP_ISO8601:logtime}&amp;quot;] } } ] } 设置 mapping，明确时间格式，其它可以自行推断#PUT /filebeat-test { &amp;quot;mappings&amp;quot;: { &amp;quot;properties&amp;quot;: { &amp;quot;logtime&amp;quot;: { &amp;quot;type&amp;quot;: &amp;quot;date&amp;quot;, &amp;quot;format&amp;quot;: &amp;quot;yyyy-MM-dd HH:mm:ss.SSS&amp;quot;} } } } 写入log:#PUT filebeat-test/_doc/1?pipeline=get_java_time { &amp;quot;log&amp;quot;: { &amp;quot;offset&amp;quot;: 0, &amp;quot;file&amp;quot;: { &amp;quot;path&amp;quot;: &amp;quot;/jsonfile/98f01b2565052a41ca90cf94442b4bde85e77547547da008c64b90956f723653/98f01b2565052a41ca90cf94442b4bde85e77547547da008c64b90956f723653-json.log&amp;quot; } }, &amp;quot;input&amp;quot;: { &amp;quot;type&amp;quot;: &amp;quot;container&amp;quot; }, &amp;quot;fields&amp;quot;: { &amp;quot;stack&amp;quot;: &amp;quot;test&amp;quot;, &amp;quot;tenant&amp;quot;: &amp;quot;default&amp;quot;, &amp;quot;log_source&amp;quot;: &amp;quot;test&amp;quot;, &amp;quot;log_topic&amp;quot;: &amp;quot;target_index&amp;quot;, &amp;quot;environment&amp;quot;: &amp;quot;192.</description>
     </item>
     
     <item>
@@ -48,7 +48,7 @@ PUT _ingest/pipeline/get_java_time{&amp;quot;description&amp;quot;: &amp;quot;
       <guid>https://wangyijie.github.io.io/blog/posts/devops/github-actions/</guid>
       <description>Getting started with a workflow#To help you get started, this guide shows you some basic examples. For the full GitHub Actions documentation on workflows, see &amp;ldquo;Configuring workflows.&amp;rdquo;
 Customizing when workflow runs are triggered#  Set your workflow to run on push events to the master and release/* branches
-on:push:branches:- master- release/*  Set your workflow to run on pull_request events that target the master branch</description>
+on: push: branches: - master - release/*   Set your workflow to run on pull_request events that target the master branch</description>
     </item>
     
     <item>
@@ -89,7 +89,7 @@ sysctl命令被用于在内核运行时动态地修改内核的运行参数，�
       
       <guid>https://wangyijie.github.io.io/blog/posts/devops/redhat-rhel8-%E5%AE%89%E8%A3%85-azure-cli/</guid>
       <description>The package is for el7, and there are assumptions based on el7 that are no longer true for RHEL8. For now, instead of running sudo yum install azure-cli, please follow the workaround to install azure-cli:
-$ sudo yum install python2$ sudo yum install yum-utils$ sudo yumdownloader azure-cli$ sudo rpm -ivh --nodeps azure-cli-2.0.75-1.el7.x86_64.rpmThen edit the second line of /usr/bin/az (result of which az) to specify using python2: PYTHONPATH=/usr/lib64/az/lib/python2.</description>
+$ sudo yum install python2 $ sudo yum install yum-utils $ sudo yumdownloader azure-cli $ sudo rpm -ivh --nodeps azure-cli-2.0.75-1.el7.x86_64.rpm Then edit the second line of /usr/bin/az (result of which az) to specify using python2: PYTHONPATH=/usr/lib64/az/lib/python2.</description>
     </item>
     
     <item>

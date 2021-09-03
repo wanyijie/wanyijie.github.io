@@ -12,9 +12,9 @@
 <title>notes | A great computer technology Site</title>
 <link rel="manifest" href="/blog/manifest.json">
 <link rel="icon" href="/blog/favicon.png" type="image/x-icon">
-<link rel="stylesheet" href="/blog/book.min.8599444fcc48ee6b435b5b62c955ab7d914fa1e2a453df90c4b97cc9769665d1.css" integrity="sha256-hZlET8xI7mtDW1tiyVWrfZFPoeKkU9&#43;QxLl8yXaWZdE=" crossorigin="anonymous">
+<link rel="stylesheet" href="/blog/book.min.46181bc93375ba932026e753b37c40e6ff8bb16a9ef770c78bcc663e4577b1ba.css" integrity="sha256-RhgbyTN1upMgJudTs3xA5v&#43;LsWqe93DHi8xmPkV3sbo=" crossorigin="anonymous">
   <script defer src="/blog/flexsearch.min.js"></script>
-  <script defer src="/blog/en.search.min.55158ed2791ede306408bc7be70c306acf6623f56886bcf17d6a95efaaabf9db.js" integrity="sha256-VRWO0nke3jBkCLx75wwwas9mI/VohrzxfWqV76qr&#43;ds=" crossorigin="anonymous"></script>
+  <script defer src="/blog/en.search.min.243fede94d2ab4b88ffdd9674185e2ccb65b1929b6e7ead26fe703347fb01927.js" integrity="sha256-JD/t6U0qtLiP/dlnQYXizLZbGSm25&#43;rSb&#43;cDNH&#43;wGSc=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://wangyijie.github.io.io/blog/posts/%E6%97%A5%E8%AE%B0%E6%9C%AC/index.xml" title="A great computer technology Site" />
 <!--
 Made with Book Theme
@@ -384,7 +384,7 @@ https://github.com/alex-shpak/hugo-book
 
 
     <p>pod IP docker 把容器网络命名空间隐藏起来了，查看容器网络需要把对应的网络命名空间显示出来： 容器Id:10316
-把容器网络命名空间链接到主机,这样主机就可以管理容器网络 ln -s /proc/10316/ns/net /var/run/netns/10316 查看网络命名空间  ip netns 在网络命名空间内执行命令  [root@k8s01 ~]# ip netns exec 10316 ip a1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN qlen 1link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00inet 127.0.0.1/8 scope host lovalid_lft forever preferred_lft foreverinet6 ::1/128 scope host valid_lft forever preferred_lft forever3: eth0@if40: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1450 qdisc noqueue state UP link/ether 0a:58:0a:f4:02:f6 brd ff:ff:ff:ff:ff:ff link-netnsid 0inet 10.
+把容器网络命名空间链接到主机,这样主机就可以管理容器网络 ln -s /proc/10316/ns/net /var/run/netns/10316 查看网络命名空间  ip netns 在网络命名空间内执行命令  [root@k8s01 ~]# ip netns exec 10316 ip a 1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN qlen 1 link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00 inet 127.0.0.1/8 scope host lo valid_lft forever preferred_lft forever inet6 ::1/128 scope host valid_lft forever preferred_lft forever 3: eth0@if40: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1450 qdisc noqueue state UP link/ether 0a:58:0a:f4:02:f6 brd ff:ff:ff:ff:ff:ff link-netnsid 0 inet 10.
         <a href="/blog/posts/%E6%97%A5%E8%AE%B0%E6%9C%AC/kubernetes-flannel-%E7%BD%91%E7%BB%9C%E6%B5%81%E7%A8%8B%E7%86%9F%E7%BB%83/">...</a>
       
     </p>
@@ -422,7 +422,7 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-    <p>文档即命令行#OVPN_DATA=&quot;vpn-data&quot;docker volume create --name $OVPN_DATAdocker run -v $OVPN_DATA:/etc/openvpn --log-driver=none --rm # udp://112.60.90.13:1194 指定服务器地址协议端口, 默认1194dockerhub.azk8s.cn/kylemanna/openvpn ovpn_genconfig -u udp://112.60.90.13docker run -v $OVPN_DATA:/etc/openvpn -it --log-driver=none --rm dockerhub.azk8s.cn/kylemanna/openvpn ovpn_initpkidocker run -v $OVPN_DATA:/etc/openvpn -d -p 1194:1194/udp --cap-add=NET_ADMIN dockerhub.azk8s.cn/kylemanna/openvpndocker run -v $OVPN_DATA:/etc/openvpn --log-driver=none --rm -it dockerhub.azk8s.cn/kylemanna/openvpn easyrsa build-client-full wangyijie nopassdocker volume lsdocker volume inspect vpn-data cd /var/lib/docker/volumes/vpn-data/_datals pki/private/wangyijie.key docker run -v $OVPN_DATA:/etc/openvpn --log-driver=none --rm dockerhub.
+    <p>文档即命令行#OVPN_DATA=&quot;vpn-data&quot; docker volume create --name $OVPN_DATA docker run -v $OVPN_DATA:/etc/openvpn --log-driver=none --rm # udp://112.60.90.13:1194 指定服务器地址协议端口, 默认1194 dockerhub.azk8s.cn/kylemanna/openvpn ovpn_genconfig -u udp://112.60.90.13 docker run -v $OVPN_DATA:/etc/openvpn -it --log-driver=none --rm dockerhub.azk8s.cn/kylemanna/openvpn ovpn_initpki docker run -v $OVPN_DATA:/etc/openvpn -d -p 1194:1194/udp --cap-add=NET_ADMIN dockerhub.azk8s.cn/kylemanna/openvpn docker run -v $OVPN_DATA:/etc/openvpn --log-driver=none --rm -it dockerhub.azk8s.cn/kylemanna/openvpn easyrsa build-client-full wangyijie nopass docker volume ls docker volume inspect vpn-data cd /var/lib/docker/volumes/vpn-data/_data ls pki/private/wangyijie.key docker run -v $OVPN_DATA:/etc/openvpn --log-driver=none --rm dockerhub.
         <a href="/blog/posts/%E6%97%A5%E8%AE%B0%E6%9C%AC/openvpn%E5%AE%89%E8%A3%85%E5%8F%8A%E5%AE%A2%E6%88%B7%E7%AB%AF%E9%85%8D%E7%BD%AE%E5%88%9B%E5%BB%BA/">...</a>
       
     </p>
@@ -443,7 +443,7 @@ https://github.com/alex-shpak/hugo-book
 
 
     <p>go语言之旅：https://tour.go-zh.org/ 如何使用go编程：https://go-zh.org/doc/code.html 时效go编程：https://go-zh.org/doc/effective_go.html golang安装包下载：https://gomirrors.org/ go mod 代理地址：https://goproxy.io/
-bash## Enable the go modules feature export GO111MODULE=on # Set the GOPROXY environment variable export GOPROXY=https://goproxy.io PowerShell## Enable the go modules feature $env:GO111MODULE=on # Set the GOPROXY environment variable $env:GOPROXY=https://goproxy.io Go version &gt;= 1.13#go env -w GOPROXY=https://goproxy.io, direct# Set environment variable allow bypassing the proxy for selected modulesgo env -w GOPRIVATE=*.corp.example.com
+bash## Enable the go modules feature export GO111MODULE=on # Set the GOPROXY environment variable export GOPROXY=https://goproxy.io PowerShell## Enable the go modules feature $env:GO111MODULE=on # Set the GOPROXY environment variable $env:GOPROXY=https://goproxy.io Go version &gt;= 1.13#go env -w GOPROXY=https://goproxy.io, direct # Set environment variable allow bypassing the proxy for selected modules go env -w GOPRIVATE=*.corp.example.com 
     </p>
   </article>
   
@@ -596,7 +596,18 @@ I: bookzz.org/ (2)
     
   </main>
 
-  
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6266541561533854"
+     crossorigin="anonymous"></script>
+
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-6266541561533854"
+     data-ad-slot="9511333096"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
 </body>
 </html>
 

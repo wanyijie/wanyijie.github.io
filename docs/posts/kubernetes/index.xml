@@ -39,7 +39,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.github.io.io/blog/posts/kubernetes/fluented-install/</guid>
-      <description>deploy elasticsearch persistent volume#cat pv-master.yamlkind: PersistentVolumeapiVersion: v1metadata:name: efk-master-volumelabels:type: localspec:storageClassName: elasticsearch-mastercapacity:storage: 10GiaccessModes:- ReadWriteOncehostPath:path: &amp;quot;/mnt/data/efk-master&amp;quot;mkdir -p /mnt/data/efk-master &amp;amp;&amp;amp; kubectl create -f pv-master.yamldata#cat pv-data.yamlkind: PersistentVolumeapiVersion: v1metadata:name: efk-data-volumelabels:type: localspec:storageClassName: elasticsearch-datacapacity:storage: 5GiaccessModes:- ReadWriteOncehostPath:path: &amp;quot;/mnt/data/efk-data&amp;quot;mkdir -p /mnt/data/efk-data &amp;amp;&amp;amp; kubectl create -f pv-data.</description>
+      <description>deploy elasticsearch persistent volume#cat pv-master.yaml kind: PersistentVolume apiVersion: v1 metadata: name: efk-master-volume labels: type: localspec: storageClassName: elasticsearch-master capacity: storage: 10Gi accessModes: - ReadWriteOnce hostPath: path: &amp;quot;/mnt/data/efk-master&amp;quot; mkdir -p /mnt/data/efk-master &amp;amp;&amp;amp; kubectl create -f pv-master.yaml data#cat pv-data.yaml kind: PersistentVolume apiVersion: v1 metadata: name: efk-data-volume labels: type: local spec: storageClassName: elasticsearch-data capacity: storage: 5Gi accessModes: - ReadWriteOnce hostPath: path: &amp;quot;/mnt/data/efk-data&amp;quot; mkdir -p /mnt/data/efk-data &amp;amp;&amp;amp; kubectl create -f pv-data.</description>
     </item>
     
     <item>
@@ -49,7 +49,7 @@
       
       <guid>https://wangyijie.github.io.io/blog/posts/kubernetes/gcr-proxy-cache/</guid>
       <description>GCR Proxy Cache 帮助#GCR Proxy Cache服务器相当于一台GCR镜像服务器，国内用户可以经由该服务器从gcr.io下载镜像。
-使用GCR Proxy Cache从gcr.io下载镜像#docker pull gcr.azk8s.cn/google_containers/&amp;lt;imagename&amp;gt;:&amp;lt;version&amp;gt;例子#docker pull gcr.azk8s.cn/google_containers/pause-amd64:3.0docker pull gcr.azk8s.cn/google_containers/kubedns-amd64:1.7</description>
+使用GCR Proxy Cache从gcr.io下载镜像#docker pull gcr.azk8s.cn/google_containers/&amp;lt;imagename&amp;gt;:&amp;lt;version&amp;gt; 例子#docker pull gcr.azk8s.cn/google_containers/pause-amd64:3.0 docker pull gcr.azk8s.cn/google_containers/kubedns-amd64:1.7 </description>
     </item>
     
     <item>
@@ -60,7 +60,7 @@
       <guid>https://wangyijie.github.io.io/blog/posts/kubernetes/get-kubernetes-images-quickly/</guid>
       <description>open:#https://katacoda.com/courses/kubernetes/playground
 check images#kubeadm config images list W0601 03:36:09.535740 16500 configset.go:202] WARNING: kubeadm cannot validate component configs for API groups [kubelet.config.k8s.io kubeproxy.config.k8s.io] k8s.gcr.io/kube-apiserver:v1.18.3 k8s.gcr.io/kube-controller-manager:v1.18.3 k8s.gcr.io/kube-scheduler:v1.18.3 k8s.gcr.io/kube-proxy:v1.18.3 k8s.gcr.io/pause:3.2 k8s.gcr.io/etcd:3.4.3-0 k8s.gcr.io/coredns:1.6.7
-exceute script#docker login --username=hi30567721@aliyun.com --password=youpass registry.cn-shenzhen.aliyuncs.comfor i in `kubeadm config images list | grep k8s.gcr.io`do echo $i; docker pull $idocker tag $i registry.cn-shenzhen.aliyuncs.com/wangyijie/${i##*/}docker push registry.cn-shenzhen.aliyuncs.com/wangyijie/${i##*/}done</description>
+exceute script#docker login --username=hi30567721@aliyun.com --password=youpass registry.cn-shenzhen.aliyuncs.com for i in `kubeadm config images list | grep k8s.gcr.io` do echo $i; docker pull $i docker tag $i registry.cn-shenzhen.aliyuncs.com/wangyijie/${i##*/} docker push registry.cn-shenzhen.aliyuncs.com/wangyijie/${i##*/} done </description>
     </item>
     
     <item>
@@ -71,10 +71,10 @@ exceute script#docker login --username=hi30567721@aliyun.com --password=youpa
       <guid>https://wangyijie.github.io.io/blog/posts/kubernetes/heapster-&#43;-influxdb-&#43;-grafana-%E7%9B%91%E6%8E%A7%E6%B2%A1%E6%95%B0%E6%8D%AE%E6%A1%88%E4%BE%8B/</guid>
       <description>现象#通过grafana查看部分容器没有监控数据
 关键信息#通过查看influxdb发现异常日志
-[write] 2019/04/25 09:56:05 write failed for shard 170: max-series-per-database limit exceeded: db=k8s (1000000/1000000) dropped=2111[httpd] 172.16.3.10 - root [25/Apr/2019:09:56:05 +0000] &amp;quot;POST /write?consistency=&amp;amp;db=k8s&amp;amp;precision=&amp;amp;rp=default HTTP/1.1&amp;quot; 400 115 &amp;quot;-&amp;quot; &amp;quot;heapster/v1.5.1&amp;quot; 579d5b31-6740-11e9-8057-000000000000 156302日志提示有序列超出了最大数限制： 查看文档有对应的参数： ##解决方法： 添加环境变量覆盖参数：
- - image: registry-vpc.cn-shenzhen.aliyuncs.com/acs/heapster-influxdb-amd64:v1.1.1imagePullPolicy: IfNotPresentname: influxdbenv:- name: INFLUXDB_DATA_MAX_SERIES_PER_DATABASEvalue: &amp;quot;0&amp;quot;- name: INFLUXDB_DATA_MAX_VALUES_PER_TAGvalue: &amp;quot;0&amp;quot;变量值需加引号
+[write] 2019/04/25 09:56:05 write failed for shard 170: max-series-per-database limit exceeded: db=k8s (1000000/1000000) dropped=2111 [httpd] 172.16.3.10 - root [25/Apr/2019:09:56:05 +0000] &amp;quot;POST /write?consistency=&amp;amp;db=k8s&amp;amp;precision=&amp;amp;rp=default HTTP/1.1&amp;quot; 400 115 &amp;quot;-&amp;quot; &amp;quot;heapster/v1.5.1&amp;quot; 579d5b31-6740-11e9-8057-000000000000 156302 日志提示有序列超出了最大数限制： 查看文档有对应的参数： ##解决方法： 添加环境变量覆盖参数：
+ - image: registry-vpc.cn-shenzhen.aliyuncs.com/acs/heapster-influxdb-amd64:v1.1.1 imagePullPolicy: IfNotPresent name: influxdb env: - name: INFLUXDB_DATA_MAX_SERIES_PER_DATABASE value: &amp;quot;0&amp;quot; - name: INFLUXDB_DATA_MAX_VALUES_PER_TAG value: &amp;quot;0&amp;quot; 变量值需加引号
 验证方法#influxdb没有图形界面了，命令工具也不易安装，curl最方便，不过格式需要注意，我参照了许多才找到合适的，记录个例子：
-curl http://172.21.11.108:8086/query?pretty=true --data-urlencode &amp;quot;db=k8s&amp;quot; --data-urlencode &amp;quot;q=SELECT * FROM \&amp;quot;cpu/usage\&amp;quot; WHERE (\&amp;quot;type\&amp;quot; = &#39;pod&#39; AND \&amp;quot;namespace_name\&amp;quot; =~ /^blue$/) AND time &amp;gt;= now() - 30m&amp;quot;</description>
+curl http://172.21.11.108:8086/query?pretty=true --data-urlencode &amp;quot;db=k8s&amp;quot; --data-urlencode &amp;quot;q=SELECT * FROM \&amp;quot;cpu/usage\&amp;quot; WHERE (\&amp;quot;type\&amp;quot; = &#39;pod&#39; AND \&amp;quot;namespace_name\&amp;quot; =~ /^blue$/) AND time &amp;gt;= now() - 30m&amp;quot; </description>
     </item>
     
     <item>
@@ -125,7 +125,7 @@ curl http://172.21.11.108:8086/query?pretty=true --data-urlencode &amp;quot;db=k
       
       <guid>https://wangyijie.github.io.io/blog/posts/kubernetes/kubernetes-conformance-tests/</guid>
       <description>大概步骤# 获取镜像 ./sonobuoy images pull &amp;ndash;e2e-repo-config custom-repos.yaml -dry-run 参考下面的脚本通过gcr.azk8s.cn代理地址下载gcr镜像上传到私有仓库 执行任务会在kubenetes里面创建pod启动任务 ./sonobuoy run &amp;ndash;sonobuoy-image 172.20.8.7/library/sonobuoy:v0.17.2
-&amp;ndash;kube-conformance-image 172.20.8.7/library/conformance:v1.15.10 等运行剩一个pod，大概几个小时的时间，检查结果 ./sonobuoy status 通过之后收集数据 results=$(./sonobuoy retrieve) ./sonobuoy results $results  #get command sonobuoydocker run -d --rm --name=sonobuoy sonobuoy/sonobuoy:v0.16 sleep 120docker cp sonobuoy:/sonobuoy ./# 私有仓库registry=172.20.8.7getImage(){image=$1docker pull $imagedocker $image tag ${registry}/library/${image##*/}docker push ${registry}/library/${image##*/}}kubeVersion=v1.15.10getImage gcr.azk8s.cn/heptio-images/sonobuoy-plugin-systemd-logs:latestgetImage gcr.azk8s.cn/google-containers/conformance:$kubeVersion./sonobuoy run --sonobuoy-image 172.20.8.7/library/sonobuoy:v0.16\--kube-conformance-image 172.</description>
+&amp;ndash;kube-conformance-image 172.20.8.7/library/conformance:v1.15.10 等运行剩一个pod，大概几个小时的时间，检查结果 ./sonobuoy status 通过之后收集数据 results=$(./sonobuoy retrieve) ./sonobuoy results $results  #get command sonobuoy docker run -d --rm --name=sonobuoy sonobuoy/sonobuoy:v0.16 sleep 120 docker cp sonobuoy:/sonobuoy ./ # 私有仓库 registry=172.20.8.7 getImage(){ image=$1 docker pull $image docker $image tag ${registry}/library/${image##*/} docker push ${registry}/library/${image##*/} } kubeVersion=v1.15.10 getImage gcr.azk8s.cn/heptio-images/sonobuoy-plugin-systemd-logs:latest getImage gcr.azk8s.cn/google-containers/conformance:$kubeVersion ./sonobuoy run --sonobuoy-image 172.20.8.7/library/sonobuoy:v0.16\ --kube-conformance-image 172.</description>
     </item>
     
     <item>
@@ -163,7 +163,7 @@ curl http://172.21.11.108:8086/query?pretty=true --data-urlencode &amp;quot;db=k
       
       <guid>https://wangyijie.github.io.io/blog/posts/kubernetes/kubernetes-%E8%B5%84%E6%BA%90%E7%BC%96%E6%8E%92%E5%B8%AE%E5%8A%A9/</guid>
       <description>我们在编写kubernetes资源清单的时候有很多细节不易记住，特别对于还不熟练的同学，寻找参考摸板是一件麻烦的事，下面介绍两种获取参考帮助的手段，足够大家无往不利
- kubectl get &amp;ndash;export kubectl get -o yaml &amp;ndash;export 我们编写清单可以在集群找一个现成的资源摸板,然后修改我们想要的信息在以此创建新的资源，这能解决大部分需要了， kubectl get -o yaml &amp;ndash;export 命令获得的资源内容就一个完美的摸板，-o yaml 用的比较多，&amp;ndash;export 关注的可能就比较少，它的作用是把资源在当前集群的一些个性化数据过滤掉，给你一个清爽的摸板，去感受一下吧！ kubectl explain 有时我们通过上面的方法能找到的摸板可能没有我们要的配置，这时需要去别处寻找参考，或者去查看api文档，其实都可以不用，kubectl explain 可以根据资源路径给对应资源的子对象，就是其可以包含的字段或对象，比如看一个我不知道configMap卷怎么写的栗子：  [root@Registry ~]# kubectl explain deployments.spec.template.spec.volumes.configMapRESOURCE: configMap &amp;lt;Object&amp;gt;DESCRIPTION:ConfigMap represents a configMap that should populate this volumeAdapts a ConfigMap into a volume.FIELDS:defaultMode	&amp;lt;integer&amp;gt;Optional: mode bits to use on created files by default. Must be a valuebetween 0 and 0777.</description>
+ kubectl get &amp;ndash;export kubectl get -o yaml &amp;ndash;export 我们编写清单可以在集群找一个现成的资源摸板,然后修改我们想要的信息在以此创建新的资源，这能解决大部分需要了， kubectl get -o yaml &amp;ndash;export 命令获得的资源内容就一个完美的摸板，-o yaml 用的比较多，&amp;ndash;export 关注的可能就比较少，它的作用是把资源在当前集群的一些个性化数据过滤掉，给你一个清爽的摸板，去感受一下吧！ kubectl explain 有时我们通过上面的方法能找到的摸板可能没有我们要的配置，这时需要去别处寻找参考，或者去查看api文档，其实都可以不用，kubectl explain 可以根据资源路径给对应资源的子对象，就是其可以包含的字段或对象，比如看一个我不知道configMap卷怎么写的栗子：  [root@Registry ~]# kubectl explain deployments.spec.template.spec.volumes.configMap RESOURCE: configMap &amp;lt;Object&amp;gt; DESCRIPTION: ConfigMap represents a configMap that should populate this volume Adapts a ConfigMap into a volume. FIELDS: defaultMode	&amp;lt;integer&amp;gt; Optional: mode bits to use on created files by default. Must be a value between 0 and 0777.</description>
     </item>
     
     <item>
@@ -173,9 +173,9 @@ curl http://172.21.11.108:8086/query?pretty=true --data-urlencode &amp;quot;db=k
       
       <guid>https://wangyijie.github.io.io/blog/posts/kubernetes/kubernetes%E4%BC%98%E5%85%88%E7%BA%A7%E8%B0%83%E5%BA%A6/</guid>
       <description>从 v1.8 开始，kube-scheduler 支持定义 Pod 的优先级，从而保证高优先级的 Pod 优先调度。并从 v1.11 开始默认开启。 注：在 v1.8-v1.10 版本中的开启方法为
-apiserver 配置: --feature-gates=PodPriority=true --runtime-config=scheduling.k8s.io/v1alpha1=truekube-scheduler 配置:--feature-gates=PodPriority=true在指定 Pod 的优先级之前需要先定义一个 PriorityClass（非 namespace 资源），如
-apiVersion: v1kind: PriorityClassmetadata:name: high-priorityvalue: 1000000globalDefault: falsedescription: &amp;quot;This priority class should be used for XYZ service pods only.&amp;quot;其中value 为 32 位整数的优先级，该值越大，优先级越高 globalDefault 用于未配置 PriorityClassName 的 Pod，整个集群中应该只有一个 PriorityClass 将其设置为 true 然后，在 PodSpec 中通过 PriorityClassName 设置 Pod 的优先级：
-apiVersion: v1kind: Podmetadata:name: nginxlabels:env: testspec:containers:- name: nginximage: nginximagePullPolicy: IfNotPresentpriorityClassName: high-priority</description>
+apiserver 配置: --feature-gates=PodPriority=true --runtime-config=scheduling.k8s.io/v1alpha1=true kube-scheduler 配置: --feature-gates=PodPriority=true 在指定 Pod 的优先级之前需要先定义一个 PriorityClass（非 namespace 资源），如
+apiVersion: v1 kind: PriorityClass metadata: name: high-priority value: 1000000 globalDefault: false description: &amp;quot;This priority class should be used for XYZ service pods only.&amp;quot; 其中value 为 32 位整数的优先级，该值越大，优先级越高 globalDefault 用于未配置 PriorityClassName 的 Pod，整个集群中应该只有一个 PriorityClass 将其设置为 true 然后，在 PodSpec 中通过 PriorityClassName 设置 Pod 的优先级：
+apiVersion: v1 kind: Pod metadata: name: nginx labels: env: test spec: containers: - name: nginx image: nginx imagePullPolicy: IfNotPresent priorityClassName: high-priority </description>
     </item>
     
     <item>
@@ -197,10 +197,10 @@ Chapter 1. Course Introduction# Welcome 1.1. Before You Begin 1.2. Course Int
       <guid>https://wangyijie.github.io.io/blog/posts/kubernetes/kubernetes%E8%AF%81%E4%B9%A6%E7%BB%AD%E6%9C%9F/</guid>
       <description>kubeadm 默认证书为一年，一年过期后，会导致api service不可用，使用过程中会出现：x509: certificate has expired or is not yet valid.
 方案一 通过修改kubeadm 调整证书过期时间
-一、使用kubadm 更新证书#1. 查看证书有效期#kubeadm alpha certs check-expiration2. 重新签发证书#kubeadm alpha certs renew admin.confkubeadm alpha certs renew scheduler.conf kubeadm alpha certs renew controller-manager.conf3. 重启控制平面使生效#重启kubelet会自动重新创建核心组件
-systemctl restart kubelet4. 验证#kubeadm alpha certs check-expiration
+一、使用kubadm 更新证书#1. 查看证书有效期#kubeadm alpha certs check-expiration 2. 重新签发证书#kubeadm alpha certs renew admin.conf kubeadm alpha certs renew scheduler.conf kubeadm alpha certs renew controller-manager.conf 3. 重启控制平面使生效#重启kubelet会自动重新创建核心组件
+systemctl restart kubelet 4. 验证#kubeadm alpha certs check-expiration
 二、创建长期有效期证书#自己创建这四个文件需要的证书，替换四个文件使用的内嵌证书。我们自己创建的证书的有效期为50年，不再有过期的风险。步骤如下：
-生成证书：#cd /etc/kubernetesmkdir certcd cert/cat &amp;gt; ca-config.</description>
+生成证书：#cd /etc/kubernetes mkdir cert cd cert/ cat &amp;gt; ca-config.</description>
     </item>
     
     <item>
@@ -210,7 +210,7 @@ systemctl restart kubelet4. 验证#kubeadm alpha certs check-expiration
       
       <guid>https://wangyijie.github.io.io/blog/posts/kubernetes/metrics-server-%E9%83%A8%E7%BD%B2/</guid>
       <description>heapster已经不在维护，转由metrics-server 替代，没安装metrics-server pod命令和自动调度不能正常工作 项目地址：https://github.com/kubernetes-incubator/metrics-server 部署后可能不能正常收集数据，尝试添加下面的启动参数，kubelet-insecure-tls用于kubelet使用证书不满足认证添加，kubelet-preferred-address-types指名访问kubelet的地址类型，分别有：InternalIP,ExternalIP,Hostname
-- /metrics-server- --v=2- --kubelet-insecure-tls- --kubelet-preferred-address-types=InternalIP</description>
+- /metrics-server - --v=2 - --kubelet-insecure-tls - --kubelet-preferred-address-types=InternalIP </description>
     </item>
     
     <item>
@@ -219,7 +219,7 @@ systemctl restart kubelet4. 验证#kubeadm alpha certs check-expiration
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.github.io.io/blog/posts/kubernetes/skiffold/</guid>
-      <description>调试可用的配置，花了不少时间踩坑，拿走不谢！#apiVersion: skaffold/v1beta8kind: Config- name: profile-prod # a unique profile name.patches:activation:- env: ENV=productionkubeContext: minikubecommand: deploy- env: ENV=developkubeContext: minikubecommand: devbuild:artifacts:- image: axd-registerjibMaven:module: axd-registerargs:- -DskipTests- image: axd-gatewayjibMaven:module: axd-gatewayargs:- -DskipTests- image: axd-activity-providerjibMaven:module: axd-gatewayargs:- -DskipTests- image: axd-auth-providerjibMaven:module: axd-auth-providerargs:- -DskipTests- image: axd-basic-providerjibMaven:module: axd-basic-providerargs:- -DskipTests- image: axd-book-providerjibMaven:module: axd-book-providerargs:- -DskipTests- image: axd-manager-providerjibMaven:module: axd-manager-providerargs:- -DskipTests- image: axd-merchant-providerjibMaven:module: axd-merchant-providerargs:- -DskipTests- image: axd-mq-providerjibMaven:module: axd-mq-providerargs:- -DskipTests- image: axd-order-providerjibMaven:module: axd-order-providerargs:- -DskipTests- image: axd-push-providerjibMaven:module: axd-push-providerargs:- -DskipTests- image: axd-user-providerjibMaven:module: axd-user-providerargs:- -DskipTests# optional profile to run the jib build on Google Cloud Builddeploy:kubectl:manifests:- axd-register/k8s.</description>
+      <description>调试可用的配置，花了不少时间踩坑，拿走不谢！#apiVersion: skaffold/v1beta8 kind: Config - name: profile-prod # a unique profile name. patches: activation: - env: ENV=production kubeContext: minikube command: deploy - env: ENV=develop kubeContext: minikube command: dev build: artifacts: - image: axd-register jibMaven: module: axd-register args: - -DskipTests - image: axd-gateway jibMaven: module: axd-gateway args: - -DskipTests - image: axd-activity-provider jibMaven: module: axd-gateway args: - -DskipTests - image: axd-auth-provider jibMaven: module: axd-auth-provider args: - -DskipTests - image: axd-basic-provider jibMaven: module: axd-basic-provider args: - -DskipTests - image: axd-book-provider jibMaven: module: axd-book-provider args: - -DskipTests - image: axd-manager-provider jibMaven: module: axd-manager-provider args: - -DskipTests - image: axd-merchant-provider jibMaven: module: axd-merchant-provider args: - -DskipTests - image: axd-mq-provider jibMaven: module: axd-mq-provider args: - -DskipTests - image: axd-order-provider jibMaven: module: axd-order-provider args: - -DskipTests - image: axd-push-provider jibMaven: module: axd-push-provider args: - -DskipTests - image: axd-user-provider jibMaven: module: axd-user-provider args: - -DskipTests # optional profile to run the jib build on Google Cloud Build deploy: kubectl: manifests: - axd-register/k8s.</description>
     </item>
     
     <item>
@@ -228,7 +228,7 @@ systemctl restart kubelet4. 验证#kubeadm alpha certs check-expiration
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.github.io.io/blog/posts/kubernetes/ubuntu18-04%E5%AE%89%E8%A3%85minikube/</guid>
-      <description> 使用kvm2 ,检查命令看到关键字即可： egrep --color &#39;vmx|svm&#39; /proc/cpuinfo 安装kvm依赖：  apt install libvirt-clients libvirt-daemon-system qemu-kvmsystemctl enable libvirtd.servicesystemctl start libvirtd.servicecurl -LO https://storage.googleapis.com/minikube/releases/latest/docker-machine-driver-kvm2 install docker-machine-driver-kvm2 /usr/local/bin/下载minikube, google的存储，下载失败多尝试几下成功后速度很快：  curl -Lo minikube https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64 &amp;amp;&amp;amp; chmod +x minikubecp minikube /usr/local/bin &amp;amp;&amp;amp; rm minikub设置minikube使用的虚拟化环境， 启动miniKube环境：  minikube start --vm-driver kvm2</description>
+      <description> 使用kvm2 ,检查命令看到关键字即可： egrep --color &#39;vmx|svm&#39; /proc/cpuinfo 安装kvm依赖：  apt install libvirt-clients libvirt-daemon-system qemu-kvm systemctl enable libvirtd.service systemctl start libvirtd.service curl -LO https://storage.googleapis.com/minikube/releases/latest/docker-machine-driver-kvm2 install docker-machine-driver-kvm2 /usr/local/bin/ 下载minikube, google的存储，下载失败多尝试几下成功后速度很快：  curl -Lo minikube https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64 &amp;amp;&amp;amp; chmod +x minikube cp minikube /usr/local/bin &amp;amp;&amp;amp; rm minikub 设置minikube使用的虚拟化环境， 启动miniKube环境：  minikube start --vm-driver kvm2 </description>
     </item>
     
     <item>
@@ -237,8 +237,8 @@ systemctl restart kubelet4. 验证#kubeadm alpha certs check-expiration
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.github.io.io/blog/posts/kubernetes/upgrade-kubernetes-to-1-19-4/</guid>
-      <description>install upgrade tool kubeadm#apt install -y kubeadmkubeadm config images listk8s.gcr.io/kube-apiserver:v1.19.4k8s.gcr.io/kube-controller-manager:v1.19.4k8s.gcr.io/kube-scheduler:v1.19.4k8s.gcr.io/kube-proxy:v1.19.4k8s.gcr.io/pause:3.2k8s.gcr.io/etcd:3.4.13-0k8s.gcr.io/coredns:1.7.0transfer gcr images to docker hub#open https://katacoda.com/courses/ubuntu/playground
-go get github.com/xilu0/transferfor im in `kubeadm config images list`;do transfer --user=heishui --password=&amp;quot;$repopass&amp;quot; --image=$im;doneupgrade kubernetes cluster#kubeadm upgrade plankubeadm upgrade apply v1.19.4upgrade components#apt install -y kubectl kubelet</description>
+      <description>install upgrade tool kubeadm#apt install -y kubeadm kubeadm config images list k8s.gcr.io/kube-apiserver:v1.19.4 k8s.gcr.io/kube-controller-manager:v1.19.4 k8s.gcr.io/kube-scheduler:v1.19.4 k8s.gcr.io/kube-proxy:v1.19.4 k8s.gcr.io/pause:3.2 k8s.gcr.io/etcd:3.4.13-0 k8s.gcr.io/coredns:1.7.0 transfer gcr images to docker hub#open https://katacoda.com/courses/ubuntu/playground
+go get github.com/xilu0/transfer for im in `kubeadm config images list`;do transfer --user=heishui --password=&amp;quot;$repopass&amp;quot; --image=$im;done upgrade kubernetes cluster#kubeadm upgrade plan kubeadm upgrade apply v1.19.4 upgrade components#apt install -y kubectl kubelet </description>
     </item>
     
     <item>
@@ -302,7 +302,7 @@ image 原理#分层文件系统或联合文件系统，有mergedir, workdir, 
       
       <guid>https://wangyijie.github.io.io/blog/posts/kubernetes/%E9%80%9A%E8%BF%87hub-docker%E5%8A%A0git%E8%8E%B7%E5%8F%96kubernetes%E9%95%9C%E5%83%8F/</guid>
       <description>使用工具kubeadm安装kubernetes集群是需要的镜像默认放在google容器仓库中，国内不便直接下载，这里记录通过hub.docker加git获取kubernetes镜像： 1.登陆注册dockerID和github账户 2.dockerhub和github上的公开仓库创建都是没有限制的，在github创建一个仓库，里面放放入自己Dockerfile，列入：
-from gcr.io/google_containers/kube-scheduler-amd64:v1.9.2label maintainer=&amp;quot;785471184@qq.com&amp;quot; 这次我是使用应该仓库构建多个镜像，github上用目录分开存放，dockerhub上用tag来区分不同的仓库，如果不闲玛法可以一个镜像创建一个仓库。 dockerhub有普通仓库和自带构建仓库，普仓库我们可以登录后把本地镜像push上去，自动构建仓库支持对接github和bitbucket版本控制系统自动化构建，我要用github仓库自动构建，那就创建自动构建仓库，跟图： 不要点下面那个很大的创建仓库图标，那里只是创建普通仓库的入口，从那里开始不能配置自动构建的，我也被坑一阵，留意！ 这里有一点值得提醒，如果你的仓库是在组织下而不是在个人名下，那dockerhub默认是不能访问组织仓库，这时候需要去到github上删除组织仓库的第三方访问限制： 选择仓库创建： 默认是在仓库的根目录检查Dockerfile文件，我这里是要用一个仓库构建多个镜像，所有创建了子目录，把Dockerfile放在子目录里面，指定Dockerfile位置，中间有个激活自动构建的单选框，可以选择也可以不选需要的时候自己来点一下触发按钮，记得保存： 触发构建之后可以去构建详细那里查看构建结果，如果失败了点击错误可以看到日志。 构建成功的可以就可以在tags那里看到标签，不想保留的镜像可以删除。 最后一次构建成功的Dockerfile内容还会被提取到Dockerfile栏目。 在仓库信息里面给些备注可以方便其他寻找镜像的人使用。 ok！</description>
+from gcr.io/google_containers/kube-scheduler-amd64:v1.9.2 label maintainer=&amp;quot;785471184@qq.com&amp;quot;  这次我是使用应该仓库构建多个镜像，github上用目录分开存放，dockerhub上用tag来区分不同的仓库，如果不闲玛法可以一个镜像创建一个仓库。 dockerhub有普通仓库和自带构建仓库，普仓库我们可以登录后把本地镜像push上去，自动构建仓库支持对接github和bitbucket版本控制系统自动化构建，我要用github仓库自动构建，那就创建自动构建仓库，跟图： 不要点下面那个很大的创建仓库图标，那里只是创建普通仓库的入口，从那里开始不能配置自动构建的，我也被坑一阵，留意！ 这里有一点值得提醒，如果你的仓库是在组织下而不是在个人名下，那dockerhub默认是不能访问组织仓库，这时候需要去到github上删除组织仓库的第三方访问限制： 选择仓库创建： 默认是在仓库的根目录检查Dockerfile文件，我这里是要用一个仓库构建多个镜像，所有创建了子目录，把Dockerfile放在子目录里面，指定Dockerfile位置，中间有个激活自动构建的单选框，可以选择也可以不选需要的时候自己来点一下触发按钮，记得保存： 触发构建之后可以去构建详细那里查看构建结果，如果失败了点击错误可以看到日志。 构建成功的可以就可以在tags那里看到标签，不想保留的镜像可以删除。 最后一次构建成功的Dockerfile内容还会被提取到Dockerfile栏目。 在仓库信息里面给些备注可以方便其他寻找镜像的人使用。 ok！</description>
     </item>
     
   </channel>

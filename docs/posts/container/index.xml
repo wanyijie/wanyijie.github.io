@@ -25,11 +25,11 @@
 cpu limit#即如果没有显式指定-XX:ParalllelGCThreads 或者 -XX:CICompilerCount, 那么JVM使用docker的cpu限制。如果docker有指定cpu limit，jvm参数也有指定-XX:ParalllelGCThreads 或者 -XX:CICompilerCount，那么以指定的参数为准。
 memory limit#在java8u131+及java9，需要加上-XX:+UnlockExperimentalVMOptions -XX:+UseCGroupMemoryLimitForHeap才能使得Xmx感知docker的memory limit。
 查看参数默认值
-java -XX:+UnlockDiagnosticVMOptions -XX:+UnlockExperimentalVMOptions -XX:+PrintFlagsFinal部分输出
-bool UseCGroupMemoryLimitForHeap = false {experimental} {default} 可以看到在java9，UseCGroupMemoryLimitForHeap参数还是实验性的，默认关闭。
- java10#bool UseCGroupMemoryLimitForHeap = false {experimental} {default} java10，UseCGroupMemoryLimitForHeap还是experimental，不过标记为废弃。
+java -XX:+UnlockDiagnosticVMOptions -XX:+UnlockExperimentalVMOptions -XX:+PrintFlagsFinal 部分输出
+bool UseCGroupMemoryLimitForHeap = false {experimental} {default}  可以看到在java9，UseCGroupMemoryLimitForHeap参数还是实验性的，默认关闭。
+ java10#bool UseCGroupMemoryLimitForHeap = false {experimental} {default}  java10，UseCGroupMemoryLimitForHeap还是experimental，不过标记为废弃。
  不过java10新引入了1个参数
-int ActiveProcessorCount = -1 {product} {default} ActiveProcessorCount可以用来指定cpu的个数
+int ActiveProcessorCount = -1 {product} {default}  ActiveProcessorCount可以用来指定cpu的个数
  java11#java11正式移除UseCGroupMemoryLimitForHeap，代码改动见8194086: Remove deprecated experimental flag UseCGroupMemoryLimitForHeap
 同时引入1个新参数</description>
     </item>
@@ -49,7 +49,7 @@ int ActiveProcessorCount = -1 {product} {default} ActiveProcessorCount可以
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.github.io.io/blog/posts/container/podman-error-with-centos7/</guid>
-      <description>system info:## podman infohost:BuildahVersion: 1.14.2CgroupVersion: v1Conmon:package: conmon-2.0.13-1.1.el7.x86_64path: /usr/bin/conmonversion: &#39;conmon version 2.0.13, commit: eab756c90e2bdfa6fecf6616845ddcd9d3e339cb&#39;Distribution:distribution: &#39;&amp;quot;centos&amp;quot;&#39;version: &amp;quot;7&amp;quot;MemFree: 408485888MemTotal: 952160256OCIRuntime:name: runcpackage: runc-1.0.0-15.1.el7.x86_64path: /usr/bin/runcversion: |-runc version 1.0.0-rc10commit: 67b92f062188d9cb6472b428855432c9f35efcf5spec: 1.0.1-devSwapFree: 0SwapTotal: 0arch: amd64cpus: 1eventlogger: journaldhostname: test-serverkernel: 3.10.0-1062.12.1.el7.x86_64os: linuxrootless: falseuptime: 51m 16.22sregistries:search:- registry.</description>
+      <description>system info:## podman info host: BuildahVersion: 1.14.2 CgroupVersion: v1 Conmon: package: conmon-2.0.13-1.1.el7.x86_64 path: /usr/bin/conmon version: &#39;conmon version 2.0.13, commit: eab756c90e2bdfa6fecf6616845ddcd9d3e339cb&#39; Distribution: distribution: &#39;&amp;quot;centos&amp;quot;&#39; version: &amp;quot;7&amp;quot; MemFree: 408485888 MemTotal: 952160256 OCIRuntime: name: runc package: runc-1.0.0-15.1.el7.x86_64 path: /usr/bin/runc version: |- runc version 1.0.0-rc10 commit: 67b92f062188d9cb6472b428855432c9f35efcf5 spec: 1.0.1-dev SwapFree: 0 SwapTotal: 0 arch: amd64 cpus: 1 eventlogger: journald hostname: test-server kernel: 3.10.0-1062.12.1.el7.x86_64 os: linux rootless: false uptime: 51m 16.22s registries: search: - registry.</description>
     </item>
     
     <item>

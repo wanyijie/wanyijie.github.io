@@ -40,7 +40,7 @@ Install Schematics#安装原理图#Schematics come packaged with Angular M
 原理图与Angular Material一起打包，所以一旦安装了npm软件包，它们将通过Angular CLI提供。
 If you run it will automatically install Angular Material for you and run the install schematic.
 如果您运行下面的命令，它会自动为您安装Angular Material并运行安装原理图。
-ng add @angular/materialThe install schematic will help you quickly add Material to a new project.</description>
+ng add @angular/material The install schematic will help you quickly add Material to a new project.</description>
     </item>
     
   </channel>

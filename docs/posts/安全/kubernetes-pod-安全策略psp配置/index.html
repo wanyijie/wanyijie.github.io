@@ -4,12 +4,12 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Kubernetes Pod 安全策略(PSP)配置 默认情况下，Kubernetes 允许创建一个有特权容器的 Pod，这些容器很可能会危机系统安全，而 Pod 安全策略（PSP）则通过确保请求者有权限按配置来创建 Pod，从而来保护集群免受特权 Pod 的影响。
-PodSecurityPolicy 是 Kubernetes API 对象，你可以在不对 Kubernetes 进行任何修改的情况下创建它们，但是，默认情况下不会强制执行我们创建的一些策略，我们需要一个准入控制器、kube-controller-manager 配置以及 RBAC 权限配置，下面我们就来对这些配置进行一一说明。Kubernetes Pod 安全策略(PSP)配置kubernetes pspAdmission ControllerAdmission Controller（准入控制器）拦截对 kube-apiserver 的请求，拦截发生在请求的对象被持久化之前，但是在请求被验证和授权之后。这样我们就可以查看请求对象的来源，并验证需要的内容是否正确。通过将它们添加到 kube-apiserver 的enable-admission-plugins参数中来启用准入控制器。在1.10版本之前，使用现在已经弃用的admision-control参数，另外需要注意准入控制器的顺序很重要。将PodSecurityPolicy添加到 kube-apiserver 上的enabled-admission-plugins参数中，然后重启 kube-apiserver：enable-admission-plugins=NamespaceLifecycle,LimitRanger,ServiceAccount,DefaultStorageClass,DefaultTolerationSeconds,MutatingAdmissionWebhook,ValidatingAdmissionWebhook,ResourceQuota,PodSecurityPolicy 其他插件来自 Kubernetes 文档中推荐的一些插件列表。
-PodSecurityPolicy 已经添加到上面的列表中了，现在 PSP 的控制器已经启用了，但是我们集群中现在缺少一些安全策略，那么新的 Pod 创建就会失败。比如现在我们创建一个 Nginx 的 Deployment，YAML 文件内容如下所示：（nginx.yaml） apiVersion: apps/v1kind: Deploymentmetadata:name: nginx-deploynamespace: defaultlabels:app: nginxspec:replicas: 1selector:matchLabels:app: nginxtemplate:metadata:labels:app: nginxspec:containers:- name: nginximage: nginx:1.">
+PodSecurityPolicy 是 Kubernetes API 对象，你可以在不对 Kubernetes 进行任何修改的情况下创建它们，但是，默认情况下不会强制执行我们创建的一些策略，我们需要一个准入控制器、kube-controller-manager 配置以及 RBAC 权限配置，下面我们就来对这些配置进行一一说明。 Kubernetes Pod 安全策略(PSP)配置 kubernetes psp Admission Controller Admission Controller（准入控制器）拦截对 kube-apiserver 的请求，拦截发生在请求的对象被持久化之前，但是在请求被验证和授权之后。这样我们就可以查看请求对象的来源，并验证需要的内容是否正确。通过将它们添加到 kube-apiserver 的enable-admission-plugins参数中来启用准入控制器。在1.10版本之前，使用现在已经弃用的admision-control参数，另外需要注意准入控制器的顺序很重要。 将PodSecurityPolicy添加到 kube-apiserver 上的enabled-admission-plugins参数中，然后重启 kube-apiserver： enable-admission-plugins=NamespaceLifecycle,LimitRanger,ServiceAccount,DefaultStorageClass,DefaultTolerationSeconds,MutatingAdmissionWebhook,ValidatingAdmissionWebhook,ResourceQuota,PodSecurityPolicy  其他插件来自 Kubernetes 文档中推荐的一些插件列表。
+PodSecurityPolicy 已经添加到上面的列表中了，现在 PSP 的控制器已经启用了，但是我们集群中现在缺少一些安全策略，那么新的 Pod 创建就会失败。 比如现在我们创建一个 Nginx 的 Deployment，YAML 文件内容如下所示：（nginx.yaml）  apiVersion: apps/v1 kind: Deployment metadata: name: nginx-deploy namespace: default labels: app: nginx spec: replicas: 1 selector: matchLabels: app: nginx template: metadata: labels: app: nginx spec: containers: - name: nginx image: nginx:1.">
 <meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="" />
 <meta property="og:description" content="Kubernetes Pod 安全策略(PSP)配置 默认情况下，Kubernetes 允许创建一个有特权容器的 Pod，这些容器很可能会危机系统安全，而 Pod 安全策略（PSP）则通过确保请求者有权限按配置来创建 Pod，从而来保护集群免受特权 Pod 的影响。
-PodSecurityPolicy 是 Kubernetes API 对象，你可以在不对 Kubernetes 进行任何修改的情况下创建它们，但是，默认情况下不会强制执行我们创建的一些策略，我们需要一个准入控制器、kube-controller-manager 配置以及 RBAC 权限配置，下面我们就来对这些配置进行一一说明。Kubernetes Pod 安全策略(PSP)配置kubernetes pspAdmission ControllerAdmission Controller（准入控制器）拦截对 kube-apiserver 的请求，拦截发生在请求的对象被持久化之前，但是在请求被验证和授权之后。这样我们就可以查看请求对象的来源，并验证需要的内容是否正确。通过将它们添加到 kube-apiserver 的enable-admission-plugins参数中来启用准入控制器。在1.10版本之前，使用现在已经弃用的admision-control参数，另外需要注意准入控制器的顺序很重要。将PodSecurityPolicy添加到 kube-apiserver 上的enabled-admission-plugins参数中，然后重启 kube-apiserver：enable-admission-plugins=NamespaceLifecycle,LimitRanger,ServiceAccount,DefaultStorageClass,DefaultTolerationSeconds,MutatingAdmissionWebhook,ValidatingAdmissionWebhook,ResourceQuota,PodSecurityPolicy 其他插件来自 Kubernetes 文档中推荐的一些插件列表。
-PodSecurityPolicy 已经添加到上面的列表中了，现在 PSP 的控制器已经启用了，但是我们集群中现在缺少一些安全策略，那么新的 Pod 创建就会失败。比如现在我们创建一个 Nginx 的 Deployment，YAML 文件内容如下所示：（nginx.yaml） apiVersion: apps/v1kind: Deploymentmetadata:name: nginx-deploynamespace: defaultlabels:app: nginxspec:replicas: 1selector:matchLabels:app: nginxtemplate:metadata:labels:app: nginxspec:containers:- name: nginximage: nginx:1." />
+PodSecurityPolicy 是 Kubernetes API 对象，你可以在不对 Kubernetes 进行任何修改的情况下创建它们，但是，默认情况下不会强制执行我们创建的一些策略，我们需要一个准入控制器、kube-controller-manager 配置以及 RBAC 权限配置，下面我们就来对这些配置进行一一说明。 Kubernetes Pod 安全策略(PSP)配置 kubernetes psp Admission Controller Admission Controller（准入控制器）拦截对 kube-apiserver 的请求，拦截发生在请求的对象被持久化之前，但是在请求被验证和授权之后。这样我们就可以查看请求对象的来源，并验证需要的内容是否正确。通过将它们添加到 kube-apiserver 的enable-admission-plugins参数中来启用准入控制器。在1.10版本之前，使用现在已经弃用的admision-control参数，另外需要注意准入控制器的顺序很重要。 将PodSecurityPolicy添加到 kube-apiserver 上的enabled-admission-plugins参数中，然后重启 kube-apiserver： enable-admission-plugins=NamespaceLifecycle,LimitRanger,ServiceAccount,DefaultStorageClass,DefaultTolerationSeconds,MutatingAdmissionWebhook,ValidatingAdmissionWebhook,ResourceQuota,PodSecurityPolicy  其他插件来自 Kubernetes 文档中推荐的一些插件列表。
+PodSecurityPolicy 已经添加到上面的列表中了，现在 PSP 的控制器已经启用了，但是我们集群中现在缺少一些安全策略，那么新的 Pod 创建就会失败。 比如现在我们创建一个 Nginx 的 Deployment，YAML 文件内容如下所示：（nginx.yaml）  apiVersion: apps/v1 kind: Deployment metadata: name: nginx-deploy namespace: default labels: app: nginx spec: replicas: 1 selector: matchLabels: app: nginx template: metadata: labels: app: nginx spec: containers: - name: nginx image: nginx:1." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://wangyijie.github.io.io/blog/posts/%E5%AE%89%E5%85%A8/kubernetes-pod-%E5%AE%89%E5%85%A8%E7%AD%96%E7%95%A5psp%E9%85%8D%E7%BD%AE/" /><meta property="article:section" content="posts" />
 
@@ -18,9 +18,9 @@ PodSecurityPolicy 已经添加到上面的列表中了，现在 PSP 的控制器
 <title>Kubernetes Pod 安全策略( Psp)配置 | A great computer technology Site</title>
 <link rel="manifest" href="/blog/manifest.json">
 <link rel="icon" href="/blog/favicon.png" type="image/x-icon">
-<link rel="stylesheet" href="/blog/book.min.8599444fcc48ee6b435b5b62c955ab7d914fa1e2a453df90c4b97cc9769665d1.css" integrity="sha256-hZlET8xI7mtDW1tiyVWrfZFPoeKkU9&#43;QxLl8yXaWZdE=" crossorigin="anonymous">
+<link rel="stylesheet" href="/blog/book.min.46181bc93375ba932026e753b37c40e6ff8bb16a9ef770c78bcc663e4577b1ba.css" integrity="sha256-RhgbyTN1upMgJudTs3xA5v&#43;LsWqe93DHi8xmPkV3sbo=" crossorigin="anonymous">
   <script defer src="/blog/flexsearch.min.js"></script>
-  <script defer src="/blog/en.search.min.55158ed2791ede306408bc7be70c306acf6623f56886bcf17d6a95efaaabf9db.js" integrity="sha256-VRWO0nke3jBkCLx75wwwas9mI/VohrzxfWqV76qr&#43;ds=" crossorigin="anonymous"></script>
+  <script defer src="/blog/en.search.min.243fede94d2ab4b88ffdd9674185e2ccb65b1929b6e7ead26fe703347fb01927.js" integrity="sha256-JD/t6U0qtLiP/dlnQYXizLZbGSm25&#43;rSb&#43;cDNH&#43;wGSc=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -775,7 +775,18 @@ deployment.extensions/nginx-hostnetwork-deploy 1/1 1 1 31m</p>
     
   </main>
 
-  
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6266541561533854"
+     crossorigin="anonymous"></script>
+
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-6266541561533854"
+     data-ad-slot="9511333096"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
 </body>
 </html>
 

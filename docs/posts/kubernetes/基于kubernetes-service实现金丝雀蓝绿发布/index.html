@@ -9,7 +9,7 @@ apiVersion: extensions/v1beta1 kind: Deployment metadata: labels: run: old-nginx
 <meta property="og:description" content="服务匹配部署是在template下的labels,选择一个labels即可，一个服务可以对应多个部署，部署的副本越多分的流量比例越大哦，以此来实现金丝雀发布，同理也可以做蓝绿部署，就是在部署的template labels上交换添加移除标签的事
 apiVersion: extensions/v1beta1 kind: Deployment metadata: labels: run: old-nginx name: old-nginx spec: replicas: 1 selector: matchLabels: run: old-nginx template: metadata: labels: run: old-nginx app: nginx spec: containers: - image: registry.cn-hangzhou.aliyuncs.com/xianlu/old-nginx imagePullPolicy: Always name: old-nginx ports: - containerPort: 80 protocol: TCP restartPolicy: Always#apiVersion: extensions/v1beta1 kind: Deployment metadata: labels: run: new-nginx name: new-nginx spec: replicas: 1 selector: matchLabels: run: new-nginx template: metadata: labels: run: new-nginx app: nginx spec: containers: - image: registry." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://wangyijie.github.io.io/posts/kubernetes/%E5%9F%BA%E4%BA%8Ekubernetes-service%E5%AE%9E%E7%8E%B0%E9%87%91%E4%B8%9D%E9%9B%80%E8%93%9D%E7%BB%BF%E5%8F%91%E5%B8%83/" /><meta property="article:section" content="posts" />
+<meta property="og:url" content="https://wangyijie.github.io/posts/kubernetes/%E5%9F%BA%E4%BA%8Ekubernetes-service%E5%AE%9E%E7%8E%B0%E9%87%91%E4%B8%9D%E9%9B%80%E8%93%9D%E7%BB%BF%E5%8F%91%E5%B8%83/" /><meta property="article:section" content="posts" />
 
 
 

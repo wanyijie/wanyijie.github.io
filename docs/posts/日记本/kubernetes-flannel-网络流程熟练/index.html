@@ -9,7 +9,7 @@
 <meta property="og:description" content="pod IP docker 把容器网络命名空间隐藏起来了，查看容器网络需要把对应的网络命名空间显示出来： 容器Id:10316
 把容器网络命名空间链接到主机,这样主机就可以管理容器网络 ln -s /proc/10316/ns/net /var/run/netns/10316 查看网络命名空间  ip netns 在网络命名空间内执行命令  [root@k8s01 ~]# ip netns exec 10316 ip a 1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN qlen 1 link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00 inet 127.0.0.1/8 scope host lo valid_lft forever preferred_lft forever inet6 ::1/128 scope host valid_lft forever preferred_lft forever 3: eth0@if40: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1450 qdisc noqueue state UP link/ether 0a:58:0a:f4:02:f6 brd ff:ff:ff:ff:ff:ff link-netnsid 0 inet 10." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://wangyijie.github.io.io/posts/%E6%97%A5%E8%AE%B0%E6%9C%AC/kubernetes-flannel-%E7%BD%91%E7%BB%9C%E6%B5%81%E7%A8%8B%E7%86%9F%E7%BB%83/" /><meta property="article:section" content="posts" />
+<meta property="og:url" content="https://wangyijie.github.io/posts/%E6%97%A5%E8%AE%B0%E6%9C%AC/kubernetes-flannel-%E7%BD%91%E7%BB%9C%E6%B5%81%E7%A8%8B%E7%86%9F%E7%BB%83/" /><meta property="article:section" content="posts" />
 
 
 

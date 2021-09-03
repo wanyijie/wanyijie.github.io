@@ -2,25 +2,25 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Opetration on A great computer technology Site</title>
-    <link>https://wangyijie.github.io.io/categories/opetration/</link>
+    <link>https://wangyijie.github.io/categories/opetration/</link>
     <description>Recent content in Opetration on A great computer technology Site</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="https://wangyijie.github.io.io/categories/opetration/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language><atom:link href="https://wangyijie.github.io/categories/opetration/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title></title>
-      <link>https://wangyijie.github.io.io/posts/kubernetes/%E5%9B%BD%E5%86%85cka%E8%80%83%E8%AF%95%E6%80%BB%E7%BB%93/</link>
+      <link>https://wangyijie.github.io/posts/kubernetes/%E5%9B%BD%E5%86%85cka%E8%80%83%E8%AF%95%E6%80%BB%E7%BB%93/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://wangyijie.github.io.io/posts/kubernetes/%E5%9B%BD%E5%86%85cka%E8%80%83%E8%AF%95%E6%80%BB%E7%BB%93/</guid>
+      <guid>https://wangyijie.github.io/posts/kubernetes/%E5%9B%BD%E5%86%85cka%E8%80%83%E8%AF%95%E6%80%BB%E7%BB%93/</guid>
       <description>这里没用透露考题，签有保密协议的，君子慎独，不欺暗室 深圳的考点在八卦岭地铁站附近的八卦二路616号四楼，试题是中文，使用考试中心的电脑考试，那边的电脑不能上google,我用google登录linux基金会的网站还遇到了麻烦，考官很开明，只要不违背考试原则都可以 在一个web终端考试，只有一个终端，复制进出没用影响，最好熟悉下tmux这个终端管理工具，我就得益于它快速切换终端使用explain查看接口文档 感觉试题难度一般，但时间有点紧，有文档有不敢去翻，翻翻时间过去了，所以要熟悉命令，命令是最快的，可以帮助节省时间解决难题，多数时候个把难题就决定着过不过，还有就是要熟悉常见资源熟悉的默写，我在这里吃了大亏，平时惯于复制粘贴，关键石刻心里没底默写不出现，找参考复制浪费了时间，要查文档最好用搜索，我试过记住文档的知识布局，结果还是不易快速找到，一些资源参考github仓库搜索效率比官方文档还高，主要是快 我还不知道这次又没用通过，三小时做下来还有点累，心累，做的我都怕了，考完后再来一遍也没用把握通过</description>
     </item>
     
     <item>
       <title></title>
-      <link>https://wangyijie.github.io.io/posts/postgresql/postgresql-%E7%81%BE%E5%A4%87%E8%87%AA%E5%8A%A8%E9%85%8D%E7%BD%AE%E8%84%9A%E6%9C%AC-barman/</link>
+      <link>https://wangyijie.github.io/posts/postgresql/postgresql-%E7%81%BE%E5%A4%87%E8%87%AA%E5%8A%A8%E9%85%8D%E7%BD%AE%E8%84%9A%E6%9C%AC-barman/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://wangyijie.github.io.io/posts/postgresql/postgresql-%E7%81%BE%E5%A4%87%E8%87%AA%E5%8A%A8%E9%85%8D%E7%BD%AE%E8%84%9A%E6%9C%AC-barman/</guid>
+      <guid>https://wangyijie.github.io/posts/postgresql/postgresql-%E7%81%BE%E5%A4%87%E8%87%AA%E5%8A%A8%E9%85%8D%E7%BD%AE%E8%84%9A%E6%9C%AC-barman/</guid>
       <description>postgreql版本：12+ barman版本：2.+</description>
     </item>
     

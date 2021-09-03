@@ -2,35 +2,35 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>SRE on A great computer technology Site</title>
-    <link>https://wangyijie.github.io.io/posts/%E7%AB%99%E7%82%B9%E5%8F%AF%E9%9D%A0%E6%80%A7%E5%B7%A5%E7%A8%8B/</link>
+    <link>https://wangyijie.github.io/posts/%E7%AB%99%E7%82%B9%E5%8F%AF%E9%9D%A0%E6%80%A7%E5%B7%A5%E7%A8%8B/</link>
     <description>Recent content in SRE on A great computer technology Site</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="https://wangyijie.github.io.io/posts/%E7%AB%99%E7%82%B9%E5%8F%AF%E9%9D%A0%E6%80%A7%E5%B7%A5%E7%A8%8B/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language><atom:link href="https://wangyijie.github.io/posts/%E7%AB%99%E7%82%B9%E5%8F%AF%E9%9D%A0%E6%80%A7%E5%B7%A5%E7%A8%8B/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title></title>
-      <link>https://wangyijie.github.io.io/posts/%E7%AB%99%E7%82%B9%E5%8F%AF%E9%9D%A0%E6%80%A7%E5%B7%A5%E7%A8%8B/ningx%E5%AE%9E%E7%8E%B0%E9%87%8D%E8%BD%BD%E9%85%8D%E7%BD%AE%E4%B8%8D%E4%B8%A2%E5%A4%B1%E8%AF%B7%E6%B1%82%E7%9A%84%E5%8E%9F%E7%90%86/</link>
+      <link>https://wangyijie.github.io/posts/%E7%AB%99%E7%82%B9%E5%8F%AF%E9%9D%A0%E6%80%A7%E5%B7%A5%E7%A8%8B/ningx%E5%AE%9E%E7%8E%B0%E9%87%8D%E8%BD%BD%E9%85%8D%E7%BD%AE%E4%B8%8D%E4%B8%A2%E5%A4%B1%E8%AF%B7%E6%B1%82%E7%9A%84%E5%8E%9F%E7%90%86/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://wangyijie.github.io.io/posts/%E7%AB%99%E7%82%B9%E5%8F%AF%E9%9D%A0%E6%80%A7%E5%B7%A5%E7%A8%8B/ningx%E5%AE%9E%E7%8E%B0%E9%87%8D%E8%BD%BD%E9%85%8D%E7%BD%AE%E4%B8%8D%E4%B8%A2%E5%A4%B1%E8%AF%B7%E6%B1%82%E7%9A%84%E5%8E%9F%E7%90%86/</guid>
+      <guid>https://wangyijie.github.io/posts/%E7%AB%99%E7%82%B9%E5%8F%AF%E9%9D%A0%E6%80%A7%E5%B7%A5%E7%A8%8B/ningx%E5%AE%9E%E7%8E%B0%E9%87%8D%E8%BD%BD%E9%85%8D%E7%BD%AE%E4%B8%8D%E4%B8%A2%E5%A4%B1%E8%AF%B7%E6%B1%82%E7%9A%84%E5%8E%9F%E7%90%86/</guid>
       <description>前言#nginx启动时，会启动两个进程： 一个是Master进程和worker进程。
 改变配置后nginx做的事#1）改变了nginx配置之后，HUP signal的信号需要发送给主进程。 2）主进程首先会检测新配置的语法有效性。 3）尝试应用新的配置 1.打开日志文件，并且新分配一个socket来监听。 2.如果1失败，则回滚改变，还是会使用原有的配置。 3.如果1成功，则使用新的配置，新建一个线程。新建成功后发送一个关闭消息给旧的进程。要求旧线程优雅的关闭。 4.旧的线程 受到信号后会继续服务，当所有请求的客户端被服务后，旧线程关闭。 ———————————————— 修改配置后使用如下命令生效配置 nginx -s reload </description>
     </item>
     
     <item>
       <title></title>
-      <link>https://wangyijie.github.io.io/posts/%E7%AB%99%E7%82%B9%E5%8F%AF%E9%9D%A0%E6%80%A7%E5%B7%A5%E7%A8%8B/site-reliability-engineering%E4%B9%A6%E8%AF%84/</link>
+      <link>https://wangyijie.github.io/posts/%E7%AB%99%E7%82%B9%E5%8F%AF%E9%9D%A0%E6%80%A7%E5%B7%A5%E7%A8%8B/site-reliability-engineering%E4%B9%A6%E8%AF%84/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://wangyijie.github.io.io/posts/%E7%AB%99%E7%82%B9%E5%8F%AF%E9%9D%A0%E6%80%A7%E5%B7%A5%E7%A8%8B/site-reliability-engineering%E4%B9%A6%E8%AF%84/</guid>
+      <guid>https://wangyijie.github.io/posts/%E7%AB%99%E7%82%B9%E5%8F%AF%E9%9D%A0%E6%80%A7%E5%B7%A5%E7%A8%8B/site-reliability-engineering%E4%B9%A6%E8%AF%84/</guid>
       <description> 深入的技术和管理实践每个公司都可以使用，但只有谷歌能发明。 对于任何大规模运行高可用性web服务的人来说都是必须阅读的。 你有责任为自己和你的组织读这本书，为自己尝试这些想法。  </description>
     </item>
     
     <item>
       <title></title>
-      <link>https://wangyijie.github.io.io/posts/%E7%AB%99%E7%82%B9%E5%8F%AF%E9%9D%A0%E6%80%A7%E5%B7%A5%E7%A8%8B/%E7%AB%99%E7%82%B9%E5%8F%AF%E9%9D%A0%E6%80%A7%E5%B7%A5%E7%A8%8B/</link>
+      <link>https://wangyijie.github.io/posts/%E7%AB%99%E7%82%B9%E5%8F%AF%E9%9D%A0%E6%80%A7%E5%B7%A5%E7%A8%8B/%E7%AB%99%E7%82%B9%E5%8F%AF%E9%9D%A0%E6%80%A7%E5%B7%A5%E7%A8%8B/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://wangyijie.github.io.io/posts/%E7%AB%99%E7%82%B9%E5%8F%AF%E9%9D%A0%E6%80%A7%E5%B7%A5%E7%A8%8B/%E7%AB%99%E7%82%B9%E5%8F%AF%E9%9D%A0%E6%80%A7%E5%B7%A5%E7%A8%8B/</guid>
+      <guid>https://wangyijie.github.io/posts/%E7%AB%99%E7%82%B9%E5%8F%AF%E9%9D%A0%E6%80%A7%E5%B7%A5%E7%A8%8B/%E7%AB%99%E7%82%B9%E5%8F%AF%E9%9D%A0%E6%80%A7%E5%B7%A5%E7%A8%8B/</guid>
       <description>绝大多数软件系统的生命周期花费在使用上，不在设计和实现上。如此，为什么普遍的理论坚持软件工程师主要关注大规模计算系统的设计和实现。 在这一些列的文章和论文中谷歌站点可靠性工程团队的关键成员们说明了怎样和为什么他们整个生命周期的投入能使公司成功构建、部署、监控和维护一些世界上最大的软件系统。你将学习谷歌工程师创造系统更高可扩展性，可靠性和高效的理论和实践课程，直接应用到你的组织。
  简介：学习什么是站点可靠性工程和为什么它不同于传统信息技术行业的做法 理论：研究公司的模式，行为和区域对一个站点可靠性工程师（SRE）的工作的影响 实践：理解站点可靠性工程师日常工作中构建和维护大型分部署系统的理论和实践 管理：探索你的组织可以使用的谷歌培训，沟通和会议的最佳实践  有兴趣和我一起实践网站可靠性工程的朋友请加微信群，特别对于新参加工作的同学，力所能及的地方我保证会提供帮助 </description>
     </item>

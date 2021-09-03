@@ -41,7 +41,7 @@ kubectl create configmap no-priv-pods &ndash;from-file=no-priv-pod.rego kube-mgm
 让我们通过尝试部署一个特权容器来确保我们的策略是有效的：
 kubectl -n default apply -f - &lt;&lt;EOT apiVersion: v1 kind: Pod metadata: name: nginx-privileged labels: app: nginx-privileged spec: containers: - name: nginx image: nginx securityContext: privileged: true #false EOT Error from server (Privileged container is not allowed: nginx, securityContext: {&ldquo;privileged&rdquo;: true}): error when creating &ldquo;STDIN&rdquo;: admission webhook &ldquo;validating-webhook." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://wangyijie.github.io.io/posts/%E5%AE%89%E5%85%A8/kubernetes-opaopen-policy-agent/" /><meta property="article:section" content="posts" />
+<meta property="og:url" content="https://wangyijie.github.io/posts/%E5%AE%89%E5%85%A8/kubernetes-opaopen-policy-agent/" /><meta property="article:section" content="posts" />
 
 
 

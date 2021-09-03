@@ -1,4 +1,4 @@
-baseURL = 'https://wangyijie.github.io.io/blog/'
+baseURL = 'https://wangyijie.github.io.io'
 languageCode = 'en-us'
 title = 'A great computer technology Site'
 theme = "book"

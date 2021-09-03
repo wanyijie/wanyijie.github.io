@@ -9,16 +9,16 @@
 <meta property="og:description" content="对于云计算系统，系统API实际上处于系统设计的统领地位。Kubernetes集群系统每支持一项新功能，引入一项新技术，一定会新引入对应的API对象，支持对该功能的管理操作。理解掌握的API，就好比抓住了K8s系统的牛鼻子。Kubernetes系统API的设计有以下几条原则：
  所有API应该是声明式的。声明式的操作，相对于命令式操作，对于重复操作的效果是稳定的，这对于容易出现数据丢失或重复的分布式环境来说是很重要的。另外，声明式操作更容易被用户使用，可以使系统向用户隐藏实现的细节，同时也保留了系统未来持续优化的可能性。此外，声明式的API还隐含了所有的API对象都是名词性质的，例如Service、Volume这些API都是名词，这些名词描述了用户所期望得到的一个目标对象。 API对象是彼此互补而且可组合的。这实际上鼓励API对象尽量实现面向对象设计时的要求，即“高内聚，松耦合”，对业务相关的概念有一个合适的分解，提高分解出来的对象的可重用性。 高层API以操作意图为基础设计。如何能够设计好API，跟如何能用面向对象的方法设计好应用系统有相通的地方，高层设计一定是从业务出发，而不是过早的从技术实现出发。因此，针对Kubernetes的高层API设计，一定是以K8s的业务为基础出发，也就是以系统调度管理容器的操作意图为基础设计。 低层API根据高层API的控制需要设计。设计实现低层API的目的，是为了被高层API使用，考虑减少冗余、提高重用性的目的，低层API的设计也要以需求为基础，要尽量抵抗受技术实现影响的诱惑。 尽量避免简单封装，不要有在外部API无法显式知道的内部隐藏的机制。简单的封装，实际没有提供新的功能，反而增加了对所封装API的依赖性。内部隐藏的机制也是非常不利于系统维护的设计方式，例如StatefulSet和ReplicaSet，本来就是两种Pod集合，那么Kubernetes就用不同API对象来定义它们，而不会说只用同一个ReplicaSet，内部通过特殊的算法再来区分这个ReplicaSet是有状态的还是无状态。 API操作复杂度与对象数量成正比。这一条主要是从系统性能角度考虑，要保证整个系统随着系统规模的扩大，性能不会迅速变慢到无法使用，那么最低的限定就是API的操作复杂度不能超过O(N)，N是对象的数量，否则系统就不具备水平伸缩性了。 API对象状态不能依赖于网络连接状态。由于众所周知，在分布式环境下，网络连接断开是经常发生的事情，因此要保证API对象状态能应对网络的不稳定，API对象的状态就不能依赖于网络连接状态。 尽量避免让操作机制依赖于全局状态，因为在分布式系统中要保证全局状态的同步是非常困难的。  " />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://wangyijie.github.io.io/blog/posts/kubernetes/kubernetes-api-%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99/" /><meta property="article:section" content="posts" />
+<meta property="og:url" content="https://wangyijie.github.io.io/posts/kubernetes/kubernetes-api-%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99/" /><meta property="article:section" content="posts" />
 
 
 
 <title>Kubernetes API 设计原则 | A great computer technology Site</title>
-<link rel="manifest" href="/blog/manifest.json">
-<link rel="icon" href="/blog/favicon.png" type="image/x-icon">
-<link rel="stylesheet" href="/blog/book.min.46181bc93375ba932026e753b37c40e6ff8bb16a9ef770c78bcc663e4577b1ba.css" integrity="sha256-RhgbyTN1upMgJudTs3xA5v&#43;LsWqe93DHi8xmPkV3sbo=" crossorigin="anonymous">
-  <script defer src="/blog/flexsearch.min.js"></script>
-  <script defer src="/blog/en.search.min.243fede94d2ab4b88ffdd9674185e2ccb65b1929b6e7ead26fe703347fb01927.js" integrity="sha256-JD/t6U0qtLiP/dlnQYXizLZbGSm25&#43;rSb&#43;cDNH&#43;wGSc=" crossorigin="anonymous"></script>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.46181bc93375ba932026e753b37c40e6ff8bb16a9ef770c78bcc663e4577b1ba.css" integrity="sha256-RhgbyTN1upMgJudTs3xA5v&#43;LsWqe93DHi8xmPkV3sbo=" crossorigin="anonymous">
+  <script defer src="/flexsearch.min.js"></script>
+  <script defer src="/en.search.min.a56ad50ed261bfdb649cf182a254f9ed96d46fee7705a6ce5c9e85fa1ff18eb5.js" integrity="sha256-pWrVDtJhv9tknPGColT57ZbUb&#43;53BabOXJ6F&#43;h/xjrU=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -34,7 +34,7 @@ https://github.com/alex-shpak/hugo-book
         
   <nav>
 <h2 class="book-brand">
-  <a class="flex align-center" href="/blog/"><span>A great computer technology Site</span>
+  <a class="flex align-center" href="/"><span>A great computer technology Site</span>
   </a>
 </h2>
 
@@ -73,146 +73,146 @@ https://github.com/alex-shpak/hugo-book
 <ul>
   
   <li>
-    <a href="/blog/posts/" >
+    <a href="/posts/" >
         Posts
       </a>
       
 <ul>
   
   <li>
-    <a href="/blog/posts/angluar-cli/" >
+    <a href="/posts/angluar-cli/" >
         angular
       </a>
   </li>
   
   <li>
-    <a href="/blog/posts/ansible/" >
+    <a href="/posts/ansible/" >
         ansible
       </a>
   </li>
   
   <li>
-    <a href="/blog/posts/cicd/" >
+    <a href="/posts/cicd/" >
         CICD
       </a>
   </li>
   
   <li>
-    <a href="/blog/posts/cloud/" >
+    <a href="/posts/cloud/" >
         cloude
       </a>
   </li>
   
   <li>
-    <a href="/blog/posts/container/" >
+    <a href="/posts/container/" >
         container
       </a>
   </li>
   
   <li>
-    <a href="/blog/posts/devops/" >
+    <a href="/posts/devops/" >
         DevOps
       </a>
   </li>
   
   <li>
-    <a href="/blog/posts/english/" >
+    <a href="/posts/english/" >
         English
       </a>
   </li>
   
   <li>
-    <a href="/blog/posts/golang/" >
+    <a href="/posts/golang/" >
         golang
       </a>
   </li>
   
   <li>
-    <a href="/blog/posts/istio/" >
+    <a href="/posts/istio/" >
         istio
       </a>
   </li>
   
   <li>
-    <a href="/blog/posts/kubernetes/" >
+    <a href="/posts/kubernetes/" >
         Kubernetes
       </a>
   </li>
   
   <li>
-    <a href="/blog/posts/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" >
+    <a href="/posts/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" >
         mechine leaning
       </a>
   </li>
   
   <li>
-    <a href="/blog/posts/material2/" >
+    <a href="/posts/material2/" >
         mererial2
       </a>
   </li>
   
   <li>
-    <a href="/blog/posts/%E7%9B%91%E6%8E%A7/" >
+    <a href="/posts/%E7%9B%91%E6%8E%A7/" >
         monitor
       </a>
   </li>
   
   <li>
-    <a href="/blog/posts/mysql/" >
+    <a href="/posts/mysql/" >
         mysql
       </a>
   </li>
   
   <li>
-    <a href="/blog/posts/%E7%BD%91%E7%BB%9C/" >
+    <a href="/posts/%E7%BD%91%E7%BB%9C/" >
         networking
       </a>
   </li>
   
   <li>
-    <a href="/blog/posts/%E6%97%A5%E8%AE%B0%E6%9C%AC/" >
+    <a href="/posts/%E6%97%A5%E8%AE%B0%E6%9C%AC/" >
         notes
       </a>
   </li>
   
   <li>
-    <a href="/blog/posts/postgresql/" >
+    <a href="/posts/postgresql/" >
         postgresql
       </a>
   </li>
   
   <li>
-    <a href="/blog/posts/django/" >
+    <a href="/posts/django/" >
         python
       </a>
   </li>
   
   <li>
-    <a href="/blog/posts/%E5%AE%89%E5%85%A8/" >
+    <a href="/posts/%E5%AE%89%E5%85%A8/" >
         safe
       </a>
   </li>
   
   <li>
-    <a href="/blog/posts/%E8%AF%97%E8%AF%8D/" >
+    <a href="/posts/%E8%AF%97%E8%AF%8D/" >
         shi chi
       </a>
   </li>
   
   <li>
-    <a href="/blog/posts/%E7%AB%99%E7%82%B9%E5%8F%AF%E9%9D%A0%E6%80%A7%E5%B7%A5%E7%A8%8B/" >
+    <a href="/posts/%E7%AB%99%E7%82%B9%E5%8F%AF%E9%9D%A0%E6%80%A7%E5%B7%A5%E7%A8%8B/" >
         SRE
       </a>
   </li>
   
   <li>
-    <a href="/blog/posts/%E6%96%87%E5%AD%A6/" >
+    <a href="/posts/%E6%96%87%E5%AD%A6/" >
         wenxue
       </a>
   </li>
   
   <li>
-    <a href="/blog/posts/%E9%9A%8F%E7%AC%94/" >
+    <a href="/posts/%E9%9A%8F%E7%AC%94/" >
         write somethings
       </a>
   </li>
@@ -222,7 +222,7 @@ https://github.com/alex-shpak/hugo-book
   </li>
   
   <li>
-    <a href="/blog/about/" >
+    <a href="/about/" >
         About
       </a>
   </li>
@@ -251,14 +251,14 @@ https://github.com/alex-shpak/hugo-book
         
   <div class="flex align-center justify-between">
   <label for="menu-control">
-    <img src="/blog/svg/menu.svg" class="book-icon" alt="Menu" />
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
   <strong>Kubernetes API 设计原则</strong>
 
   <label for="toc-control">
     
-    <img src="/blog/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
     
   </label>
 </div>
@@ -281,7 +281,7 @@ https://github.com/alex-shpak/hugo-book
       
 <article class="markdown">
   <h1>
-    <a href="/blog/posts/kubernetes/kubernetes-api-%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99/">Kubernetes API 设计原则</a>
+    <a href="/posts/kubernetes/kubernetes-api-%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99/">Kubernetes API 设计原则</a>
   </h1>
   
 

@@ -9,16 +9,16 @@
 <meta property="og:description" content="前言#nginx启动时，会启动两个进程： 一个是Master进程和worker进程。
 改变配置后nginx做的事#1）改变了nginx配置之后，HUP signal的信号需要发送给主进程。 2）主进程首先会检测新配置的语法有效性。 3）尝试应用新的配置 1.打开日志文件，并且新分配一个socket来监听。 2.如果1失败，则回滚改变，还是会使用原有的配置。 3.如果1成功，则使用新的配置，新建一个线程。新建成功后发送一个关闭消息给旧的进程。要求旧线程优雅的关闭。 4.旧的线程 受到信号后会继续服务，当所有请求的客户端被服务后，旧线程关闭。 ———————————————— 修改配置后使用如下命令生效配置 nginx -s reload " />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://wangyijie.github.io.io/blog/posts/%E7%AB%99%E7%82%B9%E5%8F%AF%E9%9D%A0%E6%80%A7%E5%B7%A5%E7%A8%8B/ningx%E5%AE%9E%E7%8E%B0%E9%87%8D%E8%BD%BD%E9%85%8D%E7%BD%AE%E4%B8%8D%E4%B8%A2%E5%A4%B1%E8%AF%B7%E6%B1%82%E7%9A%84%E5%8E%9F%E7%90%86/" /><meta property="article:section" content="posts" />
+<meta property="og:url" content="https://wangyijie.github.io.io/posts/%E7%AB%99%E7%82%B9%E5%8F%AF%E9%9D%A0%E6%80%A7%E5%B7%A5%E7%A8%8B/ningx%E5%AE%9E%E7%8E%B0%E9%87%8D%E8%BD%BD%E9%85%8D%E7%BD%AE%E4%B8%8D%E4%B8%A2%E5%A4%B1%E8%AF%B7%E6%B1%82%E7%9A%84%E5%8E%9F%E7%90%86/" /><meta property="article:section" content="posts" />
 
 
 
 <title>Ningx实现重载配置不丢失请求的原理 | A great computer technology Site</title>
-<link rel="manifest" href="/blog/manifest.json">
-<link rel="icon" href="/blog/favicon.png" type="image/x-icon">
-<link rel="stylesheet" href="/blog/book.min.46181bc93375ba932026e753b37c40e6ff8bb16a9ef770c78bcc663e4577b1ba.css" integrity="sha256-RhgbyTN1upMgJudTs3xA5v&#43;LsWqe93DHi8xmPkV3sbo=" crossorigin="anonymous">
-  <script defer src="/blog/flexsearch.min.js"></script>
-  <script defer src="/blog/en.search.min.243fede94d2ab4b88ffdd9674185e2ccb65b1929b6e7ead26fe703347fb01927.js" integrity="sha256-JD/t6U0qtLiP/dlnQYXizLZbGSm25&#43;rSb&#43;cDNH&#43;wGSc=" crossorigin="anonymous"></script>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.46181bc93375ba932026e753b37c40e6ff8bb16a9ef770c78bcc663e4577b1ba.css" integrity="sha256-RhgbyTN1upMgJudTs3xA5v&#43;LsWqe93DHi8xmPkV3sbo=" crossorigin="anonymous">
+  <script defer src="/flexsearch.min.js"></script>
+  <script defer src="/en.search.min.a56ad50ed261bfdb649cf182a254f9ed96d46fee7705a6ce5c9e85fa1ff18eb5.js" integrity="sha256-pWrVDtJhv9tknPGColT57ZbUb&#43;53BabOXJ6F&#43;h/xjrU=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -34,7 +34,7 @@ https://github.com/alex-shpak/hugo-book
         
   <nav>
 <h2 class="book-brand">
-  <a class="flex align-center" href="/blog/"><span>A great computer technology Site</span>
+  <a class="flex align-center" href="/"><span>A great computer technology Site</span>
   </a>
 </h2>
 
@@ -73,146 +73,146 @@ https://github.com/alex-shpak/hugo-book
 <ul>
   
   <li>
-    <a href="/blog/posts/" >
+    <a href="/posts/" >
         Posts
       </a>
       
 <ul>
   
   <li>
-    <a href="/blog/posts/angluar-cli/" >
+    <a href="/posts/angluar-cli/" >
         angular
       </a>
   </li>
   
   <li>
-    <a href="/blog/posts/ansible/" >
+    <a href="/posts/ansible/" >
         ansible
       </a>
   </li>
   
   <li>
-    <a href="/blog/posts/cicd/" >
+    <a href="/posts/cicd/" >
         CICD
       </a>
   </li>
   
   <li>
-    <a href="/blog/posts/cloud/" >
+    <a href="/posts/cloud/" >
         cloude
       </a>
   </li>
   
   <li>
-    <a href="/blog/posts/container/" >
+    <a href="/posts/container/" >
         container
       </a>
   </li>
   
   <li>
-    <a href="/blog/posts/devops/" >
+    <a href="/posts/devops/" >
         DevOps
       </a>
   </li>
   
   <li>
-    <a href="/blog/posts/english/" >
+    <a href="/posts/english/" >
         English
       </a>
   </li>
   
   <li>
-    <a href="/blog/posts/golang/" >
+    <a href="/posts/golang/" >
         golang
       </a>
   </li>
   
   <li>
-    <a href="/blog/posts/istio/" >
+    <a href="/posts/istio/" >
         istio
       </a>
   </li>
   
   <li>
-    <a href="/blog/posts/kubernetes/" >
+    <a href="/posts/kubernetes/" >
         Kubernetes
       </a>
   </li>
   
   <li>
-    <a href="/blog/posts/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" >
+    <a href="/posts/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" >
         mechine leaning
       </a>
   </li>
   
   <li>
-    <a href="/blog/posts/material2/" >
+    <a href="/posts/material2/" >
         mererial2
       </a>
   </li>
   
   <li>
-    <a href="/blog/posts/%E7%9B%91%E6%8E%A7/" >
+    <a href="/posts/%E7%9B%91%E6%8E%A7/" >
         monitor
       </a>
   </li>
   
   <li>
-    <a href="/blog/posts/mysql/" >
+    <a href="/posts/mysql/" >
         mysql
       </a>
   </li>
   
   <li>
-    <a href="/blog/posts/%E7%BD%91%E7%BB%9C/" >
+    <a href="/posts/%E7%BD%91%E7%BB%9C/" >
         networking
       </a>
   </li>
   
   <li>
-    <a href="/blog/posts/%E6%97%A5%E8%AE%B0%E6%9C%AC/" >
+    <a href="/posts/%E6%97%A5%E8%AE%B0%E6%9C%AC/" >
         notes
       </a>
   </li>
   
   <li>
-    <a href="/blog/posts/postgresql/" >
+    <a href="/posts/postgresql/" >
         postgresql
       </a>
   </li>
   
   <li>
-    <a href="/blog/posts/django/" >
+    <a href="/posts/django/" >
         python
       </a>
   </li>
   
   <li>
-    <a href="/blog/posts/%E5%AE%89%E5%85%A8/" >
+    <a href="/posts/%E5%AE%89%E5%85%A8/" >
         safe
       </a>
   </li>
   
   <li>
-    <a href="/blog/posts/%E8%AF%97%E8%AF%8D/" >
+    <a href="/posts/%E8%AF%97%E8%AF%8D/" >
         shi chi
       </a>
   </li>
   
   <li>
-    <a href="/blog/posts/%E7%AB%99%E7%82%B9%E5%8F%AF%E9%9D%A0%E6%80%A7%E5%B7%A5%E7%A8%8B/" >
+    <a href="/posts/%E7%AB%99%E7%82%B9%E5%8F%AF%E9%9D%A0%E6%80%A7%E5%B7%A5%E7%A8%8B/" >
         SRE
       </a>
   </li>
   
   <li>
-    <a href="/blog/posts/%E6%96%87%E5%AD%A6/" >
+    <a href="/posts/%E6%96%87%E5%AD%A6/" >
         wenxue
       </a>
   </li>
   
   <li>
-    <a href="/blog/posts/%E9%9A%8F%E7%AC%94/" >
+    <a href="/posts/%E9%9A%8F%E7%AC%94/" >
         write somethings
       </a>
   </li>
@@ -222,7 +222,7 @@ https://github.com/alex-shpak/hugo-book
   </li>
   
   <li>
-    <a href="/blog/about/" >
+    <a href="/about/" >
         About
       </a>
   </li>
@@ -251,14 +251,14 @@ https://github.com/alex-shpak/hugo-book
         
   <div class="flex align-center justify-between">
   <label for="menu-control">
-    <img src="/blog/svg/menu.svg" class="book-icon" alt="Menu" />
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
   <strong>Ningx实现重载配置不丢失请求的原理</strong>
 
   <label for="toc-control">
     
-    <img src="/blog/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
     
   </label>
 </div>
@@ -286,7 +286,7 @@ https://github.com/alex-shpak/hugo-book
       
 <article class="markdown">
   <h1>
-    <a href="/blog/posts/%E7%AB%99%E7%82%B9%E5%8F%AF%E9%9D%A0%E6%80%A7%E5%B7%A5%E7%A8%8B/ningx%E5%AE%9E%E7%8E%B0%E9%87%8D%E8%BD%BD%E9%85%8D%E7%BD%AE%E4%B8%8D%E4%B8%A2%E5%A4%B1%E8%AF%B7%E6%B1%82%E7%9A%84%E5%8E%9F%E7%90%86/">Ningx实现重载配置不丢失请求的原理</a>
+    <a href="/posts/%E7%AB%99%E7%82%B9%E5%8F%AF%E9%9D%A0%E6%80%A7%E5%B7%A5%E7%A8%8B/ningx%E5%AE%9E%E7%8E%B0%E9%87%8D%E8%BD%BD%E9%85%8D%E7%BD%AE%E4%B8%8D%E4%B8%A2%E5%A4%B1%E8%AF%B7%E6%B1%82%E7%9A%84%E5%8E%9F%E7%90%86/">Ningx实现重载配置不丢失请求的原理</a>
   </h1>
   
 

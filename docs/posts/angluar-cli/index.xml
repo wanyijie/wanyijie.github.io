@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>angular on A great computer technology Site</title>
-    <link>https://wangyijie.github.io.io/blog/posts/angluar-cli/</link>
+    <link>https://wangyijie.github.io.io/posts/angluar-cli/</link>
     <description>Recent content in angular on A great computer technology Site</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="https://wangyijie.github.io.io/blog/posts/angluar-cli/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language><atom:link href="https://wangyijie.github.io.io/posts/angluar-cli/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title></title>
-      <link>https://wangyijie.github.io.io/blog/posts/angluar-cli/angular-cli-6-%E5%BA%93%E6%94%AF%E6%8C%81/</link>
+      <link>https://wangyijie.github.io.io/posts/angluar-cli/angular-cli-6-%E5%BA%93%E6%94%AF%E6%8C%81/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://wangyijie.github.io.io/blog/posts/angluar-cli/angular-cli-6-%E5%BA%93%E6%94%AF%E6%8C%81/</guid>
+      <guid>https://wangyijie.github.io.io/posts/angluar-cli/angular-cli-6-%E5%BA%93%E6%94%AF%E6%8C%81/</guid>
       <description>Library support in Angular CLI 6#库支持在 Angular CLI 6#Angular CLI v6 comes with library support via ng-packagr plugged into the build system we use in Angular CLI, together with schematics for generating a library.
 Angular CLI v6通过插入到我们在Angular CLI中使用的构建系统中的ng-packagr提供库支持，以及用于生成库的原理图。
 Generating a library#生成库#You can create a library in a existing workspace by running the following commands:
@@ -21,10 +21,10 @@ ng generate library my-lib You should now have a library inside projects/my-lib.
     
     <item>
       <title></title>
-      <link>https://wangyijie.github.io.io/blog/posts/angluar-cli/angular-cli-css-%E9%A2%84%E5%A4%84%E7%90%86%E5%99%A8%E9%9B%86%E6%88%90/</link>
+      <link>https://wangyijie.github.io.io/posts/angluar-cli/angular-cli-css-%E9%A2%84%E5%A4%84%E7%90%86%E5%99%A8%E9%9B%86%E6%88%90/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://wangyijie.github.io.io/blog/posts/angluar-cli/angular-cli-css-%E9%A2%84%E5%A4%84%E7%90%86%E5%99%A8%E9%9B%86%E6%88%90/</guid>
+      <guid>https://wangyijie.github.io.io/posts/angluar-cli/angular-cli-css-%E9%A2%84%E5%A4%84%E7%90%86%E5%99%A8%E9%9B%86%E6%88%90/</guid>
       <description>CSS Preprocessor integration#CSS 预处理器集成#Angular CLI supports all major CSS preprocessors:
 Angular CLI 支持所有anjor css 预处理器:
  sass/scss (http://sass-lang.com/) less (http://lesscss.org/) stylus (http://stylus-lang.com/)  To use these preprocessors simply add the file to your component&amp;rsquo;s styleUrls:
@@ -34,10 +34,10 @@ Angular CLI 支持所有anjor css 预处理器:
     
     <item>
       <title></title>
-      <link>https://wangyijie.github.io.io/blog/posts/angluar-cli/angular-cli-%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93%E5%AE%89%E8%A3%85/</link>
+      <link>https://wangyijie.github.io.io/posts/angluar-cli/angular-cli-%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93%E5%AE%89%E8%A3%85/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://wangyijie.github.io.io/blog/posts/angluar-cli/angular-cli-%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93%E5%AE%89%E8%A3%85/</guid>
+      <guid>https://wangyijie.github.io.io/posts/angluar-cli/angular-cli-%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93%E5%AE%89%E8%A3%85/</guid>
       <description>3rd Party Library Installation#第三方库安装#Simply install your library via npm install lib-name --save and import it in your code.
 只需通过 npm install lib-name --save 安装你的库并将其导入到你的代码中。
 If the library does not include typings, you can install them using npm:
@@ -49,10 +49,10 @@ npm install d3 --save npm install @types/d3 --save-dev Then open src/tsconfig.ap
     
     <item>
       <title></title>
-      <link>https://wangyijie.github.io.io/blog/posts/angluar-cli/angular-cli-%E9%93%BE%E6%8E%A5%E5%BA%93/</link>
+      <link>https://wangyijie.github.io.io/posts/angluar-cli/angular-cli-%E9%93%BE%E6%8E%A5%E5%BA%93/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://wangyijie.github.io.io/blog/posts/angluar-cli/angular-cli-%E9%93%BE%E6%8E%A5%E5%BA%93/</guid>
+      <guid>https://wangyijie.github.io.io/posts/angluar-cli/angular-cli-%E9%93%BE%E6%8E%A5%E5%BA%93/</guid>
       <description>Linked libraries#链接库#While working on a library, it is common to use npm link to avoid reinstalling the library on every build.
 在库工作时，它通常使用 [npm link] 避免在每次构建时重复安装库。
 While this is very useful there are a few caveats to keep in mind.
@@ -62,10 +62,10 @@ The library needs to be AOT compatible#库需要 AOT 兼容#Angular CLI do
     
     <item>
       <title></title>
-      <link>https://wangyijie.github.io.io/blog/posts/angluar-cli/angular-cli%E4%BB%A3%E7%90%86%E5%90%8E%E7%AB%AF/</link>
+      <link>https://wangyijie.github.io.io/posts/angluar-cli/angular-cli%E4%BB%A3%E7%90%86%E5%90%8E%E7%AB%AF/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://wangyijie.github.io.io/blog/posts/angluar-cli/angular-cli%E4%BB%A3%E7%90%86%E5%90%8E%E7%AB%AF/</guid>
+      <guid>https://wangyijie.github.io.io/posts/angluar-cli/angular-cli%E4%BB%A3%E7%90%86%E5%90%8E%E7%AB%AF/</guid>
       <description>Proxy To Backend#代理后端#Using the proxying support in webpack&amp;rsquo;s dev server we can highjack certain URLs and send them to a backend server. We do this by passing a file to --proxy-config
 使用 webpacks 开发服务器中的代理支持, 我们可以劫持某些 url 并将它们发送到后端服务器。我们这样做是通过传递一个文件给 --proxy-config 选项。
 Say we have a server running on http://localhost:3000/api and we want all calls to http://localhost:4200/api to go to that server. 假设我们有一个服务器运行在 http://localhost:3000/api 我们希望所有调用 http://localhost:4200/api 到该服务器上.</description>
@@ -73,10 +73,10 @@ Say we have a server running on http://localhost:3000/api and we want all calls 
     
     <item>
       <title></title>
-      <link>https://wangyijie.github.io.io/blog/posts/angluar-cli/angular-cli%E5%A4%9A%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E9%9B%86%E6%88%90/</link>
+      <link>https://wangyijie.github.io.io/posts/angluar-cli/angular-cli%E5%A4%9A%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E9%9B%86%E6%88%90/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://wangyijie.github.io.io/blog/posts/angluar-cli/angular-cli%E5%A4%9A%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E9%9B%86%E6%88%90/</guid>
+      <guid>https://wangyijie.github.io.io/posts/angluar-cli/angular-cli%E5%A4%9A%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E9%9B%86%E6%88%90/</guid>
       <description>Multiple Apps integration#多应用程序集成#Angular CLI supports multiple applications within one project. You use the apps array in .angular-cli.json to list files and folders you want to use for different apps.
 Angular CLI 支持多应用程序在一个项目中，您可以使用 .angular-cli.json 中的应用程序数组来列出要用于不同应用程序的文件和文件夹。
 By default one app is created when then new project is created and apps array looks like:
@@ -86,10 +86,10 @@ By default one app is created when then new project is created and apps array lo
     
     <item>
       <title></title>
-      <link>https://wangyijie.github.io.io/blog/posts/angluar-cli/angular-cli%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90/</link>
+      <link>https://wangyijie.github.io.io/posts/angluar-cli/angular-cli%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://wangyijie.github.io.io/blog/posts/angluar-cli/angular-cli%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90/</guid>
+      <guid>https://wangyijie.github.io.io/posts/angluar-cli/angular-cli%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90/</guid>
       <description>Continuous Integration#持续集成#One of the best ways to keep your project bug free is through a test suite, but it&amp;rsquo;s easy to forget to run tests all the time.
 保持项目缺陷肃清的最好方法之一是通过测试套件，但忘记随时运行测试很容易。
 That&amp;rsquo;s where Continuous Integration (CI) servers come in. You can set up your project repository so that your tests run on every commit and pull request.
@@ -99,10 +99,10 @@ There are paid CI services like Circle CI and Travis CI, and you can also host y
     
     <item>
       <title></title>
-      <link>https://wangyijie.github.io.io/blog/posts/angluar-cli/angular-flex%E5%B8%83%E5%B1%80/</link>
+      <link>https://wangyijie.github.io.io/posts/angluar-cli/angular-flex%E5%B8%83%E5%B1%80/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://wangyijie.github.io.io/blog/posts/angluar-cli/angular-flex%E5%B8%83%E5%B1%80/</guid>
+      <guid>https://wangyijie.github.io.io/posts/angluar-cli/angular-flex%E5%B8%83%E5%B1%80/</guid>
       <description>Include Flex Layout in your CLI application#在您的CLI应用程序中包含Flex布局# Above is snapshot of a Online Demos using @angular/flex-layout
 这个截图是一个在线演示使用@angular/flex-layout
  Include @angular/flex-layout as detailed below:#包含 @angular/flex-layout 详情如下:#Install the library and add the dependency to package.json&amp;hellip;
@@ -114,10 +114,10 @@ npm i --save @angular/flex-layout-builds Import the Angular Flex-Layout NgModule
     
     <item>
       <title></title>
-      <link>https://wangyijie.github.io.io/blog/posts/angluar-cli/angular-%E4%BD%BF%E7%94%A8-bootstrap/</link>
+      <link>https://wangyijie.github.io.io/posts/angluar-cli/angular-%E4%BD%BF%E7%94%A8-bootstrap/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://wangyijie.github.io.io/blog/posts/angluar-cli/angular-%E4%BD%BF%E7%94%A8-bootstrap/</guid>
+      <guid>https://wangyijie.github.io.io/posts/angluar-cli/angular-%E4%BD%BF%E7%94%A8-bootstrap/</guid>
       <description>Include Bootstrap#包括 Bootstrap#Bootstrap is a popular CSS framework which can be used within an Angular project. This guide will walk you through adding bootstrap to your Angular CLI project and configuring it to use bootstrap.
 Bootstrap 是一个流行的CSS框架，可以在Angular项目中使用。本指南将引导您为Angular CLI项目添加引导程序并将其配置为使用引导程序。
 Using CSS#使用CSS#Getting Started#开始#Create a new project and navigate into the project
@@ -127,10 +127,10 @@ ng new my-app cd my-app Installing Bootstrap#安装 Bootstrap#With the new
     
     <item>
       <title></title>
-      <link>https://wangyijie.github.io.io/blog/posts/angluar-cli/angular-%E5%9B%BD%E9%99%85%E5%8C%96-i18n/</link>
+      <link>https://wangyijie.github.io.io/posts/angluar-cli/angular-%E5%9B%BD%E9%99%85%E5%8C%96-i18n/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://wangyijie.github.io.io/blog/posts/angluar-cli/angular-%E5%9B%BD%E9%99%85%E5%8C%96-i18n/</guid>
+      <guid>https://wangyijie.github.io.io/posts/angluar-cli/angular-%E5%9B%BD%E9%99%85%E5%8C%96-i18n/</guid>
       <description>Internationalization (i18n)#国际化 (i18n)#If you are working on internationalization, the CLI can help you with the following steps:
 如果您正在致力于国际化，CLI可以通过以下步骤为您提供帮助：
  extraction
@@ -143,10 +143,10 @@ Extraction#提取#When your app is ready, you can extract the strings to t
     
     <item>
       <title></title>
-      <link>https://wangyijie.github.io.io/blog/posts/angluar-cli/angular-%E5%9C%A8%E7%A3%81%E7%9B%98%E4%B8%8A%E8%BF%90%E8%A1%8C%E6%9C%8D%E5%8A%A1/</link>
+      <link>https://wangyijie.github.io.io/posts/angluar-cli/angular-%E5%9C%A8%E7%A3%81%E7%9B%98%E4%B8%8A%E8%BF%90%E8%A1%8C%E6%9C%8D%E5%8A%A1/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://wangyijie.github.io.io/blog/posts/angluar-cli/angular-%E5%9C%A8%E7%A3%81%E7%9B%98%E4%B8%8A%E8%BF%90%E8%A1%8C%E6%9C%8D%E5%8A%A1/</guid>
+      <guid>https://wangyijie.github.io.io/posts/angluar-cli/angular-%E5%9C%A8%E7%A3%81%E7%9B%98%E4%B8%8A%E8%BF%90%E8%A1%8C%E6%9C%8D%E5%8A%A1/</guid>
       <description>Serve from Disk#在磁盘上运行服务#The CLI supports running a live browser reload experience to users by running ng serve. This will compile the application upon file saves and reload the browser with the newly compiled application. This is done by hosting the application in memory and serving it via webpack-dev-server.
 CLI支持通过运行 ng serve 来为用户运行实时浏览器重新加载体验。这将在文件保存时编译应用程序，并用新编译的应用程序重新载入浏览器。这是通过将应用程序托管在内存中并通过webpack-dev-server.来完成的。
 If you wish to get a similar experience with the application output to disk please use the steps below.</description>
@@ -154,10 +154,10 @@ If you wish to get a similar experience with the application output to disk plea
     
     <item>
       <title></title>
-      <link>https://wangyijie.github.io.io/blog/posts/angluar-cli/angular-%E5%A4%9A%E9%A1%B9%E7%9B%AE/</link>
+      <link>https://wangyijie.github.io.io/posts/angluar-cli/angular-%E5%A4%9A%E9%A1%B9%E7%9B%AE/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://wangyijie.github.io.io/blog/posts/angluar-cli/angular-%E5%A4%9A%E9%A1%B9%E7%9B%AE/</guid>
+      <guid>https://wangyijie.github.io.io/posts/angluar-cli/angular-%E5%A4%9A%E9%A1%B9%E7%9B%AE/</guid>
       <description>Multiple Projects#多项目#Angular CLI supports multiple applications within one workspace.
 Angular CLI支持多个应用在一个工作空间
 To create another app you can use the following command: 创建另一个应用程序可以使用下面的命令:
@@ -170,10 +170,10 @@ ng serve my-other-app You can also create libraries, which is detailed in Create
     
     <item>
       <title></title>
-      <link>https://wangyijie.github.io.io/blog/posts/angluar-cli/angular-%E9%80%9A%E7%94%A8%E9%9B%86%E6%88%90/</link>
+      <link>https://wangyijie.github.io.io/posts/angluar-cli/angular-%E9%80%9A%E7%94%A8%E9%9B%86%E6%88%90/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://wangyijie.github.io.io/blog/posts/angluar-cli/angular-%E9%80%9A%E7%94%A8%E9%9B%86%E6%88%90/</guid>
+      <guid>https://wangyijie.github.io.io/posts/angluar-cli/angular-%E9%80%9A%E7%94%A8%E9%9B%86%E6%88%90/</guid>
       <description>Angular Universal Integration#Angular 通用集成#The Angular CLI supports generation of a Universal build for your application. This is a CommonJS-formatted bundle which can be require()&amp;rsquo;d into a Node application (for example, an Express server) and used with @angular/platform-server&amp;rsquo;s APIs to prerender your application.
 Angular CLI 支持为应用程序生成通用集成。这是一个 CommonJS 格式的包, 可以通过 require() 进入节点应用程序 , 并与@angular/platform-server 的 api 一起使用以预渲染应用程序。
  Example CLI Integration:#CLI 集成例子:#Angular Universal-Starter - Clone the universal-starter for a working example.</description>
@@ -181,10 +181,10 @@ Angular CLI 支持为应用程序生成通用集成。这是一个 CommonJS 格�
     
     <item>
       <title></title>
-      <link>https://wangyijie.github.io.io/blog/posts/angluar-cli/angular-%E9%85%8D%E7%BD%AE-angularfire/</link>
+      <link>https://wangyijie.github.io.io/posts/angluar-cli/angular-%E9%85%8D%E7%BD%AE-angularfire/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://wangyijie.github.io.io/blog/posts/angluar-cli/angular-%E9%85%8D%E7%BD%AE-angularfire/</guid>
+      <guid>https://wangyijie.github.io.io/posts/angluar-cli/angular-%E9%85%8D%E7%BD%AE-angularfire/</guid>
       <description>Include AngularFire#包含 AngularFire#Firebase is a mobile and web application platform with tools and infrastructure designed to help developers build high-quality apps. AngularFire2 is the official Angular library to use Firebase in your apps.
 Firebase是一个移动和Web应用程序平台，其中包含旨在帮助开发人员构建高品质应用程序的工具和基础结构。 AngularFire2是在您的应用中使用Firebase的官方Angular库。
 Create new project#创建新项目#Create a new project and navigate into the project. 创建一个新项目并导航到项目中。
@@ -193,10 +193,10 @@ $ ng new my-app $ cd my-app Install dependencies#安装依赖#In the new p
     
     <item>
       <title></title>
-      <link>https://wangyijie.github.io.io/blog/posts/angluar-cli/angular%E5%85%A8%E5%B1%80%E6%A0%B7%E5%BC%8F/</link>
+      <link>https://wangyijie.github.io.io/posts/angluar-cli/angular%E5%85%A8%E5%B1%80%E6%A0%B7%E5%BC%8F/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://wangyijie.github.io.io/blog/posts/angluar-cli/angular%E5%85%A8%E5%B1%80%E6%A0%B7%E5%BC%8F/</guid>
+      <guid>https://wangyijie.github.io.io/posts/angluar-cli/angular%E5%85%A8%E5%B1%80%E6%A0%B7%E5%BC%8F/</guid>
       <description>Global styles#全局样式#The styles.css file allows users to add global styles and supports CSS imports.
 styles.css 文件允许用户添加全局样式和支持 CSS imports.
 If the project is created with the --style=sass option, this will be a .sass file instead, and the same applies to scss/less/styl.
@@ -206,10 +206,10 @@ You can add more global styles via the styles option inside your project&amp;rsq
     
     <item>
       <title></title>
-      <link>https://wangyijie.github.io.io/blog/posts/angluar-cli/angular%E5%85%A8%E5%B1%80%E8%84%9A%E6%9C%AC/</link>
+      <link>https://wangyijie.github.io.io/posts/angluar-cli/angular%E5%85%A8%E5%B1%80%E8%84%9A%E6%9C%AC/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://wangyijie.github.io.io/blog/posts/angluar-cli/angular%E5%85%A8%E5%B1%80%E8%84%9A%E6%9C%AC/</guid>
+      <guid>https://wangyijie.github.io.io/posts/angluar-cli/angular%E5%85%A8%E5%B1%80%E8%84%9A%E6%9C%AC/</guid>
       <description>Global scripts#全局脚本#You can add Javascript files to the global scope via the scripts option inside your project&amp;rsquo;s build target options in angular.json. These will be loaded exactly as if you had added them in a &amp;lt;script&amp;gt; tag inside index.html.
 您可以通过angular.json中项目的构建目标选项中的 脚本 选项将JavaScript文件添加到全局范围。这些将被加载，就像您将它们添加到 index.html 中的 &amp;lt;script&amp;gt; 标记中一样。 This is especially useful for legacy libraries or analytic snippets.
 这对旧版库或分析片段尤其有用。
@@ -218,10 +218,10 @@ You can add more global styles via the styles option inside your project&amp;rsq
     
     <item>
       <title></title>
-      <link>https://wangyijie.github.io.io/blog/posts/angluar-cli/%E4%BB%A3%E7%A0%81%E8%A6%86%E7%9B%96%E7%8E%87/</link>
+      <link>https://wangyijie.github.io.io/posts/angluar-cli/%E4%BB%A3%E7%A0%81%E8%A6%86%E7%9B%96%E7%8E%87/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://wangyijie.github.io.io/blog/posts/angluar-cli/%E4%BB%A3%E7%A0%81%E8%A6%86%E7%9B%96%E7%8E%87/</guid>
+      <guid>https://wangyijie.github.io.io/posts/angluar-cli/%E4%BB%A3%E7%A0%81%E8%A6%86%E7%9B%96%E7%8E%87/</guid>
       <description>Code Coverage#代码覆盖率#With the Angular CLI we can run unit tests as well as create code coverage reports. Code coverage reports allow us to see any parts of our code base that may not be properly tested by our unit tests.
 用Angular CLI我们能运行单元测试并创建代码覆盖率报告。代码覆盖率报告允许我们看到我们的代码库中的任何部分可能无法通过我们的单元测试。
 To generate a coverage report run the following command in the root of your project
@@ -231,10 +231,10 @@ ng test --watch=false --code-coverage Once the tests complete a new /coverage fo
     
     <item>
       <title></title>
-      <link>https://wangyijie.github.io.io/blog/posts/angluar-cli/%E5%85%A8%E5%B1%80%E5%BA%93%E5%AE%89%E8%A3%85/</link>
+      <link>https://wangyijie.github.io.io/posts/angluar-cli/%E5%85%A8%E5%B1%80%E5%BA%93%E5%AE%89%E8%A3%85/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://wangyijie.github.io.io/blog/posts/angluar-cli/%E5%85%A8%E5%B1%80%E5%BA%93%E5%AE%89%E8%A3%85/</guid>
+      <guid>https://wangyijie.github.io.io/posts/angluar-cli/%E5%85%A8%E5%B1%80%E5%BA%93%E5%AE%89%E8%A3%85/</guid>
       <description>Global Library Installation#全局库安装#Some javascript libraries need to be added to the global scope and loaded as if they were in a script tag. We can do this using the scripts and styles options of the build target in angular.json.
 一些JavaScript库需要被添加到全局范围并加载，就好像它们在脚本标签中一样，我们可以使用angular.json中构建目标的脚本和样式选项来完成此操作。
 As an example, to use Bootstrap 4 this is what you need to do:
@@ -244,10 +244,10 @@ First install Bootstrap from npm: 首先从 npm 安装Bootstrap：</description>
     
     <item>
       <title></title>
-      <link>https://wangyijie.github.io.io/blog/posts/angluar-cli/%E5%BA%94%E7%94%A8%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E9%85%8D%E7%BD%AE/</link>
+      <link>https://wangyijie.github.io.io/posts/angluar-cli/%E5%BA%94%E7%94%A8%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E9%85%8D%E7%BD%AE/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://wangyijie.github.io.io/blog/posts/angluar-cli/%E5%BA%94%E7%94%A8%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E9%85%8D%E7%BD%AE/</guid>
+      <guid>https://wangyijie.github.io.io/posts/angluar-cli/%E5%BA%94%E7%94%A8%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E9%85%8D%E7%BD%AE/</guid>
       <description>应用环境#Configuring available environments#配置环境变量#.angular-cli.json contains an environments section. By default, this looks like:
 .angular-cli.json 包含一个 environments 选项. 默认像下面:
 &amp;#34;environments&amp;#34;: { &amp;#34;dev&amp;#34;: &amp;#34;environments/environment.ts&amp;#34;, &amp;#34;prod&amp;#34;: &amp;#34;environments/environment.prod.ts&amp;#34; } You can add additional environments as required. To add a staging environment, your configuration would look like:
@@ -257,10 +257,10 @@ First install Bootstrap from npm: 首先从 npm 安装Bootstrap：</description>
     
     <item>
       <title></title>
-      <link>https://wangyijie.github.io.io/blog/posts/angluar-cli/%E6%94%B9%E5%8F%98%E7%9B%AE%E6%A0%87%E6%B5%8F%E8%A7%88%E5%99%A8%E7%9A%84%E8%87%AA%E5%8A%A8%E5%89%8D%E7%BC%80/</link>
+      <link>https://wangyijie.github.io.io/posts/angluar-cli/%E6%94%B9%E5%8F%98%E7%9B%AE%E6%A0%87%E6%B5%8F%E8%A7%88%E5%99%A8%E7%9A%84%E8%87%AA%E5%8A%A8%E5%89%8D%E7%BC%80/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://wangyijie.github.io.io/blog/posts/angluar-cli/%E6%94%B9%E5%8F%98%E7%9B%AE%E6%A0%87%E6%B5%8F%E8%A7%88%E5%99%A8%E7%9A%84%E8%87%AA%E5%8A%A8%E5%89%8D%E7%BC%80/</guid>
+      <guid>https://wangyijie.github.io.io/posts/angluar-cli/%E6%94%B9%E5%8F%98%E7%9B%AE%E6%A0%87%E6%B5%8F%E8%A7%88%E5%99%A8%E7%9A%84%E8%87%AA%E5%8A%A8%E5%89%8D%E7%BC%80/</guid>
       <description>Change target browsers for Autoprefixer#改变目标浏览器的自动前缀#Currently, the CLI uses Autoprefixer to ensure compatibility with different browser and browser versions. You may find it necessary to target specific browsers or exclude certain browser versions from your build.
 当前, CLI使用 Autoprefixer 来确定合适不同的浏览器和版本，你可以发现它必须指明特定的浏览器或不包括某个浏览器版本从你的构建。
 Internally, Autoprefixer relies on a library called Browserslist to figure out which browsers to support with prefixing.
@@ -270,10 +270,10 @@ There are a few ways to tell Autoprefixer what browsers to target:</description>
     
     <item>
       <title></title>
-      <link>https://wangyijie.github.io.io/blog/posts/angluar-cli/%E9%83%A8%E7%BD%B2angular%E5%BA%94%E7%94%A8%E5%88%B0-github/</link>
+      <link>https://wangyijie.github.io.io/posts/angluar-cli/%E9%83%A8%E7%BD%B2angular%E5%BA%94%E7%94%A8%E5%88%B0-github/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://wangyijie.github.io.io/blog/posts/angluar-cli/%E9%83%A8%E7%BD%B2angular%E5%BA%94%E7%94%A8%E5%88%B0-github/</guid>
+      <guid>https://wangyijie.github.io.io/posts/angluar-cli/%E9%83%A8%E7%BD%B2angular%E5%BA%94%E7%94%A8%E5%88%B0-github/</guid>
       <description>Deploy to GitHub Pages#部署到 Github#A simple way to deploy your Angular app is to use GitHub Pages.
 部署Angular应用的一个简单方法是使用GitHub Pages. 如果自己做一个单页网站可以不需要自购web服务器。
 The first step is to create a GitHub account, and then create a repository for your project. Make a note of the user name and project name in GitHub.
@@ -283,10 +283,10 @@ Then all you need to do is run ng build --prod --output-path docs --base-href PR
     
     <item>
       <title></title>
-      <link>https://wangyijie.github.io.io/blog/posts/angluar-cli/%E9%85%8D%E7%BD%AEangular%E4%BD%BF%E7%94%A8font-awesome/</link>
+      <link>https://wangyijie.github.io.io/posts/angluar-cli/%E9%85%8D%E7%BD%AEangular%E4%BD%BF%E7%94%A8font-awesome/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://wangyijie.github.io.io/blog/posts/angluar-cli/%E9%85%8D%E7%BD%AEangular%E4%BD%BF%E7%94%A8font-awesome/</guid>
+      <guid>https://wangyijie.github.io.io/posts/angluar-cli/%E9%85%8D%E7%BD%AEangular%E4%BD%BF%E7%94%A8font-awesome/</guid>
       <description>Include Font Awesome#包含 Font Awesome#Font Awesome gives you scalable vector icons that can instantly be customized — size, color, drop shadow, and anything that can be done with the power of CSS.
 Font Awesome 为您提供可立即定制的可缩放矢量图标 - 尺寸，颜色，阴影以及任何可以通过CSS强大功能进行定制的图标。
 Create a new project and navigate into the project&amp;hellip;
@@ -298,10 +298,10 @@ npm install --save font-awesome Using CSS#使用 CSS#To add Font Awesome C
     
     <item>
       <title></title>
-      <link>https://wangyijie.github.io.io/blog/posts/angluar-cli/%E9%A1%B9%E7%9B%AE%E8%B5%84%E6%BA%90%E8%AE%BE%E7%BD%AE/</link>
+      <link>https://wangyijie.github.io.io/posts/angluar-cli/%E9%A1%B9%E7%9B%AE%E8%B5%84%E6%BA%90%E8%AE%BE%E7%BD%AE/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://wangyijie.github.io.io/blog/posts/angluar-cli/%E9%A1%B9%E7%9B%AE%E8%B5%84%E6%BA%90%E8%AE%BE%E7%BD%AE/</guid>
+      <guid>https://wangyijie.github.io.io/posts/angluar-cli/%E9%A1%B9%E7%9B%AE%E8%B5%84%E6%BA%90%E8%AE%BE%E7%BD%AE/</guid>
       <description>项目资产#You use the assets array in .angular-cli.json to list files or folders you want to copy as-is when building your project.
 你使用 angular.json 里面的 assets 文件或目录列表，当构建你的项目时原样复制。
 By default, the src/assets/ folder and src/favicon.ico are copied over.

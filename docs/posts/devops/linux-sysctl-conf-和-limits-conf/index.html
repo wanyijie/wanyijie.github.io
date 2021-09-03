@@ -13,16 +13,16 @@ sysctl命令被用于在内核运行时动态地修改内核的运行参数，�
 【sysctl.conf设置】
 #优化TCP vi /etc/sysctl.conf #禁用包过滤功能 net.ipv4.ip_forward = 0 #启用源路由核查功能 net.ipv4.conf.default.rp_filter = 1 #禁用所有IP源路由 net.ipv4.conf.default.accept_source_route = 0 #使用sysrq组合键是了解系统目前运行情况，为安全起见设为0关闭 kernel.sysrq = 0 #控制core文件的文件名是否添加pid作为扩展 kernel.core_uses_pid = 1 #开启SYN Cookies，当出现SYN等待队列溢出时，启用cookies来处理 net.ipv4.tcp_syncookies = 1 #每个消息队列的大小（单位：字节）限制 kernel.msgmnb = 65536 #整个系统最大消息队列数量限制 kernel.msgmax = 65536 #单个共享内存段的大小（单位：字节）限制，计算公式64G102410241024(字节) kernel.shmmax = 68719476736 #所有内存大小（单位：页，1页 = 4Kb），计算公式16G102410241024/4KB(页) kernel.shmall = 4294967296 #timewait的数量，默认是180000 net.ipv4.tcp_max_tw_buckets = 6000 #开启有选择的应答 net.ipv4.tcp_sack = 1 #支持更大的TCP窗口. 如果TCP窗口最大超过65535(64K), 必须设置该数值为1 net.ipv4.tcp_window_scaling = 1 #TCP读buffer net.ipv4.tcp_rmem = 4096 131072 1048576 #TCP写buffer net." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://wangyijie.github.io.io/blog/posts/devops/linux-sysctl-conf-%E5%92%8C-limits-conf/" /><meta property="article:section" content="posts" />
+<meta property="og:url" content="https://wangyijie.github.io.io/posts/devops/linux-sysctl-conf-%E5%92%8C-limits-conf/" /><meta property="article:section" content="posts" />
 
 
 
 <title>Linux Sysctl Conf 和 Limits Conf | A great computer technology Site</title>
-<link rel="manifest" href="/blog/manifest.json">
-<link rel="icon" href="/blog/favicon.png" type="image/x-icon">
-<link rel="stylesheet" href="/blog/book.min.46181bc93375ba932026e753b37c40e6ff8bb16a9ef770c78bcc663e4577b1ba.css" integrity="sha256-RhgbyTN1upMgJudTs3xA5v&#43;LsWqe93DHi8xmPkV3sbo=" crossorigin="anonymous">
-  <script defer src="/blog/flexsearch.min.js"></script>
-  <script defer src="/blog/en.search.min.243fede94d2ab4b88ffdd9674185e2ccb65b1929b6e7ead26fe703347fb01927.js" integrity="sha256-JD/t6U0qtLiP/dlnQYXizLZbGSm25&#43;rSb&#43;cDNH&#43;wGSc=" crossorigin="anonymous"></script>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.46181bc93375ba932026e753b37c40e6ff8bb16a9ef770c78bcc663e4577b1ba.css" integrity="sha256-RhgbyTN1upMgJudTs3xA5v&#43;LsWqe93DHi8xmPkV3sbo=" crossorigin="anonymous">
+  <script defer src="/flexsearch.min.js"></script>
+  <script defer src="/en.search.min.a56ad50ed261bfdb649cf182a254f9ed96d46fee7705a6ce5c9e85fa1ff18eb5.js" integrity="sha256-pWrVDtJhv9tknPGColT57ZbUb&#43;53BabOXJ6F&#43;h/xjrU=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -38,7 +38,7 @@ https://github.com/alex-shpak/hugo-book
         
   <nav>
 <h2 class="book-brand">
-  <a class="flex align-center" href="/blog/"><span>A great computer technology Site</span>
+  <a class="flex align-center" href="/"><span>A great computer technology Site</span>
   </a>
 </h2>
 
@@ -77,146 +77,146 @@ https://github.com/alex-shpak/hugo-book
 <ul>
   
   <li>
-    <a href="/blog/posts/" >
+    <a href="/posts/" >
         Posts
       </a>
       
 <ul>
   
   <li>
-    <a href="/blog/posts/angluar-cli/" >
+    <a href="/posts/angluar-cli/" >
         angular
       </a>
   </li>
   
   <li>
-    <a href="/blog/posts/ansible/" >
+    <a href="/posts/ansible/" >
         ansible
       </a>
   </li>
   
   <li>
-    <a href="/blog/posts/cicd/" >
+    <a href="/posts/cicd/" >
         CICD
       </a>
   </li>
   
   <li>
-    <a href="/blog/posts/cloud/" >
+    <a href="/posts/cloud/" >
         cloude
       </a>
   </li>
   
   <li>
-    <a href="/blog/posts/container/" >
+    <a href="/posts/container/" >
         container
       </a>
   </li>
   
   <li>
-    <a href="/blog/posts/devops/" >
+    <a href="/posts/devops/" >
         DevOps
       </a>
   </li>
   
   <li>
-    <a href="/blog/posts/english/" >
+    <a href="/posts/english/" >
         English
       </a>
   </li>
   
   <li>
-    <a href="/blog/posts/golang/" >
+    <a href="/posts/golang/" >
         golang
       </a>
   </li>
   
   <li>
-    <a href="/blog/posts/istio/" >
+    <a href="/posts/istio/" >
         istio
       </a>
   </li>
   
   <li>
-    <a href="/blog/posts/kubernetes/" >
+    <a href="/posts/kubernetes/" >
         Kubernetes
       </a>
   </li>
   
   <li>
-    <a href="/blog/posts/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" >
+    <a href="/posts/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" >
         mechine leaning
       </a>
   </li>
   
   <li>
-    <a href="/blog/posts/material2/" >
+    <a href="/posts/material2/" >
         mererial2
       </a>
   </li>
   
   <li>
-    <a href="/blog/posts/%E7%9B%91%E6%8E%A7/" >
+    <a href="/posts/%E7%9B%91%E6%8E%A7/" >
         monitor
       </a>
   </li>
   
   <li>
-    <a href="/blog/posts/mysql/" >
+    <a href="/posts/mysql/" >
         mysql
       </a>
   </li>
   
   <li>
-    <a href="/blog/posts/%E7%BD%91%E7%BB%9C/" >
+    <a href="/posts/%E7%BD%91%E7%BB%9C/" >
         networking
       </a>
   </li>
   
   <li>
-    <a href="/blog/posts/%E6%97%A5%E8%AE%B0%E6%9C%AC/" >
+    <a href="/posts/%E6%97%A5%E8%AE%B0%E6%9C%AC/" >
         notes
       </a>
   </li>
   
   <li>
-    <a href="/blog/posts/postgresql/" >
+    <a href="/posts/postgresql/" >
         postgresql
       </a>
   </li>
   
   <li>
-    <a href="/blog/posts/django/" >
+    <a href="/posts/django/" >
         python
       </a>
   </li>
   
   <li>
-    <a href="/blog/posts/%E5%AE%89%E5%85%A8/" >
+    <a href="/posts/%E5%AE%89%E5%85%A8/" >
         safe
       </a>
   </li>
   
   <li>
-    <a href="/blog/posts/%E8%AF%97%E8%AF%8D/" >
+    <a href="/posts/%E8%AF%97%E8%AF%8D/" >
         shi chi
       </a>
   </li>
   
   <li>
-    <a href="/blog/posts/%E7%AB%99%E7%82%B9%E5%8F%AF%E9%9D%A0%E6%80%A7%E5%B7%A5%E7%A8%8B/" >
+    <a href="/posts/%E7%AB%99%E7%82%B9%E5%8F%AF%E9%9D%A0%E6%80%A7%E5%B7%A5%E7%A8%8B/" >
         SRE
       </a>
   </li>
   
   <li>
-    <a href="/blog/posts/%E6%96%87%E5%AD%A6/" >
+    <a href="/posts/%E6%96%87%E5%AD%A6/" >
         wenxue
       </a>
   </li>
   
   <li>
-    <a href="/blog/posts/%E9%9A%8F%E7%AC%94/" >
+    <a href="/posts/%E9%9A%8F%E7%AC%94/" >
         write somethings
       </a>
   </li>
@@ -226,7 +226,7 @@ https://github.com/alex-shpak/hugo-book
   </li>
   
   <li>
-    <a href="/blog/about/" >
+    <a href="/about/" >
         About
       </a>
   </li>
@@ -255,14 +255,14 @@ https://github.com/alex-shpak/hugo-book
         
   <div class="flex align-center justify-between">
   <label for="menu-control">
-    <img src="/blog/svg/menu.svg" class="book-icon" alt="Menu" />
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
   <strong>Linux Sysctl Conf 和 Limits Conf</strong>
 
   <label for="toc-control">
     
-    <img src="/blog/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
     
   </label>
 </div>
@@ -285,7 +285,7 @@ https://github.com/alex-shpak/hugo-book
       
 <article class="markdown">
   <h1>
-    <a href="/blog/posts/devops/linux-sysctl-conf-%E5%92%8C-limits-conf/">Linux Sysctl Conf 和 Limits Conf</a>
+    <a href="/posts/devops/linux-sysctl-conf-%E5%92%8C-limits-conf/">Linux Sysctl Conf 和 Limits Conf</a>
   </h1>
   
 

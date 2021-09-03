@@ -11,16 +11,16 @@ src/extundelete &ndash;help#A typical usage scenario is presented below. Note
 在利用 extundelete 恢复文件时并不依赖特定文件格式，首先extundelete会通过文件系统的inode信息（根目录的inode一般为2）来获得当前文件系统下所有文件的信息，包括存在的和已经删除的文件，这些信息包括文件名和inode。然后利用inode信息结合日志去查询该inode所在的block位置，包括直接块，间接块等信息。最后利用dd命令将这些信息备份出来，从而恢复数据文件。该工具最给力的一点就是支持ext3/ext4双格式分区恢复，基于整个磁盘的恢复功能较为强大。 注意：在实际线上恢复过程中，切勿将extundelete安装到你误删的文件所在硬盘，这样会有一定几率将需要恢复的数据彻底覆盖
 src/extundelete &ndash;help#A typical usage scenario is presented below. Note that some of the commands below require special permissions to complete. Adding &lsquo;sudo &#39; before the command is one way to ensure you have the necessary permissions. Assume you have deleted a file called /home/user/an/important/file. Also assume the output of the &lsquo;mount&rsquo; command shows this line (among others): /dev/sda3 on /home type ext3 (rw) This line shows that the /home directory is on the partition named /dev/sda3, so then run: umount /dev/sda3 and check that it is now unmounted by running the mount command again and seeing it is not listed." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://wangyijie.github.io.io/blog/posts/%E5%AE%89%E5%85%A8/linux-%E7%9A%84%E5%BC%80%E6%BA%90%E6%95%B0%E6%8D%AE%E6%81%A2%E5%A4%8D%E8%BD%AF%E4%BB%B6extundelete/" /><meta property="article:section" content="posts" />
+<meta property="og:url" content="https://wangyijie.github.io.io/posts/%E5%AE%89%E5%85%A8/linux-%E7%9A%84%E5%BC%80%E6%BA%90%E6%95%B0%E6%8D%AE%E6%81%A2%E5%A4%8D%E8%BD%AF%E4%BB%B6extundelete/" /><meta property="article:section" content="posts" />
 
 
 
 <title>Linux 的开源数据恢复软件 Extundelete | A great computer technology Site</title>
-<link rel="manifest" href="/blog/manifest.json">
-<link rel="icon" href="/blog/favicon.png" type="image/x-icon">
-<link rel="stylesheet" href="/blog/book.min.46181bc93375ba932026e753b37c40e6ff8bb16a9ef770c78bcc663e4577b1ba.css" integrity="sha256-RhgbyTN1upMgJudTs3xA5v&#43;LsWqe93DHi8xmPkV3sbo=" crossorigin="anonymous">
-  <script defer src="/blog/flexsearch.min.js"></script>
-  <script defer src="/blog/en.search.min.243fede94d2ab4b88ffdd9674185e2ccb65b1929b6e7ead26fe703347fb01927.js" integrity="sha256-JD/t6U0qtLiP/dlnQYXizLZbGSm25&#43;rSb&#43;cDNH&#43;wGSc=" crossorigin="anonymous"></script>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.46181bc93375ba932026e753b37c40e6ff8bb16a9ef770c78bcc663e4577b1ba.css" integrity="sha256-RhgbyTN1upMgJudTs3xA5v&#43;LsWqe93DHi8xmPkV3sbo=" crossorigin="anonymous">
+  <script defer src="/flexsearch.min.js"></script>
+  <script defer src="/en.search.min.a56ad50ed261bfdb649cf182a254f9ed96d46fee7705a6ce5c9e85fa1ff18eb5.js" integrity="sha256-pWrVDtJhv9tknPGColT57ZbUb&#43;53BabOXJ6F&#43;h/xjrU=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -36,7 +36,7 @@ https://github.com/alex-shpak/hugo-book
         
   <nav>
 <h2 class="book-brand">
-  <a class="flex align-center" href="/blog/"><span>A great computer technology Site</span>
+  <a class="flex align-center" href="/"><span>A great computer technology Site</span>
   </a>
 </h2>
 
@@ -75,146 +75,146 @@ https://github.com/alex-shpak/hugo-book
 <ul>
   
   <li>
-    <a href="/blog/posts/" >
+    <a href="/posts/" >
         Posts
       </a>
       
 <ul>
   
   <li>
-    <a href="/blog/posts/angluar-cli/" >
+    <a href="/posts/angluar-cli/" >
         angular
       </a>
   </li>
   
   <li>
-    <a href="/blog/posts/ansible/" >
+    <a href="/posts/ansible/" >
         ansible
       </a>
   </li>
   
   <li>
-    <a href="/blog/posts/cicd/" >
+    <a href="/posts/cicd/" >
         CICD
       </a>
   </li>
   
   <li>
-    <a href="/blog/posts/cloud/" >
+    <a href="/posts/cloud/" >
         cloude
       </a>
   </li>
   
   <li>
-    <a href="/blog/posts/container/" >
+    <a href="/posts/container/" >
         container
       </a>
   </li>
   
   <li>
-    <a href="/blog/posts/devops/" >
+    <a href="/posts/devops/" >
         DevOps
       </a>
   </li>
   
   <li>
-    <a href="/blog/posts/english/" >
+    <a href="/posts/english/" >
         English
       </a>
   </li>
   
   <li>
-    <a href="/blog/posts/golang/" >
+    <a href="/posts/golang/" >
         golang
       </a>
   </li>
   
   <li>
-    <a href="/blog/posts/istio/" >
+    <a href="/posts/istio/" >
         istio
       </a>
   </li>
   
   <li>
-    <a href="/blog/posts/kubernetes/" >
+    <a href="/posts/kubernetes/" >
         Kubernetes
       </a>
   </li>
   
   <li>
-    <a href="/blog/posts/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" >
+    <a href="/posts/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" >
         mechine leaning
       </a>
   </li>
   
   <li>
-    <a href="/blog/posts/material2/" >
+    <a href="/posts/material2/" >
         mererial2
       </a>
   </li>
   
   <li>
-    <a href="/blog/posts/%E7%9B%91%E6%8E%A7/" >
+    <a href="/posts/%E7%9B%91%E6%8E%A7/" >
         monitor
       </a>
   </li>
   
   <li>
-    <a href="/blog/posts/mysql/" >
+    <a href="/posts/mysql/" >
         mysql
       </a>
   </li>
   
   <li>
-    <a href="/blog/posts/%E7%BD%91%E7%BB%9C/" >
+    <a href="/posts/%E7%BD%91%E7%BB%9C/" >
         networking
       </a>
   </li>
   
   <li>
-    <a href="/blog/posts/%E6%97%A5%E8%AE%B0%E6%9C%AC/" >
+    <a href="/posts/%E6%97%A5%E8%AE%B0%E6%9C%AC/" >
         notes
       </a>
   </li>
   
   <li>
-    <a href="/blog/posts/postgresql/" >
+    <a href="/posts/postgresql/" >
         postgresql
       </a>
   </li>
   
   <li>
-    <a href="/blog/posts/django/" >
+    <a href="/posts/django/" >
         python
       </a>
   </li>
   
   <li>
-    <a href="/blog/posts/%E5%AE%89%E5%85%A8/" >
+    <a href="/posts/%E5%AE%89%E5%85%A8/" >
         safe
       </a>
   </li>
   
   <li>
-    <a href="/blog/posts/%E8%AF%97%E8%AF%8D/" >
+    <a href="/posts/%E8%AF%97%E8%AF%8D/" >
         shi chi
       </a>
   </li>
   
   <li>
-    <a href="/blog/posts/%E7%AB%99%E7%82%B9%E5%8F%AF%E9%9D%A0%E6%80%A7%E5%B7%A5%E7%A8%8B/" >
+    <a href="/posts/%E7%AB%99%E7%82%B9%E5%8F%AF%E9%9D%A0%E6%80%A7%E5%B7%A5%E7%A8%8B/" >
         SRE
       </a>
   </li>
   
   <li>
-    <a href="/blog/posts/%E6%96%87%E5%AD%A6/" >
+    <a href="/posts/%E6%96%87%E5%AD%A6/" >
         wenxue
       </a>
   </li>
   
   <li>
-    <a href="/blog/posts/%E9%9A%8F%E7%AC%94/" >
+    <a href="/posts/%E9%9A%8F%E7%AC%94/" >
         write somethings
       </a>
   </li>
@@ -224,7 +224,7 @@ https://github.com/alex-shpak/hugo-book
   </li>
   
   <li>
-    <a href="/blog/about/" >
+    <a href="/about/" >
         About
       </a>
   </li>
@@ -253,14 +253,14 @@ https://github.com/alex-shpak/hugo-book
         
   <div class="flex align-center justify-between">
   <label for="menu-control">
-    <img src="/blog/svg/menu.svg" class="book-icon" alt="Menu" />
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
   <strong>Linux 的开源数据恢复软件 Extundelete</strong>
 
   <label for="toc-control">
     
-    <img src="/blog/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
     
   </label>
 </div>
@@ -287,7 +287,7 @@ https://github.com/alex-shpak/hugo-book
       
 <article class="markdown">
   <h1>
-    <a href="/blog/posts/%E5%AE%89%E5%85%A8/linux-%E7%9A%84%E5%BC%80%E6%BA%90%E6%95%B0%E6%8D%AE%E6%81%A2%E5%A4%8D%E8%BD%AF%E4%BB%B6extundelete/">Linux 的开源数据恢复软件 Extundelete</a>
+    <a href="/posts/%E5%AE%89%E5%85%A8/linux-%E7%9A%84%E5%BC%80%E6%BA%90%E6%95%B0%E6%8D%AE%E6%81%A2%E5%A4%8D%E8%BD%AF%E4%BB%B6extundelete/">Linux 的开源数据恢复软件 Extundelete</a>
   </h1>
   
 

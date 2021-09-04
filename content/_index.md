@@ -28,6 +28,6 @@ openstack, docker, python, typescript, kubernetes, golang. 核心周边都有一
 
 本人目前住在深圳，估计长期居住深圳。在探寻长期旅行工作的条件，包括工作方向，经济基础
 
-欢迎加我的微信，虽然我没时间和关系普通的人聊天，互相关注下也可以
+欢迎加我的微信，虽然我没时间和关系普通的人聊天，互相关注下,请微信扫下面的二维码。
 
-![My QR Code](picture\WeChat_code.jpg)
+![My QR Code](picture/WeChat_code.jpg)

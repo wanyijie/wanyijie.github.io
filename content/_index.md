@@ -2,39 +2,32 @@
 title: home
 ---
 
-# Acerbo datus maxime
+# 站点介绍
 
 {{< columns >}}
-## Astris ipse furtiva
+## 计划
 
-Est in vagis et Pittheus tu arge accipiter regia iram vocatur nurus. Omnes ut
-olivae sensit **arma sorori** deducit, inesset **crudus**, ego vetuere aliis,
-modo arsit? Utinam rapta fiducia valuere litora _adicit cursu_, ad facies
+本人在IT运维行业有多年从业经验，计划将以往有价值的知识经验提取出来，陆续整理成本站的文章，由于本人在学习英语，所以本站可能出现许多中英混合的地方，请勿见怪！
+本人有时喜欢
 
 <--->
 
-## Suis quot vota
+## 目的
 
-Ea _furtique_ risere fratres edidit terrae magis. Colla tam mihi tenebat:
-miseram excita suadent es pecudes iam. Concilio _quam_ velatus posset ait quod
-nunc! Fragosis suae dextra geruntur functus vulgata.
+Markdown 已是常用的文档写作语言，可以简便的写出整洁美观的文档，同时方便转换为其它文档格式，本人希望坚持使用markdown写作，培养对markdown语法及其使用技巧的掌握，欢迎同道一同交流！
 {{< /columns >}}
 
 
-## Tempora nisi nunc
+## 自我介绍
 
-Lorem **markdownum** emicat gestu. Cannis sol pressit ducta. **Est** Idaei,
-tremens ausim se tutaeque, illi ulnis hausit, sed, lumina cutem. Quae avis
-sequens!
+本人2014毕业后就从业IT运维工作，在基础系统windows和linux方面有丰富的使用经验，早期比较常用windows，还有一定的掌握。工作学习以linux为主，沿着本人的工作时间，技术核心依次是：
+openstack, docker, python, typescript, kubernetes, golang. 核心周边都有一定的了解，但是早期的技术知识已经模糊，可能一时难以运用出来，若有必要我乐意去回顾。kubernetes对我的职业助力甚多，目前主要从事golang开发。
 
-    var panel = ram_design;
-    if (backup + system) {
-        file.readPoint = network_native;
-        sidebar_engine_device(cell_tftp_raster,
-                dual_login_paper.adf_vci.application_reader_design(
-                graphicsNvramCdma, lpi_footer_snmp, integer_model));
-    }
 
-## Locis suis novi cum suoque decidit eadem
+## 个人生活
 
-Idmoniae ripis, at aves, ali missa adest, ut _et autem_, et ab?
+本人目前住在深圳，估计长期居住深圳。在探寻长期旅行工作的条件，包括工作方向，经济基础
+
+欢迎加我的微信，虽然我没时间和关系普通的人聊天，互相关注下也可以
+
+![My QR Code](picture\WeChat_code.jpg)

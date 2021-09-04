@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="go语言之旅：https://tour.go-zh.org/ 如何使用go编程：https://go-zh.org/doc/code.html 时效go编程：https://go-zh.org/doc/effective_go.html golang安装包下载：https://gomirrors.org/ go mod 代理地址：https://goproxy.io/
+bash## Enable the go modules feature export GO111MODULE=on # Set the GOPROXY environment variable export GOPROXY=https://goproxy.io PowerShell## Enable the go modules feature $env:GO111MODULE=on # Set the GOPROXY environment variable $env:GOPROXY=https://goproxy.io Go version &gt;= 1.13#go env -w GOPROXY=https://goproxy.io, direct # Set environment variable allow bypassing the proxy for selected modules go env -w GOPRIVATE=*.corp.example.com ">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="" />
+<meta property="og:description" content="go语言之旅：https://tour.go-zh.org/ 如何使用go编程：https://go-zh.org/doc/code.html 时效go编程：https://go-zh.org/doc/effective_go.html golang安装包下载：https://gomirrors.org/ go mod 代理地址：https://goproxy.io/
+bash## Enable the go modules feature export GO111MODULE=on # Set the GOPROXY environment variable export GOPROXY=https://goproxy.io PowerShell## Enable the go modules feature $env:GO111MODULE=on # Set the GOPROXY environment variable $env:GOPROXY=https://goproxy.io Go version &gt;= 1.13#go env -w GOPROXY=https://goproxy.io, direct # Set environment variable allow bypassing the proxy for selected modules go env -w GOPRIVATE=*.corp.example.com " />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://wangyijie.store/posts/diary/%E4%BE%BF%E6%8D%B7golang%E5%BC%80%E5%8F%91/" /><meta property="article:section" content="posts" />
+
+
+
+<title>便捷golang开发 | hope to be a great computer technology Site</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.46181bc93375ba932026e753b37c40e6ff8bb16a9ef770c78bcc663e4577b1ba.css" integrity="sha256-RhgbyTN1upMgJudTs3xA5v&#43;LsWqe93DHi8xmPkV3sbo=" crossorigin="anonymous">
+  <script defer src="/flexsearch.min.js"></script>
+  <script defer src="/en.search.min.fdba0647c9501127a41f26adcab0438eb8555e76b0481ad7bc42620c87ea0e43.js" integrity="sha256-/boGR8lQESekHyatyrBDjrhVXnawSBrXvEJiDIfqDkM=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>hope to be a great computer technology Site</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/posts/" >
+        Posts
+      </a>
+      
+<ul>
+  
+  <li>
+    <a href="/posts/angluar/" >
+        angular
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/ansible/" >
+        ansible
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/cicd/" >
+        CICD
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/devops/" >
+        DevOps
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/english/" >
+        English
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/golang/" >
+        golang
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/istio/" >
+        istio
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/kubernetes/" >
+        Kubernetes
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/material2/" >
+        mererial2
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/mysql/" >
+        mysql
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/postgresql/" >
+        postgresql
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/python/" >
+        python
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/cloud/" >
+        云服务
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/security/" >
+        安全
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/container/" >
+        容器
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/literature/" >
+        文学
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/diary/" >
+        日记
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/machine_learning/" >
+        机器学习
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/monitor/" >
+        监控
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/sre/" >
+        站点可靠性工程
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/network/" >
+        网络
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/poetry/" >
+        诗歌
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/essay/" >
+        随笔
+      </a>
+  </li>
+  
+</ul>
+
+  </li>
+  
+  <li>
+    <a href="/about/" >
+        关于作者
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var a=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(b){localStorage.setItem("menu.scrollTop",a.scrollTop)}),a.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>便捷golang开发</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#bash">bash</a></li>
+    <li><a href="#powershell">PowerShell</a></li>
+    <li><a href="#go-version--113">Go version &gt;= 1.13</a></li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+<article class="markdown">
+  <h1>
+    <a href="/posts/diary/%E4%BE%BF%E6%8D%B7golang%E5%BC%80%E5%8F%91/">便捷golang开发</a>
+  </h1>
+  
+
+
+  
+
+  
+
+
+
+<p>go语言之旅：<a href="https://tour.go-zh.org/">https://tour.go-zh.org/</a>
+如何使用go编程：<a href="https://go-zh.org/doc/code.html">https://go-zh.org/doc/code.html</a>
+时效go编程：<a href="https://go-zh.org/doc/effective_go.html">https://go-zh.org/doc/effective_go.html</a>
+golang安装包下载：<a href="https://gomirrors.org/">https://gomirrors.org/</a>
+go mod 代理地址：<a href="https://goproxy.io/">https://goproxy.io/</a></p>
+<h2 id="bash">
+  bash
+  <a class="anchor" href="#bash">#</a>
+</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Enable the go modules feature</span>
+export GO111MODULE<span style="color:#f92672">=</span>on
+<span style="color:#75715e"># Set the GOPROXY environment variable</span>
+export GOPROXY<span style="color:#f92672">=</span>https://goproxy.io
+</code></pre></div><h2 id="powershell">
+  PowerShell
+  <a class="anchor" href="#powershell">#</a>
+</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Powershell" data-lang="Powershell"><span style="color:#75715e"># Enable the go modules feature</span>
+$env:GO111MODULE=on
+<span style="color:#75715e"># Set the GOPROXY environment variable</span>
+$env:GOPROXY=https<span style="color:#960050;background-color:#1e0010">:</span>//goproxy.io
+</code></pre></div><h2 id="go-version--113">
+  Go version &gt;= 1.13
+  <a class="anchor" href="#go-version--113">#</a>
+</h2>
+<pre tabindex="0"><code>go env -w GOPROXY=https://goproxy.io, direct
+# Set environment variable allow bypassing the proxy for selected modules
+go env -w GOPRIVATE=*.corp.example.com
+</code></pre></article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+  
+
+  
+
+  <script src="https://utteranc.es/client.js" repo="wanyijie/blog" issue-term="pathname" label="web"
+    theme="github-light" crossorigin="anonymous" async>
+    </script>
+</div>
+
+
+
+<script>{ { . | safeJS } }</script>
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#bash">bash</a></li>
+    <li><a href="#powershell">PowerShell</a></li>
+    <li><a href="#go-version--113">Go version &gt;= 1.13</a></li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6266541561533854"
+     crossorigin="anonymous"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,80 +1,63 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>CICD on A great computer technology Site</title>
-    <link>https://wangyijie.github.io/posts/cicd/</link>
-    <description>Recent content in CICD on A great computer technology Site</description>
+    <title>CICD on hope to be a great computer technology Site</title>
+    <link>https://wangyijie.store/posts/cicd/</link>
+    <description>Recent content in CICD on hope to be a great computer technology Site</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="https://wangyijie.github.io/posts/cicd/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language><atom:link href="https://wangyijie.store/posts/cicd/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title></title>
-      <link>https://wangyijie.github.io/posts/cicd/blue-green-deployment/</link>
+      <link>https://wangyijie.store/posts/cicd/blue-green-deployment/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://wangyijie.github.io/posts/cicd/blue-green-deployment/</guid>
-      <description>Blue-green deployment is a way to safely deploy applications that are serving live traffic by creating two versions of an application (BLUE and GREEN). To deploy a new version of the application, you will drain all traffic, requests, and pending operations from the current version of the application, switch to the new version, and then turn off the old version. Blue-green deployment eliminates application downtime and allows you to quickly roll back to the BLUE version of the application if necessary.</description>
+      <guid>https://wangyijie.store/posts/cicd/blue-green-deployment/</guid>
+      <description>&lt;p&gt;Blue-green deployment is a way to safely deploy applications that are serving live traffic by creating two versions of an application (BLUE and GREEN). To deploy a new version of the application, you will drain all traffic, requests, and pending operations from the current version of the application, switch to the new version, and then turn off the old version. Blue-green deployment eliminates application downtime and allows you to quickly roll back to the BLUE version of the application if necessary.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title></title>
-      <link>https://wangyijie.github.io/posts/cicd/doing-a-canary-release/</link>
+      <link>https://wangyijie.store/posts/cicd/doing-a-canary-release/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://wangyijie.github.io/posts/cicd/doing-a-canary-release/</guid>
-      <description>Sometimes it’s safest to test the new version of an application on a small set of users to see how it performs in production, then gradually ramp up the proportion of traffic to the new servers until eventually all traffic is going to them. This method is commonly called a canary release or a dark launch. (“Canary release” refers to the old mining practice of taking a canary down into a coal mine to detect the presence of dangerous gases before the miners were affected.</description>
+      <guid>https://wangyijie.store/posts/cicd/doing-a-canary-release/</guid>
+      <description>&lt;p&gt;Sometimes it’s safest to test the new version of an application on a small set of users to see how it performs in production, then gradually ramp up the proportion of traffic to the new servers until eventually all traffic is going to them.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title></title>
-      <link>https://wangyijie.github.io/posts/cicd/gitlab%E4%B8%80%E4%B8%AA%E6%8E%A8%E9%80%81%E8%A7%A6%E5%8F%91%E9%87%8D%E5%A4%8D%E6%88%96%E5%A4%9A%E4%B8%AAwebhook%E4%BA%8B%E4%BB%B6/</link>
+      <link>https://wangyijie.store/posts/cicd/gitlab%E4%B8%80%E4%B8%AA%E6%8E%A8%E9%80%81%E8%A7%A6%E5%8F%91%E9%87%8D%E5%A4%8D%E6%88%96%E5%A4%9A%E4%B8%AAwebhook%E4%BA%8B%E4%BB%B6/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://wangyijie.github.io/posts/cicd/gitlab%E4%B8%80%E4%B8%AA%E6%8E%A8%E9%80%81%E8%A7%A6%E5%8F%91%E9%87%8D%E5%A4%8D%E6%88%96%E5%A4%9A%E4%B8%AAwebhook%E4%BA%8B%E4%BB%B6/</guid>
-      <description>当GitLab发送webhook时，它需要10秒内的响应（设置默认值）。如果它没有收到，它将重试webhook。如果端点在这10秒内没有发送HTTP响应，GitLab可能会决定挂钩失败并重试。
-如果您收到多个请求，可以尝试增加默认值以在发送webhook后等待HTTP响应，方法是取消注释或将以下设置添加到/etc/gitlab/gitlab.rb：
-gitlab_rails[&#39;webhook_timeout&#39;] = 10  </description>
+      <guid>https://wangyijie.store/posts/cicd/gitlab%E4%B8%80%E4%B8%AA%E6%8E%A8%E9%80%81%E8%A7%A6%E5%8F%91%E9%87%8D%E5%A4%8D%E6%88%96%E5%A4%9A%E4%B8%AAwebhook%E4%BA%8B%E4%BB%B6/</guid>
+      <description>&lt;p&gt;当GitLab发送webhook时，它需要10秒内的响应（设置默认值）。如果它没有收到，它将重试webhook。如果端点在这10秒内没有发送HTTP响应，GitLab可能会决定挂钩失败并重试。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title></title>
-      <link>https://wangyijie.github.io/posts/cicd/nginx-and-devops-methodologies-go-hand-in-hand/</link>
+      <link>https://wangyijie.store/posts/cicd/nginx-and-devops-methodologies-go-hand-in-hand/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://wangyijie.github.io/posts/cicd/nginx-and-devops-methodologies-go-hand-in-hand/</guid>
-      <description>DevOps has seen explosive growth recently, as organizations look to deliver releases and features faster by automating operations with an Infrastructure as Code approach. This shift in the industry is making for some very interesting transformations, both in how organizations deploy applications and what is expected from IT operations.
-DevOps plays a big role, not just in the delivery of infrastructure, but in the application deployment process itself. Many times, DevOps and development go hand in hand, with infrastructure deployed for the sole purpose of developing an application pipeline.</description>
+      <guid>https://wangyijie.store/posts/cicd/nginx-and-devops-methodologies-go-hand-in-hand/</guid>
+      <description>&lt;p&gt;DevOps has seen explosive growth recently, as organizations look to deliver releases and features faster by automating operations with an Infrastructure as Code approach. This shift in the industry is making for some very interesting transformations, both in how organizations deploy applications and what is expected from IT operations.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title></title>
-      <link>https://wangyijie.github.io/posts/cicd/performing-a-b-testing/</link>
+      <link>https://wangyijie.store/posts/cicd/performing-a-b-testing/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://wangyijie.github.io/posts/cicd/performing-a-b-testing/</guid>
-      <description>When you are testing changes to an application, there are some factors you can measure only in a production environment rather than a development test bed. Examples include the effect of UI changes on user behavior and the impact on overall performance. A common testing method is A/B testing – also known as split testing – in which a (usually small) proportion of users is directed to the new version of an application while most users continue to use the current version.</description>
+      <guid>https://wangyijie.store/posts/cicd/performing-a-b-testing/</guid>
+      <description>&lt;p&gt;When you are testing changes to an application, there are some factors you can measure only in a production environment rather than a development test bed. Examples include the effect of UI changes on user behavior and the impact on overall performance. A common testing method is &lt;em&gt;A/B testing&lt;/em&gt; – also known as &lt;em&gt;split testing&lt;/em&gt; – in which a (usually small) proportion of users is directed to the new version of an application while most users continue to use the current version.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title></title>
-      <link>https://wangyijie.github.io/posts/cicd/%E4%BB%80%E4%B9%88%E6%98%AF%E8%87%AA%E5%8A%A8%E5%8C%96/</link>
+      <link>https://wangyijie.store/posts/cicd/%E4%BB%80%E4%B9%88%E6%98%AF%E8%87%AA%E5%8A%A8%E5%8C%96/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://wangyijie.github.io/posts/cicd/%E4%BB%80%E4%B9%88%E6%98%AF%E8%87%AA%E5%8A%A8%E5%8C%96/</guid>
-      <description>自动化是指运用技术，在减少人工协助的情况下执行各项任务。面临重复性任务的任何行业都可利用自动化，但自动化在制造、机器人和汽车行业以及技术世界中更加普及，例如在 IT 系统和业务决策软件中。
-IT 自动化#一种通过执行重复进程集合来取代对 IT 系统的手动操作的指令系统，例如，利用标准运行环境（SOE）来自动进行置备。
-业务自动化#使业务流程管理（BPM）、业务规则管理（BRM）和业务优化与现代应用开发的方向保持一致，从而应对市场的变化。
-机器人流程自动化#WorkFusion 和 Blue Prism 等提供的软件赋予程序有限的决策制定能力，例如本页上的聊天机器人。
-面向新手的 RPA
-工业自动化#在实现工厂自动化的过程中，缩短制造流程中人类劳动的工时，通常缩减到人类工作者只需操控控制面板或其他人机界面（HMI） 的程度。
-人工智能#基于规则的软件，执行通常通过人类介入来完成的任务。
-AI 指南
-机器学习#利用预测模型执行任务的自适应算法，无需明确的指令，并可在完成每一任务时自动修改算法。
-深度学习#利用多种自适应算法、自动化软件和程序执行一项固定的重复性任务，例如从原始图像中提取细微的细节。
-为什么要自动化？#自动化可以助力企业实现数字变革。当前，Airbnb 和 Amazon 等企业正引领着颠覆性的变革浪潮。他们要应对各种各样的挑战，不仅要为员工和合作伙伴提供支持、发展新的客户，还要以更快的速度提供新颖的创新产品与服务。
-他们不仅想要成为行业的颠覆者，并且势在必行。
-自动化的作用十分关键，它不仅能够管理、改变和调整您的 IT 基础架构，还会影响企业的流程运作方式。利用自动化来简化变革，您就能把更多时间和精力投入到创新之中。采取自动化的企业能够更快地完成工作。自动化能够解放 IT 员工，让他们能够节省时间，去关注并解决更重要的问题，随后，再将这些事务也优化精简，交由自动化处理。
-我们可以说得更细一点：
- IT 运维是一项艰难的工作。要在采用新系统的同时保留原来的系统和流程，更是难上加难。 各种要求和需求的增长速度，远远超过 IT 和业务能力的进步。 DevOps等新的方法正在推动文化变革。 技术虚拟化、云和容器等规模太大，无法完全靠手动完成。 这时我们就需要自动化。  自动化的优势#自动化并不意味着完全取代人工。虽然自动化可以免除一些人工介入的工序，但自动化的重点和优势其实在于提高生产率、一致性和效率。这是自动化的悖论，因为当您高效运用自动化时，人工介入的重要性会提高，但频率会降低。</description>
+      <guid>https://wangyijie.store/posts/cicd/%E4%BB%80%E4%B9%88%E6%98%AF%E8%87%AA%E5%8A%A8%E5%8C%96/</guid>
+      <description>&lt;p&gt;自动化是指运用技术，在减少人工协助的情况下执行各项任务。面临重复性任务的任何行业都可利用自动化，但自动化在制造、机器人和&lt;a href=&#34;https://www.redhat.com/zh/open-source-stories/road-to-ai&#34;&gt;汽车&lt;/a&gt;行业以及技术世界中更加普及，例如在 IT 系统和业务决策软件中。&lt;/p&gt;</description>
     </item>
     
   </channel>

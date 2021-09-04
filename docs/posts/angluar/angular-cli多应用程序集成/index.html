@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Multiple Apps integration#多应用程序集成#Angular CLI supports multiple applications within one project. You use the apps array in .angular-cli.json to list files and folders you want to use for different apps.
+Angular CLI 支持多应用程序在一个项目中，您可以使用 .angular-cli.json 中的应用程序数组来列出要用于不同应用程序的文件和文件夹。
+By default one app is created when then new project is created and apps array looks like:
+默认情况下, 在创建新项目时创建一个应用程序, 并且 apps 数组如下所示:
+&quot;apps&quot;: [ { &quot;root&quot;: &quot;src&quot;, ... &quot;main&quot;: &quot;main.ts&quot;, &quot;polyfills&quot;: &quot;polyfills.">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="" />
+<meta property="og:description" content="Multiple Apps integration#多应用程序集成#Angular CLI supports multiple applications within one project. You use the apps array in .angular-cli.json to list files and folders you want to use for different apps.
+Angular CLI 支持多应用程序在一个项目中，您可以使用 .angular-cli.json 中的应用程序数组来列出要用于不同应用程序的文件和文件夹。
+By default one app is created when then new project is created and apps array looks like:
+默认情况下, 在创建新项目时创建一个应用程序, 并且 apps 数组如下所示:
+&quot;apps&quot;: [ { &quot;root&quot;: &quot;src&quot;, ... &quot;main&quot;: &quot;main.ts&quot;, &quot;polyfills&quot;: &quot;polyfills." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://wangyijie.store/posts/angluar/angular-cli%E5%A4%9A%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E9%9B%86%E6%88%90/" /><meta property="article:section" content="posts" />
+
+
+
+<title>Angular Cli多应用程序集成 | hope to be a great computer technology Site</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.46181bc93375ba932026e753b37c40e6ff8bb16a9ef770c78bcc663e4577b1ba.css" integrity="sha256-RhgbyTN1upMgJudTs3xA5v&#43;LsWqe93DHi8xmPkV3sbo=" crossorigin="anonymous">
+  <script defer src="/flexsearch.min.js"></script>
+  <script defer src="/en.search.min.fdba0647c9501127a41f26adcab0438eb8555e76b0481ad7bc42620c87ea0e43.js" integrity="sha256-/boGR8lQESekHyatyrBDjrhVXnawSBrXvEJiDIfqDkM=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>hope to be a great computer technology Site</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/posts/" >
+        Posts
+      </a>
+      
+<ul>
+  
+  <li>
+    <a href="/posts/angluar/" >
+        angular
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/ansible/" >
+        ansible
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/cicd/" >
+        CICD
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/devops/" >
+        DevOps
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/english/" >
+        English
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/golang/" >
+        golang
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/istio/" >
+        istio
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/kubernetes/" >
+        Kubernetes
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/material2/" >
+        mererial2
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/mysql/" >
+        mysql
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/postgresql/" >
+        postgresql
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/python/" >
+        python
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/cloud/" >
+        云服务
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/security/" >
+        安全
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/container/" >
+        容器
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/literature/" >
+        文学
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/diary/" >
+        日记
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/machine_learning/" >
+        机器学习
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/monitor/" >
+        监控
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/sre/" >
+        站点可靠性工程
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/network/" >
+        网络
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/poetry/" >
+        诗歌
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/essay/" >
+        随笔
+      </a>
+  </li>
+  
+</ul>
+
+  </li>
+  
+  <li>
+    <a href="/about/" >
+        关于作者
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var a=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(b){localStorage.setItem("menu.scrollTop",a.scrollTop)}),a.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Angular Cli多应用程序集成</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents"></nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+<article class="markdown">
+  <h1>
+    <a href="/posts/angluar/angular-cli%E5%A4%9A%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E9%9B%86%E6%88%90/">Angular Cli多应用程序集成</a>
+  </h1>
+  
+
+
+  
+
+  
+
+
+
+<h1 id="multiple-apps-integration">
+  Multiple Apps integration
+  <a class="anchor" href="#multiple-apps-integration">#</a>
+</h1>
+<h1 id="多应用程序集成">
+  多应用程序集成
+  <a class="anchor" href="#%e5%a4%9a%e5%ba%94%e7%94%a8%e7%a8%8b%e5%ba%8f%e9%9b%86%e6%88%90">#</a>
+</h1>
+<p>Angular CLI supports multiple applications within one project.
+You use the <code>apps</code> array in <code>.angular-cli.json</code> to list files and folders you want to use for different apps.<br>
+Angular CLI 支持多应用程序在一个项目中，您可以使用 <code>.angular-cli.json</code> 中的应用程序数组来列出要用于不同应用程序的文件和文件夹。</p>
+<p>By default one app is created when then new project is created and <code>apps</code> array looks like:<br>
+默认情况下, 在创建新项目时创建一个应用程序, 并且 <code>apps</code> 数组如下所示:</p>
+<pre tabindex="0"><code>&quot;apps&quot;: [
+  {
+    &quot;root&quot;: &quot;src&quot;,
+    ...
+    &quot;main&quot;: &quot;main.ts&quot;,
+    &quot;polyfills&quot;: &quot;polyfills.ts&quot;,
+    &quot;test&quot;: &quot;test.ts&quot;,
+    &quot;tsconfig&quot;: &quot;tsconfig.app.json&quot;,
+    &quot;testTsconfig&quot;: &quot;tsconfig.spec.json&quot;,
+    &quot;prefix&quot;: &quot;app&quot;,
+    ...
+  }
+],
+</code></pre><p>To create another app you can copy the app object and then change the values for the options you want to change. eg. If I want to create another app with different <code>main</code>, <code>polyfills</code>, <code>test</code> and <code>prefix</code> and keep other configurations such as <code>assets</code>, <code>styles</code>, <code>environment</code> etc. same. I can add it to apps array as below.<br>
+若要创建其他应用程序, 可以复制应用程序对象, 然后更改要更改的选项的值。如如果我想创建另一个具有不同的 <code>main</code>、<code>polyfills</code>、<code>test</code>和 <code>prefix</code> 的应用程序, 并保留其他配置, 如 <code>assets</code>、<code>styles</code>、<code>enviroment</code>等。我可以添加到应用程序阵列如下。</p>
+<pre tabindex="0"><code>&quot;apps&quot;: [
+  {
+    &quot;root&quot;: &quot;src&quot;,
+    ...
+    &quot;main&quot;: &quot;main.ts&quot;,
+    &quot;polyfills&quot;: &quot;polyfills.ts&quot;,
+    &quot;test&quot;: &quot;test.ts&quot;,
+    &quot;tsconfig&quot;: &quot;tsconfig.app.json&quot;,
+    &quot;testTsconfig&quot;: &quot;tsconfig.spec.json&quot;,
+    &quot;prefix&quot;: &quot;app&quot;,
+    ...
+  },
+  {
+    &quot;root&quot;: &quot;src&quot;,
+    ...
+    &quot;main&quot;: &quot;main2.ts&quot;,
+    &quot;polyfills&quot;: &quot;polyfills2.ts&quot;,
+    &quot;test&quot;: &quot;test2.ts&quot;,
+    &quot;tsconfig&quot;: &quot;tsconfig.app.json&quot;,
+    &quot;testTsconfig&quot;: &quot;tsconfig.spec.json&quot;,
+    &quot;prefix&quot;: &quot;app2&quot;,
+    ...
+  }  
+],
+</code></pre><p>Now we can <code>serve</code>, <code>build</code> etc. both the apps by passing the app index with the commands. By default, it will pick the first app only.<br>
+现在, 我们可以通过使用命令传递应用程序索引来 <code>serve</code>、<code>build</code> 等应用程序。默认情况下, 它将选择第一个应用程序。</p>
+<p>To serve the first app: <code>ng serve --app=0</code> or <code>ng serve --app 0</code><br>
+为第一个应用程序运行： <code>ng serve --app=0</code> 或 <code>ng serve --app 0</code></p>
+<p>To serve the second app: <code>ng serve --app=1</code> or <code>ng serve --app 1</code>
+为第二个应用程序运行: <code>ng serve --app=1</code> 或 <code>ng serve --app 1</code></p>
+<p>You can also add the <code>name</code> property to the app object in <code>apps</code> array and then pass it to commands to distinguish between different applications.<br>
+您还可以将 <code>name</code> 属性添加到 <code>apps</code> 组中的应用程序对象中, 然后将其传递给命令以区分不同的应用程序。</p>
+<pre tabindex="0"><code>&quot;apps&quot;: [
+  {
+    &quot;name&quot;: &quot;app1&quot;,
+    &quot;root&quot;: &quot;src&quot;,
+    &quot;outDir&quot;: &quot;dist&quot;,
+....
+</code></pre><p>To serve application by name <code>ng serve --app=app1</code> or <code>ng serve --app app1</code>.<br>
+按名称运行应用程序 <code>ng serve --app=app1</code> 或 <code>ng serve --app app1</code>.</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+  
+
+  
+
+  <script src="https://utteranc.es/client.js" repo="wanyijie/blog" issue-term="pathname" label="web"
+    theme="github-light" crossorigin="anonymous" async>
+    </script>
+</div>
+
+
+
+<script>{ { . | safeJS } }</script>
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents"></nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6266541561533854"
+     crossorigin="anonymous"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

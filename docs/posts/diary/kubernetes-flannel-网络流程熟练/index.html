@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="pod IP docker 把容器网络命名空间隐藏起来了，查看容器网络需要把对应的网络命名空间显示出来： 容器Id:10316
+把容器网络命名空间链接到主机,这样主机就可以管理容器网络 ln -s /proc/10316/ns/net /var/run/netns/10316 查看网络命名空间  ip netns 在网络命名空间内执行命令  [root@k8s01 ~]# ip netns exec 10316 ip a 1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN qlen 1 link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00 inet 127.0.0.1/8 scope host lo valid_lft forever preferred_lft forever inet6 ::1/128 scope host valid_lft forever preferred_lft forever 3: eth0@if40: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1450 qdisc noqueue state UP link/ether 0a:58:0a:f4:02:f6 brd ff:ff:ff:ff:ff:ff link-netnsid 0 inet 10.">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="" />
+<meta property="og:description" content="pod IP docker 把容器网络命名空间隐藏起来了，查看容器网络需要把对应的网络命名空间显示出来： 容器Id:10316
+把容器网络命名空间链接到主机,这样主机就可以管理容器网络 ln -s /proc/10316/ns/net /var/run/netns/10316 查看网络命名空间  ip netns 在网络命名空间内执行命令  [root@k8s01 ~]# ip netns exec 10316 ip a 1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN qlen 1 link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00 inet 127.0.0.1/8 scope host lo valid_lft forever preferred_lft forever inet6 ::1/128 scope host valid_lft forever preferred_lft forever 3: eth0@if40: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1450 qdisc noqueue state UP link/ether 0a:58:0a:f4:02:f6 brd ff:ff:ff:ff:ff:ff link-netnsid 0 inet 10." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://wangyijie.store/posts/diary/kubernetes-flannel-%E7%BD%91%E7%BB%9C%E6%B5%81%E7%A8%8B%E7%86%9F%E7%BB%83/" /><meta property="article:section" content="posts" />
+
+
+
+<title>Kubernetes Flannel 网络流程熟练 | hope to be a great computer technology Site</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.46181bc93375ba932026e753b37c40e6ff8bb16a9ef770c78bcc663e4577b1ba.css" integrity="sha256-RhgbyTN1upMgJudTs3xA5v&#43;LsWqe93DHi8xmPkV3sbo=" crossorigin="anonymous">
+  <script defer src="/flexsearch.min.js"></script>
+  <script defer src="/en.search.min.fdba0647c9501127a41f26adcab0438eb8555e76b0481ad7bc42620c87ea0e43.js" integrity="sha256-/boGR8lQESekHyatyrBDjrhVXnawSBrXvEJiDIfqDkM=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>hope to be a great computer technology Site</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/posts/" >
+        Posts
+      </a>
+      
+<ul>
+  
+  <li>
+    <a href="/posts/angluar/" >
+        angular
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/ansible/" >
+        ansible
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/cicd/" >
+        CICD
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/devops/" >
+        DevOps
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/english/" >
+        English
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/golang/" >
+        golang
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/istio/" >
+        istio
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/kubernetes/" >
+        Kubernetes
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/material2/" >
+        mererial2
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/mysql/" >
+        mysql
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/postgresql/" >
+        postgresql
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/python/" >
+        python
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/cloud/" >
+        云服务
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/security/" >
+        安全
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/container/" >
+        容器
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/literature/" >
+        文学
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/diary/" >
+        日记
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/machine_learning/" >
+        机器学习
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/monitor/" >
+        监控
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/sre/" >
+        站点可靠性工程
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/network/" >
+        网络
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/poetry/" >
+        诗歌
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/essay/" >
+        随笔
+      </a>
+  </li>
+  
+</ul>
+
+  </li>
+  
+  <li>
+    <a href="/about/" >
+        关于作者
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var a=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(b){localStorage.setItem("menu.scrollTop",a.scrollTop)}),a.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Kubernetes Flannel 网络流程熟练</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents"></nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+<article class="markdown">
+  <h1>
+    <a href="/posts/diary/kubernetes-flannel-%E7%BD%91%E7%BB%9C%E6%B5%81%E7%A8%8B%E7%86%9F%E7%BB%83/">Kubernetes Flannel 网络流程熟练</a>
+  </h1>
+  
+
+
+  
+
+  
+
+
+
+<ol>
+<li>pod IP
+docker 把容器网络命名空间隐藏起来了，查看容器网络需要把对应的网络命名空间显示出来：
+容器Id:10316<br>
+把容器网络命名空间链接到主机,这样主机就可以管理容器网络
+<code>ln -s /proc/10316/ns/net  /var/run/netns/10316</code>
+查看网络命名空间
+<code> ip netns</code>
+在网络命名空间内执行命令</li>
+</ol>
+<pre tabindex="0"><code>[root@k8s01 ~]# ip netns exec 10316 ip a
+1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN qlen 1
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+3: eth0@if40: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1450 qdisc noqueue state UP 
+    link/ether 0a:58:0a:f4:02:f6 brd ff:ff:ff:ff:ff:ff link-netnsid 0
+    inet 10.244.2.246/24 scope global eth0
+       valid_lft forever preferred_lft forever
+    inet6 fe80::885b:baff:fed8:f556/64 scope link tentative dadfailed 
+       valid_lft forever preferred_lft forever
+[root@k8s01 ~]# ip netns exec 10316 ip route
+default via 10.244.2.1 dev eth0 
+10.244.0.0/16 via 10.244.2.1 dev eth0 
+10.244.2.0/24 dev eth0 proto kernel scope link src 10.244.2.246
+</code></pre><p>看到与容器网卡对接的主机网卡</p>
+<pre tabindex="0"><code>[root@k8s01 ~]# ip netns exec 10316 ethtool -S eth0
+NIC statistics:
+     peer_ifindex: 40
+[root@k8s01 ~]# ip link show | grep   ^40:
+40: vethfac0226a@if3: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1450 qdisc noqueue master cni0 state UP mode DEFAULT
+</code></pre><p>flannel网络和网络插件；</p>
+<pre tabindex="0"><code>10: flannel.1: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1450 qdisc noqueue state UNKNOWN 
+    link/ether de:a4:50:24:9d:11 brd ff:ff:ff:ff:ff:ff
+    inet 10.244.2.0/32 scope global flannel.1
+       valid_lft forever preferred_lft forever
+    inet6 fe80::dca4:50ff:fe24:9d11/64 scope link 
+       valid_lft forever preferred_lft forever
+11: cni0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1450 qdisc noqueue state UP qlen 1000
+    link/ether 0a:58:0a:f4:02:01 brd ff:ff:ff:ff:ff:ff
+    inet 10.244.2.1/24 scope global cni0
+       valid_lft forever preferred_lft forever
+    inet6 fe80::4c4c:4bff:fe34:c300/64 scope link 
+       valid_lft forever preferred_lft forever
+
+</code></pre><p>主机路由：</p>
+<pre tabindex="0"><code>[root@k8s01 ~]# ip route show
+default via 172.20.10.254 dev ens32 proto static metric 100 
+10.244.0.0/24 via 10.244.0.0 dev flannel.1 onlink 
+10.244.1.0/24 via 10.244.1.0 dev flannel.1 onlink 
+10.244.2.0/24 dev cni0 proto kernel scope link src 10.244.2.1 
+10.244.3.0/24 via 10.244.3.0 dev flannel.1 onlink 
+172.17.0.0/16 dev docker0 proto kernel scope link src 172.17.0.1 
+172.20.0.0/16 dev ens32 proto kernel scope link src 172.20.8.1 metric 100
+</code></pre></article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+  
+
+  
+
+  <script src="https://utteranc.es/client.js" repo="wanyijie/blog" issue-term="pathname" label="web"
+    theme="github-light" crossorigin="anonymous" async>
+    </script>
+</div>
+
+
+
+<script>{ { . | safeJS } }</script>
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents"></nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6266541561533854"
+     crossorigin="anonymous"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

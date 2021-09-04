@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="安装 Django#先安装 PIP，再通过 PIP 安装 Django#安装 PIP
+cd /data;
+mkdir tmp;
+cd tmp;
+wget https://bootstrap.pypa.io/get-pip.py;
+python ./get-pip.py;
+使用 PIP，安装 Django
+pip install Django==1.11.7
+安装 Mysql 安装并启动 mariadb
+因为 CentOS 7 之后的版本都不在提供 Mysql 安装源，这里我们使用 mariadb 代替 mysql，依次执行下列命令
+yum install mariadb mariadb-server -y
+yum install MySQL-python -y
+systemctl start mariadb
+对 mariadb 进行初始化设置
+执行下面命令，根据提示操作
+设置新密码为 test
+默认密码为空，直接回车即可
+mysql_secure_installation
+使用设置的密码登陆 mariadb
+登陆 db，这里假设密码被设置为 test
+mysql -uroot -ptest">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="Django 环境搭建" />
+<meta property="og:description" content="安装 Django#先安装 PIP，再通过 PIP 安装 Django#安装 PIP
+cd /data;
+mkdir tmp;
+cd tmp;
+wget https://bootstrap.pypa.io/get-pip.py;
+python ./get-pip.py;
+使用 PIP，安装 Django
+pip install Django==1.11.7
+安装 Mysql 安装并启动 mariadb
+因为 CentOS 7 之后的版本都不在提供 Mysql 安装源，这里我们使用 mariadb 代替 mysql，依次执行下列命令
+yum install mariadb mariadb-server -y
+yum install MySQL-python -y
+systemctl start mariadb
+对 mariadb 进行初始化设置
+执行下面命令，根据提示操作
+设置新密码为 test
+默认密码为空，直接回车即可
+mysql_secure_installation
+使用设置的密码登陆 mariadb
+登陆 db，这里假设密码被设置为 test
+mysql -uroot -ptest" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://wangyijie.store/posts/python/django-%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-08-30T21:25:26+08:00" />
+<meta property="article:modified_time" content="2021-08-30T21:25:26+08:00" />
+
+<title>Django 环境搭建 | hope to be a great computer technology Site</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.46181bc93375ba932026e753b37c40e6ff8bb16a9ef770c78bcc663e4577b1ba.css" integrity="sha256-RhgbyTN1upMgJudTs3xA5v&#43;LsWqe93DHi8xmPkV3sbo=" crossorigin="anonymous">
+  <script defer src="/flexsearch.min.js"></script>
+  <script defer src="/en.search.min.fdba0647c9501127a41f26adcab0438eb8555e76b0481ad7bc42620c87ea0e43.js" integrity="sha256-/boGR8lQESekHyatyrBDjrhVXnawSBrXvEJiDIfqDkM=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>hope to be a great computer technology Site</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/posts/" >
+        Posts
+      </a>
+      
+<ul>
+  
+  <li>
+    <a href="/posts/angluar/" >
+        angular
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/ansible/" >
+        ansible
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/cicd/" >
+        CICD
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/devops/" >
+        DevOps
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/english/" >
+        English
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/golang/" >
+        golang
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/istio/" >
+        istio
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/kubernetes/" >
+        Kubernetes
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/material2/" >
+        mererial2
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/mysql/" >
+        mysql
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/postgresql/" >
+        postgresql
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/python/" >
+        python
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/cloud/" >
+        云服务
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/security/" >
+        安全
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/container/" >
+        容器
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/literature/" >
+        文学
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/diary/" >
+        日记
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/machine_learning/" >
+        机器学习
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/monitor/" >
+        监控
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/sre/" >
+        站点可靠性工程
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/network/" >
+        网络
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/poetry/" >
+        诗歌
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/essay/" >
+        随笔
+      </a>
+  </li>
+  
+</ul>
+
+  </li>
+  
+  <li>
+    <a href="/about/" >
+        关于作者
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var a=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(b){localStorage.setItem("menu.scrollTop",a.scrollTop)}),a.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Django 环境搭建</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#先安装-pip再通过-pip-安装-django">先安装 PIP，再通过 PIP 安装 Django</a></li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+<article class="markdown">
+  <h1>
+    <a href="/posts/python/django-%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">Django 环境搭建</a>
+  </h1>
+  
+  <h5>August 30, 2021</h5>
+
+
+
+  
+  <div>
+    
+      <a href="/categories/development/">Development</a>, 
+      <a href="/categories/opetration/">Opetration</a>
+  </div>
+  
+
+  
+  <div>
+    
+      <a href="/tags/wangyijie/">wangyijie</a>
+  </div>
+  
+
+
+
+<h1 id="安装-django">
+  安装 Django
+  <a class="anchor" href="#%e5%ae%89%e8%a3%85-django">#</a>
+</h1>
+<h2 id="先安装-pip再通过-pip-安装-django">
+  先安装 PIP，再通过 PIP 安装 Django
+  <a class="anchor" href="#%e5%85%88%e5%ae%89%e8%a3%85-pip%e5%86%8d%e9%80%9a%e8%bf%87-pip-%e5%ae%89%e8%a3%85-django">#</a>
+</h2>
+<p>安装 PIP</p>
+<p>cd /data;</p>
+<p>mkdir tmp;</p>
+<p>cd tmp;</p>
+<p>wget <a href="https://bootstrap.pypa.io/get-pip.py;">https://bootstrap.pypa.io/get-pip.py;</a></p>
+<p>python ./get-pip.py;</p>
+<p>使用 PIP，安装 Django</p>
+<p>pip install Django==1.11.7</p>
+<p>安装 Mysql
+安装并启动 mariadb</p>
+<p>因为 CentOS 7 之后的版本都不在提供 Mysql 安装源，这里我们使用 mariadb 代替 mysql，依次执行下列命令</p>
+<p>yum install mariadb mariadb-server -y</p>
+<p>yum install MySQL-python -y</p>
+<p>systemctl start mariadb</p>
+<p>对 mariadb 进行初始化设置</p>
+<p>执行下面命令，根据提示操作</p>
+<p>设置新密码为 test</p>
+<p>默认密码为空，直接回车即可</p>
+<p>mysql_secure_installation</p>
+<p>使用设置的密码登陆 mariadb</p>
+<p>登陆 db，这里假设密码被设置为 test</p>
+<p>mysql -uroot -ptest</p>
+<p>创建一个数据库</p>
+<p>create database mysite;</p>
+<p>成功后，输入 exit 命令退出 db</p>
+<p>exit</p>
+<p>创建 Django 项目
+创建 mysite 项目</p>
+<p>在 /data/ 目录下，创建一个名为 mysite 的 Django 项目</p>
+<p>cd /data/</p>
+<p>django-admin startproject mysite</p>
+<p>修改配置文件，与 Mysql 数据库相关联</p>
+<p>备注：SECRET_KEY 配置项无需修改</p>
+<p>编辑 /data/mysite/mysite/settings.py</p>
+<p>示例代码：/data/mysite/mysite/settings.py</p>
+<p>&quot;&quot;&quot;</p>
+<p>Django settings for mysite project.</p>
+<p>Generated by &lsquo;django-admin startproject&rsquo; using Django 1.11.7.</p>
+<p>For more information on this file, see</p>
+<p><a href="https://docs.djangoproject.com/en/1.11/topics/settings/">https://docs.djangoproject.com/en/1.11/topics/settings/</a></p>
+<p>For the full list of settings and their values, see</p>
+<p><a href="https://docs.djangoproject.com/en/1.11/ref/settings/">https://docs.djangoproject.com/en/1.11/ref/settings/</a></p>
+<p>&quot;&quot;&quot;</p>
+<p>import os</p>
+<h1 id="build-paths-inside-the-project-like-this-ospathjoinbase_dir-">
+  Build paths inside the project like this: os.path.join(BASE_DIR, &hellip;)
+  <a class="anchor" href="#build-paths-inside-the-project-like-this-ospathjoinbase_dir-">#</a>
+</h1>
+<p>BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(<strong>file</strong>)))</p>
+<h1 id="quick-start-development-settings---unsuitable-for-production">
+  Quick-start development settings - unsuitable for production
+  <a class="anchor" href="#quick-start-development-settings---unsuitable-for-production">#</a>
+</h1>
+<h1 id="see-httpsdocsdjangoprojectcomen111howtodeploymentchecklist">
+  See <a href="https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/">https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/</a>
+  <a class="anchor" href="#see-httpsdocsdjangoprojectcomen111howtodeploymentchecklist">#</a>
+</h1>
+<h1 id="security-warning-keep-the-secret-key-used-in-production-secret">
+  SECURITY WARNING: keep the secret key used in production secret!
+  <a class="anchor" href="#security-warning-keep-the-secret-key-used-in-production-secret">#</a>
+</h1>
+<p>SECRET_KEY = &lsquo;m4@g1=hz^08y(9d)v5l!8^*0wbla=oe15s@u8@5^pw=llfz48%&rsquo;</p>
+<h1 id="security-warning-dont-run-with-debug-turned-on-in-production">
+  SECURITY WARNING: don&rsquo;t run with debug turned on in production!
+  <a class="anchor" href="#security-warning-dont-run-with-debug-turned-on-in-production">#</a>
+</h1>
+<p>DEBUG = True</p>
+<p>ALLOWED_HOSTS = [&quot;*&quot;]</p>
+<h1 id="application-definition">
+  Application definition
+  <a class="anchor" href="#application-definition">#</a>
+</h1>
+<p>INSTALLED_APPS = [</p>
+<pre><code>'django.contrib.admin',
+
+'django.contrib.auth',
+
+'django.contrib.contenttypes',
+
+'django.contrib.sessions',
+
+'django.contrib.messages',
+
+'django.contrib.staticfiles',
+</code></pre>
+<p>]</p>
+<p>MIDDLEWARE = [</p>
+<pre><code>'django.middleware.security.SecurityMiddleware',
+
+'django.contrib.sessions.middleware.SessionMiddleware',
+
+'django.middleware.common.CommonMiddleware',
+
+'django.middleware.csrf.CsrfViewMiddleware',
+
+'django.contrib.auth.middleware.AuthenticationMiddleware',
+
+'django.contrib.messages.middleware.MessageMiddleware',
+
+'django.middleware.clickjacking.XFrameOptionsMiddleware',
+</code></pre>
+<p>]</p>
+<p>ROOT_URLCONF = &lsquo;mysite.urls&rsquo;</p>
+<p>TEMPLATES = [</p>
+<pre><code>{
+
+    'BACKEND': 'django.template.backends.django.DjangoTemplates',
+
+    'DIRS': [],
+
+    'APP_DIRS': True,
+
+    'OPTIONS': {
+
+        'context_processors': [
+
+            'django.template.context_processors.debug',
+
+            'django.template.context_processors.request',
+
+            'django.contrib.auth.context_processors.auth',
+
+            'django.contrib.messages.context_processors.messages',
+
+        ],
+
+    },
+
+},
+</code></pre>
+<p>]</p>
+<p>WSGI_APPLICATION = &lsquo;mysite.wsgi.application&rsquo;</p>
+<h1 id="database">
+  Database
+  <a class="anchor" href="#database">#</a>
+</h1>
+<h1 id="httpsdocsdjangoprojectcomen111refsettingsdatabases">
+  <a href="https://docs.djangoproject.com/en/1.11/ref/settings/#databases">https://docs.djangoproject.com/en/1.11/ref/settings/#databases</a>
+  <a class="anchor" href="#httpsdocsdjangoprojectcomen111refsettingsdatabases">#</a>
+</h1>
+<p>DATABASES = {</p>
+<pre><code>'default': {
+
+    'ENGINE': 'django.db.backends.mysql',
+
+    'NAME': 'mysite',
+
+    'PASSWORD':'test',
+
+    'USER': 'root',
+
+    'HOST':'127.0.0.1',
+
+    'PORT':'3306',
+
+}
+</code></pre>
+<p>}</p>
+<h1 id="password-validation">
+  Password validation
+  <a class="anchor" href="#password-validation">#</a>
+</h1>
+<h1 id="httpsdocsdjangoprojectcomen111refsettingsauth-password-validators">
+  <a href="https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators">https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators</a>
+  <a class="anchor" href="#httpsdocsdjangoprojectcomen111refsettingsauth-password-validators">#</a>
+</h1>
+<p>AUTH_PASSWORD_VALIDATORS = [</p>
+<pre><code>{
+
+    'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+
+},
+
+{
+
+    'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+
+},
+
+{
+
+    'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
+
+},
+
+{
+
+    'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
+
+},
+</code></pre>
+<p>]</p>
+<h1 id="internationalization">
+  Internationalization
+  <a class="anchor" href="#internationalization">#</a>
+</h1>
+<h1 id="httpsdocsdjangoprojectcomen111topicsi18n">
+  <a href="https://docs.djangoproject.com/en/1.11/topics/i18n/">https://docs.djangoproject.com/en/1.11/topics/i18n/</a>
+  <a class="anchor" href="#httpsdocsdjangoprojectcomen111topicsi18n">#</a>
+</h1>
+<p>LANGUAGE_CODE = &lsquo;en-us&rsquo;</p>
+<p>TIME_ZONE = &lsquo;UTC&rsquo;</p>
+<p>USE_I18N = True</p>
+<p>USE_L10N = True</p>
+<p>USE_TZ = True</p>
+<h1 id="static-files-css-javascript-images">
+  Static files (CSS, JavaScript, Images)
+  <a class="anchor" href="#static-files-css-javascript-images">#</a>
+</h1>
+<h1 id="httpsdocsdjangoprojectcomen111howtostatic-files">
+  <a href="https://docs.djangoproject.com/en/1.11/howto/static-files/">https://docs.djangoproject.com/en/1.11/howto/static-files/</a>
+  <a class="anchor" href="#httpsdocsdjangoprojectcomen111howtostatic-files">#</a>
+</h1>
+<p>STATIC_URL = &lsquo;/static/&rsquo;</p>
+<p>创建 Django 数据库</p>
+<p>cd /data/mysite</p>
+<p>python manage.py migrate</p>
+<p>启动 Django</p>
+<p>python manage.py runserver</p>
+<p>如果没有报错，就说明 Django 已经安装成功了，并且跟 Mysql 的连接正常</p>
+<p>退出 Django</p>
+<p>按 ctrl+c 退出 Django 服务</p>
+<p>安装 Nginx
+通过 yum 安装 Nginx</p>
+<p>yum install nginx -y</p>
+<p>启动 Nginx 服务</p>
+<p>systemctl start nginx</p>
+<p>访问下面的链接，可以看到 nginx 的欢迎界面</p>
+<p>http://&lt;您的 CVM IP 地址&gt;/</p>
+<p>安装 uwsgi</p>
+<p>任务时间：5min ~ 10min</p>
+<p>使用 yum 命令安装 uwsgi</p>
+<p>yum install uwsgi uwsgi-plugin-python -y</p>
+<p>让 Nginx，uwsgi，Django 协同工作
+修改 Nginx 配置文件</p>
+<p>编辑 /etc/nginx/nginx.conf</p>
+<p>示例代码：/etc/nginx/nginx.conf</p>
+<h1 id="for-more-information-on-configuration-see">
+  For more information on configuration, see:
+  <a class="anchor" href="#for-more-information-on-configuration-see">#</a>
+</h1>
+<h1 id="-official-english-documentation-httpnginxorgendocs">
+  * Official English Documentation: <a href="http://nginx.org/en/docs/">http://nginx.org/en/docs/</a>
+  <a class="anchor" href="#-official-english-documentation-httpnginxorgendocs">#</a>
+</h1>
+<h1 id="-official-russian-documentation-httpnginxorgrudocs">
+  * Official Russian Documentation: <a href="http://nginx.org/ru/docs/">http://nginx.org/ru/docs/</a>
+  <a class="anchor" href="#-official-russian-documentation-httpnginxorgrudocs">#</a>
+</h1>
+<p>user nginx;</p>
+<p>worker_processes auto;</p>
+<p>error_log /var/log/nginx/error.log;</p>
+<p>pid /run/nginx.pid;</p>
+<h1 id="load-dynamic-modules-see-usrsharenginxreadmedynamic">
+  Load dynamic modules. See /usr/share/nginx/README.dynamic.
+  <a class="anchor" href="#load-dynamic-modules-see-usrsharenginxreadmedynamic">#</a>
+</h1>
+<p>include /usr/share/nginx/modules/*.conf;</p>
+<p>events {</p>
+<pre><code>worker_connections 1024;
+</code></pre>
+<p>}</p>
+<p>http {</p>
+<pre><code>log_format  main  '$remote_addr - $remote_user [$time_local] &quot;$request&quot; '
+
+                  '$status $body_bytes_sent &quot;$http_referer&quot; '
+
+                  '&quot;$http_user_agent&quot; &quot;$http_x_forwarded_for&quot;';
+
+access_log  /var/log/nginx/access.log  main;
+
+sendfile            on;
+
+tcp_nopush          on;
+
+tcp_nodelay        on;
+
+keepalive_timeout  65;
+
+types_hash_max_size 2048;
+
+include            /etc/nginx/mime.types;
+
+default_type        application/octet-stream;
+
+# Load modular configuration files from the /etc/nginx/conf.d directory.
+
+# See http://nginx.org/en/docs/ngx_core_module.html#include
+
+# for more information.
+
+include /etc/nginx/conf.d/*.conf;
+
+server {
+
+    listen      80 default_server;
+
+    listen      [::]:80 default_server;
+
+    server_name  _;
+
+    root        /usr/share/nginx/html;
+
+    # Load configuration files for the default server block.
+
+    include /etc/nginx/default.d/*.conf;
+
+    location / {
+
+        include uwsgi_params;
+
+        uwsgi_pass 127.0.0.1:8000;
+
+    }
+
+    error_page 404 /404.html;
+
+        location = /40x.html {
+
+    }
+
+    error_page 500 502 503 504 /50x.html;
+
+        location = /50x.html {
+
+    }
+
+}
+</code></pre>
+<h1 id="settings-for-a-tls-enabled-server">
+  Settings for a TLS enabled server.
+  <a class="anchor" href="#settings-for-a-tls-enabled-server">#</a>
+</h1>
+<h1 id="heading">
+  
+  <a class="anchor" href="#heading">#</a>
+</h1>
+<h1 id="server-">
+  server {
+  <a class="anchor" href="#server-">#</a>
+</h1>
+<h1 id="listen------443-ssl-http2-default_server">
+  listen      443 ssl http2 default_server;
+  <a class="anchor" href="#listen------443-ssl-http2-default_server">#</a>
+</h1>
+<h1 id="listen------443-ssl-http2-default_server-1">
+  listen      [::]:443 ssl http2 default_server;
+  <a class="anchor" href="#listen------443-ssl-http2-default_server-1">#</a>
+</h1>
+<h1 id="server_name--_">
+  server_name  _;
+  <a class="anchor" href="#server_name--_">#</a>
+</h1>
+<h1 id="root--------usrsharenginxhtml">
+  root        /usr/share/nginx/html;
+  <a class="anchor" href="#root--------usrsharenginxhtml">#</a>
+</h1>
+<h1 id="heading-1">
+  
+  <a class="anchor" href="#heading-1">#</a>
+</h1>
+<h1 id="ssl_certificate-etcpkinginxservercrt">
+  ssl_certificate &ldquo;/etc/pki/nginx/server.crt&rdquo;;
+  <a class="anchor" href="#ssl_certificate-etcpkinginxservercrt">#</a>
+</h1>
+<h1 id="ssl_certificate_key-etcpkinginxprivateserverkey">
+  ssl_certificate_key &ldquo;/etc/pki/nginx/private/server.key&rdquo;;
+  <a class="anchor" href="#ssl_certificate_key-etcpkinginxprivateserverkey">#</a>
+</h1>
+<h1 id="ssl_session_cache-sharedssl1m">
+  ssl_session_cache shared:SSL:1m;
+  <a class="anchor" href="#ssl_session_cache-sharedssl1m">#</a>
+</h1>
+<h1 id="ssl_session_timeout--10m">
+  ssl_session_timeout  10m;
+  <a class="anchor" href="#ssl_session_timeout--10m">#</a>
+</h1>
+<h1 id="ssl_ciphers-highanullmd5">
+  ssl_ciphers HIGH:!aNULL:!MD5;
+  <a class="anchor" href="#ssl_ciphers-highanullmd5">#</a>
+</h1>
+<h1 id="ssl_prefer_server_ciphers-on">
+  ssl_prefer_server_ciphers on;
+  <a class="anchor" href="#ssl_prefer_server_ciphers-on">#</a>
+</h1>
+<h1 id="heading-2">
+  
+  <a class="anchor" href="#heading-2">#</a>
+</h1>
+<h1 id="-load-configuration-files-for-the-default-server-block">
+  # Load configuration files for the default server block.
+  <a class="anchor" href="#-load-configuration-files-for-the-default-server-block">#</a>
+</h1>
+<h1 id="include-etcnginxdefaultdconf">
+  include /etc/nginx/default.d/*.conf;
+  <a class="anchor" href="#include-etcnginxdefaultdconf">#</a>
+</h1>
+<h1 id="heading-3">
+  
+  <a class="anchor" href="#heading-3">#</a>
+</h1>
+<h1 id="location--">
+  location / {
+  <a class="anchor" href="#location--">#</a>
+</h1>
+<h1 id="heading-4">
+  }
+  <a class="anchor" href="#heading-4">#</a>
+</h1>
+<h1 id="heading-5">
+  
+  <a class="anchor" href="#heading-5">#</a>
+</h1>
+<h1 id="error_page-404-404html">
+  error_page 404 /404.html;
+  <a class="anchor" href="#error_page-404-404html">#</a>
+</h1>
+<h1 id="location--40xhtml-">
+  location = /40x.html {
+  <a class="anchor" href="#location--40xhtml-">#</a>
+</h1>
+<h1 id="heading-6">
+  }
+  <a class="anchor" href="#heading-6">#</a>
+</h1>
+<h1 id="heading-7">
+  
+  <a class="anchor" href="#heading-7">#</a>
+</h1>
+<h1 id="error_page-500-502-503-504-50xhtml">
+  error_page 500 502 503 504 /50x.html;
+  <a class="anchor" href="#error_page-500-502-503-504-50xhtml">#</a>
+</h1>
+<h1 id="location--50xhtml-">
+  location = /50x.html {
+  <a class="anchor" href="#location--50xhtml-">#</a>
+</h1>
+<h1 id="heading-8">
+  }
+  <a class="anchor" href="#heading-8">#</a>
+</h1>
+<h1 id="heading-9">
+  }
+  <a class="anchor" href="#heading-9">#</a>
+</h1>
+<p>}</p>
+<p>重启 Nginx</p>
+<p>/usr/sbin/nginx -s reload</p>
+<p>创建 uwsgi 配置文件</p>
+<p>请在 /data/mysite 目录下创建 uwsgi.ini，参考下面的内容。</p>
+<p>示例代码：/data/mysite/uwsgi.ini</p>
+<p>[uwsgi]</p>
+<p>socket = 127.0.0.1:8000</p>
+<p>chdir = /data/mysite</p>
+<p>wsgi-file = mysite/wsgi.py</p>
+<p>processes = 4</p>
+<p>threads = 2</p>
+<p>stats = 127.0.0.1:9191</p>
+<p>uid = nobody</p>
+<p>gid = nobody</p>
+<p>master = true</p>
+<p>harakiri = 30</p>
+<p>daemonize = /data/mysite/uwsgi.log</p>
+<p>plugins = python</p>
+<p>启动 uwsgi</p>
+<p>uwsgi uwsgi.ini</p>
+<p>测试</p>
+<p>访问链接 http://&lt;您的  IP 地址&gt;/</p>
+<p>如果可以看到 Django 的界面，恭喜你，环境搭建成功</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+  
+
+  
+
+  <script src="https://utteranc.es/client.js" repo="wanyijie/blog" issue-term="pathname" label="web"
+    theme="github-light" crossorigin="anonymous" async>
+    </script>
+</div>
+
+
+
+<script>{ { . | safeJS } }</script>
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#先安装-pip再通过-pip-安装-django">先安装 PIP，再通过 PIP 安装 Django</a></li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6266541561533854"
+     crossorigin="anonymous"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="linux#zip -r test.zip ./
+[root@ip-172-31-28-124 ec2-user]# cd /opt/ [root@ip-172-31-28-124 opt]# ls [root@ip-172-31-28-124 opt]# mkdir test [root@ip-172-31-28-124 opt]# ls test [root@ip-172-31-28-124 opt]# echo 123 &gt;&gt; test/test.txt [root@ip-172-31-28-124 opt]# ls test [root@ip-172-31-28-124 opt]# zip -r test.zip . adding: test/ (stored 0%) adding: test/test.txt (stored 0%) [root@ip-172-31-28-124 opt]# ls test test.zip [root@ip-172-31-28-124 opt]# rm -rf test [root@ip-172-31-28-124 opt]# unzip test.zip  Archive: test.zip creating: test/ extracting: test/test.txt [root@ip-172-31-28-124 opt]# ls test test.">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="" />
+<meta property="og:description" content="linux#zip -r test.zip ./
+[root@ip-172-31-28-124 ec2-user]# cd /opt/ [root@ip-172-31-28-124 opt]# ls [root@ip-172-31-28-124 opt]# mkdir test [root@ip-172-31-28-124 opt]# ls test [root@ip-172-31-28-124 opt]# echo 123 &gt;&gt; test/test.txt [root@ip-172-31-28-124 opt]# ls test [root@ip-172-31-28-124 opt]# zip -r test.zip . adding: test/ (stored 0%) adding: test/test.txt (stored 0%) [root@ip-172-31-28-124 opt]# ls test test.zip [root@ip-172-31-28-124 opt]# rm -rf test [root@ip-172-31-28-124 opt]# unzip test.zip  Archive: test.zip creating: test/ extracting: test/test.txt [root@ip-172-31-28-124 opt]# ls test test." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://wangyijie.store/posts/essay/window-linux-%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%88%9B%E5%BB%BAzip%E5%8E%8B%E7%BC%A9%E5%8C%85/" /><meta property="article:section" content="posts" />
+
+
+
+<title>Window Linux 命令行创建zip压缩包 | hope to be a great computer technology Site</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.46181bc93375ba932026e753b37c40e6ff8bb16a9ef770c78bcc663e4577b1ba.css" integrity="sha256-RhgbyTN1upMgJudTs3xA5v&#43;LsWqe93DHi8xmPkV3sbo=" crossorigin="anonymous">
+  <script defer src="/flexsearch.min.js"></script>
+  <script defer src="/en.search.min.fdba0647c9501127a41f26adcab0438eb8555e76b0481ad7bc42620c87ea0e43.js" integrity="sha256-/boGR8lQESekHyatyrBDjrhVXnawSBrXvEJiDIfqDkM=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>hope to be a great computer technology Site</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/posts/" >
+        Posts
+      </a>
+      
+<ul>
+  
+  <li>
+    <a href="/posts/angluar/" >
+        angular
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/ansible/" >
+        ansible
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/cicd/" >
+        CICD
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/devops/" >
+        DevOps
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/english/" >
+        English
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/golang/" >
+        golang
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/istio/" >
+        istio
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/kubernetes/" >
+        Kubernetes
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/material2/" >
+        mererial2
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/mysql/" >
+        mysql
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/postgresql/" >
+        postgresql
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/python/" >
+        python
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/cloud/" >
+        云服务
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/security/" >
+        安全
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/container/" >
+        容器
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/literature/" >
+        文学
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/diary/" >
+        日记
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/machine_learning/" >
+        机器学习
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/monitor/" >
+        监控
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/sre/" >
+        站点可靠性工程
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/network/" >
+        网络
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/poetry/" >
+        诗歌
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/essay/" >
+        随笔
+      </a>
+  </li>
+  
+</ul>
+
+  </li>
+  
+  <li>
+    <a href="/about/" >
+        关于作者
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var a=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(b){localStorage.setItem("menu.scrollTop",a.scrollTop)}),a.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Window Linux 命令行创建zip压缩包</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents"></nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+<article class="markdown">
+  <h1>
+    <a href="/posts/essay/window-linux-%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%88%9B%E5%BB%BAzip%E5%8E%8B%E7%BC%A9%E5%8C%85/">Window Linux 命令行创建zip压缩包</a>
+  </h1>
+  
+
+
+  
+
+  
+
+
+
+<h1 id="linux">
+  linux
+  <a class="anchor" href="#linux">#</a>
+</h1>
+<p><strong>zip -r test.zip ./</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#f92672">[</span>root@ip-172-31-28-124 ec2-user<span style="color:#f92672">]</span><span style="color:#75715e"># cd /opt/</span>
+<span style="color:#f92672">[</span>root@ip-172-31-28-124 opt<span style="color:#f92672">]</span><span style="color:#75715e"># ls</span>
+<span style="color:#f92672">[</span>root@ip-172-31-28-124 opt<span style="color:#f92672">]</span><span style="color:#75715e"># mkdir test</span>
+<span style="color:#f92672">[</span>root@ip-172-31-28-124 opt<span style="color:#f92672">]</span><span style="color:#75715e"># ls</span>
+test
+<span style="color:#f92672">[</span>root@ip-172-31-28-124 opt<span style="color:#f92672">]</span><span style="color:#75715e"># echo 123 &gt;&gt; test/test.txt</span>
+<span style="color:#f92672">[</span>root@ip-172-31-28-124 opt<span style="color:#f92672">]</span><span style="color:#75715e"># ls</span>
+test
+<span style="color:#f92672">[</span>root@ip-172-31-28-124 opt<span style="color:#f92672">]</span><span style="color:#75715e"># zip -r test.zip .</span>
+  adding: test/ <span style="color:#f92672">(</span>stored 0%<span style="color:#f92672">)</span>
+  adding: test/test.txt <span style="color:#f92672">(</span>stored 0%<span style="color:#f92672">)</span>
+<span style="color:#f92672">[</span>root@ip-172-31-28-124 opt<span style="color:#f92672">]</span><span style="color:#75715e"># ls</span>
+test  test.zip
+
+<span style="color:#f92672">[</span>root@ip-172-31-28-124 opt<span style="color:#f92672">]</span><span style="color:#75715e"># rm -rf test</span>
+<span style="color:#f92672">[</span>root@ip-172-31-28-124 opt<span style="color:#f92672">]</span><span style="color:#75715e"># unzip test.zip </span>
+Archive:  test.zip
+   creating: test/
+ extracting: test/test.txt           
+<span style="color:#f92672">[</span>root@ip-172-31-28-124 opt<span style="color:#f92672">]</span><span style="color:#75715e"># ls</span>
+test  test.zip
+<span style="color:#f92672">[</span>root@ip-172-31-28-124 opt<span style="color:#f92672">]</span><span style="color:#75715e">#</span>
+</code></pre></div><h1 id="windows">
+  windows
+  <a class="anchor" href="#windows">#</a>
+</h1>
+<p><strong>Compress-Archive -Path * -DestinationPath doc.zip</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">PS D:\web\doc&gt; Compress-Archive -Path * -DestinationPath doc.zip
+PS D:\web\doc&gt; ls
+
+    目录<span style="color:#960050;background-color:#1e0010">:</span> D:\web\doc
+
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+d-----        11/1/2017  10<span style="color:#960050;background-color:#1e0010">:</span>51 PM                doc
+d-----       10/19/2017   2<span style="color:#960050;background-color:#1e0010">:</span>18 PM                hugo-theme-docdock
+d-----       10/19/2017   2<span style="color:#960050;background-color:#1e0010">:</span>18 PM                hugo-theme-learn
+d-----        11/1/2017  10<span style="color:#960050;background-color:#1e0010">:</span>42 AM                kubernetes
+d-----       10/23/2017   1<span style="color:#960050;background-color:#1e0010">:</span>46 PM                zhikong
+-a----        6/26/2018   5<span style="color:#960050;background-color:#1e0010">:</span>14 PM       75689120 doc.zip
+PS D:\web\doc&gt;
+</code></pre></div></article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+  
+
+  
+
+  <script src="https://utteranc.es/client.js" repo="wanyijie/blog" issue-term="pathname" label="web"
+    theme="github-light" crossorigin="anonymous" async>
+    </script>
+</div>
+
+
+
+<script>{ { . | safeJS } }</script>
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents"></nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6266541561533854"
+     crossorigin="anonymous"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

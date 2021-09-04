@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>wangyijie on hope to be a great computer technology Site</title>
+    <link>https://wangyijie.store/tags/wangyijie/</link>
+    <description>Recent content in wangyijie on hope to be a great computer technology Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 30 Aug 2021 21:25:26 +0800</lastBuildDate><atom:link href="https://wangyijie.store/tags/wangyijie/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Django 环境搭建</title>
+      <link>https://wangyijie.store/posts/python/django-%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</link>
+      <pubDate>Mon, 30 Aug 2021 21:25:26 +0800</pubDate>
+      
+      <guid>https://wangyijie.store/posts/python/django-%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</guid>
+      <description>安装 Django#先安装 PIP，再通过 PIP 安装 Django#安装 PIP
+cd /data;
+mkdir tmp;
+cd tmp;
+wget https://bootstrap.pypa.io/get-pip.py;
+python ./get-pip.py;
+使用 PIP，安装 Django
+pip install Django==1.11.7
+安装 Mysql 安装并启动 mariadb
+因为 CentOS 7 之后的版本都不在提供 Mysql 安装源，这里我们使用 mariadb 代替 mysql，依次执行下列命令
+yum install mariadb mariadb-server -y
+yum install MySQL-python -y
+systemctl start mariadb
+对 mariadb 进行初始化设置
+执行下面命令，根据提示操作
+设置新密码为 test
+默认密码为空，直接回车即可
+mysql_secure_installation
+使用设置的密码登陆 mariadb
+登陆 db，这里假设密码被设置为 test
+mysql -uroot -ptest</description>
+    </item>
+    
+  </channel>
+</rss>

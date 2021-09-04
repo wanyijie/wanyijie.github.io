@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Serve from Disk#在磁盘上运行服务#The CLI supports running a live browser reload experience to users by running ng serve. This will compile the application upon file saves and reload the browser with the newly compiled application. This is done by hosting the application in memory and serving it via webpack-dev-server.
+CLI支持通过运行 ng serve 来为用户运行实时浏览器重新加载体验。这将在文件保存时编译应用程序，并用新编译的应用程序重新载入浏览器。这是通过将应用程序托管在内存中并通过webpack-dev-server.来完成的。
+If you wish to get a similar experience with the application output to disk please use the steps below.">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="" />
+<meta property="og:description" content="Serve from Disk#在磁盘上运行服务#The CLI supports running a live browser reload experience to users by running ng serve. This will compile the application upon file saves and reload the browser with the newly compiled application. This is done by hosting the application in memory and serving it via webpack-dev-server.
+CLI支持通过运行 ng serve 来为用户运行实时浏览器重新加载体验。这将在文件保存时编译应用程序，并用新编译的应用程序重新载入浏览器。这是通过将应用程序托管在内存中并通过webpack-dev-server.来完成的。
+If you wish to get a similar experience with the application output to disk please use the steps below." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://wangyijie.store/posts/angluar/angular-%E5%9C%A8%E7%A3%81%E7%9B%98%E4%B8%8A%E8%BF%90%E8%A1%8C%E6%9C%8D%E5%8A%A1/" /><meta property="article:section" content="posts" />
+
+
+
+<title>Angular 在磁盘上运行服务 | hope to be a great computer technology Site</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.46181bc93375ba932026e753b37c40e6ff8bb16a9ef770c78bcc663e4577b1ba.css" integrity="sha256-RhgbyTN1upMgJudTs3xA5v&#43;LsWqe93DHi8xmPkV3sbo=" crossorigin="anonymous">
+  <script defer src="/flexsearch.min.js"></script>
+  <script defer src="/en.search.min.fdba0647c9501127a41f26adcab0438eb8555e76b0481ad7bc42620c87ea0e43.js" integrity="sha256-/boGR8lQESekHyatyrBDjrhVXnawSBrXvEJiDIfqDkM=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>hope to be a great computer technology Site</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/posts/" >
+        Posts
+      </a>
+      
+<ul>
+  
+  <li>
+    <a href="/posts/angluar/" >
+        angular
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/ansible/" >
+        ansible
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/cicd/" >
+        CICD
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/devops/" >
+        DevOps
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/english/" >
+        English
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/golang/" >
+        golang
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/istio/" >
+        istio
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/kubernetes/" >
+        Kubernetes
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/material2/" >
+        mererial2
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/mysql/" >
+        mysql
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/postgresql/" >
+        postgresql
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/python/" >
+        python
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/cloud/" >
+        云服务
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/security/" >
+        安全
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/container/" >
+        容器
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/literature/" >
+        文学
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/diary/" >
+        日记
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/machine_learning/" >
+        机器学习
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/monitor/" >
+        监控
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/sre/" >
+        站点可靠性工程
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/network/" >
+        网络
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/poetry/" >
+        诗歌
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/essay/" >
+        随笔
+      </a>
+  </li>
+  
+</ul>
+
+  </li>
+  
+  <li>
+    <a href="/about/" >
+        关于作者
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var a=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(b){localStorage.setItem("menu.scrollTop",a.scrollTop)}),a.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Angular 在磁盘上运行服务</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#environment-setup">Environment Setup</a></li>
+    <li><a href="#环境设置">环境设置</a>
+      <ul>
+        <li><a href="#install-a-web-server">Install a web server</a></li>
+        <li><a href="#安装一个web服务器">安装一个web服务器</a></li>
+      </ul>
+    </li>
+    <li><a href="#usage">Usage</a></li>
+    <li><a href="#使用">使用</a>
+      <ul>
+        <li><a href="#1st-terminal---start-the-build">1st terminal - Start the build</a></li>
+        <li><a href="#第一个终端开始构建">第一个终端，开始构建</a></li>
+        <li><a href="#2nd-terminal---start-the-web-server">2nd terminal - Start the web server</a></li>
+        <li><a href="#第二个终端开始web服务器">第二个终端。开始web服务器</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+<article class="markdown">
+  <h1>
+    <a href="/posts/angluar/angular-%E5%9C%A8%E7%A3%81%E7%9B%98%E4%B8%8A%E8%BF%90%E8%A1%8C%E6%9C%8D%E5%8A%A1/">Angular 在磁盘上运行服务</a>
+  </h1>
+  
+
+
+  
+
+  
+
+
+
+<h1 id="serve-from-disk">
+  Serve from Disk
+  <a class="anchor" href="#serve-from-disk">#</a>
+</h1>
+<h1 id="在磁盘上运行服务">
+  在磁盘上运行服务
+  <a class="anchor" href="#%e5%9c%a8%e7%a3%81%e7%9b%98%e4%b8%8a%e8%bf%90%e8%a1%8c%e6%9c%8d%e5%8a%a1">#</a>
+</h1>
+<p>The CLI supports running a live browser reload experience to users by running <code>ng serve</code>. This will compile the application upon file saves and reload the browser with the newly compiled application. This is done by hosting the application in memory and serving it via <a href="https://webpack.js.org/guides/development/#webpack-dev-server">webpack-dev-server</a>.<br>
+CLI支持通过运行 <code>ng serve</code> 来为用户运行实时浏览器重新加载体验。这将在文件保存时编译应用程序，并用新编译的应用程序重新载入浏览器。这是通过将应用程序托管在内存中并通过<a href="https://webpack.js.org/guides/development/#webpack-dev-server">webpack-dev-server</a>.来完成的。</p>
+<p>If you wish to get a similar experience with the application output to disk please use the steps below. This practice will allow you to ensure that serving the contents of your <code>dist</code> dir will be closer to how your application will behave when it is deployed.<br>
+如果您希望获得与应用程序输出到磁盘相似的体验，请使用以下步骤。这种做法将允许您确保提供远程目录的内容将更接近您的应用程序在部署时的行为方式。</p>
+<h2 id="environment-setup">
+  Environment Setup
+  <a class="anchor" href="#environment-setup">#</a>
+</h2>
+<h2 id="环境设置">
+  环境设置
+  <a class="anchor" href="#%e7%8e%af%e5%a2%83%e8%ae%be%e7%bd%ae">#</a>
+</h2>
+<h3 id="install-a-web-server">
+  Install a web server
+  <a class="anchor" href="#install-a-web-server">#</a>
+</h3>
+<h3 id="安装一个web服务器">
+  安装一个web服务器
+  <a class="anchor" href="#%e5%ae%89%e8%a3%85%e4%b8%80%e4%b8%aaweb%e6%9c%8d%e5%8a%a1%e5%99%a8">#</a>
+</h3>
+<p>You will not be using webpack-dev-server, so you will need to install a web server for the browser to request the application. There are many to choose from but a good one to try is <a href="https://github.com/johnpapa/lite-server">lite-server</a> as it will auto-reload your browser when new files are output.<br>
+您将不会使用webpack-dev-server，因此您需要安装Web服务器以供浏览器请求应用程序。有很多可供选择的，但最好尝试的是<a href="https://github.com/johnpapa/lite-server">lite-server</a>，因为它会在输出新文件时自动重新加载浏览器</p>
+<h2 id="usage">
+  Usage
+  <a class="anchor" href="#usage">#</a>
+</h2>
+<h2 id="使用">
+  使用
+  <a class="anchor" href="#%e4%bd%bf%e7%94%a8">#</a>
+</h2>
+<p>You will need two terminals to get the live-reload experience. The first will run the build in a watch mode to compile the application to the <code>dist</code> folder. The second will run the web server against the <code>dist</code> folder. The combination of these two processes will mimic the same behavior of ng serve.<br>
+您将需要两个终端才能获得实时加载体验。第一个将以监视模式运行构建以将应用程序编译到 <code>dist</code> 文件夹。第二个将针对 <code>dist</code> 文件夹运行Web服务器。这两个过程的结合将模拟ng服务的相同行为。</p>
+<h3 id="1st-terminal---start-the-build">
+  1st terminal - Start the build
+  <a class="anchor" href="#1st-terminal---start-the-build">#</a>
+</h3>
+<h3 id="第一个终端开始构建">
+  第一个终端，开始构建
+  <a class="anchor" href="#%e7%ac%ac%e4%b8%80%e4%b8%aa%e7%bb%88%e7%ab%af%e5%bc%80%e5%a7%8b%e6%9e%84%e5%bb%ba">#</a>
+</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ng build --watch
+</code></pre></div><h3 id="2nd-terminal---start-the-web-server">
+  2nd terminal - Start the web server
+  <a class="anchor" href="#2nd-terminal---start-the-web-server">#</a>
+</h3>
+<h3 id="第二个终端开始web服务器">
+  第二个终端。开始web服务器
+  <a class="anchor" href="#%e7%ac%ac%e4%ba%8c%e4%b8%aa%e7%bb%88%e7%ab%af%e5%bc%80%e5%a7%8bweb%e6%9c%8d%e5%8a%a1%e5%99%a8">#</a>
+</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">lite-server --baseDir<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;dist&#34;</span>
+</code></pre></div><p>When using <code>lite-server</code> the default browser will open to the appropriate URL.<br>
+使用 <code>lite-server</code> 时，默认浏览器将打开相应的URL。</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+  
+
+  
+
+  <script src="https://utteranc.es/client.js" repo="wanyijie/blog" issue-term="pathname" label="web"
+    theme="github-light" crossorigin="anonymous" async>
+    </script>
+</div>
+
+
+
+<script>{ { . | safeJS } }</script>
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#environment-setup">Environment Setup</a></li>
+    <li><a href="#环境设置">环境设置</a>
+      <ul>
+        <li><a href="#install-a-web-server">Install a web server</a></li>
+        <li><a href="#安装一个web服务器">安装一个web服务器</a></li>
+      </ul>
+    </li>
+    <li><a href="#usage">Usage</a></li>
+    <li><a href="#使用">使用</a>
+      <ul>
+        <li><a href="#1st-terminal---start-the-build">1st terminal - Start the build</a></li>
+        <li><a href="#第一个终端开始构建">第一个终端，开始构建</a></li>
+        <li><a href="#2nd-terminal---start-the-web-server">2nd terminal - Start the web server</a></li>
+        <li><a href="#第二个终端开始web服务器">第二个终端。开始web服务器</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6266541561533854"
+     crossorigin="anonymous"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

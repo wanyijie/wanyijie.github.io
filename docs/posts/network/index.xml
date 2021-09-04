@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>网络 on hope to be a great computer technology Site</title>
+    <link>https://wangyijie.store/posts/network/</link>
+    <description>Recent content in 网络 on hope to be a great computer technology Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="https://wangyijie.store/posts/network/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/network/wifi%E5%B8%B8%E8%AF%86/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/network/wifi%E5%B8%B8%E8%AF%86/</guid>
+      <description>频段带宽#频段带宽指的是你的路由器的发射频率宽度：
+  20MHz对应的是65M带宽穿透性好传输距离远（100米左右）。 40MHz对应的是150M带宽穿透性差传输距离近（50米左右）。   　而你路由器的300M是指的你的路由器的传输速率（最大传输速率）：300Mbps，也就是俗称网速, 40MHZ双通道能达到300M。
+频段标准#无线路由工作根据频段的不同分好几种标准，分别是11a，11b，11g，11n。其中工作频段不同也导致传输速度不同。11n的可以在11b和11g之间用，自动转换。 频段带宽是路由频段带宽的选择
+ 20MHz对应的是65M带宽，穿透性相对较好 40MHz对应的是150M带宽，穿透性不如20MHz
+ 5g#5G Wi-Fi的诞生很好解决现在WiFi面临的问题，首先它运行在5GHz以上的高频段，宽带能提高到40MHz甚至80MHz或更高，传输速度最高提升到了1Gbps，每秒可以传输约125MB的内容。</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/network/windows-powershell-%E6%9F%A5%E7%9C%8B%E7%AB%AF%E5%8F%A3%E5%92%8C%E9%A1%BE%E8%99%91%E6%96%87%E6%9C%AC%E4%B8%8A%E4%B8%8B%E6%96%87/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/network/windows-powershell-%E6%9F%A5%E7%9C%8B%E7%AB%AF%E5%8F%A3%E5%92%8C%E9%A1%BE%E8%99%91%E6%96%87%E6%9C%AC%E4%B8%8A%E4%B8%8B%E6%96%87/</guid>
+      <description>example#NETSTAT.EXE -abno | Select-String -Pattern Sangfor -Context 1,2  windows netstat使用-abno显示的信息最完善，建议常用 select-string 匹配文本，使用-context指定匹配文本的前后行数，例子是前面一行后面两行 谢谢！  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/network/windows-powershell%E5%85%B3%E9%97%AD%E9%98%B2%E7%81%AB%E5%A2%99/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/network/windows-powershell%E5%85%B3%E9%97%AD%E9%98%B2%E7%81%AB%E5%A2%99/</guid>
+      <description>Set-NetFirewallProfile -Profile Private -Enabled False Set-NetFirewallProfile -Profile Public -Enabled False Get-NetFirewallProfile 加域的还有一种属性，参考设置</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/network/windows%E4%BD%BF%E7%94%A8netsh%E5%81%9A%E7%AB%AF%E5%8F%A3%E4%BB%A3%E7%90%86%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/network/windows%E4%BD%BF%E7%94%A8netsh%E5%81%9A%E7%AB%AF%E5%8F%A3%E4%BB%A3%E7%90%86%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91/</guid>
+      <description>example#netsh interface portproxy add v4tov4 listenaddress=172.20.0.2 listenport=1521 connectaddress=172.16.100.74 connectport=1521 netsh interface portproxy add v4tov4 listenaddress=172.20.0.2 listenport=1433 connectaddress=172.16.100.73 connectport=1433 删除#netsh interface portproxy delete v4tov4 listenport=3340 listenaddress=10.1.1.110 netsh.exe interface portproxy delete v4tov4 listenport=1521 listenaddress=172.20.0.2
+清除所有当前的端口转发规则：#netsh interface portproxy reset</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/network/%E4%BD%BF%E7%94%A8ssh%E5%81%9A%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/network/%E4%BD%BF%E7%94%A8ssh%E5%81%9A%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91/</guid>
+      <description>10.240.0.4是remoteserver后面的主机，把访问本机5500端口的流量通过remoteserver转发到10.240.0.4 demo自己参照理解 ssh -L 5500:10.240.0.4:3389 remoteserver mstsc.exe /v:localhost:5500</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/network/%E5%9C%A8%E4%B8%80%E4%B8%AA%E5%91%BD%E4%BB%A4%E4%B8%AD%E5%B0%86%E4%BB%BB%E4%BD%95linux%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%BD%AC%E6%8D%A2%E4%B8%BAsocks5%E4%BB%A3%E7%90%86/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/network/%E5%9C%A8%E4%B8%80%E4%B8%AA%E5%91%BD%E4%BB%A4%E4%B8%AD%E5%B0%86%E4%BB%BB%E4%BD%95linux%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%BD%AC%E6%8D%A2%E4%B8%BAsocks5%E4%BB%A3%E7%90%86/</guid>
+      <description>对于那些想上网的人来说这很方便 - 你可以在一个命令中将任何Linux计算机变成SOCKS5（和SOCKS4）代理：
+ssh -N -D 0.0.0.0:1080 user@ip 并且它不需要root权限。该ssh命令启动-D端口上的动态端口转发，1080并通过SOCSK5或SOCKS4协议与客户端通信，就像常规的SOCKS5代理一样！该-N选项确保ssh保持空闲状态，并且不在主机上执行任何命令。0.0.0.0允许任意地址连接，设置为127.0.0.1可以限制本机之外的主机使用代理，ip可以是远程代理主机，也可以是本机相当于把本机做为代理服务器
+如果您还希望命令作为守护进程进入后台，则添加-f选项：
+ssh -f -N -D 0.0.0.0:1080 user@ip 要使用它，只需让您的软件在您的Linux计算机的IP，端口1080上使用SOCKS5代理，并且您已完成，您的所有请求现在都会被代理.
+访问控制可以通过实现iptables。例如，要仅允许来自ip的1.2.3.4人员使用SOCKS5代理，请添加以下iptables规则：
+iptables -A INPUT --src 1.2.3.4 -p tcp --dport 1080 -j ACCEPT iptables -A INPUT -p tcp --dport 1080 -j REJECT 第一条规则说，允许任何人1.2.3.4连接到端口1080，另一条规则说，拒绝其他所有人连接到端口1080。</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/network/%E9%98%B2%E7%81%AB%E5%A2%99%E6%8A%80%E6%9C%AF%E6%A6%82%E8%BF%B0/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/network/%E9%98%B2%E7%81%AB%E5%A2%99%E6%8A%80%E6%9C%AF%E6%A6%82%E8%BF%B0/</guid>
+      <description>一、防火墙技术概述#随着互联网的普及和发展，尤其是Internet的广泛使用，使计算机应用更加广泛与深入。同时，我们不得不注意到，网络虽然功能强大，也有其脆弱易受到攻击的一面。据美国FBI统计，美国每年因网络安全问题所造成的经济损失高达75亿美元，而全求平均每20秒钟就发生一起Internet计算机侵入事件。在我国，每年因黑客入侵、计算机病毒的破坏也造成了巨大的经济损失。人们在利用网络的优越性的同时，对网络安全问题也决不能忽视。如何建立比较安全的网络体系，值得我们关注研究。
+二、防火墙的概念# 防火墙是设置在被保护网络和外部网络之间的一道屏障，以防止发生不可预测的、潜在破坏性的侵入。防火墙是指设置在不同网络(如可信任的企业内部网和不可信的公共网)或网络安全域之间的一系列部件的组合。它是不同网络或网络安全域之间信息的唯一出入口，能根据企业的安全政策控制(允许、拒绝、监测)出入网络的信息流，且本身具有较强的抗攻击能力。防火墙提供信息安全服务，是实现网络和信息安全的基础设施。在逻辑上，防火墙是一个分离器，一个限制器，也是一个分析器，它有效地监控了内部网络和互联网之间的任何活动，保证了内部网络的安全。目前的防火墙技术无论从技术上还是从产品发展历程上，都经历了五个发展历程。
+第一代防火墙技术几乎与路由器同时出现，采用了包过滤（ Packet filter）技术。由贝尔实验室的 Dave Presotto 和 Howard Trickey 推出了第二代防火墙，即电路层防火墙，同时提出了第三代防火墙— 应用层防火墙（代理防火墙）的初步结构。 1992 年，USC 信息科学院的 BobBraden 开发出了基于动态包过滤（Dynamic packet filter）技术的第四代防火墙 ，后来演变为目前所说的状态监视（Stateful inspection）技术。1994 年，以色列的 CheckPoint 公司开发出了第一个采用这种技术的商业化的产品。 1998年，NAI 公司推出了一种自适应代理（Adaptive proxy）技术，并在其产品 Gauntlet Firewall for NT 中得以实现，给代理类型的防火墙赋予了全 新的意义，可以称之为第五代防火墙。但传统的防火墙并没有解决目前网络中主要的安全问题。目前网络安全的三大主要问题是:以拒绝访问(DDOS)为主要代表的网络攻击，以蠕虫(Worm)为主要代表的病毒传播和以垃圾电子邮件(SPAM)为代表的内容控制。这三大安全问题占据网络安全问题九成以上。而这三大问题，传统防火墙都无能为力。主要有以下三个原因: 一是传统防火墙的计算能力的限制。传统的防火墙是以高强度的检查为代价，检查的强度越高，计算的代价越大。二是传统防火墙的访问控制机制是一个简单的过滤机制。它是一个简单的条件过滤器，不具有智能功能，无法检测复杂的攻击。三是传统的防火墙无法区分识别善意和恶意的行为。该特征决定了传统的防火墙无法解决恶意的攻击行为。现在防火墙正在向分布、智能的方向发展，其中智能防火墙可以很好的解决上面的问题。智能防火墙是相对传统的防火墙而言的，从技术特征上智能防火墙是利用统计、记忆、概率和决策的智能方法来对数据进行识别，并达到访问控制的目的。新的数学方法，消除了匹配检查所需要的海量计算，高效发现网络行为的特征值，直接进行访问控制。由于这些方法多是人工智能学科采用的方法，因此，又称为智能防火墙。
+三、防火墙的功能#防火墙的主要功能主要为：
+** 1．包过滤**# 包过滤是一种网络的数据安全保护机制，它可用来控制流出和流入网络的数据，它通常由定义的各条数据安全规则所组成，防火墙设置可基于源地址、源端口、目的地址、目的端口、协议和时间;可根据地址簿进行设置规则。
+2．地址转换#网络地址变换是将内部网络或外部网络的IP地址转换，可分为源地址转换SourceNAT(SNAT)和目的地址转换 Destination NAT(DNAT)。SNAT 用于对内部网络地址进行转换，对外部网络隐藏起内部网络的结构，避免受到来自外部其他网络的非授权访问或恶意攻击。并将有限的 IP 地址动态或静态的与内部 IP 地址对应起来，用来缓解地址空间的短缺问题，节省资源，降低成本。DNAT 主要用于外网主机访问内网主机。
+3．认证和应用代理# 认证指防火墙对访问网络者合法身分的确定。代理指防火墙内置用户认证数据库;提供 HTTP、FTP和 SMTP代理功能，并可对这三种协议进行访问控制；同时支持 URL 过滤功能。</description>
+    </item>
+    
+  </channel>
+</rss>

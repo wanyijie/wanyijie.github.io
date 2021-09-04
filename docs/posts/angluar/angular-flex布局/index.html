@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Include Flex Layout in your CLI application#在您的CLI应用程序中包含Flex布局# Above is snapshot of a Online Demos using @angular/flex-layout
+这个截图是一个在线演示使用@angular/flex-layout
+ Include @angular/flex-layout as detailed below:#包含 @angular/flex-layout 详情如下:#Install the library and add the dependency to package.json&hellip;
+安装该库并将依赖项添加到package.json&hellip;
+npm install --save @angular/flex-layout Or install the nightly build using:
+或者使用以下命令安装每晚构建:
+npm i --save @angular/flex-layout-builds Import the Angular Flex-Layout NgModule into your app module&hellip;">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="" />
+<meta property="og:description" content="Include Flex Layout in your CLI application#在您的CLI应用程序中包含Flex布局# Above is snapshot of a Online Demos using @angular/flex-layout
+这个截图是一个在线演示使用@angular/flex-layout
+ Include @angular/flex-layout as detailed below:#包含 @angular/flex-layout 详情如下:#Install the library and add the dependency to package.json&hellip;
+安装该库并将依赖项添加到package.json&hellip;
+npm install --save @angular/flex-layout Or install the nightly build using:
+或者使用以下命令安装每晚构建:
+npm i --save @angular/flex-layout-builds Import the Angular Flex-Layout NgModule into your app module&hellip;" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://wangyijie.store/posts/angluar/angular-flex%E5%B8%83%E5%B1%80/" /><meta property="article:section" content="posts" />
+
+
+
+<title>Angular Flex布局 | hope to be a great computer technology Site</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.46181bc93375ba932026e753b37c40e6ff8bb16a9ef770c78bcc663e4577b1ba.css" integrity="sha256-RhgbyTN1upMgJudTs3xA5v&#43;LsWqe93DHi8xmPkV3sbo=" crossorigin="anonymous">
+  <script defer src="/flexsearch.min.js"></script>
+  <script defer src="/en.search.min.fdba0647c9501127a41f26adcab0438eb8555e76b0481ad7bc42620c87ea0e43.js" integrity="sha256-/boGR8lQESekHyatyrBDjrhVXnawSBrXvEJiDIfqDkM=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>hope to be a great computer technology Site</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/posts/" >
+        Posts
+      </a>
+      
+<ul>
+  
+  <li>
+    <a href="/posts/angluar/" >
+        angular
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/ansible/" >
+        ansible
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/cicd/" >
+        CICD
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/devops/" >
+        DevOps
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/english/" >
+        English
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/golang/" >
+        golang
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/istio/" >
+        istio
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/kubernetes/" >
+        Kubernetes
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/material2/" >
+        mererial2
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/mysql/" >
+        mysql
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/postgresql/" >
+        postgresql
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/python/" >
+        python
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/cloud/" >
+        云服务
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/security/" >
+        安全
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/container/" >
+        容器
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/literature/" >
+        文学
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/diary/" >
+        日记
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/machine_learning/" >
+        机器学习
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/monitor/" >
+        监控
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/sre/" >
+        站点可靠性工程
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/network/" >
+        网络
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/poetry/" >
+        诗歌
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/essay/" >
+        随笔
+      </a>
+  </li>
+  
+</ul>
+
+  </li>
+  
+  <li>
+    <a href="/about/" >
+        关于作者
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var a=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(b){localStorage.setItem("menu.scrollTop",a.scrollTop)}),a.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Angular Flex布局</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#include-flex-layouthttpsgithubcomangularflex-layout-in-your-cli-application">Include <a href="https://github.com/angular/flex-layout">Flex Layout</a> in your CLI application</a></li>
+    <li><a href="#在您的cli应用程序中包含flex布局httpsgithubcomangularflex-layout">在您的CLI应用程序中包含<a href="https://github.com/angular/flex-layout">Flex布局</a></a>
+      <ul>
+        <li><a href="#include-angularflex-layout-as-detailed-below">Include <code>@angular/flex-layout</code> as detailed below:</a></li>
+        <li><a href="#包含-angularflex-layout-详情如下">包含 <code>@angular/flex-layout</code> 详情如下:</a></li>
+        <li><a href="#sample-app">Sample App</a></li>
+        <li><a href="#示例应用程序">示例应用程序</a></li>
+        <li><a href="#more-info">More Info</a></li>
+        <li><a href="#更多信息">更多信息</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+<article class="markdown">
+  <h1>
+    <a href="/posts/angluar/angular-flex%E5%B8%83%E5%B1%80/">Angular Flex布局</a>
+  </h1>
+  
+
+
+  
+
+  
+
+
+
+Include <h2 id="include-flex-layouthttpsgithubcomangularflex-layout-in-your-cli-application">
+  <a href="https://github.com/angular/flex-layout">Flex Layout</a> in your CLI application
+  <a class="anchor" href="#include-flex-layouthttpsgithubcomangularflex-layout-in-your-cli-application">#</a>
+</h2>
+在您的CLI应用程序中包含<h2 id="在您的cli应用程序中包含flex布局httpsgithubcomangularflex-layout">
+  <a href="https://github.com/angular/flex-layout">Flex布局</a>
+  <a class="anchor" href="#%e5%9c%a8%e6%82%a8%e7%9a%84cli%e5%ba%94%e7%94%a8%e7%a8%8b%e5%ba%8f%e4%b8%ad%e5%8c%85%e5%90%abflex%e5%b8%83%e5%b1%80httpsgithubcomangularflex-layout">#</a>
+</h2>
+<!-- raw HTML omitted -->
+<blockquote>
+<p>Above is snapshot of a <a href="https://tburleson-layouts-demos.firebaseapp.com/#/docs">Online Demos</a> using @angular/flex-layout<br>
+这个截图是一个<a href="https://tburleson-layouts-demos.firebaseapp.com/#/docs">在线演示</a>使用@angular/flex-layout</p>
+</blockquote>
+<!-- raw HTML omitted -->
+<h3 id="include-angularflex-layout-as-detailed-below">
+  Include <code>@angular/flex-layout</code> as detailed below:
+  <a class="anchor" href="#include-angularflex-layout-as-detailed-below">#</a>
+</h3>
+<h3 id="包含-angularflex-layout-详情如下">
+  包含 <code>@angular/flex-layout</code> 详情如下:
+  <a class="anchor" href="#%e5%8c%85%e5%90%ab-angularflex-layout-%e8%af%a6%e6%83%85%e5%a6%82%e4%b8%8b">#</a>
+</h3>
+<p>Install the  library and add the dependency to package.json&hellip;<br>
+安装该库并将依赖项添加到package.json&hellip;</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">npm install --save @angular/flex-layout
+</code></pre></div><p>Or install the nightly build using:<br>
+或者使用以下命令安装每晚构建:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">npm i --save @angular/flex-layout-builds
+</code></pre></div><p>Import the Angular Flex-Layout NgModule into your app module&hellip;<br>
+将Angular Flex布局NgModule导入您的应用程序模块&hellip;</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">//in src/app/app.module.ts 
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">FlexLayoutModule</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;@angular/flex-layout&#39;</span>;
+<span style="color:#75715e">// other imports 
+</span><span style="color:#75715e"></span>
+<span style="color:#960050;background-color:#1e0010">@</span><span style="color:#a6e22e">NgModule</span>({
+  <span style="color:#a6e22e">imports</span><span style="color:#f92672">:</span> [
+    ...
+    <span style="color:#a6e22e">FlexLayoutModule</span>
+  ],
+  ...
+})
+</code></pre></div><p>Run <code>ng serve</code> to run your application in develop mode, and navigate to <code>http://localhost:4200</code><br>
+运行 <code>ng serve</code> 以开发模式运行您的应用程序，并导航到 <code>http://localhost：4200</code></p>
+<!-- raw HTML omitted -->
+<h3 id="sample-app">
+  Sample App
+  <a class="anchor" href="#sample-app">#</a>
+</h3>
+<h3 id="示例应用程序">
+  示例应用程序
+  <a class="anchor" href="#%e7%a4%ba%e4%be%8b%e5%ba%94%e7%94%a8%e7%a8%8b%e5%ba%8f">#</a>
+</h3>
+<p>添加下列内容到 <code>src/app/app.component.css</code>&hellip;</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#f92672">[</span><span style="color:#f92672">fxLayout</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;column&#34;</span><span style="color:#f92672">]</span> { <span style="color:#66d9ef">border</span>: <span style="color:#ae81ff">1</span><span style="color:#66d9ef">px</span> <span style="color:#66d9ef">solid</span>;<span style="color:#66d9ef">padding</span>:<span style="color:#ae81ff">4</span><span style="color:#66d9ef">px</span>; <span style="color:#66d9ef">margin-top</span>:<span style="color:#ae81ff">50</span><span style="color:#66d9ef">px</span>; }<span style="color:#f92672">,</span>
+<span style="color:#f92672">[</span><span style="color:#f92672">fxFlex</span><span style="color:#f92672">]</span>{  <span style="color:#66d9ef">padding</span>:<span style="color:#ae81ff">5</span><span style="color:#66d9ef">px</span>;}<span style="color:#f92672">,</span>
+<span style="color:#f92672">h3</span>      {  <span style="color:#66d9ef">padding-top</span>:<span style="color:#ae81ff">20</span><span style="color:#66d9ef">px</span>; }<span style="color:#f92672">,</span>
+.<span style="color:#a6e22e">header</span> {  <span style="color:#66d9ef">background-color</span>: <span style="color:#66d9ef">lightyellow</span>;  }<span style="color:#f92672">,</span>
+.<span style="color:#a6e22e">left</span>   {  <span style="color:#66d9ef">background-color</span>: <span style="color:#66d9ef">lightblue</span>;  }<span style="color:#f92672">,</span>
+.<span style="color:#a6e22e">right</span>  {  <span style="color:#66d9ef">background-color</span>: <span style="color:#66d9ef">pink</span>;  }
+</code></pre></div><p>要验证flex-layout已正确设置，请更改 <code>src/app/app.component.html</code> 为以下内容&hellip;</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"> &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">fxLayout</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;column&#34;</span>&gt;
+   &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;header&#34;</span> <span style="color:#a6e22e">fxLayout</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;row&#34;</span> <span style="color:#a6e22e">fxLayoutAlign</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;space-between center&#34;</span>&gt;
+       &lt;<span style="color:#f92672">h3</span>&gt;
+         {{title}}
+       &lt;/<span style="color:#f92672">h3</span>&gt;
+   &lt;/<span style="color:#f92672">div</span>&gt;
+   &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">fxLayout</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;row&#34;</span>&gt;
+       &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;left&#34;</span> <span style="color:#a6e22e">fxFlex</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;20&#34;</span>&gt; LEFT: 20% wide &lt;/<span style="color:#f92672">div</span>&gt;
+       &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;right&#34;</span> <span style="color:#a6e22e">fxFlex</span>&gt; RIGHT: 80% wide &lt;/<span style="color:#f92672">div</span>&gt;
+   &lt;/<span style="color:#f92672">div</span>&gt;
+ &lt;/<span style="color:#f92672">div</span>&gt;
+</code></pre></div><p>After saving this file, return to the browser to see the very ugly but demonstrative flex-layout.<br>
+保存此文件后，返回浏览器查看非常丑陋但具有示范性的弹性布局。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/6000429-c8619053871e27e0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="screen shot 2017-08-05 at 7 20 05 pm" /></p>
+<p>Among what you should see are - a light yellow header that is the entire width of the window, sitting directly atop 2 columns. Of those 2 columns, the left column should be light blue, and 20% wide, while the right column is pink, 80% to start, and will flex with window (re)size.<br>
+在你应该看到的是 - 一个淡黄色的标题，是整个窗口的宽度，直接坐在2列上。在这2列中，左栏应为浅蓝色，宽20％。在这2列中，左列应该是浅蓝色，宽20％，右列是粉红色，80％开始，并且会随着窗口（再）尺寸而弯曲。</p>
+<!-- raw HTML omitted -->
+<h3 id="more-info">
+  More Info
+  <a class="anchor" href="#more-info">#</a>
+</h3>
+<h3 id="更多信息">
+  更多信息
+  <a class="anchor" href="#%e6%9b%b4%e5%a4%9a%e4%bf%a1%e6%81%af">#</a>
+</h3>
+<ul>
+<li><a href="https://github.com/angular/flex-layout/wiki/Using-Angular-CLI">Installation</a></li>
+<li><a href="https://github.com/angular/flex-layout/wiki/Declarative-API-Overview">API Overview</a></li>
+<li><a href="https://tburleson-layouts-demos.firebaseapp.com/#/docs">Demo</a></li>
+</ul>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+  
+
+  
+
+  <script src="https://utteranc.es/client.js" repo="wanyijie/blog" issue-term="pathname" label="web"
+    theme="github-light" crossorigin="anonymous" async>
+    </script>
+</div>
+
+
+
+<script>{ { . | safeJS } }</script>
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#include-flex-layouthttpsgithubcomangularflex-layout-in-your-cli-application">Include <a href="https://github.com/angular/flex-layout">Flex Layout</a> in your CLI application</a></li>
+    <li><a href="#在您的cli应用程序中包含flex布局httpsgithubcomangularflex-layout">在您的CLI应用程序中包含<a href="https://github.com/angular/flex-layout">Flex布局</a></a>
+      <ul>
+        <li><a href="#include-angularflex-layout-as-detailed-below">Include <code>@angular/flex-layout</code> as detailed below:</a></li>
+        <li><a href="#包含-angularflex-layout-详情如下">包含 <code>@angular/flex-layout</code> 详情如下:</a></li>
+        <li><a href="#sample-app">Sample App</a></li>
+        <li><a href="#示例应用程序">示例应用程序</a></li>
+        <li><a href="#more-info">More Info</a></li>
+        <li><a href="#更多信息">更多信息</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6266541561533854"
+     crossorigin="anonymous"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

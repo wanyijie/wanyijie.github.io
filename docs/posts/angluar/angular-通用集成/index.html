@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Angular Universal Integration#Angular 通用集成#The Angular CLI supports generation of a Universal build for your application. This is a CommonJS-formatted bundle which can be require()&rsquo;d into a Node application (for example, an Express server) and used with @angular/platform-server&rsquo;s APIs to prerender your application.
+Angular CLI 支持为应用程序生成通用集成。这是一个 CommonJS 格式的包, 可以通过 require() 进入节点应用程序 , 并与@angular/platform-server 的 api 一起使用以预渲染应用程序。
+ Example CLI Integration:#CLI 集成例子:#Angular Universal-Starter - Clone the universal-starter for a working example.">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="" />
+<meta property="og:description" content="Angular Universal Integration#Angular 通用集成#The Angular CLI supports generation of a Universal build for your application. This is a CommonJS-formatted bundle which can be require()&rsquo;d into a Node application (for example, an Express server) and used with @angular/platform-server&rsquo;s APIs to prerender your application.
+Angular CLI 支持为应用程序生成通用集成。这是一个 CommonJS 格式的包, 可以通过 require() 进入节点应用程序 , 并与@angular/platform-server 的 api 一起使用以预渲染应用程序。
+ Example CLI Integration:#CLI 集成例子:#Angular Universal-Starter - Clone the universal-starter for a working example." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://wangyijie.store/posts/angluar/angular-%E9%80%9A%E7%94%A8%E9%9B%86%E6%88%90/" /><meta property="article:section" content="posts" />
+
+
+
+<title>Angular 通用集成 | hope to be a great computer technology Site</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.46181bc93375ba932026e753b37c40e6ff8bb16a9ef770c78bcc663e4577b1ba.css" integrity="sha256-RhgbyTN1upMgJudTs3xA5v&#43;LsWqe93DHi8xmPkV3sbo=" crossorigin="anonymous">
+  <script defer src="/flexsearch.min.js"></script>
+  <script defer src="/en.search.min.fdba0647c9501127a41f26adcab0438eb8555e76b0481ad7bc42620c87ea0e43.js" integrity="sha256-/boGR8lQESekHyatyrBDjrhVXnawSBrXvEJiDIfqDkM=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>hope to be a great computer technology Site</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/posts/" >
+        Posts
+      </a>
+      
+<ul>
+  
+  <li>
+    <a href="/posts/angluar/" >
+        angular
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/ansible/" >
+        ansible
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/cicd/" >
+        CICD
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/devops/" >
+        DevOps
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/english/" >
+        English
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/golang/" >
+        golang
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/istio/" >
+        istio
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/kubernetes/" >
+        Kubernetes
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/material2/" >
+        mererial2
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/mysql/" >
+        mysql
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/postgresql/" >
+        postgresql
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/python/" >
+        python
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/cloud/" >
+        云服务
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/security/" >
+        安全
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/container/" >
+        容器
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/literature/" >
+        文学
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/diary/" >
+        日记
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/machine_learning/" >
+        机器学习
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/monitor/" >
+        监控
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/sre/" >
+        站点可靠性工程
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/network/" >
+        网络
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/poetry/" >
+        诗歌
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/essay/" >
+        随笔
+      </a>
+  </li>
+  
+</ul>
+
+  </li>
+  
+  <li>
+    <a href="/about/" >
+        关于作者
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var a=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(b){localStorage.setItem("menu.scrollTop",a.scrollTop)}),a.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Angular 通用集成</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#example-cli-integration">Example CLI Integration:</a></li>
+    <li><a href="#cli-集成例子">CLI 集成例子:</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#install-dependencies">Install Dependencies</a></li>
+    <li><a href="#安装依赖">安装依赖</a></li>
+    <li><a href="#step-1-prepare-your-app-for-universal-rendering">Step 1: Prepare your App for Universal rendering</a></li>
+    <li><a href="#步骤一准备您的应用程序进行通用渲染">步骤一：准备您的应用程序进行通用渲染</a>
+      <ul>
+        <li><a href="#srcappappmodulets">src/app/app.module.ts:</a></li>
+        <li><a href="#srcappappservermodulets">src/app/app.server.module.ts:</a></li>
+      </ul>
+    </li>
+    <li><a href="#step-2-create-a-server-main-file-and-tsconfig-to-build-it">Step 2: Create a server &ldquo;main&rdquo; file and tsconfig to build it</a></li>
+    <li><a href="#步骤二-创建服务器-main-文件并-tsconfig-以生成它">步骤二: 创建服务器 &ldquo;main&rdquo; 文件并 tsconfig 以生成它</a>
+      <ul>
+        <li><a href="#srcmainserverts">src/main.server.ts:</a></li>
+        <li><a href="#srctsconfigserverjson">src/tsconfig.server.json:</a></li>
+      </ul>
+    </li>
+    <li><a href="#step-3-create-a-new-target-in-angularjson">Step 3: Create a new target in <code>angular.json</code></a></li>
+    <li><a href="#步骤三-在-angularjson-中创建一个目标">步骤三: 在 <code>angular.json</code> 中创建一个目标</a></li>
+    <li><a href="#building-the-bundle">Building the bundle</a></li>
+    <li><a href="#构建包">构建包</a></li>
+    <li><a href="#step-4-setting-up-an-express-server-to-run-our-universal-bundles">Step 4: Setting up an Express Server to run our Universal bundles</a></li>
+    <li><a href="#设置express服务器来运行我们的universal套件">设置Express服务器来运行我们的Universal套件</a>
+      <ul>
+        <li><a href="#serverts-root-project-level">./server.ts (root project level)</a></li>
+      </ul>
+    </li>
+    <li><a href="#step-5-setup-a-webpack-config-to-handle-this-node-serverts-file-and-serve-your-application">Step 5: Setup a webpack config to handle this Node server.ts file and serve your application!</a></li>
+    <li><a href="#第5步设置一个webpack配置来处理这个node-serverts文件并为您的应用程序提供服务">第5步：设置一个webpack配置来处理这个Node server.ts文件并为您的应用程序提供服务</a>
+      <ul>
+        <li><a href="#webpackserverconfigjs-root-project-level">./webpack.server.config.js (root project level)</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+<article class="markdown">
+  <h1>
+    <a href="/posts/angluar/angular-%E9%80%9A%E7%94%A8%E9%9B%86%E6%88%90/">Angular 通用集成</a>
+  </h1>
+  
+
+
+  
+
+  
+
+
+
+<h1 id="angular-universal-integration">
+  Angular Universal Integration
+  <a class="anchor" href="#angular-universal-integration">#</a>
+</h1>
+<h1 id="angular-通用集成">
+  Angular 通用集成
+  <a class="anchor" href="#angular-%e9%80%9a%e7%94%a8%e9%9b%86%e6%88%90">#</a>
+</h1>
+<p>The Angular CLI supports generation of a Universal build for your application. This is a CommonJS-formatted bundle which can be <code>require()</code>&rsquo;d into a Node application (for example, an Express server) and used with <code>@angular/platform-server</code>&rsquo;s APIs to prerender your application.<br>
+Angular CLI 支持为应用程序生成通用集成。这是一个 CommonJS 格式的包, 可以通过 <code>require()</code> 进入节点应用程序 , 并与<code>@angular/platform-server</code> 的 api 一起使用以预渲染应用程序。</p>
+<hr>
+<h2 id="example-cli-integration">
+  Example CLI Integration:
+  <a class="anchor" href="#example-cli-integration">#</a>
+</h2>
+<h2 id="cli-集成例子">
+  CLI 集成例子:
+  <a class="anchor" href="#cli-%e9%9b%86%e6%88%90%e4%be%8b%e5%ad%90">#</a>
+</h2>
+<p><a href="https://github.com/angular/universal-starter">Angular Universal-Starter</a> - Clone the universal-starter for a working example.<br>
+<a href="https://github.com/angular/universal-starter">Angular 通用启动器</a> -克隆通用启动器的一个工作示例。 -</p>
+<hr>
+<h1 id="integrating-angular-universal-into-existing-cli-applications">
+  Integrating Angular Universal into existing CLI Applications
+  <a class="anchor" href="#integrating-angular-universal-into-existing-cli-applications">#</a>
+</h1>
+<h1 id="将angular-universal集成到现有的cli应用程序中">
+  将Angular Universal集成到现有的CLI应用程序中
+  <a class="anchor" href="#%e5%b0%86angular-universal%e9%9b%86%e6%88%90%e5%88%b0%e7%8e%b0%e6%9c%89%e7%9a%84cli%e5%ba%94%e7%94%a8%e7%a8%8b%e5%ba%8f%e4%b8%ad">#</a>
+</h1>
+<p>This story will show you how to set up Universal bundling for an existing <code>@angular/cli</code> project in 5 steps.<br>
+这个故事将向您展示如何通过5个步骤为现有的 <code>@angular/cli</code> 项目设置通用构建。</p>
+<hr>
+<h2 id="install-dependencies">
+  Install Dependencies
+  <a class="anchor" href="#install-dependencies">#</a>
+</h2>
+<h2 id="安装依赖">
+  安装依赖
+  <a class="anchor" href="#%e5%ae%89%e8%a3%85%e4%be%9d%e8%b5%96">#</a>
+</h2>
+<p>Install <code>@angular/platform-server</code> into your project. Make sure you use the same version as the other <code>@angular</code> packages in your project.<br>
+安装 <code>@angular/platform-server</code> 到你的项目. 确保您的项目中使用与其他@angular软件包相同的版本。</p>
+<blockquote>
+<p>You&rsquo;ll also need ts-loader (for your webpack build we&rsquo;ll show later) and @nguniversal/module-map-ngfactory-loader, as it&rsquo;s used to handle lazy-loading in the context of a server-render. (by loading the chunks right away)
+您还需要ts-loader（用于您的webpack构建，稍后会显示）和 <code>@nguniversal/module-map-ngfactory-loader</code>，因为它用于处理服务器呈现环境中的延迟加载。 （通过立即加载块）</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ npm install --save @angular/platform-server @nguniversal/module-map-ngfactory-loader ts-loader
+</code></pre></div><h2 id="step-1-prepare-your-app-for-universal-rendering">
+  Step 1: Prepare your App for Universal rendering
+  <a class="anchor" href="#step-1-prepare-your-app-for-universal-rendering">#</a>
+</h2>
+<h2 id="步骤一准备您的应用程序进行通用渲染">
+  步骤一：准备您的应用程序进行通用渲染
+  <a class="anchor" href="#%e6%ad%a5%e9%aa%a4%e4%b8%80%e5%87%86%e5%a4%87%e6%82%a8%e7%9a%84%e5%ba%94%e7%94%a8%e7%a8%8b%e5%ba%8f%e8%bf%9b%e8%a1%8c%e9%80%9a%e7%94%a8%e6%b8%b2%e6%9f%93">#</a>
+</h2>
+<p>The first thing you need to do is make your <code>AppModule</code> compatible with Universal by adding <code>.withServerTransition()</code> and an application ID to your <code>BrowserModule</code> import:<br>
+您需要做的第一件事是通过向您的 <code>BrowserModule</code> 导入添加 <code>.withServerTransition（）</code>和一个应用程序ID，使您的 <code>AppModule</code> 与通用兼容：</p>
+<h3 id="srcappappmodulets">
+  src/app/app.module.ts:
+  <a class="anchor" href="#srcappappmodulets">#</a>
+</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#960050;background-color:#1e0010">@</span><span style="color:#a6e22e">NgModule</span>({
+  <span style="color:#a6e22e">bootstrap</span><span style="color:#f92672">:</span> [<span style="color:#a6e22e">AppComponent</span>],
+  <span style="color:#a6e22e">imports</span><span style="color:#f92672">:</span> [
+    <span style="color:#75715e">// Add .withServerTransition() to support Universal rendering.
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">// The application ID can be any identifier which is unique on
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">// the page.
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">BrowserModule</span>.<span style="color:#a6e22e">withServerTransition</span>({<span style="color:#a6e22e">appId</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;my-app&#39;</span>}),
+    ...
+  ],
+
+})
+<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">AppModule</span> {}
+</code></pre></div><p>Next, create a module specifically for your application when running on the server. It&rsquo;s recommended to call this module <code>AppServerModule</code>.<br>
+接下来，在服务器上运行时，专门为您的应用程序创建一个模块。建议调用这个模块<code>AppServerModule</code>。</p>
+<p>This example places it alongside <code>app.module.ts</code> in a file named <code>app.server.module.ts</code>:<br>
+这个例子将它放在 <code>app.module.ts</code> 名为的文件 <code>app.server.module.ts</code>旁边:</p>
+<h3 id="srcappappservermodulets">
+  src/app/app.server.module.ts:
+  <a class="anchor" href="#srcappappservermodulets">#</a>
+</h3>
+<p>You can see here we&rsquo;re simply Importing everything from AppModule, followed by ServerModule.<br>
+您可以在这里看到我们只是从AppModule导入所有内容，然后导入ServerModule。</p>
+<blockquote>
+<p>One important thing to Note: We need <code>ModuleMapLoaderModule</code> to help make Lazy-loaded routes possible during Server-side renders with the Angular CLI.<br>
+注意一件重要的事情：我们需要使用ModuleMapLoaderModule，以便在使用Angular CLI进行服务器端呈现期间使延迟加载的路由成为可能。</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="color:#66d9ef">import</span> {<span style="color:#a6e22e">NgModule</span>} <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#39;@angular/core&#39;</span>;
+<span style="color:#66d9ef">import</span> {<span style="color:#a6e22e">ServerModule</span>} <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#39;@angular/platform-server&#39;</span>;
+<span style="color:#66d9ef">import</span> {<span style="color:#a6e22e">ModuleMapLoaderModule</span>} <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#39;@nguniversal/module-map-ngfactory-loader&#39;</span>;
+
+<span style="color:#66d9ef">import</span> {<span style="color:#a6e22e">AppModule</span>} <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#39;./app.module&#39;</span>;
+<span style="color:#66d9ef">import</span> {<span style="color:#a6e22e">AppComponent</span>} <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#39;./app.component&#39;</span>;
+
+<span style="color:#66d9ef">@NgModule</span>({
+  <span style="color:#a6e22e">imports</span><span style="color:#f92672">:</span> [
+    <span style="color:#75715e">// The AppServerModule should import your AppModule followed
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">// by the ServerModule from @angular/platform-server.
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">AppModule</span>,
+    <span style="color:#a6e22e">ServerModule</span>,
+    <span style="color:#a6e22e">ModuleMapLoaderModule</span> <span style="color:#75715e">// &lt;-- *Important* to have lazy-loaded routes work
+</span><span style="color:#75715e"></span>  ],
+  <span style="color:#75715e">// Since the bootstrapped component is not inherited from your
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">// imported AppModule, it needs to be repeated here.
+</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">bootstrap</span><span style="color:#f92672">:</span> [<span style="color:#a6e22e">AppComponent</span>],
+})
+<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">AppServerModule</span> {}
+</code></pre></div><hr>
+<h2 id="step-2-create-a-server-main-file-and-tsconfig-to-build-it">
+  Step 2: Create a server &ldquo;main&rdquo; file and tsconfig to build it
+  <a class="anchor" href="#step-2-create-a-server-main-file-and-tsconfig-to-build-it">#</a>
+</h2>
+<h2 id="步骤二-创建服务器-main-文件并-tsconfig-以生成它">
+  步骤二: 创建服务器 &ldquo;main&rdquo; 文件并 tsconfig 以生成它
+  <a class="anchor" href="#%e6%ad%a5%e9%aa%a4%e4%ba%8c-%e5%88%9b%e5%bb%ba%e6%9c%8d%e5%8a%a1%e5%99%a8-main-%e6%96%87%e4%bb%b6%e5%b9%b6-tsconfig-%e4%bb%a5%e7%94%9f%e6%88%90%e5%ae%83">#</a>
+</h2>
+<p>Create a main file for your Universal bundle. This file only needs to export your <code>AppServerModule</code>. It can go in <code>src</code>. This example calls this file <code>main.server.ts</code>:<br>
+创建一个主文件为通用包. 这个文件只需要导出你的 <code>AppServerModule</code>. 它可以进去 <code>src</code>. 这个例子调用这个文件 <code>main.server.ts</code>:</p>
+<h3 id="srcmainserverts">
+  src/main.server.ts:
+  <a class="anchor" href="#srcmainserverts">#</a>
+</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="color:#66d9ef">export</span> { <span style="color:#a6e22e">AppServerModule</span> } <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#39;./app/app.server.module&#39;</span>;
+</code></pre></div><p>Copy <code>tsconfig.app.json</code> to <code>tsconfig.server.json</code> and change it to build with a <code>&quot;module&quot;</code> target of <code>&quot;commonjs&quot;</code>.<br>
+复制<code>tsconfig.app.json</code> 到 <code>tsconfig.server.json</code> 并改变它与建立一个 <code>&quot;module&quot;</code> 目标为 <code>&quot;commonjs&quot;</code>.</p>
+<p>Add a section for <code>&quot;angularCompilerOptions&quot;</code> and set <code>&quot;entryModule&quot;</code> to your <code>AppServerModule</code>, specified as a path to the import with a hash (<code>#</code>) containing the symbol name. In this example, this would be <code>app/app.server.module#AppServerModule</code>.<br>
+为 <code>“angularCompilerOptions”</code> 添加一个属性并将 <code>“entryModule”</code> 设置为您的<code>AppServerModule</code>，使用包含符号名称的散列（＃）指定为导入路径。在这个例子中，这将是<code>app/app.server.module＃AppServerModule</code>。</p>
+<h3 id="srctsconfigserverjson">
+  src/tsconfig.server.json:
+  <a class="anchor" href="#srctsconfigserverjson">#</a>
+</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">{
+  <span style="color:#e6db74">&#34;extends&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;../tsconfig.json&#34;</span>,
+  <span style="color:#e6db74">&#34;compilerOptions&#34;</span><span style="color:#f92672">:</span> {
+    <span style="color:#e6db74">&#34;outDir&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;../out-tsc/app&#34;</span>,
+    <span style="color:#e6db74">&#34;baseUrl&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;./&#34;</span>,
+    <span style="color:#75715e">// Set the module format to &#34;commonjs&#34;:
+</span><span style="color:#75715e"></span>    <span style="color:#e6db74">&#34;module&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;commonjs&#34;</span>,
+    <span style="color:#e6db74">&#34;types&#34;</span><span style="color:#f92672">:</span> []
+  },
+  <span style="color:#e6db74">&#34;exclude&#34;</span><span style="color:#f92672">:</span> [
+    <span style="color:#e6db74">&#34;test.ts&#34;</span>,
+    <span style="color:#e6db74">&#34;**/*.spec.ts&#34;</span>
+  ],
+  <span style="color:#75715e">// Add &#34;angularCompilerOptions&#34; with the AppServerModule you wrote
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">// set as the &#34;entryModule&#34;.
+</span><span style="color:#75715e"></span>  <span style="color:#e6db74">&#34;angularCompilerOptions&#34;</span><span style="color:#f92672">:</span> {
+    <span style="color:#e6db74">&#34;entryModule&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;app/app.server.module#AppServerModule&#34;</span>
+  }
+}
+</code></pre></div><hr>
+<h2 id="step-3-create-a-new-target-in-angularjson">
+  Step 3: Create a new target in <code>angular.json</code>
+  <a class="anchor" href="#step-3-create-a-new-target-in-angularjson">#</a>
+</h2>
+<h2 id="步骤三-在-angularjson-中创建一个目标">
+  步骤三: 在 <code>angular.json</code> 中创建一个目标
+  <a class="anchor" href="#%e6%ad%a5%e9%aa%a4%e4%b8%89-%e5%9c%a8-angularjson-%e4%b8%ad%e5%88%9b%e5%bb%ba%e4%b8%80%e4%b8%aa%e7%9b%ae%e6%a0%87">#</a>
+</h2>
+<p>In <code>angular.json</code> locate the <code>architect</code> property inside your project, and add a new <code>server</code>
+target:<br>
+在 <code>angular.json</code> 中找到项目中的 <code>architect</code> 属性，并添加一个新的 <code>server</code> 属性：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#e6db74">&#34;architect&#34;</span><span style="color:#f92672">:</span> {
+  <span style="color:#e6db74">&#34;build&#34;</span><span style="color:#f92672">:</span> { ... }
+  <span style="color:#e6db74">&#34;server&#34;</span><span style="color:#f92672">:</span> {
+    <span style="color:#e6db74">&#34;builder&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;@angular-devkit/build-angular:server&#34;</span>,
+    <span style="color:#e6db74">&#34;options&#34;</span><span style="color:#f92672">:</span> {
+      <span style="color:#e6db74">&#34;outputPath&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;dist/your-project-name-server&#34;</span>,
+      <span style="color:#e6db74">&#34;main&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;src/main.server.ts&#34;</span>,
+      <span style="color:#e6db74">&#34;tsConfig&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;src/tsconfig.server.json&#34;</span>
+    }
+  }
+}
+</code></pre></div><h2 id="building-the-bundle">
+  Building the bundle
+  <a class="anchor" href="#building-the-bundle">#</a>
+</h2>
+<h2 id="构建包">
+  构建包
+  <a class="anchor" href="#%e6%9e%84%e5%bb%ba%e5%8c%85">#</a>
+</h2>
+<p>With these steps complete, you should be able to build a server bundle for your application, using the <code>--app</code> flag to tell the CLI to build the server bundle, referencing its index of <code>1</code> in the <code>&quot;apps&quot;</code> array in <code>.angular-cli.json</code>:<br>
+完成这些步骤后，您应该能够为应用程序构建一个服务器包，使用 <code>--app</code> 标志告诉CLI构建服务器包，在.` angular-cli.json 中apps”数组中引用索引1以.json：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># This builds your project using the server target, and places the output</span>
+<span style="color:#75715e"># in dist/your-project-name-server/</span>
+$ ng run your-project-name:server
+
+Date: 2017-07-24T22:42:09.739Z
+Hash: 9cac7d8e9434007fd8da
+Time: 4933ms
+chunk <span style="color:#f92672">{</span>0<span style="color:#f92672">}</span> main.js <span style="color:#f92672">(</span>main<span style="color:#f92672">)</span> 9.49 kB <span style="color:#f92672">[</span>entry<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>rendered<span style="color:#f92672">]</span>
+chunk <span style="color:#f92672">{</span>1<span style="color:#f92672">}</span> styles.css <span style="color:#f92672">(</span>styles<span style="color:#f92672">)</span> <span style="color:#ae81ff">0</span> bytes <span style="color:#f92672">[</span>entry<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>rendered<span style="color:#f92672">]</span>
+</code></pre></div><hr>
+<h2 id="step-4-setting-up-an-express-server-to-run-our-universal-bundles">
+  Step 4: Setting up an Express Server to run our Universal bundles
+  <a class="anchor" href="#step-4-setting-up-an-express-server-to-run-our-universal-bundles">#</a>
+</h2>
+<h2 id="设置express服务器来运行我们的universal套件">
+  设置Express服务器来运行我们的Universal套件
+  <a class="anchor" href="#%e8%ae%be%e7%bd%aeexpress%e6%9c%8d%e5%8a%a1%e5%99%a8%e6%9d%a5%e8%bf%90%e8%a1%8c%e6%88%91%e4%bb%ac%e7%9a%84universal%e5%a5%97%e4%bb%b6">#</a>
+</h2>
+<p>Now that we have everything set up to -make- the bundles, how we get everything running?<br>
+现在我们已经把所有东西都设置成了 - 捆绑包，我们如何让所有的东西都运行？</p>
+<p>PlatformServer offers a method called <code>renderModuleFactory()</code> that we can use to pass in our AoT&rsquo;d AppServerModule, to serialize our application, and then we&rsquo;ll be returning that result to the Browser.<br>
+PlatformServer提供了一个名为 <code>renderModuleFactory()</code> 的方法，我们可以使用它传递我们的预编译支持AppServerModule，序列化我们的应用程序，然后我们将返回结果给浏览器。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">engine</span>(<span style="color:#e6db74">&#39;html&#39;</span>, (<span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">options</span>, <span style="color:#a6e22e">callback</span>) <span style="color:#f92672">=&gt;</span> {
+  <span style="color:#a6e22e">renderModuleFactory</span>(<span style="color:#a6e22e">AppServerModuleNgFactory</span>, {
+    <span style="color:#75715e">// Our index.html
+</span><span style="color:#75715e"></span>    document<span style="color:#f92672">:</span> <span style="color:#a6e22e">template</span>,
+    <span style="color:#a6e22e">url</span>: <span style="color:#66d9ef">options.req.url</span>,
+    <span style="color:#75715e">// DI so that we can get lazy-loading to work differently (since we need it to just instantly render it)
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">extraProviders</span><span style="color:#f92672">:</span> [
+      <span style="color:#a6e22e">provideModuleMap</span>(<span style="color:#a6e22e">LAZY_MODULE_MAP</span>)
+    ]
+  }).<span style="color:#a6e22e">then</span>(<span style="color:#a6e22e">html</span> <span style="color:#f92672">=&gt;</span> {
+    <span style="color:#a6e22e">callback</span>(<span style="color:#66d9ef">null</span>, <span style="color:#a6e22e">html</span>);
+  });
+});
+</code></pre></div><p>You could do this, if you want complete flexibility, or use an express-engine with a few other built in features from <a href="https://github.com/angular/universal/tree/master/modules/express-engine"><code>@nguniversal/express-engine</code></a> found here.<br>
+你可以做到这一点，如果你想要完全的灵活性，或者使用Express引擎和其他一些内置的功能，你可以在这里找到 <code>@nguniversal/express-engine</code>。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="color:#75715e">// It&#39;s used as easily as
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">ngExpressEngine</span> } <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#39;@nguniversal/express-engine&#39;</span>;
+
+<span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">engine</span>(<span style="color:#e6db74">&#39;html&#39;</span>, <span style="color:#a6e22e">ngExpressEngine</span>({
+  <span style="color:#a6e22e">bootstrap</span>: <span style="color:#66d9ef">AppServerModuleNgFactory</span>,
+  <span style="color:#a6e22e">providers</span><span style="color:#f92672">:</span> [
+    <span style="color:#a6e22e">provideModuleMap</span>(<span style="color:#a6e22e">LAZY_MODULE_MAP</span>)
+  ]
+}));
+</code></pre></div><p>Below we can see a TypeScript implementation of a -very- simple Express server to fire everything up.<br>
+下面我们可以看到一个简单的Express服务器的TypeScript实现来启动一切</p>
+<blockquote>
+<p>Note: This is a very bare bones Express application, and is just for demonstrations sake. In a real production environment, you&rsquo;d want to make sure you have other authentication and security things setup here as well. This is just meant just to show the specific things needed that are relevant to Universal itself. The rest is up to you!<br>
+注意：这是一个非常简单的Express应用程序，只是为了演示。在真实的生产环境中，您需要确保您在此处设置了其他身份验证和安全性功能。这只是为了显示与通用本身相关的具体事情。其余的由你决定！</p>
+</blockquote>
+<p>At the ROOT level of your project (where package.json / etc are), created a file named: <strong><code>server.ts</code></strong><br>
+在项目的根级别（package.json / etc所在的位置）创建一个名为：<strong><code>server.ts</code></strong> 的文件</p>
+<h3 id="serverts-root-project-level">
+  ./server.ts (root project level)
+  <a class="anchor" href="#serverts-root-project-level">#</a>
+</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="color:#75715e">// These are important and needed before anything else
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">import</span> <span style="color:#e6db74">&#39;zone.js/dist/zone-node&#39;</span>;
+<span style="color:#66d9ef">import</span> <span style="color:#e6db74">&#39;reflect-metadata&#39;</span>;
+
+<span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">renderModuleFactory</span> } <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#39;@angular/platform-server&#39;</span>;
+<span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">enableProdMode</span> } <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#39;@angular/core&#39;</span>;
+
+<span style="color:#66d9ef">import</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">as</span> <span style="color:#a6e22e">express</span> <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#39;express&#39;</span>;
+<span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">join</span> } <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#39;path&#39;</span>;
+<span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">readFileSync</span> } <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#39;fs&#39;</span>;
+
+<span style="color:#75715e">// Faster server renders w/ Prod mode (dev mode never needed)
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">enableProdMode</span>();
+
+<span style="color:#75715e">// Express server
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">app</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">express</span>();
+
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">PORT</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">process</span>.<span style="color:#a6e22e">env</span>.<span style="color:#a6e22e">PORT</span> <span style="color:#f92672">||</span> <span style="color:#ae81ff">4000</span>;
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">DIST_FOLDER</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">join</span>(<span style="color:#a6e22e">process</span>.<span style="color:#a6e22e">cwd</span>(), <span style="color:#e6db74">&#39;dist&#39;</span>);
+
+<span style="color:#75715e">// Our index.html we&#39;ll use as our template
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">template</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">readFileSync</span>(<span style="color:#a6e22e">join</span>(<span style="color:#a6e22e">DIST_FOLDER</span>, <span style="color:#e6db74">&#39;browser&#39;</span>, <span style="color:#e6db74">&#39;index.html&#39;</span>)).<span style="color:#a6e22e">toString</span>();
+
+<span style="color:#75715e">// * NOTE :: leave this as require() since this file is built Dynamically from webpack
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">AppServerModuleNgFactory</span>, <span style="color:#a6e22e">LAZY_MODULE_MAP</span> } <span style="color:#f92672">=</span> <span style="color:#66d9ef">require</span>(<span style="color:#e6db74">&#39;./dist/server/main.bundle&#39;</span>);
+
+<span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">provideModuleMap</span> } <span style="color:#f92672">=</span> <span style="color:#66d9ef">require</span>(<span style="color:#e6db74">&#39;@nguniversal/module-map-ngfactory-loader&#39;</span>);
+
+<span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">engine</span>(<span style="color:#e6db74">&#39;html&#39;</span>, (<span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">options</span>, <span style="color:#a6e22e">callback</span>) <span style="color:#f92672">=&gt;</span> {
+  <span style="color:#a6e22e">renderModuleFactory</span>(<span style="color:#a6e22e">AppServerModuleNgFactory</span>, {
+    <span style="color:#75715e">// Our index.html
+</span><span style="color:#75715e"></span>    document<span style="color:#f92672">:</span> <span style="color:#a6e22e">template</span>,
+    <span style="color:#a6e22e">url</span>: <span style="color:#66d9ef">options.req.url</span>,
+    <span style="color:#75715e">// DI so that we can get lazy-loading to work differently (since we need it to just instantly render it)
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">extraProviders</span><span style="color:#f92672">:</span> [
+      <span style="color:#a6e22e">provideModuleMap</span>(<span style="color:#a6e22e">LAZY_MODULE_MAP</span>)
+    ]
+  }).<span style="color:#a6e22e">then</span>(<span style="color:#a6e22e">html</span> <span style="color:#f92672">=&gt;</span> {
+    <span style="color:#a6e22e">callback</span>(<span style="color:#66d9ef">null</span>, <span style="color:#a6e22e">html</span>);
+  });
+});
+
+<span style="color:#a6e22e">app</span>.<span style="color:#66d9ef">set</span>(<span style="color:#e6db74">&#39;view engine&#39;</span>, <span style="color:#e6db74">&#39;html&#39;</span>);
+<span style="color:#a6e22e">app</span>.<span style="color:#66d9ef">set</span>(<span style="color:#e6db74">&#39;views&#39;</span>, <span style="color:#a6e22e">join</span>(<span style="color:#a6e22e">DIST_FOLDER</span>, <span style="color:#e6db74">&#39;browser&#39;</span>));
+
+<span style="color:#75715e">// Server static files from /browser
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">app</span>.<span style="color:#66d9ef">get</span>(<span style="color:#e6db74">&#39;*.*&#39;</span>, <span style="color:#a6e22e">express</span>.<span style="color:#66d9ef">static</span>(<span style="color:#a6e22e">join</span>(<span style="color:#a6e22e">DIST_FOLDER</span>, <span style="color:#e6db74">&#39;browser&#39;</span>)));
+
+<span style="color:#75715e">// All regular routes use the Universal engine
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">app</span>.<span style="color:#66d9ef">get</span>(<span style="color:#e6db74">&#39;*&#39;</span>, (<span style="color:#a6e22e">req</span>, <span style="color:#a6e22e">res</span>) <span style="color:#f92672">=&gt;</span> {
+  <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">render</span>(<span style="color:#a6e22e">join</span>(<span style="color:#a6e22e">DIST_FOLDER</span>, <span style="color:#e6db74">&#39;browser&#39;</span>, <span style="color:#e6db74">&#39;index.html&#39;</span>), { <span style="color:#a6e22e">req</span> });
+});
+
+<span style="color:#75715e">// Start up the Node server
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">listen</span>(<span style="color:#a6e22e">PORT</span>, () <span style="color:#f92672">=&gt;</span> {
+  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`Node server listening on http://localhost:</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">PORT</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>);
+});
+</code></pre></div><h2 id="step-5-setup-a-webpack-config-to-handle-this-node-serverts-file-and-serve-your-application">
+  Step 5: Setup a webpack config to handle this Node server.ts file and serve your application!
+  <a class="anchor" href="#step-5-setup-a-webpack-config-to-handle-this-node-serverts-file-and-serve-your-application">#</a>
+</h2>
+<h2 id="第5步设置一个webpack配置来处理这个node-serverts文件并为您的应用程序提供服务">
+  第5步：设置一个webpack配置来处理这个Node server.ts文件并为您的应用程序提供服务
+  <a class="anchor" href="#%e7%ac%ac5%e6%ad%a5%e8%ae%be%e7%bd%ae%e4%b8%80%e4%b8%aawebpack%e9%85%8d%e7%bd%ae%e6%9d%a5%e5%a4%84%e7%90%86%e8%bf%99%e4%b8%aanode-serverts%e6%96%87%e4%bb%b6%e5%b9%b6%e4%b8%ba%e6%82%a8%e7%9a%84%e5%ba%94%e7%94%a8%e7%a8%8b%e5%ba%8f%e6%8f%90%e4%be%9b%e6%9c%8d%e5%8a%a1">#</a>
+</h2>
+<p>Now that we have our Node Express server setup, we need to pack it and serve it!<br>
+现在我们已经安装了Node Express服务器，我们需要打包并提供服务！</p>
+<p>Create a file named <code>webpack.server.config.js</code> at the ROOT of your application.<br>
+在应用程序的ROOT处创建一个名为 <code>webpack.server.config.js</code> 的文件。</p>
+<blockquote>
+<p>This file basically takes that server.ts file, and takes it and compiles it and every dependency it has into <code>dist/server.js</code>.<br>
+这个文件基本上接受了server.ts文件，并将其编译到 <code>dist/server.js</code> 中。</p>
+</blockquote>
+<h3 id="webpackserverconfigjs-root-project-level">
+  ./webpack.server.config.js (root project level)
+  <a class="anchor" href="#webpackserverconfigjs-root-project-level">#</a>
+</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">path</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">require</span>(<span style="color:#e6db74">&#39;path&#39;</span>);
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">webpack</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">require</span>(<span style="color:#e6db74">&#39;webpack&#39;</span>);
+
+<span style="color:#66d9ef">module</span><span style="color:#a6e22e">.exports</span> <span style="color:#f92672">=</span> {
+  <span style="color:#a6e22e">entry</span><span style="color:#f92672">:</span> {  <span style="color:#a6e22e">server</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;./server.ts&#39;</span> },
+  <span style="color:#a6e22e">resolve</span><span style="color:#f92672">:</span> { <span style="color:#a6e22e">extensions</span><span style="color:#f92672">:</span> [<span style="color:#e6db74">&#39;.js&#39;</span>, <span style="color:#e6db74">&#39;.ts&#39;</span>] },
+  <span style="color:#a6e22e">target</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;node&#39;</span>,
+  <span style="color:#75715e">// this makes sure we include node_modules and other 3rd party libraries
+</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">externals</span><span style="color:#f92672">:</span> [<span style="color:#e6db74">/(node_modules|main\..*\.js)/</span>],
+  <span style="color:#a6e22e">output</span><span style="color:#f92672">:</span> {
+    <span style="color:#a6e22e">path</span>: <span style="color:#66d9ef">path.join</span>(<span style="color:#a6e22e">__dirname</span>, <span style="color:#e6db74">&#39;dist&#39;</span>),
+    <span style="color:#a6e22e">filename</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;[name].js&#39;</span>
+  },
+  <span style="color:#a6e22e">module</span><span style="color:#f92672">:</span> {
+    <span style="color:#a6e22e">rules</span><span style="color:#f92672">:</span> [
+      { <span style="color:#a6e22e">test</span><span style="color:#f92672">:</span> <span style="color:#e6db74">/\.ts$/</span>, <span style="color:#a6e22e">loader</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;ts-loader&#39;</span> }
+    ]
+  },
+  <span style="color:#a6e22e">plugins</span><span style="color:#f92672">:</span> [
+    <span style="color:#75715e">// Temporary Fix for issue: https://github.com/angular/angular/issues/11580
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">// for &#34;WARNING Critical dependency: the request of a dependency is an expression&#34;
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">webpack</span>.<span style="color:#a6e22e">ContextReplacementPlugin</span>(
+      <span style="color:#e6db74">/(.+)?angular(\\|\/)core(.+)?/</span>,
+      <span style="color:#a6e22e">path</span>.<span style="color:#a6e22e">join</span>(<span style="color:#a6e22e">__dirname</span>, <span style="color:#e6db74">&#39;src&#39;</span>), <span style="color:#75715e">// location of your src
+</span><span style="color:#75715e"></span>      {} <span style="color:#75715e">// a map of your routes
+</span><span style="color:#75715e"></span>    ),
+    <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">webpack</span>.<span style="color:#a6e22e">ContextReplacementPlugin</span>(
+      <span style="color:#e6db74">/(.+)?express(\\|\/)(.+)?/</span>,
+      <span style="color:#a6e22e">path</span>.<span style="color:#a6e22e">join</span>(<span style="color:#a6e22e">__dirname</span>, <span style="color:#e6db74">&#39;src&#39;</span>),
+      {}
+    )
+  ]
+}
+</code></pre></div><p><strong>Almost there!</strong><br>
+<strong>差不多了！</strong></p>
+<p>Now let&rsquo;s see what our resulting structure should look like, if we open up our <code>/dist/</code> folder we should see:<br>
+现在让我们看看我们的结构应该是什么样子，如果我们打开我们应该看到的 <code>/dist/</code> 文件夹：</p>
+<pre tabindex="0"><code>/dist/
+   /browser/
+   /server/
+</code></pre><p>To fire up the application, in your terminal enter<br>
+要启动应用程序，请在终端中输入</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">node dist/server.js
+</code></pre></div><p>:sparkles:</p>
+<p>Now lets create a few handy scripts to help us do all of this in the future.<br>
+现在让我们创建一些便利的脚本来帮助我们在未来完成所有这些。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json"><span style="color:#e6db74">&#34;scripts&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> {
+
+  <span style="color:#960050;background-color:#1e0010">//</span> <span style="color:#960050;background-color:#1e0010">These</span> <span style="color:#960050;background-color:#1e0010">will</span> <span style="color:#960050;background-color:#1e0010">be</span> <span style="color:#960050;background-color:#1e0010">your</span> <span style="color:#960050;background-color:#1e0010">common</span> <span style="color:#960050;background-color:#1e0010">scripts</span>
+  <span style="color:#f92672">&#34;build:ssr&#34;</span>: <span style="color:#e6db74">&#34;npm run build:client-and-server-bundles &amp;&amp; npm run webpack:server&#34;</span>,
+  <span style="color:#f92672">&#34;serve:ssr&#34;</span>: <span style="color:#e6db74">&#34;node dist/server.js&#34;</span>,
+
+  <span style="color:#960050;background-color:#1e0010">//</span> <span style="color:#960050;background-color:#1e0010">Helpers</span> <span style="color:#960050;background-color:#1e0010">for</span> <span style="color:#960050;background-color:#1e0010">the</span> <span style="color:#960050;background-color:#1e0010">above</span> <span style="color:#960050;background-color:#1e0010">scripts</span>
+  <span style="color:#f92672">&#34;build:client-and-server-bundles&#34;</span>: <span style="color:#e6db74">&#34;ng build --prod &amp;&amp; ng build --prod --app 1 --output-hashing=false&#34;</span>,
+  <span style="color:#f92672">&#34;webpack:server&#34;</span>: <span style="color:#e6db74">&#34;webpack --config webpack.server.config.js --progress --colors&#34;</span>
+}
+</code></pre></div><p>In the future when you want to see a Production build of your app with Universal (locally), you can simply run:<br>
+在将来，当您想通过Universal（本地）查看您的应用程序的Production版本时，只需运行：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">npm run build:ssr <span style="color:#f92672">&amp;&amp;</span> npm run serve:ssr
+</code></pre></div><p>Enjoy!<br>
+欣赏!</p>
+<p>Once again to see a working version of everything, check out the <a href="https://github.com/angular/universal-starter">universal-starter</a>.<br>
+再次看到一切的工作版本，请查看<a href="https://github.com/angular/universal-starter">通用启动器</a>。</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+  
+
+  
+
+  <script src="https://utteranc.es/client.js" repo="wanyijie/blog" issue-term="pathname" label="web"
+    theme="github-light" crossorigin="anonymous" async>
+    </script>
+</div>
+
+
+
+<script>{ { . | safeJS } }</script>
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#example-cli-integration">Example CLI Integration:</a></li>
+    <li><a href="#cli-集成例子">CLI 集成例子:</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#install-dependencies">Install Dependencies</a></li>
+    <li><a href="#安装依赖">安装依赖</a></li>
+    <li><a href="#step-1-prepare-your-app-for-universal-rendering">Step 1: Prepare your App for Universal rendering</a></li>
+    <li><a href="#步骤一准备您的应用程序进行通用渲染">步骤一：准备您的应用程序进行通用渲染</a>
+      <ul>
+        <li><a href="#srcappappmodulets">src/app/app.module.ts:</a></li>
+        <li><a href="#srcappappservermodulets">src/app/app.server.module.ts:</a></li>
+      </ul>
+    </li>
+    <li><a href="#step-2-create-a-server-main-file-and-tsconfig-to-build-it">Step 2: Create a server &ldquo;main&rdquo; file and tsconfig to build it</a></li>
+    <li><a href="#步骤二-创建服务器-main-文件并-tsconfig-以生成它">步骤二: 创建服务器 &ldquo;main&rdquo; 文件并 tsconfig 以生成它</a>
+      <ul>
+        <li><a href="#srcmainserverts">src/main.server.ts:</a></li>
+        <li><a href="#srctsconfigserverjson">src/tsconfig.server.json:</a></li>
+      </ul>
+    </li>
+    <li><a href="#step-3-create-a-new-target-in-angularjson">Step 3: Create a new target in <code>angular.json</code></a></li>
+    <li><a href="#步骤三-在-angularjson-中创建一个目标">步骤三: 在 <code>angular.json</code> 中创建一个目标</a></li>
+    <li><a href="#building-the-bundle">Building the bundle</a></li>
+    <li><a href="#构建包">构建包</a></li>
+    <li><a href="#step-4-setting-up-an-express-server-to-run-our-universal-bundles">Step 4: Setting up an Express Server to run our Universal bundles</a></li>
+    <li><a href="#设置express服务器来运行我们的universal套件">设置Express服务器来运行我们的Universal套件</a>
+      <ul>
+        <li><a href="#serverts-root-project-level">./server.ts (root project level)</a></li>
+      </ul>
+    </li>
+    <li><a href="#step-5-setup-a-webpack-config-to-handle-this-node-serverts-file-and-serve-your-application">Step 5: Setup a webpack config to handle this Node server.ts file and serve your application!</a></li>
+    <li><a href="#第5步设置一个webpack配置来处理这个node-serverts文件并为您的应用程序提供服务">第5步：设置一个webpack配置来处理这个Node server.ts文件并为您的应用程序提供服务</a>
+      <ul>
+        <li><a href="#webpackserverconfigjs-root-project-level">./webpack.server.config.js (root project level)</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6266541561533854"
+     crossorigin="anonymous"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

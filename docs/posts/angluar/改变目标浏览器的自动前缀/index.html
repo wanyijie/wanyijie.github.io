@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Change target browsers for Autoprefixer#改变目标浏览器的自动前缀#Currently, the CLI uses Autoprefixer to ensure compatibility with different browser and browser versions. You may find it necessary to target specific browsers or exclude certain browser versions from your build.
+当前, CLI使用 Autoprefixer 来确定合适不同的浏览器和版本，你可以发现它必须指明特定的浏览器或不包括某个浏览器版本从你的构建。
+Internally, Autoprefixer relies on a library called Browserslist to figure out which browsers to support with prefixing.
+在内部，自动前缀依赖一个库叫Browserslist 用来算出哪些浏览器支持前缀
+There are a few ways to tell Autoprefixer what browsers to target:">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="" />
+<meta property="og:description" content="Change target browsers for Autoprefixer#改变目标浏览器的自动前缀#Currently, the CLI uses Autoprefixer to ensure compatibility with different browser and browser versions. You may find it necessary to target specific browsers or exclude certain browser versions from your build.
+当前, CLI使用 Autoprefixer 来确定合适不同的浏览器和版本，你可以发现它必须指明特定的浏览器或不包括某个浏览器版本从你的构建。
+Internally, Autoprefixer relies on a library called Browserslist to figure out which browsers to support with prefixing.
+在内部，自动前缀依赖一个库叫Browserslist 用来算出哪些浏览器支持前缀
+There are a few ways to tell Autoprefixer what browsers to target:" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://wangyijie.store/posts/angluar/%E6%94%B9%E5%8F%98%E7%9B%AE%E6%A0%87%E6%B5%8F%E8%A7%88%E5%99%A8%E7%9A%84%E8%87%AA%E5%8A%A8%E5%89%8D%E7%BC%80/" /><meta property="article:section" content="posts" />
+
+
+
+<title>改变目标浏览器的自动前缀 | hope to be a great computer technology Site</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.46181bc93375ba932026e753b37c40e6ff8bb16a9ef770c78bcc663e4577b1ba.css" integrity="sha256-RhgbyTN1upMgJudTs3xA5v&#43;LsWqe93DHi8xmPkV3sbo=" crossorigin="anonymous">
+  <script defer src="/flexsearch.min.js"></script>
+  <script defer src="/en.search.min.fdba0647c9501127a41f26adcab0438eb8555e76b0481ad7bc42620c87ea0e43.js" integrity="sha256-/boGR8lQESekHyatyrBDjrhVXnawSBrXvEJiDIfqDkM=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>hope to be a great computer technology Site</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/posts/" >
+        Posts
+      </a>
+      
+<ul>
+  
+  <li>
+    <a href="/posts/angluar/" >
+        angular
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/ansible/" >
+        ansible
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/cicd/" >
+        CICD
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/devops/" >
+        DevOps
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/english/" >
+        English
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/golang/" >
+        golang
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/istio/" >
+        istio
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/kubernetes/" >
+        Kubernetes
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/material2/" >
+        mererial2
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/mysql/" >
+        mysql
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/postgresql/" >
+        postgresql
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/python/" >
+        python
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/cloud/" >
+        云服务
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/security/" >
+        安全
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/container/" >
+        容器
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/literature/" >
+        文学
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/diary/" >
+        日记
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/machine_learning/" >
+        机器学习
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/monitor/" >
+        监控
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/sre/" >
+        站点可靠性工程
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/network/" >
+        网络
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/poetry/" >
+        诗歌
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/essay/" >
+        随笔
+      </a>
+  </li>
+  
+</ul>
+
+  </li>
+  
+  <li>
+    <a href="/about/" >
+        关于作者
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var a=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(b){localStorage.setItem("menu.scrollTop",a.scrollTop)}),a.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>改变目标浏览器的自动前缀</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#add-a-browserslist-property-to-the-packagejson-file">Add a browserslist property to the <code>package.json</code> file</a></li>
+        <li><a href="#增加浏览器列表的特征到-packagejson-文件">增加浏览器列表的特征到 <code>package.json</code> 文件</a></li>
+        <li><a href="#add-a-new-file-to-the-project-directory-called-browserslistrc">Add a new file to the project directory called <code>.browserslistrc</code></a></li>
+        <li><a href="#增加一些文件到项目目录叫-browserslistrc">增加一些文件到项目，目录叫 <code>.browserslistrc</code></a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+<article class="markdown">
+  <h1>
+    <a href="/posts/angluar/%E6%94%B9%E5%8F%98%E7%9B%AE%E6%A0%87%E6%B5%8F%E8%A7%88%E5%99%A8%E7%9A%84%E8%87%AA%E5%8A%A8%E5%89%8D%E7%BC%80/">改变目标浏览器的自动前缀</a>
+  </h1>
+  
+
+
+  
+
+  
+
+
+
+<h1 id="change-target-browsers-for-autoprefixer">
+  Change target browsers for Autoprefixer
+  <a class="anchor" href="#change-target-browsers-for-autoprefixer">#</a>
+</h1>
+<h1 id="改变目标浏览器的自动前缀">
+  改变目标浏览器的自动前缀
+  <a class="anchor" href="#%e6%94%b9%e5%8f%98%e7%9b%ae%e6%a0%87%e6%b5%8f%e8%a7%88%e5%99%a8%e7%9a%84%e8%87%aa%e5%8a%a8%e5%89%8d%e7%bc%80">#</a>
+</h1>
+<p>Currently, the CLI uses <a href="https://github.com/postcss/autoprefixer">Autoprefixer</a> to ensure compatibility
+with different browser and browser versions. You may find it necessary to target specific browsers
+or exclude certain browser versions from your build.<br>
+当前, CLI使用 <a href="https://github.com/postcss/autoprefixer">Autoprefixer</a> 来确定合适不同的浏览器和版本，你可以发现它必须指明特定的浏览器或不包括某个浏览器版本从你的构建。</p>
+<p>Internally, Autoprefixer relies on a library called <a href="https://github.com/ai/browserslist">Browserslist</a>
+to figure out which browsers to support with prefixing.<br>
+在内部，自动前缀依赖一个库叫<a href="https://github.com/ai/browserslist">Browserslist</a> 用来算出哪些浏览器支持前缀</p>
+<p>There are a few ways to tell Autoprefixer what browsers to target:<br>
+这儿是一些方法告诉自动前缀目标浏览器：</p>
+<h3 id="add-a-browserslist-property-to-the-packagejson-file">
+  Add a browserslist property to the <code>package.json</code> file
+  <a class="anchor" href="#add-a-browserslist-property-to-the-packagejson-file">#</a>
+</h3>
+<h3 id="增加浏览器列表的特征到-packagejson-文件">
+  增加浏览器列表的特征到 <code>package.json</code> 文件
+  <a class="anchor" href="#%e5%a2%9e%e5%8a%a0%e6%b5%8f%e8%a7%88%e5%99%a8%e5%88%97%e8%a1%a8%e7%9a%84%e7%89%b9%e5%be%81%e5%88%b0-packagejson-%e6%96%87%e4%bb%b6">#</a>
+</h3>
+<pre tabindex="0"><code>&quot;browserslist&quot;: [
+  &quot;&gt; 1%&quot;,
+  &quot;last 2 versions&quot;
+]
+</code></pre><h3 id="add-a-new-file-to-the-project-directory-called-browserslistrc">
+  Add a new file to the project directory called <code>.browserslistrc</code>
+  <a class="anchor" href="#add-a-new-file-to-the-project-directory-called-browserslistrc">#</a>
+</h3>
+<h3 id="增加一些文件到项目目录叫-browserslistrc">
+  增加一些文件到项目，目录叫 <code>.browserslistrc</code>
+  <a class="anchor" href="#%e5%a2%9e%e5%8a%a0%e4%b8%80%e4%ba%9b%e6%96%87%e4%bb%b6%e5%88%b0%e9%a1%b9%e7%9b%ae%e7%9b%ae%e5%bd%95%e5%8f%ab-browserslistrc">#</a>
+</h3>
+<pre tabindex="0"><code>### Supported Browsers
+### 支持的浏览器
+
+&gt; 1%
+last 2 versions
+</code></pre><p>Autoprefixer will look for the configuration file/property to use when it prefixes your css.
+Check out the <a href="https://github.com/ai/browserslist">browserslist repo</a> for more examples of how to target
+specific browsers and versions.<br>
+自动前缀将寻找要使用的配置文件或属性，前缀是css. 检出<a href="https://github.com/ai/browserslist">browserslist repo</a> 为怎样标记特定浏览器或ban&rsquo;j的更多例子。</p>
+<p><em>Side note:</em>
+Those who are seeking to produce a <a href="https://developers.google.com/web/progressive-web-apps/">progressive web app</a> and are using <a href="https://developers.google.com/web/tools/lighthouse/">Lighthouse</a> to grade the project will
+need to add the following browserslist config to their package.json file to eliminate the <a href="https://developers.google.com/web/tools/lighthouse/audits/old-flexbox">old flexbox</a> prefixes<br>
+<em>便笺:</em>
+那些试图制作<a href="https://developers.google.com/web/progressive-web-apps/">progressive web app</a> 和使用grade项目将需要增加下列浏览器列表配置他们的package.json文件消除<a href="https://developers.google.com/web/tools/lighthouse/audits/old-flexbox">old flexbox</a>前缀</p>
+<p><code>package.json</code> 配置:</p>
+<pre tabindex="0"><code>&quot;browserslist&quot;: [
+  &quot;last 2 versions&quot;,
+  &quot;not ie &lt;= 10&quot;,
+  &quot;not ie_mob &lt;= 10&quot;
+]
+</code></pre></article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+  
+
+  
+
+  <script src="https://utteranc.es/client.js" repo="wanyijie/blog" issue-term="pathname" label="web"
+    theme="github-light" crossorigin="anonymous" async>
+    </script>
+</div>
+
+
+
+<script>{ { . | safeJS } }</script>
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#add-a-browserslist-property-to-the-packagejson-file">Add a browserslist property to the <code>package.json</code> file</a></li>
+        <li><a href="#增加浏览器列表的特征到-packagejson-文件">增加浏览器列表的特征到 <code>package.json</code> 文件</a></li>
+        <li><a href="#add-a-new-file-to-the-project-directory-called-browserslistrc">Add a new file to the project directory called <code>.browserslistrc</code></a></li>
+        <li><a href="#增加一些文件到项目目录叫-browserslistrc">增加一些文件到项目，目录叫 <code>.browserslistrc</code></a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6266541561533854"
+     crossorigin="anonymous"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

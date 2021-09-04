@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Include Bootstrap#包括 Bootstrap#Bootstrap is a popular CSS framework which can be used within an Angular project. This guide will walk you through adding bootstrap to your Angular CLI project and configuring it to use bootstrap.
+Bootstrap 是一个流行的CSS框架，可以在Angular项目中使用。本指南将引导您为Angular CLI项目添加引导程序并将其配置为使用引导程序。
+Using CSS#使用CSS#Getting Started#开始#Create a new project and navigate into the project
+创建一个新项目并导航到项目中
+ng new my-app cd my-app Installing Bootstrap#安装 Bootstrap#With the new project created and ready you will next need to install bootstrap to your project as a dependency.">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="" />
+<meta property="og:description" content="Include Bootstrap#包括 Bootstrap#Bootstrap is a popular CSS framework which can be used within an Angular project. This guide will walk you through adding bootstrap to your Angular CLI project and configuring it to use bootstrap.
+Bootstrap 是一个流行的CSS框架，可以在Angular项目中使用。本指南将引导您为Angular CLI项目添加引导程序并将其配置为使用引导程序。
+Using CSS#使用CSS#Getting Started#开始#Create a new project and navigate into the project
+创建一个新项目并导航到项目中
+ng new my-app cd my-app Installing Bootstrap#安装 Bootstrap#With the new project created and ready you will next need to install bootstrap to your project as a dependency." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://wangyijie.store/posts/angluar/angular-%E4%BD%BF%E7%94%A8-bootstrap/" /><meta property="article:section" content="posts" />
+
+
+
+<title>Angular 使用 Bootstrap | hope to be a great computer technology Site</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.46181bc93375ba932026e753b37c40e6ff8bb16a9ef770c78bcc663e4577b1ba.css" integrity="sha256-RhgbyTN1upMgJudTs3xA5v&#43;LsWqe93DHi8xmPkV3sbo=" crossorigin="anonymous">
+  <script defer src="/flexsearch.min.js"></script>
+  <script defer src="/en.search.min.fdba0647c9501127a41f26adcab0438eb8555e76b0481ad7bc42620c87ea0e43.js" integrity="sha256-/boGR8lQESekHyatyrBDjrhVXnawSBrXvEJiDIfqDkM=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>hope to be a great computer technology Site</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/posts/" >
+        Posts
+      </a>
+      
+<ul>
+  
+  <li>
+    <a href="/posts/angluar/" >
+        angular
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/ansible/" >
+        ansible
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/cicd/" >
+        CICD
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/devops/" >
+        DevOps
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/english/" >
+        English
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/golang/" >
+        golang
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/istio/" >
+        istio
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/kubernetes/" >
+        Kubernetes
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/material2/" >
+        mererial2
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/mysql/" >
+        mysql
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/postgresql/" >
+        postgresql
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/python/" >
+        python
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/cloud/" >
+        云服务
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/security/" >
+        安全
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/container/" >
+        容器
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/literature/" >
+        文学
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/diary/" >
+        日记
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/machine_learning/" >
+        机器学习
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/monitor/" >
+        监控
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/sre/" >
+        站点可靠性工程
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/network/" >
+        网络
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/poetry/" >
+        诗歌
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/essay/" >
+        随笔
+      </a>
+  </li>
+  
+</ul>
+
+  </li>
+  
+  <li>
+    <a href="/about/" >
+        关于作者
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var a=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(b){localStorage.setItem("menu.scrollTop",a.scrollTop)}),a.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Angular 使用 Bootstrap</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#using-css">Using CSS</a></li>
+    <li><a href="#使用css">使用CSS</a>
+      <ul>
+        <li><a href="#getting-started">Getting Started</a></li>
+        <li><a href="#开始">开始</a></li>
+        <li><a href="#installing-bootstrap">Installing Bootstrap</a></li>
+        <li><a href="#安装-bootstrap">安装 Bootstrap</a></li>
+        <li><a href="#configuring-project">Configuring Project</a></li>
+        <li><a href="#配置项目">配置项目</a></li>
+        <li><a href="#testing-project">Testing Project</a></li>
+        <li><a href="#测试项目">测试项目</a></li>
+      </ul>
+    </li>
+    <li><a href="#using-sass">Using SASS</a></li>
+    <li><a href="#使用-sass">使用 SASS</a>
+      <ul>
+        <li><a href="#getting-started-1">Getting Started</a></li>
+        <li><a href="#开始-1">开始</a></li>
+        <li><a href="#installing-bootstrap-1">Installing Bootstrap</a></li>
+        <li><a href="#安装-bootstrap-1">安装 Bootstrap</a></li>
+        <li><a href="#configuring-project-1">Configuring Project</a></li>
+        <li><a href="#配置项目-1">配置项目</a></li>
+        <li><a href="#testing-project-1">Testing Project</a></li>
+        <li><a href="#测试项目-1">测试项目</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+<article class="markdown">
+  <h1>
+    <a href="/posts/angluar/angular-%E4%BD%BF%E7%94%A8-bootstrap/">Angular 使用 Bootstrap</a>
+  </h1>
+  
+
+
+  
+
+  
+
+
+
+Include <h1 id="include-bootstraphttpgetbootstrapcom">
+  <a href="http://getbootstrap.com/">Bootstrap</a>
+  <a class="anchor" href="#include-bootstraphttpgetbootstrapcom">#</a>
+</h1>
+包括 <h1 id="包括-bootstraphttpgetbootstrapcom">
+  <a href="http://getbootstrap.com/">Bootstrap</a>
+  <a class="anchor" href="#%e5%8c%85%e6%8b%ac-bootstraphttpgetbootstrapcom">#</a>
+</h1>
+<p><a href="http://getbootstrap.com/">Bootstrap</a> is a popular CSS framework which can be used within an Angular project.
+This guide will walk you through adding bootstrap to your Angular CLI project and configuring it to use bootstrap.<br>
+<a href="http://getbootstrap.com/">Bootstrap</a> 是一个流行的CSS框架，可以在Angular项目中使用。本指南将引导您为Angular CLI项目添加引导程序并将其配置为使用引导程序。</p>
+<h2 id="using-css">
+  Using CSS
+  <a class="anchor" href="#using-css">#</a>
+</h2>
+<h2 id="使用css">
+  使用CSS
+  <a class="anchor" href="#%e4%bd%bf%e7%94%a8css">#</a>
+</h2>
+<h3 id="getting-started">
+  Getting Started
+  <a class="anchor" href="#getting-started">#</a>
+</h3>
+<h3 id="开始">
+  开始
+  <a class="anchor" href="#%e5%bc%80%e5%a7%8b">#</a>
+</h3>
+<p>Create a new project and navigate into the project<br>
+创建一个新项目并导航到项目中</p>
+<pre tabindex="0"><code>ng new my-app
+cd my-app
+</code></pre><h3 id="installing-bootstrap">
+  Installing Bootstrap
+  <a class="anchor" href="#installing-bootstrap">#</a>
+</h3>
+<h3 id="安装-bootstrap">
+  安装 Bootstrap
+  <a class="anchor" href="#%e5%ae%89%e8%a3%85-bootstrap">#</a>
+</h3>
+<p>With the new project created and ready you will next need to install bootstrap to your project as a dependency.
+Using the <code>--save</code> option the dependency will be saved in package.json<br>
+随着新项目的创建和准备，接下来需要将引导程序作为依赖项安装到项目中。使用&ndash;save选项，依赖项将被保存在package.json中</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">npm install bootstrap --save
+</code></pre></div><h3 id="configuring-project">
+  Configuring Project
+  <a class="anchor" href="#configuring-project">#</a>
+</h3>
+<h3 id="配置项目">
+  配置项目
+  <a class="anchor" href="#%e9%85%8d%e7%bd%ae%e9%a1%b9%e7%9b%ae">#</a>
+</h3>
+<p>Now that the project is set up it must be configured to include the bootstrap CSS.<br>
+现在该项目已经建立，它必须配置为包含引导CSS。</p>
+<ul>
+<li>
+<p>Open the file <code>angular.json</code> from the root of your project.<br>
+从项目的根目录打开文件angular.json。</p>
+</li>
+<li>
+<p>Under the property <code>projects</code> find your project.<br>
+在项目属性下找到你的项目。</p>
+</li>
+<li>
+<p>Inside <code>architect.build.options</code> locate the <code>styles</code> property.<br>
+在 <code>architect.build.options</code> 内部找到 <code>styles</code> 属性。</p>
+</li>
+<li>
+<p>This property allows external global styles to be applied to your application.<br>
+该属性允许将外部全局样式应用于您的应用程序。</p>
+</li>
+<li>
+<p>Specify the path to <code>bootstrap.min.css</code><br>
+指定 <code>bootstrap.min.css</code> 的路径</p>
+<p>It should look like the following when you are done:<br>
+完成后它应该如下图所示：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json"><span style="color:#e6db74">&#34;build&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> {
+  <span style="color:#f92672">&#34;options&#34;</span>: {
+    <span style="color:#f92672">&#34;styles&#34;</span>: [
+      <span style="color:#e6db74">&#34;../node_modules/bootstrap/dist/css/bootstrap.min.css&#34;</span>,
+      <span style="color:#e6db74">&#34;styles.css&#34;</span>
+    ],
+  }
+}
+</code></pre></div></li>
+</ul>
+<p><strong>Note:</strong> When you make changes to <code>angular.json</code> you will need to re-start <code>ng serve</code> to pick up configuration changes.<br>
+注意：当您对 <code>angular.json</code> 进行更改时，您将需要重新启动服务来获取配置更改。</p>
+<h3 id="testing-project">
+  Testing Project
+  <a class="anchor" href="#testing-project">#</a>
+</h3>
+<h3 id="测试项目">
+  测试项目
+  <a class="anchor" href="#%e6%b5%8b%e8%af%95%e9%a1%b9%e7%9b%ae">#</a>
+</h3>
+<p>Open <code>app.component.html</code> and add the following markup:
+打开 <code>app.component.html</code> 添加下列标记:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">button</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;btn btn-primary&#34;</span>&gt;Test Button&lt;/<span style="color:#f92672">button</span>&gt;
+</code></pre></div><p>With the application configured, run <code>ng serve</code> to run your application in develop mode.
+In your browser navigate to the application <code>localhost:4200</code>.
+Verify the bootstrap styled button appears.<br>
+在配置应用程序后，运行 <code>ng serve</code> 以开发模式运行您的应用程序。在浏览器中导航到应用程序 <code>localhost:4200</code>。验证引导样式按钮出现。</p>
+<h2 id="using-sass">
+  Using SASS
+  <a class="anchor" href="#using-sass">#</a>
+</h2>
+<h2 id="使用-sass">
+  使用 SASS
+  <a class="anchor" href="#%e4%bd%bf%e7%94%a8-sass">#</a>
+</h2>
+<h3 id="getting-started-1">
+  Getting Started
+  <a class="anchor" href="#getting-started-1">#</a>
+</h3>
+<h3 id="开始-1">
+  开始
+  <a class="anchor" href="#%e5%bc%80%e5%a7%8b-1">#</a>
+</h3>
+<p>Create a new project and navigate into the project<br>
+创建一个新项目并导航到项目中</p>
+<pre tabindex="0"><code>ng new my-app --style=scss
+cd my-app
+</code></pre><h3 id="installing-bootstrap-1">
+  Installing Bootstrap
+  <a class="anchor" href="#installing-bootstrap-1">#</a>
+</h3>
+<h3 id="安装-bootstrap-1">
+  安装 Bootstrap
+  <a class="anchor" href="#%e5%ae%89%e8%a3%85-bootstrap-1">#</a>
+</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">npm install bootstrap --save
+</code></pre></div><h3 id="configuring-project-1">
+  Configuring Project
+  <a class="anchor" href="#configuring-project-1">#</a>
+</h3>
+<h3 id="配置项目-1">
+  配置项目
+  <a class="anchor" href="#%e9%85%8d%e7%bd%ae%e9%a1%b9%e7%9b%ae-1">#</a>
+</h3>
+<p>Create an empty file <code>_variables.scss</code> in <code>src/</code>.<br>
+在 <code>src/</code> 中创建一个文件 <code>_variables.scss</code></p>
+<p>If you are using <code>bootstrap-sass</code>, add the following to <code>_variables.scss</code>:
+如果你使用 <code>bootstrap-sass</code>, 将下面的内容添加到 <code>_variables.scss</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sass" data-lang="sass"><span style="color:#a6e22e">$icon-font-path</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;../node_modules/bootstrap-sass/assets/fonts/bootstrap/&#39;</span><span style="color:#960050;background-color:#1e0010">;</span>
+</code></pre></div><p>in <code>styles.scss</code> add the following:
+在 <code>styles.scss</code> 中添加下列内容:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sass" data-lang="sass"><span style="color:#66d9ef">@import</span> <span style="color:#e6db74">&#39;variables&#39;;</span>
+<span style="color:#66d9ef">@import</span> <span style="color:#e6db74">&#39;../node_modules/bootstrap/scss/bootstrap&#39;;</span>
+</code></pre></div><h3 id="testing-project-1">
+  Testing Project
+  <a class="anchor" href="#testing-project-1">#</a>
+</h3>
+<h3 id="测试项目-1">
+  测试项目
+  <a class="anchor" href="#%e6%b5%8b%e8%af%95%e9%a1%b9%e7%9b%ae-1">#</a>
+</h3>
+<p>Open <code>app.component.html</code> and add the following markup:
+打开 <code>app.component.html</code> 添加下列标记:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">button</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;btn btn-primary&#34;</span>&gt;Test Button&lt;/<span style="color:#f92672">button</span>&gt;
+</code></pre></div><p>With the application configured, run <code>ng serve</code> to run your application in develop mode.
+In your browser navigate to the application <code>localhost:4200</code>.
+Verify the bootstrap styled button appears.
+To ensure your variables are used open <code>_variables.scss</code> and add the following:<br>
+配置应用程序后， 运行 <code>ng serve</code> 启动你的应用程序在开发模式。 在浏览器中导航到你的应用程序 <code>localhost:4200</code>. 验证引导样式按钮出现. 要确保您的变量使用打开_variables.scss并添加以下内容</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sass" data-lang="sass">$primary<span style="color:#f92672">:</span> red<span style="color:#960050;background-color:#1e0010">;</span>
+</code></pre></div><p>Return the browser to see the font color changed.<br>
+返回浏览器查看更改的字体颜色。</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+  
+
+  
+
+  <script src="https://utteranc.es/client.js" repo="wanyijie/blog" issue-term="pathname" label="web"
+    theme="github-light" crossorigin="anonymous" async>
+    </script>
+</div>
+
+
+
+<script>{ { . | safeJS } }</script>
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#using-css">Using CSS</a></li>
+    <li><a href="#使用css">使用CSS</a>
+      <ul>
+        <li><a href="#getting-started">Getting Started</a></li>
+        <li><a href="#开始">开始</a></li>
+        <li><a href="#installing-bootstrap">Installing Bootstrap</a></li>
+        <li><a href="#安装-bootstrap">安装 Bootstrap</a></li>
+        <li><a href="#configuring-project">Configuring Project</a></li>
+        <li><a href="#配置项目">配置项目</a></li>
+        <li><a href="#testing-project">Testing Project</a></li>
+        <li><a href="#测试项目">测试项目</a></li>
+      </ul>
+    </li>
+    <li><a href="#using-sass">Using SASS</a></li>
+    <li><a href="#使用-sass">使用 SASS</a>
+      <ul>
+        <li><a href="#getting-started-1">Getting Started</a></li>
+        <li><a href="#开始-1">开始</a></li>
+        <li><a href="#installing-bootstrap-1">Installing Bootstrap</a></li>
+        <li><a href="#安装-bootstrap-1">安装 Bootstrap</a></li>
+        <li><a href="#configuring-project-1">Configuring Project</a></li>
+        <li><a href="#配置项目-1">配置项目</a></li>
+        <li><a href="#testing-project-1">Testing Project</a></li>
+        <li><a href="#测试项目-1">测试项目</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6266541561533854"
+     crossorigin="anonymous"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

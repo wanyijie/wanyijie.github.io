@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="3rd Party Library Installation#第三方库安装#Simply install your library via npm install lib-name --save and import it in your code.
+只需通过 npm install lib-name --save 安装你的库并将其导入到你的代码中。
+If the library does not include typings, you can install them using npm:
+如果库不包括类型，你可以使用npm来安装它们：
+npm install d3 --save npm install @types/d3 --save-dev Then open src/tsconfig.app.json and add it to the types array:
+然后打开 src/tsconfig.app.json 并将其添加到 types 数组中:
+&quot;types&quot;:[ &quot;d3&quot; ] If the library you added typings for is only to be used on your e2e tests, instead use e2e/tsconfig.">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="" />
+<meta property="og:description" content="3rd Party Library Installation#第三方库安装#Simply install your library via npm install lib-name --save and import it in your code.
+只需通过 npm install lib-name --save 安装你的库并将其导入到你的代码中。
+If the library does not include typings, you can install them using npm:
+如果库不包括类型，你可以使用npm来安装它们：
+npm install d3 --save npm install @types/d3 --save-dev Then open src/tsconfig.app.json and add it to the types array:
+然后打开 src/tsconfig.app.json 并将其添加到 types 数组中:
+&quot;types&quot;:[ &quot;d3&quot; ] If the library you added typings for is only to be used on your e2e tests, instead use e2e/tsconfig." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://wangyijie.store/posts/angluar/angular-cli-%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93%E5%AE%89%E8%A3%85/" /><meta property="article:section" content="posts" />
+
+
+
+<title>Angular CLI 第三方库安装 | hope to be a great computer technology Site</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.46181bc93375ba932026e753b37c40e6ff8bb16a9ef770c78bcc663e4577b1ba.css" integrity="sha256-RhgbyTN1upMgJudTs3xA5v&#43;LsWqe93DHi8xmPkV3sbo=" crossorigin="anonymous">
+  <script defer src="/flexsearch.min.js"></script>
+  <script defer src="/en.search.min.fdba0647c9501127a41f26adcab0438eb8555e76b0481ad7bc42620c87ea0e43.js" integrity="sha256-/boGR8lQESekHyatyrBDjrhVXnawSBrXvEJiDIfqDkM=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>hope to be a great computer technology Site</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/posts/" >
+        Posts
+      </a>
+      
+<ul>
+  
+  <li>
+    <a href="/posts/angluar/" >
+        angular
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/ansible/" >
+        ansible
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/cicd/" >
+        CICD
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/devops/" >
+        DevOps
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/english/" >
+        English
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/golang/" >
+        golang
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/istio/" >
+        istio
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/kubernetes/" >
+        Kubernetes
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/material2/" >
+        mererial2
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/mysql/" >
+        mysql
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/postgresql/" >
+        postgresql
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/python/" >
+        python
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/cloud/" >
+        云服务
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/security/" >
+        安全
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/container/" >
+        容器
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/literature/" >
+        文学
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/diary/" >
+        日记
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/machine_learning/" >
+        机器学习
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/monitor/" >
+        监控
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/sre/" >
+        站点可靠性工程
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/network/" >
+        网络
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/poetry/" >
+        诗歌
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/essay/" >
+        随笔
+      </a>
+  </li>
+  
+</ul>
+
+  </li>
+  
+  <li>
+    <a href="/about/" >
+        关于作者
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var a=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(b){localStorage.setItem("menu.scrollTop",a.scrollTop)}),a.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Angular CLI 第三方库安装</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents"></nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+<article class="markdown">
+  <h1>
+    <a href="/posts/angluar/angular-cli-%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93%E5%AE%89%E8%A3%85/">Angular CLI 第三方库安装</a>
+  </h1>
+  
+
+
+  
+
+  
+
+
+
+<h1 id="3rd-party-library-installation">
+  3rd Party Library Installation
+  <a class="anchor" href="#3rd-party-library-installation">#</a>
+</h1>
+<h1 id="第三方库安装">
+  第三方库安装
+  <a class="anchor" href="#%e7%ac%ac%e4%b8%89%e6%96%b9%e5%ba%93%e5%ae%89%e8%a3%85">#</a>
+</h1>
+<p>Simply install your library via <code>npm install lib-name --save</code> and import it in your code.<br>
+只需通过 <code>npm install lib-name --save</code> 安装你的库并将其导入到你的代码中。</p>
+<p>If the library does not include typings, you can install them using npm:<br>
+如果库不包括类型，你可以使用npm来安装它们：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">npm install d3 --save
+npm install @types/d3 --save-dev
+</code></pre></div><p>Then open <code>src/tsconfig.app.json</code> and add it to the <code>types</code> array:<br>
+然后打开 <code>src/tsconfig.app.json</code> 并将其添加到 <code>types</code> 数组中:</p>
+<pre tabindex="0"><code>&quot;types&quot;:[
+  &quot;d3&quot;
+]
+</code></pre><p>If the library you added typings for is only to be used on your e2e tests,
+instead use <code>e2e/tsconfig.e2e.json</code>.
+The same goes for unit tests and <code>src/tsconfig.spec.json</code>.<br>
+如果您添加类型的库仅用于您的e2e测试，请改为使用 <code>e2e/tsconfig.e2e.json</code>。单元测试和<code>src/tsconfig.spec.json</code> 也是如此。</p>
+<p>If the library doesn&rsquo;t have typings available at <code>@types/</code>, you can still use it by
+manually adding typings for it:<br>
+如果库在 <code>@types/</code> 中没有可用类型，则仍然可以通过手动添加类型来使用它：</p>
+<ol>
+<li>
+<p>First, create a <code>typings.d.ts</code> file in your <code>src/</code> folder. This file will be automatically included as global type definition.<br>
+首先，在 <code>src/</code> 文件夹中创建一个 <code>typings.d.ts</code> 文件。该文件将被自动包含为全局类型定义。</p>
+</li>
+<li>
+<p>Then, in <code>src/typings.d.ts</code>, add the following code:<br>
+然后，在 <code>src/typings.d.ts</code> 中添加以下代码：</p>
+</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="color:#66d9ef">declare</span> <span style="color:#a6e22e">module</span> <span style="color:#e6db74">&#39;typeless-package&#39;</span>;
+</code></pre></div><ol start="3">
+<li>Finally, in the component or file that uses the library, add the following code:<br>
+最后，在使用该库的组件或文件中，添加以下代码：</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="color:#66d9ef">import</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">as</span> <span style="color:#a6e22e">typelessPackage</span> <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#39;typeless-package&#39;</span>;
+<span style="color:#a6e22e">typelessPackage</span>.<span style="color:#a6e22e">method</span>();
+</code></pre></div><p>Done. Note: you might need or find useful to define more typings for the library that you&rsquo;re trying to use.<br>
+完成。注意：您可能需要或发现有用的定义您尝试使用的库的更多类型。</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+  
+
+  
+
+  <script src="https://utteranc.es/client.js" repo="wanyijie/blog" issue-term="pathname" label="web"
+    theme="github-light" crossorigin="anonymous" async>
+    </script>
+</div>
+
+
+
+<script>{ { . | safeJS } }</script>
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents"></nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6266541561533854"
+     crossorigin="anonymous"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

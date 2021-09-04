@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Global scripts#全局脚本#You can add Javascript files to the global scope via the scripts option inside your project&rsquo;s build target options in angular.json. These will be loaded exactly as if you had added them in a &lt;script&gt; tag inside index.html.
+您可以通过angular.json中项目的构建目标选项中的 脚本 选项将JavaScript文件添加到全局范围。这些将被加载，就像您将它们添加到 index.html 中的 &lt;script&gt; 标记中一样。 This is especially useful for legacy libraries or analytic snippets.
+这对旧版库或分析片段尤其有用。
+&#34;architect&#34;: { &#34;build&#34;: { &#34;builder&#34;: &#34;@angular-devkit/build-angular:browser&#34;, &#34;options&#34;: { &#34;scripts&#34;: [ &#34;src/global-script.">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="" />
+<meta property="og:description" content="Global scripts#全局脚本#You can add Javascript files to the global scope via the scripts option inside your project&rsquo;s build target options in angular.json. These will be loaded exactly as if you had added them in a &lt;script&gt; tag inside index.html.
+您可以通过angular.json中项目的构建目标选项中的 脚本 选项将JavaScript文件添加到全局范围。这些将被加载，就像您将它们添加到 index.html 中的 &lt;script&gt; 标记中一样。 This is especially useful for legacy libraries or analytic snippets.
+这对旧版库或分析片段尤其有用。
+&#34;architect&#34;: { &#34;build&#34;: { &#34;builder&#34;: &#34;@angular-devkit/build-angular:browser&#34;, &#34;options&#34;: { &#34;scripts&#34;: [ &#34;src/global-script." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://wangyijie.store/posts/angluar/angular%E5%85%A8%E5%B1%80%E8%84%9A%E6%9C%AC/" /><meta property="article:section" content="posts" />
+
+
+
+<title>Angular全局脚本 | hope to be a great computer technology Site</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.46181bc93375ba932026e753b37c40e6ff8bb16a9ef770c78bcc663e4577b1ba.css" integrity="sha256-RhgbyTN1upMgJudTs3xA5v&#43;LsWqe93DHi8xmPkV3sbo=" crossorigin="anonymous">
+  <script defer src="/flexsearch.min.js"></script>
+  <script defer src="/en.search.min.fdba0647c9501127a41f26adcab0438eb8555e76b0481ad7bc42620c87ea0e43.js" integrity="sha256-/boGR8lQESekHyatyrBDjrhVXnawSBrXvEJiDIfqDkM=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>hope to be a great computer technology Site</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/posts/" >
+        Posts
+      </a>
+      
+<ul>
+  
+  <li>
+    <a href="/posts/angluar/" >
+        angular
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/ansible/" >
+        ansible
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/cicd/" >
+        CICD
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/devops/" >
+        DevOps
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/english/" >
+        English
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/golang/" >
+        golang
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/istio/" >
+        istio
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/kubernetes/" >
+        Kubernetes
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/material2/" >
+        mererial2
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/mysql/" >
+        mysql
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/postgresql/" >
+        postgresql
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/python/" >
+        python
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/cloud/" >
+        云服务
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/security/" >
+        安全
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/container/" >
+        容器
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/literature/" >
+        文学
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/diary/" >
+        日记
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/machine_learning/" >
+        机器学习
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/monitor/" >
+        监控
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/sre/" >
+        站点可靠性工程
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/network/" >
+        网络
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/poetry/" >
+        诗歌
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/essay/" >
+        随笔
+      </a>
+  </li>
+  
+</ul>
+
+  </li>
+  
+  <li>
+    <a href="/about/" >
+        关于作者
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var a=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(b){localStorage.setItem("menu.scrollTop",a.scrollTop)}),a.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Angular全局脚本</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#using-global-libraries-inside-your-app">Using global libraries inside your app</a></li>
+    <li><a href="#在应用程序内使用全局库">在应用程序内使用全局库</a></li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+<article class="markdown">
+  <h1>
+    <a href="/posts/angluar/angular%E5%85%A8%E5%B1%80%E8%84%9A%E6%9C%AC/">Angular全局脚本</a>
+  </h1>
+  
+
+
+  
+
+  
+
+
+
+<h1 id="global-scripts">
+  Global scripts
+  <a class="anchor" href="#global-scripts">#</a>
+</h1>
+<h1 id="全局脚本">
+  全局脚本
+  <a class="anchor" href="#%e5%85%a8%e5%b1%80%e8%84%9a%e6%9c%ac">#</a>
+</h1>
+<p>You can add Javascript files to the global scope via the <code>scripts</code> option inside your
+project&rsquo;s build target options in <code>angular.json</code>.
+These will be loaded exactly as if you had added them in a <code>&lt;script&gt;</code> tag inside <code>index.html</code>.<br>
+您可以通过angular.json中项目的构建目标选项中的 <code>脚本</code> 选项将JavaScript文件添加到全局范围。这些将被加载，就像您将它们添加到 <code>index.html</code> 中的 <code>&lt;script&gt;</code> 标记中一样。
+This is especially useful for legacy libraries or analytic snippets.<br>
+这对旧版库或分析片段尤其有用。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json"><span style="color:#e6db74">&#34;architect&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> {
+  <span style="color:#f92672">&#34;build&#34;</span>: {
+    <span style="color:#f92672">&#34;builder&#34;</span>: <span style="color:#e6db74">&#34;@angular-devkit/build-angular:browser&#34;</span>,
+    <span style="color:#f92672">&#34;options&#34;</span>: {
+      <span style="color:#f92672">&#34;scripts&#34;</span>: [
+        <span style="color:#e6db74">&#34;src/global-script.js&#34;</span>,
+      ],
+</code></pre></div><p>You can also rename the output and lazy load it by using the object format:<br>
+您也可以使用对象格式重命名输出并延迟加载它：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json"><span style="color:#e6db74">&#34;scripts&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> [
+  <span style="color:#e6db74">&#34;src/global-script.js&#34;</span>,
+  { <span style="color:#f92672">&#34;input&#34;</span>: <span style="color:#e6db74">&#34;src/lazy-script.js&#34;</span>, <span style="color:#f92672">&#34;lazy&#34;</span>: <span style="color:#66d9ef">true</span> },
+  { <span style="color:#f92672">&#34;input&#34;</span>: <span style="color:#e6db74">&#34;src/pre-rename-script.js&#34;</span>, <span style="color:#f92672">&#34;bundleName&#34;</span>: <span style="color:#e6db74">&#34;renamed-script&#34;</span> },
+]<span style="color:#960050;background-color:#1e0010">,</span>
+</code></pre></div><p>Note: you will also need to add any scripts to the <code>test</code> builder if you need them for unit tests.<br>
+注意：如果需要它们进行单元测试，您还需要将任何脚本添加到测试生成器。</p>
+<h2 id="using-global-libraries-inside-your-app">
+  Using global libraries inside your app
+  <a class="anchor" href="#using-global-libraries-inside-your-app">#</a>
+</h2>
+<h2 id="在应用程序内使用全局库">
+  在应用程序内使用全局库
+  <a class="anchor" href="#%e5%9c%a8%e5%ba%94%e7%94%a8%e7%a8%8b%e5%ba%8f%e5%86%85%e4%bd%bf%e7%94%a8%e5%85%a8%e5%b1%80%e5%ba%93">#</a>
+</h2>
+<p>Once you import a library via the scripts array, you should <strong>not</strong> import it via a import statement
+in your TypeScript code (e.g. <code>import * as $ from 'jquery';</code>).
+If you do that you&rsquo;ll end up with two different copies of the library: one imported as a
+global library, and one imported as a module.<br>
+一旦通过脚本数组导入库，您不应该通过TypeScript代码中的import语句导入它（例如， import * as $ from &lsquo;jquery&rsquo;）</p>
+<p>This is especially bad for libraries with plugins, like JQuery, because each copy will have
+different plugins.<br>
+对于带有插件的库如JQuery来说，这是非常糟糕的，因为每个副本都会有不同的插件。</p>
+<p>Instead, download typings for your library (<code>npm install @types/jquery</code>) and follow
+the <a href="https://github.com/angular/angular-cli/wiki/stories-third-party-lib">3rd Party Library Installation</a> steps,
+this will give you access to the global variables exposed by that library.<br>
+相反，为你的库下载类型 (<code>npm install @types/jquery</code>) 和 根据 <a href="https://github.com/angular/angular-cli/wiki/stories-third-party-lib">3rd Party Library Installation</a> 步骤, 这将使您可以访问该库公开的全局变量，</p>
+<p>If the global library you need to use does not have global typings, you can also declare them
+manually in <code>src/typings.d.ts</code> as <code>any</code>:<br>
+如果您需要使用的全局库没有全局类型，您也可以在 <code>src / typings.d.ts</code> 中手动声明它们，如下所示：</p>
+<pre tabindex="0"><code>declare var libraryName: any;
+</code></pre><p>When working with scripts that extend other libraries, for instance with JQuery plugins
+(e.g, <code>$('.test').myPlugin();</code>), since the installed <code>@types/jquery</code> may not include <code>myPlugin</code>,
+you would need to add an interface like the one below in <code>src/typings.d.ts</code>.<br>
+处理扩展其他库的脚本时，例如使用JQuery插件(e.g, <code>$('.test').myPlugin();</code>), 自安装<code>@types/jquery</code> 可能不包含 <code>myPlugin</code>, 您需要在 <code>src/typings.d.ts</code> 中添加如下所示的端口。</p>
+<pre tabindex="0"><code>interface JQuery {
+  myPlugin(options?: any): any;
+}
+</code></pre><p>Otherwise you may see <code>[TS][Error] Property 'myPlugin' does not exist on type 'JQuery'.</code> in your IDE.<br>
+否则，你可能会看到 <code>[TS][Error] Property 'myPlugin' does not exist on type 'JQuery'.</code> 在你的IDE.</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+  
+
+  
+
+  <script src="https://utteranc.es/client.js" repo="wanyijie/blog" issue-term="pathname" label="web"
+    theme="github-light" crossorigin="anonymous" async>
+    </script>
+</div>
+
+
+
+<script>{ { . | safeJS } }</script>
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#using-global-libraries-inside-your-app">Using global libraries inside your app</a></li>
+    <li><a href="#在应用程序内使用全局库">在应用程序内使用全局库</a></li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6266541561533854"
+     crossorigin="anonymous"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

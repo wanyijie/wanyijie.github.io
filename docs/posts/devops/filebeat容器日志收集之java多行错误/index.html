@@ -3,22 +3,20 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="背景：#java日志出现错误的时候日志不再是一条一行，可能出来换行，这不适应默认的日志采集方式，正确的做法是使用规则确定行的开始，到下一个开始才是一行的结束，主流的日志收集插件都支持多行的配置定义。现在多用容器运行服务，日志输出到标准输出，这样使用日志采集工具去采集通过docker存储的日志文件，日志包含在json文本中，采集策略得对于调整。 在filebeat中使用container解析器，设置多行合并参数即可，细节如下：
-开始流程：#filebeat配置: filebeat.yml#filebeat.config.inputs: enabled: true path: inputs.d/*.yml reload.enabled: true reload.period: 10s filebeat.config.modules.path: ${path.config}/modules.d/*.yml output.elasticsearch: enabled: false hosts: &#39;127.0.0.1:9200&#39; username: &#39;${ELASTICSEARCH_USERNAME:}&#39; password: &#39;${ELASTICSEARCH_PASSWORD:}&#39; output.file: enabled: false path: &#34;/tmp/filebeat&#34; filename: filebeat output.console: pretty: true enabled: true 日志收集配置： cat inputs.d/java.yml#- type: container multiline.pattern: &#39;^2020-07-15&#39; multiline.negate: true multiline.match: after json.message_key: log # json.keys_under_root: false overwrite_keys: true paths: - /var/log/err.log 日志示例：/var/log/err.log#{&quot;log&quot;:&quot;2020-07-15 03:15:35 [INFO ] [main] org.">
+<meta name="description" content="java日志出现错误的时候日志不再是一条一行，可能出来换行，这不适应默认的日志采集方式，正确的做法是使用规则确定行的开始，到下一个开始才是一行的结束，主流的日志收集插件都支持多行的配置定义。现在多用容器运行服务，日志输出到标准输出，这样使用日志采集工具去采集通过docker存储的日志文件，日志包含在json文本中，采集策略得对于调整。">
 <meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="" />
-<meta property="og:description" content="背景：#java日志出现错误的时候日志不再是一条一行，可能出来换行，这不适应默认的日志采集方式，正确的做法是使用规则确定行的开始，到下一个开始才是一行的结束，主流的日志收集插件都支持多行的配置定义。现在多用容器运行服务，日志输出到标准输出，这样使用日志采集工具去采集通过docker存储的日志文件，日志包含在json文本中，采集策略得对于调整。 在filebeat中使用container解析器，设置多行合并参数即可，细节如下：
-开始流程：#filebeat配置: filebeat.yml#filebeat.config.inputs: enabled: true path: inputs.d/*.yml reload.enabled: true reload.period: 10s filebeat.config.modules.path: ${path.config}/modules.d/*.yml output.elasticsearch: enabled: false hosts: &#39;127.0.0.1:9200&#39; username: &#39;${ELASTICSEARCH_USERNAME:}&#39; password: &#39;${ELASTICSEARCH_PASSWORD:}&#39; output.file: enabled: false path: &#34;/tmp/filebeat&#34; filename: filebeat output.console: pretty: true enabled: true 日志收集配置： cat inputs.d/java.yml#- type: container multiline.pattern: &#39;^2020-07-15&#39; multiline.negate: true multiline.match: after json.message_key: log # json.keys_under_root: false overwrite_keys: true paths: - /var/log/err.log 日志示例：/var/log/err.log#{&quot;log&quot;:&quot;2020-07-15 03:15:35 [INFO ] [main] org." />
+<meta property="og:description" content="java日志出现错误的时候日志不再是一条一行，可能出来换行，这不适应默认的日志采集方式，正确的做法是使用规则确定行的开始，到下一个开始才是一行的结束，主流的日志收集插件都支持多行的配置定义。现在多用容器运行服务，日志输出到标准输出，这样使用日志采集工具去采集通过docker存储的日志文件，日志包含在json文本中，采集策略得对于调整。" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://wangyijie.github.io/posts/devops/filebeat%E5%AE%B9%E5%99%A8%E6%97%A5%E5%BF%97%E6%94%B6%E9%9B%86%E4%B9%8Bjava%E5%A4%9A%E8%A1%8C%E9%94%99%E8%AF%AF/" /><meta property="article:section" content="posts" />
+<meta property="og:url" content="https://wangyijie.store/posts/devops/filebeat%E5%AE%B9%E5%99%A8%E6%97%A5%E5%BF%97%E6%94%B6%E9%9B%86%E4%B9%8Bjava%E5%A4%9A%E8%A1%8C%E9%94%99%E8%AF%AF/" /><meta property="article:section" content="posts" />
 
 
 
-<title>Filebeat容器日志收集之java多行错误 | A great computer technology Site</title>
+<title>Filebeat容器日志收集之java多行错误 | hope to be a great computer technology Site</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.46181bc93375ba932026e753b37c40e6ff8bb16a9ef770c78bcc663e4577b1ba.css" integrity="sha256-RhgbyTN1upMgJudTs3xA5v&#43;LsWqe93DHi8xmPkV3sbo=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.a56ad50ed261bfdb649cf182a254f9ed96d46fee7705a6ce5c9e85fa1ff18eb5.js" integrity="sha256-pWrVDtJhv9tknPGColT57ZbUb&#43;53BabOXJ6F&#43;h/xjrU=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.fdba0647c9501127a41f26adcab0438eb8555e76b0481ad7bc42620c87ea0e43.js" integrity="sha256-/boGR8lQESekHyatyrBDjrhVXnawSBrXvEJiDIfqDkM=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -34,7 +32,7 @@ https://github.com/alex-shpak/hugo-book
         
   <nav>
 <h2 class="book-brand">
-  <a class="flex align-center" href="/"><span>A great computer technology Site</span>
+  <a class="flex align-center" href="/"><span>hope to be a great computer technology Site</span>
   </a>
 </h2>
 
@@ -80,7 +78,7 @@ https://github.com/alex-shpak/hugo-book
 <ul>
   
   <li>
-    <a href="/posts/angluar-cli/" >
+    <a href="/posts/angluar/" >
         angular
       </a>
   </li>
@@ -94,18 +92,6 @@ https://github.com/alex-shpak/hugo-book
   <li>
     <a href="/posts/cicd/" >
         CICD
-      </a>
-  </li>
-  
-  <li>
-    <a href="/posts/cloud/" >
-        cloude
-      </a>
-  </li>
-  
-  <li>
-    <a href="/posts/container/" >
-        container
       </a>
   </li>
   
@@ -140,20 +126,8 @@ https://github.com/alex-shpak/hugo-book
   </li>
   
   <li>
-    <a href="/posts/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" >
-        mechine leaning
-      </a>
-  </li>
-  
-  <li>
     <a href="/posts/material2/" >
         mererial2
-      </a>
-  </li>
-  
-  <li>
-    <a href="/posts/%E7%9B%91%E6%8E%A7/" >
-        monitor
       </a>
   </li>
   
@@ -164,56 +138,80 @@ https://github.com/alex-shpak/hugo-book
   </li>
   
   <li>
-    <a href="/posts/%E7%BD%91%E7%BB%9C/" >
-        networking
-      </a>
-  </li>
-  
-  <li>
-    <a href="/posts/%E6%97%A5%E8%AE%B0%E6%9C%AC/" >
-        notes
-      </a>
-  </li>
-  
-  <li>
     <a href="/posts/postgresql/" >
         postgresql
       </a>
   </li>
   
   <li>
-    <a href="/posts/django/" >
+    <a href="/posts/python/" >
         python
       </a>
   </li>
   
   <li>
-    <a href="/posts/%E5%AE%89%E5%85%A8/" >
-        safe
+    <a href="/posts/cloud/" >
+        云服务
       </a>
   </li>
   
   <li>
-    <a href="/posts/%E8%AF%97%E8%AF%8D/" >
-        shi chi
+    <a href="/posts/security/" >
+        安全
       </a>
   </li>
   
   <li>
-    <a href="/posts/%E7%AB%99%E7%82%B9%E5%8F%AF%E9%9D%A0%E6%80%A7%E5%B7%A5%E7%A8%8B/" >
-        SRE
+    <a href="/posts/container/" >
+        容器
       </a>
   </li>
   
   <li>
-    <a href="/posts/%E6%96%87%E5%AD%A6/" >
-        wenxue
+    <a href="/posts/literature/" >
+        文学
       </a>
   </li>
   
   <li>
-    <a href="/posts/%E9%9A%8F%E7%AC%94/" >
-        write somethings
+    <a href="/posts/diary/" >
+        日记
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/machine_learning/" >
+        机器学习
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/monitor/" >
+        监控
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/sre/" >
+        站点可靠性工程
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/network/" >
+        网络
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/poetry/" >
+        诗歌
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/essay/" >
+        随笔
       </a>
   </li>
   
@@ -223,7 +221,7 @@ https://github.com/alex-shpak/hugo-book
   
   <li>
     <a href="/about/" >
-        About
+        关于作者
       </a>
   </li>
   
@@ -300,12 +298,8 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-<h1 id="背景">
-  背景：
-  <a class="anchor" href="#%e8%83%8c%e6%99%af">#</a>
-</h1>
-<p>java日志出现错误的时候日志不再是一条一行，可能出来换行，这不适应默认的日志采集方式，正确的做法是使用规则确定行的开始，到下一个开始才是一行的结束，主流的日志收集插件都支持多行的配置定义。现在多用容器运行服务，日志输出到标准输出，这样使用日志采集工具去采集通过docker存储的日志文件，日志包含在json文本中，采集策略得对于调整。
-在filebeat中使用container解析器，设置多行合并参数即可，细节如下：</p>
+<p>java日志出现错误的时候日志不再是一条一行，可能出来换行，这不适应默认的日志采集方式，正确的做法是使用规则确定行的开始，到下一个开始才是一行的结束，主流的日志收集插件都支持多行的配置定义。现在多用容器运行服务，日志输出到标准输出，这样使用日志采集工具去采集通过docker存储的日志文件，日志包含在json文本中，采集策略得对于调整。</p>
+<p>在filebeat中使用container解析器，设置多行合并参数即可，细节如下：</p>
 <h1 id="开始流程">
   开始流程：
   <a class="anchor" href="#%e5%bc%80%e5%a7%8b%e6%b5%81%e7%a8%8b">#</a>

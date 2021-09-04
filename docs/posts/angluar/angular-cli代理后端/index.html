@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Proxy To Backend#代理后端#Using the proxying support in webpack&rsquo;s dev server we can highjack certain URLs and send them to a backend server. We do this by passing a file to --proxy-config
+使用 webpacks 开发服务器中的代理支持, 我们可以劫持某些 url 并将它们发送到后端服务器。我们这样做是通过传递一个文件给 --proxy-config 选项。
+Say we have a server running on http://localhost:3000/api and we want all calls to http://localhost:4200/api to go to that server. 假设我们有一个服务器运行在 http://localhost:3000/api 我们希望所有调用 http://localhost:4200/api 到该服务器上.">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="" />
+<meta property="og:description" content="Proxy To Backend#代理后端#Using the proxying support in webpack&rsquo;s dev server we can highjack certain URLs and send them to a backend server. We do this by passing a file to --proxy-config
+使用 webpacks 开发服务器中的代理支持, 我们可以劫持某些 url 并将它们发送到后端服务器。我们这样做是通过传递一个文件给 --proxy-config 选项。
+Say we have a server running on http://localhost:3000/api and we want all calls to http://localhost:4200/api to go to that server. 假设我们有一个服务器运行在 http://localhost:3000/api 我们希望所有调用 http://localhost:4200/api 到该服务器上." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://wangyijie.store/posts/angluar/angular-cli%E4%BB%A3%E7%90%86%E5%90%8E%E7%AB%AF/" /><meta property="article:section" content="posts" />
+
+
+
+<title>Angular Cli代理后端 | hope to be a great computer technology Site</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.46181bc93375ba932026e753b37c40e6ff8bb16a9ef770c78bcc663e4577b1ba.css" integrity="sha256-RhgbyTN1upMgJudTs3xA5v&#43;LsWqe93DHi8xmPkV3sbo=" crossorigin="anonymous">
+  <script defer src="/flexsearch.min.js"></script>
+  <script defer src="/en.search.min.fdba0647c9501127a41f26adcab0438eb8555e76b0481ad7bc42620c87ea0e43.js" integrity="sha256-/boGR8lQESekHyatyrBDjrhVXnawSBrXvEJiDIfqDkM=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>hope to be a great computer technology Site</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/posts/" >
+        Posts
+      </a>
+      
+<ul>
+  
+  <li>
+    <a href="/posts/angluar/" >
+        angular
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/ansible/" >
+        ansible
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/cicd/" >
+        CICD
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/devops/" >
+        DevOps
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/english/" >
+        English
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/golang/" >
+        golang
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/istio/" >
+        istio
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/kubernetes/" >
+        Kubernetes
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/material2/" >
+        mererial2
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/mysql/" >
+        mysql
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/postgresql/" >
+        postgresql
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/python/" >
+        python
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/cloud/" >
+        云服务
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/security/" >
+        安全
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/container/" >
+        容器
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/literature/" >
+        文学
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/diary/" >
+        日记
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/machine_learning/" >
+        机器学习
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/monitor/" >
+        监控
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/sre/" >
+        站点可靠性工程
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/network/" >
+        网络
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/poetry/" >
+        诗歌
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/essay/" >
+        随笔
+      </a>
+  </li>
+  
+</ul>
+
+  </li>
+  
+  <li>
+    <a href="/about/" >
+        关于作者
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var a=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(b){localStorage.setItem("menu.scrollTop",a.scrollTop)}),a.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Angular Cli代理后端</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#rewriting-the-url-path">Rewriting the URL path</a></li>
+        <li><a href="#重写url路径">重写url路径</a></li>
+        <li><a href="#multiple-entries">Multiple entries</a></li>
+        <li><a href="#多入口">多入口</a></li>
+        <li><a href="#bypass-the-proxy">Bypass the Proxy</a></li>
+        <li><a href="#绕过代理">绕过代理</a></li>
+        <li><a href="#using-corporate-proxy">Using corporate proxy</a></li>
+        <li><a href="#使用企业代理">使用企业代理</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+<article class="markdown">
+  <h1>
+    <a href="/posts/angluar/angular-cli%E4%BB%A3%E7%90%86%E5%90%8E%E7%AB%AF/">Angular Cli代理后端</a>
+  </h1>
+  
+
+
+  
+
+  
+
+
+
+<h1 id="proxy-to-backend">
+  Proxy To Backend
+  <a class="anchor" href="#proxy-to-backend">#</a>
+</h1>
+<h1 id="代理后端">
+  代理后端
+  <a class="anchor" href="#%e4%bb%a3%e7%90%86%e5%90%8e%e7%ab%af">#</a>
+</h1>
+<p>Using the <a href="https://webpack.js.org/configuration/dev-server/#devserver-proxy">proxying support</a> in webpack&rsquo;s dev server we can highjack certain URLs and send them to a backend server.
+We do this by passing a file to <code>--proxy-config</code><br>
+使用 webpacks 开发服务器中的<a href="https://webpack.js.org/configuration/dev-server/#devserver-proxy">代理支持</a>, 我们可以劫持某些 url 并将它们发送到后端服务器。我们这样做是通过传递一个文件给 <code>--proxy-config</code> 选项。</p>
+<p>Say we have a server running on <code>http://localhost:3000/api</code> and we want all calls to <code>http://localhost:4200/api</code> to go to that server.
+假设我们有一个服务器运行在 <code>http://localhost:3000/api</code> 我们希望所有调用 <code>http://localhost:4200/api</code> 到该服务器上.</p>
+<p>We create a file next to our project&rsquo;s <code>package.json</code> called <code>proxy.conf.json</code> with the content
+我们在项目包旁边创建一个文件 <code>package.json</code> 命名为 <code>proxy.conf.json</code> 和如下的内容。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+  <span style="color:#f92672">&#34;/api&#34;</span>: {
+    <span style="color:#f92672">&#34;target&#34;</span>: <span style="color:#e6db74">&#34;http://localhost:3000&#34;</span>,
+    <span style="color:#f92672">&#34;secure&#34;</span>: <span style="color:#66d9ef">false</span>
+  }
+}
+</code></pre></div><p>You can read more about what options are available <a href="https://webpack.js.org/configuration/dev-server/#devserver-proxy">here</a>.<br>
+您可以阅读更多关于<a href="https://webpack.js.org/configuration/dev-server/#devserver-proxy">此处</a>.可用选项的信息。</p>
+<p>We can then add the <code>proxyConfig</code> option to the serve target:<br>
+然后, 我们可以将 <code>proxyConfig</code> 选项添加到服务目标:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json"><span style="color:#e6db74">&#34;architect&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> {
+  <span style="color:#f92672">&#34;serve&#34;</span>: {
+    <span style="color:#f92672">&#34;builder&#34;</span>: <span style="color:#e6db74">&#34;@angular-devkit/build-angular:dev-server&#34;</span>,
+    <span style="color:#f92672">&#34;options&#34;</span>: {
+      <span style="color:#f92672">&#34;browserTarget&#34;</span>: <span style="color:#e6db74">&#34;your-application-name:build&#34;</span>,
+      <span style="color:#f92672">&#34;proxyConfig&#34;</span>: <span style="color:#e6db74">&#34;src/proxy.conf.json&#34;</span>
+    },
+</code></pre></div><p>Now in order to run our dev server with our proxy config we can call <code>ng serve</code>.</p>
+<p>现在, 为了运行我们的开发服务器与我们的代理配置, 我们可以调用
+<code>ng serve</code>.</p>
+<p><strong>After each edit to the proxy.conf.json file remember to relaunch the <code>ng serve</code> process to make your changes effective.</strong><br>
+<strong>每次编辑到 proxy.conf.json 文件后, 记住重新启动 ng serve 进程, 使您的更改生效</strong></p>
+<h3 id="rewriting-the-url-path">
+  Rewriting the URL path
+  <a class="anchor" href="#rewriting-the-url-path">#</a>
+</h3>
+<h3 id="重写url路径">
+  重写url路径
+  <a class="anchor" href="#%e9%87%8d%e5%86%99url%e8%b7%af%e5%be%84">#</a>
+</h3>
+<p>One option that comes up a lot is rewriting the URL path for the proxy. This is supported by the <code>pathRewrite</code> option.<br>
+一个很重要的选项是重写代理的 URL 路径。这由 <code>pathRewrite</code> 选项支持</p>
+<p>Say we have a server running on <code>http://localhost:3000</code> and we want all calls to <code>http://localhost:4200/api</code> to go to that server.<br>
+假设我们有一个服务器运行在 http://localhost:3000, 我们希望所有调用 http://localhost:4200/api 到该服务器上。</p>
+<p>in our <code>proxy.conf.json</code> file, we add the following content
+在我们的 <code>proxy.conf.json</code> 文件, 我们添加如下内容</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+  <span style="color:#f92672">&#34;/api&#34;</span>: {
+    <span style="color:#f92672">&#34;target&#34;</span>: <span style="color:#e6db74">&#34;http://localhost:3000&#34;</span>,
+    <span style="color:#f92672">&#34;secure&#34;</span>: <span style="color:#66d9ef">false</span>,
+    <span style="color:#f92672">&#34;pathRewrite&#34;</span>: {
+      <span style="color:#f92672">&#34;^/api&#34;</span>: <span style="color:#e6db74">&#34;&#34;</span>
+    }
+  }
+}
+</code></pre></div><p>If you need to access a backend that is not on localhost, you will need to add the <code>changeOrigin</code> option as follows:<br>
+如果您需要访问不在本地主机上的后端，则需要添加 <code>changeOrigin</code> 选项，如下所示：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+  <span style="color:#f92672">&#34;/api&#34;</span>: {
+    <span style="color:#f92672">&#34;target&#34;</span>: <span style="color:#e6db74">&#34;http://npmjs.org&#34;</span>,
+    <span style="color:#f92672">&#34;secure&#34;</span>: <span style="color:#66d9ef">false</span>,
+    <span style="color:#f92672">&#34;pathRewrite&#34;</span>: {
+      <span style="color:#f92672">&#34;^/api&#34;</span>: <span style="color:#e6db74">&#34;&#34;</span>
+    },
+    <span style="color:#f92672">&#34;changeOrigin&#34;</span>: <span style="color:#66d9ef">true</span>
+  }
+}
+</code></pre></div><p>To help debug whether or not your proxy is working properly, you can also add the <code>logLevel</code> option as follows:<br>
+为了帮助调试代理是否正常工作，您还可以添加 <code>logLevel</code> 选项，如下所示：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+  <span style="color:#f92672">&#34;/api&#34;</span>: {
+    <span style="color:#f92672">&#34;target&#34;</span>: <span style="color:#e6db74">&#34;http://localhost:3000&#34;</span>,
+    <span style="color:#f92672">&#34;secure&#34;</span>: <span style="color:#66d9ef">false</span>,
+    <span style="color:#f92672">&#34;pathRewrite&#34;</span>: {
+      <span style="color:#f92672">&#34;^/api&#34;</span>: <span style="color:#e6db74">&#34;&#34;</span>
+    },
+    <span style="color:#f92672">&#34;logLevel&#34;</span>: <span style="color:#e6db74">&#34;debug&#34;</span>
+  }
+}
+</code></pre></div><p>Possible options for <code>logLevel</code> include <code>debug</code>, <code>info</code>, <code>warn</code>, <code>error</code>, and <code>silent</code> (default is <code>info</code>)<br>
+<code>logLevel</code> 的可能选项包括 <code>debug</code>, <code>info</code>, <code>warn</code>, <code>error</code>, 和 <code>silent</code> (默认是<code>info</code>)</p>
+<h3 id="multiple-entries">
+  Multiple entries
+  <a class="anchor" href="#multiple-entries">#</a>
+</h3>
+<h3 id="多入口">
+  多入口
+  <a class="anchor" href="#%e5%a4%9a%e5%85%a5%e5%8f%a3">#</a>
+</h3>
+<p>If you need to proxy multiple entries to the same target define the configuration in <code>proxy.conf.js</code> instead of <code>proxy.conf.json</code> e.g.<br>
+如果需要将多个条目代理到同一目标，请在 <code>proxy.conf.js</code> 中定义配置，而不是<code>proxy.conf.json</code> 中的配置，例如</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">PROXY_CONFIG</span> <span style="color:#f92672">=</span> [
+    {
+        <span style="color:#a6e22e">context</span><span style="color:#f92672">:</span> [
+            <span style="color:#e6db74">&#34;/my&#34;</span>,
+            <span style="color:#e6db74">&#34;/many&#34;</span>,
+            <span style="color:#e6db74">&#34;/endpoints&#34;</span>,
+            <span style="color:#e6db74">&#34;/i&#34;</span>,
+            <span style="color:#e6db74">&#34;/need&#34;</span>,
+            <span style="color:#e6db74">&#34;/to&#34;</span>,
+            <span style="color:#e6db74">&#34;/proxy&#34;</span>
+        ],
+        <span style="color:#a6e22e">target</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;http://localhost:3000&#34;</span>,
+        <span style="color:#a6e22e">secure</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">false</span>
+    }
+]
+
+<span style="color:#a6e22e">module</span>.<span style="color:#a6e22e">exports</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">PROXY_CONFIG</span>;
+</code></pre></div><p>Make sure to point to the right file (<code>.js</code> instead of <code>.json</code>):<br>
+确保指向正确的文件 (<code>.js</code> 而不是 <code>.json</code>):</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json"><span style="color:#e6db74">&#34;architect&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> {
+  <span style="color:#f92672">&#34;serve&#34;</span>: {
+    <span style="color:#f92672">&#34;builder&#34;</span>: <span style="color:#e6db74">&#34;@angular-devkit/build-angular:dev-server&#34;</span>,
+    <span style="color:#f92672">&#34;options&#34;</span>: {
+      <span style="color:#f92672">&#34;browserTarget&#34;</span>: <span style="color:#e6db74">&#34;your-application-name:build&#34;</span>,
+      <span style="color:#f92672">&#34;proxyConfig&#34;</span>: <span style="color:#e6db74">&#34;src/proxy.conf.js&#34;</span>
+    },
+</code></pre></div><h3 id="bypass-the-proxy">
+  Bypass the Proxy
+  <a class="anchor" href="#bypass-the-proxy">#</a>
+</h3>
+<h3 id="绕过代理">
+  绕过代理
+  <a class="anchor" href="#%e7%bb%95%e8%bf%87%e4%bb%a3%e7%90%86">#</a>
+</h3>
+<p>If you need to optionally bypass the proxy, or dynamically change the request before it&rsquo;s sent,  define the configuration in proxy.conf.js e.g.<br>
+如果需要绕过代理，或者在请求发送前动态更改请求，请在proxy.conf.js中定义配置，例如。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">PROXY_CONFIG</span> <span style="color:#f92672">=</span> {
+    <span style="color:#e6db74">&#34;/api/proxy&#34;</span><span style="color:#f92672">:</span> {
+        <span style="color:#e6db74">&#34;target&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;http://localhost:3000&#34;</span>,
+        <span style="color:#e6db74">&#34;secure&#34;</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">false</span>,
+        <span style="color:#e6db74">&#34;bypass&#34;</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">req</span>, <span style="color:#a6e22e">res</span>, <span style="color:#a6e22e">proxyOptions</span>) {
+            <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">req</span>.<span style="color:#a6e22e">headers</span>.<span style="color:#a6e22e">accept</span>.<span style="color:#a6e22e">indexOf</span>(<span style="color:#e6db74">&#34;html&#34;</span>) <span style="color:#f92672">!==</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>) {
+                <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;Skipping proxy for browser request.&#34;</span>);
+                <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;/index.html&#34;</span>;
+            }
+            <span style="color:#a6e22e">req</span>.<span style="color:#a6e22e">headers</span>[<span style="color:#e6db74">&#34;X-Custom-Header&#34;</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;yes&#34;</span>;
+        }
+    }
+}
+
+<span style="color:#a6e22e">module</span>.<span style="color:#a6e22e">exports</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">PROXY_CONFIG</span>;
+</code></pre></div><h3 id="using-corporate-proxy">
+  Using corporate proxy
+  <a class="anchor" href="#using-corporate-proxy">#</a>
+</h3>
+<h3 id="使用企业代理">
+  使用企业代理
+  <a class="anchor" href="#%e4%bd%bf%e7%94%a8%e4%bc%81%e4%b8%9a%e4%bb%a3%e7%90%86">#</a>
+</h3>
+<p>If you work behind a corporate proxy, the regular configuration will not work if you try to proxy
+calls to any URL outside your local network.<br>
+如果您在公司代理的后面工作，如果您尝试将呼叫代理到本地网络之外的任何URL，则常规配置将不起作用</p>
+<p>In this case, you can configure the backend proxy to redirect calls through your corporate
+proxy using an agent:<br>
+在这种情况下，您可以配置后端代理以使用代理通过公司代理重定向呼叫</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">npm install --save-dev https-proxy-agent
+</code></pre></div><p>Then instead of using a <code>proxy.conf.json</code> file, we create a file called <code>proxy.conf.js</code> with
+the following content:<br>
+然后，我们不使用 <code>proxy.conf.json</code> 文件，而是使用以下内容创建一个名为 <code>proxy.conf.js</code> 的文件：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">HttpsProxyAgent</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;https-proxy-agent&#39;</span>);
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">proxyConfig</span> <span style="color:#f92672">=</span> [{
+  <span style="color:#a6e22e">context</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;/api&#39;</span>,
+  <span style="color:#a6e22e">target</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;http://your-remote-server.com:3000&#39;</span>,
+  <span style="color:#a6e22e">secure</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">false</span>
+}];
+
+<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">setupForCorporateProxy</span>(<span style="color:#a6e22e">proxyConfig</span>) {
+  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">proxyServer</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">process</span>.<span style="color:#a6e22e">env</span>.<span style="color:#a6e22e">http_proxy</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">process</span>.<span style="color:#a6e22e">env</span>.<span style="color:#a6e22e">HTTP_PROXY</span>;
+  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">proxyServer</span>) {
+    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">agent</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">HttpsProxyAgent</span>(<span style="color:#a6e22e">proxyServer</span>);
+    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;Using corporate proxy server: &#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">proxyServer</span>);
+    <span style="color:#a6e22e">proxyConfig</span>.<span style="color:#a6e22e">forEach</span>(<span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">entry</span>) {
+      <span style="color:#a6e22e">entry</span>.<span style="color:#a6e22e">agent</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">agent</span>;
+    });
+  }
+  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">proxyConfig</span>;
+}
+
+<span style="color:#a6e22e">module</span>.<span style="color:#a6e22e">exports</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">setupForCorporateProxy</span>(<span style="color:#a6e22e">proxyConfig</span>);
+</code></pre></div><p>This way if you have a <code>http_proxy</code> or <code>HTTP_PROXY</code> environment variable defined, an agent will automatically be added to pass calls through your corporate proxy when running <code>npm start</code>.<br>
+这样，如果您定义了 <code>http_proxy</code> 或 <code>HTTP_PROXY</code> 环境变量，则在运行 <code>npm start</code> 时，会自动添加代理以通过公司代理传递调用。</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+  
+
+  
+
+  <script src="https://utteranc.es/client.js" repo="wanyijie/blog" issue-term="pathname" label="web"
+    theme="github-light" crossorigin="anonymous" async>
+    </script>
+</div>
+
+
+
+<script>{ { . | safeJS } }</script>
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#rewriting-the-url-path">Rewriting the URL path</a></li>
+        <li><a href="#重写url路径">重写url路径</a></li>
+        <li><a href="#multiple-entries">Multiple entries</a></li>
+        <li><a href="#多入口">多入口</a></li>
+        <li><a href="#bypass-the-proxy">Bypass the Proxy</a></li>
+        <li><a href="#绕过代理">绕过代理</a></li>
+        <li><a href="#using-corporate-proxy">Using corporate proxy</a></li>
+        <li><a href="#使用企业代理">使用企业代理</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6266541561533854"
+     crossorigin="anonymous"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

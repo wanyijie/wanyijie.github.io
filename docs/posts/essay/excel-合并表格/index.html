@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="前提： 要合并的表格表格列数相同 在要合并的表格放一个文件内，建一个新的空表格：   3.打开表格：
+4.鼠标放到左下角的sheet导航栏上右键选择查看源码：  把后面的代码贴入文本框中点顶部菜单栏的运行即可：   脚本
+  Sub 合并当前目录下所有工作簿的全部工作表() Dim MyPath, MyName, AWbName Dim Wb As Workbook, WbN As String Dim G As Long Dim Num As Long Dim BOX As String Application.ScreenUpdating = False MyPath = ActiveWorkbook.Path MyName = Dir(MyPath &amp; &quot;\&quot; &amp; &quot;*.xlsx&quot;) AWbName = ActiveWorkbook.Name Num = 0 Do While MyName &lt;&gt; &quot;&quot; If MyName &lt;&gt; AWbName Then Set Wb = Workbooks.">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="" />
+<meta property="og:description" content="前提： 要合并的表格表格列数相同 在要合并的表格放一个文件内，建一个新的空表格：   3.打开表格：
+4.鼠标放到左下角的sheet导航栏上右键选择查看源码：  把后面的代码贴入文本框中点顶部菜单栏的运行即可：   脚本
+  Sub 合并当前目录下所有工作簿的全部工作表() Dim MyPath, MyName, AWbName Dim Wb As Workbook, WbN As String Dim G As Long Dim Num As Long Dim BOX As String Application.ScreenUpdating = False MyPath = ActiveWorkbook.Path MyName = Dir(MyPath &amp; &quot;\&quot; &amp; &quot;*.xlsx&quot;) AWbName = ActiveWorkbook.Name Num = 0 Do While MyName &lt;&gt; &quot;&quot; If MyName &lt;&gt; AWbName Then Set Wb = Workbooks." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://wangyijie.store/posts/essay/excel-%E5%90%88%E5%B9%B6%E8%A1%A8%E6%A0%BC/" /><meta property="article:section" content="posts" />
+
+
+
+<title>Excel 合并表格 | hope to be a great computer technology Site</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.46181bc93375ba932026e753b37c40e6ff8bb16a9ef770c78bcc663e4577b1ba.css" integrity="sha256-RhgbyTN1upMgJudTs3xA5v&#43;LsWqe93DHi8xmPkV3sbo=" crossorigin="anonymous">
+  <script defer src="/flexsearch.min.js"></script>
+  <script defer src="/en.search.min.fdba0647c9501127a41f26adcab0438eb8555e76b0481ad7bc42620c87ea0e43.js" integrity="sha256-/boGR8lQESekHyatyrBDjrhVXnawSBrXvEJiDIfqDkM=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>hope to be a great computer technology Site</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/posts/" >
+        Posts
+      </a>
+      
+<ul>
+  
+  <li>
+    <a href="/posts/angluar/" >
+        angular
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/ansible/" >
+        ansible
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/cicd/" >
+        CICD
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/devops/" >
+        DevOps
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/english/" >
+        English
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/golang/" >
+        golang
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/istio/" >
+        istio
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/kubernetes/" >
+        Kubernetes
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/material2/" >
+        mererial2
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/mysql/" >
+        mysql
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/postgresql/" >
+        postgresql
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/python/" >
+        python
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/cloud/" >
+        云服务
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/security/" >
+        安全
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/container/" >
+        容器
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/literature/" >
+        文学
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/diary/" >
+        日记
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/machine_learning/" >
+        机器学习
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/monitor/" >
+        监控
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/sre/" >
+        站点可靠性工程
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/network/" >
+        网络
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/poetry/" >
+        诗歌
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/essay/" >
+        随笔
+      </a>
+  </li>
+  
+</ul>
+
+  </li>
+  
+  <li>
+    <a href="/about/" >
+        关于作者
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var a=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(b){localStorage.setItem("menu.scrollTop",a.scrollTop)}),a.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Excel 合并表格</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents"></nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+<article class="markdown">
+  <h1>
+    <a href="/posts/essay/excel-%E5%90%88%E5%B9%B6%E8%A1%A8%E6%A0%BC/">Excel 合并表格</a>
+  </h1>
+  
+
+
+  
+
+  
+
+
+
+<ol>
+<li>前提： 要合并的表格表格列数相同</li>
+<li>在要合并的表格放一个文件内，建一个新的空表格：
+<img src="https://upload-images.jianshu.io/upload_images/6000429-d52aac8db46c333c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" /></li>
+</ol>
+<p>3.打开表格：</p>
+<p>4.鼠标放到左下角的sheet导航栏上右键选择查看源码：
+<img src="https://upload-images.jianshu.io/upload_images/6000429-c2be23288bf3f69a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" /></p>
+<ol start="5">
+<li>
+<p>把后面的代码贴入文本框中点顶部菜单栏的运行即可：
+<img src="https://upload-images.jianshu.io/upload_images/6000429-4a3266b7c437cb4c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" /></p>
+</li>
+<li>
+<p>脚本</p>
+</li>
+</ol>
+<pre tabindex="0"><code>Sub 合并当前目录下所有工作簿的全部工作表()
+Dim MyPath, MyName, AWbName
+Dim Wb As Workbook, WbN As String
+Dim G As Long
+Dim Num As Long
+Dim BOX As String
+Application.ScreenUpdating = False
+MyPath = ActiveWorkbook.Path
+MyName = Dir(MyPath &amp; &quot;\&quot; &amp; &quot;*.xlsx&quot;)
+AWbName = ActiveWorkbook.Name
+Num = 0
+Do While MyName &lt;&gt; &quot;&quot;
+If MyName &lt;&gt; AWbName Then
+Set Wb = Workbooks.Open(MyPath &amp; &quot;\&quot; &amp; MyName)
+Num = Num + 1
+With Workbooks(1).ActiveSheet
+.Cells(.Range(&quot;B1048576&quot;).End(xlUp).Row + 2, 1) = Left(MyName, Len(MyName) - 4)
+For G = 1 To Sheets.Count
+Wb.Sheets(G).UsedRange.Copy .Cells(.Range(&quot;B1048576&quot;).End(xlUp).Row + 1, 1)
+Next
+WbN = WbN &amp; Chr(13) &amp; Wb.Name
+Wb.Close False
+End With
+End If
+MyName = Dir
+Loop
+Range(&quot;B1&quot;).Select
+Application.ScreenUpdating = True
+MsgBox &quot;共合并了&quot; &amp; Num &amp; &quot;个工作薄下的全部工作表。如下：&quot; &amp; Chr(13) &amp; WbN, vbInformation, &quot;提示&quot;
+End Sub
+</code></pre></article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+  
+
+  
+
+  <script src="https://utteranc.es/client.js" repo="wanyijie/blog" issue-term="pathname" label="web"
+    theme="github-light" crossorigin="anonymous" async>
+    </script>
+</div>
+
+
+
+<script>{ { . | safeJS } }</script>
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents"></nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6266541561533854"
+     crossorigin="anonymous"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

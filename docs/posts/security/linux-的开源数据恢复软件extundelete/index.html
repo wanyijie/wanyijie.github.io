@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Extundelete工具简介 Extundelete 是基于 linux 的开源数据恢复软件。如果您不小心误删除数据，并且 Linux 系统也没有与 Windows 系统下回收站类似的功能，您可以方便快速安装此工具。
+在利用 extundelete 恢复文件时并不依赖特定文件格式，首先extundelete会通过文件系统的inode信息（根目录的inode一般为2）来获得当前文件系统下所有文件的信息，包括存在的和已经删除的文件，这些信息包括文件名和inode。然后利用inode信息结合日志去查询该inode所在的block位置，包括直接块，间接块等信息。最后利用dd命令将这些信息备份出来，从而恢复数据文件。该工具最给力的一点就是支持ext3/ext4双格式分区恢复，基于整个磁盘的恢复功能较为强大。 注意：在实际线上恢复过程中，切勿将extundelete安装到你误删的文件所在硬盘，这样会有一定几率将需要恢复的数据彻底覆盖
+src/extundelete &ndash;help#A typical usage scenario is presented below. Note that some of the commands below require special permissions to complete. Adding &lsquo;sudo &#39; before the command is one way to ensure you have the necessary permissions. Assume you have deleted a file called /home/user/an/important/file. Also assume the output of the &lsquo;mount&rsquo; command shows this line (among others): /dev/sda3 on /home type ext3 (rw) This line shows that the /home directory is on the partition named /dev/sda3, so then run: umount /dev/sda3 and check that it is now unmounted by running the mount command again and seeing it is not listed.">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="" />
+<meta property="og:description" content="Extundelete工具简介 Extundelete 是基于 linux 的开源数据恢复软件。如果您不小心误删除数据，并且 Linux 系统也没有与 Windows 系统下回收站类似的功能，您可以方便快速安装此工具。
+在利用 extundelete 恢复文件时并不依赖特定文件格式，首先extundelete会通过文件系统的inode信息（根目录的inode一般为2）来获得当前文件系统下所有文件的信息，包括存在的和已经删除的文件，这些信息包括文件名和inode。然后利用inode信息结合日志去查询该inode所在的block位置，包括直接块，间接块等信息。最后利用dd命令将这些信息备份出来，从而恢复数据文件。该工具最给力的一点就是支持ext3/ext4双格式分区恢复，基于整个磁盘的恢复功能较为强大。 注意：在实际线上恢复过程中，切勿将extundelete安装到你误删的文件所在硬盘，这样会有一定几率将需要恢复的数据彻底覆盖
+src/extundelete &ndash;help#A typical usage scenario is presented below. Note that some of the commands below require special permissions to complete. Adding &lsquo;sudo &#39; before the command is one way to ensure you have the necessary permissions. Assume you have deleted a file called /home/user/an/important/file. Also assume the output of the &lsquo;mount&rsquo; command shows this line (among others): /dev/sda3 on /home type ext3 (rw) This line shows that the /home directory is on the partition named /dev/sda3, so then run: umount /dev/sda3 and check that it is now unmounted by running the mount command again and seeing it is not listed." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://wangyijie.store/posts/security/linux-%E7%9A%84%E5%BC%80%E6%BA%90%E6%95%B0%E6%8D%AE%E6%81%A2%E5%A4%8D%E8%BD%AF%E4%BB%B6extundelete/" /><meta property="article:section" content="posts" />
+
+
+
+<title>Linux 的开源数据恢复软件 Extundelete | hope to be a great computer technology Site</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.46181bc93375ba932026e753b37c40e6ff8bb16a9ef770c78bcc663e4577b1ba.css" integrity="sha256-RhgbyTN1upMgJudTs3xA5v&#43;LsWqe93DHi8xmPkV3sbo=" crossorigin="anonymous">
+  <script defer src="/flexsearch.min.js"></script>
+  <script defer src="/en.search.min.fdba0647c9501127a41f26adcab0438eb8555e76b0481ad7bc42620c87ea0e43.js" integrity="sha256-/boGR8lQESekHyatyrBDjrhVXnawSBrXvEJiDIfqDkM=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>hope to be a great computer technology Site</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/posts/" >
+        Posts
+      </a>
+      
+<ul>
+  
+  <li>
+    <a href="/posts/angluar/" >
+        angular
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/ansible/" >
+        ansible
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/cicd/" >
+        CICD
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/devops/" >
+        DevOps
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/english/" >
+        English
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/golang/" >
+        golang
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/istio/" >
+        istio
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/kubernetes/" >
+        Kubernetes
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/material2/" >
+        mererial2
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/mysql/" >
+        mysql
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/postgresql/" >
+        postgresql
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/python/" >
+        python
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/cloud/" >
+        云服务
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/security/" >
+        安全
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/container/" >
+        容器
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/literature/" >
+        文学
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/diary/" >
+        日记
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/machine_learning/" >
+        机器学习
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/monitor/" >
+        监控
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/sre/" >
+        站点可靠性工程
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/network/" >
+        网络
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/poetry/" >
+        诗歌
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/essay/" >
+        随笔
+      </a>
+  </li>
+  
+</ul>
+
+  </li>
+  
+  <li>
+    <a href="/about/" >
+        关于作者
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var a=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(b){localStorage.setItem("menu.scrollTop",a.scrollTop)}),a.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Linux 的开源数据恢复软件 Extundelete</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#srcextundelete---help">src/extundelete &ndash;help</a></li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+<article class="markdown">
+  <h1>
+    <a href="/posts/security/linux-%E7%9A%84%E5%BC%80%E6%BA%90%E6%95%B0%E6%8D%AE%E6%81%A2%E5%A4%8D%E8%BD%AF%E4%BB%B6extundelete/">Linux 的开源数据恢复软件 Extundelete</a>
+  </h1>
+  
+
+
+  
+
+  
+
+
+
+<p>Extundelete工具简介
+Extundelete 是基于 linux 的开源数据恢复软件。如果您不小心误删除数据，并且 Linux 系统也没有与 Windows 系统下回收站类似的功能，您可以方便快速安装此工具。</p>
+<p>在利用 extundelete 恢复文件时并不依赖特定文件格式，首先extundelete会通过文件系统的inode信息（根目录的inode一般为2）来获得当前文件系统下所有文件的信息，包括存在的和已经删除的文件，这些信息包括文件名和inode。然后利用inode信息结合日志去查询该inode所在的block位置，包括直接块，间接块等信息。最后利用dd命令将这些信息备份出来，从而恢复数据文件。该工具最给力的一点就是支持ext3/ext4双格式分区恢复，基于整个磁盘的恢复功能较为强大。
+注意：在实际线上恢复过程中，切勿将extundelete安装到你误删的文件所在硬盘，这样会有一定几率将需要恢复的数据彻底覆盖</p>
+<h2 id="srcextundelete---help">
+  src/extundelete &ndash;help
+  <a class="anchor" href="#srcextundelete---help">#</a>
+</h2>
+<p>A typical usage scenario is presented below.  Note that some
+of the commands below require special permissions to
+complete.  Adding &lsquo;sudo ' before the command is one way to
+ensure you have the necessary permissions.  Assume you
+have deleted a file called <strong>/home/user/an/important/file.</strong>
+Also assume the output of the &lsquo;mount&rsquo; command shows this
+line (among others):
+/dev/sda3 on /home type ext3 (rw)
+This line shows that the /home directory is on the partition
+named /dev/sda3, so then run:
+<code>umount /dev/sda3</code>
+and check that it is now unmounted by running the mount
+command again and seeing it is not listed.
+Now, with this information, run extundelete:
+<code>extundelete /dev/sda3 --restore-file user/an/important/file</code>
+If you have deleted the directory &lsquo;important&rsquo;, you can run:
+<code>extundelete /dev/sda3 --restore-directory user/an/important</code>
+Or if you have deleted everything, you can run:
+<code>extundelete /dev/sda3 --restore-all</code></p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+  
+
+  
+
+  <script src="https://utteranc.es/client.js" repo="wanyijie/blog" issue-term="pathname" label="web"
+    theme="github-light" crossorigin="anonymous" async>
+    </script>
+</div>
+
+
+
+<script>{ { . | safeJS } }</script>
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#srcextundelete---help">src/extundelete &ndash;help</a></li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6266541561533854"
+     crossorigin="anonymous"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

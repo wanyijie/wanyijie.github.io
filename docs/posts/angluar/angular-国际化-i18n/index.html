@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Internationalization (i18n)#国际化 (i18n)#If you are working on internationalization, the CLI can help you with the following steps:
+如果您正在致力于国际化，CLI可以通过以下步骤为您提供帮助：
+ extraction
+提取 serve
+服务 build
+构建  The first thing that you have to do is to setup your application to use i18n. To do that you can follow the cookbook on angular.io.
+你必须做的第一件事是设置你的应用程序使用国际化。要做到这一点，你查看 关于angular.io的食谱  。
+Extraction#提取#When your app is ready, you can extract the strings to translate from your templates with the ng xi18n command.">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="" />
+<meta property="og:description" content="Internationalization (i18n)#国际化 (i18n)#If you are working on internationalization, the CLI can help you with the following steps:
+如果您正在致力于国际化，CLI可以通过以下步骤为您提供帮助：
+ extraction
+提取 serve
+服务 build
+构建  The first thing that you have to do is to setup your application to use i18n. To do that you can follow the cookbook on angular.io.
+你必须做的第一件事是设置你的应用程序使用国际化。要做到这一点，你查看 关于angular.io的食谱  。
+Extraction#提取#When your app is ready, you can extract the strings to translate from your templates with the ng xi18n command." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://wangyijie.store/posts/angluar/angular-%E5%9B%BD%E9%99%85%E5%8C%96-i18n/" /><meta property="article:section" content="posts" />
+
+
+
+<title>Angular 国际化 (I18n) | hope to be a great computer technology Site</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.46181bc93375ba932026e753b37c40e6ff8bb16a9ef770c78bcc663e4577b1ba.css" integrity="sha256-RhgbyTN1upMgJudTs3xA5v&#43;LsWqe93DHi8xmPkV3sbo=" crossorigin="anonymous">
+  <script defer src="/flexsearch.min.js"></script>
+  <script defer src="/en.search.min.fdba0647c9501127a41f26adcab0438eb8555e76b0481ad7bc42620c87ea0e43.js" integrity="sha256-/boGR8lQESekHyatyrBDjrhVXnawSBrXvEJiDIfqDkM=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>hope to be a great computer technology Site</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/posts/" >
+        Posts
+      </a>
+      
+<ul>
+  
+  <li>
+    <a href="/posts/angluar/" >
+        angular
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/ansible/" >
+        ansible
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/cicd/" >
+        CICD
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/devops/" >
+        DevOps
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/english/" >
+        English
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/golang/" >
+        golang
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/istio/" >
+        istio
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/kubernetes/" >
+        Kubernetes
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/material2/" >
+        mererial2
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/mysql/" >
+        mysql
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/postgresql/" >
+        postgresql
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/python/" >
+        python
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/cloud/" >
+        云服务
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/security/" >
+        安全
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/container/" >
+        容器
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/literature/" >
+        文学
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/diary/" >
+        日记
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/machine_learning/" >
+        机器学习
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/monitor/" >
+        监控
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/sre/" >
+        站点可靠性工程
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/network/" >
+        网络
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/poetry/" >
+        诗歌
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/essay/" >
+        随笔
+      </a>
+  </li>
+  
+</ul>
+
+  </li>
+  
+  <li>
+    <a href="/about/" >
+        关于作者
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var a=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(b){localStorage.setItem("menu.scrollTop",a.scrollTop)}),a.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Angular 国际化 (I18n)</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#extraction">Extraction</a></li>
+        <li><a href="#提取">提取</a></li>
+        <li><a href="#building-and-serving">Building and serving</a></li>
+        <li><a href="#建设和服务">建设和服务</a></li>
+        <li><a href="#using-multiple-languages">Using multiple languages</a></li>
+        <li><a href="#使用多种语言">使用多种语言</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+<article class="markdown">
+  <h1>
+    <a href="/posts/angluar/angular-%E5%9B%BD%E9%99%85%E5%8C%96-i18n/">Angular 国际化 (I18n)</a>
+  </h1>
+  
+
+
+  
+
+  
+
+
+
+<h1 id="internationalization-i18n">
+  Internationalization (i18n)
+  <a class="anchor" href="#internationalization-i18n">#</a>
+</h1>
+<h1 id="国际化-i18n">
+  国际化 (i18n)
+  <a class="anchor" href="#%e5%9b%bd%e9%99%85%e5%8c%96-i18n">#</a>
+</h1>
+<p>If you are working on internationalization, the CLI can help you with the following steps:<br>
+如果您正在致力于国际化，CLI可以通过以下步骤为您提供帮助：</p>
+<ul>
+<li>extraction<br>
+提取</li>
+<li>serve<br>
+服务</li>
+<li>build<br>
+构建</li>
+</ul>
+<p>The first thing that you have to do is to setup your application to use i18n.
+To do that you can follow <a href="https://angular.io/docs/ts/latest/cookbook/i18n.html">the cookbook on angular.io</a>.<br>
+你必须做的第一件事是设置你的应用程序使用国际化。要做到这一点，你查看 <a href="https://angular.io/docs/ts/latest/cookbook/i18n.html">关于angular.io的食谱 </a> 。</p>
+<h3 id="extraction">
+  Extraction
+  <a class="anchor" href="#extraction">#</a>
+</h3>
+<h3 id="提取">
+  提取
+  <a class="anchor" href="#%e6%8f%90%e5%8f%96">#</a>
+</h3>
+<p>When your app is ready, you can extract the strings to translate from your templates with the
+<code>ng xi18n</code> command.<br>
+当您的应用程序准备就绪时，您可以使用 <code>ng xi18n</code> 命令从您的模板中提取字符串以进行翻译。</p>
+<p>By default it will create a file named <code>messages.xlf</code> in your <code>src</code> folder.
+You can use <a href="./xi18n">parameters from the xi18n command</a> to change the format,
+the name, the location and the source locale of the extracted file.<br>
+默认情况下，它会在 <code>src</code> 文件夹中创建一个名为 <code>messages.xlf</code> 的文件. 您可以使用 <a href="./xi18n">xi18n命令中的参数</a>更改提取文件的格式，名称，位置和源语言环境。</p>
+<p>For example to create a file in the <code>src/locale</code> folder you would use:<br>
+例如，要在src / locale文件夹中创建一个文件，您可以使用：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">ng xi18n --output-path src/locale
+</code></pre></div><h3 id="building-and-serving">
+  Building and serving
+  <a class="anchor" href="#building-and-serving">#</a>
+</h3>
+<h3 id="建设和服务">
+  建设和服务
+  <a class="anchor" href="#%e5%bb%ba%e8%ae%be%e5%92%8c%e6%9c%8d%e5%8a%a1">#</a>
+</h3>
+<p>Now that you have generated a messages bundle source file, you can translate it.
+Let&rsquo;s say that your file containing the french translations is named <code>messages.fr.xlf</code>
+and is located in the <code>src/locale</code> folder.<br>
+现在您已经生成了一个消息包源文件，您可以将其翻译。假设您的包含法文翻译的文件名为messages.fr.xlf并位于src / locale文件夹中。</p>
+<p>If you want to use it when you serve your application you can use the 4 following options:<br>
+如果您想在为应用程序提供服务时使用它，则可以使用以下4个选项：</p>
+<ul>
+<li><code>i18nFile</code> Localization file to use for i18n.</li>
+<li><code>i18nFile</code> 用于i18n的本地化文件.</li>
+<li><code>i18nFormat</code> Format of the localization file specified with &ndash;i18n-file.</li>
+<li><code>i18nFormat</code> 使用&ndash;i18n-file指定的本地化文件的格式.</li>
+<li><code>i18nLocale</code> Locale to use for i18n.</li>
+<li><code>i18nLocale</code> 用于i18n的语言环境.</li>
+<li><code>i18nMissingTranslation</code> Defines the strategy to use for missing i18n translations.</li>
+<li><code>i18nMissingTranslation</code> 定义用于缺少i18n翻译的策略。.</li>
+</ul>
+<p>In our case we can load the french translations with the following configuration:<br>
+在我们的案例中，我们可以使用以下配置加载法语翻译:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json"><span style="color:#e6db74">&#34;architect&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> {
+  <span style="color:#f92672">&#34;build&#34;</span>: {
+    <span style="color:#f92672">&#34;builder&#34;</span>: <span style="color:#e6db74">&#34;@angular-devkit/build-angular:browser&#34;</span>,
+    <span style="color:#f92672">&#34;options&#34;</span>: { <span style="color:#960050;background-color:#1e0010">...</span> },
+    <span style="color:#f92672">&#34;configurations&#34;</span>: {
+      <span style="color:#f92672">&#34;fr&#34;</span>: {
+        <span style="color:#f92672">&#34;aot&#34;</span>: <span style="color:#66d9ef">true</span>,
+        <span style="color:#f92672">&#34;outputPath&#34;</span>: <span style="color:#e6db74">&#34;dist/my-project-fr/&#34;</span>,
+        <span style="color:#f92672">&#34;i18nFile&#34;</span>: <span style="color:#e6db74">&#34;src/locale/messages.fr.xlf&#34;</span>,
+        <span style="color:#f92672">&#34;i18nFormat&#34;</span>: <span style="color:#e6db74">&#34;xlf&#34;</span>,
+        <span style="color:#f92672">&#34;i18nLocale&#34;</span>: <span style="color:#e6db74">&#34;fr&#34;</span>,
+        <span style="color:#f92672">&#34;i18nMissingTranslation&#34;</span>: <span style="color:#e6db74">&#34;error&#34;</span>,
+      }
+<span style="color:#960050;background-color:#1e0010">//</span> <span style="color:#960050;background-color:#1e0010">...</span>
+<span style="color:#e6db74">&#34;serve&#34;</span>: {
+  <span style="color:#f92672">&#34;builder&#34;</span>: <span style="color:#e6db74">&#34;@angular-devkit/build-angular:dev-server&#34;</span>,
+  <span style="color:#f92672">&#34;options&#34;</span>: {
+    <span style="color:#f92672">&#34;browserTarget&#34;</span>: <span style="color:#e6db74">&#34;your-project-name:build&#34;</span>
+  },
+  <span style="color:#f92672">&#34;configurations&#34;</span>: {
+    <span style="color:#f92672">&#34;production&#34;</span>: {
+      <span style="color:#f92672">&#34;browserTarget&#34;</span>: <span style="color:#e6db74">&#34;your-project-name:build:production&#34;</span>
+    },
+    <span style="color:#f92672">&#34;fr&#34;</span>: {
+      <span style="color:#f92672">&#34;browserTarget&#34;</span>: <span style="color:#e6db74">&#34;your-project-name:build:fr&#34;</span>
+    }
+  }
+},
+</code></pre></div><p>To build the application using the French i18n options, use <code>ng build --configuration=fr</code>.
+To serve, use <code>ng serve --configuration=fr</code>.<br>
+使用法语i18n选项构建应用程序,使用 <code>ng build --configuration=fr</code>. 运行服务，请使用ng <code>serve --configuration=fr</code>.</p>
+<p>Our application is exactly the same but the <code>LOCALE_ID</code> has been provided with &ldquo;fr&rdquo;,
+<code>TRANSLATIONS_FORMAT</code> with &ldquo;xlf&rdquo; and <code>TRANSLATIONS</code> with the content of <code>messages.fr.xlf</code>.
+All the strings flagged for i18n have been replaced with their french translations.<br>
+我们的应用程序是完全相同的，但是 <code>LOCALE_ID</code> 有提供“fr”, 带有“xlf”的<code>TRANSLATIONS_FORMAT</code> 和带有<code> messages.fr.xlf</code> 内容的 <code>TRANSLATIONS</code>。</p>
+<p>Note: this only works for AOT, if you want to use i18n in JIT you will have to update<br>
+your bootstrap file yourself.<br>
+注意：这只适用于AOT，如果你想在JIT中使用i18n，你必须自己更新引导文件。</p>
+<h3 id="using-multiple-languages">
+  Using multiple languages
+  <a class="anchor" href="#using-multiple-languages">#</a>
+</h3>
+<h3 id="使用多种语言">
+  使用多种语言
+  <a class="anchor" href="#%e4%bd%bf%e7%94%a8%e5%a4%9a%e7%a7%8d%e8%af%ad%e8%a8%80">#</a>
+</h3>
+<p>When you build your application for a specific locale, it is probably a good idea to change
+the output path with the <code>outputPath</code> options in order to save the files to a different location.<br>
+在为特定语言环境构建应用程序时，最好使用 <code>outputPath</code> 选项更改输出路径，以便将文件保存到其他位置。</p>
+<p>If you end up serving this specific version from a subdirectory, you can also change
+the base url used by your application with the <code>baseHref</code> option.<br>
+如果您最终从子目录中提供此特定版本，您还可以使用 <code>baseHref</code> 选项更改应用程序使用的基础URL。</p>
+<p>For example if the french version of your application is served from <a href="https://myapp.com/fr/">https://myapp.com/fr/</a>
+then you would build the french version like this:<br>
+例如，如果您的应用程序的法语版本是从https://myapp.com/fr/提供的，那么您可以像这样构建法语版本：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json"><span style="color:#e6db74">&#34;configurations&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> {
+  <span style="color:#f92672">&#34;fr&#34;</span>: {
+    <span style="color:#f92672">&#34;aot&#34;</span>: <span style="color:#66d9ef">true</span>,
+    <span style="color:#f92672">&#34;outputPath&#34;</span>: <span style="color:#e6db74">&#34;dist/my-project-fr/&#34;</span>,
+    <span style="color:#f92672">&#34;baseHref&#34;</span>: <span style="color:#e6db74">&#34;/fr/&#34;</span>,
+    <span style="color:#f92672">&#34;i18nFile&#34;</span>: <span style="color:#e6db74">&#34;src/locale/messages.fr.xlf&#34;</span>,
+    <span style="color:#f92672">&#34;i18nFormat&#34;</span>: <span style="color:#e6db74">&#34;xlf&#34;</span>,
+    <span style="color:#f92672">&#34;i18nLocale&#34;</span>: <span style="color:#e6db74">&#34;fr&#34;</span>,
+    <span style="color:#f92672">&#34;i18nMissingTranslation&#34;</span>: <span style="color:#e6db74">&#34;error&#34;</span>,
+  }
+</code></pre></div><p>If you need more details about how to create scripts to generate the app in multiple
+languages and how to setup Apache 2 to serve them from different subdirectories,
+you can read <a href="https://medium.com/@feloy/deploying-an-i18n-angular-app-with-angular-cli-fc788f17e358#.1xq4iy6fp">this great tutorial</a>
+by Philippe Martin.<br>
+如果您需要更多关于如何创建脚本以多种语言生成应用程序的详细信息，以及如何设置Apache 2以便从不同的子目录提供它们，你可以阅读菲利普马丁的这个<a href="https://medium.com/@feloy/deploying-an-i18n-angular-app-with-angular-cli-fc788f17e358#.1xq4iy6fp">伟大的教程</a>。</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+  
+
+  
+
+  <script src="https://utteranc.es/client.js" repo="wanyijie/blog" issue-term="pathname" label="web"
+    theme="github-light" crossorigin="anonymous" async>
+    </script>
+</div>
+
+
+
+<script>{ { . | safeJS } }</script>
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#extraction">Extraction</a></li>
+        <li><a href="#提取">提取</a></li>
+        <li><a href="#building-and-serving">Building and serving</a></li>
+        <li><a href="#建设和服务">建设和服务</a></li>
+        <li><a href="#using-multiple-languages">Using multiple languages</a></li>
+        <li><a href="#使用多种语言">使用多种语言</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6266541561533854"
+     crossorigin="anonymous"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

@@ -3,28 +3,20 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="install docker#需要 docker-ce-18.03.&#43; docker-compose 1.23.&#43;
-yum install -y http://mirror.azure.cn/docker-ce/linux/centos/7/x86_64/stable/Packages/docker-ce-cli-19.03.8-3.el7.x86_64.rpm systemctl start docker systemctl enable docker curl -o /usr/local/bin/docker-compose http://mirror.azure.cn/docker-toolbox/linux/compose/1.25.5/docker-compose-Linux-x86_64 chmod &#43;x /usr/local/bin/docker-compose install pinpoint#cd /opt git clone https://github.com/naver/pinpoint-docker cd pinpoint-docker docker-compose pull docker-compose up -d
-#访问 demo: 打开页面之后点各个连接产生访问数据 http://${your host}:8000
-web: http://${your host}:8079
-example#最后这一张图片是显示APM信息的,打开的方式是框住主页的访问数据点图,选择之后就会打开新页面#">
+<meta name="description" content="通过docker安装APM系统pinpoint">
 <meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="" />
-<meta property="og:description" content="install docker#需要 docker-ce-18.03.&#43; docker-compose 1.23.&#43;
-yum install -y http://mirror.azure.cn/docker-ce/linux/centos/7/x86_64/stable/Packages/docker-ce-cli-19.03.8-3.el7.x86_64.rpm systemctl start docker systemctl enable docker curl -o /usr/local/bin/docker-compose http://mirror.azure.cn/docker-toolbox/linux/compose/1.25.5/docker-compose-Linux-x86_64 chmod &#43;x /usr/local/bin/docker-compose install pinpoint#cd /opt git clone https://github.com/naver/pinpoint-docker cd pinpoint-docker docker-compose pull docker-compose up -d
-#访问 demo: 打开页面之后点各个连接产生访问数据 http://${your host}:8000
-web: http://${your host}:8079
-example#最后这一张图片是显示APM信息的,打开的方式是框住主页的访问数据点图,选择之后就会打开新页面#" />
+<meta property="og:description" content="通过docker安装APM系统pinpoint" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://wangyijie.github.io/posts/devops/apm-pinpoint-install/" /><meta property="article:section" content="posts" />
+<meta property="og:url" content="https://wangyijie.store/posts/devops/apm-pinpoint-install/" /><meta property="article:section" content="posts" />
 
 
 
-<title>Apm Pinpoint Install | A great computer technology Site</title>
+<title>Apm Pinpoint Install | hope to be a great computer technology Site</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.46181bc93375ba932026e753b37c40e6ff8bb16a9ef770c78bcc663e4577b1ba.css" integrity="sha256-RhgbyTN1upMgJudTs3xA5v&#43;LsWqe93DHi8xmPkV3sbo=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.a56ad50ed261bfdb649cf182a254f9ed96d46fee7705a6ce5c9e85fa1ff18eb5.js" integrity="sha256-pWrVDtJhv9tknPGColT57ZbUb&#43;53BabOXJ6F&#43;h/xjrU=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.fdba0647c9501127a41f26adcab0438eb8555e76b0481ad7bc42620c87ea0e43.js" integrity="sha256-/boGR8lQESekHyatyrBDjrhVXnawSBrXvEJiDIfqDkM=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -40,7 +32,7 @@ https://github.com/alex-shpak/hugo-book
         
   <nav>
 <h2 class="book-brand">
-  <a class="flex align-center" href="/"><span>A great computer technology Site</span>
+  <a class="flex align-center" href="/"><span>hope to be a great computer technology Site</span>
   </a>
 </h2>
 
@@ -86,7 +78,7 @@ https://github.com/alex-shpak/hugo-book
 <ul>
   
   <li>
-    <a href="/posts/angluar-cli/" >
+    <a href="/posts/angluar/" >
         angular
       </a>
   </li>
@@ -100,18 +92,6 @@ https://github.com/alex-shpak/hugo-book
   <li>
     <a href="/posts/cicd/" >
         CICD
-      </a>
-  </li>
-  
-  <li>
-    <a href="/posts/cloud/" >
-        cloude
-      </a>
-  </li>
-  
-  <li>
-    <a href="/posts/container/" >
-        container
       </a>
   </li>
   
@@ -146,20 +126,8 @@ https://github.com/alex-shpak/hugo-book
   </li>
   
   <li>
-    <a href="/posts/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" >
-        mechine leaning
-      </a>
-  </li>
-  
-  <li>
     <a href="/posts/material2/" >
         mererial2
-      </a>
-  </li>
-  
-  <li>
-    <a href="/posts/%E7%9B%91%E6%8E%A7/" >
-        monitor
       </a>
   </li>
   
@@ -170,56 +138,80 @@ https://github.com/alex-shpak/hugo-book
   </li>
   
   <li>
-    <a href="/posts/%E7%BD%91%E7%BB%9C/" >
-        networking
-      </a>
-  </li>
-  
-  <li>
-    <a href="/posts/%E6%97%A5%E8%AE%B0%E6%9C%AC/" >
-        notes
-      </a>
-  </li>
-  
-  <li>
     <a href="/posts/postgresql/" >
         postgresql
       </a>
   </li>
   
   <li>
-    <a href="/posts/django/" >
+    <a href="/posts/python/" >
         python
       </a>
   </li>
   
   <li>
-    <a href="/posts/%E5%AE%89%E5%85%A8/" >
-        safe
+    <a href="/posts/cloud/" >
+        云服务
       </a>
   </li>
   
   <li>
-    <a href="/posts/%E8%AF%97%E8%AF%8D/" >
-        shi chi
+    <a href="/posts/security/" >
+        安全
       </a>
   </li>
   
   <li>
-    <a href="/posts/%E7%AB%99%E7%82%B9%E5%8F%AF%E9%9D%A0%E6%80%A7%E5%B7%A5%E7%A8%8B/" >
-        SRE
+    <a href="/posts/container/" >
+        容器
       </a>
   </li>
   
   <li>
-    <a href="/posts/%E6%96%87%E5%AD%A6/" >
-        wenxue
+    <a href="/posts/literature/" >
+        文学
       </a>
   </li>
   
   <li>
-    <a href="/posts/%E9%9A%8F%E7%AC%94/" >
-        write somethings
+    <a href="/posts/diary/" >
+        日记
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/machine_learning/" >
+        机器学习
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/monitor/" >
+        监控
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/sre/" >
+        站点可靠性工程
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/network/" >
+        网络
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/poetry/" >
+        诗歌
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/essay/" >
+        随笔
       </a>
   </li>
   
@@ -229,7 +221,7 @@ https://github.com/alex-shpak/hugo-book
   
   <li>
     <a href="/about/" >
-        About
+        关于作者
       </a>
   </li>
   
@@ -298,6 +290,7 @@ https://github.com/alex-shpak/hugo-book
 
 
 
+<p>通过docker安装APM系统pinpoint</p>
 <h1 id="install-docker">
   install docker
   <a class="anchor" href="#install-docker">#</a>
@@ -333,8 +326,7 @@ http://${your host}:8000</p>
   最后这一张图片是显示APM信息的,打开的方式是框住主页的访问数据点图,选择之后就会打开新页面
   <a class="anchor" href="#%e6%9c%80%e5%90%8e%e8%bf%99%e4%b8%80%e5%bc%a0%e5%9b%be%e7%89%87%e6%98%af%e6%98%be%e7%a4%baapm%e4%bf%a1%e6%81%af%e7%9a%84%e6%89%93%e5%bc%80%e7%9a%84%e6%96%b9%e5%bc%8f%e6%98%af%e6%a1%86%e4%bd%8f%e4%b8%bb%e9%a1%b5%e7%9a%84%e8%ae%bf%e9%97%ae%e6%95%b0%e6%8d%ae%e7%82%b9%e5%9b%be%e9%80%89%e6%8b%a9%e4%b9%8b%e5%90%8e%e5%b0%b1%e4%bc%9a%e6%89%93%e5%bc%80%e6%96%b0%e9%a1%b5%e9%9d%a2">#</a>
 </h1>
-<p><img src="https://upload-images.jianshu.io/upload_images/6000429-546fb97d1afa5f2a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="open APM" /></p>
-</article>
+<p><img src="https://upload-images.jianshu.io/upload_images/6000429-546fb97d1afa5f2a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="open APM" /></p></article>
  
       
 

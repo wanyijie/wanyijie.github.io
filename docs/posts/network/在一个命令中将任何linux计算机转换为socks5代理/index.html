@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="对于那些想上网的人来说这很方便 - 你可以在一个命令中将任何Linux计算机变成SOCKS5（和SOCKS4）代理：
+ssh -N -D 0.0.0.0:1080 user@ip 并且它不需要root权限。该ssh命令启动-D端口上的动态端口转发，1080并通过SOCSK5或SOCKS4协议与客户端通信，就像常规的SOCKS5代理一样！该-N选项确保ssh保持空闲状态，并且不在主机上执行任何命令。0.0.0.0允许任意地址连接，设置为127.0.0.1可以限制本机之外的主机使用代理，ip可以是远程代理主机，也可以是本机相当于把本机做为代理服务器
+如果您还希望命令作为守护进程进入后台，则添加-f选项：
+ssh -f -N -D 0.0.0.0:1080 user@ip 要使用它，只需让您的软件在您的Linux计算机的IP，端口1080上使用SOCKS5代理，并且您已完成，您的所有请求现在都会被代理.
+访问控制可以通过实现iptables。例如，要仅允许来自ip的1.2.3.4人员使用SOCKS5代理，请添加以下iptables规则：
+iptables -A INPUT --src 1.2.3.4 -p tcp --dport 1080 -j ACCEPT iptables -A INPUT -p tcp --dport 1080 -j REJECT 第一条规则说，允许任何人1.2.3.4连接到端口1080，另一条规则说，拒绝其他所有人连接到端口1080。">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="" />
+<meta property="og:description" content="对于那些想上网的人来说这很方便 - 你可以在一个命令中将任何Linux计算机变成SOCKS5（和SOCKS4）代理：
+ssh -N -D 0.0.0.0:1080 user@ip 并且它不需要root权限。该ssh命令启动-D端口上的动态端口转发，1080并通过SOCSK5或SOCKS4协议与客户端通信，就像常规的SOCKS5代理一样！该-N选项确保ssh保持空闲状态，并且不在主机上执行任何命令。0.0.0.0允许任意地址连接，设置为127.0.0.1可以限制本机之外的主机使用代理，ip可以是远程代理主机，也可以是本机相当于把本机做为代理服务器
+如果您还希望命令作为守护进程进入后台，则添加-f选项：
+ssh -f -N -D 0.0.0.0:1080 user@ip 要使用它，只需让您的软件在您的Linux计算机的IP，端口1080上使用SOCKS5代理，并且您已完成，您的所有请求现在都会被代理.
+访问控制可以通过实现iptables。例如，要仅允许来自ip的1.2.3.4人员使用SOCKS5代理，请添加以下iptables规则：
+iptables -A INPUT --src 1.2.3.4 -p tcp --dport 1080 -j ACCEPT iptables -A INPUT -p tcp --dport 1080 -j REJECT 第一条规则说，允许任何人1.2.3.4连接到端口1080，另一条规则说，拒绝其他所有人连接到端口1080。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://wangyijie.store/posts/network/%E5%9C%A8%E4%B8%80%E4%B8%AA%E5%91%BD%E4%BB%A4%E4%B8%AD%E5%B0%86%E4%BB%BB%E4%BD%95linux%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%BD%AC%E6%8D%A2%E4%B8%BAsocks5%E4%BB%A3%E7%90%86/" /><meta property="article:section" content="posts" />
+
+
+
+<title>在一个命令中将任何 Linux计算机转换为 Socks5代理 | hope to be a great computer technology Site</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.46181bc93375ba932026e753b37c40e6ff8bb16a9ef770c78bcc663e4577b1ba.css" integrity="sha256-RhgbyTN1upMgJudTs3xA5v&#43;LsWqe93DHi8xmPkV3sbo=" crossorigin="anonymous">
+  <script defer src="/flexsearch.min.js"></script>
+  <script defer src="/en.search.min.fdba0647c9501127a41f26adcab0438eb8555e76b0481ad7bc42620c87ea0e43.js" integrity="sha256-/boGR8lQESekHyatyrBDjrhVXnawSBrXvEJiDIfqDkM=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>hope to be a great computer technology Site</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/posts/" >
+        Posts
+      </a>
+      
+<ul>
+  
+  <li>
+    <a href="/posts/angluar/" >
+        angular
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/ansible/" >
+        ansible
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/cicd/" >
+        CICD
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/devops/" >
+        DevOps
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/english/" >
+        English
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/golang/" >
+        golang
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/istio/" >
+        istio
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/kubernetes/" >
+        Kubernetes
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/material2/" >
+        mererial2
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/mysql/" >
+        mysql
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/postgresql/" >
+        postgresql
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/python/" >
+        python
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/cloud/" >
+        云服务
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/security/" >
+        安全
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/container/" >
+        容器
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/literature/" >
+        文学
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/diary/" >
+        日记
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/machine_learning/" >
+        机器学习
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/monitor/" >
+        监控
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/sre/" >
+        站点可靠性工程
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/network/" >
+        网络
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/poetry/" >
+        诗歌
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/essay/" >
+        随笔
+      </a>
+  </li>
+  
+</ul>
+
+  </li>
+  
+  <li>
+    <a href="/about/" >
+        关于作者
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var a=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(b){localStorage.setItem("menu.scrollTop",a.scrollTop)}),a.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>在一个命令中将任何 Linux计算机转换为 Socks5代理</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents"></nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+<article class="markdown">
+  <h1>
+    <a href="/posts/network/%E5%9C%A8%E4%B8%80%E4%B8%AA%E5%91%BD%E4%BB%A4%E4%B8%AD%E5%B0%86%E4%BB%BB%E4%BD%95linux%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%BD%AC%E6%8D%A2%E4%B8%BAsocks5%E4%BB%A3%E7%90%86/">在一个命令中将任何 Linux计算机转换为 Socks5代理</a>
+  </h1>
+  
+
+
+  
+
+  
+
+
+
+<p>对于那些想上网的人来说这很方便 - 你可以在一个命令中将任何Linux计算机变成SOCKS5（和SOCKS4）代理：</p>
+<pre tabindex="0"><code>ssh -N -D 0.0.0.0:1080 user@ip
+</code></pre><p>并且它不需要root权限。该ssh命令启动-D端口上的动态端口转发，1080并通过SOCSK5或SOCKS4协议与客户端通信，就像常规的SOCKS5代理一样！该-N选项确保ssh保持空闲状态，并且不在主机上执行任何命令。0.0.0.0允许任意地址连接，设置为127.0.0.1可以限制本机之外的主机使用代理，ip可以是远程代理主机，也可以是本机相当于把本机做为代理服务器</p>
+<p>如果您还希望命令作为守护进程进入后台，则添加-f选项：</p>
+<pre tabindex="0"><code>ssh -f -N -D 0.0.0.0:1080 user@ip
+</code></pre><p>要使用它，只需让您的软件在您的Linux计算机的IP，端口1080上使用SOCKS5代理，并且您已完成，您的所有请求现在都会被代理.</p>
+<p>访问控制可以通过实现iptables。例如，要仅允许来自ip的1.2.3.4人员使用SOCKS5代理，请添加以下iptables规则：</p>
+<pre tabindex="0"><code>iptables -A INPUT --src 1.2.3.4 -p tcp --dport 1080 -j ACCEPT
+iptables -A INPUT -p tcp --dport 1080 -j REJECT
+</code></pre><p>第一条规则说，允许任何人1.2.3.4连接到端口1080，另一条规则说，拒绝其他所有人连接到端口1080。</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+  
+
+  
+
+  <script src="https://utteranc.es/client.js" repo="wanyijie/blog" issue-term="pathname" label="web"
+    theme="github-light" crossorigin="anonymous" async>
+    </script>
+</div>
+
+
+
+<script>{ { . | safeJS } }</script>
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents"></nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6266541561533854"
+     crossorigin="anonymous"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

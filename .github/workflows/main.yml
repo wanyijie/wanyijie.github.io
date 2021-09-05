@@ -44,12 +44,6 @@ jobs:
           hugo version
           pwd
           hugo -d docs
-          
-      - name: Run git commit
-        run: |
 	  git add docs
 	  git commit -m "$(date)"
-	  
-      - name: Run a multi-line script
-        run: |
 	  git push wangyijie master

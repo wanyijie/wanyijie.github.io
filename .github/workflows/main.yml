@@ -43,4 +43,5 @@ jobs:
           go version
           hugo version
           pwd
+          ls
           hugo -d docs

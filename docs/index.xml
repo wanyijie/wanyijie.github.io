@@ -51,11 +51,7 @@ mysql -uroot -ptest</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/angluar/angular-cli-6-%E5%BA%93%E6%94%AF%E6%8C%81/</guid>
-      <description>Library support in Angular CLI 6#库支持在 Angular CLI 6#Angular CLI v6 comes with library support via ng-packagr plugged into the build system we use in Angular CLI, together with schematics for generating a library.
-Angular CLI v6通过插入到我们在Angular CLI中使用的构建系统中的ng-packagr提供库支持，以及用于生成库的原理图。
-Generating a library#生成库#You can create a library in a existing workspace by running the following commands:
-您可以通过运行以下命令在现有工作区中创建库：
-ng generate library my-lib You should now have a library inside projects/my-lib.</description>
+      <description>Angular CLI v6通过插入到我们在Angular CLI中使用的构建系统中的ng-packagr提供库支持，以及用于生成库的原理图。</description>
     </item>
     
     <item>
@@ -64,11 +60,7 @@ ng generate library my-lib You should now have a library inside projects/my-lib.
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/angluar/angular-cli-css-%E9%A2%84%E5%A4%84%E7%90%86%E5%99%A8%E9%9B%86%E6%88%90/</guid>
-      <description>CSS Preprocessor integration#CSS 预处理器集成#Angular CLI supports all major CSS preprocessors:
-Angular CLI 支持所有anjor css 预处理器:
- sass/scss (http://sass-lang.com/) less (http://lesscss.org/) stylus (http://stylus-lang.com/)  To use these preprocessors simply add the file to your component&amp;rsquo;s styleUrls:
-要使用这些预处理器只需将文件添加到组件的 styleUrls:
-@Component({ selector: &amp;#39;app-root&amp;#39;, templateUrl: &amp;#39;./app.component.html&amp;#39;, styleUrls: [&amp;#39;./app.component.scss&amp;#39;] }) export class AppComponent { title = &amp;#39;app works!&amp;#39;; } When generating a new project you can also define which extension you want for style files:</description>
+      <description>Angular CLI 支持所有anjor css 预处理器,要使用这些预处理器只需将文件添加到组件的 styleUrls</description>
     </item>
     
     <item>
@@ -77,13 +69,7 @@ Angular CLI 支持所有anjor css 预处理器:
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/angluar/angular-cli-%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93%E5%AE%89%E8%A3%85/</guid>
-      <description>3rd Party Library Installation#第三方库安装#Simply install your library via npm install lib-name --save and import it in your code.
-只需通过 npm install lib-name --save 安装你的库并将其导入到你的代码中。
-If the library does not include typings, you can install them using npm:
-如果库不包括类型，你可以使用npm来安装它们：
-npm install d3 --save npm install @types/d3 --save-dev Then open src/tsconfig.app.json and add it to the types array:
-然后打开 src/tsconfig.app.json 并将其添加到 types 数组中:
-&amp;quot;types&amp;quot;:[ &amp;quot;d3&amp;quot; ] If the library you added typings for is only to be used on your e2e tests, instead use e2e/tsconfig.</description>
+      <description>只需通过 npm install lib-name &amp;ndash;save 安装你的库并将其导入到你的代码中</description>
     </item>
     
     <item>
@@ -92,11 +78,7 @@ npm install d3 --save npm install @types/d3 --save-dev Then open src/tsconfig.ap
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/angluar/angular-cli-%E9%93%BE%E6%8E%A5%E5%BA%93/</guid>
-      <description>Linked libraries#链接库#While working on a library, it is common to use npm link to avoid reinstalling the library on every build.
-在库工作时，它通常使用 [npm link] 避免在每次构建时重复安装库。
-While this is very useful there are a few caveats to keep in mind.
-虽然这是非常有用的, 有几个告诫要牢记。
-The library needs to be AOT compatible#库需要 AOT 兼容#Angular CLI does static analysis even without the --aot flag in order to detect lazy-loade routes.</description>
+      <description>在库工作时，它通常使用 [npm link] 避免在每次构建时重复安装库。</description>
     </item>
     
     <item>
@@ -105,9 +87,7 @@ The library needs to be AOT compatible#库需要 AOT 兼容#Angular CLI do
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/angluar/angular-cli%E4%BB%A3%E7%90%86%E5%90%8E%E7%AB%AF/</guid>
-      <description>Proxy To Backend#代理后端#Using the proxying support in webpack&amp;rsquo;s dev server we can highjack certain URLs and send them to a backend server. We do this by passing a file to --proxy-config
-使用 webpacks 开发服务器中的代理支持, 我们可以劫持某些 url 并将它们发送到后端服务器。我们这样做是通过传递一个文件给 --proxy-config 选项。
-Say we have a server running on http://localhost:3000/api and we want all calls to http://localhost:4200/api to go to that server. 假设我们有一个服务器运行在 http://localhost:3000/api 我们希望所有调用 http://localhost:4200/api 到该服务器上.</description>
+      <description>使用 webpacks 开发服务器中的[代理支持], 我们可以劫持某些 url 并将它们发送到后端服务器。我们这样做是通过传递一个文件给 &amp;ndash;proxy-config 选项。</description>
     </item>
     
     <item>
@@ -116,11 +96,7 @@ Say we have a server running on http://localhost:3000/api and we want all calls 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/angluar/angular-cli%E5%A4%9A%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E9%9B%86%E6%88%90/</guid>
-      <description>Multiple Apps integration#多应用程序集成#Angular CLI supports multiple applications within one project. You use the apps array in .angular-cli.json to list files and folders you want to use for different apps.
-Angular CLI 支持多应用程序在一个项目中，您可以使用 .angular-cli.json 中的应用程序数组来列出要用于不同应用程序的文件和文件夹。
-By default one app is created when then new project is created and apps array looks like:
-默认情况下, 在创建新项目时创建一个应用程序, 并且 apps 数组如下所示:
-&amp;quot;apps&amp;quot;: [ { &amp;quot;root&amp;quot;: &amp;quot;src&amp;quot;, ... &amp;quot;main&amp;quot;: &amp;quot;main.ts&amp;quot;, &amp;quot;polyfills&amp;quot;: &amp;quot;polyfills.</description>
+      <description>Angular CLI 支持多应用程序在一个项目中，您可以使用 &lt;code&gt;.angular-cli.json&lt;/code&gt; 中的应用程序数组来列出要用于不同应用程序的文件和文件夹。</description>
     </item>
     
     <item>
@@ -129,11 +105,7 @@ By default one app is created when then new project is created and apps array lo
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/angluar/angular-cli%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90/</guid>
-      <description>Continuous Integration#持续集成#One of the best ways to keep your project bug free is through a test suite, but it&amp;rsquo;s easy to forget to run tests all the time.
-保持项目缺陷肃清的最好方法之一是通过测试套件，但忘记随时运行测试很容易。
-That&amp;rsquo;s where Continuous Integration (CI) servers come in. You can set up your project repository so that your tests run on every commit and pull request.
-这就是持续集成（CI）服务器的用武之地。您可以设置您的项目存储库，以便您的测试可以在每次提交和提交请求时运行。
-There are paid CI services like Circle CI and Travis CI, and you can also host your own for free using Jenkins and others.</description>
+      <description>保持项目缺陷肃清的最好方法之一是通过测试套件，但忘记随时运行测试很容易。这就是持续集成（CI）服务器的用武之地。您可以设置您的项目存储库，以便您的测试可以在每次提交和提交请求时运行。</description>
     </item>
     
     <item>
@@ -142,13 +114,7 @@ There are paid CI services like Circle CI and Travis CI, and you can also host y
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/angluar/angular-flex%E5%B8%83%E5%B1%80/</guid>
-      <description>Include Flex Layout in your CLI application#在您的CLI应用程序中包含Flex布局# Above is snapshot of a Online Demos using @angular/flex-layout
-这个截图是一个在线演示使用@angular/flex-layout
- Include @angular/flex-layout as detailed below:#包含 @angular/flex-layout 详情如下:#Install the library and add the dependency to package.json&amp;hellip;
-安装该库并将依赖项添加到package.json&amp;hellip;
-npm install --save @angular/flex-layout Or install the nightly build using:
-或者使用以下命令安装每晚构建:
-npm i --save @angular/flex-layout-builds Import the Angular Flex-Layout NgModule into your app module&amp;hellip;</description>
+      <description>将Angular Flex布局NgModule导入您的应用程序模块</description>
     </item>
     
     <item>
@@ -157,11 +123,7 @@ npm i --save @angular/flex-layout-builds Import the Angular Flex-Layout NgModule
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/angluar/angular-%E4%BD%BF%E7%94%A8-bootstrap/</guid>
-      <description>Include Bootstrap#包括 Bootstrap#Bootstrap is a popular CSS framework which can be used within an Angular project. This guide will walk you through adding bootstrap to your Angular CLI project and configuring it to use bootstrap.
-Bootstrap 是一个流行的CSS框架，可以在Angular项目中使用。本指南将引导您为Angular CLI项目添加引导程序并将其配置为使用引导程序。
-Using CSS#使用CSS#Getting Started#开始#Create a new project and navigate into the project
-创建一个新项目并导航到项目中
-ng new my-app cd my-app Installing Bootstrap#安装 Bootstrap#With the new project created and ready you will next need to install bootstrap to your project as a dependency.</description>
+      <description>Bootstrap是一个流行的CSS框架，可以在Angular项目中使用。本指南将引导您为Angular CLI项目添加引导程序并将其配置为使用引导程序。</description>
     </item>
     
     <item>
@@ -170,14 +132,7 @@ ng new my-app cd my-app Installing Bootstrap#安装 Bootstrap#With the new
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/angluar/angular-%E5%9B%BD%E9%99%85%E5%8C%96-i18n/</guid>
-      <description>Internationalization (i18n)#国际化 (i18n)#If you are working on internationalization, the CLI can help you with the following steps:
-如果您正在致力于国际化，CLI可以通过以下步骤为您提供帮助：
- extraction
-提取 serve
-服务 build
-构建  The first thing that you have to do is to setup your application to use i18n. To do that you can follow the cookbook on angular.io.
-你必须做的第一件事是设置你的应用程序使用国际化。要做到这一点，你查看 关于angular.io的食谱  。
-Extraction#提取#When your app is ready, you can extract the strings to translate from your templates with the ng xi18n command.</description>
+      <description>如果您正在致力于国际化，CLI可以通过以下步骤为您提供帮助</description>
     </item>
     
     <item>
@@ -186,9 +141,7 @@ Extraction#提取#When your app is ready, you can extract the strings to t
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/angluar/angular-%E5%9C%A8%E7%A3%81%E7%9B%98%E4%B8%8A%E8%BF%90%E8%A1%8C%E6%9C%8D%E5%8A%A1/</guid>
-      <description>Serve from Disk#在磁盘上运行服务#The CLI supports running a live browser reload experience to users by running ng serve. This will compile the application upon file saves and reload the browser with the newly compiled application. This is done by hosting the application in memory and serving it via webpack-dev-server.
-CLI支持通过运行 ng serve 来为用户运行实时浏览器重新加载体验。这将在文件保存时编译应用程序，并用新编译的应用程序重新载入浏览器。这是通过将应用程序托管在内存中并通过webpack-dev-server.来完成的。
-If you wish to get a similar experience with the application output to disk please use the steps below.</description>
+      <description>CLI支持通过运行 &lt;code&gt;ng serve&lt;/code&gt; 来为用户运行实时浏览器重新加载体验。这将在文件保存时编译应用程序，并用新编译的应用程序重新载入浏览器。</description>
     </item>
     
     <item>
@@ -197,14 +150,7 @@ If you wish to get a similar experience with the application output to disk plea
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/angluar/angular-%E5%A4%9A%E9%A1%B9%E7%9B%AE/</guid>
-      <description>Multiple Projects#多项目#Angular CLI supports multiple applications within one workspace.
-Angular CLI支持多个应用在一个工作空间
-To create another app you can use the following command: 创建另一个应用程序可以使用下面的命令:
-ng generate application my-other-app The new application will be generated inside projects/my-other-app.
-新应用程序 projects/my-other-app 将在内部生成.
-Now we can serve, build etc. both the apps by passing the project name with the commands:
-现在, 我们可以通过使用命令传递项目名称来 serve, build 等两个应用程序:
-ng serve my-other-app You can also create libraries, which is detailed in Create a library.</description>
+      <description>Angular CLI支持多个应用在一个工作空间</description>
     </item>
     
     <item>
@@ -213,9 +159,7 @@ ng serve my-other-app You can also create libraries, which is detailed in Create
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/angluar/angular-%E9%80%9A%E7%94%A8%E9%9B%86%E6%88%90/</guid>
-      <description>Angular Universal Integration#Angular 通用集成#The Angular CLI supports generation of a Universal build for your application. This is a CommonJS-formatted bundle which can be require()&amp;rsquo;d into a Node application (for example, an Express server) and used with @angular/platform-server&amp;rsquo;s APIs to prerender your application.
-Angular CLI 支持为应用程序生成通用集成。这是一个 CommonJS 格式的包, 可以通过 require() 进入节点应用程序 , 并与@angular/platform-server 的 api 一起使用以预渲染应用程序。
- Example CLI Integration:#CLI 集成例子:#Angular Universal-Starter - Clone the universal-starter for a working example.</description>
+      <description>Angular CLI 支持为应用程序生成通用集成。这是一个 CommonJS 格式的包, 可以通过 &lt;code&gt;require()&lt;/code&gt; 进入节点应用程序 , 并与&lt;code&gt;@angular/platform-server&lt;/code&gt; 的 api 一起使用以预渲染应用程序。</description>
     </item>
     
     <item>
@@ -224,10 +168,7 @@ Angular CLI 支持为应用程序生成通用集成。这是一个 CommonJS 格�
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/angluar/angular-%E9%85%8D%E7%BD%AE-angularfire/</guid>
-      <description>Include AngularFire#包含 AngularFire#Firebase is a mobile and web application platform with tools and infrastructure designed to help developers build high-quality apps. AngularFire2 is the official Angular library to use Firebase in your apps.
-Firebase是一个移动和Web应用程序平台，其中包含旨在帮助开发人员构建高品质应用程序的工具和基础结构。 AngularFire2是在您的应用中使用Firebase的官方Angular库。
-Create new project#创建新项目#Create a new project and navigate into the project. 创建一个新项目并导航到项目中。
-$ ng new my-app $ cd my-app Install dependencies#安装依赖#In the new project you need to install the required dependencies.</description>
+      <description>Firebase是一个移动和Web应用程序平台，其中包含旨在帮助开发人员构建高品质应用程序的工具和基础结构。 AngularFire2是在您的应用中使用Firebase的官方Angular库。</description>
     </item>
     
     <item>
@@ -236,11 +177,7 @@ $ ng new my-app $ cd my-app Install dependencies#安装依赖#In the new p
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/angluar/angular%E5%85%A8%E5%B1%80%E6%A0%B7%E5%BC%8F/</guid>
-      <description>Global styles#全局样式#The styles.css file allows users to add global styles and supports CSS imports.
-styles.css 文件允许用户添加全局样式和支持 CSS imports.
-If the project is created with the --style=sass option, this will be a .sass file instead, and the same applies to scss/less/styl.
-假如项目创建使用 --style=sass 选项, 这是一个 .sass 文件的代替, 同样适用于 scss/less/styl.
-You can add more global styles via the styles option inside your project&amp;rsquo;s build target options in angular.</description>
+      <description>您可以通过 angular.json 中项目的构建目标选项中的 styles 选项添加更多全局样式。这些将被加载，就像您将它们添加到index.html中的&lt;!-- raw HTML omitted --&gt;标记中一样。</description>
     </item>
     
     <item>
@@ -249,10 +186,7 @@ You can add more global styles via the styles option inside your project&amp;rsq
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/angluar/angular%E5%85%A8%E5%B1%80%E8%84%9A%E6%9C%AC/</guid>
-      <description>Global scripts#全局脚本#You can add Javascript files to the global scope via the scripts option inside your project&amp;rsquo;s build target options in angular.json. These will be loaded exactly as if you had added them in a &amp;lt;script&amp;gt; tag inside index.html.
-您可以通过angular.json中项目的构建目标选项中的 脚本 选项将JavaScript文件添加到全局范围。这些将被加载，就像您将它们添加到 index.html 中的 &amp;lt;script&amp;gt; 标记中一样。 This is especially useful for legacy libraries or analytic snippets.
-这对旧版库或分析片段尤其有用。
-&amp;#34;architect&amp;#34;: { &amp;#34;build&amp;#34;: { &amp;#34;builder&amp;#34;: &amp;#34;@angular-devkit/build-angular:browser&amp;#34;, &amp;#34;options&amp;#34;: { &amp;#34;scripts&amp;#34;: [ &amp;#34;src/global-script.</description>
+      <description>您可以通过angular.json中项目的构建目标选项中的脚本选项将JavaScript文件添加到全局范围。这些将被加载，就像您将它们添加到 index.html 中的 &lt;!-- raw HTML omitted --&gt; 标记中一样</description>
     </item>
     
     <item>
@@ -261,11 +195,16 @@ You can add more global styles via the styles option inside your project&amp;rsq
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/angluar/%E4%BB%A3%E7%A0%81%E8%A6%86%E7%9B%96%E7%8E%87/</guid>
-      <description>Code Coverage#代码覆盖率#With the Angular CLI we can run unit tests as well as create code coverage reports. Code coverage reports allow us to see any parts of our code base that may not be properly tested by our unit tests.
-用Angular CLI我们能运行单元测试并创建代码覆盖率报告。代码覆盖率报告允许我们看到我们的代码库中的任何部分可能无法通过我们的单元测试。
-To generate a coverage report run the following command in the root of your project
-生成一个覆盖率报告运行下面的命令在项目的根
-ng test --watch=false --code-coverage Once the tests complete a new /coverage folder will appear in the project.</description>
+      <description>&lt;h1 id=&#34;code-coverage&#34;&gt;
+  Code Coverage
+  &lt;a class=&#34;anchor&#34; href=&#34;#code-coverage&#34;&gt;#&lt;/a&gt;
+&lt;/h1&gt;
+&lt;h1 id=&#34;代码覆盖率&#34;&gt;
+  代码覆盖率
+  &lt;a class=&#34;anchor&#34; href=&#34;#%e4%bb%a3%e7%a0%81%e8%a6%86%e7%9b%96%e7%8e%87&#34;&gt;#&lt;/a&gt;
+&lt;/h1&gt;
+&lt;p&gt;With the Angular CLI we can run unit tests as well as create code coverage reports. Code coverage reports allow us to see any parts of our code base that may not be properly tested by our unit tests.&lt;br&gt;
+用Angular CLI我们能运行单元测试并创建代码覆盖率报告。代码覆盖率报告允许我们看到我们的代码库中的任何部分可能无法通过我们的单元测试。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -274,11 +213,7 @@ ng test --watch=false --code-coverage Once the tests complete a new /coverage fo
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/angluar/%E5%85%A8%E5%B1%80%E5%BA%93%E5%AE%89%E8%A3%85/</guid>
-      <description>Global Library Installation#全局库安装#Some javascript libraries need to be added to the global scope and loaded as if they were in a script tag. We can do this using the scripts and styles options of the build target in angular.json.
-一些JavaScript库需要被添加到全局范围并加载，就好像它们在脚本标签中一样，我们可以使用angular.json中构建目标的脚本和样式选项来完成此操作。
-As an example, to use Bootstrap 4 this is what you need to do:
-例如，要使用Bootstrap 4，您需要执行以下操作：
-First install Bootstrap from npm: 首先从 npm 安装Bootstrap：</description>
+      <description>一些JavaScript库需要被添加到全局范围并加载，就好像它们在脚本标签中一样，我们可以使用angular.json中构建目标的脚本和样式选项来完成此操作。</description>
     </item>
     
     <item>
@@ -287,11 +222,7 @@ First install Bootstrap from npm: 首先从 npm 安装Bootstrap：</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/angluar/%E5%BA%94%E7%94%A8%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E9%85%8D%E7%BD%AE/</guid>
-      <description>应用环境#Configuring available environments#配置环境变量#.angular-cli.json contains an environments section. By default, this looks like:
-.angular-cli.json 包含一个 environments 选项. 默认像下面:
-&amp;#34;environments&amp;#34;: { &amp;#34;dev&amp;#34;: &amp;#34;environments/environment.ts&amp;#34;, &amp;#34;prod&amp;#34;: &amp;#34;environments/environment.prod.ts&amp;#34; } You can add additional environments as required. To add a staging environment, your configuration would look like:
-你能增加附加的环境变量和请求. 增加一个 staging 变量, 你的配置将像下面:
-&amp;#34;environments&amp;#34;: { &amp;#34;dev&amp;#34;: &amp;#34;environments/environment.ts&amp;#34;, &amp;#34;staging&amp;#34;: &amp;#34;environments/environment.staging.ts&amp;#34;, &amp;#34;prod&amp;#34;: &amp;#34;environments/environment.prod.ts&amp;#34; } Adding environment-specific files#添加环境特征文件#The environment-specific files are set out as shown below:</description>
+      <description>angular-cli.json` 包含一个 &lt;strong&gt;environments&lt;/strong&gt; 选项</description>
     </item>
     
     <item>
@@ -300,11 +231,7 @@ First install Bootstrap from npm: 首先从 npm 安装Bootstrap：</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/angluar/%E6%94%B9%E5%8F%98%E7%9B%AE%E6%A0%87%E6%B5%8F%E8%A7%88%E5%99%A8%E7%9A%84%E8%87%AA%E5%8A%A8%E5%89%8D%E7%BC%80/</guid>
-      <description>Change target browsers for Autoprefixer#改变目标浏览器的自动前缀#Currently, the CLI uses Autoprefixer to ensure compatibility with different browser and browser versions. You may find it necessary to target specific browsers or exclude certain browser versions from your build.
-当前, CLI使用 Autoprefixer 来确定合适不同的浏览器和版本，你可以发现它必须指明特定的浏览器或不包括某个浏览器版本从你的构建。
-Internally, Autoprefixer relies on a library called Browserslist to figure out which browsers to support with prefixing.
-在内部，自动前缀依赖一个库叫Browserslist 用来算出哪些浏览器支持前缀
-There are a few ways to tell Autoprefixer what browsers to target:</description>
+      <description>当前, CLI使用来确定合适不同的浏览器和版本，你可以发现它必须指明特定的浏览器或不包括某个浏览器版本从你的构建。</description>
     </item>
     
     <item>
@@ -313,11 +240,17 @@ There are a few ways to tell Autoprefixer what browsers to target:</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/angluar/%E9%83%A8%E7%BD%B2angular%E5%BA%94%E7%94%A8%E5%88%B0-github/</guid>
-      <description>Deploy to GitHub Pages#部署到 Github#A simple way to deploy your Angular app is to use GitHub Pages.
-部署Angular应用的一个简单方法是使用GitHub Pages. 如果自己做一个单页网站可以不需要自购web服务器。
-The first step is to create a GitHub account, and then create a repository for your project. Make a note of the user name and project name in GitHub.
-第一步是创建一个GitHub帐户，然后为您的项目创建一个存储库 。记下GitHub中的用户名和项目名称。
-Then all you need to do is run ng build --prod --output-path docs --base-href PROJECT_NAME, where PROJECT_NAME is the name of your project in GitHub.</description>
+      <description>&lt;h1 id=&#34;deploy-to-github-pages&#34;&gt;
+  Deploy to GitHub Pages
+  &lt;a class=&#34;anchor&#34; href=&#34;#deploy-to-github-pages&#34;&gt;#&lt;/a&gt;
+&lt;/h1&gt;
+&lt;h1 id=&#34;部署到-github&#34;&gt;
+  部署到 Github
+  &lt;a class=&#34;anchor&#34; href=&#34;#%e9%83%a8%e7%bd%b2%e5%88%b0-github&#34;&gt;#&lt;/a&gt;
+&lt;/h1&gt;
+&lt;p&gt;A simple way to deploy your Angular app is to use
+&lt;a href=&#34;https://help.github.com/articles/what-is-github-pages/&#34;&gt;GitHub Pages&lt;/a&gt;.&lt;br&gt;
+部署Angular应用的一个简单方法是使用&lt;a href=&#34;https://help.github.com/articles/what-is-github-pages/&#34;&gt;GitHub Pages&lt;/a&gt;. 如果自己做一个单页网站可以不需要自购web服务器。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -326,13 +259,7 @@ Then all you need to do is run ng build --prod --output-path docs --base-href PR
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/angluar/%E9%85%8D%E7%BD%AEangular%E4%BD%BF%E7%94%A8font-awesome/</guid>
-      <description>Include Font Awesome#包含 Font Awesome#Font Awesome gives you scalable vector icons that can instantly be customized — size, color, drop shadow, and anything that can be done with the power of CSS.
-Font Awesome 为您提供可立即定制的可缩放矢量图标 - 尺寸，颜色，阴影以及任何可以通过CSS强大功能进行定制的图标。
-Create a new project and navigate into the project&amp;hellip;
-创建一个新项目并导航到项目中&amp;hellip;
-ng new my-app cd my-app Install the font-awesome library and add the dependency to package.json&amp;hellip;
-安装font-awesome库并将依赖关系添加到package.json&amp;hellip;
-npm install --save font-awesome Using CSS#使用 CSS#To add Font Awesome CSS icons to your app&amp;hellip;</description>
+      <description>Font Awesome为您提供可立即定制的可缩放矢量图标 - 尺寸，颜色，阴影以及任何可以通过CSS强大功能进行定制的图标。</description>
     </item>
     
     <item>
@@ -341,13 +268,7 @@ npm install --save font-awesome Using CSS#使用 CSS#To add Font Awesome C
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/angluar/%E9%A1%B9%E7%9B%AE%E8%B5%84%E6%BA%90%E8%AE%BE%E7%BD%AE/</guid>
-      <description>项目资产#You use the assets array in .angular-cli.json to list files or folders you want to copy as-is when building your project.
-你使用 angular.json 里面的 assets 文件或目录列表，当构建你的项目时原样复制。
-By default, the src/assets/ folder and src/favicon.ico are copied over.
-默认，src/assets 文件夹和 src/favicon.io 是会复制的。
-&amp;#34;assets&amp;#34;: [ &amp;#34;assets&amp;#34;, &amp;#34;favicon.ico&amp;#34; ] You can also further configure assets to be copied by using objects as configuration.
-你总能进一步复制配置资产使用项目配置文件。
-The array below does the same as the default one:</description>
+      <description>你使用 angular.json 里面的 assets 文件或目录列表，当构建你的项目时原样复制。</description>
     </item>
     
     <item>
@@ -419,10 +340,25 @@ The array below does the same as the default one:</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/cloud/%E4%BA%91%E4%BA%A7%E5%93%81%E5%AD%A6%E4%B9%A0%E5%AE%9E%E9%AA%8C%E5%AE%A4/</guid>
-      <description>腾讯云实验室 阿里云开发者课堂 微软Azure培训
-azure免费套餐
-腾讯云11.11爆款1核2G云服务器首购88元，免费领9888元代金券，百款云产品一折起
-新客户无门槛领取总价值高达2860元代金券，每种代金券限量500张，先到先得。</description>
+      <description>azure免费套餐</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/container/docker-compose-%E7%BD%91%E7%BB%9C/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/container/docker-compose-%E7%BD%91%E7%BB%9C/</guid>
+      <description>默认情况下，Compose为您的应用程序设置单个网络。服务的每个容器都加入默认网络，并且可以由该网络上的其他容器访问，并且可由他们发现与容器名称相同的主机名。</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/container/docker-overlay-networks/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/container/docker-overlay-networks/</guid>
+      <description>内置的Docker overlay网络驱动程序彻底简化了多主机网络中的许多挑战。使用overlay驱动程序，多主机网络是Docker内的顶级原生类，无需外部配置或组件。overlay使用Swarm分布式控制平面在跨大规模集群中提供集中管理，稳定性和安全性</description>
     </item>
     
     <item>
@@ -431,7 +367,7 @@ azure免费套餐
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/container/introduction-to-containers/</guid>
-      <description>Introduction to Containers#If you understand Linux, you probably already have 85% of the knowledge you need to understand containers. If you understand how processes, mounts, networks , shells and daemons work - commands like ps, mount, ip addr, bash, httpd and mysqld - then you just need to understand a few extra primitives to become an expert with containers. Remember that all of the things that you already know today still apply: from security and performance to storage and networking, containers are just a different way of packaging and delivering Linux applications.</description>
+      <description>If you understand Linux, you probably already have 85% of the knowledge you need to understand containers. If you understand how processes, mounts, networks , shells and daemons work - commands like ps, mount, ip addr, bash, httpd and mysqld - then you just need to understand a few extra primitives to become an expert with containers.</description>
     </item>
     
     <item>
@@ -440,17 +376,7 @@ azure免费套餐
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/container/jdk%E5%AF%B9docker%E5%AE%B9%E5%99%A8%E7%9A%84%E6%94%AF%E6%8C%81/</guid>
-      <description>java8及java9#Java 8u131及以上版本开始支持了Docker的cpu和memory限制。
-cpu limit#即如果没有显式指定-XX:ParalllelGCThreads 或者 -XX:CICompilerCount, 那么JVM使用docker的cpu限制。如果docker有指定cpu limit，jvm参数也有指定-XX:ParalllelGCThreads 或者 -XX:CICompilerCount，那么以指定的参数为准。
-memory limit#在java8u131+及java9，需要加上-XX:+UnlockExperimentalVMOptions -XX:+UseCGroupMemoryLimitForHeap才能使得Xmx感知docker的memory limit。
-查看参数默认值
-java -XX:+UnlockDiagnosticVMOptions -XX:+UnlockExperimentalVMOptions -XX:+PrintFlagsFinal 部分输出
-bool UseCGroupMemoryLimitForHeap = false {experimental} {default}  可以看到在java9，UseCGroupMemoryLimitForHeap参数还是实验性的，默认关闭。
- java10#bool UseCGroupMemoryLimitForHeap = false {experimental} {default}  java10，UseCGroupMemoryLimitForHeap还是experimental，不过标记为废弃。
- 不过java10新引入了1个参数
-int ActiveProcessorCount = -1 {product} {default}  ActiveProcessorCount可以用来指定cpu的个数
- java11#java11正式移除UseCGroupMemoryLimitForHeap，代码改动见8194086: Remove deprecated experimental flag UseCGroupMemoryLimitForHeap
-同时引入1个新参数</description>
+      <description>Java 8u131及以上版本开始支持了Docker的cpu和memory限制。</description>
     </item>
     
     <item>
@@ -459,7 +385,7 @@ int ActiveProcessorCount = -1 {product} {default}  ActiveProcessorCount可以
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/container/overview-of-the-docker-architecture/</guid>
-      <description>In this text we&amp;rsquo;re going to be talking about Docker architecture. And Docker is the container implementation that is supported by Red Hat and is used by OpenShift. So Docker uses a client-server architecture, and the client will run our command-line tool, which is known as docker, so all of our requests that we&amp;rsquo;re going to make are running on the client server. And then we&amp;rsquo;ll also have another server, which is running the Docker service, and that has a daemon on it that&amp;rsquo;s responsible for all of the building and running and downloading images.</description>
+      <description>In this text we&amp;rsquo;re going to be talking about Docker architecture. And Docker is the container implementationthat is supported by Red Hat and is used by OpenShift.</description>
     </item>
     
     <item>
@@ -468,7 +394,7 @@ int ActiveProcessorCount = -1 {product} {default}  ActiveProcessorCount可以
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/container/podman-error-with-centos7/</guid>
-      <description>system info:## podman info host: BuildahVersion: 1.14.2 CgroupVersion: v1 Conmon: package: conmon-2.0.13-1.1.el7.x86_64 path: /usr/bin/conmon version: &#39;conmon version 2.0.13, commit: eab756c90e2bdfa6fecf6616845ddcd9d3e339cb&#39; Distribution: distribution: &#39;&amp;quot;centos&amp;quot;&#39; version: &amp;quot;7&amp;quot; MemFree: 408485888 MemTotal: 952160256 OCIRuntime: name: runc package: runc-1.0.0-15.1.el7.x86_64 path: /usr/bin/runc version: |- runc version 1.0.0-rc10 commit: 67b92f062188d9cb6472b428855432c9f35efcf5 spec: 1.0.1-dev SwapFree: 0 SwapTotal: 0 arch: amd64 cpus: 1 eventlogger: journald hostname: test-server kernel: 3.10.0-1062.12.1.el7.x86_64 os: linux rootless: false uptime: 51m 16.22s registries: search: - registry.</description>
+      <description>Error: error creating libpod runtime: failed to mount overlay for metacopy check: invalid argument</description>
     </item>
     
     <item>
@@ -477,7 +403,7 @@ int ActiveProcessorCount = -1 {product} {default}  ActiveProcessorCount可以
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/container/windows-server-%E5%AE%B9%E5%99%A8-os-%E4%B8%8E%E4%B8%BB%E6%9C%BA-os-%E7%9A%84%E5%85%BC%E5%AE%B9%E6%80%A7/</guid>
-      <description>Windows Server 容器并非在所有主机 OS 版本间都兼容。 例如： 使用 Windows Server 1709 版本生成的 Windows Server 容器在运行 Windows Server 2016 版本的主机上无效。 使用 Windows Server 2016 生成的 Windows Server 容器仅在运行 Windows Server 1709 版本的主机上以 Hyper-V 隔离模式工作。 因为 Windows Server 容器使用 Windows Server 2016 生成，所以在运行 Windows Server 2016 的主机上以进程隔离模式运行时，可能需要确保容器 OS 和主机 OS 的版本相同。 https://docs.microsoft.com/zh-cn/virtualization/windowscontainers/deploy-containers/version-compatibility?tabs=windows-server-1909%2Cwindows-10-1909</description>
+      <description>Windows Server 容器并非在所有主机 OS 版本间都兼容</description>
     </item>
     
     <item>
@@ -524,9 +450,7 @@ Table of Contents
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/devops/github-actions/</guid>
-      <description>Getting started with a workflow#To help you get started, this guide shows you some basic examples. For the full GitHub Actions documentation on workflows, see &amp;ldquo;Configuring workflows.&amp;rdquo;
-Customizing when workflow runs are triggered#  Set your workflow to run on push events to the master and release/* branches
-on: push: branches: - master - release/*   Set your workflow to run on pull_request events that target the master branch</description>
+      <description>To help you get started, this guide shows you some basic examples. For the full GitHub Actions documentation on workflows, see Configuring workflows</description>
     </item>
     
     <item>
@@ -535,7 +459,7 @@ on: push: branches: - master - release/*   Set your workflow to run on pull_req
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/devops/github%E4%B8%8B%E8%BD%BD%E5%8A%A0%E9%80%9F/</guid>
-      <description>&lt;p&gt;同步了一万多个，希望有你要的&lt;/p&gt;</description>
+      <description>&lt;p&gt;同步了一万多个github热门仓库，希望有你要的&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -553,8 +477,7 @@ on: push: branches: - master - release/*   Set your workflow to run on pull_req
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/devops/linux-sysctl-conf-%E5%92%8C-limits-conf/</guid>
-      <description>&lt;p&gt;【sysctl.conf工作原理】&lt;/p&gt;
-&lt;p&gt;sysctl命令被用于在内核运行时动态地修改内核的运行参数，可用的内核参数在目录/proc/sys中。它包含一些TCP/IP堆栈和虚拟内存系统的高级选项， 这可以让有经验的管理员提高引人注目的系统性能。用sysctl可以读取设置超过五百个系统变量。&lt;/p&gt;</description>
+      <description>sysctl命令被用于在内核运行时动态地修改内核的运行参数，可用的内核参数在目录/proc/sys中。它包含一些TCP/IP堆栈和虚拟内存系统的高级选项， 这可以让有经验的管理员提高引人注目的系统性能。用sysctl可以读取设置超过五百个系统变量</description>
     </item>
     
     <item>
@@ -588,20 +511,11 @@ workaround to install azure-cli:&lt;/p&gt;</description>
     
     <item>
       <title></title>
-      <link>https://wangyijie.store/posts/diary/2018-12-21/</link>
+      <link>https://wangyijie.store/posts/diary/3rvrarmr/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://wangyijie.store/posts/diary/2018-12-21/</guid>
-      <description>where is you from?</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://wangyijie.store/posts/diary/2020-01-16/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://wangyijie.store/posts/diary/2020-01-16/</guid>
-      <description></description>
+      <guid>https://wangyijie.store/posts/diary/3rvrarmr/</guid>
+      <description>VR(virtual reality，虚拟现实) AR(augmented reality，增强现实) MR(mixed reality，混合现实)</description>
     </item>
     
     <item>
@@ -610,10 +524,7 @@ workaround to install azure-cli:&lt;/p&gt;</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/diary/difference-of-game-match-competition-and-contest/</guid>
-      <description>【1】game： 指决定胜负的比赛，游戏，通常有一定的规则，参加者必须遵守，且多以个人对抗或集体对抗形式根据一定的规则进行的比赛。
-【2】match： 多指重要的，参加队数较多的大型体育运动项目比赛，隐含势均力敌意味。
-【3】competition： 多指体育运动中的各项比赛、角逐，也指知识、技巧等方面的竞赛。
-【4】contest： 多指在音乐、书法、演讲等方面所进行的比赛或竞争。其结果，由评判委员会裁决。</description>
+      <description>game： 指决定胜负的比赛，游戏，通常有一定的规则，参加者必须遵守，且多以个人对抗或集体对抗形式根据一定的规则进行的比赛。</description>
     </item>
     
     <item>
@@ -622,8 +533,7 @@ workaround to install azure-cli:&lt;/p&gt;</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/diary/kubernetes-flannel-%E7%BD%91%E7%BB%9C%E6%B5%81%E7%A8%8B%E7%86%9F%E7%BB%83/</guid>
-      <description>pod IP docker 把容器网络命名空间隐藏起来了，查看容器网络需要把对应的网络命名空间显示出来： 容器Id:10316
-把容器网络命名空间链接到主机,这样主机就可以管理容器网络 ln -s /proc/10316/ns/net /var/run/netns/10316 查看网络命名空间  ip netns 在网络命名空间内执行命令  [root@k8s01 ~]# ip netns exec 10316 ip a 1: lo: &amp;lt;LOOPBACK,UP,LOWER_UP&amp;gt; mtu 65536 qdisc noqueue state UNKNOWN qlen 1 link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00 inet 127.0.0.1/8 scope host lo valid_lft forever preferred_lft forever inet6 ::1/128 scope host valid_lft forever preferred_lft forever 3: eth0@if40: &amp;lt;BROADCAST,MULTICAST,UP,LOWER_UP&amp;gt; mtu 1450 qdisc noqueue state UP link/ether 0a:58:0a:f4:02:f6 brd ff:ff:ff:ff:ff:ff link-netnsid 0 inet 10.</description>
+      <description>ip netns, docker 把容器网络命名空间隐藏起来了，查看容器网络需要把对应的网络命名空间显示出来</description>
     </item>
     
     <item>
@@ -632,7 +542,7 @@ workaround to install azure-cli:&lt;/p&gt;</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/diary/kubernetes%E6%8E%A7%E5%88%B6%E6%9C%BA%E5%88%B6%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99/</guid>
-      <description> **控制逻辑应该只依赖于当前状态。**这是为了保证分布式系统的稳定可靠，对于经常出现局部错误的分布式系统，如果控制逻辑只依赖当前状态，那么就非常容易将一个暂时出现故障的系统恢复到正常状态，因为你只要将该系统重置到某个稳定状态，就可以自信的知道系统的所有控制逻辑会开始按照正常方式运行。 **假设任何错误的可能，并做容错处理。**在一个分布式系统中出现局部和临时错误是大概率事件。错误可能来自于物理系统故障，外部系统故障也可能来自于系统自身的代码错误，依靠自己实现的代码不会出错来保证系统稳定其实也是难以实现的，因此要设计对任何可能错误的容错处理。 **尽量避免复杂状态机，控制逻辑不要依赖无法监控的内部状态。**因为分布式系统各个子系统都是不能严格通过程序内部保持同步的，所以如果两个子系统的控制逻辑如果互相有影响，那么子系统就一定要能互相访问到影响控制逻辑的状态，否则，就等同于系统里存在不确定的控制逻辑。 **假设任何操作都可能被任何操作对象拒绝，甚至被错误解析。**由于分布式系统的复杂性以及各子系统的相对独立性，不同子系统经常来自不同的开发团队，所以不能奢望任何操作被另一个子系统以正确的方式处理，要保证出现错误的时候，操作级别的错误不会影响到系统稳定性。 **每个模块都可以在出错后自动恢复。**由于分布式系统中无法保证系统各个模块是始终连接的，因此每个模块要有自我修复的能力，保证不会因为连接不到其他模块而自我崩溃。 **每个模块都可以在必要时优雅地降级服务。**所谓优雅地降级服务，是对系统鲁棒性的要求，即要求在设计实现模块时划分清楚基本功能和高级功能，保证基本功能不会依赖高级功能，这样同时就保证了不会因为高级功能出现故障而导致整个模块崩溃。根据这种理念实现的系统，也更容易快速地增加新的高级功能，因为不必担心引入高级功能影响原有的基本功能。  </description>
+      <description>这是为了保证分布式系统的稳定可靠，对于经常出现局部错误的分布式系统，如果控制逻辑只依赖当前状态，那么就非常容易将一个暂时出现故障的系统恢复到正常状态，因为你只要将该系统重置到某个稳定状态，就可以自信的知道系统的所有控制逻辑会开始按照正常方式运行。</description>
     </item>
     
     <item>
@@ -641,7 +551,7 @@ workaround to install azure-cli:&lt;/p&gt;</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/diary/openvpn%E5%AE%89%E8%A3%85%E5%8F%8A%E5%AE%A2%E6%88%B7%E7%AB%AF%E9%85%8D%E7%BD%AE%E5%88%9B%E5%BB%BA/</guid>
-      <description>文档即命令行#OVPN_DATA=&amp;quot;vpn-data&amp;quot; docker volume create --name $OVPN_DATA docker run -v $OVPN_DATA:/etc/openvpn --log-driver=none --rm # udp://112.60.90.13:1194 指定服务器地址协议端口, 默认1194 dockerhub.azk8s.cn/kylemanna/openvpn ovpn_genconfig -u udp://112.60.90.13 docker run -v $OVPN_DATA:/etc/openvpn -it --log-driver=none --rm dockerhub.azk8s.cn/kylemanna/openvpn ovpn_initpki docker run -v $OVPN_DATA:/etc/openvpn -d -p 1194:1194/udp --cap-add=NET_ADMIN dockerhub.azk8s.cn/kylemanna/openvpn docker run -v $OVPN_DATA:/etc/openvpn --log-driver=none --rm -it dockerhub.azk8s.cn/kylemanna/openvpn easyrsa build-client-full wangyijie nopass docker volume ls docker volume inspect vpn-data cd /var/lib/docker/volumes/vpn-data/_data ls pki/private/wangyijie.key docker run -v $OVPN_DATA:/etc/openvpn --log-driver=none --rm dockerhub.</description>
+      <description>install openvpn</description>
     </item>
     
     <item>
@@ -650,8 +560,7 @@ workaround to install azure-cli:&lt;/p&gt;</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/diary/%E4%BE%BF%E6%8D%B7golang%E5%BC%80%E5%8F%91/</guid>
-      <description>go语言之旅：https://tour.go-zh.org/ 如何使用go编程：https://go-zh.org/doc/code.html 时效go编程：https://go-zh.org/doc/effective_go.html golang安装包下载：https://gomirrors.org/ go mod 代理地址：https://goproxy.io/
-bash## Enable the go modules feature export GO111MODULE=on # Set the GOPROXY environment variable export GOPROXY=https://goproxy.io PowerShell## Enable the go modules feature $env:GO111MODULE=on # Set the GOPROXY environment variable $env:GOPROXY=https://goproxy.io Go version &amp;gt;= 1.13#go env -w GOPROXY=https://goproxy.io, direct # Set environment variable allow bypassing the proxy for selected modules go env -w GOPRIVATE=*.corp.example.com </description>
+      <description>go语言之旅, go mod 代理地址</description>
     </item>
     
     <item>
@@ -668,37 +577,20 @@ bash## Enable the go modules feature export GO111MODULE=on # Set the GOPROXY 
     
     <item>
       <title></title>
+      <link>https://wangyijie.store/posts/diary/%E6%9C%80%E5%85%A8%E7%9A%84%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%8D%8F%E8%AE%AE%E7%AB%AF%E5%8F%A3%E5%AF%B9%E7%85%A7%E8%A1%A8/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/diary/%E6%9C%80%E5%85%A8%E7%9A%84%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%8D%8F%E8%AE%AE%E7%AB%AF%E5%8F%A3%E5%AF%B9%E7%85%A7%E8%A1%A8/</guid>
+      <description>最全的计算机协议端口对照表最全的计算机协议端口对照表</description>
+    </item>
+    
+    <item>
+      <title></title>
       <link>https://wangyijie.store/posts/diary/%E8%8B%B1%E8%AF%AD%E5%AD%A6%E4%B9%A0%E7%BD%91%E7%AB%99/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/diary/%E8%8B%B1%E8%AF%AD%E5%AD%A6%E4%B9%A0%E7%BD%91%E7%AB%99/</guid>
-      <description>英语学习网站对自学者来说就像是寻觅家园，一旦找到，内心会平静下来，一扫喧嚣尘世间的烦恼。现在我坐在家里阳光明媚的窗下，理理思路，给大家一一道来这些英语学习网站的妙用，希望你们也喜欢，就像我一直听的老歌，耳畔回响起美妙的音乐，我就会满血复活，忍不住和大家分享，希望你们喜欢。
-1、读书非读教材，是读真实语料
-当学生时，每每盼着老师到我们宿舍一起吃午饭，饭后她不多聊，慢悠悠地取出英文的Reader&amp;rsquo;s Digest, 一个人悄悄地读，虽然宿舍有8个女生，我们也都会安静下来，不想打扰她阅读。就这样，当别人在读三毛的《撒哈拉日记》时，我们宿舍的女生在读英文小说。
-从我阅读的经历来看，适合学生看的杂志有这些：
-A: 科学美国人 www.scientificamerican.com/
-推荐理由：最新的科学类文章，考托福、考雅思、考四六级必备的阅读背景知识一网打尽。最有用的一个栏目是 Podcasts.
-2、听BBC News, Radio Beijing的日子
-上海的夏季好长，吃过晚饭后，小风轻轻地吹，或绵绵细雨柔柔地飘下，我们外文系的学生一定是去听老师录好的BBC News, 自己买的收音机只能听Radio Beijing. B: BBC 新闻 www.bbc.com/news 或者 www. bbc.com/radio
-推荐理由： BBC新闻和VOA新闻应该说有相似之处，想听英式英语，所以关注BBC World Service Radio, 其中五分钟新闻 (five minutes news bulletin)可以帮助我们了解国际大事，听着发音如此清脆的英语，真是有“大珠小珠落玉盘”的美感。
-3、听NPR，了解美帝的社会与生活
-C: NPR 新闻 www.npr.org
-推荐理由： 收听NPR可以听到新闻对话、诙谐故事、音乐栏目等。
-4、Vice
-D: www.vice.com/en_us
-推荐理由： VICE主讲流行文化，以及重大时事问题，你可以关心美国文化的方方面面，也可以了解美国人现在面临的问题。
-5、TED
-E: www.ted.com
-TED无疑是最精彩的演讲汇集处，这里不乏热门话题、名人演讲，更有拓展视野的专家演讲，配合同步字幕，适合多次聆听，每一遍听完后领悟、反思、更可以观察一些地道的英语用法。
-**6、Future Learn **
-F: www.futurelearn.com/
-Future Learn上有很多英国著名大学的免费在线课程，有字幕可以帮助我们理解英文讲授的课程。
-7、可汗学院
-G: www.khanacademy.org/
-可汗学院的课程都是免费，对所有人开放的课程。其中有家长可能喜欢的SRT、GMAT等大学入学考试辅导，内容涵盖数学、工程类、艺术、人文、经济金融等。
-**8、寻书的网站 **
-H: www.goodreads.com （1）
-I: bookzz.org/ (2)</description>
+      <description>对自学者来说就像是寻觅家园，一旦找到，内心会平静下来，一扫喧嚣尘世间的烦恼。现在我坐在家里阳光明媚的窗下，理理思路，给大家一一道来这些英语学习网站的妙用，希望你们也喜欢，就像我一直听的老歌，耳畔回响起美妙的音乐，我就会满血复活，忍不住和大家分享，希望你们喜欢。</description>
     </item>
     
     <item>
@@ -707,11 +599,7 @@ I: bookzz.org/ (2)</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/english/be-the-present-simple-tense/</guid>
-      <description>##Be(am/is/are) Usage: BE
- be + noun be + adjective be + preposition
- Grammar: BE#Subject + BE
- I + am You/We/They + are He/She/It + is ##Examples
-   Subject BE      I am teacher.   You are beautiful.   He is at work.   She is in London.   It is a book.   We are in the library.</description>
+      <description>Usage: BE</description>
     </item>
     
     <item>
@@ -720,10 +608,7 @@ I: bookzz.org/ (2)</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/english/because-vs-because-of/</guid>
-      <description>在英语里，because 用在主句前面。#I can&amp;rsquo;t see because it is so foggy. 因为雾太大了，我看不到。
-Because of 却会用在名词前面。
-It was difficult to see because of the snow. 因为雪，很难看清楚。
-Angela couldn&amp;rsquo;t sleep because of the noise. 因为那些噪音，Angela 没有睡觉。</description>
+      <description>在英语里，because 用在主句前面</description>
     </item>
     
     <item>
@@ -732,7 +617,7 @@ Angela couldn&amp;rsquo;t sleep because of the noise. 因为那些噪音，Angel
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/english/difference-of-customer-client-and-guest/</guid>
-      <description>customer意思是：消费者，用于表示消费者与销售厂家时 client意思是：客户端， 专门表示客户一方的术语 guest意思是：贵宾、客人 用于表示外国来访的客人或自己家来的客人等等</description>
+      <description>customer意思是：消费者，用于表示消费者与销售厂家时</description>
     </item>
     
     <item>
@@ -741,9 +626,7 @@ Angela couldn&amp;rsquo;t sleep because of the noise. 因为那些噪音，Angel
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/english/difference-of-spent-cost-pay-and-take/</guid>
-      <description>spend，cost，take和pay的区别是历年中考试题的必考内容之一，虽然它们都可以表示“花费”，但用法却不尽相同。
-spend的主语必须是人， 常用于以下结构：(1) spend time ／money on sth. 在……上花费时间（金钱）。例：I spent two hours on this maths problem. 这道数学题花了我两个小时。(2) spend time ／ money (in) doing sth. 花费时间（金钱）做某事。例：They spent two years (in) building this bridge. 造这座桥花了他们两年时间。(3)spend money for sth. 花钱买……。例：His money was spent for books. 他的钱用来买书了。
-cost的主语是物或某种活动， 还可以表示“值”， 常见用法如下：(1)sth. costs (sb.) ＋金钱,某物花了（某人）多少钱。例：A new computer costs a lot of money. 买一台新电脑要花一大笔钱。(2) (doing) sth. costs (sb.) ＋时间,某物（做某事）花了（某人）多少时间。例：Remembering these new words cost him a lot of time.</description>
+      <description>spend，cost，take和pay的区别是历年中考试题的必考内容之一，虽然它们都可以表示“花费”，但用法却不尽相同</description>
     </item>
     
     <item>
@@ -752,7 +635,7 @@ cost的主语是物或某种活动， 还可以表示“值”， 常见用法�
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/english/each-day-a-sentence/</guid>
-      <description>Every man dies, not every man really lives Yesterday is history, tomorrow is a mystery, and today is a gift There are two sides to every story, at least When you are convinced that your cause is right, have the courage to take a stand the supreme happiness of life is the conviction that we are loved As is a tale, so is life: not how long it is, but how good it is, is what matters.</description>
+      <description>Every man dies, not every man really lives</description>
     </item>
     
     <item>
@@ -761,7 +644,7 @@ cost的主语是物或某种活动， 还可以表示“值”， 常见用法�
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/english/english-grammar-and-structure/</guid>
-      <description>too + adjective; adjective + enough We can use this structure; adjective { comparative form } + than &amp;hellip; For example: he&amp;rsquo;s older than me as adjective as; like something if it&amp;rsquo;s short adjective { one or two syllables }, we often put &amp;lsquo;the&amp;rsquo; before it and add -est {superlative form}. if it&amp;rsquo;s a long adjective { more than 2 syllables}, we often form it this way: the + most + adjective compare 1} the adjective+est - the longest 2} the most + adjective - the most beautiful.</description>
+      <description>too + adjective; adjective + enough</description>
     </item>
     
     <item>
@@ -770,7 +653,7 @@ cost的主语是物或某种活动， 还可以表示“值”， 常见用法�
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/english/four-kinds-of-man/</guid>
-      <description>In a relationship, some men fall into one of four categories. a boy, a player, a confused man, and a good man. A boy, a boy will always be a boy, regardless of his age. Growing up and growing old is never the same. Growing old is mandatory while growing up is optional by choice. A boy cares less about what makes you happy as a woman, he knows very little about putting a home together, and he&amp;rsquo;s not ready to learn.</description>
+      <description>In a relationship, some men fall into one of four categories. a boy, a player, a confused man, and a good man.</description>
     </item>
     
     <item>
@@ -779,12 +662,7 @@ cost的主语是物或某种活动， 还可以表示“值”， 常见用法�
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/english/have-got-posession/</guid>
-      <description>Have Got#Usage: have got
- have got + noun = possess noun/have noun/own noun
- Grammer: have got
- have =&amp;gt; have/has I/You/We/They + have got + noun He/She/It + has got + noun
- Example: have got
-   subj. have got noun     I have got a car.   You have got a bike.   He has got a laptop.</description>
+      <description>have got + noun = possess noun/have noun/own noun</description>
     </item>
     
     <item>
@@ -793,19 +671,7 @@ cost的主语是物或某种活动， 还可以表示“值”， 常见用法�
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/english/how-about-%E5%92%8C-what-about-/</guid>
-      <description>How about…? 和 What about…? 基本上意思是一样的！
-What about bringing some ice cream? 带一些冰淇淋怎么样？
-What about playing your new video games? 玩你的新电子游戏怎么样？
-What about getting some pizza? 买一些比萨怎么样？</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://wangyijie.store/posts/english/introduce-myself/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://wangyijie.store/posts/english/introduce-myself/</guid>
-      <description>Hello, eveyone. Very glad to be here. My name is WangYiJie, and i am twenty eight years old. Now i am a operation enginner of wangushengshi. My favourite subject is english, and i like sports very much, English is an ability that is very helpful for me, and sports make me health. I like this sentence: &amp;ldquo;nothing is impossible.&amp;rdquo;, so i always try me best to do everything well, and never give up easily, so this is me, i hope to make friends with you all, Thank you for listening!</description>
+      <description>How about…? 和 What about…? 基本上意思是一样的！</description>
     </item>
     
     <item>
@@ -814,7 +680,7 @@ What about getting some pizza? 买一些比萨怎么样？</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/english/prefix-and-suffix/</guid>
-      <description>Anti- against(反对) Anticlimatic(虎头蛇尾)，anti-inflammotory(抗炎)，antiway(反对战争) De- opposite(相反的) Devalue(贬值)，destruction(破坏) Dis- not or the opposite of something(与某事不同或相反)，discover(发现)，disagree(不同意)，disproportionate(不成比例). En, Em cause to, enact造成, enable启用, empower授权, embrace拥抱 Fore-, before前, front of在什么前, foreshadow预兆, forearm前臂, forecast预测 In-, Im-, in this one&amp;rsquo;s pretty self-explanatory. income收入，impulse冲动 In-, Im, II-,Ir-, not, Indirect间接的, injustice不公正的, immoral不道德的, illiterate文盲的, irreverent不敬的, irresponsible不负责任的 Inter- between在什么之间, among interrupt, interact, Mid- middle中间, midway中途, midsentence中断 Mis- wrongly错误, misspell拼错, misstep失误,misdemeanor轻罪 Non- not不, nonviolent非暴力, nonsense胡说八道. Over- ove过度,too much, overeat吃的过量, overlook俯视 Pre- bfore在什么之前，preview预览，prefix,前缀 Re- again再次, this one is super common, rewrite重写,research研究, review回顾, refresh刷新,refurbish翻新 Semi- or you might hear people say semi, half, partly,not fully, 不完整的 semifial半决赛，semiformal半正式 Sub- under在什么下面，subway地铁,submarine潜艇 Super- above, beyond,超过，超越， superhuman超人，superstar超级明星 Trans- across or crossing a boundary, trans 越过边界，transmit传输，transport运输 Un- not不， opposite of.</description>
+      <description>suffixes prefix</description>
     </item>
     
     <item>
@@ -823,10 +689,7 @@ What about getting some pizza? 买一些比萨怎么样？</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/english/recruitment/</guid>
-      <description>#Operations Engineer
-Be among the first 25 applicants 应聘者 IT Recruitment 招聘 Consultant 顾问 I Move IT
-My international client 客户 is currently looking to hire 聘用 an Operations Engineer to join their Desktop Operations Department to be responsible负责 for providing mainly 3rd tier support.
-Position Summary:# The role requires someone to engineer and support key desktop technologies and to assist协助 with 3rd tier support for complex desktop issues.</description>
+      <description>My international client 客户 is currently looking to hire 聘用 an Operations Engineer to join their Desktop Operations Department to be responsible负责 for providing mainly 3rd tier support</description>
     </item>
     
     <item>
@@ -835,24 +698,7 @@ Position Summary:# The role requires someone to engineer and support key desk
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/english/saying-of-book/</guid>
-      <description>1、书籍是人类知识的总结。
-Books are the summary of human knowledge.
-2、书籍是人类思想的宝库。
-Books are the treasure house of human thought.
-3、书籍是全人类的营养品。
-Books are the nourishment of all mankind.
-4、书籍是我们的精神粮食。
-Books are our spiritual food.
-5、读书，可以使生活过得更好！
-Reading, can make a better life!
-6、书籍是朋友，我们并不孤独。
-Books are friends, we are not alone.
-7、书籍是积累世人智慧的不灭的明灯。
-Books are the ever-burning lamps of accumulated wisdom the world of eternal.
-8、没有书籍的屋子如同没有灵魂的**。
-No books room like a body without soul.
-9、没有了书籍就好似你的人生没有了光彩。
-Did not have the book as if your life without a brilliance.</description>
+      <description>书籍是人类知识的总结</description>
     </item>
     
     <item>
@@ -861,9 +707,7 @@ Did not have the book as if your life without a brilliance.</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/english/the-100-most-commonly-used-words-in-english/</guid>
-      <description>Listed here, according to the 100-million-word British National Corpus, are the 100 most commonly used words in English. Many of these words are function words: they glue pieces of sentences together into longer syntactic units.
-Where needed, the part of speech is identified to distinguish different grammatical uses of the same word.
-the be of and a in (preposition: &amp;ldquo;in the old days&amp;rdquo;) to (infinitive marker: &amp;ldquo;to sing&amp;rdquo;) have it to (preposition: &amp;ldquo;to the country&amp;rdquo;) for (preposition: &amp;ldquo;for you&amp;rdquo;) I that (relative pronoun: &amp;ldquo;the book that I read&amp;rdquo;) you he on (preposition: &amp;ldquo;on the beach&amp;rdquo;) with (preposition: &amp;ldquo;with pleasure&amp;rdquo;) do (verb: &amp;ldquo;I do&amp;rdquo;) at (preposition: &amp;ldquo;at school&amp;rdquo;) by (preposition: &amp;ldquo;by midnight&amp;rdquo;) not this (determiner: &amp;ldquo;this page&amp;rdquo;) but from (preposition: &amp;ldquo;from home&amp;rdquo;) they his (determiner: &amp;ldquo;his job&amp;rdquo;) that (determiner: &amp;ldquo;that song&amp;rdquo;) she or which (determiner: &amp;ldquo;which book&amp;rdquo;) as (conjunction: &amp;ldquo;as we agreed&amp;rdquo;) we an say (verb: &amp;ldquo;say a prayer&amp;rdquo;) will (auxiliary verb: &amp;ldquo;I will try&amp;rdquo;) would can (auxiliary verb: &amp;ldquo;I can go&amp;rdquo;) if their go (verb: &amp;ldquo;go now&amp;rdquo;) what (determiner: &amp;ldquo;what time&amp;rdquo;) there all (determiner: &amp;ldquo;all people&amp;rdquo;) get (verb: &amp;ldquo;get busy&amp;rdquo;) her (determiner: &amp;ldquo;her job&amp;rdquo;) make (verb: &amp;ldquo;make money&amp;rdquo;) who as (preposition: &amp;ldquo;as a child&amp;rdquo;) out (adverb: &amp;ldquo;go out&amp;rdquo;) up (adverb: &amp;ldquo;go up&amp;rdquo;) see (verb: &amp;ldquo;see the sky&amp;rdquo;) know (verb: &amp;ldquo;know a place&amp;rdquo;) time (time: &amp;ldquo;a time to laugh&amp;rdquo;) take (verb: &amp;ldquo;take a break&amp;rdquo;) them some (determiner: &amp;ldquo;some money&amp;rdquo;) could so (adverb: &amp;ldquo;I said so&amp;rdquo;) him year into (preposition: &amp;ldquo;into the room&amp;rdquo;) its then think (verb: &amp;ldquo;think hard&amp;rdquo;) my come (verb: &amp;ldquo;come early&amp;rdquo;) than more (adverb: &amp;ldquo;more quickly&amp;rdquo;) about (preposition: &amp;ldquo;about you&amp;rdquo;) now last (adjective: &amp;ldquo;last call&amp;rdquo;) your me no (determiner: &amp;ldquo;no time&amp;rdquo;) other (adjective: &amp;ldquo;other people&amp;rdquo;) give just (adverb: &amp;ldquo;just try&amp;rdquo;) should these (determiner: &amp;ldquo;these days&amp;rdquo;) people also well (adverb: &amp;ldquo;well written&amp;rdquo;) any (determiner: &amp;ldquo;any day&amp;rdquo;) only new (adjective: &amp;ldquo;new friend&amp;rdquo;) very when (conjunction: &amp;ldquo;when you go&amp;rdquo;) may (auxiliary verb: &amp;ldquo;you may go&amp;rdquo;) way look (verb: &amp;ldquo;look here&amp;rdquo;) like (preposition: &amp;ldquo;like a boat&amp;rdquo;) use (verb: &amp;ldquo;use your head&amp;rdquo;) her (pronoun: &amp;ldquo;give her&amp;rdquo;) such (determiner: &amp;ldquo;such problems&amp;rdquo;) how (adverb: &amp;ldquo;see how&amp;rdquo;) because when (adverb: &amp;ldquo;know when&amp;rdquo;) as (adverb: &amp;ldquo;as good&amp;rdquo;) good (adjective: &amp;ldquo;good time&amp;rdquo;) find (verb: &amp;ldquo;find time&amp;rdquo;)</description>
+      <description>Listed here, according to the 100-million-word British National Corpus, are the 100 most commonly used words in English. Many of these words are function words: they glue pieces of sentences together into longer syntactic units.</description>
     </item>
     
     <item>
@@ -872,10 +716,7 @@ the be of and a in (preposition: &amp;ldquo;in the old days&amp;rdquo;) to (infi
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/english/the-50-most-commonly-used-words-in-the-english-language/</guid>
-      <description>If you&amp;rsquo;re an English learner, knowing which words are most commonly used in the language can help you to improve your vocabulary skills and gain confidence in casual conversations.
-Don&amp;rsquo;t count on these words to help you become fluent in English, but do use them as a resource to help you build your skills as you grow more comfortable with the English language.
-Top Vocabulary Words#All
-Everyone in a group.</description>
+      <description>If you&amp;rsquo;re an English learner, knowing which words are most commonly used in the language can help you to improve your vocabulary skills and gain confidence in casual conversations.</description>
     </item>
     
     <item>
@@ -884,9 +725,7 @@ Everyone in a group.</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/english/the-difference-between-preposition-_to_-_for_-and-_of_/</guid>
-      <description>to、for和of的区别： For，of都是介词，所以跟在后面的词动词要加ing，这是他们共有的特性。 for，to，of后都跟人称代词的宾格，这是他们共有的特性。 for是为了的意思，为了一般与decorate,help,thank等及物动词相连接； to是无意义的，与for意思差不多，区别是to后面是加动词原形。 of是&amp;rsquo;的&amp;rsquo;的意思,后面一般跟名词，它还连接量词和不可数名词。 具体的区别也是要根据用法来进行比较。
-to，for和of的用法： For的用法
- 表示“当作、作为”。如: I like some bread and milk forbreakfast. 我喜欢把面包和牛奶作为早餐。 What will we have for supper? 我们晚餐吃什么? 表示理由或原因,意为“因为、由于”。 如: Thank you for helping me with myEnglish. 谢谢你帮我学习英语。 表示动作的对象或接受者,意为“给……”、“对…… (而言)”。 如: Let me pick it up for you. 让我为你捡起来。 Watching TV too much is bad for yourhealth. 看电视太多有害于你的健康。 表示时间、距离,意为“计、达”。 如: I usually do the running for an hourin the morning. 我早晨通常跑步一小时。 We will stay there for two days.</description>
+      <description>to、for和of的区别</description>
     </item>
     
     <item>
@@ -895,10 +734,7 @@ to，for和of的用法： For的用法
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/english/the-past-simple-tense-time-phrases/</guid>
-      <description>Past(in/at/on/last/ago)#Usage: in + time phrase
- in + the morning/the afternoon/the evening in + month(e.g. May) in + year(e.g. 2019) in + season(e.g. winter)
- Examples: in + time phrase
-   ACTIVITY in TIME PHRASE     I walked the dog in the morning.   He started in September.   We went in 2010.   It snowed in spring.    Example: on + time phrase</description>
+      <description>in/at/on/last/ago</description>
     </item>
     
     <item>
@@ -907,14 +743,7 @@ to，for和of的用法： For的用法
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/english/title-of-degree/</guid>
-      <description>title of degree/学位的程度，是指学士/硕士/博士
-1、bachelor（学士）分为：BSc ：bachelor of science（理科）；B.A ：bachelor of Art（文科）BSc(Eng)： bachelor of science(engineering)工科
-2、master（硕士）分为：MSc ：master of science（理科）;M.A ：master of art（文科）；MSc(Eng) ：master of science(Engineering)工科
-3、doctor&amp;rsquo;s degree（博士）：统称Phd即可
-学位程度中的学士、硕士和博士还可以进行细分：
-1、学士：Bachelor of Arts B.A/文学士、Bachelor of Arts in Education B.A.Ed., B.A.E/教育学文学士、Bachelor of Arts in Computer Science B.A.CS/计算机文学士 、Bachelor of Arts in Music B.A.Mus,B.Mus/音乐艺术学士
-Bachelor of Arts in Social Work B.A.S.W/社会工作学文学士、Bachelor of Engineering B.Eng., B.E/工学士、Bachelor of Engineering in Social Science B.Eng.Soc/社会工程学士、Bachelor of Science B.S/理学士等。
-2、硕士：Master of Arts M.</description>
+      <description>title of degree/学位的程度，是指学士/硕士/博士</description>
     </item>
     
     <item>
@@ -923,11 +752,7 @@ Bachelor of Arts in Social Work B.A.S.W/社会工作学文学士、Bachelor of E
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/english/which/</guid>
-      <description>我们已经学过如何用 which 来提问。#Which team has more fans? 哪个队有更多球迷？
-Which 也可以用来把名词和修饰名词的词句连在一起！
-That is a meter, which is about three feet. 那是一米，就是三英尺左右。
-That is one foot, which is twelve inches. 那是一英尺，就是十二英寸。
-This is one inch, which is about two and a half centimeters. 这是一英寸，就是两厘米半。</description>
+      <description>如何用 which 来提问</description>
     </item>
     
     <item>
@@ -936,16 +761,7 @@ This is one inch, which is about two and a half centimeters. 这是一英寸，�
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/english/%E4%B8%BB%E8%B0%93%E4%B8%80%E8%87%B4the-subject-and-predicate-are-consistent/</guid>
-      <description> the+形容词或分词表示一类人， +姓表示一家人，做主语时动词用复数 表示时间，金钱，距离等复合名词做主语时谓语动词用单数 一些学课名词以s结尾看作单数，还有一些形式复数，其实单数的名词 由every-, some-, no-, any-等候成的复合不定代词或者each every, either, neither等做主语的时候，谓语动词用单数 集体名词如family, class, team等做主语，表示每个成员时用复数，表示整体时谓语动词用单数 当主语用and连接时，表示同一概念，谓语动词用单数，不同概念时谓语动词用复数 不定式，动名词做主语，谓语动词用单数  </description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://wangyijie.store/posts/english/%E4%BB%8E%E5%8F%A5%E4%B8%AD%E7%9A%84%E5%8A%A8%E8%AF%8D%E6%97%B6%E6%80%81/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://wangyijie.store/posts/english/%E4%BB%8E%E5%8F%A5%E4%B8%AD%E7%9A%84%E5%8A%A8%E8%AF%8D%E6%97%B6%E6%80%81/</guid>
-      <description>这里只是打开，没有了或过，要用一般时，如果是打开了，打开过这要换成完成时或过去时 </description>
+      <description>the+形容词或分词表示一类人， +姓表示一家人，做主语时动词用复数</description>
     </item>
     
     <item>
@@ -954,28 +770,7 @@ This is one inch, which is about two and a half centimeters. 这是一英寸，�
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/english/%E5%85%AD%E7%BA%A7%E5%86%99%E4%BD%9C%E8%AF%84%E5%88%86%E6%A0%87%E5%87%86/</guid>
-      <description>六级评分标准 满分15分 分档标准 文章表述全面，主题鲜明切题，结构层次清晰，语句连贯流畅，句式修辞丰富，语法、拼写、标点等错误极少。
-13-15分 文章比较完整，主题清楚切题，结构分明，语句比较流畅，句式修辞较多变，有少量语法、拼写、标点等错误。
-10-12分 文章内容完整，基本涵盖要点，结构不够清晰，语意不连贯，句式修辞单一，有较多语法、拼写、标点等错误。
-7-9分 文章表述不全，结构不清晰，层次混乱，语意不连贯，句式修辞单一且错误较多，语法、拼写、标点等错误过多。
-4-6分 主题混乱不清，要点表述不全，未划分段落结构，语句不通顺，有大量语法、拼写、标点等错误。
-1-3分 未进行任何主题相关写作。
-0分 规定字数 大于等于 150 words
-写作建议 A. 思想表达：
-  表达中心思想
-  表达重要或特定信息
-  表达观点、态度等
-  B. 篇章组织
- 围绕所给的题目叙述、议论或描述，突出重点
-  连贯地组句成段，组段成篇
-  C. 语言运用
- 运用恰当的词汇
-  运用正确的语法
-  运用合适的句子结构
-  使用正确的标点符号
-  运用衔接手段表达句间关系（如对比、原因、结果、程度、目的等）
-  D. 写作格式
-运用正确的符合英语表达习惯的写作格式  </description>
+      <description>文章表述全面，主题鲜明切题，结构层次清晰，语句连贯流畅，句式修辞丰富，语法、拼写、标点等错误极少。</description>
     </item>
     
     <item>
@@ -984,13 +779,7 @@ This is one inch, which is about two and a half centimeters. 这是一英寸，�
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/english/%E5%85%B3%E7%B3%BB%E5%89%AF%E8%AF%8D%E7%9A%84%E4%BB%A3%E6%9B%BF%E4%BD%BF%E7%94%A8/</guid>
-      <description>时间、地点或理由的名词的先行词是关系副词，在从句中作状语。
-1）when, where,why 关系副词when, where, why的含义相当于&amp;quot;介词+ which&amp;quot;结构，因此常常和&amp;quot;介词+ which&amp;quot;结构交替使用. There are occasions when (on which) one must yield.
-任何人都有不得不屈服的时候。 Beijing is the place where (in which) I was born.
-北京是我的出生地。 Is this the reason why (for which) he refused our offer?
-这就是他拒绝我们帮助他的理由吗？
-2）that代替关系副词 that可以用于表示时间、地点、方式、理由的名词后取代when, where, why和&amp;quot;介词+ which&amp;quot;引导的定语从 句，在非正式文体中that常被省略（正式文体中不可省略），例如： His father died the year (that / when / in which) he was born.
-他父亲在他出生那年逝世了。 He is unlikely to find the place (that / where / in which) he lived forty years ago.</description>
+      <description>时间、地点或理由的名词的先行词是关系副词，在从句中作状语</description>
     </item>
     
     <item>
@@ -999,16 +788,7 @@ This is one inch, which is about two and a half centimeters. 这是一英寸，�
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/english/%E5%88%9D%E4%B8%AD%E8%8B%B1%E8%AF%AD%E4%B8%80%E5%8D%83%E9%AB%98%E9%A2%91%E8%AF%8D/</guid>
-      <description>爱 love 安静的 silent 安静地 silently 安全 safety 安全的 safe 安装;修理 fix 按顺序 in order 按照,如同,当…,因为 as 昂贵的 expensive 嗷,哎哟 ouch [澳大利亚] [澳大利亚]人 Australian Aussie 澳门 Macao 八 eight 八月 August 巴黎 Paris 巴西 Brazil 爸爸 dad 白色的 white 白天 daytime 百 hundred 百货商店 department 百万 million 柏林 Berlin 班级,年级 class 办公室 office 邦戴 Bondy 帮助 help 傍晚;晚上 evening 棒球,垒球 baseball 磅;镑 pound 保持;使得… keep 报纸 newspaper 抱怨 complain 杯子 cup 悲伤的;难过的 sad 北方;北部 north 北方的;北部的 northern 鼻子 nose 比…;比较… than 比较 comparison 比较级的 comparative 比利时 Belgium 比例,比率 rate 比萨饼 pizza 比赛 match 比赛,竞赛 competition 比赛者;选手 player 必须 must 必须的 necessary 毕业 graduate 壁炉 fireplace 避免 avoid 避暑胜地 summer resort 边 side 边;边缘 edge 边缘 rim 鞭炮 firecrackers 便帽;军帽 cap 便士 penny (pence) 便条;纸币 note 便宜的 cheap 变成;成为 become 变换,改变 change 遍及 throughout 标点符号 puntuation 标记;符号;痕迹 sign 标签 label 表达 expression 表格;构成,组成 form 表演;成绩 performance 别的,其他的;另外的人 other 别的;其他的 else 冰 ice 冰雕 ice carving 冰激凌 ice cream 冰山 iceberg 并排 side by side 病假 sick leave 病人 patient 拨(电话) dial 波士顿 Boston 玻璃(杯) glass 脖子 neck 博物馆 museum 不 not 不,不是;没有 no 不安的 restless 不安的 uneasy 不按次序排队的人 jumper 不出名的 unknown 不好不坏的,马马虎虎的 so-so 不见的 missing 不健康的 unhealthy 不久；很快 soon 不可能的 impossible 不平常的 unusual 不同;差异 difference 不同的 different 不喜欢,厌恶 dislike 不走运的;不幸的 unlucky 布 cloth 部分 part 擦;磨 rub 猜 guess 猜想 suppose 裁缝 tailor 裁判，法官 judge 菜单 menu 参加 join 餐厅 dining-room 操场 playground 操作;动手术 operate 嘈杂的 noisy 嘈杂声,响声 noise 草;草地 grass 厕所 toilet 叉子 fork 茶;茶叶 tea 茶壶 teapot 察觉;领悟;了解 realize 长的 long 长筒袜 stocking 尝味;有&amp;hellip;味道 taste 畅销货(书) best-seller 唱唱歌 sing 唱诵 chant 抄写,誊写;复制 copy 超过…,经过…;过去(的) past 超级市场 supermarket 朝着…;向… towards 潮湿的 moist 潮湿的 wet 车站 station 陈列,展览 display 陈述 statement 称…的重量 weigh 成就;成功 success 成立;建立 found 成年人 adult 成员 member 城堡 castle 城市 city 城镇 town 乘…,通过… by 乘独木舟 canoe 乘客 passenger 乘以 multiply 吃 eat 池塘;水坑 pool 迟的 late 尺寸 size 尺子 ruler 冲;奔跑 rush 冲浪 surf 冲浪运动 surfing 冲浪者 surfer 虫;蠕虫 worm 宠物 pet 出口 exit 出去,在外面 out 出生(bear的过去分词) born 出声地, aloud 出现;露面 appear 出租车 taxi 除…之外 except 除非…;如果…不… unless 厨房 kitchen 穿着 wear 传播 spread 传单 leaflet 传递;通过 pass 传统的 traditional 传真 fax 窗子 window 床 bed 吹,刮 blow 春天 spring 磁带 tape 此后;自…以来;由于…;既然… since 此刻,瞬间 moment 从… from 从来不;决不 never 匆忙 hurry 聪明的;机灵的 clever 粗鲁的;激烈的;粗糙的 rough 粗体 bold type 粗心的 careless 粗心地 carelessly 村庄 village 错误 mistake 错误的 wrong 答复;回复 reply 打;撞;击中 hit 打包 pack 打电话,叫喊;电话通话 call 打开;开放的 open 打破(过去式) broke 打破,折断;课间休息 break 打扫;干净的, clean 打印机 printer 打字 type 大道,大街 avenue 大的 big 大的 large 大量地；猛烈地 heavily 大陆;本土 mainland 大门 gate 大米,米饭;水稻 rice 大声的;响亮的 loud 大声地;高声地 loudly 大厅 hall 大象 elephant 大笑;笑声 laugh 大写的 capital [大学生运动会]UNIVERSIADE 大众的;流行的 popular 代词 pronoun 代替 instead 带来;拿来 bring 单程的 one-way 单一的 single 担心，使…担心 worry 担心的,烦恼的 worried 但是;除了 but 蛋糕,,饼 cake 当然 certainly 岛屿 island 倒,灌;倾泻 pour 倒空,清空 empty 倒塌 collapse 倒下 fall 到…;往…;(不定式符号,无词义) to 到…里 into 到…上 onto 到处 everywhere 到达;抵达 arrive 到达;够着 reach 道路;公路 road 得到;到达 get 得分;获胜 score 德国 Germany 德国人 German(s) 的确;确信的 sure 灯笼 lantern 登记处 check-in 等候 wait 等候室 waiting room 低的 low 敌人 enemy 底部 bottom 地板 floor 地方 place 地理(学) geography 地面 ground 地球,地球仪 globe 地图 map 地下的 underground 地震 earthquake 地址 address 第……号 No.</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://wangyijie.store/posts/english/%E5%8A%A8%E4%BD%9C%E6%9C%89%E6%8C%81%E7%BB%AD%E7%8A%B6%E6%80%81%E6%97%B6%E8%A6%81%E7%94%A8%E4%B8%BB%E7%B3%BB%E8%A1%A8%E7%BB%93%E6%9E%84/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://wangyijie.store/posts/english/%E5%8A%A8%E4%BD%9C%E6%9C%89%E6%8C%81%E7%BB%AD%E7%8A%B6%E6%80%81%E6%97%B6%E8%A6%81%E7%94%A8%E4%B8%BB%E7%B3%BB%E8%A1%A8%E7%BB%93%E6%9E%84/</guid>
-      <description>这里骑了很多个小时的马，我们不能再用主谓结构，也就是用动词ride的原型或者过去式rode, 而要改为表状态的主谓结构，was riding</description>
+      <description>one thousand words</description>
     </item>
     
     <item>
@@ -1017,12 +797,7 @@ This is one inch, which is about two and a half centimeters. 这是一英寸，�
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/english/%E5%8A%A8%E8%AF%8D%E4%B8%8D%E5%AE%9A%E5%BC%8F%E7%94%A8%E5%88%97/</guid>
-      <description>动词不定式做主语:# to get up early is necessary 早起是必要的 it做形式主语 it&amp;rsquo;s necessary to get up early
- 动词不定式做宾语# he decided to buy a new car
- 动词不定式做宾语补足语# I like you to keep everything tidy
- 疑问词加不定式做宾语# please show us how to do that
- 动词不定式做表语# his wish is to be a policeman
- 动词不定式做状定语# we need someone to help I have many letters to write 如果不定式的动词是不及物动词，后面须加上适当的介词 I am looking for a room to live in.</description>
+      <description>动词不定式case</description>
     </item>
     
     <item>
@@ -1031,10 +806,7 @@ This is one inch, which is about two and a half centimeters. 这是一英寸，�
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/english/%E5%8A%A8%E8%AF%8D%E7%9A%84%E6%97%B6%E6%80%81/</guid>
-      <description>动词时态的意义 动词，就是用来形容或表示各类动作的词汇。基本上每个完整的子句都有一个动词，要表示第二个动作时可使用不定词、动名词、对等连接词、从属连接词或增加子句等方法连结。而在英语中根据时间和动作的种类，动词又分为了多种时态。
-动词时态的种类 时间和动作的种类 1.一般现在时(do); 2.一般过去时(did); 3.一般将来时( will do)(be going to do)(shall do); 4.一般过去将来时( would do); 5.现在进行时( be doing); 6.过去进行时(was/were doing); 7.将来进行时( will be doing); 8.过去将来进行时( would be doing)(was/were going to do); 9.现在完成时(have done); 10.过去完成时( had done); 11.将来完成时( will have done); 12.过去将来完成时(would have done); 13.现在完成进行时( have been doing); 14.过去完成进行时( had been doing); 15.将来完成进行时( will have been doing); 16.过去将来完成进行时(would have been doing)。
-　其实是英语动词的时和体。时有现在、过去、将来和过去将来;体有一般、完成、进行和完成进行。而态有2种，即主动和被动。以上只是主动，加上被动就更多了。
-注意：本文来自互联网，复制是为了知识传播，本人不从转载中获取金钱利益</description>
+      <description>动词，就是用来形容或表示各类动作的词汇。基本上每个完整的子句都有一个动词，要表示第二个动作时可使用不定词、动名词、对等连接词、从属连接词或增加子句等方法连结。而在英语中根据时间和动作的种类，动词又分为了多种时态。</description>
     </item>
     
     <item>
@@ -1043,7 +815,7 @@ This is one inch, which is about two and a half centimeters. 这是一英寸，�
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/english/%E6%97%B6%E9%97%B4%E4%BB%8B%E8%AF%8Din-on-at-%E7%9A%84%E4%B8%8D%E5%90%8C%E7%94%A8%E5%A4%84/</guid>
-      <description>用 at 来表示在某一段时刻：#　atdawn/daybreak： 在黎明 at six ：在6点钟 atmidnight ：在午夜 at 4:30 ：在4点30分 用 at 来表示在……岁时 at sixteen/at the age of sixteen ：16岁的时候 ##用 on 来表示在星期几/某日 on Monday ：在星期一 on January fifth：在1月5日 on Christmas Day ：在圣诞节那一天 也可用atChristmas onNew Year&amp;rsquo;s Day：在新年那天 ##用in来表示一天中的早中晚，月份，季节或年份 in the morning/afternoon/evening在早晨，下午，晚上 inJanuary/February在一月，二月 inSpring在春天 in 2014在2014年</description>
+      <description>用 at 来表示在某一段时刻,用 on 来表示在星期几/某日,用in来表示一天中的早中晚，月份，季节或年份</description>
     </item>
     
     <item>
@@ -1052,8 +824,7 @@ This is one inch, which is about two and a half centimeters. 这是一英寸，�
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/english/%E8%8B%B1%E6%96%87%E8%AF%AD%E6%B3%95%E8%AF%8D%E6%B1%87/</guid>
-      <description>抽象名词 abstract noun 副词 adverb 形容词 adjective 冠词 article 助动词 auxiliary verb 基数词 cardinal numeral 集体名词 collective noun 普通名词 common noun 连接词 conjunction 可数名词 countable noun 定冠词 dfinite sentence 指示代词 demonstrative pronoun 限定词 determiner 动名词 gerund 不定冠词 indefinite article 不定代词 indefinite pronoun 感叹词 interjection word
-疑问代词 in terrogative pronoun 不及物动词 intransitive verb 不规则动词 irregular verb 系动词 link verb 物质名词 material noun 情态动词 modal noun 非限定动词 non-finite verb 名词 noun 数词 numberal 序数词 ordinal numberal 人称代词 personal pronoun 短语动词 phrasa verb 物主代词 possesive pronoun 谓语动词 predicate verb 代词 pronoun 专有名词 proper noun 量词 quantifier 规则动词 regular verb 关系副词 relative adverb 关系代词 relative pronoun 自身代词 self/ reflexive pronoun 及物动词 transitive verb 不可数名词 uncountable noun 动词 verb 非限定性动词 verbal 形容词短语 adjective phrase 同位语 appositive 定语 attribute 补语 complement 复合宾语 complex object 直接宾语 direct object 直接引语 direct speech 间接引语 indirect speech 间接宾语 indirect object 修饰词语 modifier</description>
+      <description>one thousand words</description>
     </item>
     
     <item>
@@ -1062,7 +833,7 @@ This is one inch, which is about two and a half centimeters. 这是一英寸，�
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/english/%E8%8B%B1%E8%AF%AD%E5%8F%A3%E8%AF%AD%E5%85%B3%E9%94%AE%E5%90%8D%E8%AF%8D-nouns/</guid>
-      <description>#有关物的名词 ##时间类 time morning afternoon noon evening night tonight today tomorrow yesterday weekend month year season spring autumn winter day date moment period history future birthday holiday festival schedule age ##气候类 weather rain snow wind cloud ##自然类 nature mountain air light water fire ice smoke heat ground sky river field forest sea stone star ##植物类 plant grass tree crop ##动物类 animal bird cat dog horse rabbit elephant bear tiger lion bull cow pig chicken fish sheep monkey snake reptile ##昆虫类 insect bee butterfly spider ##其他生物 bacteria ##地点类 place hospital restaurant hotel university factory jail zoo park school store club bar court market town village city ##机构类 organization company charity ##声音类 sound voice noise music ##食品类 food egg meat steak bread cake dessert soup sandwich noodle pie chocolate sauce ##餐饮类 meal breakfast lunch dinner ##蔬菜类 vegetable potato tomato carrot lettuce bean ##水果类 fruit apple orange banana ##食材类 ingredient oil sugar salt butter cream ##饮料类 drink coffee milk tea juice beer wine alcohol ##营养类 nutrient mineral vitamin protein ##疾病类 disease fever flu cancer ##房屋类 house office room floor wall window door roof kitchen ##家具类 furniture bed chair desk table seat couch ##服装类 clothes shirt shoes cap hat coat dress pants uniform suits underwear pocket jeans button zip sock ##首饰类 jewelry diamond ring ##化妆品 cosmetics perfume lipstick powder ##交通类 transport traffic bicycle ship boat plane train ##车辆类 vehicle motorcycle bus car truck brake engine gear tire wheel ##路桥类 road street bridge station ##装置类 device lock key bell scale tap 设备类 equipment shower radio telephone camera computer TV fridge video ##容器类 container box cup dish plate bowl basket tub sink pot pan ##材料类 material cloth paper glass plastic gold paint chemical ##日常用品类 toy brush mirror chain board handle cartoon bottle wood clock knife pen book album menu card envelope ticket pipe tube wire belt web film screen gift channel alarm electricity towel carpet tool junk fork spoon medicine drug pill ##数量 couple double load pack lot ##单位 unit meter inch pound gram piece ##事情 thing issue matter stuff object event #有关人的名词 ##家庭角色类 parent daughter son father mother brother sister husband wife uncle aunt grandfather grandmother role ##社会角色类 kid child baby boy girl man woman friend lady gentleman boss customer student neighbor person volunteer fool sir madam ##职业类 job doctor nurse professor lawyer engineer teacher coach guard judge ##群体类 group people class team human staff society generation army government family 总单词量：355个 类别：38个 ##抽象名词： #话语类 words topic subject joke question suggestion instruction permission ##文字类 document story report novel note text letter email blog list menu rule：law grammar principle ##信息类 information message news update notice fact detail evidence clue background data sign knowledge ##状态类 state condition environment situation：mess balance peace emergency chance opportunity ##行为类 act exercise practice test experiment lesson bath security attention focus step education advertisement treatment trick habit service business homework job：task project challenge duty：responsibility fault performance：concert opera drama study：math art science philosophy psychology arrangement：deal insurance account engagement occasion：meeting interview party picnic wedding funeral barbecue ceremony money：profit income salary loan cash cost credit deposit price tax bill budget ##活动类 activity game discipline crime trade economy politics war trip fashion industry sports：soccer football golf basketball race ##思想类 thought idea view theory religion plan：strategy policy program ##整体类 network internet series career system：language transport ##其他类 favor privilege mistake risk advantage benefit problem trouble surprise secret award prize diet property option case example sample score limit experience effort energy figure 总单词量：166个 类别：9个 #构成类名词：你的外在与内在 ##核心词 part ##部位 side edge base core ##身体 head eye ear face nose foot mouth tooth tongue neck shoulder breast chest stomach arm hand finger nail leg knee throat brain heart lung muscle bone nerve hair skin blood sweat ##精神 mind spirit soul emotion feeling：shame stress respect desire pain sense ##力量 strength force power：authority ability：sight intelligence memory skill ##动物 tail wing ##植物 flower leaf root branch ##其他 whole rest half 总单词量：65个 类别：8个 #属性类名词：你的状态 ##静态属性 ###形状 shape appearance ###尺寸 size space ###位置 position point line end bottom middle top front back center corner left right direction：east west north south ###品质 quality feature character personality ##其他属性 color weight tone material structure ##数量 amount number measurement distance volume angle temperature level：degree grade rank standard rate：speed percentage ##类别 kind type ##动态属性 ###方式 form way：behavior mood logic tradition culture style pattern relation manner ###原因 cause reason source excuse factor ###目的 purpose goal ###结果 effect result ###过程 course process 总单词量：70个 类别：12个</description>
+      <description>one thousand words</description>
     </item>
     
     <item>
@@ -1071,7 +842,7 @@ This is one inch, which is about two and a half centimeters. 这是一英寸，�
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/english/%E8%8B%B1%E8%AF%AD%E5%A4%A7%E8%AF%8D/</guid>
-      <description>动词： be, make, 单纯词：go, have, give，get, take</description>
+      <description>english big words</description>
     </item>
     
     <item>
@@ -1080,15 +851,7 @@ This is one inch, which is about two and a half centimeters. 这是一英寸，�
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/english/%E8%8B%B1%E8%AF%AD%E8%AF%AD%E6%B3%95%E7%BB%86%E8%8A%82/</guid>
-      <description>拼读基础知识：# 语调
-语调（intonation），即说话的腔调，就是一句话里声调（pitch）高低抑扬轻重的配制和变化。英语有五种基本语调：升调（↗）、降调（↙）、升降调（∧）、降升调（∨）以及平调（→）。一句话除了词汇意义（lexical meaning）还有语调意义（intonation meaning）。语调意义就是说话人用语调所表示的态度或口气。一句话的词汇意义加上语调意义才算是完全的意义。同样的句子，语调不同，意思就会不同，有时甚至会相差千里。 读音规则  重读音节 非重读音节   读音
-48个英语国际音标 用对称法排序 20个辅音 3个鼻音 2个半元音 3个似拼音 20个元音  元音  12个单元音  5个长元音
-[i:][ə:][ɔ:][u:][ɑ:] 7个短元音 [ə][ɔ][æ][e][ʌ][i][u]     8个双元音
-[ai][ei][ɔi][iə][εə][uə][əu][au] 辅音  10个清辅音 [p][t][k][f][s][θ][ʃ][tʃ][tr][ts] 10个浊辅音
-[b][d][g][v][z][ð][ʒ][dʒ][dr][dz]   3个鼻音 [m][n][ŋ] 3个似拼音
-[h][r][l] 2个半元音
-[w][j] 音标字母对应：  [i:] 字母组合:ee ea e ie ei （eo ey i）
-three tree green sheep meet beef see seek</description>
+      <description>语调（intonation），即说话的腔调，就是一句话里声调（pitch）高低抑扬轻重的配制和变化。英语有五种基本语调：升调（↗）、降调（↙）、升降调（∧）、降升调（∨）以及平调（→）</description>
     </item>
     
     <item>
@@ -1097,7 +860,7 @@ three tree green sheep meet beef see seek</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/english/%E8%AF%AD%E6%B3%95-grammar/</guid>
-      <description>主语&amp;ndash;动作的发出者 谓语&amp;ndash;动词，有实意动词和系动词 宾语&amp;ndash;动作指向的对象是宾语 定语&amp;ndash;形容词，修饰、限定、说明名词或代词的品质与特征 状语&amp;ndash;修饰动词 表语&amp;ndash;系动词之后，对主语进行描述 补语&amp;ndash;对宾语进行补充</description>
+      <description>主语&amp;ndash;动作的发出者</description>
     </item>
     
     <item>
@@ -1106,17 +869,7 @@ three tree green sheep meet beef see seek</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/english/%E8%AF%AD%E6%B3%95%E5%BD%92%E7%BA%B3/</guid>
-      <description>名词、动词、形容词#副词#副词（Adverb 简称adv.）是指在句子中表示行为或状态特征的词，用以修饰动词、形容词、其他副词或全句，表示时间、地点、程度、方式等概念。副词可分为：时间副词、频率副词、地点副词、方式副词、程度副词、疑问副词、连接副词、关系副词、表顺序的副词。 &amp;hellip;&amp;hellip;地
-冠词#冠词（Article）是一种虚词，在句子中不重读，本身不能独立使用，只能放在名词前帮助说明名词所指的人或事物，它是英语词性中最小的一类，只有三个，一种是不定冠词（Indefinite Article），一种是定冠词（Definite Article）。此外也有些特定场合不用冠词，即通常所称的零冠词（Zero Article）。其中冠词简称“art.”冠词有不定冠词、 定冠词、 零冠词。 定冠词（例如英语中的the）用来限定这个冠词后面的名词是某个特定的事物； 不定冠词（例如英语中的a/an）用来表示这个冠词后面的名词是指某一类特定事物中的一个，但具体是哪一个并不重要； 部分冠词（例如法语中的du/de la）用来表示这个冠词后面的名词的量是不确定的。
-介词#介词（preposition 简写prep.）又称作前置词，表示名词、代词语句中其他词的关系，在句中不能单独作句子成分。介词后面一般有名词、代词或相当于名词的其他词类、短语或从句作它的宾语，表示与其他成分的关系。介词和它的宾语构成介词词组，在句中作状语，表语，补语，定语或介词宾语。同时介词的用法也很灵活，同一个介词可以表达多种意义，介词可以分为时间介词、地点介词、方式介词、原因介词、数量介词和其他介词。
-连词#连词是用来连接词与词、词组与词组或句子与句子、表示某种逻辑关系的虚词。连词可以表并列、承接、转折、因果、选择、假设、比较、让步等关系。
-感叹词#表示说话时喜悦、惊讶等情感的词就是感叹词。感叹词有oh，喔，耶，啊，哇等。感叹词一般放在句首，后用逗号隔开，感情强烈时，可用感叹号表示。oh ah come dear well now man boy
-语气#陈述语气、祈使语气、虚拟语气
-语态#主动语态、被动语态 被动语态(passive voice)是动词的一种形式，用以说明主语与谓语动词之间的关系。英语的语态共有两种：主动语态和被动语态。主动语态表示主语是动作的执行者，被动语态表示主语是动作的承受者。被动语态是动词的一种特殊形式，一般来说，只有需要动作对象的及物动词才有被动语态。汉语往往用&amp;quot;被&amp;quot;、&amp;ldquo;受&amp;rdquo;、&amp;ldquo;给&amp;quot;等被动词来表示被动意义 。被动语态由“助动词be+及物动词的过去分词”构成。被动语态的时态变化只改变be的形式，过去分词部分不变。疑问式和否定式的变化也如此。
-非谓语动词#不定式 在语法中，动词不定式是指动词的一种不带词形变化从而不指示人称、数量、时态的形式。它之所以被叫做不定式，是因为动词不被限定，或者说不被词形变化所局限。不定式属于非谓语动词。 动词ing形式 动词过去分词
-句子成分#句子的组成部分，包括主语、谓语、宾语、定语、状语、表语、宾语补足语和同位语八种
-主语#主语是句子陈述的对象，表示句子主要说明的人或事物，一般由名词.代词.数词.动名词.动词不定式等充当。
-谓语#谓语由动词构成，说明主语所发出的动作或具有的特征和状态。依据其在句中繁简程度可把谓语分为简单谓语和复合谓语两类。不论何种时态，语态，语气，凡由一个动词（或动词词组）构成的谓语都是简单谓语。</description>
+      <description>名词、动词、形容词</description>
     </item>
     
     <item>
@@ -1125,22 +878,7 @@ three tree green sheep meet beef see seek</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/english/%E9%9B%85%E6%80%9D%E8%AF%84%E5%88%86%E6%A0%87%E5%87%86/</guid>
-      <description>满分9分 分档标准 完全满足任务的所有要求，对于题目的回应非常切题，观点鲜明，论证非常充分； 不露痕迹地使用衔接手段，分段得体； 词汇使用广泛、自然而老到，极少出现小错误如“笔误”； 语法结构的使用广泛、准确而灵活。
-9分 充分涵盖题目的所有要求，对于题目的回应切题，观点鲜明，论证充分； 信息和观点的安排有序而富有逻辑性，衔接性的各个方面安排得体，分段充分、适当； 能流畅、灵活地使用多样词汇来准确表达思想，能巧妙使用较不常见单词和习语，尽管偶尔有词汇选择和搭配上的不准确，拼写和构词法错误极少； 灵活使用多种结构，大部分语句无误。
-8分 涵盖题目要求，文章立场清晰，提出、引申、并支持主要观点，但可能有过度概括，分支观点不够紧凑； 信息和观点组织有逻辑性，文章从头至尾有延续性，衔接手段使用合理，虽然可能有一些使用过少或过多，每个段落有明确的主题； 词汇使用丰富、有一定的准确性和灵活性，能使用较不常见词汇，对语体和搭配有所了解，在词汇的选择、拼写和构词法上偶尔有错误；
-7分 回应题目要求，虽然有的部分涵盖不够完整，立场切题，虽然结论可能不清晰或重复，主要观点切题，但有的观点可能论证不够充分或不清晰； 信息和观点组织连贯，文章有延续性，衔接手段使用有效，但是句子内部和句子之间的衔接可能有误或过于机械，指代关系可能不能总是清晰合理地使用，有分段但没有逻辑性； 使用适当范围的词汇，试图使用较不常见词汇但有一些不准确，在拼写和构词法上有错误但不至于影响交际。
-6分 只是部分回应题目要求，格式可能有时不准确，有立场但发展不够清晰，可能缺少结论，有主要观点但观点有限并且论证不够充分，可能有不相关细节； 信息有一定组织但缺少总体延续性，衔接手段不充分、不准确或过度使用，缺少指代和替换，显得重复过多，没有分段或分段不充分； 使用有限词汇量，但只是在最低层面满足题目，拼写和构词法上可能出现明显错误，造成阅读困难； 只能使用有限句子结构，试图使用复杂句但准确性低。
-5分 只在最低限度回应任务或文章离题，格式可能不得体，有立场但不清晰，有一些主要观点但难以辨认，可能有重复、不相关或论证不充分； 提供信息和观点，但安排不连贯也没有清晰的连续性，使用一些基本的衔接手段，但不准确或重复，可能没有分段或段落的使用令人费解； 只使用基本词汇，可能重复或使用不得体，构词法和拼写掌握有限，错误导致读者理解困难； 只使用有限的句子结构，从句很少见，有的结构准确但错误较多。
-4分 没有能够充分回应题目的任何部分，没有提出清晰的立场，观点有限，可能大部分都是未经论证或不相关； 没有逻辑性地组织观点，衔接手段的使用非常有限，不能标明观点之间的逻辑关系； 只使用非常有限的单词和表达，对于构词法和拼写的掌握很有限，错误严重干扰信息的传递； 试图写出句子但语法和标点错误非常多，扭曲表意。
-3分 几乎没有对任务做出回应，没有提出立场，可能试图表达一两个观点但缺乏展开； 对组织结构的掌握极少； 词汇使用及其有限，基本没有掌握构词法和拼写； 除了背诵的短语以外无法使用句子。
-1-2分 未写作，或完全抄袭背诵好的范文。
-0分 规定字数 大于等于 250 words
-写作建议
-  Task Achievement：提前规划好每个段落论点；保持结构清楚，逻辑清晰。
-  Cohesion and Coherence：连接词注意逻辑关系；代词指向明确；信息流，已知信息在前，未知信息在后，保证逻辑顺畅连贯。
-  Lexical resources：讲求搭配地道；注意用词选择多样化，通过近义词/代词指代/同义词/上义词等方式去替换关键词，避免简单重复；善用小词，少用名词化的动词。
-  Grammatical Range and Accuracy：杜绝语法错误，简单句、并列句和复合句每一段尽量都要出现。
-  </description>
+      <description>one thousand words</description>
     </item>
     
     <item>

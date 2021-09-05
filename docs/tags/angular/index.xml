@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>angular on hope to be a great computer technology Site</title>
+    <link>https://wangyijie.store/tags/angular/</link>
+    <description>Recent content in angular on hope to be a great computer technology Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="https://wangyijie.store/tags/angular/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/angluar/angular-cli-6-%E5%BA%93%E6%94%AF%E6%8C%81/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/angluar/angular-cli-6-%E5%BA%93%E6%94%AF%E6%8C%81/</guid>
+      <description>Angular CLI v6通过插入到我们在Angular CLI中使用的构建系统中的ng-packagr提供库支持，以及用于生成库的原理图。</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/angluar/angular-cli-css-%E9%A2%84%E5%A4%84%E7%90%86%E5%99%A8%E9%9B%86%E6%88%90/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/angluar/angular-cli-css-%E9%A2%84%E5%A4%84%E7%90%86%E5%99%A8%E9%9B%86%E6%88%90/</guid>
+      <description>Angular CLI 支持所有anjor css 预处理器,要使用这些预处理器只需将文件添加到组件的 styleUrls</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/angluar/angular-cli-%E9%93%BE%E6%8E%A5%E5%BA%93/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/angluar/angular-cli-%E9%93%BE%E6%8E%A5%E5%BA%93/</guid>
+      <description>在库工作时，它通常使用 [npm link] 避免在每次构建时重复安装库。</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/angluar/angular-cli%E4%BB%A3%E7%90%86%E5%90%8E%E7%AB%AF/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/angluar/angular-cli%E4%BB%A3%E7%90%86%E5%90%8E%E7%AB%AF/</guid>
+      <description>使用 webpacks 开发服务器中的[代理支持], 我们可以劫持某些 url 并将它们发送到后端服务器。我们这样做是通过传递一个文件给 &amp;ndash;proxy-config 选项。</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/angluar/angular-cli%E5%A4%9A%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E9%9B%86%E6%88%90/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/angluar/angular-cli%E5%A4%9A%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E9%9B%86%E6%88%90/</guid>
+      <description>Angular CLI 支持多应用程序在一个项目中，您可以使用 &lt;code&gt;.angular-cli.json&lt;/code&gt; 中的应用程序数组来列出要用于不同应用程序的文件和文件夹。</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/angluar/angular-cli%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/angluar/angular-cli%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90/</guid>
+      <description>保持项目缺陷肃清的最好方法之一是通过测试套件，但忘记随时运行测试很容易。这就是持续集成（CI）服务器的用武之地。您可以设置您的项目存储库，以便您的测试可以在每次提交和提交请求时运行。</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/angluar/angular-flex%E5%B8%83%E5%B1%80/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/angluar/angular-flex%E5%B8%83%E5%B1%80/</guid>
+      <description>将Angular Flex布局NgModule导入您的应用程序模块</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/angluar/angular%E5%85%A8%E5%B1%80%E6%A0%B7%E5%BC%8F/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/angluar/angular%E5%85%A8%E5%B1%80%E6%A0%B7%E5%BC%8F/</guid>
+      <description>您可以通过 angular.json 中项目的构建目标选项中的 styles 选项添加更多全局样式。这些将被加载，就像您将它们添加到index.html中的&lt;!-- raw HTML omitted --&gt;标记中一样。</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/angluar/angular%E5%85%A8%E5%B1%80%E8%84%9A%E6%9C%AC/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/angluar/angular%E5%85%A8%E5%B1%80%E8%84%9A%E6%9C%AC/</guid>
+      <description>您可以通过angular.json中项目的构建目标选项中的脚本选项将JavaScript文件添加到全局范围。这些将被加载，就像您将它们添加到 index.html 中的 &lt;!-- raw HTML omitted --&gt; 标记中一样</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -8,6 +8,34 @@
     <language>en-us</language><atom:link href="https://wangyijie.store/tags/kubernetes/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title></title>
+      <link>https://wangyijie.store/posts/angluar/%E9%83%A8%E7%BD%B2angular%E5%BA%94%E7%94%A8%E5%88%B0-github/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/angluar/%E9%83%A8%E7%BD%B2angular%E5%BA%94%E7%94%A8%E5%88%B0-github/</guid>
+      <description>&lt;h1 id=&#34;deploy-to-github-pages&#34;&gt;
+  Deploy to GitHub Pages
+  &lt;a class=&#34;anchor&#34; href=&#34;#deploy-to-github-pages&#34;&gt;#&lt;/a&gt;
+&lt;/h1&gt;
+&lt;h1 id=&#34;部署到-github&#34;&gt;
+  部署到 Github
+  &lt;a class=&#34;anchor&#34; href=&#34;#%e9%83%a8%e7%bd%b2%e5%88%b0-github&#34;&gt;#&lt;/a&gt;
+&lt;/h1&gt;
+&lt;p&gt;A simple way to deploy your Angular app is to use
+&lt;a href=&#34;https://help.github.com/articles/what-is-github-pages/&#34;&gt;GitHub Pages&lt;/a&gt;.&lt;br&gt;
+部署Angular应用的一个简单方法是使用&lt;a href=&#34;https://help.github.com/articles/what-is-github-pages/&#34;&gt;GitHub Pages&lt;/a&gt;. 如果自己做一个单页网站可以不需要自购web服务器。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/diary/kubernetes-flannel-%E7%BD%91%E7%BB%9C%E6%B5%81%E7%A8%8B%E7%86%9F%E7%BB%83/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/diary/kubernetes-flannel-%E7%BD%91%E7%BB%9C%E6%B5%81%E7%A8%8B%E7%86%9F%E7%BB%83/</guid>
+      <description>ip netns, docker 把容器网络命名空间隐藏起来了，查看容器网络需要把对应的网络命名空间显示出来</description>
+    </item>
+    
+    <item>
+      <title></title>
       <link>https://wangyijie.store/posts/kubernetes/%E5%9B%BD%E5%86%85cka%E8%80%83%E8%AF%95%E6%80%BB%E7%BB%93/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       

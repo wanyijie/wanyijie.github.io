@@ -14,13 +14,19 @@
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.46181bc93375ba932026e753b37c40e6ff8bb16a9ef770c78bcc663e4577b1ba.css" integrity="sha256-RhgbyTN1upMgJudTs3xA5v&#43;LsWqe93DHi8xmPkV3sbo=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.fdba0647c9501127a41f26adcab0438eb8555e76b0481ad7bc42620c87ea0e43.js" integrity="sha256-/boGR8lQESekHyatyrBDjrhVXnawSBrXvEJiDIfqDkM=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.a070b2dd452cb474e30248358b5ef77b98384931c60a9e827b5a4dac3fefed89.js" integrity="sha256-oHCy3UUstHTjAkg1i173e5g4STHGCp6Ce1pNrD/v7Yk=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://wangyijie.store/posts/container/index.xml" title="hope to be a great computer technology Site" />
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
 -->
   
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-NBRSWPN');</script>
+    
 </head>
 <body dir="ltr">
   <input type="checkbox" class="hidden toggle" id="menu-control" />
@@ -274,12 +280,17 @@ https://github.com/alex-shpak/hugo-book
       
         <li class="flex justify-between">
           <a href="/categories/development/">Development</a>
-          <span>4</span>
+          <span>62</span>
         </li>
       
         <li class="flex justify-between">
           <a href="/categories/opetration/">Opetration</a>
-          <span>4</span>
+          <span>62</span>
+        </li>
+      
+        <li class="flex justify-between">
+          <a href="/categories/leaning/">leaning</a>
+          <span>32</span>
         </li>
       
       </ul>
@@ -293,6 +304,41 @@ https://github.com/alex-shpak/hugo-book
       
         <li class="flex justify-between">
           <a href="/tags/wangyijie/">wangyijie</a>
+          <span>90</span>
+        </li>
+      
+        <li class="flex justify-between">
+          <a href="/tags/angular/">angular</a>
+          <span>9</span>
+        </li>
+      
+        <li class="flex justify-between">
+          <a href="/tags/ansible/">ansible</a>
+          <span>7</span>
+        </li>
+      
+        <li class="flex justify-between">
+          <a href="/tags/cloud/">cloud</a>
+          <span>1</span>
+        </li>
+      
+        <li class="flex justify-between">
+          <a href="/tags/container/">container</a>
+          <span>8</span>
+        </li>
+      
+        <li class="flex justify-between">
+          <a href="/tags/devops/">DevOps</a>
+          <span>13</span>
+        </li>
+      
+        <li class="flex justify-between">
+          <a href="/tags/english/">English</a>
+          <span>33</span>
+        </li>
+      
+        <li class="flex justify-between">
+          <a href="/tags/golang/">golang</a>
           <span>1</span>
         </li>
       
@@ -303,7 +349,22 @@ https://github.com/alex-shpak/hugo-book
       
         <li class="flex justify-between">
           <a href="/tags/kubernetes/">Kubernetes</a>
-          <span>2</span>
+          <span>4</span>
+        </li>
+      
+        <li class="flex justify-between">
+          <a href="/tags/learning/">learning</a>
+          <span>1</span>
+        </li>
+      
+        <li class="flex justify-between">
+          <a href="/tags/vpn/">vpn</a>
+          <span>1</span>
+        </li>
+      
+        <li class="flex justify-between">
+          <a href="/tags/vr/">VR</a>
+          <span>1</span>
         </li>
       
       </ul>
@@ -324,21 +385,91 @@ https://github.com/alex-shpak/hugo-book
   
   <article class="markdown book-post">
     <h2>
+      <a href="/posts/container/docker-compose-%E7%BD%91%E7%BB%9C/">Docker Compose 网络</a>
+    </h2>
+    
+
+
+  
+  <div>
+    
+      <a href="/categories/development/">Development</a>, 
+      <a href="/categories/opetration/">Opetration</a>
+  </div>
+  
+
+  
+  <div>
+    
+      <a href="/tags/wangyijie/">wangyijie</a>, 
+      <a href="/tags/container/">container</a>
+  </div>
+  
+
+
+
+
+    <p>默认情况下，Compose为您的应用程序设置单个网络。服务的每个容器都加入默认网络，并且可以由该网络上的其他容器访问，并且可由他们发现与容器名称相同的主机名。
+    </p>
+  </article>
+  
+  <article class="markdown book-post">
+    <h2>
+      <a href="/posts/container/docker-overlay-networks/">Docker Overlay Networks</a>
+    </h2>
+    
+
+
+  
+  <div>
+    
+      <a href="/categories/development/">Development</a>, 
+      <a href="/categories/opetration/">Opetration</a>
+  </div>
+  
+
+  
+  <div>
+    
+      <a href="/tags/wangyijie/">wangyijie</a>, 
+      <a href="/tags/container/">container</a>
+  </div>
+  
+
+
+
+
+    <p>内置的Docker overlay网络驱动程序彻底简化了多主机网络中的许多挑战。使用overlay驱动程序，多主机网络是Docker内的顶级原生类，无需外部配置或组件。overlay使用Swarm分布式控制平面在跨大规模集群中提供集中管理，稳定性和安全性
+    </p>
+  </article>
+  
+  <article class="markdown book-post">
+    <h2>
       <a href="/posts/container/introduction-to-containers/">Introduction to Containers</a>
     </h2>
     
 
 
   
+  <div>
+    
+      <a href="/categories/development/">Development</a>, 
+      <a href="/categories/opetration/">Opetration</a>
+  </div>
+  
 
+  
+  <div>
+    
+      <a href="/tags/wangyijie/">wangyijie</a>, 
+      <a href="/tags/container/">container</a>
+  </div>
   
 
 
 
 
-    <p>Introduction to Containers#If you understand Linux, you probably already have 85% of the knowledge you need to understand containers. If you understand how processes, mounts, networks , shells and daemons work - commands like ps, mount, ip addr, bash, httpd and mysqld - then you just need to understand a few extra primitives to become an expert with containers. Remember that all of the things that you already know today still apply: from security and performance to storage and networking, containers are just a different way of packaging and delivering Linux applications.
-        <a href="/posts/container/introduction-to-containers/">...</a>
-      
+    <p>If you understand Linux, you probably already have 85% of the knowledge you need to understand containers. If you understand how processes, mounts, networks , shells and daemons work - commands like ps, mount, ip addr, bash, httpd and mysqld - then you just need to understand a few extra primitives to become an expert with containers.
     </p>
   </article>
   
@@ -350,25 +481,25 @@ https://github.com/alex-shpak/hugo-book
 
 
   
+  <div>
+    
+      <a href="/categories/development/">Development</a>, 
+      <a href="/categories/opetration/">Opetration</a>
+  </div>
+  
 
+  
+  <div>
+    
+      <a href="/tags/wangyijie/">wangyijie</a>, 
+      <a href="/tags/container/">container</a>
+  </div>
   
 
 
 
 
-    <p>java8及java9#Java 8u131及以上版本开始支持了Docker的cpu和memory限制。
-cpu limit#即如果没有显式指定-XX:ParalllelGCThreads 或者 -XX:CICompilerCount, 那么JVM使用docker的cpu限制。如果docker有指定cpu limit，jvm参数也有指定-XX:ParalllelGCThreads 或者 -XX:CICompilerCount，那么以指定的参数为准。
-memory limit#在java8u131+及java9，需要加上-XX:+UnlockExperimentalVMOptions -XX:+UseCGroupMemoryLimitForHeap才能使得Xmx感知docker的memory limit。
-查看参数默认值
-java -XX:+UnlockDiagnosticVMOptions -XX:+UnlockExperimentalVMOptions -XX:+PrintFlagsFinal 部分输出
-bool UseCGroupMemoryLimitForHeap = false {experimental} {default}  可以看到在java9，UseCGroupMemoryLimitForHeap参数还是实验性的，默认关闭。
- java10#bool UseCGroupMemoryLimitForHeap = false {experimental} {default}  java10，UseCGroupMemoryLimitForHeap还是experimental，不过标记为废弃。
- 不过java10新引入了1个参数
-int ActiveProcessorCount = -1 {product} {default}  ActiveProcessorCount可以用来指定cpu的个数
- java11#java11正式移除UseCGroupMemoryLimitForHeap，代码改动见8194086: Remove deprecated experimental flag UseCGroupMemoryLimitForHeap
-同时引入1个新参数
-        <a href="/posts/container/jdk%E5%AF%B9docker%E5%AE%B9%E5%99%A8%E7%9A%84%E6%94%AF%E6%8C%81/">...</a>
-      
+    <p>Java 8u131及以上版本开始支持了Docker的cpu和memory限制。
     </p>
   </article>
   
@@ -380,15 +511,25 @@ int ActiveProcessorCount = -1 {product} {default}  ActiveProcessorCount可以
 
 
   
+  <div>
+    
+      <a href="/categories/development/">Development</a>, 
+      <a href="/categories/opetration/">Opetration</a>
+  </div>
+  
 
+  
+  <div>
+    
+      <a href="/tags/wangyijie/">wangyijie</a>, 
+      <a href="/tags/container/">container</a>
+  </div>
   
 
 
 
 
-    <p>In this text we&rsquo;re going to be talking about Docker architecture. And Docker is the container implementation that is supported by Red Hat and is used by OpenShift. So Docker uses a client-server architecture, and the client will run our command-line tool, which is known as docker, so all of our requests that we&rsquo;re going to make are running on the client server. And then we&rsquo;ll also have another server, which is running the Docker service, and that has a daemon on it that&rsquo;s responsible for all of the building and running and downloading images.
-        <a href="/posts/container/overview-of-the-docker-architecture/">...</a>
-      
+    <p>In this text we&rsquo;re going to be talking about Docker architecture. And Docker is the container implementationthat is supported by Red Hat and is used by OpenShift.
     </p>
   </article>
   
@@ -400,15 +541,25 @@ int ActiveProcessorCount = -1 {product} {default}  ActiveProcessorCount可以
 
 
   
+  <div>
+    
+      <a href="/categories/development/">Development</a>, 
+      <a href="/categories/opetration/">Opetration</a>
+  </div>
+  
 
+  
+  <div>
+    
+      <a href="/tags/wangyijie/">wangyijie</a>, 
+      <a href="/tags/container/">container</a>
+  </div>
   
 
 
 
 
-    <p>system info:## podman info host: BuildahVersion: 1.14.2 CgroupVersion: v1 Conmon: package: conmon-2.0.13-1.1.el7.x86_64 path: /usr/bin/conmon version: 'conmon version 2.0.13, commit: eab756c90e2bdfa6fecf6616845ddcd9d3e339cb' Distribution: distribution: '&quot;centos&quot;' version: &quot;7&quot; MemFree: 408485888 MemTotal: 952160256 OCIRuntime: name: runc package: runc-1.0.0-15.1.el7.x86_64 path: /usr/bin/runc version: |- runc version 1.0.0-rc10 commit: 67b92f062188d9cb6472b428855432c9f35efcf5 spec: 1.0.1-dev SwapFree: 0 SwapTotal: 0 arch: amd64 cpus: 1 eventlogger: journald hostname: test-server kernel: 3.10.0-1062.12.1.el7.x86_64 os: linux rootless: false uptime: 51m 16.22s registries: search: - registry.
-        <a href="/posts/container/podman-error-with-centos7/">...</a>
-      
+    <p>Error: error creating libpod runtime: failed to mount overlay for metacopy check: invalid argument
     </p>
   </article>
   
@@ -420,13 +571,25 @@ int ActiveProcessorCount = -1 {product} {default}  ActiveProcessorCount可以
 
 
   
+  <div>
+    
+      <a href="/categories/development/">Development</a>, 
+      <a href="/categories/opetration/">Opetration</a>
+  </div>
+  
 
+  
+  <div>
+    
+      <a href="/tags/wangyijie/">wangyijie</a>, 
+      <a href="/tags/container/">container</a>
+  </div>
   
 
 
 
 
-    <p>Windows Server 容器并非在所有主机 OS 版本间都兼容。 例如： 使用 Windows Server 1709 版本生成的 Windows Server 容器在运行 Windows Server 2016 版本的主机上无效。 使用 Windows Server 2016 生成的 Windows Server 容器仅在运行 Windows Server 1709 版本的主机上以 Hyper-V 隔离模式工作。 因为 Windows Server 容器使用 Windows Server 2016 生成，所以在运行 Windows Server 2016 的主机上以进程隔离模式运行时，可能需要确保容器 OS 和主机 OS 的版本相同。 https://docs.microsoft.com/zh-cn/virtualization/windowscontainers/deploy-containers/version-compatibility?tabs=windows-server-1909%2Cwindows-10-1909
+    <p>Windows Server 容器并非在所有主机 OS 版本间都兼容
     </p>
   </article>
   
@@ -438,7 +601,19 @@ int ActiveProcessorCount = -1 {product} {default}  ActiveProcessorCount可以
 
 
   
+  <div>
+    
+      <a href="/categories/development/">Development</a>, 
+      <a href="/categories/opetration/">Opetration</a>
+  </div>
+  
 
+  
+  <div>
+    
+      <a href="/tags/wangyijie/">wangyijie</a>, 
+      <a href="/tags/container/">container</a>
+  </div>
   
 
 
@@ -499,12 +674,17 @@ Table of Contents
       
         <li class="flex justify-between">
           <a href="/categories/development/">Development</a>
-          <span>4</span>
+          <span>62</span>
         </li>
       
         <li class="flex justify-between">
           <a href="/categories/opetration/">Opetration</a>
-          <span>4</span>
+          <span>62</span>
+        </li>
+      
+        <li class="flex justify-between">
+          <a href="/categories/leaning/">leaning</a>
+          <span>32</span>
         </li>
       
       </ul>
@@ -518,6 +698,41 @@ Table of Contents
       
         <li class="flex justify-between">
           <a href="/tags/wangyijie/">wangyijie</a>
+          <span>90</span>
+        </li>
+      
+        <li class="flex justify-between">
+          <a href="/tags/angular/">angular</a>
+          <span>9</span>
+        </li>
+      
+        <li class="flex justify-between">
+          <a href="/tags/ansible/">ansible</a>
+          <span>7</span>
+        </li>
+      
+        <li class="flex justify-between">
+          <a href="/tags/cloud/">cloud</a>
+          <span>1</span>
+        </li>
+      
+        <li class="flex justify-between">
+          <a href="/tags/container/">container</a>
+          <span>8</span>
+        </li>
+      
+        <li class="flex justify-between">
+          <a href="/tags/devops/">DevOps</a>
+          <span>13</span>
+        </li>
+      
+        <li class="flex justify-between">
+          <a href="/tags/english/">English</a>
+          <span>33</span>
+        </li>
+      
+        <li class="flex justify-between">
+          <a href="/tags/golang/">golang</a>
           <span>1</span>
         </li>
       
@@ -528,7 +743,22 @@ Table of Contents
       
         <li class="flex justify-between">
           <a href="/tags/kubernetes/">Kubernetes</a>
-          <span>2</span>
+          <span>4</span>
+        </li>
+      
+        <li class="flex justify-between">
+          <a href="/tags/learning/">learning</a>
+          <span>1</span>
+        </li>
+      
+        <li class="flex justify-between">
+          <a href="/tags/vpn/">vpn</a>
+          <span>1</span>
+        </li>
+      
+        <li class="flex justify-between">
+          <a href="/tags/vr/">VR</a>
+          <span>1</span>
         </li>
       
       </ul>
@@ -546,6 +776,10 @@ Table of Contents
 
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6266541561533854"
      crossorigin="anonymous"></script>
+     
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NBRSWPN"
+     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+     
 </body>
 </html>
 

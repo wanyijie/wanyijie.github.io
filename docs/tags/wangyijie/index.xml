@@ -36,5 +36,822 @@ mysql_secure_installation
 mysql -uroot -ptest</description>
     </item>
     
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/angluar/angular-cli-6-%E5%BA%93%E6%94%AF%E6%8C%81/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/angluar/angular-cli-6-%E5%BA%93%E6%94%AF%E6%8C%81/</guid>
+      <description>Angular CLI v6通过插入到我们在Angular CLI中使用的构建系统中的ng-packagr提供库支持，以及用于生成库的原理图。</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/angluar/angular-cli-css-%E9%A2%84%E5%A4%84%E7%90%86%E5%99%A8%E9%9B%86%E6%88%90/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/angluar/angular-cli-css-%E9%A2%84%E5%A4%84%E7%90%86%E5%99%A8%E9%9B%86%E6%88%90/</guid>
+      <description>Angular CLI 支持所有anjor css 预处理器,要使用这些预处理器只需将文件添加到组件的 styleUrls</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/angluar/angular-cli-%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93%E5%AE%89%E8%A3%85/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/angluar/angular-cli-%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93%E5%AE%89%E8%A3%85/</guid>
+      <description>只需通过 npm install lib-name &amp;ndash;save 安装你的库并将其导入到你的代码中</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/angluar/angular-cli-%E9%93%BE%E6%8E%A5%E5%BA%93/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/angluar/angular-cli-%E9%93%BE%E6%8E%A5%E5%BA%93/</guid>
+      <description>在库工作时，它通常使用 [npm link] 避免在每次构建时重复安装库。</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/angluar/angular-cli%E4%BB%A3%E7%90%86%E5%90%8E%E7%AB%AF/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/angluar/angular-cli%E4%BB%A3%E7%90%86%E5%90%8E%E7%AB%AF/</guid>
+      <description>使用 webpacks 开发服务器中的[代理支持], 我们可以劫持某些 url 并将它们发送到后端服务器。我们这样做是通过传递一个文件给 &amp;ndash;proxy-config 选项。</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/angluar/angular-cli%E5%A4%9A%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E9%9B%86%E6%88%90/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/angluar/angular-cli%E5%A4%9A%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E9%9B%86%E6%88%90/</guid>
+      <description>Angular CLI 支持多应用程序在一个项目中，您可以使用 &lt;code&gt;.angular-cli.json&lt;/code&gt; 中的应用程序数组来列出要用于不同应用程序的文件和文件夹。</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/angluar/angular-cli%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/angluar/angular-cli%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90/</guid>
+      <description>保持项目缺陷肃清的最好方法之一是通过测试套件，但忘记随时运行测试很容易。这就是持续集成（CI）服务器的用武之地。您可以设置您的项目存储库，以便您的测试可以在每次提交和提交请求时运行。</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/angluar/angular-flex%E5%B8%83%E5%B1%80/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/angluar/angular-flex%E5%B8%83%E5%B1%80/</guid>
+      <description>将Angular Flex布局NgModule导入您的应用程序模块</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/angluar/angular-%E4%BD%BF%E7%94%A8-bootstrap/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/angluar/angular-%E4%BD%BF%E7%94%A8-bootstrap/</guid>
+      <description>Bootstrap是一个流行的CSS框架，可以在Angular项目中使用。本指南将引导您为Angular CLI项目添加引导程序并将其配置为使用引导程序。</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/angluar/angular-%E5%9B%BD%E9%99%85%E5%8C%96-i18n/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/angluar/angular-%E5%9B%BD%E9%99%85%E5%8C%96-i18n/</guid>
+      <description>如果您正在致力于国际化，CLI可以通过以下步骤为您提供帮助</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/angluar/angular-%E5%9C%A8%E7%A3%81%E7%9B%98%E4%B8%8A%E8%BF%90%E8%A1%8C%E6%9C%8D%E5%8A%A1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/angluar/angular-%E5%9C%A8%E7%A3%81%E7%9B%98%E4%B8%8A%E8%BF%90%E8%A1%8C%E6%9C%8D%E5%8A%A1/</guid>
+      <description>CLI支持通过运行 &lt;code&gt;ng serve&lt;/code&gt; 来为用户运行实时浏览器重新加载体验。这将在文件保存时编译应用程序，并用新编译的应用程序重新载入浏览器。</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/angluar/angular-%E5%A4%9A%E9%A1%B9%E7%9B%AE/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/angluar/angular-%E5%A4%9A%E9%A1%B9%E7%9B%AE/</guid>
+      <description>Angular CLI支持多个应用在一个工作空间</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/angluar/angular-%E9%80%9A%E7%94%A8%E9%9B%86%E6%88%90/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/angluar/angular-%E9%80%9A%E7%94%A8%E9%9B%86%E6%88%90/</guid>
+      <description>Angular CLI 支持为应用程序生成通用集成。这是一个 CommonJS 格式的包, 可以通过 &lt;code&gt;require()&lt;/code&gt; 进入节点应用程序 , 并与&lt;code&gt;@angular/platform-server&lt;/code&gt; 的 api 一起使用以预渲染应用程序。</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/angluar/angular-%E9%85%8D%E7%BD%AE-angularfire/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/angluar/angular-%E9%85%8D%E7%BD%AE-angularfire/</guid>
+      <description>Firebase是一个移动和Web应用程序平台，其中包含旨在帮助开发人员构建高品质应用程序的工具和基础结构。 AngularFire2是在您的应用中使用Firebase的官方Angular库。</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/angluar/angular%E5%85%A8%E5%B1%80%E6%A0%B7%E5%BC%8F/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/angluar/angular%E5%85%A8%E5%B1%80%E6%A0%B7%E5%BC%8F/</guid>
+      <description>您可以通过 angular.json 中项目的构建目标选项中的 styles 选项添加更多全局样式。这些将被加载，就像您将它们添加到index.html中的&lt;!-- raw HTML omitted --&gt;标记中一样。</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/angluar/angular%E5%85%A8%E5%B1%80%E8%84%9A%E6%9C%AC/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/angluar/angular%E5%85%A8%E5%B1%80%E8%84%9A%E6%9C%AC/</guid>
+      <description>您可以通过angular.json中项目的构建目标选项中的脚本选项将JavaScript文件添加到全局范围。这些将被加载，就像您将它们添加到 index.html 中的 &lt;!-- raw HTML omitted --&gt; 标记中一样</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/angluar/%E4%BB%A3%E7%A0%81%E8%A6%86%E7%9B%96%E7%8E%87/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/angluar/%E4%BB%A3%E7%A0%81%E8%A6%86%E7%9B%96%E7%8E%87/</guid>
+      <description>&lt;h1 id=&#34;code-coverage&#34;&gt;
+  Code Coverage
+  &lt;a class=&#34;anchor&#34; href=&#34;#code-coverage&#34;&gt;#&lt;/a&gt;
+&lt;/h1&gt;
+&lt;h1 id=&#34;代码覆盖率&#34;&gt;
+  代码覆盖率
+  &lt;a class=&#34;anchor&#34; href=&#34;#%e4%bb%a3%e7%a0%81%e8%a6%86%e7%9b%96%e7%8e%87&#34;&gt;#&lt;/a&gt;
+&lt;/h1&gt;
+&lt;p&gt;With the Angular CLI we can run unit tests as well as create code coverage reports. Code coverage reports allow us to see any parts of our code base that may not be properly tested by our unit tests.&lt;br&gt;
+用Angular CLI我们能运行单元测试并创建代码覆盖率报告。代码覆盖率报告允许我们看到我们的代码库中的任何部分可能无法通过我们的单元测试。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/angluar/%E5%85%A8%E5%B1%80%E5%BA%93%E5%AE%89%E8%A3%85/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/angluar/%E5%85%A8%E5%B1%80%E5%BA%93%E5%AE%89%E8%A3%85/</guid>
+      <description>一些JavaScript库需要被添加到全局范围并加载，就好像它们在脚本标签中一样，我们可以使用angular.json中构建目标的脚本和样式选项来完成此操作。</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/angluar/%E5%BA%94%E7%94%A8%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E9%85%8D%E7%BD%AE/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/angluar/%E5%BA%94%E7%94%A8%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E9%85%8D%E7%BD%AE/</guid>
+      <description>angular-cli.json` 包含一个 &lt;strong&gt;environments&lt;/strong&gt; 选项</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/angluar/%E6%94%B9%E5%8F%98%E7%9B%AE%E6%A0%87%E6%B5%8F%E8%A7%88%E5%99%A8%E7%9A%84%E8%87%AA%E5%8A%A8%E5%89%8D%E7%BC%80/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/angluar/%E6%94%B9%E5%8F%98%E7%9B%AE%E6%A0%87%E6%B5%8F%E8%A7%88%E5%99%A8%E7%9A%84%E8%87%AA%E5%8A%A8%E5%89%8D%E7%BC%80/</guid>
+      <description>当前, CLI使用来确定合适不同的浏览器和版本，你可以发现它必须指明特定的浏览器或不包括某个浏览器版本从你的构建。</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/angluar/%E9%85%8D%E7%BD%AEangular%E4%BD%BF%E7%94%A8font-awesome/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/angluar/%E9%85%8D%E7%BD%AEangular%E4%BD%BF%E7%94%A8font-awesome/</guid>
+      <description>Font Awesome为您提供可立即定制的可缩放矢量图标 - 尺寸，颜色，阴影以及任何可以通过CSS强大功能进行定制的图标。</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/angluar/%E9%A1%B9%E7%9B%AE%E8%B5%84%E6%BA%90%E8%AE%BE%E7%BD%AE/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/angluar/%E9%A1%B9%E7%9B%AE%E8%B5%84%E6%BA%90%E8%AE%BE%E7%BD%AE/</guid>
+      <description>你使用 angular.json 里面的 assets 文件或目录列表，当构建你的项目时原样复制。</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/ansible/ansible%E4%BD%BF%E7%94%A8%E4%B8%BB%E6%9C%BA%E6%B8%85%E5%8D%95/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/ansible/ansible%E4%BD%BF%E7%94%A8%E4%B8%BB%E6%9C%BA%E6%B8%85%E5%8D%95/</guid>
+      <description>&lt;p&gt;Ansible同时针对基础架构中的多个系统。它通过选择Ansible库存中列出的系统部分来实现这一点，默认情况下将保存在该位置&lt;code&gt;/etc/ansible/hosts&lt;/code&gt;。您可以使用命令行上的选项指定不同的清单文件。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/cicd/blue-green-deployment/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/cicd/blue-green-deployment/</guid>
+      <description>&lt;p&gt;Blue-green deployment is a way to safely deploy applications that are serving live traffic by creating two versions of an application (BLUE and GREEN). To deploy a new version of the application, you will drain all traffic, requests, and pending operations from the current version of the application, switch to the new version, and then turn off the old version. Blue-green deployment eliminates application downtime and allows you to quickly roll back to the BLUE version of the application if necessary.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/cicd/doing-a-canary-release/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/cicd/doing-a-canary-release/</guid>
+      <description>&lt;p&gt;Sometimes it’s safest to test the new version of an application on a small set of users to see how it performs in production, then gradually ramp up the proportion of traffic to the new servers until eventually all traffic is going to them.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/cicd/gitlab%E4%B8%80%E4%B8%AA%E6%8E%A8%E9%80%81%E8%A7%A6%E5%8F%91%E9%87%8D%E5%A4%8D%E6%88%96%E5%A4%9A%E4%B8%AAwebhook%E4%BA%8B%E4%BB%B6/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/cicd/gitlab%E4%B8%80%E4%B8%AA%E6%8E%A8%E9%80%81%E8%A7%A6%E5%8F%91%E9%87%8D%E5%A4%8D%E6%88%96%E5%A4%9A%E4%B8%AAwebhook%E4%BA%8B%E4%BB%B6/</guid>
+      <description>&lt;p&gt;当GitLab发送webhook时，它需要10秒内的响应（设置默认值）。如果它没有收到，它将重试webhook。如果端点在这10秒内没有发送HTTP响应，GitLab可能会决定挂钩失败并重试。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/cicd/nginx-and-devops-methodologies-go-hand-in-hand/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/cicd/nginx-and-devops-methodologies-go-hand-in-hand/</guid>
+      <description>&lt;p&gt;DevOps has seen explosive growth recently, as organizations look to deliver releases and features faster by automating operations with an Infrastructure as Code approach. This shift in the industry is making for some very interesting transformations, both in how organizations deploy applications and what is expected from IT operations.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/cicd/performing-a-b-testing/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/cicd/performing-a-b-testing/</guid>
+      <description>&lt;p&gt;When you are testing changes to an application, there are some factors you can measure only in a production environment rather than a development test bed. Examples include the effect of UI changes on user behavior and the impact on overall performance. A common testing method is &lt;em&gt;A/B testing&lt;/em&gt; – also known as &lt;em&gt;split testing&lt;/em&gt; – in which a (usually small) proportion of users is directed to the new version of an application while most users continue to use the current version.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/cicd/%E4%BB%80%E4%B9%88%E6%98%AF%E8%87%AA%E5%8A%A8%E5%8C%96/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/cicd/%E4%BB%80%E4%B9%88%E6%98%AF%E8%87%AA%E5%8A%A8%E5%8C%96/</guid>
+      <description>&lt;p&gt;自动化是指运用技术，在减少人工协助的情况下执行各项任务。面临重复性任务的任何行业都可利用自动化，但自动化在制造、机器人和&lt;a href=&#34;https://www.redhat.com/zh/open-source-stories/road-to-ai&#34;&gt;汽车&lt;/a&gt;行业以及技术世界中更加普及，例如在 IT 系统和业务决策软件中。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/cloud/%E4%BA%91%E4%BA%A7%E5%93%81%E5%AD%A6%E4%B9%A0%E5%AE%9E%E9%AA%8C%E5%AE%A4/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/cloud/%E4%BA%91%E4%BA%A7%E5%93%81%E5%AD%A6%E4%B9%A0%E5%AE%9E%E9%AA%8C%E5%AE%A4/</guid>
+      <description>azure免费套餐</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/container/docker-compose-%E7%BD%91%E7%BB%9C/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/container/docker-compose-%E7%BD%91%E7%BB%9C/</guid>
+      <description>默认情况下，Compose为您的应用程序设置单个网络。服务的每个容器都加入默认网络，并且可以由该网络上的其他容器访问，并且可由他们发现与容器名称相同的主机名。</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/container/docker-overlay-networks/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/container/docker-overlay-networks/</guid>
+      <description>内置的Docker overlay网络驱动程序彻底简化了多主机网络中的许多挑战。使用overlay驱动程序，多主机网络是Docker内的顶级原生类，无需外部配置或组件。overlay使用Swarm分布式控制平面在跨大规模集群中提供集中管理，稳定性和安全性</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/container/introduction-to-containers/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/container/introduction-to-containers/</guid>
+      <description>If you understand Linux, you probably already have 85% of the knowledge you need to understand containers. If you understand how processes, mounts, networks , shells and daemons work - commands like ps, mount, ip addr, bash, httpd and mysqld - then you just need to understand a few extra primitives to become an expert with containers.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/container/jdk%E5%AF%B9docker%E5%AE%B9%E5%99%A8%E7%9A%84%E6%94%AF%E6%8C%81/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/container/jdk%E5%AF%B9docker%E5%AE%B9%E5%99%A8%E7%9A%84%E6%94%AF%E6%8C%81/</guid>
+      <description>Java 8u131及以上版本开始支持了Docker的cpu和memory限制。</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/container/overview-of-the-docker-architecture/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/container/overview-of-the-docker-architecture/</guid>
+      <description>In this text we&amp;rsquo;re going to be talking about Docker architecture. And Docker is the container implementationthat is supported by Red Hat and is used by OpenShift.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/container/podman-error-with-centos7/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/container/podman-error-with-centos7/</guid>
+      <description>Error: error creating libpod runtime: failed to mount overlay for metacopy check: invalid argument</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/container/windows-server-%E5%AE%B9%E5%99%A8-os-%E4%B8%8E%E4%B8%BB%E6%9C%BA-os-%E7%9A%84%E5%85%BC%E5%AE%B9%E6%80%A7/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/container/windows-server-%E5%AE%B9%E5%99%A8-os-%E4%B8%8E%E4%B8%BB%E6%9C%BA-os-%E7%9A%84%E5%85%BC%E5%AE%B9%E6%80%A7/</guid>
+      <description>Windows Server 容器并非在所有主机 OS 版本间都兼容</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/container/%E9%95%9C%E5%83%8F%E5%86%85%E5%AE%B9%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD%E5%B7%A5%E5%85%B7-reg/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/container/%E9%95%9C%E5%83%8F%E5%86%85%E5%AE%B9%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD%E5%B7%A5%E5%85%B7-reg/</guid>
+      <description>Docker registry v2 command line client and repo listing generator with security checks.
+Table of Contents
+ Installation  Binaries Via Go   Usage  Auth List Repositories and Tags Get a Manifest Get the Digest Download a Layer Delete an Image Vulnerability Reports Generating Static Website for a Registry Using Self-Signed Certs with a Registry   Contributing  Installation#Binaries#For installation instructions from binaries please visit the Releases Page.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/devops/apm-pinpoint-install/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/devops/apm-pinpoint-install/</guid>
+      <description>&lt;p&gt;通过docker安装APM系统pinpoint&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/devops/filebeat-%E6%8F%90%E5%8F%96java%E6%97%B6%E9%97%B4/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/devops/filebeat-%E6%8F%90%E5%8F%96java%E6%97%B6%E9%97%B4/</guid>
+      <description>&lt;p&gt;日志收集可能因机器性能而产生延迟，filebeat默认10秒扫描一次文件，收集时间集中也会导致日志按时间排序混乱，container处理器会降低日志写入时间的精度，所以提取java输出日志的时间有利于排序查看日志，java日志的写入时间大多精确到微秒，可能不足以正确排序，还可以借助filebeat 记录的offset排序.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/devops/filebeat%E5%AE%B9%E5%99%A8%E6%97%A5%E5%BF%97%E6%94%B6%E9%9B%86%E4%B9%8Bjava%E5%A4%9A%E8%A1%8C%E9%94%99%E8%AF%AF/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/devops/filebeat%E5%AE%B9%E5%99%A8%E6%97%A5%E5%BF%97%E6%94%B6%E9%9B%86%E4%B9%8Bjava%E5%A4%9A%E8%A1%8C%E9%94%99%E8%AF%AF/</guid>
+      <description>&lt;p&gt;java日志出现错误的时候日志不再是一条一行，可能出来换行，这不适应默认的日志采集方式，正确的做法是使用规则确定行的开始，到下一个开始才是一行的结束，主流的日志收集插件都支持多行的配置定义。现在多用容器运行服务，日志输出到标准输出，这样使用日志采集工具去采集通过docker存储的日志文件，日志包含在json文本中，采集策略得对于调整。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/devops/github-actions/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/devops/github-actions/</guid>
+      <description>To help you get started, this guide shows you some basic examples. For the full GitHub Actions documentation on workflows, see Configuring workflows</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/devops/github%E4%B8%8B%E8%BD%BD%E5%8A%A0%E9%80%9F/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/devops/github%E4%B8%8B%E8%BD%BD%E5%8A%A0%E9%80%9F/</guid>
+      <description>&lt;p&gt;同步了一万多个github热门仓库，希望有你要的&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/devops/knative-evening-cicd/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/devops/knative-evening-cicd/</guid>
+      <description>&lt;p&gt;最近我考虑轻量的CICD系统，就我了解的除了云服务就jekins集合git事件比较完善一点，其实开源的cicd系统并不多，大部分半开源的，jenkins运行几下就要五六G内存，实在不亲民。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/devops/linux-sysctl-conf-%E5%92%8C-limits-conf/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/devops/linux-sysctl-conf-%E5%92%8C-limits-conf/</guid>
+      <description>sysctl命令被用于在内核运行时动态地修改内核的运行参数，可用的内核参数在目录/proc/sys中。它包含一些TCP/IP堆栈和虚拟内存系统的高级选项， 这可以让有经验的管理员提高引人注目的系统性能。用sysctl可以读取设置超过五百个系统变量</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/devops/redhat-rhel8-%E5%AE%89%E8%A3%85-azure-cli/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/devops/redhat-rhel8-%E5%AE%89%E8%A3%85-azure-cli/</guid>
+      <description>&lt;p&gt;The package is for el7, and there are assumptions based on el7 that are no longer true for RHEL8. For now, instead of running sudo yum install azure-cli, please follow the
+workaround to install azure-cli:&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/devops/%E4%BB%80%E4%B9%88%E6%98%AF%E7%8E%B0%E5%9C%BA%E5%8F%AF%E9%9D%A0%E6%80%A7%E5%B7%A5%E7%A8%8B/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/devops/%E4%BB%80%E4%B9%88%E6%98%AF%E7%8E%B0%E5%9C%BA%E5%8F%AF%E9%9D%A0%E6%80%A7%E5%B7%A5%E7%A8%8B/</guid>
+      <description>&lt;p&gt;SRE(Site Reliability Engineering)从根本上说，当您要求软件工程师设计操作功能时会发生这种情况。软件工程师倾向于使用软件来解决历史上手工解决的问题。因此，当需要创建一个正式的团队来完成这项运营工作时，很自然地将“一切都视为软件问题”的方法与之一起运行。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/devops/%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95vs%E5%8E%8B%E5%8A%9B%E6%B5%8B%E8%AF%95/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/devops/%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95vs%E5%8E%8B%E5%8A%9B%E6%B5%8B%E8%AF%95/</guid>
+      <description>&lt;p&gt;软件测试包括不同的测试实践，比如单元测试、集成测试、UAT测试和可访问性测试等。每种测试实践在软件开发生命周期(SDLC)中都有重要的地位和作用。&lt;/p&gt;
+&lt;p&gt;在不同类型的测试中，一些测试有助于改善应用程序的性能，比如性能测试、压力测试和负载测试。虽然这些测试的目的是改善系统性能，但是每种测试实践都有不同的策略。因此，测试应用程序的性能时，了解这些测试实践之间的区别并执行合适的测试显得至关重要。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/diary/3rvrarmr/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/diary/3rvrarmr/</guid>
+      <description>VR(virtual reality，虚拟现实) AR(augmented reality，增强现实) MR(mixed reality，混合现实)</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/diary/difference-of-game-match-competition-and-contest/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/diary/difference-of-game-match-competition-and-contest/</guid>
+      <description>game： 指决定胜负的比赛，游戏，通常有一定的规则，参加者必须遵守，且多以个人对抗或集体对抗形式根据一定的规则进行的比赛。</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/diary/kubernetes-flannel-%E7%BD%91%E7%BB%9C%E6%B5%81%E7%A8%8B%E7%86%9F%E7%BB%83/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/diary/kubernetes-flannel-%E7%BD%91%E7%BB%9C%E6%B5%81%E7%A8%8B%E7%86%9F%E7%BB%83/</guid>
+      <description>ip netns, docker 把容器网络命名空间隐藏起来了，查看容器网络需要把对应的网络命名空间显示出来</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/diary/kubernetes%E6%8E%A7%E5%88%B6%E6%9C%BA%E5%88%B6%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/diary/kubernetes%E6%8E%A7%E5%88%B6%E6%9C%BA%E5%88%B6%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99/</guid>
+      <description>这是为了保证分布式系统的稳定可靠，对于经常出现局部错误的分布式系统，如果控制逻辑只依赖当前状态，那么就非常容易将一个暂时出现故障的系统恢复到正常状态，因为你只要将该系统重置到某个稳定状态，就可以自信的知道系统的所有控制逻辑会开始按照正常方式运行。</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/diary/openvpn%E5%AE%89%E8%A3%85%E5%8F%8A%E5%AE%A2%E6%88%B7%E7%AB%AF%E9%85%8D%E7%BD%AE%E5%88%9B%E5%BB%BA/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/diary/openvpn%E5%AE%89%E8%A3%85%E5%8F%8A%E5%AE%A2%E6%88%B7%E7%AB%AF%E9%85%8D%E7%BD%AE%E5%88%9B%E5%BB%BA/</guid>
+      <description>install openvpn</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/diary/%E4%BE%BF%E6%8D%B7golang%E5%BC%80%E5%8F%91/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/diary/%E4%BE%BF%E6%8D%B7golang%E5%BC%80%E5%8F%91/</guid>
+      <description>go语言之旅, go mod 代理地址</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/diary/%E6%83%85%E5%A2%83%E5%AD%A6%E4%B9%A0%E7%90%86%E8%AE%BA/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/diary/%E6%83%85%E5%A2%83%E5%AD%A6%E4%B9%A0%E7%90%86%E8%AE%BA/</guid>
+      <description>情境学习理论认为，学习不仅仅是一个个体性的意义建构的心理过程，而更是一个社会性的、实践性的、以差异资源为中介的参与过程。知识的意义连同学习者自身的意识与角色都是在学习者和学习情境的互动、学习者与学习者之间的互动过程生成的，因此学习情境的创设就致力于将学习者的身份和角色意识、完整的生活经验、以及认知性任务重新回归到真实的、融合的状态，由此力图解决传统学校学习的去自我、去情境的顽疾。
+正是基于对知识的社会性和情境性的主张，情境学习理论告诉我们：学习的本质就是对话，在学习的过程中所经历的就是广泛的社会协商。而“学习的快乐就是走向对话”。
+简单说来，情境学习是指在要学习的知识、技能的应用情境中进行学习的方式。也就是说，你要学习的东西将实际应用在什么情境中，那么你就应该在什么样的情境中学习这些东西。“在哪里用，就在哪里学。”譬如，你要学习做菜，就应该在厨房里学习，因为你以后炒菜就是在厨房里。再如，你要学习讨价还价的技巧，就应该在实际的销售场合学习，因为这一技巧最终是用在销售场合的。
+为什么要这样学习呢？因为在莱夫和温格看来，学习不能被简单地视为把抽象的、去情境化的知识从一个人传递给另外一个人；学习是一个社会性的过程，知识在这个过程中是由大家共同建构的；这样的学习总是处于一个特定的情境中，渗透在特定的社会和自然环境中。</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/diary/%E6%9C%80%E5%85%A8%E7%9A%84%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%8D%8F%E8%AE%AE%E7%AB%AF%E5%8F%A3%E5%AF%B9%E7%85%A7%E8%A1%A8/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/diary/%E6%9C%80%E5%85%A8%E7%9A%84%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%8D%8F%E8%AE%AE%E7%AB%AF%E5%8F%A3%E5%AF%B9%E7%85%A7%E8%A1%A8/</guid>
+      <description>最全的计算机协议端口对照表最全的计算机协议端口对照表</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/diary/%E8%8B%B1%E8%AF%AD%E5%AD%A6%E4%B9%A0%E7%BD%91%E7%AB%99/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/diary/%E8%8B%B1%E8%AF%AD%E5%AD%A6%E4%B9%A0%E7%BD%91%E7%AB%99/</guid>
+      <description>对自学者来说就像是寻觅家园，一旦找到，内心会平静下来，一扫喧嚣尘世间的烦恼。现在我坐在家里阳光明媚的窗下，理理思路，给大家一一道来这些英语学习网站的妙用，希望你们也喜欢，就像我一直听的老歌，耳畔回响起美妙的音乐，我就会满血复活，忍不住和大家分享，希望你们喜欢。</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/english/be-the-present-simple-tense/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/english/be-the-present-simple-tense/</guid>
+      <description>Usage: BE</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/english/because-vs-because-of/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/english/because-vs-because-of/</guid>
+      <description>在英语里，because 用在主句前面</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/english/difference-of-customer-client-and-guest/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/english/difference-of-customer-client-and-guest/</guid>
+      <description>customer意思是：消费者，用于表示消费者与销售厂家时</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/english/difference-of-spent-cost-pay-and-take/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/english/difference-of-spent-cost-pay-and-take/</guid>
+      <description>spend，cost，take和pay的区别是历年中考试题的必考内容之一，虽然它们都可以表示“花费”，但用法却不尽相同</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/english/each-day-a-sentence/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/english/each-day-a-sentence/</guid>
+      <description>Every man dies, not every man really lives</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/english/english-grammar-and-structure/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/english/english-grammar-and-structure/</guid>
+      <description>too + adjective; adjective + enough</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/english/four-kinds-of-man/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/english/four-kinds-of-man/</guid>
+      <description>In a relationship, some men fall into one of four categories. a boy, a player, a confused man, and a good man.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/english/have-got-posession/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/english/have-got-posession/</guid>
+      <description>have got + noun = possess noun/have noun/own noun</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/english/how-about-%E5%92%8C-what-about-/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/english/how-about-%E5%92%8C-what-about-/</guid>
+      <description>How about…? 和 What about…? 基本上意思是一样的！</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/english/prefix-and-suffix/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/english/prefix-and-suffix/</guid>
+      <description>suffixes prefix</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/english/recruitment/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/english/recruitment/</guid>
+      <description>My international client 客户 is currently looking to hire 聘用 an Operations Engineer to join their Desktop Operations Department to be responsible负责 for providing mainly 3rd tier support</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/english/saying-of-book/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/english/saying-of-book/</guid>
+      <description>书籍是人类知识的总结</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/english/the-100-most-commonly-used-words-in-english/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/english/the-100-most-commonly-used-words-in-english/</guid>
+      <description>Listed here, according to the 100-million-word British National Corpus, are the 100 most commonly used words in English. Many of these words are function words: they glue pieces of sentences together into longer syntactic units.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/english/the-50-most-commonly-used-words-in-the-english-language/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/english/the-50-most-commonly-used-words-in-the-english-language/</guid>
+      <description>If you&amp;rsquo;re an English learner, knowing which words are most commonly used in the language can help you to improve your vocabulary skills and gain confidence in casual conversations.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/english/the-difference-between-preposition-_to_-_for_-and-_of_/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/english/the-difference-between-preposition-_to_-_for_-and-_of_/</guid>
+      <description>to、for和of的区别</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/english/the-past-simple-tense-time-phrases/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/english/the-past-simple-tense-time-phrases/</guid>
+      <description>in/at/on/last/ago</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/english/title-of-degree/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/english/title-of-degree/</guid>
+      <description>title of degree/学位的程度，是指学士/硕士/博士</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/english/which/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/english/which/</guid>
+      <description>如何用 which 来提问</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/english/%E4%B8%BB%E8%B0%93%E4%B8%80%E8%87%B4the-subject-and-predicate-are-consistent/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/english/%E4%B8%BB%E8%B0%93%E4%B8%80%E8%87%B4the-subject-and-predicate-are-consistent/</guid>
+      <description>the+形容词或分词表示一类人， +姓表示一家人，做主语时动词用复数</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/english/%E5%85%AD%E7%BA%A7%E5%86%99%E4%BD%9C%E8%AF%84%E5%88%86%E6%A0%87%E5%87%86/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/english/%E5%85%AD%E7%BA%A7%E5%86%99%E4%BD%9C%E8%AF%84%E5%88%86%E6%A0%87%E5%87%86/</guid>
+      <description>文章表述全面，主题鲜明切题，结构层次清晰，语句连贯流畅，句式修辞丰富，语法、拼写、标点等错误极少。</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/english/%E5%85%B3%E7%B3%BB%E5%89%AF%E8%AF%8D%E7%9A%84%E4%BB%A3%E6%9B%BF%E4%BD%BF%E7%94%A8/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/english/%E5%85%B3%E7%B3%BB%E5%89%AF%E8%AF%8D%E7%9A%84%E4%BB%A3%E6%9B%BF%E4%BD%BF%E7%94%A8/</guid>
+      <description>时间、地点或理由的名词的先行词是关系副词，在从句中作状语</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/english/%E5%88%9D%E4%B8%AD%E8%8B%B1%E8%AF%AD%E4%B8%80%E5%8D%83%E9%AB%98%E9%A2%91%E8%AF%8D/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/english/%E5%88%9D%E4%B8%AD%E8%8B%B1%E8%AF%AD%E4%B8%80%E5%8D%83%E9%AB%98%E9%A2%91%E8%AF%8D/</guid>
+      <description>one thousand words</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/english/%E5%8A%A8%E8%AF%8D%E4%B8%8D%E5%AE%9A%E5%BC%8F%E7%94%A8%E5%88%97/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/english/%E5%8A%A8%E8%AF%8D%E4%B8%8D%E5%AE%9A%E5%BC%8F%E7%94%A8%E5%88%97/</guid>
+      <description>动词不定式case</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/english/%E5%8A%A8%E8%AF%8D%E7%9A%84%E6%97%B6%E6%80%81/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/english/%E5%8A%A8%E8%AF%8D%E7%9A%84%E6%97%B6%E6%80%81/</guid>
+      <description>动词，就是用来形容或表示各类动作的词汇。基本上每个完整的子句都有一个动词，要表示第二个动作时可使用不定词、动名词、对等连接词、从属连接词或增加子句等方法连结。而在英语中根据时间和动作的种类，动词又分为了多种时态。</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/english/%E6%97%B6%E9%97%B4%E4%BB%8B%E8%AF%8Din-on-at-%E7%9A%84%E4%B8%8D%E5%90%8C%E7%94%A8%E5%A4%84/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/english/%E6%97%B6%E9%97%B4%E4%BB%8B%E8%AF%8Din-on-at-%E7%9A%84%E4%B8%8D%E5%90%8C%E7%94%A8%E5%A4%84/</guid>
+      <description>用 at 来表示在某一段时刻,用 on 来表示在星期几/某日,用in来表示一天中的早中晚，月份，季节或年份</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/english/%E8%8B%B1%E6%96%87%E8%AF%AD%E6%B3%95%E8%AF%8D%E6%B1%87/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/english/%E8%8B%B1%E6%96%87%E8%AF%AD%E6%B3%95%E8%AF%8D%E6%B1%87/</guid>
+      <description>one thousand words</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/english/%E8%8B%B1%E8%AF%AD%E5%8F%A3%E8%AF%AD%E5%85%B3%E9%94%AE%E5%90%8D%E8%AF%8D-nouns/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/english/%E8%8B%B1%E8%AF%AD%E5%8F%A3%E8%AF%AD%E5%85%B3%E9%94%AE%E5%90%8D%E8%AF%8D-nouns/</guid>
+      <description>one thousand words</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/english/%E8%8B%B1%E8%AF%AD%E5%A4%A7%E8%AF%8D/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/english/%E8%8B%B1%E8%AF%AD%E5%A4%A7%E8%AF%8D/</guid>
+      <description>english big words</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/english/%E8%8B%B1%E8%AF%AD%E8%AF%AD%E6%B3%95%E7%BB%86%E8%8A%82/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/english/%E8%8B%B1%E8%AF%AD%E8%AF%AD%E6%B3%95%E7%BB%86%E8%8A%82/</guid>
+      <description>语调（intonation），即说话的腔调，就是一句话里声调（pitch）高低抑扬轻重的配制和变化。英语有五种基本语调：升调（↗）、降调（↙）、升降调（∧）、降升调（∨）以及平调（→）</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/english/%E8%AF%AD%E6%B3%95-grammar/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/english/%E8%AF%AD%E6%B3%95-grammar/</guid>
+      <description>主语&amp;ndash;动作的发出者</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/english/%E8%AF%AD%E6%B3%95%E5%BD%92%E7%BA%B3/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/english/%E8%AF%AD%E6%B3%95%E5%BD%92%E7%BA%B3/</guid>
+      <description>名词、动词、形容词</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/english/%E9%9B%85%E6%80%9D%E8%AF%84%E5%88%86%E6%A0%87%E5%87%86/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/english/%E9%9B%85%E6%80%9D%E8%AF%84%E5%88%86%E6%A0%87%E5%87%86/</guid>
+      <description>one thousand words</description>
+    </item>
+    
   </channel>
 </rss>

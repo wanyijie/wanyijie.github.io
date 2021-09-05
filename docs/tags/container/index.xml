@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>container on hope to be a great computer technology Site</title>
+    <link>https://wangyijie.store/tags/container/</link>
+    <description>Recent content in container on hope to be a great computer technology Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="https://wangyijie.store/tags/container/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/container/docker-compose-%E7%BD%91%E7%BB%9C/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/container/docker-compose-%E7%BD%91%E7%BB%9C/</guid>
+      <description>默认情况下，Compose为您的应用程序设置单个网络。服务的每个容器都加入默认网络，并且可以由该网络上的其他容器访问，并且可由他们发现与容器名称相同的主机名。</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/container/docker-overlay-networks/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/container/docker-overlay-networks/</guid>
+      <description>内置的Docker overlay网络驱动程序彻底简化了多主机网络中的许多挑战。使用overlay驱动程序，多主机网络是Docker内的顶级原生类，无需外部配置或组件。overlay使用Swarm分布式控制平面在跨大规模集群中提供集中管理，稳定性和安全性</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/container/introduction-to-containers/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/container/introduction-to-containers/</guid>
+      <description>If you understand Linux, you probably already have 85% of the knowledge you need to understand containers. If you understand how processes, mounts, networks , shells and daemons work - commands like ps, mount, ip addr, bash, httpd and mysqld - then you just need to understand a few extra primitives to become an expert with containers.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/container/jdk%E5%AF%B9docker%E5%AE%B9%E5%99%A8%E7%9A%84%E6%94%AF%E6%8C%81/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/container/jdk%E5%AF%B9docker%E5%AE%B9%E5%99%A8%E7%9A%84%E6%94%AF%E6%8C%81/</guid>
+      <description>Java 8u131及以上版本开始支持了Docker的cpu和memory限制。</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/container/overview-of-the-docker-architecture/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/container/overview-of-the-docker-architecture/</guid>
+      <description>In this text we&amp;rsquo;re going to be talking about Docker architecture. And Docker is the container implementationthat is supported by Red Hat and is used by OpenShift.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/container/podman-error-with-centos7/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/container/podman-error-with-centos7/</guid>
+      <description>Error: error creating libpod runtime: failed to mount overlay for metacopy check: invalid argument</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/container/windows-server-%E5%AE%B9%E5%99%A8-os-%E4%B8%8E%E4%B8%BB%E6%9C%BA-os-%E7%9A%84%E5%85%BC%E5%AE%B9%E6%80%A7/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/container/windows-server-%E5%AE%B9%E5%99%A8-os-%E4%B8%8E%E4%B8%BB%E6%9C%BA-os-%E7%9A%84%E5%85%BC%E5%AE%B9%E6%80%A7/</guid>
+      <description>Windows Server 容器并非在所有主机 OS 版本间都兼容</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/container/%E9%95%9C%E5%83%8F%E5%86%85%E5%AE%B9%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD%E5%B7%A5%E5%85%B7-reg/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/container/%E9%95%9C%E5%83%8F%E5%86%85%E5%AE%B9%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD%E5%B7%A5%E5%85%B7-reg/</guid>
+      <description>Docker registry v2 command line client and repo listing generator with security checks.
+Table of Contents
+ Installation  Binaries Via Go   Usage  Auth List Repositories and Tags Get a Manifest Get the Digest Download a Layer Delete an Image Vulnerability Reports Generating Static Website for a Registry Using Self-Signed Certs with a Registry   Contributing  Installation#Binaries#For installation instructions from binaries please visit the Releases Page.</description>
+    </item>
+    
+  </channel>
+</rss>

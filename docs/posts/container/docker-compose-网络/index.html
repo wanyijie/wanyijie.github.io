@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="默认情况下，Compose为您的应用程序设置单个网络。服务的每个容器都加入默认网络，并且可以由该网络上的其他容器访问，并且可由他们发现与容器名称相同的主机名。">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="" />
+<meta property="og:description" content="默认情况下，Compose为您的应用程序设置单个网络。服务的每个容器都加入默认网络，并且可以由该网络上的其他容器访问，并且可由他们发现与容器名称相同的主机名。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://wangyijie.store/posts/container/docker-compose-%E7%BD%91%E7%BB%9C/" /><meta property="article:section" content="posts" />
+
+
+
+<title>Docker Compose 网络 | hope to be a great computer technology Site</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.46181bc93375ba932026e753b37c40e6ff8bb16a9ef770c78bcc663e4577b1ba.css" integrity="sha256-RhgbyTN1upMgJudTs3xA5v&#43;LsWqe93DHi8xmPkV3sbo=" crossorigin="anonymous">
+  <script defer src="/flexsearch.min.js"></script>
+  <script defer src="/en.search.min.a070b2dd452cb474e30248358b5ef77b98384931c60a9e827b5a4dac3fefed89.js" integrity="sha256-oHCy3UUstHTjAkg1i173e5g4STHGCp6Ce1pNrD/v7Yk=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-NBRSWPN');</script>
+    
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>hope to be a great computer technology Site</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/posts/" >
+        Posts
+      </a>
+      
+<ul>
+  
+  <li>
+    <a href="/posts/angluar/" >
+        angular
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/ansible/" >
+        ansible
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/cicd/" >
+        CICD
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/devops/" >
+        DevOps
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/english/" >
+        English
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/golang/" >
+        golang
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/istio/" >
+        istio
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/kubernetes/" >
+        Kubernetes
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/material2/" >
+        mererial2
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/mysql/" >
+        mysql
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/postgresql/" >
+        postgresql
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/python/" >
+        python
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/cloud/" >
+        云服务
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/security/" >
+        安全
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/container/" >
+        容器
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/literature/" >
+        文学
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/diary/" >
+        日记
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/machine_learning/" >
+        机器学习
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/monitor/" >
+        监控
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/sre/" >
+        站点可靠性工程
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/network/" >
+        网络
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/poetry/" >
+        诗歌
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/essay/" >
+        随笔
+      </a>
+  </li>
+  
+</ul>
+
+  </li>
+  
+  <li>
+    <a href="/about/" >
+        关于作者
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var a=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(b){localStorage.setItem("menu.scrollTop",a.scrollTop)}),a.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Docker Compose 网络</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents"></nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+<article class="markdown">
+  <h1>
+    <a href="/posts/container/docker-compose-%E7%BD%91%E7%BB%9C/">Docker Compose 网络</a>
+  </h1>
+  
+
+
+  
+  <div>
+    
+      <a href="/categories/development/">Development</a>, 
+      <a href="/categories/opetration/">Opetration</a>
+  </div>
+  
+
+  
+  <div>
+    
+      <a href="/tags/wangyijie/">wangyijie</a>, 
+      <a href="/tags/container/">container</a>
+  </div>
+  
+
+
+
+<h1 id="单个网络">
+  单个网络
+  <a class="anchor" href="#%e5%8d%95%e4%b8%aa%e7%bd%91%e7%bb%9c">#</a>
+</h1>
+<p>注意：本文档仅适用于版本2或更高版本的compose文件格式。compose version1不支持网络功能。</p>
+<p>默认情况下，Compose为您的应用程序设置单个网络。服务的每个容器都加入默认网络，并且可以由该网络上的其他容器访问，并且可由他们发现与容器名称相同的主机名。</p>
+<p>注意：您的应用程序的网络名称基于“项目名称”，就是基于它所在的目录的名称。您可以使用&ndash;project-name标签或COMPOSE_PROJECT_NAME 环境变量覆盖项目名称。</p>
+<p>例如，假设您的应用程序位于名为myapp的目录中，并且您的docker-compose.yml如下所示：</p>
+<pre tabindex="0"><code>version: &quot;3&quot;
+services:
+       web:
+            build: .
+            ports:
+            - &quot;8000:8000&quot;
+      db:
+            image: postgres
+            ports:
+            - &quot;8001:5432&quot;
+</code></pre><p>当您运行docker-compose时，会发生以下情况：</p>
+<p>1.创建一个名为myapp_default的网络。</p>
+<p>2.使用“web”服务的配置创建一个容器。它加入一个叫myapp_default网络，在里面的名称是web。</p>
+<p>3.使用”db“服务的配置创建一个容器。它加入一个叫myapp_default网络，在里面的名称是db。</p>
+<p>每个容器现在可以查找主机名&quot;web&quot;或&quot;db&quot;并获取相应容器的IP地址。例如，Web的应用程序可以连接到URL postgres：// db：5432并开始使用Postgres数据库。</p>
+<p>请注意主机端口和容器端口之间的区别。在上述示例中，对于db，主机端口为8001，容器端口为5432（默认为postgres端口）。服务到服务的网络通信使用容器端口。当定义主机端口时，服务也可以在群外访问。</p>
+<p>在Web容器中，您的db的连接字符串看起来像postgres：// db：5432，从主机，连接字符串看起来像postgres：// {DOCKER_IP}：8001。</p>
+<h1 id="多主机网络">
+  多主机网络
+  <a class="anchor" href="#%e5%a4%9a%e4%b8%bb%e6%9c%ba%e7%bd%91%e7%bb%9c">#</a>
+</h1>
+<p>将Compose应用程序部署到Swarm群集时，可以使用内置的overlay驱动来启用多主机之间的容器通信，而不会对Compose文件或应用程序代码进行任何更改。</p>
+<p>默认情况下，群集将使用Overlay驱动，但如果您愿意，可以明确指定它。您可以使用顶级网络键（key）指定自己的网络，而不是使用默认的应用网络。这样可以创建更复杂的拓扑结构，并指定自定义网络驱动程序和选项。您还可以使用它将服务连接到由Compose管理的外部创建的网络。</p>
+<p>每个服务都可以指定使用服务级网络key连接的网络，这是一个名称引用顶级networks键下的条目的列表。</p>
+<p>这是一个定义两个自定义网络的“compose”文件示例。代理服务与数据库服务隔离，因为它们不共享一个共同的网络 - 只有app可以与两者通信。</p>
+<pre tabindex="0"><code>version: &quot;3&quot;
+services:
+   proxy:
+   build: ./proxy
+   networks:
+     - frontend
+  app:
+      build: ./app
+    networks:
+   - frontend
+   - backend
+  db:
+    image: postgres
+    networks:
+    - backend
+ networks:
+   frontend:
+     driver: custom-driver-1
+   backend:
+     driver: custom-driver-2
+     driver_opts:
+       foo: &quot;1&quot;
+       bar: &quot;2&quot;
+</code></pre></article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+  
+
+  
+
+  <script src="https://utteranc.es/client.js" repo="wanyijie/blog" issue-term="pathname" label="web"
+    theme="github-light" crossorigin="anonymous" async>
+    </script>
+</div>
+
+
+
+<script>{ { . | safeJS } }</script>
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents"></nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6266541561533854"
+     crossorigin="anonymous"></script>
+     
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NBRSWPN"
+     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+     
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

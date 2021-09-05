@@ -47,9 +47,9 @@ jobs:
           
       - name: Run git commit
         run: |
-	        git add docs
-	        git commit -m "$(date)"
-          
+	  git add docs
+	  git commit -m "$(date)"
+	  
       - name: Run a multi-line script
         run: |
-	        git push wangyijie master
+	  git push wangyijie master

@@ -43,5 +43,6 @@ jobs:
           go version
           pwd
           ls
+          git submodule update --init --recursive
           hugo version
           hugo -d docs

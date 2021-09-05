@@ -47,8 +47,8 @@ jobs:
           ls
           hugo version
           hugo -d docs
-          git config --global user.email "785471184@qq.com"
-          git config --global user.name "wang yijie"
+          git config user.email "785471184@qq.com"
+          git config user.name "wangyijie"
           git add docs
           git commit -m "$(date)"
           git push wangyijie master

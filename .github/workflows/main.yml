@@ -38,11 +38,12 @@ jobs:
           hugo-version: '0.88.1'
           extended: true
       - uses: actions/checkout@v2
+        with:
+          submodules: true
       - name: Run hugo
         run: |
           go version
           pwd
           ls
-          git submodule update --init --recursive
           hugo version
           hugo -d docs

@@ -17,18 +17,25 @@ on:
 jobs:
   # This workflow contains a single job called "build"
   build:
+    env:
+      GOPROXY: https://proxy.golang.org
+      GO111MODULE: on
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        go: [ '1.16' ]
-    name: Go ${{ matrix.go }} with hugo
+        go-version: [1.16.x, 1.17.x]
+        os: [ubuntu-latest]
+    name: Go ${{ matrix.os }} with hugo
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-
+      - name: Install Go
+        uses: actions/setup-go@37335c7bb261b353407cff977110895fa0b4f7d8
+        with:
+          go-version: ${{ matrix.go-version }}
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
         run: |

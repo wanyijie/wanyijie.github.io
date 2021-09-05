@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="为了快速见证新功能，我们选择kubeadmin这个工具来创建集群，官方的工具虽然还在内测阶段，但各种服务的配置方式，可以做为自定义部署的参考，kubeadmin是多基于容器的，只要把每个容器的配置都熟悉了，自定义部署也是非常容易的，所以说这个kubeadmin可供细研究也可快速完成集群环境的搭建，里面有些需要注意的地方，参照这篇文章可以直接解决一些问题，省去一些搜索工作">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="" />
+<meta property="og:description" content="为了快速见证新功能，我们选择kubeadmin这个工具来创建集群，官方的工具虽然还在内测阶段，但各种服务的配置方式，可以做为自定义部署的参考，kubeadmin是多基于容器的，只要把每个容器的配置都熟悉了，自定义部署也是非常容易的，所以说这个kubeadmin可供细研究也可快速完成集群环境的搭建，里面有些需要注意的地方，参照这篇文章可以直接解决一些问题，省去一些搜索工作" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://wangyijie.store/posts/kubernetes/kubernetes-1-8%E5%AE%89%E8%A3%85%E8%AE%B0%E5%BD%95/" /><meta property="article:section" content="posts" />
+
+
+
+<title>Kubernetes 1 8安装记录 | hope to be a great computer technology Site</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.46181bc93375ba932026e753b37c40e6ff8bb16a9ef770c78bcc663e4577b1ba.css" integrity="sha256-RhgbyTN1upMgJudTs3xA5v&#43;LsWqe93DHi8xmPkV3sbo=" crossorigin="anonymous">
+  <script defer src="/flexsearch.min.js"></script>
+  <script defer src="/en.search.min.e03f7285907974dc7344f2e5e1442ed3b50de4dfa5bcf431ba1efb67489bd5fc.js" integrity="sha256-4D9yhZB5dNxzRPLl4UQu07UN5N&#43;lvPQxuh77Z0ib1fw=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-NBRSWPN');</script>
+    
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>hope to be a great computer technology Site</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/posts/" >
+        Posts
+      </a>
+      
+<ul>
+  
+  <li>
+    <a href="/posts/angluar/" >
+        angular
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/ansible/" >
+        ansible
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/cicd/" >
+        CICD
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/devops/" >
+        DevOps
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/english/" >
+        English
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/golang/" >
+        golang
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/istio/" >
+        istio
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/kubernetes/" >
+        Kubernetes
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/material2/" >
+        mererial2
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/mysql/" >
+        mysql
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/postgresql/" >
+        postgresql
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/python/" >
+        python
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/cloud/" >
+        云服务
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/security/" >
+        安全
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/container/" >
+        容器
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/literature/" >
+        文学
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/diary/" >
+        日记
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/machine_learning/" >
+        机器学习
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/monitor/" >
+        监控
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/sre/" >
+        站点可靠性工程
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/network/" >
+        网络
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/poetry/" >
+        诗歌
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/essay/" >
+        随笔
+      </a>
+  </li>
+  
+</ul>
+
+  </li>
+  
+  <li>
+    <a href="/about/" >
+        关于作者
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var a=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(b){localStorage.setItem("menu.scrollTop",a.scrollTop)}),a.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Kubernetes 1 8安装记录</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#先决条件">先决条件：</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#安装ebtables-ethtool">安装ebtables ethtool</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#安装kubeadm-kubelet-and-kubectl">安装kubeadm, kubelet and kubectl</a></li>
+    <li><a href="#关闭selinux">关闭selinux</a></li>
+    <li><a href="#把iptables管理网桥流量的配置写入配置文件随kubelet启动">把iptables管理网桥流量的配置写入配置文件，随kubelet启动</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#加入节点">加入节点：</a></li>
+    <li><a href="#将api服务器代理到本地主机">将API服务器代理到本地主机:</a></li>
+    <li><a href="#故障排除">故障排除：</a></li>
+    <li><a href="#登云梯">登云梯：</a></li>
+    <li><a href="#找不到网络插件">找不到网络插件：</a></li>
+    <li><a href="#有镜像不能下载">有镜像不能下载：</a></li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+<article class="markdown">
+  <h1>
+    <a href="/posts/kubernetes/kubernetes-1-8%E5%AE%89%E8%A3%85%E8%AE%B0%E5%BD%95/">Kubernetes 1 8安装记录</a>
+  </h1>
+  
+
+
+  
+  <div>
+    
+      <a href="/categories/development/">Development</a>, 
+      <a href="/categories/opetration/">Opetration</a>
+  </div>
+  
+
+  
+  <div>
+    
+      <a href="/tags/wangyijie/">wangyijie</a>, 
+      <a href="/tags/kubernetes/">Kubernetes</a>
+  </div>
+  
+
+
+
+<h1 id="kubernetes-1.8安装记录">
+  kubernetes 1.8安装记录
+  <a class="anchor" href="#kubernetes-1.8%e5%ae%89%e8%a3%85%e8%ae%b0%e5%bd%95">#</a>
+</h1>
+<p>::: show-content</p>
+<h1 id="v180简介">
+  v1.8.0简介：
+  <a class="anchor" href="#v180%e7%ae%80%e4%bb%8b">#</a>
+</h1>
+<p>关于Kubernetes
+1.8版包括新功能和增强功能，以及修复的问题，请慢慢看下面的链接</p>
+<p><a href="https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG.md#external-dependencies">https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG.md#external-dependencies</a>\</p>
+<h1 id="安装kubeadmin">
+  安装kubeadmin：
+  <a class="anchor" href="#%e5%ae%89%e8%a3%85kubeadmin">#</a>
+</h1>
+<p>为了快速见证新功能，我们选择kubeadmin这个工具来创建集群，官方的工具虽然还在内测阶段，但各种服务的配置方式，可以做为自定义部署的参考，kubeadmin是多基于容器的，只要把每个容器的配置都熟悉了，自定义部署也是非常容易的，所以说这个kubeadmin可供细研究也可快速完成集群环境的搭建，里面有些需要注意的地方，参照这篇文章可以直接解决一些问题，省去一些搜索工作。</p>
+<h2 id="先决条件">
+  先决条件：
+  <a class="anchor" href="#%e5%85%88%e5%86%b3%e6%9d%a1%e4%bb%b6">#</a>
+</h2>
+<p>1.关闭系统的交换分区，2.sysctl
+net.bridge.bridge-nf-call-iptables=1（打开iptables管理网桥的功能），等等就是还有不关键的</p>
+<h1 id="通讯端口">
+  通讯端口：
+  <a class="anchor" href="#%e9%80%9a%e8%ae%af%e7%ab%af%e5%8f%a3">#</a>
+</h1>
+<p>::: image-package
+<img src="http://upload-images.jianshu.io/upload_images/6000429-9aadd6be32115660.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" />{original-src=&ldquo;<a href="http://upload-images.jianshu.io/upload_images/6000429-9aadd6be32115660.png?imageMogr2/auto-orient/strip%22">http://upload-images.jianshu.io/upload_images/6000429-9aadd6be32115660.png?imageMogr2/auto-orient/strip"</a>
+image-slug=&ldquo;9aadd6be32115660&rdquo; data-width=&ldquo;519&rdquo; data-height=&ldquo;283&rdquo;}\</p>
+<p>::: image-caption
+:::
+:::</p>
+<p>::: image-package
+<img src="http://upload-images.jianshu.io/upload_images/6000429-d963111e64f71cbb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" />{original-src=&ldquo;<a href="http://upload-images.jianshu.io/upload_images/6000429-d963111e64f71cbb.png?imageMogr2/auto-orient/strip%22">http://upload-images.jianshu.io/upload_images/6000429-d963111e64f71cbb.png?imageMogr2/auto-orient/strip"</a>
+image-slug=&ldquo;d963111e64f71cbb&rdquo; data-width=&ldquo;323&rdquo; data-height=&ldquo;223&rdquo;}\</p>
+<p>::: image-caption
+:::
+:::</p>
+<h2 id="安装ebtables-ethtool">
+  安装ebtables ethtool
+  <a class="anchor" href="#%e5%ae%89%e8%a3%85ebtables-ethtool">#</a>
+</h2>
+<blockquote>
+<p>yum install ebtables ethtool\</p>
+</blockquote>
+<h1 id="安装docker">
+  安装docker
+  <a class="anchor" href="#%e5%ae%89%e8%a3%85docker">#</a>
+</h1>
+<p>官方建议的1.12刚好是centos源带的，所以不必去找新版的源\</p>
+<blockquote>
+<p>yum install -y docker  &amp;&amp; systemctl enable docker &amp;&amp; systemctl start
+docker</p>
+</blockquote>
+<h2 id="安装kubeadm-kubelet-and-kubectl">
+  安装kubeadm, kubelet and kubectl
+  <a class="anchor" href="#%e5%ae%89%e8%a3%85kubeadm-kubelet-and-kubectl">#</a>
+</h2>
+<p>阿里源地址：http://mirrors.aliyun.com/kubernetes/yum/</p>
+<p>我编译的包上传网盘了，链接：http://pan.baidu.com/s/1bp51D7p 密码：jtie\</p>
+<p>要自己编译rpm包可以看这个项目：https://github.com/kubernetes/release.git</p>
+<blockquote>
+<p>cd rpm 
+#进入rpm目录执行脚本会创建docker完成编译，包输出到当前目录的output里面，要有docker环境\</p>
+<p>./docker-build.sh</p>
+</blockquote>
+<p>\</p>
+<blockquote>
+<p>cat &lt; /etc/yum.repos.d/kubernetes.repo\</p>
+<p>[kubernetes]</p>
+<p>name=Kubernetes</p>
+<p>baseurl=https://packages.cloud.google.com/yum/repos/kubernetes-el7-x86_64</p>
+<p>enabled=1</p>
+<p>gpgcheck=1</p>
+<p>repo_gpgcheck=1</p>
+<p>gpgkey=https://packages.cloud.google.com/yum/doc/yum-key.gpg</p>
+<p><a href="https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg">https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg</a></p>
+<p>EOF</p>
+<p>setenforce 0</p>
+<p>yum install -y kubelet kubeadm kubectl</p>
+<p>systemctl enable kubelet &amp;&amp; systemctl start kubelet</p>
+</blockquote>
+<h2 id="关闭selinux">
+  关闭selinux
+  <a class="anchor" href="#%e5%85%b3%e9%97%adselinux">#</a>
+</h2>
+<blockquote>
+<p>setenforce 0\</p>
+</blockquote>
+<h2 id="把iptables管理网桥流量的配置写入配置文件随kubelet启动">
+  把iptables管理网桥流量的配置写入配置文件，随kubelet启动
+  <a class="anchor" href="#%e6%8a%8aiptables%e7%ae%a1%e7%90%86%e7%bd%91%e6%a1%a5%e6%b5%81%e9%87%8f%e7%9a%84%e9%85%8d%e7%bd%ae%e5%86%99%e5%85%a5%e9%85%8d%e7%bd%ae%e6%96%87%e4%bb%b6%e9%9a%8fkubelet%e5%90%af%e5%8a%a8">#</a>
+</h2>
+<blockquote>
+<p>cat &lt;  /etc/sysctl.d/k8s.conf\</p>
+<p>net.bridge.bridge-nf-call-ip6tables = 1</p>
+<p>net.bridge.bridge-nf-call-iptables = 1</p>
+<p>EOF</p>
+<p>sysctl --system</p>
+</blockquote>
+<h1 id="创建集群">
+  创建集群：
+  <a class="anchor" href="#%e5%88%9b%e5%bb%ba%e9%9b%86%e7%be%a4">#</a>
+</h1>
+<p>执行命令初始化，有多个IP的主机最好指定宣告地址，支持后续的网络方案一般都要指定容器网段，还可以指定域名\</p>
+<blockquote>
+<p>kubeadm init --apiserver-advertise-address=172.19.7.112
+--pod-network-cidr=10.244.0.0/16 --service-dns-domain=&quot;heishui.io&quot;</p>
+</blockquote>
+<h1 id="安装网络">
+  安装网络：
+  <a class="anchor" href="#%e5%ae%89%e8%a3%85%e7%bd%91%e7%bb%9c">#</a>
+</h1>
+<p>网络有很多方案，各有特色，有些方案还很复杂，官方最新引入的Cilium很完美，但条件太苛刻不成熟；思科支持的Contiv；詹博背书的Contrail；coros
+主导开发的Flannel；Kube-router项目似乎开发很活跃，以后关注一下，很针对kubenetes;Calico综合很好；OpenVSwitch在云计算项目中很流行，这里我选择flannel,简单功能性能也不错，coros对kubernetes支持很给力，和Google很铁有前途的。</p>
+<blockquote>
+<p>kubectl apply -f
+<a href="https://raw.githubusercontent.com/coreos/flannel/v0.9.0/Documentation/kube-flannel.yml">https://raw.githubusercontent.com/coreos/flannel/v0.9.0/Documentation/kube-flannel.yml</a></p>
+</blockquote>
+<h1 id="让主节点可以运行业务">
+  让主节点可以运行业务：
+  <a class="anchor" href="#%e8%ae%a9%e4%b8%bb%e8%8a%82%e7%82%b9%e5%8f%af%e4%bb%a5%e8%bf%90%e8%a1%8c%e4%b8%9a%e5%8a%a1">#</a>
+</h1>
+<blockquote>
+<p>kubectl taint nodes --all node-role.kubernetes.io/master-\</p>
+</blockquote>
+<h2 id="加入节点">
+  加入节点：
+  <a class="anchor" href="#%e5%8a%a0%e5%85%a5%e8%8a%82%e7%82%b9">#</a>
+</h2>
+<blockquote>
+<p>kubeadm join --token 146d14.c80b331449030770 172.19.7.112:6443
+--discovery-token-ca-cert-hash
+sha256:f3b608648306dcd4eb0a854ea36dcdffb08f717e09ac176562a3d520256e8c5f\</p>
+</blockquote>
+<h2 id="将api服务器代理到本地主机">
+  将API服务器代理到本地主机:
+  <a class="anchor" href="#%e5%b0%86api%e6%9c%8d%e5%8a%a1%e5%99%a8%e4%bb%a3%e7%90%86%e5%88%b0%e6%9c%ac%e5%9c%b0%e4%b8%bb%e6%9c%ba">#</a>
+</h2>
+<blockquote>
+<p>kubectl --kubeconfig ./admin.conf proxy\</p>
+</blockquote>
+<h2 id="故障排除">
+  故障排除：
+  <a class="anchor" href="#%e6%95%85%e9%9a%9c%e6%8e%92%e9%99%a4">#</a>
+</h2>
+<p>请求不到版本文件，隐晦的问题，看下下面怎么搭梯子\</p>
+<p>::: image-package
+<img src="http://upload-images.jianshu.io/upload_images/6000429-e94dca0a593cb740.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" />{original-src=&ldquo;<a href="http://upload-images.jianshu.io/upload_images/6000429-e94dca0a593cb740.png?imageMogr2/auto-orient/strip%22">http://upload-images.jianshu.io/upload_images/6000429-e94dca0a593cb740.png?imageMogr2/auto-orient/strip"</a>
+image-slug=&ldquo;e94dca0a593cb740&rdquo; data-width=&ldquo;1540&rdquo; data-height=&ldquo;53&rdquo;}\</p>
+<p>::: image-caption
+:::
+:::</p>
+<h2 id="登云梯">
+  登云梯：
+  <a class="anchor" href="#%e7%99%bb%e4%ba%91%e6%a2%af">#</a>
+</h2>
+<p>vpn就不说了，怕麻烦就买vpn,这里说的方法是通过ssh代理socks隧道，socks协议长城都拦不住，国外备个云主机执行下面的命令即可实现代理上网,由于墙内dns都配合政府搞污染，可能你需要配置国外的dns, 
+8.8.8.8没有争议</p>
+<blockquote>
+<p>ssh -f -N -D 127.0.0.1:1080 root@your_host_ip\</p>
+</blockquote>
+<p>执行这条命令之后你的网络就已经出国了</p>
+<h2 id="找不到网络插件">
+  找不到网络插件：
+  <a class="anchor" href="#%e6%89%be%e4%b8%8d%e5%88%b0%e7%bd%91%e7%bb%9c%e6%8f%92%e4%bb%b6">#</a>
+</h2>
+<p>这里有一个bug，需要取消一些kubelet的环境变量，不然初始化会提示找不到网络插件</p>
+<p>编辑文件/etc/systemd/system/kubelet.service.d/10-kubeadm.conf,去掉KUBELET_NETWORK_ARGS，让其使用默认值\</p>
+<h2 id="有镜像不能下载">
+  有镜像不能下载：
+  <a class="anchor" href="#%e6%9c%89%e9%95%9c%e5%83%8f%e4%b8%8d%e8%83%bd%e4%b8%8b%e8%bd%bd">#</a>
+</h2>
+<p>一个办法是在dockerhub包括国内镜像源上找同样版本的镜像，下载之后改下名字即可，名字在你发现错误的地方已经有了\</p>
+<p>::: image-package
+<img src="http://upload-images.jianshu.io/upload_images/6000429-a5529893c8b0eaaa.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" />{original-src=&ldquo;<a href="http://upload-images.jianshu.io/upload_images/6000429-a5529893c8b0eaaa.png?imageMogr2/auto-orient/strip%22">http://upload-images.jianshu.io/upload_images/6000429-a5529893c8b0eaaa.png?imageMogr2/auto-orient/strip"</a>
+image-slug=&ldquo;a5529893c8b0eaaa&rdquo; data-width=&ldquo;1583&rdquo; data-height=&ldquo;173&rdquo;}\</p>
+<p>::: image-caption
+:::
+:::</p>
+<h1 id="镜像">
+  镜像：
+  <a class="anchor" href="#%e9%95%9c%e5%83%8f">#</a>
+</h1>
+<p>下面这些都是创建集群必须，我把镜像打包放百度云盘，链接：http://pan.baidu.com/s/1jH8uYqU
+密码：tosd</p>
+<p>漏了一个pase,链接：http://pan.baidu.com/s/1cErk9C 密码：auo6\</p>
+<p>可以下载tag，或许就不用外网：</p>
+<blockquote>
+<p>docker tag 790ec863918a docker.io/cloudnativelabs/kube-router:latest\</p>
+</blockquote>
+<blockquote>
+<p>docker tag ed645752b229
+gcr.io/google_containers/kube-controller-manager-amd64:v1.8.0</p>
+<p>docker tag 0e8dfbdff483
+gcr.io/google_containers/kube-apiserver-amd64:v1.8.0</p>
+<p>docker tag 758acd37d575
+gcr.io/google_containers/kube-scheduler-amd64:v1.8.0</p>
+<p>docker tag fd5fddfa4be3
+gcr.io/google_containers/kube-proxy-amd64:v1.8.0</p>
+<p>docker tag fed89e8b4248
+gcr.io/google_containers/k8s-dns-sidecar-amd64:1.14.5</p>
+<p>docker tag 512cd7425a73
+gcr.io/google_containers/k8s-dns-kube-dns-amd64:1.14.5</p>
+<p>docker tag 459944ce8cc4
+gcr.io/google_containers/k8s-dns-dnsmasq-nanny-amd64:1.14.5</p>
+<p>docker tag 4c600a64a18a quay.io/coreos/flannel:v0.9.0-amd64</p>
+<p>docker tag 54511612f1c4 docker.io/busybox:latest</p>
+<p>docker tag 243830dae7dd gcr.io/google_containers/etcd-amd64:3.0.17</p>
+<p>docker tag 99e59f495ffa gcr.io/google_containers/pause-amd64:3.0</p>
+</blockquote>
+<p>::: image-package
+<img src="http://upload-images.jianshu.io/upload_images/6000429-15e6541b015b8ad6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" />{original-src=&ldquo;<a href="http://upload-images.jianshu.io/upload_images/6000429-15e6541b015b8ad6.png?imageMogr2/auto-orient/strip%22">http://upload-images.jianshu.io/upload_images/6000429-15e6541b015b8ad6.png?imageMogr2/auto-orient/strip"</a>
+image-slug=&ldquo;15e6541b015b8ad6&rdquo; data-width=&ldquo;896&rdquo; data-height=&ldquo;228&rdquo;}\</p>
+<p>::: image-caption
+:::
+:::</p>
+<p>有问题可以到qq群（666455513）里面留言，仅限于容器交流<br>
+:::
+:::
+:::</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+  
+
+  
+
+  <script src="https://utteranc.es/client.js" repo="wanyijie/blog" issue-term="pathname" label="web"
+    theme="github-light" crossorigin="anonymous" async>
+    </script>
+</div>
+
+
+
+<script>{ { . | safeJS } }</script>
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#先决条件">先决条件：</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#安装ebtables-ethtool">安装ebtables ethtool</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#安装kubeadm-kubelet-and-kubectl">安装kubeadm, kubelet and kubectl</a></li>
+    <li><a href="#关闭selinux">关闭selinux</a></li>
+    <li><a href="#把iptables管理网桥流量的配置写入配置文件随kubelet启动">把iptables管理网桥流量的配置写入配置文件，随kubelet启动</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#加入节点">加入节点：</a></li>
+    <li><a href="#将api服务器代理到本地主机">将API服务器代理到本地主机:</a></li>
+    <li><a href="#故障排除">故障排除：</a></li>
+    <li><a href="#登云梯">登云梯：</a></li>
+    <li><a href="#找不到网络插件">找不到网络插件：</a></li>
+    <li><a href="#有镜像不能下载">有镜像不能下载：</a></li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6266541561533854"
+     crossorigin="anonymous"></script>
+     
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NBRSWPN"
+     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+     
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

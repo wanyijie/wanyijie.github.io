@@ -3,45 +3,9 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="前言#关于scrub这块一直想写一篇文章的，这个在很久前，就做过一次测试，当时是看这个scrub到底有多大的影响，当时看到的是磁盘读占很高，启动deep-scrub后会有大量的读,前端可能会出现 slow request,这个是当时测试看到的现象，一个比较简单的处理办法就是直接给scrub关掉了，当然关掉了就无法检测底层到底有没有对象不一致的问题 关于这个scrub生产上是否开启，仁者见仁，智者见智，就是选择的问题了，这里不做讨论，个人觉得开和关都有各自的道理，本篇是讲述的如果想开启的情况下如何把scrub给控制住
-最近在ceph群里看到一段大致这样的讨论：
- scrub是个坑 小文件多的场景一定要把scrub关掉 单pg的文件量达到一定规模，scrub一开就会有slow request 这个问题解决不了
- 上面的说法有没有问题呢？在一般情况下来看，确实如此，但是我们是否能尝试去解决下这个问题，或者缓解下呢？那么我们就来尝试下
-scrub的一些追踪#下面的一些追踪并不涉及代码，仅仅从配置和日志的观测来看看scrub到底干了什么
-环境准备#我的环境为了便于观测，配置的是一个pg的存储池，然后往这个pg里面put了100个对象，然后对这个pg做deep-scrub，deep-scrub比scrub对磁盘的压力要大些，所以本篇主要是去观测的deep-scrub
-开启对pg目录的访问的监控#使用的是inotifywait，我想看下deep-scrub的时候，pg里面的对象到底接收了哪些请求
-inotifywait -m 1.0_head
-|
-|
-在给osd.0开启debug_osd=20后观测chunky相关的日志
-|
-|
-截取关键部分看下，如图 我们看下上面的文件访问监控里面这些对象在什么位置
-|
-|
-看上去是不是很有规律，这个地方在ceph里面会有个chunk的概念，在做scrub的时候，ceph会对这个chunk进行加锁，这个可以在很多地方看到这个，这个也就是为什么有slow request，并不一定是你的磁盘慢了，而是加了锁，就没法读的
- osd scrub chunk min
-Description: The minimal number of object store chunks to scrub during single operation. Ceph blocks writes to single chunk during scrub. Type: 32-bit Integer Default: 5">
+<meta name="description" content="关于scrub这块一直想写一篇文章的，这个在很久前，就做过一次测试，当时是看这个scrub到底有多大的影响，当时看到的是磁盘读占很高，启动deep-scrub后会有大量的读,前端可能会出现 slow request,这个是当时测试看到的现象，一个比较简单的处理办法就是直接给scrub关掉了，当然关掉了就无法检测底层到底有没有对象不一致的问题">
 <meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="" />
-<meta property="og:description" content="前言#关于scrub这块一直想写一篇文章的，这个在很久前，就做过一次测试，当时是看这个scrub到底有多大的影响，当时看到的是磁盘读占很高，启动deep-scrub后会有大量的读,前端可能会出现 slow request,这个是当时测试看到的现象，一个比较简单的处理办法就是直接给scrub关掉了，当然关掉了就无法检测底层到底有没有对象不一致的问题 关于这个scrub生产上是否开启，仁者见仁，智者见智，就是选择的问题了，这里不做讨论，个人觉得开和关都有各自的道理，本篇是讲述的如果想开启的情况下如何把scrub给控制住
-最近在ceph群里看到一段大致这样的讨论：
- scrub是个坑 小文件多的场景一定要把scrub关掉 单pg的文件量达到一定规模，scrub一开就会有slow request 这个问题解决不了
- 上面的说法有没有问题呢？在一般情况下来看，确实如此，但是我们是否能尝试去解决下这个问题，或者缓解下呢？那么我们就来尝试下
-scrub的一些追踪#下面的一些追踪并不涉及代码，仅仅从配置和日志的观测来看看scrub到底干了什么
-环境准备#我的环境为了便于观测，配置的是一个pg的存储池，然后往这个pg里面put了100个对象，然后对这个pg做deep-scrub，deep-scrub比scrub对磁盘的压力要大些，所以本篇主要是去观测的deep-scrub
-开启对pg目录的访问的监控#使用的是inotifywait，我想看下deep-scrub的时候，pg里面的对象到底接收了哪些请求
-inotifywait -m 1.0_head
-|
-|
-在给osd.0开启debug_osd=20后观测chunky相关的日志
-|
-|
-截取关键部分看下，如图 我们看下上面的文件访问监控里面这些对象在什么位置
-|
-|
-看上去是不是很有规律，这个地方在ceph里面会有个chunk的概念，在做scrub的时候，ceph会对这个chunk进行加锁，这个可以在很多地方看到这个，这个也就是为什么有slow request，并不一定是你的磁盘慢了，而是加了锁，就没法读的
- osd scrub chunk min
-Description: The minimal number of object store chunks to scrub during single operation. Ceph blocks writes to single chunk during scrub. Type: 32-bit Integer Default: 5" />
+<meta property="og:description" content="关于scrub这块一直想写一篇文章的，这个在很久前，就做过一次测试，当时是看这个scrub到底有多大的影响，当时看到的是磁盘读占很高，启动deep-scrub后会有大量的读,前端可能会出现 slow request,这个是当时测试看到的现象，一个比较简单的处理办法就是直接给scrub关掉了，当然关掉了就无法检测底层到底有没有对象不一致的问题" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://wangyijie.store/posts/essay/ceph-scrub%E7%9A%84%E8%AF%A6%E7%BB%86%E5%88%86%E6%9E%90%E5%92%8C%E5%BB%BA%E8%AE%AE/" /><meta property="article:section" content="posts" />
 
@@ -52,7 +16,7 @@ Description: The minimal number of object store chunks to scrub during single op
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.46181bc93375ba932026e753b37c40e6ff8bb16a9ef770c78bcc663e4577b1ba.css" integrity="sha256-RhgbyTN1upMgJudTs3xA5v&#43;LsWqe93DHi8xmPkV3sbo=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.a070b2dd452cb474e30248358b5ef77b98384931c60a9e827b5a4dac3fefed89.js" integrity="sha256-oHCy3UUstHTjAkg1i173e5g4STHGCp6Ce1pNrD/v7Yk=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.e03f7285907974dc7344f2e5e1442ed3b50de4dfa5bcf431ba1efb67489bd5fc.js" integrity="sha256-4D9yhZB5dNxzRPLl4UQu07UN5N&#43;lvPQxuh77Z0ib1fw=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -339,7 +303,18 @@ https://github.com/alex-shpak/hugo-book
 
 
   
+  <div>
+    
+      <a href="/categories/leaning/">leaning</a>
+  </div>
+  
 
+  
+  <div>
+    
+      <a href="/tags/wangyijie/">wangyijie</a>, 
+      <a href="/tags/knowledge/">knowledge</a>
+  </div>
   
 
 

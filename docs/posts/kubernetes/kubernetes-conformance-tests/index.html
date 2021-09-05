@@ -3,11 +3,9 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="大概步骤# 获取镜像 ./sonobuoy images pull &ndash;e2e-repo-config custom-repos.yaml -dry-run 参考下面的脚本通过gcr.azk8s.cn代理地址下载gcr镜像上传到私有仓库 执行任务会在kubenetes里面创建pod启动任务 ./sonobuoy run &ndash;sonobuoy-image 172.20.8.7/library/sonobuoy:v0.17.2
-&ndash;kube-conformance-image 172.20.8.7/library/conformance:v1.15.10 等运行剩一个pod，大概几个小时的时间，检查结果 ./sonobuoy status 通过之后收集数据 results=$(./sonobuoy retrieve) ./sonobuoy results $results  #get command sonobuoy docker run -d --rm --name=sonobuoy sonobuoy/sonobuoy:v0.16 sleep 120 docker cp sonobuoy:/sonobuoy ./ # 私有仓库 registry=172.20.8.7 getImage(){ image=$1 docker pull $image docker $image tag ${registry}/library/${image##*/} docker push ${registry}/library/${image##*/} } kubeVersion=v1.15.10 getImage gcr.azk8s.cn/heptio-images/sonobuoy-plugin-systemd-logs:latest getImage gcr.azk8s.cn/google-containers/conformance:$kubeVersion ./sonobuoy run --sonobuoy-image 172.20.8.7/library/sonobuoy:v0.16\ --kube-conformance-image 172.">
+<meta name="description" content="./sonobuoy images pull &ndash;e2e-repo-config custom-repos.yaml -dry-run">
 <meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="" />
-<meta property="og:description" content="大概步骤# 获取镜像 ./sonobuoy images pull &ndash;e2e-repo-config custom-repos.yaml -dry-run 参考下面的脚本通过gcr.azk8s.cn代理地址下载gcr镜像上传到私有仓库 执行任务会在kubenetes里面创建pod启动任务 ./sonobuoy run &ndash;sonobuoy-image 172.20.8.7/library/sonobuoy:v0.17.2
-&ndash;kube-conformance-image 172.20.8.7/library/conformance:v1.15.10 等运行剩一个pod，大概几个小时的时间，检查结果 ./sonobuoy status 通过之后收集数据 results=$(./sonobuoy retrieve) ./sonobuoy results $results  #get command sonobuoy docker run -d --rm --name=sonobuoy sonobuoy/sonobuoy:v0.16 sleep 120 docker cp sonobuoy:/sonobuoy ./ # 私有仓库 registry=172.20.8.7 getImage(){ image=$1 docker pull $image docker $image tag ${registry}/library/${image##*/} docker push ${registry}/library/${image##*/} } kubeVersion=v1.15.10 getImage gcr.azk8s.cn/heptio-images/sonobuoy-plugin-systemd-logs:latest getImage gcr.azk8s.cn/google-containers/conformance:$kubeVersion ./sonobuoy run --sonobuoy-image 172.20.8.7/library/sonobuoy:v0.16\ --kube-conformance-image 172." />
+<meta property="og:description" content="./sonobuoy images pull &ndash;e2e-repo-config custom-repos.yaml -dry-run" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://wangyijie.store/posts/kubernetes/kubernetes-conformance-tests/" /><meta property="article:section" content="posts" />
 
@@ -18,7 +16,7 @@
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.46181bc93375ba932026e753b37c40e6ff8bb16a9ef770c78bcc663e4577b1ba.css" integrity="sha256-RhgbyTN1upMgJudTs3xA5v&#43;LsWqe93DHi8xmPkV3sbo=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.a070b2dd452cb474e30248358b5ef77b98384931c60a9e827b5a4dac3fefed89.js" integrity="sha256-oHCy3UUstHTjAkg1i173e5g4STHGCp6Ce1pNrD/v7Yk=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.e03f7285907974dc7344f2e5e1442ed3b50de4dfa5bcf431ba1efb67489bd5fc.js" integrity="sha256-4D9yhZB5dNxzRPLl4UQu07UN5N&#43;lvPQxuh77Z0ib1fw=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -302,7 +300,19 @@ https://github.com/alex-shpak/hugo-book
 
 
   
+  <div>
+    
+      <a href="/categories/development/">Development</a>, 
+      <a href="/categories/opetration/">Opetration</a>
+  </div>
+  
 
+  
+  <div>
+    
+      <a href="/tags/wangyijie/">wangyijie</a>, 
+      <a href="/tags/kubernetes/">Kubernetes</a>
+  </div>
   
 
 

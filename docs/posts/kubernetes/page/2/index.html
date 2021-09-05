@@ -14,7 +14,7 @@
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.46181bc93375ba932026e753b37c40e6ff8bb16a9ef770c78bcc663e4577b1ba.css" integrity="sha256-RhgbyTN1upMgJudTs3xA5v&#43;LsWqe93DHi8xmPkV3sbo=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.a070b2dd452cb474e30248358b5ef77b98384931c60a9e827b5a4dac3fefed89.js" integrity="sha256-oHCy3UUstHTjAkg1i173e5g4STHGCp6Ce1pNrD/v7Yk=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.e03f7285907974dc7344f2e5e1442ed3b50de4dfa5bcf431ba1efb67489bd5fc.js" integrity="sha256-4D9yhZB5dNxzRPLl4UQu07UN5N&#43;lvPQxuh77Z0ib1fw=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://wangyijie.store/posts/kubernetes/index.xml" title="hope to be a great computer technology Site" />
 <!--
 Made with Book Theme
@@ -280,17 +280,22 @@ https://github.com/alex-shpak/hugo-book
       
         <li class="flex justify-between">
           <a href="/categories/development/">Development</a>
-          <span>62</span>
+          <span>88</span>
         </li>
       
         <li class="flex justify-between">
           <a href="/categories/opetration/">Opetration</a>
-          <span>62</span>
+          <span>88</span>
         </li>
       
         <li class="flex justify-between">
           <a href="/categories/leaning/">leaning</a>
-          <span>32</span>
+          <span>43</span>
+        </li>
+      
+        <li class="flex justify-between">
+          <a href="/categories/literature/">literature</a>
+          <span>43</span>
         </li>
       
       </ul>
@@ -304,7 +309,7 @@ https://github.com/alex-shpak/hugo-book
       
         <li class="flex justify-between">
           <a href="/tags/wangyijie/">wangyijie</a>
-          <span>90</span>
+          <span>171</span>
         </li>
       
         <li class="flex justify-between">
@@ -339,22 +344,27 @@ https://github.com/alex-shpak/hugo-book
       
         <li class="flex justify-between">
           <a href="/tags/golang/">golang</a>
-          <span>1</span>
+          <span>4</span>
         </li>
       
         <li class="flex justify-between">
-          <a href="/tags/istio/">istio</a>
-          <span>1</span>
+          <a href="/tags/knowledge/">knowledge</a>
+          <span>11</span>
         </li>
       
         <li class="flex justify-between">
           <a href="/tags/kubernetes/">Kubernetes</a>
-          <span>4</span>
+          <span>28</span>
         </li>
       
         <li class="flex justify-between">
           <a href="/tags/learning/">learning</a>
           <span>1</span>
+        </li>
+      
+        <li class="flex justify-between">
+          <a href="/tags/literature/">literature</a>
+          <span>43</span>
         </li>
       
         <li class="flex justify-between">
@@ -385,20 +395,61 @@ https://github.com/alex-shpak/hugo-book
   
   <article class="markdown book-post">
     <h2>
+      <a href="/posts/kubernetes/kubernetes-1-8%E5%AE%89%E8%A3%85%E8%AE%B0%E5%BD%95/">Kubernetes 1 8安装记录</a>
+    </h2>
+    
+
+
+  
+  <div>
+    
+      <a href="/categories/development/">Development</a>, 
+      <a href="/categories/opetration/">Opetration</a>
+  </div>
+  
+
+  
+  <div>
+    
+      <a href="/tags/wangyijie/">wangyijie</a>, 
+      <a href="/tags/kubernetes/">Kubernetes</a>
+  </div>
+  
+
+
+
+
+    <p>为了快速见证新功能，我们选择kubeadmin这个工具来创建集群，官方的工具虽然还在内测阶段，但各种服务的配置方式，可以做为自定义部署的参考，kubeadmin是多基于容器的，只要把每个容器的配置都熟悉了，自定义部署也是非常容易的，所以说这个kubeadmin可供细研究也可快速完成集群环境的搭建，里面有些需要注意的地方，参照这篇文章可以直接解决一些问题，省去一些搜索工作
+    </p>
+  </article>
+  
+  <article class="markdown book-post">
+    <h2>
       <a href="/posts/kubernetes/kubernetes-api-%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99/">Kubernetes API 设计原则</a>
     </h2>
     
 
 
   
+  <div>
+    
+      <a href="/categories/development/">Development</a>, 
+      <a href="/categories/opetration/">Opetration</a>
+  </div>
+  
 
+  
+  <div>
+    
+      <a href="/tags/wangyijie/">wangyijie</a>, 
+      <a href="/tags/kubernetes/">Kubernetes</a>
+  </div>
   
 
 
 
 
-    <p>对于云计算系统，系统API实际上处于系统设计的统领地位。Kubernetes集群系统每支持一项新功能，引入一项新技术，一定会新引入对应的API对象，支持对该功能的管理操作。理解掌握的API，就好比抓住了K8s系统的牛鼻子。Kubernetes系统API的设计有以下几条原则：
- 所有API应该是声明式的。声明式的操作，相对于命令式操作，对于重复操作的效果是稳定的，这对于容易出现数据丢失或重复的分布式环境来说是很重要的。另外，声明式操作更容易被用户使用，可以使系统向用户隐藏实现的细节，同时也保留了系统未来持续优化的可能性。此外，声明式的API还隐含了所有的API对象都是名词性质的，例如Service、Volume这些API都是名词，这些名词描述了用户所期望得到的一个目标对象。 API对象是彼此互补而且可组合的。这实际上鼓励API对象尽量实现面向对象设计时的要求，即“高内聚，松耦合”，对业务相关的概念有一个合适的分解，提高分解出来的对象的可重用性。 高层API以操作意图为基础设计。如何能够设计好API，跟如何能用面向对象的方法设计好应用系统有相通的地方，高层设计一定是从业务出发，而不是过早的从技术实现出发。因此，针对Kubernetes的高层API设计，一定是以K8s的业务为基础出发，也就是以系统调度管理容器的操作意图为基础设计。 低层API根据高层API的控制需要设计。设计实现低层API的目的，是为了被高层API使用，考虑减少冗余、提高重用性的目的，低层API的设计也要以需求为基础，要尽量抵抗受技术实现影响的诱惑。 尽量避免简单封装，不要有在外部API无法显式知道的内部隐藏的机制。简单的封装，实际没有提供新的功能，反而增加了对所封装API的依赖性。内部隐藏的机制也是非常不利于系统维护的设计方式，例如StatefulSet和ReplicaSet，本来就是两种Pod集合，那么Kubernetes就用不同API对象来定义它们，而不会说只用同一个ReplicaSet，内部通过特殊的算法再来区分这个ReplicaSet是有状态的还是无状态。 API操作复杂度与对象数量成正比。这一条主要是从系统性能角度考虑，要保证整个系统随着系统规模的扩大，性能不会迅速变慢到无法使用，那么最低的限定就是API的操作复杂度不能超过O(N)，N是对象的数量，否则系统就不具备水平伸缩性了。 API对象状态不能依赖于网络连接状态。由于众所周知，在分布式环境下，网络连接断开是经常发生的事情，因此要保证API对象状态能应对网络的不稳定，API对象的状态就不能依赖于网络连接状态。 尽量避免让操作机制依赖于全局状态，因为在分布式系统中要保证全局状态的同步是非常困难的。  
+    <p>对于云计算系统，系统API实际上处于系统设计的统领地位。Kubernetes集群系统每支持一项新功能，引入一项新技术，一定会新引入对应的API对象，支持对该功能的管理操作。理解掌握的API，就好比抓住了K8s系统的牛鼻子。Kubernetes系统API的设计有以下几条原则
     </p>
   </article>
   
@@ -410,16 +461,25 @@ https://github.com/alex-shpak/hugo-book
 
 
   
+  <div>
+    
+      <a href="/categories/development/">Development</a>, 
+      <a href="/categories/opetration/">Opetration</a>
+  </div>
+  
 
+  
+  <div>
+    
+      <a href="/tags/wangyijie/">wangyijie</a>, 
+      <a href="/tags/kubernetes/">Kubernetes</a>
+  </div>
   
 
 
 
 
-    <p>大概步骤# 获取镜像 ./sonobuoy images pull &ndash;e2e-repo-config custom-repos.yaml -dry-run 参考下面的脚本通过gcr.azk8s.cn代理地址下载gcr镜像上传到私有仓库 执行任务会在kubenetes里面创建pod启动任务 ./sonobuoy run &ndash;sonobuoy-image 172.20.8.7/library/sonobuoy:v0.17.2
-&ndash;kube-conformance-image 172.20.8.7/library/conformance:v1.15.10 等运行剩一个pod，大概几个小时的时间，检查结果 ./sonobuoy status 通过之后收集数据 results=$(./sonobuoy retrieve) ./sonobuoy results $results  #get command sonobuoy docker run -d --rm --name=sonobuoy sonobuoy/sonobuoy:v0.16 sleep 120 docker cp sonobuoy:/sonobuoy ./ # 私有仓库 registry=172.20.8.7 getImage(){ image=$1 docker pull $image docker $image tag ${registry}/library/${image##*/} docker push ${registry}/library/${image##*/} } kubeVersion=v1.15.10 getImage gcr.azk8s.cn/heptio-images/sonobuoy-plugin-systemd-logs:latest getImage gcr.azk8s.cn/google-containers/conformance:$kubeVersion ./sonobuoy run --sonobuoy-image 172.20.8.7/library/sonobuoy:v0.16\ --kube-conformance-image 172.
-        <a href="/posts/kubernetes/kubernetes-conformance-tests/">...</a>
-      
+    <p>./sonobuoy images pull &ndash;e2e-repo-config custom-repos.yaml -dry-run
     </p>
   </article>
   
@@ -431,14 +491,25 @@ https://github.com/alex-shpak/hugo-book
 
 
   
+  <div>
+    
+      <a href="/categories/development/">Development</a>, 
+      <a href="/categories/opetration/">Opetration</a>
+  </div>
+  
 
+  
+  <div>
+    
+      <a href="/tags/wangyijie/">wangyijie</a>, 
+      <a href="/tags/kubernetes/">Kubernetes</a>
+  </div>
   
 
 
 
 
-    <p>一次使用helm安装spinnaker这个部署系统，对helm不熟悉，由于卡住超时了，随着又再次执行安装，我是在自己的电脑上弄了个10G内存的虚拟机安装的kubernetes,结果安装了两次spinnaker导致资源不足系统异常缓慢，kube-apiserver响应不过来不停的失败重启，kube-apiserver不能存活我就没办法管理pods了，所以想到去数据源etcd把spinnaker的容器信息先删掉，把集群恢复之后再重新安装，为了操作etcd我翻了些文章才找到方法，相关的资料比较少，所以自己也记录一下。 我是使用kubeadm工具安装的集群，要解除集群的资源占用要先把一些容器停掉，把kube-apiserver的编排文件从/etc/kubernetes/manifests/目录下先移出来，kubelet检查到会停止相应的pods,没有了kube-apiserver集群不会再创建新的pods,这时kubectl不可用了，使用docker命令把spinnaker项目的容器都删掉系统资源就能空闲出来。这时etcd还是正常的，用docker工具直接进入etcd。
-操作etcd有命令行工具etcdctl，有两个api版本互不兼容的，系统默认的v2版本，kubernetes集群使用的是v3版本，v2版本下是看不到v3版本的数据的，我也是找了些资料才了解这个情况。 使用环境变量定义api版本 export ETCDCTL_API=3 etcd有目录结构类似linux文件系统，获取所有key看一看： etcdctl get / --prefix --keys-only 一看就可以大概理解kubenetes的数据结构了，查询命名空间下所有部署的数据： etcdctl get /registry/deployments/default --prefix --keys-only 把想删除的删掉，列如： etcdctl del /registry/deployments/default/elevated-dragonfly-spinn-front50 删除deployments，pods这可以了，稍微减少一些资源，让kube-apiserver可以正常工作即可，其它资源还可以使用kubectl工具删除 删掉些资源后退出etcd把kube-apiserver的编排文件放回/etc/kubernetes/manifests目录，服务会再次启动，然后再清理重新部署。 ##总结： etcd组织的数据结构清晰，查找操作简便，从数据层面去维护集群也很容易，保护好数据就有一切
+    <p>etcd组织的数据结构清晰，查找操作简便，从数据层面去维护集群也很容易，保护好数据就有一切
     </p>
   </article>
   
@@ -450,13 +521,25 @@ https://github.com/alex-shpak/hugo-book
 
 
   
+  <div>
+    
+      <a href="/categories/development/">Development</a>, 
+      <a href="/categories/opetration/">Opetration</a>
+  </div>
+  
 
+  
+  <div>
+    
+      <a href="/tags/wangyijie/">wangyijie</a>, 
+      <a href="/tags/kubernetes/">Kubernetes</a>
+  </div>
   
 
 
 
 
-    <p>相信熟悉kubernetes的朋友都知道，kubernetes启动 Pod 里定义的容器之前，kubelet 会先启动一个 infra 容器，并执行 /pause 让 infra 容器的主进程永远挂起。 这个容器存在的目的其实是维持住整个 Pod 的各种 namespace，真正的业务容器只要加入 infra 容器的 network 等 namespace 就能实现对应 namespace 的共享。而 infra 容器创造的这个共享环境则被抽象为 PodSandbox。每次 kubelet 在创建 Pod 时，就会先调用 CRI 的 RunPodSandbox 接口启动一个沙箱环境，再调用 CreateContainer 在沙箱中创建容器。 pause很小，这有时可以加快pod的启动速度
+    <p>相信熟悉kubernetes的朋友都知道，kubernetes启动 Pod 里定义的容器之前，kubelet 会先启动一个 infra 容器，并执行 /pause 让 infra 容器的主进程永远挂起。
     </p>
   </article>
   
@@ -468,13 +551,25 @@ https://github.com/alex-shpak/hugo-book
 
 
   
+  <div>
+    
+      <a href="/categories/development/">Development</a>, 
+      <a href="/categories/opetration/">Opetration</a>
+  </div>
+  
 
+  
+  <div>
+    
+      <a href="/tags/wangyijie/">wangyijie</a>, 
+      <a href="/tags/kubernetes/">Kubernetes</a>
+  </div>
   
 
 
 
 
-    <p>
+    <p>kubernetes network solution
     </p>
   </article>
   
@@ -486,16 +581,25 @@ https://github.com/alex-shpak/hugo-book
 
 
   
+  <div>
+    
+      <a href="/categories/development/">Development</a>, 
+      <a href="/categories/opetration/">Opetration</a>
+  </div>
+  
 
+  
+  <div>
+    
+      <a href="/tags/wangyijie/">wangyijie</a>, 
+      <a href="/tags/kubernetes/">Kubernetes</a>
+  </div>
   
 
 
 
 
     <p>我们在编写kubernetes资源清单的时候有很多细节不易记住，特别对于还不熟练的同学，寻找参考摸板是一件麻烦的事，下面介绍两种获取参考帮助的手段，足够大家无往不利
- kubectl get &ndash;export kubectl get -o yaml &ndash;export 我们编写清单可以在集群找一个现成的资源摸板,然后修改我们想要的信息在以此创建新的资源，这能解决大部分需要了， kubectl get -o yaml &ndash;export 命令获得的资源内容就一个完美的摸板，-o yaml 用的比较多，&ndash;export 关注的可能就比较少，它的作用是把资源在当前集群的一些个性化数据过滤掉，给你一个清爽的摸板，去感受一下吧！ kubectl explain 有时我们通过上面的方法能找到的摸板可能没有我们要的配置，这时需要去别处寻找参考，或者去查看api文档，其实都可以不用，kubectl explain 可以根据资源路径给对应资源的子对象，就是其可以包含的字段或对象，比如看一个我不知道configMap卷怎么写的栗子：  [root@Registry ~]# kubectl explain deployments.spec.template.spec.volumes.configMap RESOURCE: configMap &lt;Object&gt; DESCRIPTION: ConfigMap represents a configMap that should populate this volume Adapts a ConfigMap into a volume. FIELDS: defaultMode	&lt;integer&gt; Optional: mode bits to use on created files by default. Must be a value between 0 and 0777.
-        <a href="/posts/kubernetes/kubernetes-%E8%B5%84%E6%BA%90%E7%BC%96%E6%8E%92%E5%B8%AE%E5%8A%A9/">...</a>
-      
     </p>
   </article>
   
@@ -507,16 +611,25 @@ https://github.com/alex-shpak/hugo-book
 
 
   
+  <div>
+    
+      <a href="/categories/development/">Development</a>, 
+      <a href="/categories/opetration/">Opetration</a>
+  </div>
+  
 
+  
+  <div>
+    
+      <a href="/tags/wangyijie/">wangyijie</a>, 
+      <a href="/tags/kubernetes/">Kubernetes</a>
+  </div>
   
 
 
 
 
-    <p>从 v1.8 开始，kube-scheduler 支持定义 Pod 的优先级，从而保证高优先级的 Pod 优先调度。并从 v1.11 开始默认开启。 注：在 v1.8-v1.10 版本中的开启方法为
-apiserver 配置: --feature-gates=PodPriority=true --runtime-config=scheduling.k8s.io/v1alpha1=true kube-scheduler 配置: --feature-gates=PodPriority=true 在指定 Pod 的优先级之前需要先定义一个 PriorityClass（非 namespace 资源），如
-apiVersion: v1 kind: PriorityClass metadata: name: high-priority value: 1000000 globalDefault: false description: &quot;This priority class should be used for XYZ service pods only.&quot; 其中value 为 32 位整数的优先级，该值越大，优先级越高 globalDefault 用于未配置 PriorityClassName 的 Pod，整个集群中应该只有一个 PriorityClass 将其设置为 true 然后，在 PodSpec 中通过 PriorityClassName 设置 Pod 的优先级：
-apiVersion: v1 kind: Pod metadata: name: nginx labels: env: test spec: containers: - name: nginx image: nginx imagePullPolicy: IfNotPresent priorityClassName: high-priority 
+    <p>从 v1.8 开始，kube-scheduler 支持定义 Pod 的优先级，从而保证高优先级的 Pod 优先调度。并从 v1.11 开始默认开启
     </p>
   </article>
   
@@ -528,17 +641,25 @@ apiVersion: v1 kind: Pod metadata: name: nginx labels: env: test spec: container
 
 
   
+  <div>
+    
+      <a href="/categories/development/">Development</a>, 
+      <a href="/categories/opetration/">Opetration</a>
+  </div>
+  
 
+  
+  <div>
+    
+      <a href="/tags/wangyijie/">wangyijie</a>, 
+      <a href="/tags/kubernetes/">Kubernetes</a>
+  </div>
   
 
 
 
 
     <p>考cka需要整理kubernetes的知识，看了linux基金会的课程，感觉有点贵，赚钱不容易得到刀刃上，所以看下目录帮助熟悉学习目标即可
-Kubernetes 基础课程 （LFS258)
-Chapter 1. Course Introduction# Welcome 1.1. Before You Begin 1.2. Course Introduction 1.3. Course Objectives 1.4. Course Formatting 安排 1.5. Course Completion 1.6. Course Timing 1.7.a. Exercises-Lab Environment 1.7.b. Exercises-Labs 1.7.c. Exercises - Knowledge Check 1.8. Course Resources 1.9. Class Forum Guidelines 1.10. Course Support 1.11. Course Audience and Requirements 1.12. Software Environment 1.13. Which Distribution to Choose? 1.14. Red Hat Family 1.15. SUSE Family 1.
-        <a href="/posts/kubernetes/kubernetes%E7%9F%A5%E8%AF%86%E7%82%B9/">...</a>
-      
     </p>
   </article>
   
@@ -550,39 +671,25 @@ Chapter 1. Course Introduction# Welcome 1.1. Before You Begin 1.2. Course Int
 
 
   
-
-  
-
-
-
-
-    <p>kubeadm 默认证书为一年，一年过期后，会导致api service不可用，使用过程中会出现：x509: certificate has expired or is not yet valid.
-方案一 通过修改kubeadm 调整证书过期时间
-一、使用kubadm 更新证书#1. 查看证书有效期#kubeadm alpha certs check-expiration 2. 重新签发证书#kubeadm alpha certs renew admin.conf kubeadm alpha certs renew scheduler.conf kubeadm alpha certs renew controller-manager.conf 3. 重启控制平面使生效#重启kubelet会自动重新创建核心组件
-systemctl restart kubelet 4. 验证#kubeadm alpha certs check-expiration
-二、创建长期有效期证书#自己创建这四个文件需要的证书，替换四个文件使用的内嵌证书。我们自己创建的证书的有效期为50年，不再有过期的风险。步骤如下：
-生成证书：#cd /etc/kubernetes mkdir cert cd cert/ cat &gt; ca-config.
-        <a href="/posts/kubernetes/kubernetes%E8%AF%81%E4%B9%A6%E7%BB%AD%E6%9C%9F/">...</a>
-      
-    </p>
-  </article>
-  
-  <article class="markdown book-post">
-    <h2>
-      <a href="/posts/kubernetes/metrics-server-%E9%83%A8%E7%BD%B2/">Metrics Server 部署</a>
-    </h2>
+  <div>
     
-
-
+      <a href="/categories/development/">Development</a>, 
+      <a href="/categories/opetration/">Opetration</a>
+  </div>
   
 
   
+  <div>
+    
+      <a href="/tags/wangyijie/">wangyijie</a>, 
+      <a href="/tags/kubernetes/">Kubernetes</a>
+  </div>
+  
 
 
 
 
-    <p>heapster已经不在维护，转由metrics-server 替代，没安装metrics-server pod命令和自动调度不能正常工作 项目地址：https://github.com/kubernetes-incubator/metrics-server 部署后可能不能正常收集数据，尝试添加下面的启动参数，kubelet-insecure-tls用于kubelet使用证书不满足认证添加，kubelet-preferred-address-types指名访问kubelet的地址类型，分别有：InternalIP,ExternalIP,Hostname
-- /metrics-server - --v=2 - --kubelet-insecure-tls - --kubelet-preferred-address-types=InternalIP 
+    <p>kubeadm 默认证书为一年，一年过期后，会导致api service不可用，使用过程中会出现：x509: certificate has expired or is not yet valid
     </p>
   </article>
   
@@ -605,10 +712,13 @@ systemctl restart kubelet 4. 验证#kubeadm alpha certs check-expiration
         <a href="/posts/kubernetes/page/3/" aria-label="Page 3" class="page-link" role="button">3</a>
       </li>
       <li class="page-item">
+        <a href="/posts/kubernetes/page/4/" aria-label="Page 4" class="page-link" role="button">4</a>
+      </li>
+      <li class="page-item">
         <a href="/posts/kubernetes/page/3/" aria-label="Next" class="page-link" role="button"><span aria-hidden="true">&raquo;</span></a>
       </li>
       <li class="page-item">
-        <a href="/posts/kubernetes/page/3/" aria-label="Last" class="page-link" role="button"><span aria-hidden="true">&raquo;&raquo;</span></a>
+        <a href="/posts/kubernetes/page/4/" aria-label="Last" class="page-link" role="button"><span aria-hidden="true">&raquo;&raquo;</span></a>
       </li>
     </ul>
  
@@ -656,17 +766,22 @@ systemctl restart kubelet 4. 验证#kubeadm alpha certs check-expiration
       
         <li class="flex justify-between">
           <a href="/categories/development/">Development</a>
-          <span>62</span>
+          <span>88</span>
         </li>
       
         <li class="flex justify-between">
           <a href="/categories/opetration/">Opetration</a>
-          <span>62</span>
+          <span>88</span>
         </li>
       
         <li class="flex justify-between">
           <a href="/categories/leaning/">leaning</a>
-          <span>32</span>
+          <span>43</span>
+        </li>
+      
+        <li class="flex justify-between">
+          <a href="/categories/literature/">literature</a>
+          <span>43</span>
         </li>
       
       </ul>
@@ -680,7 +795,7 @@ systemctl restart kubelet 4. 验证#kubeadm alpha certs check-expiration
       
         <li class="flex justify-between">
           <a href="/tags/wangyijie/">wangyijie</a>
-          <span>90</span>
+          <span>171</span>
         </li>
       
         <li class="flex justify-between">
@@ -715,22 +830,27 @@ systemctl restart kubelet 4. 验证#kubeadm alpha certs check-expiration
       
         <li class="flex justify-between">
           <a href="/tags/golang/">golang</a>
-          <span>1</span>
+          <span>4</span>
         </li>
       
         <li class="flex justify-between">
-          <a href="/tags/istio/">istio</a>
-          <span>1</span>
+          <a href="/tags/knowledge/">knowledge</a>
+          <span>11</span>
         </li>
       
         <li class="flex justify-between">
           <a href="/tags/kubernetes/">Kubernetes</a>
-          <span>4</span>
+          <span>28</span>
         </li>
       
         <li class="flex justify-between">
           <a href="/tags/learning/">learning</a>
           <span>1</span>
+        </li>
+      
+        <li class="flex justify-between">
+          <a href="/tags/literature/">literature</a>
+          <span>43</span>
         </li>
       
         <li class="flex justify-between">

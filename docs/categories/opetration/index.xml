@@ -182,24 +182,6 @@ mysql -uroot -ptest</description>
     
     <item>
       <title></title>
-      <link>https://wangyijie.store/posts/angluar/%E4%BB%A3%E7%A0%81%E8%A6%86%E7%9B%96%E7%8E%87/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://wangyijie.store/posts/angluar/%E4%BB%A3%E7%A0%81%E8%A6%86%E7%9B%96%E7%8E%87/</guid>
-      <description>&lt;h1 id=&#34;code-coverage&#34;&gt;
-  Code Coverage
-  &lt;a class=&#34;anchor&#34; href=&#34;#code-coverage&#34;&gt;#&lt;/a&gt;
-&lt;/h1&gt;
-&lt;h1 id=&#34;代码覆盖率&#34;&gt;
-  代码覆盖率
-  &lt;a class=&#34;anchor&#34; href=&#34;#%e4%bb%a3%e7%a0%81%e8%a6%86%e7%9b%96%e7%8e%87&#34;&gt;#&lt;/a&gt;
-&lt;/h1&gt;
-&lt;p&gt;With the Angular CLI we can run unit tests as well as create code coverage reports. Code coverage reports allow us to see any parts of our code base that may not be properly tested by our unit tests.&lt;br&gt;
-用Angular CLI我们能运行单元测试并创建代码覆盖率报告。代码覆盖率报告允许我们看到我们的代码库中的任何部分可能无法通过我们的单元测试。&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title></title>
       <link>https://wangyijie.store/posts/angluar/%E5%85%A8%E5%B1%80%E5%BA%93%E5%AE%89%E8%A3%85/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -586,11 +568,236 @@ workaround to install azure-cli:&lt;/p&gt;</description>
     
     <item>
       <title></title>
+      <link>https://wangyijie.store/posts/golang/a-global-proxy-for-go-modules/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/golang/a-global-proxy-for-go-modules/</guid>
+      <description>export GOPROXY=https://goproxy.io</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/golang/cgo-install/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/golang/cgo-install/</guid>
+      <description>window下安装安装微软的c++编译器很臃肿，和visual studio配套的，安装mingw-w64会比较轻量，我遇到的问题在于安装程序不好下载，我上传到网盘了，下载直接安装。</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/golang/golang-%E5%87%BD%E6%95%B0%E5%92%8C%E9%97%AD%E5%8C%85/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/golang/golang-%E5%87%BD%E6%95%B0%E5%92%8C%E9%97%AD%E5%8C%85/</guid>
+      <description>接触golang有些时间了，以前磕磕碰碰的勉强写过几个小程序，最近工作又亲近golang，就想着再回头巩固一下，曾经遇到过几次的问题又再次遇到了，golang的函数定义格式是这样的：</description>
+    </item>
+    
+    <item>
+      <title></title>
       <link>https://wangyijie.store/posts/istio/istio%E4%BF%97%E8%AF%AD%E5%92%8C%E7%BB%84%E4%BB%B6%E6%A6%82%E6%8B%AC/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/istio/istio%E4%BF%97%E8%AF%AD%E5%92%8C%E7%BB%84%E4%BB%B6%E6%A6%82%E6%8B%AC/</guid>
-      <description>istio概况</description>
+      <description>Istio 使用 Envoy 代理的扩展版本，Envoy 是以 C++ 开发的高性能代理，用于调解服务网格中所有服务的所有入站和出站流量。Envoy 的许多内置功能被 istio 发扬光大</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/kubernetes/fluented-install/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/kubernetes/fluented-install/</guid>
+      <description>deploy elasticsearch persistent volume</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/kubernetes/gcr-proxy-cache/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/kubernetes/gcr-proxy-cache/</guid>
+      <description>GCR Proxy Cache服务器相当于一台GCR镜像服务器，国内用户可以经由该服务器从&lt;a href=&#34;http://gcr.io/&#34;&gt;gcr.io&lt;/a&gt;下载镜像</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/kubernetes/get-kubernetes-images-quickly/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/kubernetes/get-kubernetes-images-quickly/</guid>
+      <description>&lt;a href=&#34;https://katacoda.com/courses/kubernetes/playground&#34;&gt;https://katacoda.com/courses/kubernetes/playground&lt;/a&gt;</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/kubernetes/heapster-&#43;-influxdb-&#43;-grafana-%E7%9B%91%E6%8E%A7%E6%B2%A1%E6%95%B0%E6%8D%AE%E6%A1%88%E4%BE%8B/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/kubernetes/heapster-&#43;-influxdb-&#43;-grafana-%E7%9B%91%E6%8E%A7%E6%B2%A1%E6%95%B0%E6%8D%AE%E6%A1%88%E4%BE%8B/</guid>
+      <description>influxdb没有图形界面了，命令工具也不易安装，curl最方便，不过格式需要注意，我参照了许多才找到合适的</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/kubernetes/kube-scheduler-%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/kubernetes/kube-scheduler-%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86/</guid>
+      <description>kube-scheduler 调度分为两个阶段，predicate 和 priority</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/kubernetes/kubectl-%E5%88%9B%E5%BB%BA%E8%B5%84%E6%BA%90/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/kubernetes/kubectl-%E5%88%9B%E5%BB%BA%E8%B5%84%E6%BA%90/</guid>
+      <description>最近去参加了CKA考试，在速度上吃亏，以往喜欢复制粘贴修改摸板，在时间紧张的情况下这种方式的效率问题暴露了，导致考试时间紧张，没用时间解决难题，考试会要求创建各种类型的资源，所以这准备练习命令创建资源，提高操作效率</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/kubernetes/kubelet%E5%88%9B%E5%BB%BA%E5%AE%B9%E5%99%A8%E7%9A%84%E6%AD%A5%E9%AA%A4/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/kubernetes/kubelet%E5%88%9B%E5%BB%BA%E5%AE%B9%E5%99%A8%E7%9A%84%E6%AD%A5%E9%AA%A4/</guid>
+      <description>Kubelet 通过 CRI 接口（gRPC）调用 dockershim，请求创建一个容器，CRI 即容器运行时接口（Container Runtime Interface），这一步中，Kubelet 可以视作一个简单的 CRI Client，而 dockershim 就是接收请求的 Server。目前 dockershim 的代码其实是内嵌在 Kubelet 中的，所以接收调用的凑巧就是 Kubelet 进程</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/kubernetes/kubernetes-1-8%E5%AE%89%E8%A3%85%E8%AE%B0%E5%BD%95/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/kubernetes/kubernetes-1-8%E5%AE%89%E8%A3%85%E8%AE%B0%E5%BD%95/</guid>
+      <description>为了快速见证新功能，我们选择kubeadmin这个工具来创建集群，官方的工具虽然还在内测阶段，但各种服务的配置方式，可以做为自定义部署的参考，kubeadmin是多基于容器的，只要把每个容器的配置都熟悉了，自定义部署也是非常容易的，所以说这个kubeadmin可供细研究也可快速完成集群环境的搭建，里面有些需要注意的地方，参照这篇文章可以直接解决一些问题，省去一些搜索工作</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/kubernetes/kubernetes-api-%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/kubernetes/kubernetes-api-%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99/</guid>
+      <description>对于云计算系统，系统API实际上处于系统设计的统领地位。Kubernetes集群系统每支持一项新功能，引入一项新技术，一定会新引入对应的API对象，支持对该功能的管理操作。理解掌握的API，就好比抓住了K8s系统的牛鼻子。Kubernetes系统API的设计有以下几条原则</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/kubernetes/kubernetes-conformance-tests/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/kubernetes/kubernetes-conformance-tests/</guid>
+      <description>./sonobuoy images pull &amp;ndash;e2e-repo-config custom-repos.yaml -dry-run</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/kubernetes/kubernetes-etcd%E6%95%B0%E6%8D%AE%E7%AE%A1%E7%90%86/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/kubernetes/kubernetes-etcd%E6%95%B0%E6%8D%AE%E7%AE%A1%E7%90%86/</guid>
+      <description>etcd组织的数据结构清晰，查找操作简便，从数据层面去维护集群也很容易，保护好数据就有一切</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/kubernetes/kubernetes-pause-role/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/kubernetes/kubernetes-pause-role/</guid>
+      <description>相信熟悉kubernetes的朋友都知道，kubernetes启动 Pod 里定义的容器之前，kubelet 会先启动一个 infra 容器，并执行 /pause 让 infra 容器的主进程永远挂起。</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/kubernetes/kubernetes-%E7%BD%91%E7%BB%9C%E6%96%B9%E6%A1%88%E5%8F%8A-lvs%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/kubernetes/kubernetes-%E7%BD%91%E7%BB%9C%E6%96%B9%E6%A1%88%E5%8F%8A-lvs%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86/</guid>
+      <description>kubernetes network solution</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/kubernetes/kubernetes-%E8%B5%84%E6%BA%90%E7%BC%96%E6%8E%92%E5%B8%AE%E5%8A%A9/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/kubernetes/kubernetes-%E8%B5%84%E6%BA%90%E7%BC%96%E6%8E%92%E5%B8%AE%E5%8A%A9/</guid>
+      <description>我们在编写kubernetes资源清单的时候有很多细节不易记住，特别对于还不熟练的同学，寻找参考摸板是一件麻烦的事，下面介绍两种获取参考帮助的手段，足够大家无往不利</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/kubernetes/kubernetes%E4%BC%98%E5%85%88%E7%BA%A7%E8%B0%83%E5%BA%A6/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/kubernetes/kubernetes%E4%BC%98%E5%85%88%E7%BA%A7%E8%B0%83%E5%BA%A6/</guid>
+      <description>从 v1.8 开始，kube-scheduler 支持定义 Pod 的优先级，从而保证高优先级的 Pod 优先调度。并从 v1.11 开始默认开启</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/kubernetes/kubernetes%E7%9F%A5%E8%AF%86%E7%82%B9/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/kubernetes/kubernetes%E7%9F%A5%E8%AF%86%E7%82%B9/</guid>
+      <description>考cka需要整理kubernetes的知识，看了linux基金会的课程，感觉有点贵，赚钱不容易得到刀刃上，所以看下目录帮助熟悉学习目标即可</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/kubernetes/kubernetes%E8%AF%81%E4%B9%A6%E7%BB%AD%E6%9C%9F/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/kubernetes/kubernetes%E8%AF%81%E4%B9%A6%E7%BB%AD%E6%9C%9F/</guid>
+      <description>kubeadm 默认证书为一年，一年过期后，会导致api service不可用，使用过程中会出现：x509: certificate has expired or is not yet valid</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/kubernetes/metrics-server-%E9%83%A8%E7%BD%B2/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/kubernetes/metrics-server-%E9%83%A8%E7%BD%B2/</guid>
+      <description>heapster已经不在维护，转由metrics-server 替代，没安装metrics-server pod命令和自动调度不能正常工作</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/kubernetes/skiffold/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/kubernetes/skiffold/</guid>
+      <description>调试可用的配置，花了不少时间踩坑，拿走不谢</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/kubernetes/ubuntu18-04%E5%AE%89%E8%A3%85minikube/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/kubernetes/ubuntu18-04%E5%AE%89%E8%A3%85minikube/</guid>
+      <description>设置minikube使用的虚拟化环境， 启动miniKube环境</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/kubernetes/upgrade-kubernetes-to-1-19-4/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/kubernetes/upgrade-kubernetes-to-1-19-4/</guid>
+      <description>install upgrade tool kubeadm</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/kubernetes/yaml%E8%AF%AD%E6%B3%95/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/kubernetes/yaml%E8%AF%AD%E6%B3%95/</guid>
+      <description>YAML语言接受整个Unicode字符集。所有可接受的字符都可以在YAML文档中使用</description>
     </item>
     
     <item>
@@ -599,7 +806,16 @@ workaround to install azure-cli:&lt;/p&gt;</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/kubernetes/%E5%9B%BD%E5%86%85cka%E8%80%83%E8%AF%95%E6%80%BB%E7%BB%93/</guid>
-      <description>这里没用透露考题，签有保密协议的，君子慎独，不欺暗室 深圳的考点在八卦岭地铁站附近的八卦二路616号四楼，试题是中文，使用考试中心的电脑考试，那边的电脑不能上google,我用google登录linux基金会的网站还遇到了麻烦，考官很开明，只要不违背考试原则都可以 在一个web终端考试，只有一个终端，复制进出没用影响，最好熟悉下tmux这个终端管理工具，我就得益于它快速切换终端使用explain查看接口文档 感觉试题难度一般，但时间有点紧，有文档有不敢去翻，翻翻时间过去了，所以要熟悉命令，命令是最快的，可以帮助节省时间解决难题，多数时候个把难题就决定着过不过，还有就是要熟悉常见资源熟悉的默写，我在这里吃了大亏，平时惯于复制粘贴，关键石刻心里没底默写不出现，找参考复制浪费了时间，要查文档最好用搜索，我试过记住文档的知识布局，结果还是不易快速找到，一些资源参考github仓库搜索效率比官方文档还高，主要是快 我还不知道这次又没用通过，三小时做下来还有点累，心累，做的我都怕了，考完后再来一遍也没用把握通过</description>
+      <description>这里没用透露考题，签有保密协议的，君子慎独，不欺暗室</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/kubernetes/%E9%87%8D%E5%A4%B4%E6%9E%84%E5%BB%BAkubernetes%E9%9B%86%E7%BE%A4v1-81/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/kubernetes/%E9%87%8D%E5%A4%B4%E6%9E%84%E5%BB%BAkubernetes%E9%9B%86%E7%BE%A4v1-81/</guid>
+      <description>重头构建kubernetes集群v1.81 {#重头构建kubernetes集群v1.81 .title}</description>
     </item>
     
     <item>
@@ -609,6 +825,20 @@ workaround to install azure-cli:&lt;/p&gt;</description>
       
       <guid>https://wangyijie.store/posts/postgresql/postgresql-%E7%81%BE%E5%A4%87%E8%87%AA%E5%8A%A8%E9%85%8D%E7%BD%AE%E8%84%9A%E6%9C%AC-barman/</guid>
       <description>postgreql版本：12+ barman版本：2.+</description>
+    </item>
+    
+    <item>
+      <title>代码覆盖率</title>
+      <link>https://wangyijie.store/posts/angluar/%E4%BB%A3%E7%A0%81%E8%A6%86%E7%9B%96%E7%8E%87/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/angluar/%E4%BB%A3%E7%A0%81%E8%A6%86%E7%9B%96%E7%8E%87/</guid>
+      <description>&lt;h1 id=&#34;代码覆盖率&#34;&gt;
+  代码覆盖率
+  &lt;a class=&#34;anchor&#34; href=&#34;#%e4%bb%a3%e7%a0%81%e8%a6%86%e7%9b%96%e7%8e%87&#34;&gt;#&lt;/a&gt;
+&lt;/h1&gt;
+&lt;p&gt;With the Angular CLI we can run unit tests as well as create code coverage reports. Code coverage reports allow us to see any parts of our code base that may not be properly tested by our unit tests.&lt;br&gt;
+用Angular CLI我们能运行单元测试并创建代码覆盖率报告。代码覆盖率报告允许我们看到我们的代码库中的任何部分可能无法通过我们的单元测试。&lt;/p&gt;</description>
     </item>
     
   </channel>

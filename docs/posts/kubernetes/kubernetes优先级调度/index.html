@@ -3,15 +3,9 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="从 v1.8 开始，kube-scheduler 支持定义 Pod 的优先级，从而保证高优先级的 Pod 优先调度。并从 v1.11 开始默认开启。 注：在 v1.8-v1.10 版本中的开启方法为
-apiserver 配置: --feature-gates=PodPriority=true --runtime-config=scheduling.k8s.io/v1alpha1=true kube-scheduler 配置: --feature-gates=PodPriority=true 在指定 Pod 的优先级之前需要先定义一个 PriorityClass（非 namespace 资源），如
-apiVersion: v1 kind: PriorityClass metadata: name: high-priority value: 1000000 globalDefault: false description: &quot;This priority class should be used for XYZ service pods only.&quot; 其中value 为 32 位整数的优先级，该值越大，优先级越高 globalDefault 用于未配置 PriorityClassName 的 Pod，整个集群中应该只有一个 PriorityClass 将其设置为 true 然后，在 PodSpec 中通过 PriorityClassName 设置 Pod 的优先级：
-apiVersion: v1 kind: Pod metadata: name: nginx labels: env: test spec: containers: - name: nginx image: nginx imagePullPolicy: IfNotPresent priorityClassName: high-priority ">
+<meta name="description" content="从 v1.8 开始，kube-scheduler 支持定义 Pod 的优先级，从而保证高优先级的 Pod 优先调度。并从 v1.11 开始默认开启">
 <meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="" />
-<meta property="og:description" content="从 v1.8 开始，kube-scheduler 支持定义 Pod 的优先级，从而保证高优先级的 Pod 优先调度。并从 v1.11 开始默认开启。 注：在 v1.8-v1.10 版本中的开启方法为
-apiserver 配置: --feature-gates=PodPriority=true --runtime-config=scheduling.k8s.io/v1alpha1=true kube-scheduler 配置: --feature-gates=PodPriority=true 在指定 Pod 的优先级之前需要先定义一个 PriorityClass（非 namespace 资源），如
-apiVersion: v1 kind: PriorityClass metadata: name: high-priority value: 1000000 globalDefault: false description: &quot;This priority class should be used for XYZ service pods only.&quot; 其中value 为 32 位整数的优先级，该值越大，优先级越高 globalDefault 用于未配置 PriorityClassName 的 Pod，整个集群中应该只有一个 PriorityClass 将其设置为 true 然后，在 PodSpec 中通过 PriorityClassName 设置 Pod 的优先级：
-apiVersion: v1 kind: Pod metadata: name: nginx labels: env: test spec: containers: - name: nginx image: nginx imagePullPolicy: IfNotPresent priorityClassName: high-priority " />
+<meta property="og:description" content="从 v1.8 开始，kube-scheduler 支持定义 Pod 的优先级，从而保证高优先级的 Pod 优先调度。并从 v1.11 开始默认开启" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://wangyijie.store/posts/kubernetes/kubernetes%E4%BC%98%E5%85%88%E7%BA%A7%E8%B0%83%E5%BA%A6/" /><meta property="article:section" content="posts" />
 
@@ -22,7 +16,7 @@ apiVersion: v1 kind: Pod metadata: name: nginx labels: env: test spec: container
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.46181bc93375ba932026e753b37c40e6ff8bb16a9ef770c78bcc663e4577b1ba.css" integrity="sha256-RhgbyTN1upMgJudTs3xA5v&#43;LsWqe93DHi8xmPkV3sbo=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.a070b2dd452cb474e30248358b5ef77b98384931c60a9e827b5a4dac3fefed89.js" integrity="sha256-oHCy3UUstHTjAkg1i173e5g4STHGCp6Ce1pNrD/v7Yk=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.e03f7285907974dc7344f2e5e1442ed3b50de4dfa5bcf431ba1efb67489bd5fc.js" integrity="sha256-4D9yhZB5dNxzRPLl4UQu07UN5N&#43;lvPQxuh77Z0ib1fw=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -297,7 +291,19 @@ https://github.com/alex-shpak/hugo-book
 
 
   
+  <div>
+    
+      <a href="/categories/development/">Development</a>, 
+      <a href="/categories/opetration/">Opetration</a>
+  </div>
+  
 
+  
+  <div>
+    
+      <a href="/tags/wangyijie/">wangyijie</a>, 
+      <a href="/tags/kubernetes/">Kubernetes</a>
+  </div>
   
 
 

@@ -182,24 +182,6 @@ mysql -uroot -ptest</description>
     
     <item>
       <title></title>
-      <link>https://wangyijie.store/posts/angluar/%E4%BB%A3%E7%A0%81%E8%A6%86%E7%9B%96%E7%8E%87/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://wangyijie.store/posts/angluar/%E4%BB%A3%E7%A0%81%E8%A6%86%E7%9B%96%E7%8E%87/</guid>
-      <description>&lt;h1 id=&#34;code-coverage&#34;&gt;
-  Code Coverage
-  &lt;a class=&#34;anchor&#34; href=&#34;#code-coverage&#34;&gt;#&lt;/a&gt;
-&lt;/h1&gt;
-&lt;h1 id=&#34;代码覆盖率&#34;&gt;
-  代码覆盖率
-  &lt;a class=&#34;anchor&#34; href=&#34;#%e4%bb%a3%e7%a0%81%e8%a6%86%e7%9b%96%e7%8e%87&#34;&gt;#&lt;/a&gt;
-&lt;/h1&gt;
-&lt;p&gt;With the Angular CLI we can run unit tests as well as create code coverage reports. Code coverage reports allow us to see any parts of our code base that may not be properly tested by our unit tests.&lt;br&gt;
-用Angular CLI我们能运行单元测试并创建代码覆盖率报告。代码覆盖率报告允许我们看到我们的代码库中的任何部分可能无法通过我们的单元测试。&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title></title>
       <link>https://wangyijie.store/posts/angluar/%E5%85%A8%E5%B1%80%E5%BA%93%E5%AE%89%E8%A3%85/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -851,6 +833,750 @@ workaround to install azure-cli:&lt;/p&gt;</description>
       
       <guid>https://wangyijie.store/posts/english/%E9%9B%85%E6%80%9D%E8%AF%84%E5%88%86%E6%A0%87%E5%87%86/</guid>
       <description>one thousand words</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/essay/ceph-scrub%E7%9A%84%E8%AF%A6%E7%BB%86%E5%88%86%E6%9E%90%E5%92%8C%E5%BB%BA%E8%AE%AE/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/essay/ceph-scrub%E7%9A%84%E8%AF%A6%E7%BB%86%E5%88%86%E6%9E%90%E5%92%8C%E5%BB%BA%E8%AE%AE/</guid>
+      <description>关于scrub这块一直想写一篇文章的，这个在很久前，就做过一次测试，当时是看这个scrub到底有多大的影响，当时看到的是磁盘读占很高，启动deep-scrub后会有大量的读,前端可能会出现 slow request,这个是当时测试看到的现象，一个比较简单的处理办法就是直接给scrub关掉了，当然关掉了就无法检测底层到底有没有对象不一致的问题</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/essay/excel-%E5%90%88%E5%B9%B6%E8%A1%A8%E6%A0%BC/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/essay/excel-%E5%90%88%E5%B9%B6%E8%A1%A8%E6%A0%BC/</guid>
+      <description>合并的表格表格列数相同</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/essay/git%E6%8E%A8%E9%80%81%E8%A6%86%E7%9B%96%E6%97%A7%E4%BB%93%E5%BA%93/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/essay/git%E6%8E%A8%E9%80%81%E8%A6%86%E7%9B%96%E6%97%A7%E4%BB%93%E5%BA%93/</guid>
+      <description>git push origin master &amp;ndash;force</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/essay/linux-shell%E6%B5%8F%E8%A7%88%E5%99%A8%E7%BB%88%E7%AB%AF%E6%B5%8F%E8%A7%88%E5%99%A8w3m%E5%8F%82%E8%80%83%E5%8F%82%E6%95%B0/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/essay/linux-shell%E6%B5%8F%E8%A7%88%E5%99%A8%E7%BB%88%E7%AB%AF%E6%B5%8F%E8%A7%88%E5%99%A8w3m%E5%8F%82%E8%80%83%E5%8F%82%E6%95%B0/</guid>
+      <description>w3m是一个基于文本的网页浏览器，支持多种操作系统，在命令行终端可以很好的支持中文。即使在没有鼠标支持的情况下也可以检查网页的输出。本文列出常用的快捷键。</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/essay/top-%E5%91%BD%E4%BB%A4%E8%A7%A3%E9%87%8A/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/essay/top-%E5%91%BD%E4%BB%A4%E8%A7%A3%E9%87%8A/</guid>
+      <description>VIRT：virtual memory usage 虚拟内存</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/essay/window-linux-%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%88%9B%E5%BB%BAzip%E5%8E%8B%E7%BC%A9%E5%8C%85/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/essay/window-linux-%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%88%9B%E5%BB%BAzip%E5%8E%8B%E7%BC%A9%E5%8C%85/</guid>
+      <description>linuz zip create compress package</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/essay/windows%E5%88%86%E5%B1%8F%E6%9C%BA%E5%B7%A7%E5%BF%AB%E6%8D%B7%E6%96%B9%E5%BC%8F/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/essay/windows%E5%88%86%E5%B1%8F%E6%9C%BA%E5%B7%A7%E5%BF%AB%E6%8D%B7%E6%96%B9%E5%BC%8F/</guid>
+      <description>windows + 上下左右即可任意分屏，最多四屏幕，还可以左右移动窗口的位置</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/essay/%E4%BC%A0%E7%BB%9F%E6%9C%8D%E8%A3%85/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/essay/%E4%BC%A0%E7%BB%9F%E6%9C%8D%E8%A3%85/</guid>
+      <description>襌衣：又称“单衣”，流行于秦汉时期，是一种作为上层人士平日所穿的单层罩衣</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/essay/%E5%8D%A1%E8%B7%AF%E9%87%8C/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/essay/%E5%8D%A1%E8%B7%AF%E9%87%8C/</guid>
+      <description>卡路里（简称卡，缩写为cal），由英文[Calorie])音译而来，其定义为在1个大气压下，将1克水提升1摄氏度所需要的热量</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/essay/%E5%AD%A6%E4%B8%8D%E5%8F%AF%E5%B7%A7/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/essay/%E5%AD%A6%E4%B8%8D%E5%8F%AF%E5%B7%A7/</guid>
+      <description>人更容易学会只有一条路径不能超前探索的技能，比如游泳，溜冰这类的，因为这些技能必须按部就班的练习，不会游泳就不能去深水，浅水反复摸索找到技巧不需要多久，溜冰也是不会就滑不起来，不熟不敢滑快，这些约束了人必须按部就班的练习，弹琴，绘画就不易学好，因为想怎么画都可以，反而很多人不能按部就班的练习</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/essay/%E7%AC%94%E8%AE%B0%E6%9C%AC%E8%A7%A6%E6%91%B8%E6%9D%BF%E6%93%8D%E4%BD%9C%E6%8A%80%E5%B7%A7/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/essay/%E7%AC%94%E8%AE%B0%E6%9C%AC%E8%A7%A6%E6%91%B8%E6%9D%BF%E6%93%8D%E4%BD%9C%E6%8A%80%E5%B7%A7/</guid>
+      <description>最初打游戏一直是鼠标控，不习惯使用笔记本触摸板，最近工作经常外出服务，鼠标有些累赘，刻意学习一下触摸板</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/golang/a-global-proxy-for-go-modules/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/golang/a-global-proxy-for-go-modules/</guid>
+      <description>export GOPROXY=https://goproxy.io</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/golang/cgo-install/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/golang/cgo-install/</guid>
+      <description>window下安装安装微软的c++编译器很臃肿，和visual studio配套的，安装mingw-w64会比较轻量，我遇到的问题在于安装程序不好下载，我上传到网盘了，下载直接安装。</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/golang/golang-%E5%87%BD%E6%95%B0%E5%92%8C%E9%97%AD%E5%8C%85/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/golang/golang-%E5%87%BD%E6%95%B0%E5%92%8C%E9%97%AD%E5%8C%85/</guid>
+      <description>接触golang有些时间了，以前磕磕碰碰的勉强写过几个小程序，最近工作又亲近golang，就想着再回头巩固一下，曾经遇到过几次的问题又再次遇到了，golang的函数定义格式是这样的：</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/istio/istio%E4%BF%97%E8%AF%AD%E5%92%8C%E7%BB%84%E4%BB%B6%E6%A6%82%E6%8B%AC/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/istio/istio%E4%BF%97%E8%AF%AD%E5%92%8C%E7%BB%84%E4%BB%B6%E6%A6%82%E6%8B%AC/</guid>
+      <description>Istio 使用 Envoy 代理的扩展版本，Envoy 是以 C++ 开发的高性能代理，用于调解服务网格中所有服务的所有入站和出站流量。Envoy 的许多内置功能被 istio 发扬光大</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/kubernetes/fluented-install/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/kubernetes/fluented-install/</guid>
+      <description>deploy elasticsearch persistent volume</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/kubernetes/gcr-proxy-cache/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/kubernetes/gcr-proxy-cache/</guid>
+      <description>GCR Proxy Cache服务器相当于一台GCR镜像服务器，国内用户可以经由该服务器从&lt;a href=&#34;http://gcr.io/&#34;&gt;gcr.io&lt;/a&gt;下载镜像</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/kubernetes/get-kubernetes-images-quickly/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/kubernetes/get-kubernetes-images-quickly/</guid>
+      <description>&lt;a href=&#34;https://katacoda.com/courses/kubernetes/playground&#34;&gt;https://katacoda.com/courses/kubernetes/playground&lt;/a&gt;</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/kubernetes/heapster-&#43;-influxdb-&#43;-grafana-%E7%9B%91%E6%8E%A7%E6%B2%A1%E6%95%B0%E6%8D%AE%E6%A1%88%E4%BE%8B/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/kubernetes/heapster-&#43;-influxdb-&#43;-grafana-%E7%9B%91%E6%8E%A7%E6%B2%A1%E6%95%B0%E6%8D%AE%E6%A1%88%E4%BE%8B/</guid>
+      <description>influxdb没有图形界面了，命令工具也不易安装，curl最方便，不过格式需要注意，我参照了许多才找到合适的</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/kubernetes/kube-scheduler-%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/kubernetes/kube-scheduler-%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86/</guid>
+      <description>kube-scheduler 调度分为两个阶段，predicate 和 priority</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/kubernetes/kubectl-%E5%88%9B%E5%BB%BA%E8%B5%84%E6%BA%90/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/kubernetes/kubectl-%E5%88%9B%E5%BB%BA%E8%B5%84%E6%BA%90/</guid>
+      <description>最近去参加了CKA考试，在速度上吃亏，以往喜欢复制粘贴修改摸板，在时间紧张的情况下这种方式的效率问题暴露了，导致考试时间紧张，没用时间解决难题，考试会要求创建各种类型的资源，所以这准备练习命令创建资源，提高操作效率</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/kubernetes/kubelet%E5%88%9B%E5%BB%BA%E5%AE%B9%E5%99%A8%E7%9A%84%E6%AD%A5%E9%AA%A4/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/kubernetes/kubelet%E5%88%9B%E5%BB%BA%E5%AE%B9%E5%99%A8%E7%9A%84%E6%AD%A5%E9%AA%A4/</guid>
+      <description>Kubelet 通过 CRI 接口（gRPC）调用 dockershim，请求创建一个容器，CRI 即容器运行时接口（Container Runtime Interface），这一步中，Kubelet 可以视作一个简单的 CRI Client，而 dockershim 就是接收请求的 Server。目前 dockershim 的代码其实是内嵌在 Kubelet 中的，所以接收调用的凑巧就是 Kubelet 进程</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/kubernetes/kubernetes-1-8%E5%AE%89%E8%A3%85%E8%AE%B0%E5%BD%95/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/kubernetes/kubernetes-1-8%E5%AE%89%E8%A3%85%E8%AE%B0%E5%BD%95/</guid>
+      <description>为了快速见证新功能，我们选择kubeadmin这个工具来创建集群，官方的工具虽然还在内测阶段，但各种服务的配置方式，可以做为自定义部署的参考，kubeadmin是多基于容器的，只要把每个容器的配置都熟悉了，自定义部署也是非常容易的，所以说这个kubeadmin可供细研究也可快速完成集群环境的搭建，里面有些需要注意的地方，参照这篇文章可以直接解决一些问题，省去一些搜索工作</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/kubernetes/kubernetes-api-%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/kubernetes/kubernetes-api-%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99/</guid>
+      <description>对于云计算系统，系统API实际上处于系统设计的统领地位。Kubernetes集群系统每支持一项新功能，引入一项新技术，一定会新引入对应的API对象，支持对该功能的管理操作。理解掌握的API，就好比抓住了K8s系统的牛鼻子。Kubernetes系统API的设计有以下几条原则</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/kubernetes/kubernetes-conformance-tests/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/kubernetes/kubernetes-conformance-tests/</guid>
+      <description>./sonobuoy images pull &amp;ndash;e2e-repo-config custom-repos.yaml -dry-run</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/kubernetes/kubernetes-etcd%E6%95%B0%E6%8D%AE%E7%AE%A1%E7%90%86/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/kubernetes/kubernetes-etcd%E6%95%B0%E6%8D%AE%E7%AE%A1%E7%90%86/</guid>
+      <description>etcd组织的数据结构清晰，查找操作简便，从数据层面去维护集群也很容易，保护好数据就有一切</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/kubernetes/kubernetes-pause-role/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/kubernetes/kubernetes-pause-role/</guid>
+      <description>相信熟悉kubernetes的朋友都知道，kubernetes启动 Pod 里定义的容器之前，kubelet 会先启动一个 infra 容器，并执行 /pause 让 infra 容器的主进程永远挂起。</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/kubernetes/kubernetes-%E7%BD%91%E7%BB%9C%E6%96%B9%E6%A1%88%E5%8F%8A-lvs%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/kubernetes/kubernetes-%E7%BD%91%E7%BB%9C%E6%96%B9%E6%A1%88%E5%8F%8A-lvs%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86/</guid>
+      <description>kubernetes network solution</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/kubernetes/kubernetes-%E8%B5%84%E6%BA%90%E7%BC%96%E6%8E%92%E5%B8%AE%E5%8A%A9/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/kubernetes/kubernetes-%E8%B5%84%E6%BA%90%E7%BC%96%E6%8E%92%E5%B8%AE%E5%8A%A9/</guid>
+      <description>我们在编写kubernetes资源清单的时候有很多细节不易记住，特别对于还不熟练的同学，寻找参考摸板是一件麻烦的事，下面介绍两种获取参考帮助的手段，足够大家无往不利</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/kubernetes/kubernetes%E4%BC%98%E5%85%88%E7%BA%A7%E8%B0%83%E5%BA%A6/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/kubernetes/kubernetes%E4%BC%98%E5%85%88%E7%BA%A7%E8%B0%83%E5%BA%A6/</guid>
+      <description>从 v1.8 开始，kube-scheduler 支持定义 Pod 的优先级，从而保证高优先级的 Pod 优先调度。并从 v1.11 开始默认开启</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/kubernetes/kubernetes%E7%9F%A5%E8%AF%86%E7%82%B9/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/kubernetes/kubernetes%E7%9F%A5%E8%AF%86%E7%82%B9/</guid>
+      <description>考cka需要整理kubernetes的知识，看了linux基金会的课程，感觉有点贵，赚钱不容易得到刀刃上，所以看下目录帮助熟悉学习目标即可</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/kubernetes/kubernetes%E8%AF%81%E4%B9%A6%E7%BB%AD%E6%9C%9F/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/kubernetes/kubernetes%E8%AF%81%E4%B9%A6%E7%BB%AD%E6%9C%9F/</guid>
+      <description>kubeadm 默认证书为一年，一年过期后，会导致api service不可用，使用过程中会出现：x509: certificate has expired or is not yet valid</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/kubernetes/metrics-server-%E9%83%A8%E7%BD%B2/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/kubernetes/metrics-server-%E9%83%A8%E7%BD%B2/</guid>
+      <description>heapster已经不在维护，转由metrics-server 替代，没安装metrics-server pod命令和自动调度不能正常工作</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/kubernetes/skiffold/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/kubernetes/skiffold/</guid>
+      <description>调试可用的配置，花了不少时间踩坑，拿走不谢</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/kubernetes/ubuntu18-04%E5%AE%89%E8%A3%85minikube/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/kubernetes/ubuntu18-04%E5%AE%89%E8%A3%85minikube/</guid>
+      <description>设置minikube使用的虚拟化环境， 启动miniKube环境</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/kubernetes/upgrade-kubernetes-to-1-19-4/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/kubernetes/upgrade-kubernetes-to-1-19-4/</guid>
+      <description>install upgrade tool kubeadm</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/kubernetes/yaml%E8%AF%AD%E6%B3%95/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/kubernetes/yaml%E8%AF%AD%E6%B3%95/</guid>
+      <description>YAML语言接受整个Unicode字符集。所有可接受的字符都可以在YAML文档中使用</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/kubernetes/%E9%87%8D%E5%A4%B4%E6%9E%84%E5%BB%BAkubernetes%E9%9B%86%E7%BE%A4v1-81/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/kubernetes/%E9%87%8D%E5%A4%B4%E6%9E%84%E5%BB%BAkubernetes%E9%9B%86%E7%BE%A4v1-81/</guid>
+      <description>重头构建kubernetes集群v1.81 {#重头构建kubernetes集群v1.81 .title}</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/literature/dwight-d-eisenhowerfarewell-address/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/literature/dwight-d-eisenhowerfarewell-address/</guid>
+      <description>Like every other &amp;ndash; Like every other citizen, I wish the new President, and all who will labor with him, Godspeed. I pray that the coming years will be blessed with peace and prosperity for all</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/literature/%E4%B8%8E%E5%B1%B1%E5%B7%A8%E6%BA%90%E7%BB%9D%E4%BA%A4%E4%B9%A6/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/literature/%E4%B8%8E%E5%B1%B1%E5%B7%A8%E6%BA%90%E7%BB%9D%E4%BA%A4%E4%B9%A6/</guid>
+      <description>人与人之间相互成为好朋友，重要的是要了解彼此天生的本性，然后成全他。夏禹不强迫伯成子高出来做官，是为了成全他的节操；孔子不向子夏借伞，是为了掩饰子夏的缺点；近时诸葛亮不逼迫徐庶投奔蜀汉，华歆不硬要管宁接受卿相的位子，以上这些人才可以说始终如一，是真正相互了解的好朋友。您看直木不可以做车轮，曲木不能够当椽子，这是因为人们不想委屈它们原来的本性，而让它们各得其所。所以士、农、工、商都各有自己的专业，都能以达到自己的志向为快乐，这一点只有通达的人才能理解，它应该是在您意料之中的。不能够因为自己喜爱华丽的帽子，而勉强越地的人也要去戴它；自己嗜好腐烂发臭的食物，而把死了的老鼠来喂养鸳雏。</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/literature/%E4%BA%BA%E7%B1%BB%E8%AF%AF%E5%88%A4%E5%BF%83%E7%90%86%E5%AD%A6/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/literature/%E4%BA%BA%E7%B1%BB%E8%AF%AF%E5%88%A4%E5%BF%83%E7%90%86%E5%AD%A6/</guid>
+      <description>查理·芒格以自己的经验总结出的心理学尝试，共25条</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/literature/%E4%BC%8A%E8%AE%AD/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/literature/%E4%BC%8A%E8%AE%AD/</guid>
+      <description>多欲就败坏法度，放纵就败坏礼制，因此给自身召来了罪过。上天造成的灾祸，还可回避；自己造成的灾祸，不可逃脱</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/literature/%E5%81%9A%E6%B3%95%E8%87%AA%E6%AF%99/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/literature/%E5%81%9A%E6%B3%95%E8%87%AA%E6%AF%99/</guid>
+      <description>那五羖大夫，是楚国偏僻的乡下人，他听说秦穆公贤明，就想当面去拜见却苦于没有路费，就把自己卖给秦国人，穿着粗布短衣给人家喂牛。秦穆公知道这件事后把他提拔起来，凌驾于万人之上，秦国没有人不满意。他出任秦相期间，向东讨伐过郑国，三次拥立晋国的国君，一次出兵救楚；他在秦国境内施行德化，巴国前来纳贡；他施德政于诸侯，四方少数民族前来朝见，由余听说后，不远万里赶来敲门投奔。五大夫出任秦相，劳累不坐车，酷暑炎热不打伞，走遍国中，不用随从的车辆，不带武装防卫，他的功名永载史册，他的德行施教于后代。五羖大夫死时，秦国不论男女都痛哭流涕，连小孩子也不唱歌谣，正在舂米的人也因悲哀而不发出相应的呼声，这就是五羖大夫的德行</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/literature/%E5%84%92%E8%80%85/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/literature/%E5%84%92%E8%80%85/</guid>
+      <description>儒者不因贫贱而灰心丧气，不因富贵而得意忘形。不因为国君的侮辱、卿大夫的掣肘、官员们的刁难而改变节操，所以才叫做‘儒’。现在很多人自命为儒但却有名无实，所以才往往被作为笑料来讲</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/literature/%E5%85%B9%E5%AE%8B%E6%9C%89%E4%B9%B1%E8%AF%91%E6%96%87/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/literature/%E5%85%B9%E5%AE%8B%E6%9C%89%E4%B9%B1%E8%AF%91%E6%96%87/</guid>
+      <description>孤没有才能，不能取得父兄的欢心，因此成为君王的忧虑，承蒙君王下达命令。君臣之间每天作战，如果君王说：‘我一定帮助臣下’，也只能唯命是听，人们有话说：‘不要经过动乱人家的门口。”君王如果赐恩保护敝邑，不去保护不忠，以奖励作乱的人，这是孤的愿望，请君王考虑一下</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/literature/%E5%85%B9%E5%AE%8B%E6%9C%89%E4%B9%B1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/literature/%E5%85%B9%E5%AE%8B%E6%9C%89%E4%B9%B1/</guid>
+      <description>孤不佞，不能媚于父兄，以为君忧，拜命之辱。抑君臣日战，君曰『余必臣是助』，亦唯命。人有言曰：『唯乱门之无过』。君若惠保敝邑，无亢不衷，以奖乱人，孤之望也。唯君图之！</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/literature/%E5%88%BA%E4%B8%96%E7%96%BE%E9%82%AA%E8%B5%8B/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/literature/%E5%88%BA%E4%B8%96%E7%96%BE%E9%82%AA%E8%B5%8B/</guid>
+      <description>五帝时候的礼仪制度不同，三王时候的礼仪制度也各不相同，气数到了极限，自然就要发生变化，非和是本来就是互相排斥的，施行仁德不能拯救社会的混乱，实行赏罚难道就可以惩戒时代的清浊吗?春秋时代是祸乱破败的开始，战国时又加重了人民的苦难，秦汉时期也没有什么改变，更增加了人民的怨恨和苦难，哪里还考虑百姓的死活，只要对自己有利就满足了</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/literature/%E5%88%BB%E6%84%8F/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/literature/%E5%88%BB%E6%84%8F/</guid>
+      <description>大道的朴素性决定了修道者的洁白，拒染悲欢喜怒好 恶种种感情色彩。大道的纯粹性决定了修道者的无为，面 对外界，拒不动摇，拒不触犯，拒不联络，拒不干涉。洁白了，无为了，精神当然不至于虚耗了</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/literature/%E5%90%9B%E5%AD%90/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/literature/%E5%90%9B%E5%AD%90/</guid>
+      <description>君子修其道德，不为穷困而改节。</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/literature/%E5%9C%A3%E7%9A%87%E4%B9%8B%E5%AF%86%E4%BB%A4/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/literature/%E5%9C%A3%E7%9A%87%E4%B9%8B%E5%AF%86%E4%BB%A4/</guid>
+      <description>若你放弃奢望，你将远离凡人的哀伤。因你的心已覆上黑暗的坚甲，伤无可伤。</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/literature/%E5%A2%A8%E8%8F%B2%E5%AE%9A%E5%BE%8B/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/literature/%E5%A2%A8%E8%8F%B2%E5%AE%9A%E5%BE%8B/</guid>
+      <description>如果有两种或两种以上的方式去做某件事情，而其中一种选择方式将导致灾难，则必定有人会做出这种选择。根本内容是：如果事情有变坏的可能，不管这种可能性有多小，它总会发生</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/literature/%E5%A4%A7%E5%AD%A6%E4%B9%8B%E9%81%93/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/literature/%E5%A4%A7%E5%AD%A6%E4%B9%8B%E9%81%93/</guid>
+      <description>自天子以至于庶人，壹是皆以修身为本。其本乱而末治者 否矣。其所厚者薄，而其所薄者厚，未之有也</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/literature/%E5%A4%A9%E4%B8%8B/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/literature/%E5%A4%A9%E4%B8%8B/</guid>
+      <description>天下大乱，贤王不显，道德分岐，天下人多各得一孔之见而自我欣赏。譬如耳目鼻口，它们各有其功能，但却不能互相通用。犹如百家众技，各有所长，时有所用。虽然如此，但不完备和全面，都是孤陋寡闻的人。割裂天地的完美，离析万物之理，把古人完美的道德弄得支离破碎，很少能具备天地的完美，相称于神明之容。所以，内圣外王之道暗而不明，抑郁而不发挥，天下的人各尽所欲而自为方术。可悲啊！百家各行其道而不回头，必定不能相合。后世的学者，不幸不能见到天地的纯真和古人的全貌，道术将被天下所割裂</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/literature/%E5%A5%BD%E5%AD%A6/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/literature/%E5%A5%BD%E5%AD%A6/</guid>
+      <description>君子食无求饱，居无求安，敏于事而慎于言，就有道而正焉，可谓好学也已</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/literature/%E5%AD%94%E5%AD%90/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/literature/%E5%AD%94%E5%AD%90/</guid>
+      <description>不降低自己的志向，不使自己的人格受到侮辱，只有伯夷、叔齐两人吧！”又说：“柳下惠、少连降低了自己的志向，使人格受到了侮辱”。又说“虞仲、夷逸隐居，不言世务，行为合干清高纯洁，自我废弃合于权变“。又说：”我就跟他们不同了，既不降志辱身以求进取，也不隐居避世脱离尘俗，没有绝对的可以，也没有绝对的不可以</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/literature/%E5%B0%A7%E6%88%92/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/literature/%E5%B0%A7%E6%88%92/</guid>
+      <description>战战栗栗，日慎一日；人莫蹪于山，而蹪于蛭
+战战栗栗，一天比一天谨慎。人不会被大山绊倒，而往往被小土堆绊倒。</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/literature/%E5%B1%B1%E6%9C%A8/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/literature/%E5%B1%B1%E6%9C%A8/</guid>
+      <description>世上的物类原本就是这样相互牵累、相互争夺的，两种物类之间也总是以利相召引</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/literature/%E5%B7%A7%E8%A8%80/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/literature/%E5%B7%A7%E8%A8%80/</guid>
+      <description>高高远远那苍天，如同人之父与母。没有罪也没有过，竟遇大祸难免除。苍天已经大发威，但我确实没错处。苍天不察太疏忽，但我确实是无辜</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/literature/%E5%B8%95%E9%87%91%E6%A3%AE%E5%AE%9A%E5%BE%8B/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/literature/%E5%B8%95%E9%87%91%E6%A3%AE%E5%AE%9A%E5%BE%8B/</guid>
+      <description>一个不称职的官员，可能有三条出路，第一是申请退职，把位子让给能干的人；第二是让一位能干的人来协助自己工作；第三是任用两个水平比自己更低的人当助手。这第一条路是万万走不得的，因为那样会丧失许多权利；第二条路也不能走，因为那个能干的人会成为自己的对手；看来只有第三条路最适宜。于是，两个平庸的助手分担了他的工作，他自己则高高在上发号施令，他们不会对自己的权利构成威胁。两个助手既然无能，他们就上行下效，再为自己找两个更加无能的助手。如此类推，就形成了一个机构臃肿，人浮于事，相互扯皮，效率低下的领导体系。帕金森得出结论：在行政管理中，行政机构会像金字塔一样不断增多，行政人员会不断膨胀，每个人都很忙，但组织效率越来越低下。</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/literature/%E5%B9%B8%E5%AD%98%E8%80%85%E5%81%8F%E5%B7%AE/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/literature/%E5%B9%B8%E5%AD%98%E8%80%85%E5%81%8F%E5%B7%AE/</guid>
+      <description>指的是只能看到经过某种筛选而产生的结果，而没有意识到筛选的过程，因此忽略了被筛选掉的关键信息。日常表达为 “沉默的数据”、“死人不会说话” 等</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/literature/%E5%BD%BC%E5%BE%B7%E5%8E%9F%E7%90%86/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/literature/%E5%BD%BC%E5%BE%B7%E5%8E%9F%E7%90%86/</guid>
+      <description>一个人，无论你有多大的聪明才智，也无论你如何努力进取，总会有一个你胜任不了的职位在等待着你，并且你一定会达到那个位置</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/literature/%E6%88%B4%E6%98%8E%E7%8E%AF%E7%90%86%E8%AE%BApdca/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/literature/%E6%88%B4%E6%98%8E%E7%8E%AF%E7%90%86%E8%AE%BApdca/</guid>
+      <description>PDCA是英语单词Plan(计划)、Do(执行)、Check(检查)和Act(纠正)的第一个字母</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/literature/%E6%94%AF%E5%85%AC%E5%A5%BD%E9%B9%A4/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/literature/%E6%94%AF%E5%85%AC%E5%A5%BD%E9%B9%A4/</guid>
+      <description>支公好鹤，住剡东峁山，有人遗其双鹤，少时翅长欲飞。支意惜之，乃铩其翮。鹤轩翥不复能飞，乃反顾翅，垂头视之，如有懊丧意。林曰：“既有凌霄之姿，何肯为人作耳目近玩？”养令翮成，置使飞去</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/literature/%E6%95%8C%E6%88%92/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/literature/%E6%95%8C%E6%88%92/</guid>
+      <description>皆知敌之仇，而不知为益之尤；皆知敌之害，而不知为利之大</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/literature/%E6%97%A0%E5%BF%83%E4%B9%8B%E5%AD%A6/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/literature/%E6%97%A0%E5%BF%83%E4%B9%8B%E5%AD%A6/</guid>
+      <description>人在生活中很多事物我们并没有刻意去记忆，遭遇多了自然而然的熟悉，人也不至于讨厌生活，感觉有压力多半是强求的东西过多了，心力承受不</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/literature/%E6%B4%AA%E8%8C%83/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/literature/%E6%B4%AA%E8%8C%83/</guid>
+      <description>武王胜殷，杀受，立武庚，以箕子归。作《洪范》</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/literature/%E6%B8%85%E5%B8%9D%E9%80%80%E4%BD%8D%E8%AF%8F%E4%B9%A6/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/literature/%E6%B8%85%E5%B8%9D%E9%80%80%E4%BD%8D%E8%AF%8F%E4%B9%A6/</guid>
+      <description>今全国人民心理，多倾向共和，南中各省既倡议于前，北方诸将亦主张于后，人心所向，天命可知，予亦何忍因一姓之尊荣，拂兆民之好恶？是用外观大势，内审舆情，特率皇帝，将统治权公诸全国，定为共和立宪国体，近慰海内厌乱望治之心，远协古圣天下为公之义</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/literature/%E7%9C%81%E5%BF%83%E5%BD%95/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/literature/%E7%9C%81%E5%BF%83%E5%BD%95/</guid>
+      <description>礼义廉耻，可以律己，不可以绳人</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/literature/%E7%A8%B7%E4%B8%8B%E5%AD%A6%E5%AE%AB/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/literature/%E7%A8%B7%E4%B8%8B%E5%AD%A6%E5%AE%AB/</guid>
+      <description>由于不少人是善于把学术和政治结合起来游说当权者的能手，故在宣王时受上大夫称号之稷下士多达七十六人。稷下学宫的存在，曾为当时百家争鸣开创了良好的社会环境，促进了先秦时期学术文化的繁荣</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/literature/%E7%BA%AF%E7%99%BD%E4%B9%8B%E9%81%93/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/literature/%E7%BA%AF%E7%99%BD%E4%B9%8B%E9%81%93/</guid>
+      <description>有机械者必有机事，有机事者必有机心。机心存于胸中则纯白不备。纯白不备，则神生不定；神生不定者，道之所不载也</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/literature/%E8%83%86%E5%B0%8F%E9%AC%BC%E5%8D%9A%E5%BC%88/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/literature/%E8%83%86%E5%B0%8F%E9%AC%BC%E5%8D%9A%E5%BC%88/</guid>
+      <description>两名车手向对方驱车而行，谁最先让开的一方被耻笑为“胆小鬼”（chicken），让另一方胜出，因此这博弈模型在英文中称为The Game of Chicken，但如果两人拒绝收掣，任由两车相撞，最终谁得无法得益。</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/literature/%E8%87%AA%E6%88%91%E5%89%A5%E5%89%8A/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/literature/%E8%87%AA%E6%88%91%E5%89%A5%E5%89%8A/</guid>
+      <description>机会成本，边际成本，边际效用，生产可能曲线 收益与成本 收益最大化容易陷入自我剥削 没有利用好机会是浪费</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/literature/%E8%89%BE%E6%A3%AE%E8%B1%AA%E5%A8%81%E5%B0%94%E5%91%8A%E5%88%AB%E6%BC%94%E8%AF%B4/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/literature/%E8%89%BE%E6%A3%AE%E8%B1%AA%E5%A8%81%E5%B0%94%E5%91%8A%E5%88%AB%E6%BC%94%E8%AF%B4/</guid>
+      <description>纵观美国在自由政府体制上的探索历程，我们的基本目的始终是维护和平，促进人类进步，在人民中和国家之间增进自由权，提高尊严，宏扬正直的品质。追求较低的目标会辱没一个自由、有虔诚宗教信仰的民族。任何由于骄傲自大或理解力不强或缺乏奉献精神的失败都将在国内外给我们带来严重损害。</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/literature/%E8%A1%8C%E6%94%BF%E5%8C%BA%E5%9F%9F%E7%94%B1%E6%9D%A5/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/literature/%E8%A1%8C%E6%94%BF%E5%8C%BA%E5%9F%9F%E7%94%B1%E6%9D%A5/</guid>
+      <description>我们看电视，学历史，听过各种地域名字，各种郡，州;中华四个个地域划分方式的背景</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/literature/%E8%AE%BA%E5%96%84%E6%81%B6/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/literature/%E8%AE%BA%E5%96%84%E6%81%B6/</guid>
+      <description>于一切法，无取无舍，于一切事，无染无执，于一切境，不动不摇，于一切时，常行方便，随顺众生，令皆欢喜</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/literature/%E8%AF%92%E9%83%91%E5%AD%90%E4%BA%A7%E4%B9%A6/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/literature/%E8%AF%92%E9%83%91%E5%AD%90%E4%BA%A7%E4%B9%A6/</guid>
+      <description>从前先王衡量事情的轻重来断定罪行，不制定刑法，这是害怕百姓有争夺之心。还是不能防止犯罪，因此用道义来防范，用政令来约束，用礼仪来奉行，用信用来保持，用仁爱来奉养。制定禄位，以勉励服从的人，严厉地判罪，以威胁放纵的人。还恐怕不能收效，所以用忠诚来教诲他们，根据行为来奖励他们，用专业知识技艺教导他们，用和悦的态度使用他们，用严肃认真对待他们，用威严监临他们，用坚决的态度判断他们的罪行。还要访求聪明贤能的卿相、明白事理的官员、忠诚守信的乡长、慈祥和蔼的老师，百姓在这种情况下才可以使用，而不致于发生祸乱。百姓知道有法律，就对上面不恭敬。大家都有争夺之心，用刑法作为根据，而且侥幸得到成功，就不能治理了</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/literature/%E8%BE%BE%E7%94%9F/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/literature/%E8%BE%BE%E7%94%9F/</guid>
+      <description>通晓生命实情的人，不会去努力追求对于生命没有什么好处的东西；通晓命运实情的人，不会去努力追求命运无可奈何的事情</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/literature/%E9%81%93%E8%B7%AF%E4%BB%A5%E7%9B%AE/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/literature/%E9%81%93%E8%B7%AF%E4%BB%A5%E7%9B%AE/</guid>
+      <description>这是用强制的手段来堵住民众的嘴啊！这样堵住人们的嘴，就像堵住了一条河。河一旦决口，要造成灭顶之灾；人们的嘴被堵住了，带来的危害远甚于河水！治水要采用疏导的办法，治民要让天下人畅所欲言</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/literature/%E9%97%AE%E8%AF%B4/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/literature/%E9%97%AE%E8%AF%B4/</guid>
+      <description>真实可信的话不漂亮，漂亮的话不真实。善良的人不巧说，巧说的人不善良。真正有知识的人不卖弄，卖弄自己懂得多的人不是真有知识。圣人是不存占有之心的，而是尽力照顾别人，他自己也更为充足；他尽力给予别人，自己反而更丰富。自然的规律是让万事万物都得到好处，而不伤害它们。圣人的行为准则是，做什么事都不跟别人争夺</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/literature/%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86%E4%B9%9D%E5%A4%A7%E4%BD%93%E7%B3%BB/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/literature/%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86%E4%B9%9D%E5%A4%A7%E4%BD%93%E7%B3%BB/</guid>
+      <description>一、项目综合管理：项目计划制订，项目计划执行，总体变更控制。</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/literature/%E9%AD%94%E5%9F%9F%E4%BC%A0%E8%AF%B4/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/literature/%E9%AD%94%E5%9F%9F%E4%BC%A0%E8%AF%B4/</guid>
+      <description>如水流向低处，实在不断流向空无</description>
+    </item>
+    
+    <item>
+      <title>代码覆盖率</title>
+      <link>https://wangyijie.store/posts/angluar/%E4%BB%A3%E7%A0%81%E8%A6%86%E7%9B%96%E7%8E%87/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/angluar/%E4%BB%A3%E7%A0%81%E8%A6%86%E7%9B%96%E7%8E%87/</guid>
+      <description>&lt;h1 id=&#34;代码覆盖率&#34;&gt;
+  代码覆盖率
+  &lt;a class=&#34;anchor&#34; href=&#34;#%e4%bb%a3%e7%a0%81%e8%a6%86%e7%9b%96%e7%8e%87&#34;&gt;#&lt;/a&gt;
+&lt;/h1&gt;
+&lt;p&gt;With the Angular CLI we can run unit tests as well as create code coverage reports. Code coverage reports allow us to see any parts of our code base that may not be properly tested by our unit tests.&lt;br&gt;
+用Angular CLI我们能运行单元测试并创建代码覆盖率报告。代码覆盖率报告允许我们看到我们的代码库中的任何部分可能无法通过我们的单元测试。&lt;/p&gt;</description>
     </item>
     
   </channel>

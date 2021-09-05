@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="重头构建kubernetes集群v1.81 {#重头构建kubernetes集群v1.81 .title}">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="" />
+<meta property="og:description" content="重头构建kubernetes集群v1.81 {#重头构建kubernetes集群v1.81 .title}" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://wangyijie.store/posts/kubernetes/%E9%87%8D%E5%A4%B4%E6%9E%84%E5%BB%BAkubernetes%E9%9B%86%E7%BE%A4v1-81/" /><meta property="article:section" content="posts" />
+
+
+
+<title>重头构建kubernetes集群v1 81 | hope to be a great computer technology Site</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.46181bc93375ba932026e753b37c40e6ff8bb16a9ef770c78bcc663e4577b1ba.css" integrity="sha256-RhgbyTN1upMgJudTs3xA5v&#43;LsWqe93DHi8xmPkV3sbo=" crossorigin="anonymous">
+  <script defer src="/flexsearch.min.js"></script>
+  <script defer src="/en.search.min.e03f7285907974dc7344f2e5e1442ed3b50de4dfa5bcf431ba1efb67489bd5fc.js" integrity="sha256-4D9yhZB5dNxzRPLl4UQu07UN5N&#43;lvPQxuh77Z0ib1fw=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-NBRSWPN');</script>
+    
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>hope to be a great computer technology Site</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/posts/" >
+        Posts
+      </a>
+      
+<ul>
+  
+  <li>
+    <a href="/posts/angluar/" >
+        angular
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/ansible/" >
+        ansible
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/cicd/" >
+        CICD
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/devops/" >
+        DevOps
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/english/" >
+        English
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/golang/" >
+        golang
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/istio/" >
+        istio
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/kubernetes/" >
+        Kubernetes
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/material2/" >
+        mererial2
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/mysql/" >
+        mysql
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/postgresql/" >
+        postgresql
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/python/" >
+        python
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/cloud/" >
+        云服务
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/security/" >
+        安全
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/container/" >
+        容器
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/literature/" >
+        文学
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/diary/" >
+        日记
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/machine_learning/" >
+        机器学习
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/monitor/" >
+        监控
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/sre/" >
+        站点可靠性工程
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/network/" >
+        网络
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/poetry/" >
+        诗歌
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/essay/" >
+        随笔
+      </a>
+  </li>
+  
+</ul>
+
+  </li>
+  
+  <li>
+    <a href="/about/" >
+        关于作者
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var a=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(b){localStorage.setItem("menu.scrollTop",a.scrollTop)}),a.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>重头构建kubernetes集群v1 81</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents"></nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+<article class="markdown">
+  <h1>
+    <a href="/posts/kubernetes/%E9%87%8D%E5%A4%B4%E6%9E%84%E5%BB%BAkubernetes%E9%9B%86%E7%BE%A4v1-81/">重头构建kubernetes集群v1 81</a>
+  </h1>
+  
+
+
+  
+  <div>
+    
+      <a href="/categories/development/">Development</a>, 
+      <a href="/categories/opetration/">Opetration</a>
+  </div>
+  
+
+  
+  <div>
+    
+      <a href="/tags/wangyijie/">wangyijie</a>, 
+      <a href="/tags/kubernetes/">Kubernetes</a>
+  </div>
+  
+
+
+
+<h1 id="重头构建kubernetes集群v1.81">
+  重头构建kubernetes集群v1.81
+  <a class="anchor" href="#%e9%87%8d%e5%a4%b4%e6%9e%84%e5%bb%bakubernetes%e9%9b%86%e7%be%a4v1.81">#</a>
+</h1>
+<p>简洁点只记录步骤，关键的地方才备注说明；</p>
+<p>设置包转发：</p>
+<blockquote>
+<p>net.ipv4.ip_forward = 1\</p>
+</blockquote>
+<p>下载二进制包：</p>
+<p>先下载最新版本的源码：</p>
+<blockquote>
+<p><a href="https://github.com/kubernetes/kubernetes/releases/tag/v1.8.1">https://github.com/kubernetes/kubernetes/releases/tag/v1.8.1</a>\</p>
+</blockquote>
+<p>下载后解压，运行下载脚本，本人当时国内下载速度还蛮快，庆幸！</p>
+<blockquote>
+<p>./kubernetes/cluster/get-kube-binaries.sh\</p>
+</blockquote>
+<p><img src="http://upload-images.jianshu.io/upload_images/6000429-24339c50b4059d4e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" />{data-height=&ldquo;407&rdquo;
+data-width=&ldquo;820&rdquo; image-slug=&ldquo;24339c50b4059d4e&rdquo;
+original-src=&ldquo;<a href="http://upload-images.jianshu.io/upload_images/6000429-24339c50b4059d4e.png?imageMogr2/auto-orient/strip%22%7d">http://upload-images.jianshu.io/upload_images/6000429-24339c50b4059d4e.png?imageMogr2/auto-orient/strip"}</a>\</p>
+<p>下载二进制程序</p>
+<p>下载包存放的位置，里面包含了所有需要的软件，\</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/6000429-6af8e8a8f7980226.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" />{data-height=&ldquo;33&rdquo;
+data-width=&ldquo;577&rdquo; image-slug=&ldquo;6af8e8a8f7980226&rdquo;
+original-src=&ldquo;<a href="http://upload-images.jianshu.io/upload_images/6000429-6af8e8a8f7980226.png?imageMogr2/auto-orient/strip%22%7d">http://upload-images.jianshu.io/upload_images/6000429-6af8e8a8f7980226.png?imageMogr2/auto-orient/strip"}</a>\</p>
+<p>包下载的二进制解压，可以放一个新的目录，后面的描述主要基于二进制文件目录，./kubernetes/server/bin包含所有必需的二进制文件</p>
+<p>安装docker</p>
+<blockquote>
+<p>yum install -y yum-utils\device-mapper-persistent-data\lvm2\</p>
+</blockquote>
+<p>现在docker只有一个包，不在依赖自己的包，都在系统源里面有，所有下载一个aliyun的安装包就可以安装</p>
+<blockquote>
+<p>wget
+<a href="http://mirrors.aliyun.com/docker-ce/linux/centos/7/x86_64/stable/Packages/docker-ce-17.06.2.ce-1.el7.centos.x86_64.rpm">http://mirrors.aliyun.com/docker-ce/linux/centos/7/x86_64/stable/Packages/docker-ce-17.06.2.ce-1.el7.centos.x86_64.rpm</a>\</p>
+</blockquote>
+<p>安装前可以更新下系统</p>
+<blockquote>
+<p>yum install docker-ce-17.06.2.ce-1.el7.centos.x86_64.rpm\</p>
+</blockquote>
+<blockquote>
+<p>systemctl start docker &amp;&amp; systemctl enable docker &amp;&amp; systemctl status
+docker\</p>
+</blockquote>
+<p>导入镜像</p>
+<blockquote>
+<p>docker load -i ./kubernetes/server/bin/kube-apiserver.tar\</p>
+<p>docker load -i ./kubernetes/server/bin/kube-controller-manager.tar</p>
+<p>docker load -i ./kubernetes/server/bin/kube-proxy.tar</p>
+<p>docker load -i ./kubernetes/server/bin/kube-scheduler.tar\</p>
+</blockquote>
+<p>::: image-package
+<img src="http://upload-images.jianshu.io/upload_images/6000429-5b3e48670ff45630.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" />{data-height=&ldquo;182&rdquo;
+data-width=&ldquo;714&rdquo; image-slug=&ldquo;5b3e48670ff45630&rdquo;
+original-src=&ldquo;<a href="http://upload-images.jianshu.io/upload_images/6000429-5b3e48670ff45630.png?imageMogr2/auto-orient/strip%22%7d">http://upload-images.jianshu.io/upload_images/6000429-5b3e48670ff45630.png?imageMogr2/auto-orient/strip"}</a>\</p>
+<p>::: image-package
+<img src="http://upload-images.jianshu.io/upload_images/6000429-80bba51cccd63e64.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" />{data-height=&ldquo;116&rdquo;
+data-width=&ldquo;832&rdquo; image-slug=&ldquo;80bba51cccd63e64&rdquo;
+original-src=&ldquo;<a href="http://upload-images.jianshu.io/upload_images/6000429-80bba51cccd63e64.png?imageMogr2/auto-orient/strip%22%7d">http://upload-images.jianshu.io/upload_images/6000429-80bba51cccd63e64.png?imageMogr2/auto-orient/strip"}</a>\</p>
+<p>下载etcd镜像：\</p>
+<blockquote>
+<p>docker pull quay.io/coreos/etcd:v2.2.1</p>
+</blockquote>
+<p>生成证书，证书我也觉得很扎手，我是复制kubeadm的证书，自己想办法</p>
+<blockquote>
+<p><a href="https://kubernetes.io/docs/admin/authentication/#creating-certificates/">https://kubernetes.io/docs/admin/authentication/#creating-certificates/</a>\</p>
+</blockquote>
+<p>设置adminconfig,会在目录下生产一个配置文件</p>
+<blockquote>
+<p>kubectl config set-cluster local
+--certificate-authority=/srv/kubernetes/ca.crt --embed-certs=true
+--server=https://172.19.6.28\</p>
+<p>kubectl config set-credentials admin
+--client-certificate=/srv/kubernetes/apiserver.crt
+--client-key=/srv/kubernetes/apiserver.key --embed-certs=true
+--token=RrRixoUDucnmsFMFzHRpARpsK4VcgXop</p>
+<p>kubectl config set-context kubernetes --cluster=local --user=admin</p>
+<p>kubectl config use-context kubernetes</p>
+</blockquote>
+<p>具体的配置文件生成就不细说了，可以参照以前配置文件</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+  
+
+  
+
+  <script src="https://utteranc.es/client.js" repo="wanyijie/blog" issue-term="pathname" label="web"
+    theme="github-light" crossorigin="anonymous" async>
+    </script>
+</div>
+
+
+
+<script>{ { . | safeJS } }</script>
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents"></nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6266541561533854"
+     crossorigin="anonymous"></script>
+     
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NBRSWPN"
+     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+     
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

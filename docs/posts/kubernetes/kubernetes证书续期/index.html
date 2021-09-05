@@ -3,19 +3,9 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="kubeadm 默认证书为一年，一年过期后，会导致api service不可用，使用过程中会出现：x509: certificate has expired or is not yet valid.
-方案一 通过修改kubeadm 调整证书过期时间
-一、使用kubadm 更新证书#1. 查看证书有效期#kubeadm alpha certs check-expiration 2. 重新签发证书#kubeadm alpha certs renew admin.conf kubeadm alpha certs renew scheduler.conf kubeadm alpha certs renew controller-manager.conf 3. 重启控制平面使生效#重启kubelet会自动重新创建核心组件
-systemctl restart kubelet 4. 验证#kubeadm alpha certs check-expiration
-二、创建长期有效期证书#自己创建这四个文件需要的证书，替换四个文件使用的内嵌证书。我们自己创建的证书的有效期为50年，不再有过期的风险。步骤如下：
-生成证书：#cd /etc/kubernetes mkdir cert cd cert/ cat &gt; ca-config.">
+<meta name="description" content="kubeadm 默认证书为一年，一年过期后，会导致api service不可用，使用过程中会出现：x509: certificate has expired or is not yet valid">
 <meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="" />
-<meta property="og:description" content="kubeadm 默认证书为一年，一年过期后，会导致api service不可用，使用过程中会出现：x509: certificate has expired or is not yet valid.
-方案一 通过修改kubeadm 调整证书过期时间
-一、使用kubadm 更新证书#1. 查看证书有效期#kubeadm alpha certs check-expiration 2. 重新签发证书#kubeadm alpha certs renew admin.conf kubeadm alpha certs renew scheduler.conf kubeadm alpha certs renew controller-manager.conf 3. 重启控制平面使生效#重启kubelet会自动重新创建核心组件
-systemctl restart kubelet 4. 验证#kubeadm alpha certs check-expiration
-二、创建长期有效期证书#自己创建这四个文件需要的证书，替换四个文件使用的内嵌证书。我们自己创建的证书的有效期为50年，不再有过期的风险。步骤如下：
-生成证书：#cd /etc/kubernetes mkdir cert cd cert/ cat &gt; ca-config." />
+<meta property="og:description" content="kubeadm 默认证书为一年，一年过期后，会导致api service不可用，使用过程中会出现：x509: certificate has expired or is not yet valid" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://wangyijie.store/posts/kubernetes/kubernetes%E8%AF%81%E4%B9%A6%E7%BB%AD%E6%9C%9F/" /><meta property="article:section" content="posts" />
 
@@ -26,7 +16,7 @@ systemctl restart kubelet 4. 验证#kubeadm alpha certs check-expiration
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.46181bc93375ba932026e753b37c40e6ff8bb16a9ef770c78bcc663e4577b1ba.css" integrity="sha256-RhgbyTN1upMgJudTs3xA5v&#43;LsWqe93DHi8xmPkV3sbo=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.a070b2dd452cb474e30248358b5ef77b98384931c60a9e827b5a4dac3fefed89.js" integrity="sha256-oHCy3UUstHTjAkg1i173e5g4STHGCp6Ce1pNrD/v7Yk=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.e03f7285907974dc7344f2e5e1442ed3b50de4dfa5bcf431ba1efb67489bd5fc.js" integrity="sha256-4D9yhZB5dNxzRPLl4UQu07UN5N&#43;lvPQxuh77Z0ib1fw=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -321,7 +311,19 @@ https://github.com/alex-shpak/hugo-book
 
 
   
+  <div>
+    
+      <a href="/categories/development/">Development</a>, 
+      <a href="/categories/opetration/">Opetration</a>
+  </div>
+  
 
+  
+  <div>
+    
+      <a href="/tags/wangyijie/">wangyijie</a>, 
+      <a href="/tags/kubernetes/">Kubernetes</a>
+  </div>
   
 
 

@@ -3,19 +3,9 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="现在容器运行时已经很多，有些原理差别大了，以最熟悉的dcoker为列，特殊的特别了解
-容器的组成#control-group &#43; namespace &#43; image
-namespace 的种类# mount, 2. uts, 3. pid, 4. network, 5. user, 6. ipc, 7. cgroup
-  cgroup类型:#两种驱动：systemd cgroup driver, cgroupfs cgroup driver cgroup类型: cpu cpuset cpuacct, memory, device, freezer, blkio, pid, net_cls, net_ prio, hugetlb, perf-event, rdma
-image 原理#分层文件系统或联合文件系统，有mergedir, workdir, upper层，lower层的概念， mergedir：整合lower层和upper层显示一个完整的文件系统视图 upper: 容器读写层 workdir: 写入会保存到upper层 lower：镜像层，不会改变
-知名的运行时#docker, RTK, firecracker, kata-containers / runtime, google / gvisor, podman">
+<meta name="description" content="现在容器运行时已经很多，有些原理差别大了，以最熟悉的dcoker为列，特殊的特别了解">
 <meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="" />
-<meta property="og:description" content="现在容器运行时已经很多，有些原理差别大了，以最熟悉的dcoker为列，特殊的特别了解
-容器的组成#control-group &#43; namespace &#43; image
-namespace 的种类# mount, 2. uts, 3. pid, 4. network, 5. user, 6. ipc, 7. cgroup
-  cgroup类型:#两种驱动：systemd cgroup driver, cgroupfs cgroup driver cgroup类型: cpu cpuset cpuacct, memory, device, freezer, blkio, pid, net_cls, net_ prio, hugetlb, perf-event, rdma
-image 原理#分层文件系统或联合文件系统，有mergedir, workdir, upper层，lower层的概念， mergedir：整合lower层和upper层显示一个完整的文件系统视图 upper: 容器读写层 workdir: 写入会保存到upper层 lower：镜像层，不会改变
-知名的运行时#docker, RTK, firecracker, kata-containers / runtime, google / gvisor, podman" />
+<meta property="og:description" content="现在容器运行时已经很多，有些原理差别大了，以最熟悉的dcoker为列，特殊的特别了解" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://wangyijie.store/posts/kubernetes/%E5%AE%B9%E5%99%A8%E7%9A%84%E5%8E%9F%E7%90%86/" /><meta property="article:section" content="posts" />
 
@@ -26,7 +16,7 @@ image 原理#分层文件系统或联合文件系统，有mergedir, workdir, 
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.46181bc93375ba932026e753b37c40e6ff8bb16a9ef770c78bcc663e4577b1ba.css" integrity="sha256-RhgbyTN1upMgJudTs3xA5v&#43;LsWqe93DHi8xmPkV3sbo=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.a070b2dd452cb474e30248358b5ef77b98384931c60a9e827b5a4dac3fefed89.js" integrity="sha256-oHCy3UUstHTjAkg1i173e5g4STHGCp6Ce1pNrD/v7Yk=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.e03f7285907974dc7344f2e5e1442ed3b50de4dfa5bcf431ba1efb67489bd5fc.js" integrity="sha256-4D9yhZB5dNxzRPLl4UQu07UN5N&#43;lvPQxuh77Z0ib1fw=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book

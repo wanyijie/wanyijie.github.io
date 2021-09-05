@@ -3,11 +3,9 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="服务匹配部署是在template下的labels,选择一个labels即可，一个服务可以对应多个部署，部署的副本越多分的流量比例越大哦，以此来实现金丝雀发布，同理也可以做蓝绿部署，就是在部署的template labels上交换添加移除标签的事
-apiVersion: extensions/v1beta1 kind: Deployment metadata: labels: run: old-nginx name: old-nginx spec: replicas: 1 selector: matchLabels: run: old-nginx template: metadata: labels: run: old-nginx app: nginx spec: containers: - image: registry.cn-hangzhou.aliyuncs.com/xianlu/old-nginx imagePullPolicy: Always name: old-nginx ports: - containerPort: 80 protocol: TCP restartPolicy: Always#apiVersion: extensions/v1beta1 kind: Deployment metadata: labels: run: new-nginx name: new-nginx spec: replicas: 1 selector: matchLabels: run: new-nginx template: metadata: labels: run: new-nginx app: nginx spec: containers: - image: registry.">
+<meta name="description" content="服务匹配部署是在template下的labels,选择一个labels即可，一个服务可以对应多个部署，部署的副本越多分的流量比例越大哦，以此来实现金丝雀发布，同理也可以做蓝绿部署，就是在部署的template labels上交换添加移除标签的事">
 <meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="" />
-<meta property="og:description" content="服务匹配部署是在template下的labels,选择一个labels即可，一个服务可以对应多个部署，部署的副本越多分的流量比例越大哦，以此来实现金丝雀发布，同理也可以做蓝绿部署，就是在部署的template labels上交换添加移除标签的事
-apiVersion: extensions/v1beta1 kind: Deployment metadata: labels: run: old-nginx name: old-nginx spec: replicas: 1 selector: matchLabels: run: old-nginx template: metadata: labels: run: old-nginx app: nginx spec: containers: - image: registry.cn-hangzhou.aliyuncs.com/xianlu/old-nginx imagePullPolicy: Always name: old-nginx ports: - containerPort: 80 protocol: TCP restartPolicy: Always#apiVersion: extensions/v1beta1 kind: Deployment metadata: labels: run: new-nginx name: new-nginx spec: replicas: 1 selector: matchLabels: run: new-nginx template: metadata: labels: run: new-nginx app: nginx spec: containers: - image: registry." />
+<meta property="og:description" content="服务匹配部署是在template下的labels,选择一个labels即可，一个服务可以对应多个部署，部署的副本越多分的流量比例越大哦，以此来实现金丝雀发布，同理也可以做蓝绿部署，就是在部署的template labels上交换添加移除标签的事" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://wangyijie.store/posts/kubernetes/%E5%9F%BA%E4%BA%8Ekubernetes-service%E5%AE%9E%E7%8E%B0%E9%87%91%E4%B8%9D%E9%9B%80%E8%93%9D%E7%BB%BF%E5%8F%91%E5%B8%83/" /><meta property="article:section" content="posts" />
 
@@ -18,7 +16,7 @@ apiVersion: extensions/v1beta1 kind: Deployment metadata: labels: run: old-nginx
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.46181bc93375ba932026e753b37c40e6ff8bb16a9ef770c78bcc663e4577b1ba.css" integrity="sha256-RhgbyTN1upMgJudTs3xA5v&#43;LsWqe93DHi8xmPkV3sbo=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.a070b2dd452cb474e30248358b5ef77b98384931c60a9e827b5a4dac3fefed89.js" integrity="sha256-oHCy3UUstHTjAkg1i173e5g4STHGCp6Ce1pNrD/v7Yk=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.e03f7285907974dc7344f2e5e1442ed3b50de4dfa5bcf431ba1efb67489bd5fc.js" integrity="sha256-4D9yhZB5dNxzRPLl4UQu07UN5N&#43;lvPQxuh77Z0ib1fw=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book

@@ -12,7 +12,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/istio/istio%E4%BF%97%E8%AF%AD%E5%92%8C%E7%BB%84%E4%BB%B6%E6%A6%82%E6%8B%AC/</guid>
-      <description>istio概况</description>
+      <description>Istio 使用 Envoy 代理的扩展版本，Envoy 是以 C++ 开发的高性能代理，用于调解服务网格中所有服务的所有入站和出站流量。Envoy 的许多内置功能被 istio 发扬光大</description>
     </item>
     
   </channel>

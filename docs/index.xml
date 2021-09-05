@@ -191,24 +191,6 @@ mysql -uroot -ptest</description>
     
     <item>
       <title></title>
-      <link>https://wangyijie.store/posts/angluar/%E4%BB%A3%E7%A0%81%E8%A6%86%E7%9B%96%E7%8E%87/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://wangyijie.store/posts/angluar/%E4%BB%A3%E7%A0%81%E8%A6%86%E7%9B%96%E7%8E%87/</guid>
-      <description>&lt;h1 id=&#34;code-coverage&#34;&gt;
-  Code Coverage
-  &lt;a class=&#34;anchor&#34; href=&#34;#code-coverage&#34;&gt;#&lt;/a&gt;
-&lt;/h1&gt;
-&lt;h1 id=&#34;代码覆盖率&#34;&gt;
-  代码覆盖率
-  &lt;a class=&#34;anchor&#34; href=&#34;#%e4%bb%a3%e7%a0%81%e8%a6%86%e7%9b%96%e7%8e%87&#34;&gt;#&lt;/a&gt;
-&lt;/h1&gt;
-&lt;p&gt;With the Angular CLI we can run unit tests as well as create code coverage reports. Code coverage reports allow us to see any parts of our code base that may not be properly tested by our unit tests.&lt;br&gt;
-用Angular CLI我们能运行单元测试并创建代码覆盖率报告。代码覆盖率报告允许我们看到我们的代码库中的任何部分可能无法通过我们的单元测试。&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title></title>
       <link>https://wangyijie.store/posts/angluar/%E5%85%A8%E5%B1%80%E5%BA%93%E5%AE%89%E8%A3%85/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -887,25 +869,7 @@ workaround to install azure-cli:&lt;/p&gt;</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/essay/ceph-scrub%E7%9A%84%E8%AF%A6%E7%BB%86%E5%88%86%E6%9E%90%E5%92%8C%E5%BB%BA%E8%AE%AE/</guid>
-      <description>前言#关于scrub这块一直想写一篇文章的，这个在很久前，就做过一次测试，当时是看这个scrub到底有多大的影响，当时看到的是磁盘读占很高，启动deep-scrub后会有大量的读,前端可能会出现 slow request,这个是当时测试看到的现象，一个比较简单的处理办法就是直接给scrub关掉了，当然关掉了就无法检测底层到底有没有对象不一致的问题 关于这个scrub生产上是否开启，仁者见仁，智者见智，就是选择的问题了，这里不做讨论，个人觉得开和关都有各自的道理，本篇是讲述的如果想开启的情况下如何把scrub给控制住
-最近在ceph群里看到一段大致这样的讨论：
- scrub是个坑 小文件多的场景一定要把scrub关掉 单pg的文件量达到一定规模，scrub一开就会有slow request 这个问题解决不了
- 上面的说法有没有问题呢？在一般情况下来看，确实如此，但是我们是否能尝试去解决下这个问题，或者缓解下呢？那么我们就来尝试下
-scrub的一些追踪#下面的一些追踪并不涉及代码，仅仅从配置和日志的观测来看看scrub到底干了什么
-环境准备#我的环境为了便于观测，配置的是一个pg的存储池，然后往这个pg里面put了100个对象，然后对这个pg做deep-scrub，deep-scrub比scrub对磁盘的压力要大些，所以本篇主要是去观测的deep-scrub
-开启对pg目录的访问的监控#使用的是inotifywait，我想看下deep-scrub的时候，pg里面的对象到底接收了哪些请求
-inotifywait -m 1.0_head
-|
-|
-在给osd.0开启debug_osd=20后观测chunky相关的日志
-|
-|
-截取关键部分看下，如图 我们看下上面的文件访问监控里面这些对象在什么位置
-|
-|
-看上去是不是很有规律，这个地方在ceph里面会有个chunk的概念，在做scrub的时候，ceph会对这个chunk进行加锁，这个可以在很多地方看到这个，这个也就是为什么有slow request，并不一定是你的磁盘慢了，而是加了锁，就没法读的
- osd scrub chunk min
-Description: The minimal number of object store chunks to scrub during single operation. Ceph blocks writes to single chunk during scrub. Type: 32-bit Integer Default: 5</description>
+      <description>关于scrub这块一直想写一篇文章的，这个在很久前，就做过一次测试，当时是看这个scrub到底有多大的影响，当时看到的是磁盘读占很高，启动deep-scrub后会有大量的读,前端可能会出现 slow request,这个是当时测试看到的现象，一个比较简单的处理办法就是直接给scrub关掉了，当然关掉了就无法检测底层到底有没有对象不一致的问题</description>
     </item>
     
     <item>
@@ -914,9 +878,7 @@ Description: The minimal number of object store chunks to scrub during single op
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/essay/excel-%E5%90%88%E5%B9%B6%E8%A1%A8%E6%A0%BC/</guid>
-      <description>前提： 要合并的表格表格列数相同 在要合并的表格放一个文件内，建一个新的空表格：   3.打开表格：
-4.鼠标放到左下角的sheet导航栏上右键选择查看源码：  把后面的代码贴入文本框中点顶部菜单栏的运行即可：   脚本
-  Sub 合并当前目录下所有工作簿的全部工作表() Dim MyPath, MyName, AWbName Dim Wb As Workbook, WbN As String Dim G As Long Dim Num As Long Dim BOX As String Application.ScreenUpdating = False MyPath = ActiveWorkbook.Path MyName = Dir(MyPath &amp;amp; &amp;quot;\&amp;quot; &amp;amp; &amp;quot;*.xlsx&amp;quot;) AWbName = ActiveWorkbook.Name Num = 0 Do While MyName &amp;lt;&amp;gt; &amp;quot;&amp;quot; If MyName &amp;lt;&amp;gt; AWbName Then Set Wb = Workbooks.</description>
+      <description>合并的表格表格列数相同</description>
     </item>
     
     <item>
@@ -925,7 +887,7 @@ Description: The minimal number of object store chunks to scrub during single op
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/essay/git%E6%8E%A8%E9%80%81%E8%A6%86%E7%9B%96%E6%97%A7%E4%BB%93%E5%BA%93/</guid>
-      <description>使用 git push origin master &amp;ndash;force#PS D:\src\angular6\material&amp;gt; git remote add origin https://github.com/getfirstcn/hsd-devops.git PS D:\src\angular6\material&amp;gt; git push origin master --force fatal: HttpRequestException encountered. 发送请求时出错。 Username for &#39;https://github.com&#39;: 785471184@qq.com Password for &#39;https://785471184@qq.com@github.com&#39;: Counting objects: 489, done. Delta compression using up to 8 threads. Compressing objects: 100% (470/470), done. Writing objects: 100% (489/489), 244.28 KiB | 0 bytes/s, done. Total 489 (delta 270), reused 0 (delta 0) remote: Resolving deltas: 100% (270/270), done.</description>
+      <description>git push origin master &amp;ndash;force</description>
     </item>
     
     <item>
@@ -934,9 +896,7 @@ Description: The minimal number of object store chunks to scrub during single op
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/essay/linux-shell%E6%B5%8F%E8%A7%88%E5%99%A8%E7%BB%88%E7%AB%AF%E6%B5%8F%E8%A7%88%E5%99%A8w3m%E5%8F%82%E8%80%83%E5%8F%82%E6%95%B0/</guid>
-      <description>W3m#w3m是一个基于文本的网页浏览器，支持多种操作系统，在命令行终端可以很好的支持中文。即使在没有鼠标支持的情况下也可以检查网页的输出。本文列出常用的快捷键。
-页面操作#SPC,C-v 向下翻页 b,ESC v 向上翻页 l,C-f 焦点向右 h,C-b 焦点向左 j,C-n 焦点向下 k,C-p 焦点向上 J 向下滚动一行 K 向上滚动一行 ^,C-a 到行首 $,C-e 到行尾 w 到下一个单词 W 到上一个单词
- 右移一屏 &amp;lt; 左移一屏 . 屏幕右移一列 , 屏幕左移一列 g,M-&amp;lt; 到首行 G,M-&amp;gt; 到末行 ESC g 到指定行 Z 当前行居中 z 当前列居中 TAB 转到下个超链接 C-u,ESC TAB 到上个超链接 [ 到第一个超链接 ] 到最後一个超链接  超链接操作# RET 打开超链接 a, ESC RET 链接另存为 u 查看链接url i 查看图片url I 查看图片 ESC I 图片另存为 标记rul字符串为锚点 ESC : 标记ID串为锚点 c 查看当前页面的URL = 显示当前页面属性 C-g 查看当前行号 C-h 查看历史记录 F 提交表单 M 用外部浏览器打开当前页面 (use 2M and 3M to invoke second and third browser) ESC M 用外部浏览器打开链接 (use 2ESC M and 3ESC M to invoke second and third browser   文件/流 操作#U 打开URL V 打开文件 @ 执行外部命令并导入</description>
+      <description>w3m是一个基于文本的网页浏览器，支持多种操作系统，在命令行终端可以很好的支持中文。即使在没有鼠标支持的情况下也可以检查网页的输出。本文列出常用的快捷键。</description>
     </item>
     
     <item>
@@ -945,11 +905,7 @@ Description: The minimal number of object store chunks to scrub during single op
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/essay/top-%E5%91%BD%E4%BB%A4%E8%A7%A3%E9%87%8A/</guid>
-      <description>VIRT：virtual memory usage 虚拟内存 1、进程“需要的”虚拟内存大小，包括进程使用的库、代码、数据等 2、假如进程申请100m的内存，但实际只使用了10m，那么它会增长100m，而不是实际的使用量
-RES：resident memory usage 常驻内存 1、进程当前使用的内存大小，但不包括swap out 2、包含其他进程的共享 3、如果申请100m的内存，实际使用10m，它只增长10m，与VIRT相反 4、关于库占用内存的情况，它只统计加载的库文件所占内存大小
-SHR：shared memory 共享内存 1、除了自身进程的共享内存，也包括其他进程的共享内存 2、虽然进程只使用了几个共享库的函数，但它包含了整个共享库的大小 3、计算某个进程所占的物理内存大小公式：RES – SHR 4、swap out后，它将会降下来
-DATA 1、数据占用的内存。如果top没有显示，按f键可以显示出来。 2、真正的该程序要求的数据空间，是真正在运行中要使用的。
-top 运行中可以通过 top 的内部命令对进程的显示方式进行控制。内部命令如下： s – 改变画面更新频率 l – 关闭或开启第一部分第一行 top 信息的表示 t – 关闭或开启第一部分第二行 Tasks 和第三行 Cpus 信息的表示 m – 关闭或开启第一部分第四行 Mem 和 第五行 Swap 信息的表示 N – 以 PID 的大小的顺序排列表示进程列表 P – 以 CPU 占用率大小的顺序排列进程列表 M – 以内存占用率大小的顺序排列进程列表 h – 显示帮助 n – 设置在进程列表所显示进程的数量 q – 退出 top s – 改变画面更新周期</description>
+      <description>VIRT：virtual memory usage 虚拟内存</description>
     </item>
     
     <item>
@@ -958,8 +914,7 @@ top 运行中可以通过 top 的内部命令对进程的显示方式进行控�
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/essay/window-linux-%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%88%9B%E5%BB%BAzip%E5%8E%8B%E7%BC%A9%E5%8C%85/</guid>
-      <description>linux#zip -r test.zip ./
-[root@ip-172-31-28-124 ec2-user]# cd /opt/ [root@ip-172-31-28-124 opt]# ls [root@ip-172-31-28-124 opt]# mkdir test [root@ip-172-31-28-124 opt]# ls test [root@ip-172-31-28-124 opt]# echo 123 &amp;gt;&amp;gt; test/test.txt [root@ip-172-31-28-124 opt]# ls test [root@ip-172-31-28-124 opt]# zip -r test.zip . adding: test/ (stored 0%) adding: test/test.txt (stored 0%) [root@ip-172-31-28-124 opt]# ls test test.zip [root@ip-172-31-28-124 opt]# rm -rf test [root@ip-172-31-28-124 opt]# unzip test.zip  Archive: test.zip creating: test/ extracting: test/test.txt [root@ip-172-31-28-124 opt]# ls test test.</description>
+      <description>linuz zip create compress package</description>
     </item>
     
     <item>
@@ -968,18 +923,7 @@ top 运行中可以通过 top 的内部命令对进程的显示方式进行控�
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/essay/windows%E5%88%86%E5%B1%8F%E6%9C%BA%E5%B7%A7%E5%BF%AB%E6%8D%B7%E6%96%B9%E5%BC%8F/</guid>
-      <description>不说废话 windows + 上下左右即可任意分屏，最多四屏幕，还可以左右移动窗口的位置
-还有些程序不支持四分之一显示，二分一应该都可以
-如果开始分屏的窗口位置不对，windows + 左右移动一下就会变得规整</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://wangyijie.store/posts/essay/%E4%BA%91%E5%8E%9F%E7%94%9F/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://wangyijie.store/posts/essay/%E4%BA%91%E5%8E%9F%E7%94%9F/</guid>
-      <description></description>
+      <description>windows + 上下左右即可任意分屏，最多四屏幕，还可以左右移动窗口的位置</description>
     </item>
     
     <item>
@@ -988,8 +932,7 @@ top 运行中可以通过 top 的内部命令对进程的显示方式进行控�
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/essay/%E4%BC%A0%E7%BB%9F%E6%9C%8D%E8%A3%85/</guid>
-      <description>襌衣：又称“单衣”，流行于秦汉时期，是一种作为上层人士平日所穿的单层罩衣 缝掖：即儒服，大袖单衣，古儒者所服。亦指儒者，儒服为章甫之冠，缝掖之衣 青衿：青色交领的深衣。周朝学子和北齐、北周、隋唐、两宋国子生的常服 道服：即是道袍指道教徒穿在外面的长袍。可以分为大褂、得罗、戒衣、法衣、花衣、衲衣等六种服装，均取肥大宽松，以寓包藏乾坤、隔断尘凡之意 短褐：又称“竖褐”、“裋褐”，以劳作方便为目的的便服。与常服和礼服相区别 剑服：剑士的服装 中衣：祭服、朝服的裹衣 深衣：深藏不露，雍容典雅，华夏之礼服
-便服 常服 礼服</description>
+      <description>襌衣：又称“单衣”，流行于秦汉时期，是一种作为上层人士平日所穿的单层罩衣</description>
     </item>
     
     <item>
@@ -998,29 +941,7 @@ top 运行中可以通过 top 的内部命令对进程的显示方式进行控�
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/essay/%E5%8D%A1%E8%B7%AF%E9%87%8C/</guid>
-      <description>1卡路里(cal)=4.1858518焦耳(J) 卡路里（简称卡，缩写为cal），由英文[Calorie])音译而来，其定义为在1个大气压下，将1克水提升1摄氏度所需要的热量；卡路里（calorie）是能量单位，现在仍被广泛使用在营养计量和健身手册上，国际标准的能量单位是焦耳（joule）。作为食物热量的法定单位，在欧洲普遍使用焦耳，美国则采用卡路里。虽然焦耳是中国大陆与台湾地区的法定单位，然而由于沿袭传统，卡路里在中国大陆与台湾地区仍然被广泛的使用
-卡路里，是一个能量单位。我们往往将卡路里与食品联系在一起，但实际上它们适用于含有能量的任何物质。
-简单地说，1卡路里的能量或热量可将1克水在一个大气压下的温度升高1摄氏度。1卡路里约等于4.186焦耳(焦耳是物理学中常用的能量单位)。 我们大多数人把卡路里与我们吃的或喝的东西联系在一起，就比如“这瓶汽水含有200卡路里”。实际上，食品包装上列出的卡路里是大卡，也被记做大写字母C，相当于将1000克水在1大气压下由14.5摄氏度提升到15.5摄氏度所需的热量，约等于4186焦耳的内能。 (1000卡路里=1大卡)。所以，实际上这听汽水含有20万卡路里(但不要担心，这一点也适用于锻炼——当练习图上说你慢跑2公里燃烧100卡路里时，它的意思是10万卡路里)。在英文中，“calorie”（首字母小写）表示卡路里，约等于4.186焦耳，“Calorie”（首字母大写）表示大卡，约等于4186焦耳。
-由于后来科学家发现水在不同温度下的比热容不同，所以衍生了以下不同的定义：
-营养学用的“15度卡路里”：将1克水在1大气压下由14.5℃提升到15.5℃所需的热量，约等于4.1855焦耳。
-“4度卡路里”：将1克水在1大气压下由3.5℃提升到4.5℃所需的热量。
-“平均卡路里”：将1克水在1大气压下由0℃提升到100℃所需的每度热量平均数，约等于4.190焦耳。
-International Steam Table（国际蒸汽表）的卡路里，相约4.1868焦耳。
-热力学和化学使用的“热化学卡路里”，相约4.184焦耳。
-一般所说的卡路里还分为两种：
-大卡，也被记做大写字母C，最常见于食品标注，相当于将1000克水在1大气压下由14.5℃提升到15.5℃所需的热量，约等于4186焦耳的内能。
-小卡，也被记做cal，较多见于科研文档中，1000小卡=1大卡（1 Calorie）
-功能#编辑
-热量作用#正如电脑要耗电，卡车要耗油，人体的日常活动也要消耗热量。热量除了给人在从事运动，日常工作和生活所需要的能量外，同样也提供人体生命活动所需要的能量，血液循环，呼吸，消化吸收等等。减肥人士可以通过运动可以来消耗脂肪，可以达到加速消耗卡路里以达到健康瘦身的效果。
-热量来源#热量来自于 碳水化合物，脂肪，蛋白质
-碳水化合物产生热能 = 4千卡/克
-蛋白质产生热量 = 4 千卡/克
-脂肪产生热量 = 9 千卡/克。
-热量的单位#千卡 Kilocalorie， 1千卡 =1大卡
-1 千卡 = 4.184 千焦耳
-1 千卡： 是能使出1升水上升摄氏1度的热量。
-需要热量#成人每日需要的热量 =人体基础代谢的需要的基本热量 + 体力活动所需要的热量 + 消化食物所需要的热量。
-消化食物所需要的热量 =10% x （人体基础代谢的需要的最低热量 +体力活动所需要的热量）</description>
+      <description>卡路里（简称卡，缩写为cal），由英文[Calorie])音译而来，其定义为在1个大气压下，将1克水提升1摄氏度所需要的热量</description>
     </item>
     
     <item>
@@ -1029,9 +950,7 @@ International Steam Table（国际蒸汽表）的卡路里，相约4.1868焦耳�
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/essay/%E5%AD%A6%E4%B8%8D%E5%8F%AF%E5%B7%A7/</guid>
-      <description>人更容易学会只有一条路径不能超前探索的技能，比如游泳，溜冰这类的，因为这些技能必须按部就班的练习，不会游泳就不能去深水，浅水反复摸索找到技巧不需要多久，溜冰也是不会就滑不起来，不熟不敢滑快，这些约束了人必须按部就班的练习，弹琴，绘画就不易学好，因为想怎么画都可以，反而很多人不能按部就班的练习。
-在没有基础，不理解的情况下看一些东西，很多是无效的，浪费了时间。 很多学习着急的看了后面的就没有耐心在按部就班的学习，前面的基础没做好，后面的学习就会很困难，困难又使人沮丧一字半途而废。 在学校有老师把握教课的节奏所以一些人还能被灌输，顺势的学到一些东西，如果是自主的去学，能学好的人我感觉很少。
-仁义的人喜欢高大、壮美；温和的人喜欢细微、巧妙；聪明的人喜欢跳跃、起伏；感性的人喜欢好事成双</description>
+      <description>人更容易学会只有一条路径不能超前探索的技能，比如游泳，溜冰这类的，因为这些技能必须按部就班的练习，不会游泳就不能去深水，浅水反复摸索找到技巧不需要多久，溜冰也是不会就滑不起来，不熟不敢滑快，这些约束了人必须按部就班的练习，弹琴，绘画就不易学好，因为想怎么画都可以，反而很多人不能按部就班的练习</description>
     </item>
     
     <item>
@@ -1040,14 +959,7 @@ International Steam Table（国际蒸汽表）的卡路里，相约4.1868焦耳�
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/essay/%E7%AC%94%E8%AE%B0%E6%9C%AC%E8%A7%A6%E6%91%B8%E6%9D%BF%E6%93%8D%E4%BD%9C%E6%8A%80%E5%B7%A7/</guid>
-      <description>最初打游戏一直是鼠标控，不习惯使用笔记本触摸板，最近工作经常外出服务，鼠标有些累赘，刻意学习一下触摸板： 一、用单指触摸触摸板并移动相当于移动鼠标。
-二、单击左键相当于点击鼠标左键；单击右键相当于点击鼠标右键。
-三、单指双击触摸板相当于鼠标左键双击；双指同时单击触摸板相当于单击鼠标右键。
-四、双指在触摸板上上下、左右滑动，可以滚动浏览网页和文档；双指张开、闭合可以实现放大、缩小（看照片、文档时）。
-五、三个手指同时点击可以快速打开搜索界面；三个手指向上滑动可以显示虚拟桌面。
-六、三个手指向下滑动可以隐藏桌面打开的应用程序；三个手指左右滑动可以快速切换任务。
-七、四个手指同时单击可以快速打开操作中心。
-以上操作若无法实现，可以进入触控板的设置界面，勾选对应功能，即可启用。</description>
+      <description>最初打游戏一直是鼠标控，不习惯使用笔记本触摸板，最近工作经常外出服务，鼠标有些累赘，刻意学习一下触摸板</description>
     </item>
     
     <item>
@@ -1056,11 +968,7 @@ International Steam Table（国际蒸汽表）的卡路里，相约4.1868焦耳�
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/golang/a-global-proxy-for-go-modules/</guid>
-      <description>First, you will need to enable the Go Modules feature and configure Go to use the proxy. bash:
-export GOPROXY=https://goproxy.io Or powershell:
-$env:GOPROXY = &amp;quot;https://goproxy.io&amp;quot; Now, when you build and run your applications, go will fetch dependencies via goproxy.io.
-Note: This proxy can&amp;rsquo;t fetch your private repos of course.
-Private proxy#Started#./goproxy -listen=0.0.0.0:80 -cacheDir=/data Use docker image#docker run -d -p80:8081 goproxy/goproxy Use the -v flag to persisting the proxy module data (change cacheDir to your own dir):</description>
+      <description>export GOPROXY=https://goproxy.io</description>
     </item>
     
     <item>
@@ -1069,7 +977,7 @@ Private proxy#Started#./goproxy -listen=0.0.0.0:80 -cacheDir=/data Use doc
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/golang/cgo-install/</guid>
-      <description>最近运行一个项目用到了Cgo,下载安装还折腾了一会儿，这里记录一下方便自己和同样的人 我是windows,Linux安装c++很方便，window下安装安装微软的c++编译器很臃肿，和visual studio配套的，安装mingw-w64会比较轻量，我遇到的问题在于安装程序不好下载，我上传到网盘了，下载直接安装。 https://pan.baidu.com/s/14i4td4zRMz4aC1rX_UdfXQ</description>
+      <description>window下安装安装微软的c++编译器很臃肿，和visual studio配套的，安装mingw-w64会比较轻量，我遇到的问题在于安装程序不好下载，我上传到网盘了，下载直接安装。</description>
     </item>
     
     <item>
@@ -1078,10 +986,7 @@ Private proxy#Started#./goproxy -listen=0.0.0.0:80 -cacheDir=/data Use doc
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/golang/golang-%E5%87%BD%E6%95%B0%E5%92%8C%E9%97%AD%E5%8C%85/</guid>
-      <description>接触golang有些时间了，以前磕磕碰碰的勉强写过几个小程序，最近工作又亲近golang，就想着再回头巩固一下，曾经遇到过几次的问题又再次遇到了，golang的函数定义格式是这样的：
-func function_name( [parameter list] ) [return_types] { 函数体 } 函数体之上的哪一行总共分为三个部分，依次是声明关键字，函数名和参数，返回值。函数名和参数是一个整体所以归为一组方便识别的，有时会遇到一些异类的形式，今天就遇到这样的：
-func fib() func() int { a, b := 0, 1 return func() int { a, b = b, a+b return a } } 比常见的多了一段，让人有点蒙圈了，再回顾到闭包的知识点才解决此困惑，说一下我自己对闭包的总结，闭包就是函数返回一个匿名函数，看一个例子：
-package main import &amp;quot;fmt&amp;quot; func returnNum() func() (int, int) { return func() (int, int) { return 0, 1 } } func main() { q := returnNum() a, b := q() fmt.Println(a, b) } 在强类型语言里面，函数返回值类型是不可少的，闭包误导人的地方就在于它的返回值定义，返回一个匿名函数，函数得注明返回值，返回值和函数名之间习惯上会加空格，这就造成闭包的形式有别于普通函数，上面这个闭包双返回值也是有些耐人寻味的。少见多怪，主要还是因为我是个业余玩家。 ####还有方法：结构体方法，对象方法也是初学者不易理解的。</description>
+      <description>接触golang有些时间了，以前磕磕碰碰的勉强写过几个小程序，最近工作又亲近golang，就想着再回头巩固一下，曾经遇到过几次的问题又再次遇到了，golang的函数定义格式是这样的：</description>
     </item>
     
     <item>
@@ -1090,7 +995,7 @@ package main import &amp;quot;fmt&amp;quot; func returnNum() func() (int, int) {
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/istio/istio%E4%BF%97%E8%AF%AD%E5%92%8C%E7%BB%84%E4%BB%B6%E6%A6%82%E6%8B%AC/</guid>
-      <description>istio概况</description>
+      <description>Istio 使用 Envoy 代理的扩展版本，Envoy 是以 C++ 开发的高性能代理，用于调解服务网格中所有服务的所有入站和出站流量。Envoy 的许多内置功能被 istio 发扬光大</description>
     </item>
     
     <item>
@@ -1126,7 +1031,7 @@ package main import &amp;quot;fmt&amp;quot; func returnNum() func() (int, int) {
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/kubernetes/fluented-install/</guid>
-      <description>deploy elasticsearch persistent volume#cat pv-master.yaml kind: PersistentVolume apiVersion: v1 metadata: name: efk-master-volume labels: type: localspec: storageClassName: elasticsearch-master capacity: storage: 10Gi accessModes: - ReadWriteOnce hostPath: path: &amp;quot;/mnt/data/efk-master&amp;quot; mkdir -p /mnt/data/efk-master &amp;amp;&amp;amp; kubectl create -f pv-master.yaml data#cat pv-data.yaml kind: PersistentVolume apiVersion: v1 metadata: name: efk-data-volume labels: type: local spec: storageClassName: elasticsearch-data capacity: storage: 5Gi accessModes: - ReadWriteOnce hostPath: path: &amp;quot;/mnt/data/efk-data&amp;quot; mkdir -p /mnt/data/efk-data &amp;amp;&amp;amp; kubectl create -f pv-data.</description>
+      <description>deploy elasticsearch persistent volume</description>
     </item>
     
     <item>
@@ -1135,8 +1040,7 @@ package main import &amp;quot;fmt&amp;quot; func returnNum() func() (int, int) {
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/kubernetes/gcr-proxy-cache/</guid>
-      <description>GCR Proxy Cache 帮助#GCR Proxy Cache服务器相当于一台GCR镜像服务器，国内用户可以经由该服务器从gcr.io下载镜像。
-使用GCR Proxy Cache从gcr.io下载镜像#docker pull gcr.azk8s.cn/google_containers/&amp;lt;imagename&amp;gt;:&amp;lt;version&amp;gt; 例子#docker pull gcr.azk8s.cn/google_containers/pause-amd64:3.0 docker pull gcr.azk8s.cn/google_containers/kubedns-amd64:1.7 </description>
+      <description>GCR Proxy Cache服务器相当于一台GCR镜像服务器，国内用户可以经由该服务器从&lt;a href=&#34;http://gcr.io/&#34;&gt;gcr.io&lt;/a&gt;下载镜像</description>
     </item>
     
     <item>
@@ -1145,9 +1049,7 @@ package main import &amp;quot;fmt&amp;quot; func returnNum() func() (int, int) {
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/kubernetes/get-kubernetes-images-quickly/</guid>
-      <description>open:#https://katacoda.com/courses/kubernetes/playground
-check images#kubeadm config images list W0601 03:36:09.535740 16500 configset.go:202] WARNING: kubeadm cannot validate component configs for API groups [kubelet.config.k8s.io kubeproxy.config.k8s.io] k8s.gcr.io/kube-apiserver:v1.18.3 k8s.gcr.io/kube-controller-manager:v1.18.3 k8s.gcr.io/kube-scheduler:v1.18.3 k8s.gcr.io/kube-proxy:v1.18.3 k8s.gcr.io/pause:3.2 k8s.gcr.io/etcd:3.4.3-0 k8s.gcr.io/coredns:1.6.7
-exceute script#docker login --username=hi30567721@aliyun.com --password=youpass registry.cn-shenzhen.aliyuncs.com for i in `kubeadm config images list | grep k8s.gcr.io` do echo $i; docker pull $i docker tag $i registry.cn-shenzhen.aliyuncs.com/wangyijie/${i##*/} docker push registry.cn-shenzhen.aliyuncs.com/wangyijie/${i##*/} done </description>
+      <description>&lt;a href=&#34;https://katacoda.com/courses/kubernetes/playground&#34;&gt;https://katacoda.com/courses/kubernetes/playground&lt;/a&gt;</description>
     </item>
     
     <item>
@@ -1156,12 +1058,7 @@ exceute script#docker login --username=hi30567721@aliyun.com --password=youpa
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/kubernetes/heapster-&#43;-influxdb-&#43;-grafana-%E7%9B%91%E6%8E%A7%E6%B2%A1%E6%95%B0%E6%8D%AE%E6%A1%88%E4%BE%8B/</guid>
-      <description>现象#通过grafana查看部分容器没有监控数据
-关键信息#通过查看influxdb发现异常日志
-[write] 2019/04/25 09:56:05 write failed for shard 170: max-series-per-database limit exceeded: db=k8s (1000000/1000000) dropped=2111 [httpd] 172.16.3.10 - root [25/Apr/2019:09:56:05 +0000] &amp;quot;POST /write?consistency=&amp;amp;db=k8s&amp;amp;precision=&amp;amp;rp=default HTTP/1.1&amp;quot; 400 115 &amp;quot;-&amp;quot; &amp;quot;heapster/v1.5.1&amp;quot; 579d5b31-6740-11e9-8057-000000000000 156302 日志提示有序列超出了最大数限制： 查看文档有对应的参数： ##解决方法： 添加环境变量覆盖参数：
- - image: registry-vpc.cn-shenzhen.aliyuncs.com/acs/heapster-influxdb-amd64:v1.1.1 imagePullPolicy: IfNotPresent name: influxdb env: - name: INFLUXDB_DATA_MAX_SERIES_PER_DATABASE value: &amp;quot;0&amp;quot; - name: INFLUXDB_DATA_MAX_VALUES_PER_TAG value: &amp;quot;0&amp;quot; 变量值需加引号
-验证方法#influxdb没有图形界面了，命令工具也不易安装，curl最方便，不过格式需要注意，我参照了许多才找到合适的，记录个例子：
-curl http://172.21.11.108:8086/query?pretty=true --data-urlencode &amp;quot;db=k8s&amp;quot; --data-urlencode &amp;quot;q=SELECT * FROM \&amp;quot;cpu/usage\&amp;quot; WHERE (\&amp;quot;type\&amp;quot; = &#39;pod&#39; AND \&amp;quot;namespace_name\&amp;quot; =~ /^blue$/) AND time &amp;gt;= now() - 30m&amp;quot; </description>
+      <description>influxdb没有图形界面了，命令工具也不易安装，curl最方便，不过格式需要注意，我参照了许多才找到合适的</description>
     </item>
     
     <item>
@@ -1170,10 +1067,7 @@ curl http://172.21.11.108:8086/query?pretty=true --data-urlencode &amp;quot;db=k
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/kubernetes/kube-scheduler-%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86/</guid>
-      <description>kube-scheduler 调度分为两个阶段，predicate 和 priority:
- predicate：过滤不符合条件的节点 priority：优先级排序，选择优先级最高的节点
- predicates 策略:
- PodFitsPorts：同 PodFitsHostPorts PodFitsHostPorts：检查是否有 Host Ports 冲突 PodFitsResources：检查 Node 的资源是否充足，包括允许的 Pod 数量、CPU、内存、GPU 个数以及其他的 OpaqueIntResources HostName：检查 pod.Spec.NodeName 是否与候选节点一致 MatchNodeSelector：检查候选节点的 pod.Spec.NodeSelector 是否匹配 NoVolumeZoneConflict：检查 volume zone 是否冲突 MaxEBSVolumeCount：检查 AWS EBS Volume 数量是否过多（默认不超过 39） MaxGCEPDVolumeCount：检查 GCE PD Volume 数量是否过多（默认不超过 16） MaxAzureDiskVolumeCount：检查 Azure Disk Volume 数量是否过多（默认不超过 16） MatchInterPodAffinity：检查是否匹配 Pod 的亲和性要求 NoDiskConflict：检查是否存在 Volume 冲突，仅限于 GCE PD、AWS EBS、Ceph RBD 以及 ISCSI GeneralPredicates：分为 noncriticalPredicates 和 EssentialPredicates。noncriticalPredicates 中包含 PodFitsResources，EssentialPredicates 中包含 PodFitsHost，PodFitsHostPorts 和 PodSelectorMatches。 PodToleratesNodeTaints：检查 Pod 是否容忍 Node Taints CheckNodeMemoryPressure：检查 Pod 是否可以调度到 MemoryPressure 的节点上 CheckNodeDiskPressure：检查 Pod 是否可以调度到 DiskPressure 的节点上 NoVolumeNodeConflict：检查节点是否满足 Pod 所引用的 Volume 的条件</description>
+      <description>kube-scheduler 调度分为两个阶段，predicate 和 priority</description>
     </item>
     
     <item>
@@ -1182,8 +1076,7 @@ curl http://172.21.11.108:8086/query?pretty=true --data-urlencode &amp;quot;db=k
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/kubernetes/kubectl-%E5%88%9B%E5%BB%BA%E8%B5%84%E6%BA%90/</guid>
-      <description>最近去参加了CKA考试，在速度上吃亏，以往喜欢复制粘贴修改摸板，在时间紧张的情况下这种方式的效率问题暴露了，导致考试时间紧张，没用时间解决难题，考试会要求创建各种类型的资源，所以这准备练习命令创建资源，提高操作效率： 如果能从命令行直接创建符合目的的资源就直接使用，如果命令参数不满足需求，可以通过**&amp;ndash;dry-run -o yaml** 参数输出摸板不实际创建资源，下面是各种资源的创建示列，多数可以合并使用：
- 创建pod 加**&amp;ndash;restart=Never**参数创建出来的资源就是pod  kubectl run busybox --image=busybox --dry-run -o yaml --restart=Never 创建cronjob 加**&amp;ndash;schedule=**参数创建出来的资源就是cronjob  kubectl run busybox --image=busybox --dry-run -o yaml --schedule=&amp;#34;* * * * *&amp;#34; 创建job 加**&amp;ndash;restart=OnFailure**参数创建出来的资源就是jod  kubectl run busybox --image=busybox --dry-run -o yaml --restart=OnFailure 创建deployment 加**&amp;ndash;restart=Aalways**参数创建出来的资源就是pod,这是默认参数可以不指明  kubectl run busybox --image=busybox --dry-run -o yaml --restart=Aalways 创建使用ENV: 使用 &amp;ndash;env, 多个环境变量重复参数指定  kubectl run nginx --image=nginx --dry-run -o yaml --env=&amp;#34;dir=/mnt&amp;#34; --env=&amp;#34;port=80&amp;#34; 创建资源限制及请求  kubectl run nginx --image=nginx --dry-run -o yaml --limits=&amp;#34;cpu=100m,memory=256m&amp;#34; --requests=&amp;#34;cpu=100m,memory=100M&amp;#34;  创建指定label 留意对象资源和列表资源在命令行参数中的表示规律，重复使用参数，用逗号分隔  kubectl run nginx --image=nginx --dry-run -o yaml --labels=&amp;#34;app=nginx,owner=wangyijie,form=cmft&amp;#34; 指定多个启动参数 在最后以 &amp;ndash; 开头可以以空格分隔指定多个命令参数  kubectl run nginx --image=nginx --dry-run -o yaml --schedule=&amp;#34;* * * * *&amp;#34; --restart=OnFailure --labels=&amp;#34;job=who&amp;#34; -- bash echo 123 9.</description>
+      <description>最近去参加了CKA考试，在速度上吃亏，以往喜欢复制粘贴修改摸板，在时间紧张的情况下这种方式的效率问题暴露了，导致考试时间紧张，没用时间解决难题，考试会要求创建各种类型的资源，所以这准备练习命令创建资源，提高操作效率</description>
     </item>
     
     <item>
@@ -1192,7 +1085,16 @@ curl http://172.21.11.108:8086/query?pretty=true --data-urlencode &amp;quot;db=k
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/kubernetes/kubelet%E5%88%9B%E5%BB%BA%E5%AE%B9%E5%99%A8%E7%9A%84%E6%AD%A5%E9%AA%A4/</guid>
-      <description> Kubelet 通过 CRI 接口（gRPC）调用 dockershim，请求创建一个容器，CRI 即容器运行时接口（Container Runtime Interface），这一步中，Kubelet 可以视作一个简单的 CRI Client，而 dockershim 就是接收请求的 Server。目前 dockershim 的代码其实是内嵌在 Kubelet 中的，所以接收调用的凑巧就是 Kubelet 进程； dockershim 收到请求后，转化成 对应 Docker Daemon 的请求，发到 Docker Daemon 上请求创建一个容器。 Docker Daemon 早在 1.12 版本中就已经将针对容器的操作移到另一个守护进程——containerd 中了，因此 Docker Daemon 仍然不直接创建容器，而是要请求 containerd 创建一个容器； containerd 收到请求后，并不会自己直接去操作容器，而是创建一个叫做 containerd-shim 的进程，让 containerd-shim 去操作容器。这是因为容器进程需要一个父进程来做诸如收集状态，维持 stdin 等 fd 打开等工作。而假如这个父进程就是 containerd，那每次 containerd 挂掉或升级，整个宿主机上所有的容器都得退出了。而引入了 containerd-shim 就规避了这个问题（containerd 和 shim 并不是父子进程关系）； 创建容器有设置 namespaces 和 cgroups，挂载 root filesystem 等操作，而这些事该怎么做已经有了公开的规范了，那就是 OCI（Open Container Initiative，开放容器标准）。它的一个参考实现叫做 runC。于是，containerd-shim 在这一步需要调用 runC 这个命令行工具，来启动容器； runC 启动完容器后本身会直接退出，containerd-shim 则会成为容器进程的父进程，负责收集容器进程的状态，上报给 containerd，并在容器中 pid 为 1 的进程退出后接管容器中的子进程进行清理，确保不会出现僵尸进程。  </description>
+      <description>Kubelet 通过 CRI 接口（gRPC）调用 dockershim，请求创建一个容器，CRI 即容器运行时接口（Container Runtime Interface），这一步中，Kubelet 可以视作一个简单的 CRI Client，而 dockershim 就是接收请求的 Server。目前 dockershim 的代码其实是内嵌在 Kubelet 中的，所以接收调用的凑巧就是 Kubelet 进程</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/kubernetes/kubernetes-1-8%E5%AE%89%E8%A3%85%E8%AE%B0%E5%BD%95/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/kubernetes/kubernetes-1-8%E5%AE%89%E8%A3%85%E8%AE%B0%E5%BD%95/</guid>
+      <description>为了快速见证新功能，我们选择kubeadmin这个工具来创建集群，官方的工具虽然还在内测阶段，但各种服务的配置方式，可以做为自定义部署的参考，kubeadmin是多基于容器的，只要把每个容器的配置都熟悉了，自定义部署也是非常容易的，所以说这个kubeadmin可供细研究也可快速完成集群环境的搭建，里面有些需要注意的地方，参照这篇文章可以直接解决一些问题，省去一些搜索工作</description>
     </item>
     
     <item>
@@ -1201,8 +1103,7 @@ curl http://172.21.11.108:8086/query?pretty=true --data-urlencode &amp;quot;db=k
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/kubernetes/kubernetes-api-%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99/</guid>
-      <description>对于云计算系统，系统API实际上处于系统设计的统领地位。Kubernetes集群系统每支持一项新功能，引入一项新技术，一定会新引入对应的API对象，支持对该功能的管理操作。理解掌握的API，就好比抓住了K8s系统的牛鼻子。Kubernetes系统API的设计有以下几条原则：
- 所有API应该是声明式的。声明式的操作，相对于命令式操作，对于重复操作的效果是稳定的，这对于容易出现数据丢失或重复的分布式环境来说是很重要的。另外，声明式操作更容易被用户使用，可以使系统向用户隐藏实现的细节，同时也保留了系统未来持续优化的可能性。此外，声明式的API还隐含了所有的API对象都是名词性质的，例如Service、Volume这些API都是名词，这些名词描述了用户所期望得到的一个目标对象。 API对象是彼此互补而且可组合的。这实际上鼓励API对象尽量实现面向对象设计时的要求，即“高内聚，松耦合”，对业务相关的概念有一个合适的分解，提高分解出来的对象的可重用性。 高层API以操作意图为基础设计。如何能够设计好API，跟如何能用面向对象的方法设计好应用系统有相通的地方，高层设计一定是从业务出发，而不是过早的从技术实现出发。因此，针对Kubernetes的高层API设计，一定是以K8s的业务为基础出发，也就是以系统调度管理容器的操作意图为基础设计。 低层API根据高层API的控制需要设计。设计实现低层API的目的，是为了被高层API使用，考虑减少冗余、提高重用性的目的，低层API的设计也要以需求为基础，要尽量抵抗受技术实现影响的诱惑。 尽量避免简单封装，不要有在外部API无法显式知道的内部隐藏的机制。简单的封装，实际没有提供新的功能，反而增加了对所封装API的依赖性。内部隐藏的机制也是非常不利于系统维护的设计方式，例如StatefulSet和ReplicaSet，本来就是两种Pod集合，那么Kubernetes就用不同API对象来定义它们，而不会说只用同一个ReplicaSet，内部通过特殊的算法再来区分这个ReplicaSet是有状态的还是无状态。 API操作复杂度与对象数量成正比。这一条主要是从系统性能角度考虑，要保证整个系统随着系统规模的扩大，性能不会迅速变慢到无法使用，那么最低的限定就是API的操作复杂度不能超过O(N)，N是对象的数量，否则系统就不具备水平伸缩性了。 API对象状态不能依赖于网络连接状态。由于众所周知，在分布式环境下，网络连接断开是经常发生的事情，因此要保证API对象状态能应对网络的不稳定，API对象的状态就不能依赖于网络连接状态。 尽量避免让操作机制依赖于全局状态，因为在分布式系统中要保证全局状态的同步是非常困难的。  </description>
+      <description>对于云计算系统，系统API实际上处于系统设计的统领地位。Kubernetes集群系统每支持一项新功能，引入一项新技术，一定会新引入对应的API对象，支持对该功能的管理操作。理解掌握的API，就好比抓住了K8s系统的牛鼻子。Kubernetes系统API的设计有以下几条原则</description>
     </item>
     
     <item>
@@ -1211,8 +1112,7 @@ curl http://172.21.11.108:8086/query?pretty=true --data-urlencode &amp;quot;db=k
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/kubernetes/kubernetes-conformance-tests/</guid>
-      <description>大概步骤# 获取镜像 ./sonobuoy images pull &amp;ndash;e2e-repo-config custom-repos.yaml -dry-run 参考下面的脚本通过gcr.azk8s.cn代理地址下载gcr镜像上传到私有仓库 执行任务会在kubenetes里面创建pod启动任务 ./sonobuoy run &amp;ndash;sonobuoy-image 172.20.8.7/library/sonobuoy:v0.17.2
-&amp;ndash;kube-conformance-image 172.20.8.7/library/conformance:v1.15.10 等运行剩一个pod，大概几个小时的时间，检查结果 ./sonobuoy status 通过之后收集数据 results=$(./sonobuoy retrieve) ./sonobuoy results $results  #get command sonobuoy docker run -d --rm --name=sonobuoy sonobuoy/sonobuoy:v0.16 sleep 120 docker cp sonobuoy:/sonobuoy ./ # 私有仓库 registry=172.20.8.7 getImage(){ image=$1 docker pull $image docker $image tag ${registry}/library/${image##*/} docker push ${registry}/library/${image##*/} } kubeVersion=v1.15.10 getImage gcr.azk8s.cn/heptio-images/sonobuoy-plugin-systemd-logs:latest getImage gcr.azk8s.cn/google-containers/conformance:$kubeVersion ./sonobuoy run --sonobuoy-image 172.20.8.7/library/sonobuoy:v0.16\ --kube-conformance-image 172.</description>
+      <description>./sonobuoy images pull &amp;ndash;e2e-repo-config custom-repos.yaml -dry-run</description>
     </item>
     
     <item>
@@ -1221,8 +1121,7 @@ curl http://172.21.11.108:8086/query?pretty=true --data-urlencode &amp;quot;db=k
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/kubernetes/kubernetes-etcd%E6%95%B0%E6%8D%AE%E7%AE%A1%E7%90%86/</guid>
-      <description>一次使用helm安装spinnaker这个部署系统，对helm不熟悉，由于卡住超时了，随着又再次执行安装，我是在自己的电脑上弄了个10G内存的虚拟机安装的kubernetes,结果安装了两次spinnaker导致资源不足系统异常缓慢，kube-apiserver响应不过来不停的失败重启，kube-apiserver不能存活我就没办法管理pods了，所以想到去数据源etcd把spinnaker的容器信息先删掉，把集群恢复之后再重新安装，为了操作etcd我翻了些文章才找到方法，相关的资料比较少，所以自己也记录一下。 我是使用kubeadm工具安装的集群，要解除集群的资源占用要先把一些容器停掉，把kube-apiserver的编排文件从/etc/kubernetes/manifests/目录下先移出来，kubelet检查到会停止相应的pods,没有了kube-apiserver集群不会再创建新的pods,这时kubectl不可用了，使用docker命令把spinnaker项目的容器都删掉系统资源就能空闲出来。这时etcd还是正常的，用docker工具直接进入etcd。
-操作etcd有命令行工具etcdctl，有两个api版本互不兼容的，系统默认的v2版本，kubernetes集群使用的是v3版本，v2版本下是看不到v3版本的数据的，我也是找了些资料才了解这个情况。 使用环境变量定义api版本 export ETCDCTL_API=3 etcd有目录结构类似linux文件系统，获取所有key看一看： etcdctl get / --prefix --keys-only 一看就可以大概理解kubenetes的数据结构了，查询命名空间下所有部署的数据： etcdctl get /registry/deployments/default --prefix --keys-only 把想删除的删掉，列如： etcdctl del /registry/deployments/default/elevated-dragonfly-spinn-front50 删除deployments，pods这可以了，稍微减少一些资源，让kube-apiserver可以正常工作即可，其它资源还可以使用kubectl工具删除 删掉些资源后退出etcd把kube-apiserver的编排文件放回/etc/kubernetes/manifests目录，服务会再次启动，然后再清理重新部署。 ##总结： etcd组织的数据结构清晰，查找操作简便，从数据层面去维护集群也很容易，保护好数据就有一切</description>
+      <description>etcd组织的数据结构清晰，查找操作简便，从数据层面去维护集群也很容易，保护好数据就有一切</description>
     </item>
     
     <item>
@@ -1231,7 +1130,7 @@ curl http://172.21.11.108:8086/query?pretty=true --data-urlencode &amp;quot;db=k
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/kubernetes/kubernetes-pause-role/</guid>
-      <description>相信熟悉kubernetes的朋友都知道，kubernetes启动 Pod 里定义的容器之前，kubelet 会先启动一个 infra 容器，并执行 /pause 让 infra 容器的主进程永远挂起。 这个容器存在的目的其实是维持住整个 Pod 的各种 namespace，真正的业务容器只要加入 infra 容器的 network 等 namespace 就能实现对应 namespace 的共享。而 infra 容器创造的这个共享环境则被抽象为 PodSandbox。每次 kubelet 在创建 Pod 时，就会先调用 CRI 的 RunPodSandbox 接口启动一个沙箱环境，再调用 CreateContainer 在沙箱中创建容器。 pause很小，这有时可以加快pod的启动速度</description>
+      <description>相信熟悉kubernetes的朋友都知道，kubernetes启动 Pod 里定义的容器之前，kubelet 会先启动一个 infra 容器，并执行 /pause 让 infra 容器的主进程永远挂起。</description>
     </item>
     
     <item>
@@ -1240,7 +1139,7 @@ curl http://172.21.11.108:8086/query?pretty=true --data-urlencode &amp;quot;db=k
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/kubernetes/kubernetes-%E7%BD%91%E7%BB%9C%E6%96%B9%E6%A1%88%E5%8F%8A-lvs%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86/</guid>
-      <description></description>
+      <description>kubernetes network solution</description>
     </item>
     
     <item>
@@ -1249,8 +1148,7 @@ curl http://172.21.11.108:8086/query?pretty=true --data-urlencode &amp;quot;db=k
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/kubernetes/kubernetes-%E8%B5%84%E6%BA%90%E7%BC%96%E6%8E%92%E5%B8%AE%E5%8A%A9/</guid>
-      <description>我们在编写kubernetes资源清单的时候有很多细节不易记住，特别对于还不熟练的同学，寻找参考摸板是一件麻烦的事，下面介绍两种获取参考帮助的手段，足够大家无往不利
- kubectl get &amp;ndash;export kubectl get -o yaml &amp;ndash;export 我们编写清单可以在集群找一个现成的资源摸板,然后修改我们想要的信息在以此创建新的资源，这能解决大部分需要了， kubectl get -o yaml &amp;ndash;export 命令获得的资源内容就一个完美的摸板，-o yaml 用的比较多，&amp;ndash;export 关注的可能就比较少，它的作用是把资源在当前集群的一些个性化数据过滤掉，给你一个清爽的摸板，去感受一下吧！ kubectl explain 有时我们通过上面的方法能找到的摸板可能没有我们要的配置，这时需要去别处寻找参考，或者去查看api文档，其实都可以不用，kubectl explain 可以根据资源路径给对应资源的子对象，就是其可以包含的字段或对象，比如看一个我不知道configMap卷怎么写的栗子：  [root@Registry ~]# kubectl explain deployments.spec.template.spec.volumes.configMap RESOURCE: configMap &amp;lt;Object&amp;gt; DESCRIPTION: ConfigMap represents a configMap that should populate this volume Adapts a ConfigMap into a volume. FIELDS: defaultMode	&amp;lt;integer&amp;gt; Optional: mode bits to use on created files by default. Must be a value between 0 and 0777.</description>
+      <description>我们在编写kubernetes资源清单的时候有很多细节不易记住，特别对于还不熟练的同学，寻找参考摸板是一件麻烦的事，下面介绍两种获取参考帮助的手段，足够大家无往不利</description>
     </item>
     
     <item>
@@ -1259,10 +1157,7 @@ curl http://172.21.11.108:8086/query?pretty=true --data-urlencode &amp;quot;db=k
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/kubernetes/kubernetes%E4%BC%98%E5%85%88%E7%BA%A7%E8%B0%83%E5%BA%A6/</guid>
-      <description>从 v1.8 开始，kube-scheduler 支持定义 Pod 的优先级，从而保证高优先级的 Pod 优先调度。并从 v1.11 开始默认开启。 注：在 v1.8-v1.10 版本中的开启方法为
-apiserver 配置: --feature-gates=PodPriority=true --runtime-config=scheduling.k8s.io/v1alpha1=true kube-scheduler 配置: --feature-gates=PodPriority=true 在指定 Pod 的优先级之前需要先定义一个 PriorityClass（非 namespace 资源），如
-apiVersion: v1 kind: PriorityClass metadata: name: high-priority value: 1000000 globalDefault: false description: &amp;quot;This priority class should be used for XYZ service pods only.&amp;quot; 其中value 为 32 位整数的优先级，该值越大，优先级越高 globalDefault 用于未配置 PriorityClassName 的 Pod，整个集群中应该只有一个 PriorityClass 将其设置为 true 然后，在 PodSpec 中通过 PriorityClassName 设置 Pod 的优先级：
-apiVersion: v1 kind: Pod metadata: name: nginx labels: env: test spec: containers: - name: nginx image: nginx imagePullPolicy: IfNotPresent priorityClassName: high-priority </description>
+      <description>从 v1.8 开始，kube-scheduler 支持定义 Pod 的优先级，从而保证高优先级的 Pod 优先调度。并从 v1.11 开始默认开启</description>
     </item>
     
     <item>
@@ -1271,9 +1166,7 @@ apiVersion: v1 kind: Pod metadata: name: nginx labels: env: test spec: container
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/kubernetes/kubernetes%E7%9F%A5%E8%AF%86%E7%82%B9/</guid>
-      <description>考cka需要整理kubernetes的知识，看了linux基金会的课程，感觉有点贵，赚钱不容易得到刀刃上，所以看下目录帮助熟悉学习目标即可
-Kubernetes 基础课程 （LFS258)
-Chapter 1. Course Introduction# Welcome 1.1. Before You Begin 1.2. Course Introduction 1.3. Course Objectives 1.4. Course Formatting 安排 1.5. Course Completion 1.6. Course Timing 1.7.a. Exercises-Lab Environment 1.7.b. Exercises-Labs 1.7.c. Exercises - Knowledge Check 1.8. Course Resources 1.9. Class Forum Guidelines 1.10. Course Support 1.11. Course Audience and Requirements 1.12. Software Environment 1.13. Which Distribution to Choose? 1.14. Red Hat Family 1.15. SUSE Family 1.</description>
+      <description>考cka需要整理kubernetes的知识，看了linux基金会的课程，感觉有点贵，赚钱不容易得到刀刃上，所以看下目录帮助熟悉学习目标即可</description>
     </item>
     
     <item>
@@ -1282,12 +1175,7 @@ Chapter 1. Course Introduction# Welcome 1.1. Before You Begin 1.2. Course Int
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/kubernetes/kubernetes%E8%AF%81%E4%B9%A6%E7%BB%AD%E6%9C%9F/</guid>
-      <description>kubeadm 默认证书为一年，一年过期后，会导致api service不可用，使用过程中会出现：x509: certificate has expired or is not yet valid.
-方案一 通过修改kubeadm 调整证书过期时间
-一、使用kubadm 更新证书#1. 查看证书有效期#kubeadm alpha certs check-expiration 2. 重新签发证书#kubeadm alpha certs renew admin.conf kubeadm alpha certs renew scheduler.conf kubeadm alpha certs renew controller-manager.conf 3. 重启控制平面使生效#重启kubelet会自动重新创建核心组件
-systemctl restart kubelet 4. 验证#kubeadm alpha certs check-expiration
-二、创建长期有效期证书#自己创建这四个文件需要的证书，替换四个文件使用的内嵌证书。我们自己创建的证书的有效期为50年，不再有过期的风险。步骤如下：
-生成证书：#cd /etc/kubernetes mkdir cert cd cert/ cat &amp;gt; ca-config.</description>
+      <description>kubeadm 默认证书为一年，一年过期后，会导致api service不可用，使用过程中会出现：x509: certificate has expired or is not yet valid</description>
     </item>
     
     <item>
@@ -1296,8 +1184,7 @@ systemctl restart kubelet 4. 验证#kubeadm alpha certs check-expiration
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/kubernetes/metrics-server-%E9%83%A8%E7%BD%B2/</guid>
-      <description>heapster已经不在维护，转由metrics-server 替代，没安装metrics-server pod命令和自动调度不能正常工作 项目地址：https://github.com/kubernetes-incubator/metrics-server 部署后可能不能正常收集数据，尝试添加下面的启动参数，kubelet-insecure-tls用于kubelet使用证书不满足认证添加，kubelet-preferred-address-types指名访问kubelet的地址类型，分别有：InternalIP,ExternalIP,Hostname
-- /metrics-server - --v=2 - --kubelet-insecure-tls - --kubelet-preferred-address-types=InternalIP </description>
+      <description>heapster已经不在维护，转由metrics-server 替代，没安装metrics-server pod命令和自动调度不能正常工作</description>
     </item>
     
     <item>
@@ -1306,7 +1193,7 @@ systemctl restart kubelet 4. 验证#kubeadm alpha certs check-expiration
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/kubernetes/skiffold/</guid>
-      <description>调试可用的配置，花了不少时间踩坑，拿走不谢！#apiVersion: skaffold/v1beta8 kind: Config - name: profile-prod # a unique profile name. patches: activation: - env: ENV=production kubeContext: minikube command: deploy - env: ENV=develop kubeContext: minikube command: dev build: artifacts: - image: axd-register jibMaven: module: axd-register args: - -DskipTests - image: axd-gateway jibMaven: module: axd-gateway args: - -DskipTests - image: axd-activity-provider jibMaven: module: axd-gateway args: - -DskipTests - image: axd-auth-provider jibMaven: module: axd-auth-provider args: - -DskipTests - image: axd-basic-provider jibMaven: module: axd-basic-provider args: - -DskipTests - image: axd-book-provider jibMaven: module: axd-book-provider args: - -DskipTests - image: axd-manager-provider jibMaven: module: axd-manager-provider args: - -DskipTests - image: axd-merchant-provider jibMaven: module: axd-merchant-provider args: - -DskipTests - image: axd-mq-provider jibMaven: module: axd-mq-provider args: - -DskipTests - image: axd-order-provider jibMaven: module: axd-order-provider args: - -DskipTests - image: axd-push-provider jibMaven: module: axd-push-provider args: - -DskipTests - image: axd-user-provider jibMaven: module: axd-user-provider args: - -DskipTests # optional profile to run the jib build on Google Cloud Build deploy: kubectl: manifests: - axd-register/k8s.</description>
+      <description>调试可用的配置，花了不少时间踩坑，拿走不谢</description>
     </item>
     
     <item>
@@ -1315,7 +1202,7 @@ systemctl restart kubelet 4. 验证#kubeadm alpha certs check-expiration
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/kubernetes/ubuntu18-04%E5%AE%89%E8%A3%85minikube/</guid>
-      <description> 使用kvm2 ,检查命令看到关键字即可： egrep --color &#39;vmx|svm&#39; /proc/cpuinfo 安装kvm依赖：  apt install libvirt-clients libvirt-daemon-system qemu-kvm systemctl enable libvirtd.service systemctl start libvirtd.service curl -LO https://storage.googleapis.com/minikube/releases/latest/docker-machine-driver-kvm2 install docker-machine-driver-kvm2 /usr/local/bin/ 下载minikube, google的存储，下载失败多尝试几下成功后速度很快：  curl -Lo minikube https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64 &amp;amp;&amp;amp; chmod +x minikube cp minikube /usr/local/bin &amp;amp;&amp;amp; rm minikub 设置minikube使用的虚拟化环境， 启动miniKube环境：  minikube start --vm-driver kvm2 </description>
+      <description>设置minikube使用的虚拟化环境， 启动miniKube环境</description>
     </item>
     
     <item>
@@ -1324,8 +1211,7 @@ systemctl restart kubelet 4. 验证#kubeadm alpha certs check-expiration
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/kubernetes/upgrade-kubernetes-to-1-19-4/</guid>
-      <description>install upgrade tool kubeadm#apt install -y kubeadm kubeadm config images list k8s.gcr.io/kube-apiserver:v1.19.4 k8s.gcr.io/kube-controller-manager:v1.19.4 k8s.gcr.io/kube-scheduler:v1.19.4 k8s.gcr.io/kube-proxy:v1.19.4 k8s.gcr.io/pause:3.2 k8s.gcr.io/etcd:3.4.13-0 k8s.gcr.io/coredns:1.7.0 transfer gcr images to docker hub#open https://katacoda.com/courses/ubuntu/playground
-go get github.com/xilu0/transfer for im in `kubeadm config images list`;do transfer --user=heishui --password=&amp;quot;$repopass&amp;quot; --image=$im;done upgrade kubernetes cluster#kubeadm upgrade plan kubeadm upgrade apply v1.19.4 upgrade components#apt install -y kubectl kubelet </description>
+      <description>install upgrade tool kubeadm</description>
     </item>
     
     <item>
@@ -1334,9 +1220,7 @@ go get github.com/xilu0/transfer for im in `kubeadm config images list`;do trans
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/kubernetes/yaml%E8%AF%AD%E6%B3%95/</guid>
-      <description>语法#除某些控制字符外，YAML语言接受整个Unicode字符集。所有可接受的字符都可以在YAML文档中使用。YAML文档可以用UTF-8，UTF-16和UTF-32编码。（虽然UTF-32不是强制性的，但如果解析器具有JSON兼容性，则必须使用它。）
- 空格 缩进用于表示结构; 但是，绝不允许制表符作为缩进。 注释以井号（#）开头，可以从一行开始，一直持续到行尾。必须通过空格字符将注释与其他标记分开。[13]如果＃字符出现在字符串中，则它们是数字符号（#）文字。 列表成员由前导连字符（-）表示，每行一个成员，或用方括号（[ ]）括起，并用逗号 空格（, ）分隔。 关联数组使用冒号 空格（: ）以表格key：value表示，每行一个或用花括号（{ }）括起来并用逗号 空格（, ）分隔。  关联数组键可以以问号（?）为前缀，以允许明确地表示自由多字键。   字符串（标量）通常不加引号，但可以用双引号（&amp;quot;）或单引号（&#39;）括起来。  在双引号内，特殊字符可以用反斜杠（）开头的C风格转义序列表示。根据文档，支持的唯一八进制转义是。\``\0   块标量用缩进分隔，并带有可选修饰符以保留（|）或fold（&amp;gt;）换行符。 单个流中的多个文档由三个连字符（---）分隔。  三个句点（...）可选地结束流中的文档。   重复节点最初用＆符号（&amp;amp;）表示，然后用星号（*）引用。 节点可以使用感叹号（!!）后跟一个字符串来标记类型或标记，该字符串可以扩展为URI。 流中的YAML文档可以在“指令”之后，该指令由百分号（%）后跟名称和空格分隔的参数组成。YAML 1.1中定义了两个指令：  ％YAML指令用于标识给定文档中的YAML版本。 ％TAG指令用作URI前缀的快捷方式。然后可以在节点类型标签中使用这些快捷方式。    YAML要求用作列表分隔符的冒号和逗号后跟空格，以便通常可以表示包含嵌入标点符号（例如5,280或http://www.jianshu.com）的标量值，而无需用引号括起来。
-YAML中保留了两个额外的sigil字符，以便将来标准化：at符号（@）和重音符号（```）。</description>
+      <description>YAML语言接受整个Unicode字符集。所有可接受的字符都可以在YAML文档中使用</description>
     </item>
     
     <item>
@@ -1345,7 +1229,7 @@ YAML中保留了两个额外的sigil字符，以便将来标准化：at符号（
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/kubernetes/%E5%9B%BD%E5%86%85cka%E8%80%83%E8%AF%95%E6%80%BB%E7%BB%93/</guid>
-      <description>这里没用透露考题，签有保密协议的，君子慎独，不欺暗室 深圳的考点在八卦岭地铁站附近的八卦二路616号四楼，试题是中文，使用考试中心的电脑考试，那边的电脑不能上google,我用google登录linux基金会的网站还遇到了麻烦，考官很开明，只要不违背考试原则都可以 在一个web终端考试，只有一个终端，复制进出没用影响，最好熟悉下tmux这个终端管理工具，我就得益于它快速切换终端使用explain查看接口文档 感觉试题难度一般，但时间有点紧，有文档有不敢去翻，翻翻时间过去了，所以要熟悉命令，命令是最快的，可以帮助节省时间解决难题，多数时候个把难题就决定着过不过，还有就是要熟悉常见资源熟悉的默写，我在这里吃了大亏，平时惯于复制粘贴，关键石刻心里没底默写不出现，找参考复制浪费了时间，要查文档最好用搜索，我试过记住文档的知识布局，结果还是不易快速找到，一些资源参考github仓库搜索效率比官方文档还高，主要是快 我还不知道这次又没用通过，三小时做下来还有点累，心累，做的我都怕了，考完后再来一遍也没用把握通过</description>
+      <description>这里没用透露考题，签有保密协议的，君子慎独，不欺暗室</description>
     </item>
     
     <item>
@@ -1354,8 +1238,7 @@ YAML中保留了两个额外的sigil字符，以便将来标准化：at符号（
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/kubernetes/%E5%9F%BA%E4%BA%8Ekubernetes-ingress-%E8%93%9D%E7%BB%BF%E5%92%8C%E9%87%91%E4%B8%9D%E9%9B%80%E9%83%A8%E7%BD%B2/</guid>
-      <description>一个ingress host可以配置多个后端服务,通过添加删除服务实现蓝绿部署，将不同版本的服务入口一起配上，通过使用权重注解可以实现流量分配，权重50的含义是将流量的百分之 50 引入到新服务的 pod 里面
-ingress.aliyun.weight/new-nginx: &amp;quot;50&amp;quot;  </description>
+      <description>一个ingress  host可以配置多个后端服务,通过添加删除服务实现蓝绿部署，将不同版本的服务入口一起配上，通过使用权重注解可以实现流量分配，权重50的含义是将流量的百分之 50 引入到新服务的 pod 里面</description>
     </item>
     
     <item>
@@ -1364,8 +1247,7 @@ ingress.aliyun.weight/new-nginx: &amp;quot;50&amp;quot;  </description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/kubernetes/%E5%9F%BA%E4%BA%8Ekubernetes-service%E5%AE%9E%E7%8E%B0%E9%87%91%E4%B8%9D%E9%9B%80%E8%93%9D%E7%BB%BF%E5%8F%91%E5%B8%83/</guid>
-      <description>服务匹配部署是在template下的labels,选择一个labels即可，一个服务可以对应多个部署，部署的副本越多分的流量比例越大哦，以此来实现金丝雀发布，同理也可以做蓝绿部署，就是在部署的template labels上交换添加移除标签的事
-apiVersion: extensions/v1beta1 kind: Deployment metadata: labels: run: old-nginx name: old-nginx spec: replicas: 1 selector: matchLabels: run: old-nginx template: metadata: labels: run: old-nginx app: nginx spec: containers: - image: registry.cn-hangzhou.aliyuncs.com/xianlu/old-nginx imagePullPolicy: Always name: old-nginx ports: - containerPort: 80 protocol: TCP restartPolicy: Always#apiVersion: extensions/v1beta1 kind: Deployment metadata: labels: run: new-nginx name: new-nginx spec: replicas: 1 selector: matchLabels: run: new-nginx template: metadata: labels: run: new-nginx app: nginx spec: containers: - image: registry.</description>
+      <description>服务匹配部署是在template下的labels,选择一个labels即可，一个服务可以对应多个部署，部署的副本越多分的流量比例越大哦，以此来实现金丝雀发布，同理也可以做蓝绿部署，就是在部署的template labels上交换添加移除标签的事</description>
     </item>
     
     <item>
@@ -1374,12 +1256,7 @@ apiVersion: extensions/v1beta1 kind: Deployment metadata: labels: run: old-nginx
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/kubernetes/%E5%AE%B9%E5%99%A8%E7%9A%84%E5%8E%9F%E7%90%86/</guid>
-      <description>现在容器运行时已经很多，有些原理差别大了，以最熟悉的dcoker为列，特殊的特别了解
-容器的组成#control-group + namespace + image
-namespace 的种类# mount, 2. uts, 3. pid, 4. network, 5. user, 6. ipc, 7. cgroup
-  cgroup类型:#两种驱动：systemd cgroup driver, cgroupfs cgroup driver cgroup类型: cpu cpuset cpuacct, memory, device, freezer, blkio, pid, net_cls, net_ prio, hugetlb, perf-event, rdma
-image 原理#分层文件系统或联合文件系统，有mergedir, workdir, upper层，lower层的概念， mergedir：整合lower层和upper层显示一个完整的文件系统视图 upper: 容器读写层 workdir: 写入会保存到upper层 lower：镜像层，不会改变
-知名的运行时#docker, RTK, firecracker, kata-containers / runtime, google / gvisor, podman</description>
+      <description>现在容器运行时已经很多，有些原理差别大了，以最熟悉的dcoker为列，特殊的特别了解</description>
     </item>
     
     <item>
@@ -1388,8 +1265,16 @@ image 原理#分层文件系统或联合文件系统，有mergedir, workdir, 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/kubernetes/%E9%80%9A%E8%BF%87hub-docker%E5%8A%A0git%E8%8E%B7%E5%8F%96kubernetes%E9%95%9C%E5%83%8F/</guid>
-      <description>使用工具kubeadm安装kubernetes集群是需要的镜像默认放在google容器仓库中，国内不便直接下载，这里记录通过hub.docker加git获取kubernetes镜像： 1.登陆注册dockerID和github账户 2.dockerhub和github上的公开仓库创建都是没有限制的，在github创建一个仓库，里面放放入自己Dockerfile，列入：
-from gcr.io/google_containers/kube-scheduler-amd64:v1.9.2 label maintainer=&amp;quot;785471184@qq.com&amp;quot;  这次我是使用应该仓库构建多个镜像，github上用目录分开存放，dockerhub上用tag来区分不同的仓库，如果不闲玛法可以一个镜像创建一个仓库。 dockerhub有普通仓库和自带构建仓库，普仓库我们可以登录后把本地镜像push上去，自动构建仓库支持对接github和bitbucket版本控制系统自动化构建，我要用github仓库自动构建，那就创建自动构建仓库，跟图： 不要点下面那个很大的创建仓库图标，那里只是创建普通仓库的入口，从那里开始不能配置自动构建的，我也被坑一阵，留意！ 这里有一点值得提醒，如果你的仓库是在组织下而不是在个人名下，那dockerhub默认是不能访问组织仓库，这时候需要去到github上删除组织仓库的第三方访问限制： 选择仓库创建： 默认是在仓库的根目录检查Dockerfile文件，我这里是要用一个仓库构建多个镜像，所有创建了子目录，把Dockerfile放在子目录里面，指定Dockerfile位置，中间有个激活自动构建的单选框，可以选择也可以不选需要的时候自己来点一下触发按钮，记得保存： 触发构建之后可以去构建详细那里查看构建结果，如果失败了点击错误可以看到日志。 构建成功的可以就可以在tags那里看到标签，不想保留的镜像可以删除。 最后一次构建成功的Dockerfile内容还会被提取到Dockerfile栏目。 在仓库信息里面给些备注可以方便其他寻找镜像的人使用。 ok！</description>
+      <description>使用工具kubeadm安装kubernetes集群是需要的镜像默认放在google容器仓库中，国内不便直接下载，这里记录通过hub.docker加git获取kubernetes镜像：</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/kubernetes/%E9%87%8D%E5%A4%B4%E6%9E%84%E5%BB%BAkubernetes%E9%9B%86%E7%BE%A4v1-81/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/kubernetes/%E9%87%8D%E5%A4%B4%E6%9E%84%E5%BB%BAkubernetes%E9%9B%86%E7%BE%A4v1-81/</guid>
+      <description>重头构建kubernetes集群v1.81 {#重头构建kubernetes集群v1.81 .title}</description>
     </item>
     
     <item>
@@ -1398,9 +1283,7 @@ from gcr.io/google_containers/kube-scheduler-amd64:v1.9.2 label maintainer=&amp;
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/literature/dwight-d-eisenhowerfarewell-address/</guid>
-      <description>Good evening, my fellow Americans.
-First, I should like to express my gratitude to the radio and television networks for the opportunities they have given me over the years to bring reports and messages to our nation. My special thanks go to them for the opportunity of addressing you this evening.
-Three days from now, after half century in the service of our country, I shall lay down the responsibilities of office as, in traditional and solemn ceremony, the authority of the Presidency is vested in my successor.</description>
+      <description>Like every other &amp;ndash; Like every other citizen, I wish the new President, and all who will labor with him, Godspeed. I pray that the coming years will be blessed with peace and prosperity for all</description>
     </item>
     
     <item>
@@ -1409,8 +1292,7 @@ Three days from now, after half century in the service of our country, I shall l
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/literature/%E4%B8%8E%E5%B1%B1%E5%B7%A8%E6%BA%90%E7%BB%9D%E4%BA%A4%E4%B9%A6/</guid>
-      <description>康白：足下昔称吾于颍川，吾常谓之知言。然经怪此意尚未熟悉于足下，何从便得之也？前年从河东还，显宗、阿都说足下议以吾自代，事虽不行，知足下故不知之。足下傍通，多可而少怪；吾直性狭中，多所不堪，偶与足下相知耳。闲闻足下迁，惕然不喜，恐足下羞庖人之独割，引尸祝以自助，手荐鸾刀，漫之膻腥，故具为足下陈其可否。 吾昔读书，得并介之人，或谓无之，今乃信其真有耳。性有所不堪，真不可强。今空语同知有达人无所不堪，外不殊俗，而内不失正，与一世同其波流，而悔吝不生耳。老子、庄周，吾之师也，亲居贱职；柳下惠、东方朔，达人也，安乎卑位，吾岂敢短之哉！又仲尼兼爱，不羞执鞭；子文无欲卿相，而三登令尹，是乃君子思济物之意也。所谓达能兼善而不渝，穷则自得而无闷。以此观之，故尧、舜之君世，许由之岩栖，子房之佐汉，接舆之行歌，其揆一也。仰瞻数君，可谓能遂其志者也。故君子百行，殊途而同致，循性而动，各附所安。故有处朝廷而不出，入山林而不返之论。且延陵高子臧之风，长卿慕相如之节，志气所托，不可夺也。吾每读尚子平、台孝威传，慨然慕之，想其为人。少加孤露，母兄见骄，不涉经学。性复疏懒，筋驽肉缓，头面常一月十五日不洗，不大闷痒，不能沐也。每常小便而忍不起，令胞中略转乃起耳。又纵逸来久，情意傲散，简与礼相背，懒与慢相成，而为侪类见宽，不攻其过。又读《庄》、《老》，重增其放，故使荣进之心日颓，任实之情转笃。此犹禽鹿，少见驯育，则服从教制；长而见羁，则狂顾顿缨，赴蹈汤火；虽饰以金镳，飨以嘉肴，愈思长林而志在丰草也。 阮嗣宗口不论人过，吾每师之而未能及；至性过人，与物无伤，唯饮酒过差耳。至为礼法之士所绳，疾之如仇，幸赖大将军保持之耳。吾不如嗣宗之资，而有慢弛之阙；又不识人情，暗于机宜；无万石之慎，而有好尽之累。久与事接，疵衅日兴，虽欲无患，其可得乎？又人伦有礼，朝廷有法，自惟至熟，有必不堪者七，甚不可者二：卧喜晚起，而当关呼之不置，一不堪也。抱琴行吟，弋钓草野，而吏卒守之，不得妄动，二不堪也。危坐一时，痹不得摇，性复多虱，把搔无已，而当裹以章服，揖拜上官，三不堪也。素不便书，又不喜作书，而人间多事，堆案盈机，不相酬答，则犯教伤义，欲自勉强，则不能久，四不堪也。不喜吊丧，而人道以此为重，已为未见恕者所怨，至欲见中伤者；虽瞿然自责，然性不可化，欲降心顺俗，则诡故不情，亦终不能获无咎无誉如此，五不堪也。不喜俗人，而当与之共事，或宾客盈坐，鸣声聒耳，嚣尘臭处，千变百伎，在人目前，六不堪也。心不耐烦，而官事鞅掌，机务缠其心，世故烦其虑，七不堪也。又每非汤、武而薄周、孔，在人间不止，此事会显，世教所不容，此甚不可一也。刚肠疾恶，轻肆直言，遇事便发，此甚不可二也。以促中小心之性，统此九患，不有外难，当有内病，宁可久处人间邪？又闻道士遗言，饵术黄精，令人久寿，意甚信之；游山泽，观鱼鸟，心甚乐之；一行作吏，此事便废，安能舍其所乐而从其所惧哉！ 夫人之相知，贵识其天性，因而济之。禹不逼伯成子高，全其节也；仲尼不假盖于子夏，护其短也；近诸葛孔明不逼元直以入蜀，华子鱼不强幼安以卿相，此可谓能相终始，真相知者也。足下见直木不可以为轮，曲木不可以为桷，盖不欲枉其天才，令得其所也。故四民有业，各以得志为乐，唯达者为能通之，此足下度内耳。不可自见好章甫，强越人以文冕也；己嗜臭腐，养鸳雏以死鼠也。吾顷学养生之术，方外荣华，去滋味，游心于寂寞，以无为为贵。纵无九患，尚不顾足下所好者。又有心闷疾，顷转增笃，私意自试，不能堪其所不乐。自卜已审，若道尽途穷则已耳。足下无事冤之，令转于沟壑也。 吾新失母兄之欢，意常凄切。女年十三，男年八岁，未及成人，况复多病。顾此悢悢，如何可言！今但愿守陋巷，教养子孙，时与亲旧叙离阔，陈说平生，浊酒一杯，弹琴一曲，志愿毕矣。足下若嬲之不置，不过欲为官得人，以益时用耳。足下旧知吾潦倒粗疏，不切事情，自惟亦皆不如今日之贤能也。若以俗人皆喜荣华，独能离之，以此为快；此最近之，可得言耳。然使长才广度，无所不淹，而能不营，乃可贵耳。若吾多病困，欲离事自全，以保余年，此真所乏耳，岂可见黄门而称贞哉！若趣欲共登王途，期于相致，时为欢益，一旦迫之，必发狂疾。自非重怨，不至于此也。野人有快炙背而美芹子者，欲献之至尊，虽有区区之意，亦已疏矣。愿足下勿似之。其意如此，既以解足下，并以为别。嵇康白。
-译文：#嵇康谨启：过去您曾在山嵚面前称说我不愿出仕的意志，我常说这是知己的话。但我感到奇怪的是您对我还不是非常熟悉，不知是从哪里得知我的志趣的？前年我从河东回来，显宗和阿都对我说，您曾经打算要我来接替您的职务，这件事情虽然没有实现，但由此知道您以往并不了解我。您遇事善于应变，对人称赞多而批评少；我性格直爽，心胸狭窄，对很多事情不能忍受，只是偶然跟您交上朋友罢了。近来听说您升官了，我感到十分忧虑，恐怕您不好意思独自做官，要拉我充当助手，正像厨师羞于一个人做菜，要拉祭师来帮忙一样，这等于使我手执屠刀，也沾上一身腥臊气味，所以向您陈说一下可不可以这样做的道理。 我从前读书的时候，听说有一种既能兼济天下又是耿介孤直的人，总认为是不可能的，现在才真正相信了。性格决定有的人对某些事情不能忍受，真不必勉强。现在大家都说有一种对任何事情都能忍受的通达的人，他们外表上跟一般世俗的人没有两样，而内心却仍能保持正道，能够与世俗同流合污而没有悔恨的心情，但这只是一种空话罢了。老子和庄周都是我要向他们学习的人，他们的职位都很低下；柳下惠和东方朔都是通达的人，他们都安于贱职，我哪里敢轻视议论他们呢！又如孔子主张博爱无私，为了追求道义，即使去执鞭赶车他也不会感到羞愧。子文没有当卿相的愿望，而三次登上令尹的高位，这就是君子想救世济民的心意。这也是前人所说的在显达的时候能够兼善天下而始终不改变自己的意志，在失意的时候能够独善其身而内心不觉得苦闷。从以上所讲的道理来看，尧、舜做皇帝，许由隐居山林，张良辅助汉王朝，接舆唱着歌劝孔子归隐，彼此的处世之道是一致的。看看上面这些人，可以说都是能够实现他们自己志向的了。所以君子表现的行为、所走的道路虽然各不相同，但同样可以达到相同的目的，顺着各自的本性去做，都可以得到心灵的归宿。所以就有朝廷做官的人为了禄位，因此入而不出，隐居山林的人为了名声，因此往而不返的说法。季札推崇子臧的高尚情操，司马相如爱慕蔺相如的气节，以寄托自己的志向，这是没有办法可以勉强改变的。每当我读尚子平和台孝威传的时候，对他们十分赞叹和钦慕，经常想到他们这种高尚的情操。再加上我年轻时就失去了父亲，身体也比较瘦弱，母亲和哥哥对我很娇宠，不去读那些修身致仕的经书。我的性情又比较懒惰散漫，筋骨迟钝，肌肉松弛，头发和脸经常一月或半月不洗，如不感到特别发闷发痒，我是不愿意洗的。小便常常忍到使膀胱发胀得几乎要转动，才起身去便。又因为放纵过久，性情变得孤傲散漫，行为简慢，与礼法相违背，懒散与傲慢却相辅相成，而这些都受到朋辈的宽容，从不加以责备。又读了《庄子》和《老子》之后，我的行为更加放任。因此，追求仕进荣华的热情日益减弱，而放任率真的本性则日益加强。这像麋鹿一样，如果从小就捕捉来加以驯服养育，那就会服从主人的管教约束；如果长大以后再加以束缚，那就一定会疯狂地乱蹦乱跳，企图挣脱羁绊它的绳索，即使赴汤蹈火也在所不顾；虽然给它带上金的笼头，喂它最精美的饲料，但它还是强烈思念着生活惯了的茂密树林和丰美的百草。 阮籍嘴里不议论别人的过失，我常想学习他但没有能够做到；他天性淳厚超过一般人，待人接物毫无伤害之心，只有饮酒过度是他的缺点。以致因此受到那些维护礼法的人们的攻击，像仇人一样的憎恨他，幸亏得到了大将军的保护。我没有阮籍那种天赋，却有傲慢懒散的缺点；又不懂得人情世故，不能随机应变；缺少万石君那样的谨慎，而有直言不知忌讳的毛病。倘若长久与人事接触，得罪人的事情就会每天发生，虽然想避掉灾祸，又怎么能够做得到呢？还有君臣、父子、夫妻、兄弟、朋友之间都有一定的礼法，国家也有一定的法度，我已经考虑得很周到了，但有七件事情我是一定不能忍受的，有两件事情是无论如何不可以这样做的：我喜欢睡懒觉，但做官以后，差役就要叫我起来，这是第一件我不能忍受的事情。我喜欢抱着琴随意边走边吟，或者到郊外去射鸟钓鱼，做官以后，吏卒就要经常守在我身边，我就不能随意行动，这是第二件我不能忍受的事情。做官以后，就要端端正正地坐着办公，腿脚麻木也不能自由活动，我身上又多虱子，一直要去搔痒，而要穿好官服，迎拜上级官长，这是第三件我不能忍受的事情。我向来不善于写信，也不喜欢写信，但做官以后，要处理很多人间世俗的事情，公文信札堆满案桌，如果不去应酬，就触犯礼教失去礼仪，倘使勉强应酬，又不能持久，这是第四件我不能忍受的事情。我不喜欢出去吊丧，但世俗对这件事情却非常重视，我的这种行为已经被不肯谅解我的人所怨恨，甚至还有人想借此对我进行中伤；虽然我自己也警惕到这一点而责备自己，但是本性还是不能改变，也想抑制住自己的本性而随顺世俗，但违背本性又是我所不愿意的，而且最后也无法做到像现在这样的既不遭到罪责也得不到称赞，这是第五件我不能忍受的事情。我不喜欢俗人，但做官以后，就要跟他们在一起办事，或者宾客满坐，满耳嘈杂喧闹的声音，处在吵吵闹闹的污浊环境中，各种千奇百怪的花招伎俩，整天可以看到，这是第六件我不能忍受的事情。我生就不耐烦的性格，但做官以后，公事繁忙，政务整天萦绕在心上，世俗的交往也要化费很多精力，这是第七件我所不能忍受的事情。还有我常常要说一些非难成汤、周武王和轻视周公、孔子的话，如果做官以后不停止这种议论，这件事情总有一天会张扬出去，为众人所知，必为世俗礼教所不容，这是第一件无论如何不可以这样做的事情。我的性格倔强，憎恨坏人坏事，说话轻率放肆，直言不讳，碰到看不惯的事情脾气就要发作，这是第二件无论如何不可以这样做的事情。以我这种心胸狭隘的性格，再加上上面所说的九种毛病，即使没有外来的灾祸，自身也一定会产生病痛，哪里还能长久地活在人世间呢？又听道士说，服食术和黄精，可以使人长寿，心里非常相信；又喜欢游山玩水，观赏大自然的鱼鸟，对这种生活心里感到很高兴；一旦做官以后，就失去了这种生活乐趣，怎么能够丢掉自己乐意做的事情而去做那种自己害怕做的事情呢？ 人与人之间相互成为好朋友，重要的是要了解彼此天生的本性，然后成全他。夏禹不强迫伯成子高出来做官，是为了成全他的节操；孔子不向子夏借伞，是为了掩饰子夏的缺点；近时诸葛亮不逼迫徐庶投奔蜀汉，华歆不硬要管宁接受卿相的位子，以上这些人才可以说始终如一，是真正相互了解的好朋友。您看直木不可以做车轮，曲木不能够当椽子，这是因为人们不想委屈它们原来的本性，而让它们各得其所。所以士、农、工、商都各有自己的专业，都能以达到自己的志向为快乐，这一点只有通达的人才能理解，它应该是在您意料之中的。不能够因为自己喜爱华丽的帽子，而勉强越地的人也要去戴它；自己嗜好腐烂发臭的食物，而把死了的老鼠来喂养鸳雏。我近来正在学习养生的方法，正疏远荣华，摒弃美味，心情安静恬淡，追求“无为”的最高境界。即使没有上面所说的“九患”，我尚且不屑一顾您所爱好的那些东西。我有心闷的毛病，近来又加重了，自己设想，是不能忍受所不乐意的事的。我已经考虑明确，如果无路可走也就算了。您不要来委屈我，使我陷于走投无路的绝境。 我刚失去母亲和哥哥的欢爱，时常感到悲伤。女儿才十三岁，男孩才八岁，还没有成人，而且经常生病。想到这些就十分悲恨，真不知从何说起！我现在但愿能过平淡清贫的生活，教育好自己的孩子，随时与亲朋友好叙说离别之情，谈谈家常，喝一杯淡酒，弹一曲琴，这样我的愿望就已经满足了。倘使您纠缠住我不放，不过是想为朝廷物色人，使他为世所用罢了。您早知道我放任散漫，不通事理，我也以为自己各方面都不及如今在朝的贤能之士。如果以为世俗的人都喜欢荣华富贵，而唯独我能够离弃它，并以此感到高兴；这样讲最接近我的本性，可以这样说。假使是一个有高才大度，又无所不通的人，而又能不求仕进，那才是可贵的。像我这样经常生病，想远离世事以求保全自己余年的人，正好缺少上面所说的那种高尚品质，怎么能够看到宦官而称赞他是守贞节的人呢！倘使急于要我跟您一同去做官，想把我招去，经常在一起欢聚，一旦来逼迫我，我一定会发疯的。若不是有深仇大恨，我想是不会到此地步的。山野里的人以太阳晒背为最愉快的事，以芹菜为最美的食物，因此想把它献给君主，虽然出于一片至诚，但却太不切合实际了。希望您不要像他们那样。我的意思就是上面所说的，写这封信既是为了向您把事情说清楚，并且也是向您告别。嵇康谨启。</description>
+      <description>人与人之间相互成为好朋友，重要的是要了解彼此天生的本性，然后成全他。夏禹不强迫伯成子高出来做官，是为了成全他的节操；孔子不向子夏借伞，是为了掩饰子夏的缺点；近时诸葛亮不逼迫徐庶投奔蜀汉，华歆不硬要管宁接受卿相的位子，以上这些人才可以说始终如一，是真正相互了解的好朋友。您看直木不可以做车轮，曲木不能够当椽子，这是因为人们不想委屈它们原来的本性，而让它们各得其所。所以士、农、工、商都各有自己的专业，都能以达到自己的志向为快乐，这一点只有通达的人才能理解，它应该是在您意料之中的。不能够因为自己喜爱华丽的帽子，而勉强越地的人也要去戴它；自己嗜好腐烂发臭的食物，而把死了的老鼠来喂养鸳雏。</description>
     </item>
     
     <item>
@@ -1419,7 +1301,7 @@ Three days from now, after half century in the service of our country, I shall l
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/literature/%E4%BA%BA%E7%B1%BB%E8%AF%AF%E5%88%A4%E5%BF%83%E7%90%86%E5%AD%A6/</guid>
-      <description>查理·芒格以自己的经验总结出的心理学尝试，共25条，整理如下： 误判心理学 1. 奖励和惩罚超级反应倾向 好的激励机制有利于提高工作效率。不恰当的激励机制则能够导致人们在做坏事的时候觉得自己是正当的。所以非常需要认清自己及他人做事的目的是什么。 这也可以应用到应对拖延上，每天强迫自己先完成不喜欢然而必要的工作，再奖励自己去处理那些自己喜欢的任务。 2. 喜欢/热爱倾向 人类喜欢和热爱被喜欢和被热爱。许多情场上的胜负皆因他/她能否表现出额外的关怀和爱护。一般来说，人类终生都会渴望得到许多和他毫无关系的他人的怜惜和欣赏。 喜欢和热爱是一种心理调节工具，促使人们：（1）忽略其热爱对象的缺点，对其百依百顺；（2）偏爱那些能够让自己联想其热爱对象的人、物品和行动；（3）为了爱而扭曲其他事实。 3. 讨厌/憎恨倾向 与“喜欢/热爱倾向”相反的模式，也会造成与“喜欢/热爱倾向”相反的心理调节效果。 4. 避免怀疑倾向 人类的大脑有一种尽快做出决定，以此消除怀疑的倾向。这种倾向在困惑和压力的环境下会尤其容易发生。 所以法庭和陪审团需要休庭讨论去抵制这种倾向。而商场购物的冲动情绪会促使你购买许多大量事后发现用不上的东西。 5. 避免不一致性倾向 大脑的抗改变倾向使人们倾向于保留以下几种东西的原样：以前的结论、忠诚度、身份、社会认可的角色等。比如工作中，之前做的错误报告，为了表现得前后一致而会在原来错误的报告基础上做出错误推论。 查理说：“正确的教育应该是一个提高认知能力的漫长过程，以便使我们变得足够有智慧，能够摧毁那些因拒绝改变倾向而被保留的错误想法。”所以我们需要不断去检查那些僵化的结论和态度。 避免不一致倾向带来的影响有好有坏： 死抱着错误观念不放手 大多数人会选择表现出与他们的公共责任、新旧公共认同相一致的行为，利于社会稳定 人们在获取一样事物的过程中做出的重大牺牲将会提高他们对这一事物的忠诚度 A对B先在小事上提出需求，然后逐渐提高要求，B即使不愿满足也往往会妥协 知识传播和更迭的速度变慢 6. 好奇心倾向 好奇心能使人们在正式教育结束后很久依然拥有许多乐趣和智慧。 7. 康德式公平倾向 康德以其“绝对命令”而闻名，他要求人们遵守某些行为方式，如果所有人都遵守这些方式，那么就能够保证社会制度对每个人来说都是最好的。人们共同遵守一些约定俗成的规则行事，而更有一些则变成了法律。 康德式公平倾向则是指人们都表现出并期待从别人那里得到康德所定义的这种公平。 8. 艳羡/嫉妒倾向 “驱动这个世界的不是贪婪，而是妒忌。” 9. 回馈倾向 人类有以德报德、以怨报怨的倾向。这种倾向明显能够促进有利于成员利益的团体合作。 而化解过激的敌意的标准方法是，延迟自己的反应。“如果你觉得骂人是个好主意，你可以留到明天再骂。” 这种回馈机制也被用到商业推销中，当别人给你提供一点小礼物，然后要求你买他的东西的时候，你很可能为了报答他而当了冤大头。 10. 受简单联想影响的倾向 许多条件反射是由简单的联想引发的。比如价格高的东西质量好，广告中的名人效应，一些所谓的幸运数字和幸运物品，富二代的优越生活和他们人品之间的关联等等。 审慎地看待这些关联，尤其容易引发热爱或厌恶。 11. 简单的、避免痛苦的心理否认 现实太过痛苦，令人无法忍受，所以人们会否认现实、会扭曲各种事实，直到它们变得可以接受。我们或多或少都有这种毛病，而这一倾向的极端后果经常会与爱情、死亡和对化学品的依赖有关。 “未必有希望才能够坚持”，能过做到这一点的人是非常可敬的。 12. 自视过高的倾向 人们会高估自己，就像90%的司机都觉得他们的驾驶技术在平均水平之上。自视过高的倾向往往使人们偏爱那些和自己相似的人，而相似的人组成的团体总是容易走向极端。自视更高也会使人们以为自己有很大的主动权而做出冲动的决定。 解决方法——客观。这一条很难去纠偏的原因在于自己已经走偏了，而且还会为此而寻找借口。所以可能更好的办法是找一些真诚的朋友提供反馈，接受建议。 13. 过度乐观的倾向 人们不但会表现出简单的、避免痛苦的心理否认，而且甚至在已经做的非常好的时候，还会表现的过度的乐观。 解决愚蠢的乐观主义的正确方法是通过学习，习惯性地应用费马和帕斯卡的概率论。 14. 被剥夺超级反应的倾向 失去造成的伤害比得到带来的快乐多得多；如果有个人即将得到某样他非常渴望的东西，而这样东西却在最后一刻飞走了，那么他的反应会像这件东西他已经拥有了却突然被夺走了一样。这两种对损失已有的好处和损失即将拥有的好处的反应，就是被剥夺超级反应倾向。这些损失可以是财产、爱情、友谊、势力范围、机会、身份或者其他任何有价值的东西。 比如，一户人家本来已经有很大的住房面积，却因为邻居稍微的侵犯就大发雷霆；赌徒也会在输钱后表现出更加急躁的心理；投资者则会更加关注那些糟糕的项目而做出错误的挽救措施。 15. 社会认同倾向 人类有自动根据他看到的周边人们的思考和行为方式去思考和行动的倾向，也会受到别人不行动的误导。例如，青少年特别容易由于社会认同倾向而出现认知错误，所以某种程度上购买学区房是有道理的。 对人类社会而言，下面两种措施是非常重要的： 在坏行为散播之前阻止它 倡导和展现所有的好行为 16. 对比错误反应倾向 因为人类的神经系统并不是精密的科学仪器，所以它必须依靠某些更为简单的东西，比如通过对比来捕捉信息，这就造成了人类的对比错误反应倾向。 人们会在前后两个物品的对比中做出不符合事实的判断，比如著名的同样一杯温水，手先放入热水和冰水中再放入这杯温水就会得出不一样的结论；或者商店的打折促销，先提高原价再打折的伎俩。 17.</description>
+      <description>查理·芒格以自己的经验总结出的心理学尝试，共25条</description>
     </item>
     
     <item>
@@ -1428,10 +1310,7 @@ Three days from now, after half century in the service of our country, I shall l
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/literature/%E4%BC%8A%E8%AE%AD/</guid>
-      <description>太甲元年十二月乙丑日，伊尹祭祀先王，侍奉嗣王恭敬地拜见他的祖先。侯服甸服的诸侯都在祭祀行列，百官率领自己的官员，听从太宰伊尹的命令。伊尹于是明白说明大功之祖成汤的大德，来教导太甲。 伊尹说：“啊！从前夏代的先君，当他勉力施行德政的时候，没有发生天灾，山川的鬼神也没有不安宁的，连同鸟兽鱼鳖各种动物的生长都很顺遂。到了他的子孙不遵循先人的德政，上天降下灾祸，借助于我汤王的手。上天有命：先从夏桀讨伐；我就从亳都执行。我商王宣明德威，用宽和代替暴虐，所以天下兆民相信我、怀念我。现在我王嗣行成汤的美德，不可不考虑开头！行爱于亲人，行敬于长上，从家和国开始，最终推广到天下。 啊！先王努力讲求做人的纲纪，听从谏言而不违反，顺从前贤的活；处在上位能够明察，为臣下能够尽忠；结交人不求全责备，检点自己好像来不及一样。因此达到拥有万国，这是很难的呀！ “又普求贤智，使他们辅助你们后嗣；还制订《官刑》来警戒百官。《官刑》上说：敢有经常在宫中舞蹈、在房中饮酒酣歌的，这叫做巫风。敢有贪求财货女色、经常游乐田猎的，这叫做淫风。敢有轻视圣人教训、拒绝忠直谏戒、疏远年老有德、亲近顽愚童稚的，这叫做乱风。这些三风十过，卿士身上有一种，他的家一定会丧失；国君身上有一种，他的国一定会灭亡。臣下不匡正君主，要受到墨刑。这些对于下士也要详细教导。 啊！嗣王当以这些教导警戒自身，念念不忘呀！圣谟美好，嘉训很明啊！上天的眷顾不常在一家，作善事的，就赐给百福；作不善的，就赐给他百殃。你修德不论多小，天下的人都会感到庆幸，行不善，即使不大，也会丧失国家。”
-嗣王太甲对伊尹不顺从，伊尹作书给王说：“先王成汤顾念天的明命是正确的，因此供奉上下神祇、宗庙社稷无不恭敬严肃。上天看到汤的善政，因此降下重大使命，使他抚安天下。我伊尹亲身能辅助君主安定人民，所以嗣王就承受了先王的基业。我伊尹亲身先见到西方夏邑的君主，用忠信取得成就，辅相大臣也取得成就；他们的后继王不能取得成就，辅相大臣也没有成就。嗣王要警戒呀！应当敬重你做君主的法则，做君主而不尽君道，将会羞辱自己的祖先。” 王像往常一样不念不闻。伊尹就说：“先王在天将明未明的时刻，就思考国事，坐着等待天明。又遍求俊彦的臣子，开导后人，不要忘记先祖的教导以自取灭亡。您要慎行俭约的美德，怀着长久的计谋。好象虞人张开了弓，还要去察看箭尾符合法度以后，才发射一样；您要重视自己所要达到的目的，遵行你的祖先的措施！这样我就高兴了，千秋万世您将会得到美好的声誉。” 太甲不能改变。伊尹对群臣说：“嗣王这样就是不义。习惯将同生性相结合，我不能轻视不顺教导的人。要在桐营造宫室，使他亲近先王的教训，莫让他终身迷误。” 嗣王去桐宫，处在忧伤的环境，能够成就诚信的美德。
-三年十二月朔日，伊尹戴着礼帽穿着礼服迎接嗣王太甲回到亳都，作书告王说：“人民没有君主，不能互相匡正而生活；君主没有人民，无法治理四方。上天顾念帮助商家，使嗣王能成就君德，实在是商家万代无疆之美啊！” 嗣王拜跪叩头说：“我小子不明于德行，自己招致不善。多欲就败坏法度，放纵就败坏礼制，因此给自身召来了罪过。上天造成的灾祸，还可回避；自己造成的灾祸，不可逃脱。以前我违背师保的教训，当初不会责备自己；还望依靠您的匡救的恩德，谋求我的好结局。” 伊尹跪拜叩头，说：“讲究自身的修养，又用诚信的美德和谐臣下，就是明君。先王成汤慈爱穷困的人民，所以人民服从他的教导，没有不喜悦的。连他的友邦和邻国，也这样说：等待我们的君主吧，我们的君主来了，就没有祸患了。大王要增进你的德行，效法你的烈祖，不可有顷刻的安乐懈怠。事奉先人，当思孝顺；接待臣下，当思恭敬。观察远方要眼明，顺从有德要耳聪。能够这样，我享受王的幸福就会没有止境。”
-伊尹向王重复告戒说：“呀！上天没有经常的亲人，能敬天的天就亲近；人民没有经常归附的君主，他们归附仁爱的君主；鬼神没有经常的享食，享食于能诚信的人。处在天子的位置很不容易呀！ “用有德的人就治，不用有德的人就乱。与治者办法相同，没有不兴盛的；与乱者办法相同，没有不灭亡的。终和始都慎择自己的同事，就是英明的君主。 “先王因此勉力敬修自己的德行，所以能够匹配上帝。我王继续享有好的基业，希望看到这一点呀！ 如果升高，一定要从下面开始；如果行远，一定要从近处开始。不要轻视人民的事务，要想到它的难处；不要苟安君位，要想到它的危险。慎终要从开头做起啊！ “有些话不顺你的心意，一定要从道义来考求；有些话顺从你的心意，一定要从不道义来考求。 “啊呀！不思考，怎么收获？不做事，怎么成功？天子大善，天下因此清正。君主不要使用巧辩扰乱旧政，臣下不要凭仗骄宠和利禄而安居成功。这样，国家将永久保持在美好之中。”</description>
+      <description>多欲就败坏法度，放纵就败坏礼制，因此给自身召来了罪过。上天造成的灾祸，还可回避；自己造成的灾祸，不可逃脱</description>
     </item>
     
     <item>
@@ -1440,7 +1319,7 @@ Three days from now, after half century in the service of our country, I shall l
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/literature/%E5%81%9A%E6%B3%95%E8%87%AA%E6%AF%99/</guid>
-      <description>赵良去见商鞅，商鞅对他说：“当初秦国的习俗和戎狄一样，父子不分开，男女老少同居一室。如今我改变了秦国的教化，使他们男女有别，分居而住。我征调士卒大造宫廷城阙，把秦国营建得像鲁国、卫国一样。您看我治理秦国，与五大夫百里奚比，谁更有才干？”赵良说：“那五羖大夫，是楚国偏僻的乡下人，他听说秦穆公贤明，就想当面去拜见却苦于没有路费，就把自己卖给秦国人，穿着粗布短衣给人家喂牛。秦穆公知道这件事后把他提拔起来，凌驾于万人之上，秦国没有人不满意。他出任秦相期间，向东讨伐过郑国，三次拥立晋国的国君，一次出兵救楚；他在秦国境内施行德化，巴国前来纳贡；他施德政于诸侯，四方少数民族前来朝见，由余听说后，不远万里赶来敲门投奔。五大夫出任秦相，劳累不坐车，酷暑炎热不打伞，走遍国中，不用随从的车辆，不带武装防卫，他的功名永载史册，他的德行施教于后代。五羖大夫死时，秦国不论男女都痛哭流涕，连小孩子也不唱歌谣，正在舂米的人也因悲哀而不发出相应的呼声，这就是五羖大夫的德行。 如今您担任国相，是靠着国君的心腹宠臣景监引荐。身为秦国国相不为百姓造福而大规模地营建宫阙，这就谈不上为国家建立功业了。惩治太子的师傅，用严刑酷法残害百姓，这是积累怨恨、聚积祸患啊。教化百姓比命令百姓更深入人心，百姓模仿君臣的行为比命令百姓更为迅速。如今您却违情背理地建立权威、变更法度，这不是对百姓施行教化啊。您又在封地南面称君，天天用新法来逼迫秦国的贵族子弟。公子虔闭门不出已经8年了，您又杀死祝欢，用黥刑处罚公孙贾。这几件事，都不是得人心的。您一出门，后边跟着数以十计的战车，车上都是顶盔贯甲、身强力壮、持矛操戟的贴身警卫，离开这些警卫，您肯定不敢自己出门。您的处境就好比早晨的露水，面临很快消亡的危险。您还打算要延长自己的寿命吗？那为什么不把封地交还给秦国，到偏僻荒远的地方浇园自耕；劝秦王重用那些隐居山林的贤才，赡养老人，抚育孤儿，使父兄相互敬重；依功序爵，尊崇有德之士，这样才可以稍保平安。您还要贪图封地的富有，以独揽秦国的国政为宠幸，聚集百姓的怨恨，秦王一旦舍弃宾客而不能当朝，秦国想要拘捕您的人还能少吗？您丧身的日子就会像抬起脚来那样迅速地到来。”</description>
+      <description>那五羖大夫，是楚国偏僻的乡下人，他听说秦穆公贤明，就想当面去拜见却苦于没有路费，就把自己卖给秦国人，穿着粗布短衣给人家喂牛。秦穆公知道这件事后把他提拔起来，凌驾于万人之上，秦国没有人不满意。他出任秦相期间，向东讨伐过郑国，三次拥立晋国的国君，一次出兵救楚；他在秦国境内施行德化，巴国前来纳贡；他施德政于诸侯，四方少数民族前来朝见，由余听说后，不远万里赶来敲门投奔。五大夫出任秦相，劳累不坐车，酷暑炎热不打伞，走遍国中，不用随从的车辆，不带武装防卫，他的功名永载史册，他的德行施教于后代。五羖大夫死时，秦国不论男女都痛哭流涕，连小孩子也不唱歌谣，正在舂米的人也因悲哀而不发出相应的呼声，这就是五羖大夫的德行</description>
     </item>
     
     <item>
@@ -1449,74 +1328,7 @@ Three days from now, after half century in the service of our country, I shall l
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/literature/%E5%84%92%E8%80%85/</guid>
-      <description>鲁哀公(?―前468年)，姬姓，名将，鲁定公之子，春秋时期鲁国第二十六任君主，公元前494-前468年在位。他在鲁定公死后即位。在位期间执政为季孙斯、叔孙州仇、仲孙何忌、季孙肥、叔孙舒、仲孙彘。前468年，鲁哀公去世，其子鲁悼公即位。
-孔子在卫，冉求言于季孙曰：“国有圣人而不能用，欲以求治，是犹却步而欲求及前人，不可得已。今孔子在卫，卫将用之。己有才而以资邻国，难以言智也，请以重币迎之。”
-孔子在卫国的时候，冉求对季孙氏说：“国家有圣人却不任用，这样想治理好国家，就像倒着走而想追赶前面的人，是不可能达到的。现在孔子在卫国，卫国将要任用他，我们自己有人才却去帮助邻国，难以说是明智之举。请您用丰厚的聘礼把他迎接回来。”
-季孙以告哀公，公从之。
-季孙氏把冉求的建议禀告了鲁哀公，鲁哀公听从了这一建议。
-季孙氏，&amp;ldquo;孙&amp;quot;为尊称，实为季氏，姬姓。春秋战国时，鲁国的卿家贵族。作为三桓之首，季孙氏凌驾于公室之上，掌握鲁国实权。三桓，是凌驾于公室的鲁国贵族，出自鲁桓公，包括季孙氏、叔孙氏、孟孙氏。其中，季孙氏的始祖季友，谥成，史称&amp;quot;成季&amp;rdquo;。
-孔子既至，舍哀公馆焉。公自阼阶，孔子宾阶，升堂立侍。
-孔子回到鲁国，住在鲁哀公招待客人的馆舍里。哀公从大堂东面的台阶走上来迎接孔子，孔子从大堂西面的台阶上来觐见哀公，然后到大堂里，孔子站着陪哀公说话。
-鲁哀公问于孔子曰：“夫子之服，其儒服与？”
-鲁哀公向孔子问道：“先生的衣服，大概是儒者特有的衣服吧？”
-孔子对曰：“丘少居鲁，衣逢掖之衣，长居宋，冠章甫之冠。丘闻之也：君子之学也博，其服也乡；丘不知儒服。”
-孔子回答说：“我小时候住在鲁国，穿的是宽袖的衣服；长大后住在宋国，戴的是缁布做的礼冠。我听说，君子学问要广博，穿衣服要入乡随俗。我不知道这是不是儒者的服装。”
-哀公曰：“敢问儒行。”
-鲁哀公问：“先生，请问儒者的行为是什么样的呢？”
-孔子对曰：“遽数之不能终其物，悉数之乃留，更仆未可终也。”
-孔子回答说：“粗略地讲讲，不能把儒者的行为讲完；如果详细地讲，恐怕值班的仆人到了换班时间也未必说完。”
-#【儒者的自修立身】
-**哀公命席。孔子侍曰：“**儒有席上之珍以待聘，夙夜强学以待问，怀忠信以待举，力行以待取，其自立有如此者。
-鲁哀公让人设席，孔子坐在旁侧陪侍，说：“儒者如同席上的珍品等待别人来采用，昼夜不停地学习等待别人来请教，心怀忠信等待别人举荐，努力做事等待别人录用。儒者自修立身就是这样的。”
-#【儒者的容貌】
-儒有衣冠中，动作慎，其大让如慢，小让如伪，大则如威，小则如愧，其难进而易退也，粥粥若无能也。其容貌有如此者。
-儒者的衣帽穿戴周正，行为从容谨慎，推让大事时好像很傲慢，推让小事时好像很虚伪。做大事时神态慎重像心怀畏惧，做小事时小心谨慎像不敢去做。难于进取而易于退让，柔弱谦恭像是很无能的样子。儒者的容貌就是这样的。”
-#【儒者的备豫】
-儒有居处齐难，其坐起恭敬，言必先信，行必中正，道涂不争险易之利，冬夏不争阴阳之和，爱其死以有待也，养其身以有为也。其备豫有如此者。
-儒者的起居庄重谨慎，坐立行走恭敬，言语讲求诚信，行为必定中正。在道路上不与行人争夺平坦之路，冬夏之季不与人争冬暖夏凉的地方。不轻易赴死以等待值得牺牲生命的事情，修身养性以期待有所作为。儒者就是这样为未来做准备的。
-#【儒者的近人】
-儒有不宝金玉，而忠信以为宝；不祈土地，立义以为土地；不祈多积，多文以为富。难得而易禄也，易禄而难畜也，非时不见，不亦难得乎？非义不合，不亦难畜乎？先劳而后禄，不亦易禄乎？其近人有如此者。
-儒者宝贵的不是金玉而是忠诚信誉，不谋求占有土地而把仁义当做土地，不求积蓄很多财富而把学问广博作为财富。儒者难以得到却容易供养，容易供养却难以留住。不到适当的时候不会出现，不是很难得吗？不正义的事情就不合作，不是很难留住他们吗？先效力而后才要俸禄，不是很容易供养吗？儒者待人接物就是这样的。
-#【儒者的特立】
-儒有委之以货财，淹之以乐好，见利不亏其义；劫之以众，沮之以兵，见死不更其守；鸷虫攫搏不程勇者，引重鼎不程其力；往者不悔，来者不豫；过言不再，流言不极；不断其威，不习其谋。其特立有如此者。
-儒者对于别人委托的财货不会有贪心，身处玩乐之境也不会沉溺，不惧怕众人的威逼利诱，不害怕来自武力的威胁。见利不会忘义，面对死亡也不改操守。遇到猛禽猛兽的攻击不度量自己的力量而与之搏斗，推举重鼎不度量自己的力量尽力而为。对过往的事情不追悔，对未来的事情不疑虑。错话不会说第二次，对流言蜚语不追根问底。时常保持威严，不学习什么权谋。儒者的特立独行就是这样的。
-#【儒者的刚毅】
-儒有可亲而不可劫也；可近而不可迫也；可杀而不可辱也。其居处不淫，其饮食不溽；其过失可微辨而不可面数也。其刚毅有如此者。
-儒者可以亲近而不可以胁迫，可以接近而不可以威逼，可以杀害而不可侮辱。他们的居处不奢侈，他们的饮食不丰厚，他们的过失可以委婉地指出不可以当面数落。儒者的刚强坚毅就是这样的。
-#【儒者的自立】
-儒有忠信以为甲胄，礼义以为干橹；戴仁而行，抱义而处，虽有暴政，不更其所。其自立有如此者。
-儒者以忠信作为铠甲，以礼仪作为盾牌，心中想着仁去行动，怀抱着义来居处，即使遇到暴政，也不改变操守。儒者操守上的自立就是这样的。
-#【儒者的出仕】
-儒有一亩之宫，环堵之室，筚门圭窬，蓬户瓮牖；易衣而出，并日而食，上答之不敢以疑，上不答不敢以谄。其仕有如此者。
-儒者有一亩地的宅院，居住着一丈见方的房间，荆竹编的院门狭小如洞，用蓬草编作房门，用破瓮口作为窗框。外出时才换件遮体的衣服，一天的饭并为一顿吃。君上采纳他的建议，不敢产生怀疑；君上不采纳他的建议，也不敢谄媚求进。儒者做官的原则就是这样的。
-#【儒者的忧思】
-儒有今人与居，古人与稽；今世行之，后世以为楷；适弗逢世，上弗援，下弗推，谗谄之民有比党而危之者，身可危也，而志不可夺也，虽危起居，竟信其志，犹将不忘百姓之病也。其忧思有如此者。
-儒者与今人一起居住，而以古人的道德标准要求自己；儒者今世的行为，可以作为后世的楷模。如果生不逢时，上面没人援引，下面没人推荐，进谗谄媚的人又合伙来陷害他，只可危害他的身体，而不可剥夺他的志向。虽然能危害他的生活起居，最终他还要施展自己的志向抱负，仍将不忘百姓的痛苦。儒者的忧民意识就是这样的。
-#【儒者的宽裕】
-儒有博学而不穷，笃行而不倦；幽居而不淫，上通而不困；礼之以和为贵，忠信之美，优游之法，举贤而容众，毁方而瓦合。其宽裕有如此者。
-儒者广博地学习而无休止，专意实行而不倦怠，独处时不放纵自己，通达于上时不离道义。遵循以和为贵的原则，悠然自得而有节制。仰慕贤人而容纳众人，有时可削减自己的棱角而依随众人。儒者的宽容大度就是这样的。
-#【儒者的举贤】
-儒有内称不辟亲，外举不辟怨，程功积事，推贤而进达之，不望其报；君得其志，茍利国家，不求富贵。其举贤援能有如此者。
-儒者举荐人才，对内不避亲属，对外不避有仇怨的人。度量功绩，积累事实，不谋求更高的禄位。推荐贤能而进达于上，不祈望他们的报答。国君满足了用贤的愿望，百姓依仗他的仁德。只要有利于国家，不贪图个人的富贵。儒者的举贤荐能就是这样的。
-#【儒者的对待朋友】
-儒有闻善以相告也，见善以相示也；爵位相先也，患难相死也；久相待也，远相致也。其任举有如此者。
-儒者听到有益的话就告诉他，见到善行就指示给他，有爵位就逊让给他，他有难处就以死效命，他久不得志就等待他，他在野就把他招来共同辅政。儒者的对待朋友就是这样的。
-#【儒者的品德的不同一般】
-儒有澡身而浴德，陈言而伏，静而正之，上弗知也；粗而翘之，又不急为也；不临深而为高，不加少而为多；世治不轻，世乱不沮；同弗与，异弗非也。其特立独行有如此者。
-儒者沐身心于道德之中，陈述自己的意见而伏听君命。平静地纠正国君的过失，君上和臣下都难以觉察。默默地等待，不急于去做。不在地位低下的人面前自高自大，不在功劳较少的人面前自夸功高。国家大治的时候，群贤并处而不自轻；国家混乱的时候，坚守正道而不沮丧。对观点相同的人不随便吹捧，对观点不同的人不妄加非议。儒者的品德的不同一般是这样的。
-#【儒者的行为方正】
-儒有上不臣天子，下不事诸侯；慎静而尚宽，强毅以与人，博学以知服；近文章砥厉廉隅；虽分国如锱铢，不臣不仕。其规为有如此者。
-儒者中有这样一类人，他上不臣事天子，下不事奉诸侯；性情慎静而崇尚宽大，性格强毅而能从善如流，学间渊博而能服膺胜于己者。多读圣贤之书，以磨练自己的品行气节。即令是要把整个国家分给他，在他看来也不过是芝麻般的小事而不为动心，不会因此就出来称臣做官。儒者行为方正就是这样的。
-#【儒者的交友】
-儒有合志同方，营道同术；并立则乐，相下不厌；久不相见，闻流言不信；其行本方立义，同而进，不同而退。其交友有如此者。
-儒者和朋友志同道合，作学问的路子也一样；彼此皆有成就则皆大欢喜，彼此有了差距也互不嫌弃；彼此久不相见，如果听到了有关对方的流言蜚语，也绝不相信。友谊的基础建立在方正上、道义上，合乎这一点就是朋友，违背这一点就敬而远之。儒者的交友有如此者。
-#【儒者的恭敬谦让】
-温良者，仁之本也；敬慎者，仁之地也；宽裕者，仁之作也；孙接者，仁之能也；礼节者，仁之貌也；言谈者，仁之文也；歌乐者，仁之和也；分散者，仁之施也；儒皆兼此而有之，犹且不敢言仁也。其尊让有如此者。
-温和善良是仁的根本，恭敬谨慎是仁的基础，宽宏大量是仁的开始，谦逊待人是仁的功能，礼节是仁的外表，言谈是仁的文采，歌舞音乐是仁的和谐，分散财物是仁的施与。儒者兼有这几种美德，还不敢说已经做到仁了。儒者的恭敬谦让就是这样的。
-儒有不陨获于贫贱，不充诎于富贵，不慁君王，不累长上，不闵有司，故曰儒。今众人之命儒也妄，常以儒相诟病。****”
-儒者不因贫贱而灰心丧气，不因富贵而得意忘形。不因为国君的侮辱、卿大夫的掣肘、官员们的刁难而改变节操，所以才叫做‘儒’。现在很多人自命为儒但却有名无实，所以才往往被作为笑料来讲。””
-孔子至舍，哀公馆之，闻此言也，言加信，行加义：“终没吾世，不敢以儒为戏。”
-孔子从国外返回鲁国，鲁哀公在公馆里接见了他，鲁哀公听到孔子的这些话后，自己说话更加守信，行为更加严肃，说：“直到我死，再不敢拿儒者开玩笑了。”</description>
+      <description>儒者不因贫贱而灰心丧气，不因富贵而得意忘形。不因为国君的侮辱、卿大夫的掣肘、官员们的刁难而改变节操，所以才叫做‘儒’。现在很多人自命为儒但却有名无实，所以才往往被作为笑料来讲</description>
     </item>
     
     <item>
@@ -1525,13 +1337,7 @@ Three days from now, after half century in the service of our country, I shall l
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/literature/%E5%85%B9%E5%AE%8B%E6%9C%89%E4%B9%B1%E8%AF%91%E6%96%87/</guid>
-      <description>宋元公不讲信用、私心很多，而讨厌华氏、向氏。华定、华亥和向宁策划说：“逃亡比死强，先下手吗？”华亥假装有病，以引诱公子们。凡是公子去探病，就扣押起来。夏季，六月初九，杀死公子寅、公子御戎、公子朱、公子固、公孙援、公孙丁，把向胜、向行囚禁在谷仓里。宋元公到华亥氏那里去请求，华氏不答应，反而要乘机劫持元公。十六日，将太子栾和他的同母兄弟辰、公子地作为人质。元公也取得了华亥的儿子无慼，向宁的儿子罗、华定的儿子启，和华氏结盟，把他们作为人质。
-宋国华氏、向氏的作乱，公子城、公孙忌、乐舍、司马彊、向宜、向郑、楚建郳申逃亡到郑国。他们的党羽和华氏在鬼阎作战，子城被打败。子城去到晋国。
-华亥和他的妻子，一定要盥洗干净、伺候作为人质的公子吃完饭以后才吃饭。宋元公和夫人每天一定到华氏那里，让公子吃完以后才回去，华亥担心这种情况，想要让公子回去。向宁说：“正因为元公没有信用，所以把他的儿子作为人质。如果又让他回去，死就很快来到了。”宋元公向华费遂请求，准备攻打华氏。华费遂回答说：“下臣不敢爱惜一死，恐怕是想要去掉忧虑反而滋长忧虑吧！下臣因此害怕，怎敢不听命令？”宋元公说：“孩子们死了是命中注定，我不能忍受他们受耻辱。”冬季，十月，宋元公杀了华氏、向氏的人质而攻打这两家。十三日，华氏、向氏逃亡到陈国，华登逃亡到吴国。向宁想要杀死太子。华亥说：“触犯了国君而出逃，又杀死他的儿子，还有谁接纳我们？而且放他们回去有功劳。”派少司寇牼带着公子们回去，说：“您的年岁大了，不能再事奉别人。用三个公子作为证明，一定可以免罪。”公子们进入国都，华牼将要从公门出去。宋元公急忙接见他，拉着他的手，说：“我知道你没有罪，进来，恢复你的官职。
-宋国的华费遂生了华貙、华多僚、华登。华貙做少司马，华多僚做御士，与华貙不和，就在宋公面前诬陷说：“华貙打算接纳逃亡的人。”屡次说这些话，宋元公说：“司马由于我的缘故，使他的儿子逃亡。死和逃亡都是命中注定，我不能让他的儿子再逃亡。”华多僚回答说：“君王如果爱惜司马，就应当逃亡。死如果可以逃避，哪有什么远不远？”宋元公害怕，让侍者召来司马的侍者宜僚，给他酒喝，让他告诉司马驱逐华貙。司马叹气说：“一定是多僚干的。我有一个造谣的儿子而不能杀死他，我又不死，国君有了命令，怎么办？”就和宋元公商量驱逐华貙，准备让他在孟诸打猎时打发他走。宋元公给他酒喝，厚厚地送给他礼物，还赏赐随行的人。司马也像宋元公一样，张匄感到奇怪，说：“一定有原因。”让华貙用剑架在宜僚脖子上追问他，宜僚把话全说出来，张匄想要杀死多僚，华貙说：“司马年老了，华登的逃亡已经很伤他的心，我又加重了他的伤心，不如逃亡。”五月十四日，华貙准备进见司马以后再走。在朝廷上遇见多僚为司马驾车上朝，张牼不能控制自己的愤怒，就和华貙、臼任、郑翩杀了多僚，劫持了司马叛变，召集逃亡的人。二十日，华氏、向氏回来，乐大心。丰愆、华貙在横地抵御他们。华氏住在卢门，领着南里的人叛变。六月十九日，宋国修缮旧城和桑林之门用以据守。
-冬季，十月，华登率领吴军救援华氏，齐国的乌枝鸣在宋国戍守，厨邑大夫濮说：“《军志》有这样的话：‘先发制人可以摧毁敌人士气，后发制人要等到敌人士气衰竭。’何不乘他们疲劳和没有安定而进攻？如果敌人已经进来而军心安定，华氏的人就多了，我们就后悔不及了。”乌枝鸣听从了。十七日，齐军、宋军在鸿口击败吴军，俘虏了他们两个将领公子苦雂、偃州员。华登率领余部击败宋军。宋元公想要逃亡，厨邑大夫濮说：“我是小人，可以为君王死难，而不能护送君王逃亡，请君王等待一下。”于是就巡行全军说：“挥舞旗帜的，是国君的战士。”众人按他的话挥舞旗帜，宋元公在扬门上见到这种情况，下城巡视，说：“国家亡，国君死，这是各位的耻辱，岂独是我一人的罪过呢？”齐国的乌枝鸣说：“使用少量的兵力，最好是一起拼命，一起拼命，最好是撤去守备。他们的武器多得很，建议我军都用剑和他们作战。”宋公听从了。华氏败走，宋军、齐军又追上去，厨邑大夫濮用裙子包着砍下的脑袋，扛在肩上快跑，说：“杀死华登了！”于是就在新里打败了华氏，翟偻新住在新里，战斗开始以后，到宋元公那里脱下盔甲而归附。华妵住在公里，也像翟偻新一样。
-十一月初四日，公子城带着晋军来到，曹国翰胡会合晋国荀吴、齐国苑何忌、卫国公子朝救援宋国，初七日，和华氏在赭丘作战，郑翩希望摆成鹳阵，他的御者希望摆成鹅阵，子禄为公子城驾御战车，庄堇作为车右，干犫为吕地封人华豹驾御战车，张匄作为车右。两车相遇，公子城退了回去，华豹大喊说：“城啊！”公子城发怒，转回来，将要装上箭，而华豹已经拉开了弓。公子城说：“平公的威灵，还在保佑我！”华豹射箭，穿过公子城和子禄之间，公子城又要装上箭，华豹又已经拉开了弓，公子城说：“不让我还手，卑鄙啊！”华豹从弓上抽下箭，公子城一箭射去，把华豹射死，张匄抽出殳下车，公子城一箭射去，射断张匄的腿，张匄爬过来用殳敲断了公子城的车轸，公子城又发了一箭，张匄死去，干犫请求给他一箭，公子城说：“我替你向国君说情。”干犫回答说：“不和战友一起战死，这是犯了军队中的大法，犯了法而跟从您，君王哪里用得着我？您快点吧！”于是公子城就射了他一箭，射死了，宋军、齐军把华氏打得大败，包围南里，华亥拍着胸脯大喊，进见华貙，说：“我们成了晋国的栾氏了。”华貙说：“您不要吓唬我，碰上倒霉才会死呢。”派华登到楚国请求出兵，华貙带领战车十五辆，步兵七十人突围而出，在睢水岸边吃饭，哭着送走华登，就再次冲进包围圈。楚国的薳越率领军队打算迎接华氏，太宰犯劝谏说：“诸侯之中惟有宋国的臣下还事奉着国君，现在又争夺国政，丢开国君而帮助臣下，恐怕不可以吧！”楚平王说：“我对你说晚了，已经答应他们了。”
-楚国的薳越派人告诉宋国说：“寡君听说君王有不好的臣下使君王忧虑，恐怕成为宗庙的羞耻，寡君请求接受下来加以诛戮。”宋元公回答说：“孤没有才能，不能取得父兄的欢心，因此成为君王的忧虑，承蒙君王下达命令。君臣之间每天作战，如果君王说：‘我一定帮助臣下’，也只能唯命是听，人们有话说：‘不要经过动乱人家的门口。”君王如果赐恩保护敝邑，不去保护不忠，以奖励作乱的人，这是孤的愿望，请君王考虑一下。”楚国人担心这件事，诸侯派往宋国戌守的将领商量说：“如果华氏感到没有前途而拼命战斗，楚国由于不见功效而很快出兵作战，这于我们不利，不如让他们出去，以成就楚国的功绩，华氏也不能有所作为了，救援了宋国而除掉了他们的祸害，还有什么要求呢？”于是坚决请求放出华氏，宋国人听从了。二月二十一日，宋国的华亥、向宁、华定、华貙、华登、皇奄伤、省臧、士平逃亡楚国。宋元公派公孙忌做大司马，边卬做大司徒，乐祁做司城，仲几做左师，乐大心做右师，乐輓做大司寇，以便用来安定国内的人们。</description>
+      <description>孤没有才能，不能取得父兄的欢心，因此成为君王的忧虑，承蒙君王下达命令。君臣之间每天作战，如果君王说：‘我一定帮助臣下’，也只能唯命是听，人们有话说：‘不要经过动乱人家的门口。”君王如果赐恩保护敝邑，不去保护不忠，以奖励作乱的人，这是孤的愿望，请君王考虑一下</description>
     </item>
     
     <item>
@@ -1540,12 +1346,7 @@ Three days from now, after half century in the service of our country, I shall l
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/literature/%E5%85%B9%E5%AE%8B%E6%9C%89%E4%B9%B1/</guid>
-      <description>宋元公无信多私，而恶华、向。华定、华亥与向宁谋曰：「亡愈于死，先诸？」华亥伪有疾，以诱群公子。公子问之，则执之。夏六月丙申，杀公子寅、公子御戎、公子朱、公子固、公孙援、公孙丁、拘向胜、向行于其廪。公如华氏请焉，弗许，遂劫之。癸卯，取大子栾与母弟辰、公子地以为质。公亦取华亥之子无戚、向宁之子罗、华定之子启，与华氏盟，以为质。
-宋华、向之乱，公子城、公孙忌、乐舍、司马强、向宜、向郑、楚建、郳甲出奔郑。其徒与华氏战于鬼阎，败子城。子城适晋。华亥与其妻必盥而食所质公子者而后食。公与夫人每日必适华氏，食公子而后归。华亥患之，欲归公子。向宁曰：「唯不信，故质其子。若又归之，死无日矣。」公请于华费遂，将攻华氏。对曰：「臣不敢爱死，无乃求去忧而滋长乎！臣是以惧，敢不听命？」公曰：「子死亡有命，余不忍其呴。」冬十月，公杀华、向之质而攻之。戊辰，华、向奔陈，华登奔吴。向宁欲杀大子，华亥曰：「干君而出，又杀其子，其谁纳我？且归之有庸。」使少司寇牼以归，曰：「子之齿长矣，不能事人，以三公子为质，必免。」公子既入，华牼将自门行。公遽见之，执其手曰：「余知而无罪也，入，复而所。」
-宋华费遂生华貙、华多僚、华登。貙为少司马，多僚为御士，与貙相恶，乃谮诸公曰：「貙将纳亡人。」亟言之。公曰：「司马以吾故，亡其良子。死亡有命，吾不可以再亡之。」对曰：「君若爱司马，则如亡。死如可逃，何远之有？」公惧，使侍人召司马之侍人宜僚，饮之酒而使告司马。司马叹曰：「必多僚也。吾有谗子而弗能杀，吾又不死，抑君有命，可若何？」乃与公谋逐华貙，将使田孟诸而遣之。公饮之酒，厚酬之，赐及从者。司马亦如之。张丐尤之，曰：「必有故。」使子皮承宜僚以剑而讯之。宜僚尽以告。张丐欲杀多僚，子皮曰：「司马老矣，登之谓甚，吾又重之，不如亡也。」五月丙申，子皮将见司马而行，则遇多僚御司马而朝。张丐不胜其怒，遂与子皮、臼任、郑翩杀多僚，劫司马以叛，而召亡人。壬寅，华、向入。乐大心、丰愆、华牼御诸横。华氏居卢门，以南里叛。六月庚午，宋城旧鄘及桑林之门而守之。
-冬十月，华登以吴师救华氏。齐乌枝鸣戍宋。厨人濮曰：「《军志》有之：『先人有夺人之心，后人有待其衰。』盍及其劳且未定也伐诸？若入而固，则华氏众矣，悔无及也。」从之。丙寅，齐师、宋师败吴师于鸿口，获其二帅公子苦雂、偃州员。华登帅其馀以败宋师。公欲出，厨人濮曰：「吾小人，可藉死而不能送亡，君请待之。」乃徇曰：「杨徽者，公徒也。」众从之。公自杨门见之，下而巡之，曰：「国亡君死，二三子之耻也，岂专孤之罪也？」齐乌枝鸣曰：「用少莫如齐致死，齐致死莫如去备。彼多兵矣，请皆用剑。」从之。华氏北，复即之。厨人濮以裳裹首而荷以走，曰：「得华登矣！」遂败华氏于新里。翟偻新居于新里，既战，说甲于公而归。华妵居于公里，亦如之。
-十一月癸未，公子城以晋师至。曹翰胡会晋荀吴、齐苑何忌、卫公子朝救宋。丙戌，与华氏战于赭丘。郑翩愿为鹳，其御愿为鹅。子禄御公子城，庄堇为右。干犨御吕封人华豹，张丐为右。相遇，城还。华豹曰：「城也！」城怒而反之，将注，豹则关矣。曰：「平公之灵，尚辅相余。」豹射，出其间。将注，则又关矣。曰：「不狎，鄙！」押矢。城射之，殪。张丐抽殳而下，射之，折股。扶伏而击之，折轸。又射之，死。干丐请一矢，城曰：「余言汝于君。」对曰：「不死伍乘，军之大刑也。干刑而从子，君焉用之？子速诸。」乃射之，殪。大败华氏，围诸南里。华亥搏膺而呼，见华貙，曰：「吾为栾氏矣。」貙曰：「子无我迋。不幸而后亡。」使华登如楚乞师。华貙以车十五乘，徒七十人，犯师而出，食于睢上，哭而送之，乃复入。楚薳越帅师将逆华氏。大宰犯谏曰：「诸侯唯宋事其君，今又争国，释君而臣是助，无乃不可乎？」王曰：「而告我也后，既许之矣。」
-楚薳越使告于宋曰：「寡君闻君有不令之臣为君忧，无宁以为宗羞？寡君请受而戮之。」对曰：「孤不佞，不能媚于父兄，以为君忧，拜命之辱。抑君臣日战，君曰『余必臣是助』，亦唯命。人有言曰：『唯乱门之无过』。君若惠保敝邑，无亢不衷，以奖乱人，孤之望也。唯君图之！」楚人患之。诸侯之戍谋曰：「若华氏知困而致死，楚耻无功而疾战，非吾利也。不如出之，以为楚功，其亦能无为也已。救宋而除其害，又何求？」乃固请出之。宋人从之。己巳，宋华亥、向宁、华定、华貙、华登、皇奄伤、省臧，士平出奔楚。宋公使公孙忌为大司马，边卬为大司徒，乐祁为司马，仲几为左师，乐大心为右师，乐挽为大司寇，以靖国人。</description>
+      <description>孤不佞，不能媚于父兄，以为君忧，拜命之辱。抑君臣日战，君曰『余必臣是助』，亦唯命。人有言曰：『唯乱门之无过』。君若惠保敝邑，无亢不衷，以奖乱人，孤之望也。唯君图之！</description>
     </item>
     
     <item>
@@ -1554,8 +1355,7 @@ Three days from now, after half century in the service of our country, I shall l
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/literature/%E5%88%BA%E4%B8%96%E7%96%BE%E9%82%AA%E8%B5%8B/</guid>
-      <description>伊五帝之不同礼，三王亦又不同乐。数极自然变化，非是故相反。德政不能救世溷乱，赏罚岂足惩时清浊？春秋时祸败之始，战国逾增其荼毒。秦汉无以相踰越，乃更加其怨酷。宁计生民之命？为利己而自足。 于兹迄今，情伪万方。佞诌日炽，刚克消亡。舐痔结驷，正色徒行。妪名势，抚拍豪强。偃蹇反俗，立致咎殃。捷慑逐物，日富月昌。浑然同惑，孰温孰凉？邪夫显进，直士幽藏。 原斯瘼之所兴，实执政之匪贤。女谒掩其视听兮，近习秉其威权。所好则钻皮出其毛羽，所恶则洗垢求其瘢痕。虽欲竭诚而尽忠，路绝险而靡缘。九重既不可启，又群吠之狺狺。安危亡于旦夕，肆嗜慾于目前。奚异涉海之失柁，坐积薪而待然？荣纳由于闪榆，孰知辨其蚩妍？故法禁屈橈于势族，恩泽不逮于单门。宁饥寒于尧舜之荒岁兮，不饱暖于当今之丰年。乘理虽死而非亡，违义虽生而匪存。 有秦客者，乃为诗曰：河清不可俟，人命不可延。顺风激靡草，富贵者称贤。文籍虽满腹，不如一囊钱。伊优北堂上，抗髒依门边。 鲁生闻此辞，紧而作歌曰：势家多所宜，咳唾自成珠；被褐怀金玉，兰蕙化为刍。贤者虽独悟，所困在群愚。且各守尔分，勿复空驰驱。哀哉复哀哉，此是命矣夫！
-五帝时候的礼仪制度不同，三王时候的礼仪制度也各不相同，气数到了极限，自然就要发生变化，非和是本来就是互相排斥的，施行仁德不能拯救社会的混乱，实行赏罚难道就可以惩戒时代的清浊吗?春秋时代是祸乱破败的开始，战国时又加重了人民的苦难，秦汉时期也没有什么改变，更增加了人民的怨恨和苦难，哪里还考虑百姓的死活，只要对自己有利就满足了。 从那时到现在，弄虚作假的现象表现在各个方面，虚伪奉承的歪风日甚一日，刚强正直的品德逐渐消亡，舔痔疮的人可以乘四匹马拉的车，正派的人只能徒步而行，对豪强之家溜须拍马，稍微有点骨气、敢于反抗这恶劣风气的，立即遭到祸殃。不择手段追逐名利者指日高升。富贵昌盛，好坏不分，冷热难辨，奸邪之人飞黄腾达，正直的人只能隐居潜藏。 追究这弊病的兴起实在是因为当政者不贤明。女人和宦官掩住了皇帝的耳目，宠臣把持了国家的大权。他们所喜好的人，千方百计让其长出羽毛；他们所讨厌的人，就不择手段找缺点毛病。正直之士即便想谒诚尽忠，为国效命，也如同面临绝险的境地，找不到路径。皇宫的大门既然打不开，又加上一群恶狗汪汪乱叫，国家的危亡就在旦夕，还在放纵自己的嗜好欲望，只贪眼前之欢。这和渡海的大船失去了舵盘，坐在干柴上等待燃烧有什么两样。 荣幸地被重用者都是些善于阿谀奉承之辈，有谁知道辨别他们的美丑。所以，连法律禁令都屈于豪门贵族，皇恩厚泽怎么能到达贫寒之家。宁可忍饥耐寒在尧舜时的灾荒之岁，也不吃饱穿暖在现在的丰收之年。坚持真理即使死去也，违背正义即使活着也等于死了。 有一秦地的人作说：“太平盛世不能等到了，人的生命是有限的，只好看风使舵，顺水推舟吧!谁有权势谁就是贤德之人，满肚子学问比不上一袋子钱更实用。卑躬屈膝就可以成为富贵人家，刚直的人只能依门而立。” 鲁地的人听到这些话，接着作歌说：“豪门势家处处遂心满意，咳出的唾沫都能被当作珍珠。贫苦的人空怀美好的理想和才华，如同芬芳的花卉变成喂牛的干草。有才德的人即使一个人很清醒，也只能被那些愚蠢的人所困。暂且守你的本分吧!不要再白白地奔走，痛苦、悲哀，这就是命运。</description>
+      <description>五帝时候的礼仪制度不同，三王时候的礼仪制度也各不相同，气数到了极限，自然就要发生变化，非和是本来就是互相排斥的，施行仁德不能拯救社会的混乱，实行赏罚难道就可以惩戒时代的清浊吗?春秋时代是祸乱破败的开始，战国时又加重了人民的苦难，秦汉时期也没有什么改变，更增加了人民的怨恨和苦难，哪里还考虑百姓的死活，只要对自己有利就满足了</description>
     </item>
     
     <item>
@@ -1564,7 +1364,7 @@ Three days from now, after half century in the service of our country, I shall l
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/literature/%E5%88%BB%E6%84%8F/</guid>
-      <description>励志矫情，洁白自诩。逃避社会，厌恶庸俗。清谈迂 论，冷嘲热讽。作为持不同政见者，自视甚高。在野的隐 士最爱来这一套。他们一肚皮的不合时宜。暮年牢骚更盛 ，最后跳河自杀。 宣传仁义，演说忠信。恭俭克己，谦让待人。作为传 统文化的肩承者，注重个人思想修养，半在野半在朝的学 士最爱来这一套。他们从事文化教育活动，年轻游历讲学 ，老了在家授课。 满口政绩，树立形象。君臣有礼，尊卑有序。作为各 级掌权者，强调整顿社会，以求安定。在朝的显士最爱来 这一套。他们崇拜君主，加强国力，拓张领土，忙得要命 ，累得要死。 害怕麻烦，贪图清静。移居山林，学会钓鱼。作为社 会竞争的失败者，拒绝再干任何事业。在野的闲士最爱来 这一套。他们无功无名，远避红尘，不再关心社会，但求 不忙不累而已。 做深呼吸，通丹田气。打太极拳，练鹤翔桩。作为活 命哲学的信奉者，老而不死比一切都要紧。在朝在野都有 一些士类最爱来这一套。他们坚持锻炼，注意保养，羡慕 彭祖活八百岁。 这五类士以外，还有一类。他们用不着励志而人品自 高，忘记了仁义而修身养性。谈不上政绩而实现安定, 家不在山林而同样悠闲，从来不锻炼而仍然长寿。什么都舍 弃了，什么都完备了。他们精神恬淡，无限制的开放，所 以感召了众多的佳士，纷纷追随。他们凭什么？凭天道， 凭圣德。 恬淡，寂寞，虚空，静止，无为。这个体系是天地间 最灵的水平仪，是修道养德的最高标准。这个标准要求圣 人休俗虑。俗虑休了，处境就平安了顺适了。处境平顺， 精神就恬淡了。恬淡的精神，平顺的处境，足以排遣忧患 ，抵抗妖邪。这样，圣人的德行就完备了，精神就不虚耗 了。近似的话，我在《天道篇》内已经说过。 这个标准要求圣人，生，顺随自然发展；死，参与物 质变化；静，阴气般的凝静；动，阳气般的波动。同样的 话，我在《天道篇》内已经说过。 此外，这个标准还要求圣人不必预先替后代求福，谨 防带头给将来召祸。为政切忌没事找事，最好得过且过， 好比唱歌，切忌领唱，最好应和。主观能动性不要加强， 而要减弱。坐待条件成熟再动手吧，不必提前闹得风风火 火。机心要割除，智囊要撕破，听天由命，获益良多。 修身治国，以上几方面都做到，圣人就不招老天怨恨 ，就不被外物牵掣，就不受帝人排斥，就不闻野鬼骂詈。 百姓看见他光辉可爱而不会刺眼，发现他信用可靠而不必 如期。他闲散，不细想，不深究。他透明，不阴谋，不阳 谋。睡了不做梦，醒了不担忧。生是泡沫，短暂的漂浮。 死是休息，永久的享受。他的精神单纯，他的灵魂清醒。 虚空恬淡的他达到了修道养德的最高标准。 用修道养德的标准来衡量，悲伤与欢乐是德性的偏斜 ，喜悦与愤怒是道理的错误，爱好与厌恶是心态的失常。 所以，高度的道德应该是忘悲忘欢，不喜不怒，无好无恶 。高度的静止是专一，不因为外界变化而动摇，高度的虚 空是宽容，不去触犯外界。高度的恬淡是独立，不去联络 外界。高度的纯粹是和谐，不去干涉外界。 恬淡，寂寞，虚空，静止，无为，这是修道养德的最 高标准，不可分割，自成体系。与此标准相反，悲欢，喜 怒，好恶，消耗人的精力；动摇，触犯，联络，干涉，消 耗人的体力。体力消耗不止不休，便会累垮。精力消耗没 完没了，便会憔悴。这些憔悴累垮的人，在持不同政见的 隐士阶层，在肩承传统文化的学士阶层，在各级掌权的显 士阶层，最为常见。 请观察瓶水、缸水、池水、河水、海水，就能了解水 性，水性喜清。滤去杂质，水便清了。水性喜平。不去搅 动，水便平了，水性不喜封闭。一封闭就溷浊再不 清了。看得出来，水在模仿天气。天气，扫除杂雾便晴， 风不吹动便静，阴云密闭又溷浊不晴了。所以水性乃天德 的投影。人也能模仿水性，效法天德吗？ 能。改掉习染的杂质，便清纯了。不受外物的摇动， 便平静了。断绝外交，不去联络外界，便恬淡了。开放自 身，宽容一切，便虚空了。纵然有所活动，也不是有意图 的，便谐和于大自然了。这里说的乃是保养精神的方法。 江南吴国越国，冶炼工艺俱精，锻打宝剑，天下闻名 ，谁购得吴越剑，皆会锁藏箱匣，视为传家之宝，不愿佩 戴，不敢妄用。养精的道理与蓄锐相同，人的精神岂可妄 用。 人身上最具有能动性的便是精神。精神外射，穿透任 何屏障，射向东西南北无限远，上穿天，下透地，无所不 射。精神遥感万物，遥控万物，遥变万物，遥养万物。人 的精神乃宇宙精神的分支。精神来无影去无踪。精神是人 体内的主宰s，具备造化功能，等同皇天后土。 大道纯粹朴素，简单明白。修道者放弃了许多东西， 但有一样必须守住，就是精神。精神守好，灵魂与肉体就 不再矛盾，就不再分裂，就合二而一了。这个一便是圆融 自足的小宇宙。这个一与大宇宙息息相通，同步运行，密 合自然原理，修道者由此而得道焉。难怪俗话说：“世人 金钱挂帅。清官名声要紧。贤士追求理想。圣人守好精神 。” 大道的朴素性决定了修道者的洁白，拒染悲欢喜怒好 恶种种感情色彩。大道的纯粹性决定了修道者的无为，面 对外界，拒不动摇，拒不触犯，拒不联络，拒不干涉。洁白了，无为了，精神当然不至于虚耗了。 能圆满体现洁白无为的乃能称为真人，真人亦即至人 ，到顶的人，拔尖的人。</description>
+      <description>大道的朴素性决定了修道者的洁白，拒染悲欢喜怒好 恶种种感情色彩。大道的纯粹性决定了修道者的无为，面 对外界，拒不动摇，拒不触犯，拒不联络，拒不干涉。洁白了，无为了，精神当然不至于虚耗了</description>
     </item>
     
     <item>
@@ -1573,11 +1373,7 @@ Three days from now, after half century in the service of our country, I shall l
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/literature/%E5%90%9B%E5%AD%90/</guid>
-      <description>天子无妻，告人无匹也。四海之内无客礼，告无适也。足能行，待相者然后进；口能言，待官人然后诏。不视而见，不听而聪，不言而信，不虑而知，不动而功，告至备也。天子也者，势至重，形至佚，心至愈；志无所诎，形无所劳，尊无上矣。《诗》曰：“普天之下；莫非王土；率土之滨，莫非王臣。”此之谓也。 圣王在上，分义行乎下，则士大夫无流淫之行，百吏官人无怠慢之事，众庶百姓无奸怪之俗，无盗贼之罪，莫敢犯上之禁。天下晓然皆知夫盗窃之人不可以为富也，皆知夫贼害之人不可以为寿也，皆知夫犯上之禁不可以为安也。由其道则人得其所好焉，不由其道则必遇其所恶焉。是故刑罚綦省而威行如流，世晓然皆知夫为奸则虽隐窜逃亡之由不足以免也，故莫不服罪而请。《书》曰：“凡人自得罪。”此之谓也。 故刑当罪则威，不当罪则侮；爵当贤则贵，不当贤则贱。古者刑不过罪，爵不逾德。故杀其父而臣其子，杀其兄而臣其弟。刑罚不怒罪，爵赏不逾德，分然各以其诚通。是以为善者劝，为不善者沮；刑罚綦省而威行如流，政令致明而化易如神。传曰：“一人有庆，兆民赖之。”此之谓也。乱世则不然：刑罚怒罪，爵赏逾德，以族论罪，以世举贤。故一人有罪而三族皆夷，德虽如舜，不免刑均，是以族论罪也。先祖当贤，后子孙必显，行虽如桀、纣，列从必尊，此以世举贤也。以族论罪，以世举贤，虽欲无乱，得乎哉！《诗》曰：“百川沸腾，山冢崒崩，高岸为谷，深谷为陵。哀今之人，胡憯莫惩！”此之谓也。 论法圣王，则知所贵矣；以义制事，则知所利矣。论知所贵，则知所养矣；事知所利，则知所出矣。二者，是非之本，得失之原也。故成王之于周公也，无所往而不听，知所贵也。桓公之于管仲也，国事无所往而不用，知所利也。吴有伍子胥而不能用，国至于亡，倍道失贤也。故尊圣者王，贵贤者霸，敬贤者存，慢贤者亡，古今一也。故尚贤使能，等贵贱，分亲疏、序长幼，此先王之道也。故尚贤使能，则主尊下安；贵贱有等，则令行而不流；亲疏有分，则施行而不悖；长幼有序，则事业捷成而有所休。故仁者，仁此者也；义者，分此者也；节者，死生此者也；忠者，惇慎此者也；兼此而能之，备矣；备而不矜，一自善也，谓之圣。不矜矣，夫故天下不与争能而致善用其功。有而不有也，夫故为天下贵矣。《诗》曰：“淑人君子，其仪不忒；其仪不忒，正是四国。”此之谓也。
-虽小道,必有可观者焉;致远恐泥,是以君子不为也 不知，无害为君子，知之无损为小人 诚于中，形于外，故君子必慎其独也 欲掩其恶，而卒不可掩;欲诈为善，而卒不可诈，则亦何益之有哉?此君子所以重以为戒，而必谨其独也 君子不妄动，动必有道 君子不徒语，语必有理 君子不苟求，求必有义 君子不虚行，行必有正 君子有九思：视思明，听思聪，色思温，貌思恭，言思忠，事思敬，疑思问，忿思难，见得思义 君子周而不比，小人比而不周 君子喻于义，小人喻于利 君子爱财，取之有道.贞妇爱色，纳之以礼 君子坦荡荡，小人常戚戚 君子道者三，我无能焉：仁者不忧，知者不惑，勇者不惧 君子义以为上。君子有勇而无义为乱；小人有勇而无义为盗 君子中庸，小人反中庸 君子之交淡如水 君子一言，驷马难追 天行健，君子以自强不息；地势坤，君子以厚德载物 君子之学，非为通也。为穷而不困，忧而意不衰也，知祸福终始而心不惑也 君子固穷，小人穷斯滥矣 富与贵，是人之所欲也，不以其道得之，不处也；贫与贱，是人之所恶也，不以其道得之，不去也。君子去仁，恶乎成名？君子无终食之间违仁，造次必于是，颠沛必于是 君子以同道为朋，小人以同利为朋
-君子于其所不知，盖阙如也。名不正，则言不顺；言不顺，则事不成；事不成，则礼乐不兴；礼乐不兴，则刑罚不中；刑罚不中，则民无所措手足。故君子名之必可言也，言之必可行也，君子于其言，无所苟而已矣 酒中不语真君子，财上分明大丈夫。 贼是小人，智过君子。君子固穷，小人穷斯滥矣 君子爱财，取之有道。 君子安贫，达人知命。 小人肥口，君子肥身。 君子千钱不计较，小人一钱恼人心。 门为小人而设，锁乃君子之防。 能言不是真君子，善处方为大丈夫！ 君子千里同舟，小人隔墙易宿。 强盗口内出赦书，君子口中无戏言。 栽树要栽松柏，结交要结君子。 门内有君子，门外君子至；门内有小人，门外小人至。 君子之交淡以成，小人之交甘以坏。 贤者不炫已之长，君子不夺人所好。 君子修其道德，不为穷困而改节。
-君子无过行，小人嫉之亦不能容。可知君子处小人，必平其气以待之，不可稍形激切也。 风俗日趋于奢淫靡所底止，安得有敦古朴之君子，力挽江河。 大丈夫处事，论是非不论祸福。士君子立言，贵平正尤贵精详。 浪子回头，仍不惭为君子。贵人失足，便贻笑于庸人。 闻人誉言，加意奋勉，闻人谤语，加意警惕，此君子修己之功也。 君子存心但凭忠信，而妇孺皆敬之如神，所以君子落得为君子。 君子以名教为乐，岂如稽阮之逾闲。圣人以悲悯为心，不取沮溺之忘世。 知过能改，便是圣人之徒。恶恶太严，终为君子之病。 数虽有定，而君子但求其理，理既得，数亦难违。变固宜防，而君子但守其常，常无失，变亦能御。 儒者多文为富，其文非时文也。君子疾名不称，其名非科名也。 才觉已有不是，便决意改图，此立志为君子也。明知人议其非，偏肆行无忌，此甘心为小人也。 义之中有利，而尚义之君子，初非计及于利也。利之中有害，而趋利之小人，并不顾其为害也。 隐微之衍，即干宪典，所以君子怀刑也。技艺之末，无益身心，所以君子务本也。
-危邦不入，乱邦不居，天下有道则入，无道则隐。邦有道，贫且贱焉，耻也。邦无道，富且贵焉，耻也。 防祸于先而不致于后伤情。知而慎行，君子不立于危墙之下，焉可等闲视之。 苍蝇附骥 捷则捷矣 难辞处后之羞；茑萝依松 高则高矣 未免仰扳之耻.所以君子宁以风霜自挟 毋为鱼鸟亲人。 士君子之涉世，於人不可轻为喜怒，喜怒轻，则心腹肝胆皆为人所窥；于物不可重为爱憎，爱憎重，则意气精神悉为物所制。 一点不忍的念头，是生民生物之根芽；一段不为的气节，是撑天撑地之柱石。故君子于一虫一蚁不忍伤残，一缕一丝勿容贪冒，便可为万物立命、天地立心矣。 情之同处即为性，舍情则性不可见，欲之公处即为理，舍欲则理不可明。故君子不能灭情，惟事平情而已；不能绝欲，惟期寡欲而已。 好丑心太明，则物不契；贤愚心太明，则人不亲。士君子须是内精明而外浑厚，使好丑两得其平，贤愚共受其益，才是生成的德量。 伺察以为明者，常因明而生暗，故君子以恬养智；奋迅以为速者，多因速而致迟，故君子以重持轻。士君子济人利物，宜居其实，不宜居其名，居其名则德损；士大夫忧国为民，当有其心，不当有其语，有其语则毁来。 遇大事矜持者，小事必纵弛；处明庭检饰者，暗室必放逸。君子只是一个念头持到底，自然临小事如临大敌，处密室若坐通衢。 膻秽则蝇蚋丛嘬，芳馨则蜂蝶交侵。故君子不作垢业，亦不立芳名。只是元气浑然，圭角不露便是持身涉世一安乐窝也。 落落者，难合亦难分；欣欣者，易亲亦易散。是以君子宁以刚方见惮，毋以媚悦取容。 君子严如介石而畏其难亲，鲜不以明珠为怪物而起按剑之心；小人滑如脂膏而喜其易合，鲜不以毒螫为甘饴而纵染指之欲。 君子好名，便起欺人之念；小人好名，犹怀畏人之心。故人而皆好名，则开诈善之门。使人而不好名，则绝为善之路。此讥好名者，当严责君子，不当过求于小人也。 廉官多无后，以其太清也；痴人每多福，以其近厚也。故君子虽重廉介，不可无含垢纳污之雅量。虽戒痴顽，亦不必有察渊洗垢之精明。 君子之心事，天青日白，不可使人不知；君子之才华，玉韫珠藏，不可使人易知。 待小人不难于严，而难于不恶；待君子不难于恭，而难于有礼。 念头浓者自恃厚，待人亦厚，处处皆厚；念头淡者自待薄，待人亦薄，事事皆薄。故君子居常嗜好，不可太浓艳，亦不宜太枯寂。 彼富我仁，彼爵我义，君子故不为君相所牢笼；人定胜天，志壹动气，君子亦不受造化之陶铸。 肝受病则目不能视，肾受病则耳不能听。病受于人所不见，必发于人所共见。故君子欲无得罪于昭昭，先无得罪于冥冥。 栖守道德者，寂寞一时；依阿权势者，凄凉万古。达人观物外之物，思身后之身，宁受一时之寂寞，毋取万古之凄凉。 春至时和，花尚铺一段好色，鸟且啭几句好音。士君子幸列头角，复遇温饱，不思立好言、行好事，虽是在世百年，恰似未生一日。 天之机缄不测，抑而伸、伸而抑，皆是播弄英雄、颠倒豪杰处。君子只是逆来顺受、居安思危，天亦无所用其伎俩矣。 十语九中未必称奇，一语不中，则愆尤骈集；十谋九成未必归功，一谋不成则訾议丛兴。君子所以宁默毋躁、宁拙毋巧。 地之秽者多生物，水之清者常无鱼，故君子当存含垢纳污之量，不可持好洁独行之操。 风来疏竹，风过而竹不留声；雁度寒潭，雁过而潭不留影。故君子事来而心始现，事去而心随空。 贫家净扫地，贫女净梳头。景色虽不艳丽，气度自是风雅。士君子当穷愁寥落，奈何辄自废弛哉！ 君子而诈善，无异小人之肆恶；君子而改节，不若小人之自新。 淡薄之士，必为浓艳者所疑；检饬之人，多为放肆者所忌。君子处此固不可少变其操履，亦不可太露其锋芒。 老来疾病都是壮时招得；衰时罪孽都是盛时作得。故持盈履满，君子尤兢兢焉。 士君子不能济物者，遇人痴迷处，出一言提醒之，遇人急难处，出一言解救之，亦是无量功德矣。 勤者敏于德义，而世人借勤以济其贪；俭者淡于货利，而世人假俭以饰其吝。君子持身之符，反为小人营私之具矣，惜哉！ 士君子处权门要路，操履要严明，心气要和易。毋少随而近腥膻之党，亦毋过激而犯蜂虿之毒。 休与小人仇雠，小人自有对头；休向君子谄媚，君子原无私惠。</description>
+      <description>君子修其道德，不为穷困而改节。</description>
     </item>
     
     <item>
@@ -1586,22 +1382,7 @@ Three days from now, after half century in the service of our country, I shall l
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/literature/%E5%9C%A3%E7%9A%87%E4%B9%8B%E5%AF%86%E4%BB%A4/</guid>
-      <description>看似繁华绚烂，实则空洞无物
-为什么我们渴求秩序的撒拉，却总被奈落眷顾。
-　为什么我们书上说神佑人类，人却总被寇德玩弄
-有时，为了信仰，你必须违背你的信仰。”
-吾乃净化者，是为驱离所有阴影之明光。 吾乃解结者，是为无法缠持之松绳。 吾乃流放者，是为吹熄最後烛火之恶意。 吾乃狂想者，是为吞噬肉体之激情。 吾乃给养者，是为使饥饿者复苏之食肴&amp;hellip;&amp;hellip;”
-每个生物都把自己的神想象得无比美好，而我却终于发现，圣地中的污秽，同样是污秽
-我们出生在一个错误的年代，所以，我们成了英雄
-多少次风起云涌，群星毕现，多少次舍命奋战，浴血荒原，多少次岌岌可危，异军突起
-要想成为勇者，首先就要有成为懦夫的勇气
-不要因为魔物未曾威胁你而怜悯，也不要因为魔物威胁了你而冲动。”
-而毫无信仰的的魔族更是不受影响地充实的生活
-“正如实与虚彼此相生，光与暗亦是永恒相连。 世间万物，古今大道，从未有过孤妄而独立的存在。 是的，从未有过
-没有尽头的黑夜，死亡的恐惧像噩梦一样扼住了咽喉，人们只有颤抖地蜷缩在一起，祈祷着第一缕曙光的到　在这刹那的黎明之间，天地静默、万物无声，连圣山神殿的光辉都不复存在，它沐浴于一弯血红的冷月之下，静静俯视着这片大陆上的风云动荡与万千苍生
-。自身力量越是强大、自我意识越是清醒，这种情绪就越是旺盛，仿佛火山口下封印千年的炽热岩浆，终有冲破阻碍、劫掠四野的一天。
-“圣皇之密令，所言极是。 我族本乃圣山众神之血亲，自当受命于众神之下，发令于众生之前。 奈何众神为争一己之私利，悍然相斗，终致魔魂水晶损毁、世界破碎。 千余年来，我族退回魔界大陆，隐遁辞世、自谋复兴，未曾与他族图谋相争。 然近来则有一众神族余孽，假借众神名义，为凡人授以神格，助其对我族之亚特大陆遗民大肆屠杀。我族遗民之血泪哭号，常入我梦，不忍卒听。 而今我族励精图治，已重振神威，加之圣物暗十字封印现世，更为先辈诸神授意我族清扫余孽、重返故土之天兆也。 故此，余当以一己之身、率全族之力，助圣皇及先辈诸神，遂我族千年之夙愿。 余万死而不辞也！”
-“若你放弃奢望，你将远离凡人的哀伤。因你的心已覆上黑暗的坚甲，伤无可伤。”</description>
+      <description>若你放弃奢望，你将远离凡人的哀伤。因你的心已覆上黑暗的坚甲，伤无可伤。</description>
     </item>
     
     <item>
@@ -1610,13 +1391,7 @@ Three days from now, after half century in the service of our country, I shall l
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/literature/%E5%A2%A8%E8%8F%B2%E5%AE%9A%E5%BE%8B/</guid>
-      <description>墨菲定律是一种[心理学效应]，由爱德华·墨菲（Edward A. Murphy）提出的，亦称墨菲法则、墨菲定理。原文为如果有两种或两种以上的方式去做某件事情，而其中一种选择方式将导致灾难，则必定有人会做出这种选择。根本内容是：如果事情有变坏的可能，不管这种可能性有多小，它总会发生。
-定律来源#1949年，一位名叫爱德华·墨菲的空军上尉工程师，对他的某位运气不太好的同事随口开了句玩笑：“如果一件事有可能被做坏，让他去做就一定会更坏。” 一句本无恶意的玩笑话最初并没有什么太深的含义，只是说出了坏运气带给人的无奈。或许是这世界不走运的人太多，或许是人们总会犯这样那样错误的缘故，这句话被迅速扩散，最后竟然演绎成：如果坏事情有可能发生，不管这种可能性有多小，它总会发生，并引起最大可能的损失
-这一结论被爱德华·墨菲应用于安全管理，他指出：做任何一件事情，如果客观上存在着一种错误的做法，或者存在着发生某种事故的可能性，不管发生的可能性有多小，当重复去做这件事时，事故总会在某一时刻发生。也就是说，只要发生事故的可能性存在，不管可能性多么小，这个事故迟早会发生的。
-具体定律#墨菲定律（Murphy&amp;rsquo;s Law）主要内容有四个方面： 一、任何事都没有表面看起来那么简单； 二、所有的事都会比你预计的时间长； 三、会出错的事总会出错； 四、如果你担心某种情况发生，那么它就更有可能发生。 “墨菲定律”的根本内容是“凡是可能出错的事有很大几率会出错”，指的是任何一个事件，只要具有大于零的机率，就不能够假设它不会发生。
-警示作用#墨菲定律是一种客观存在。要在企业管理、日常工作和生活中防范墨菲定律可能导致的恶性后果，必须从行为、技术、机制、环境等多方面因素入手，而对其在思想心理上的重视无疑要放到首位。 防微杜渐，小的隐患若不消除，就有可能扩大增长，其造成事故的几率也会慢慢增加。这对于巨大、复杂的技术系统来说尤为可怕。 看淡压力，持平常心。因面临压力太大而心态失常，这是导致悲剧发生的最常见原因之一。 守正安分，不图侥幸。侥幸心理是一种不想遵循客观规律、只想依靠机会或运气等偶然因素实现成功愿望或消灾免难的心理。它使得人们投机取巧、明知故犯、不讲因果、不守规则，变得懒惰懈怠、好走捷径。因其只依赖偶然因素，所以它必然不遵循因果规律，轻视或放纵隐患，在现实中往往如墨菲定律预言的那样事与愿违。[5]借鉴意义#在心理学上有一定根据，即负面心理暗示会对人的心态及行为造成不良影响。要打破墨菲定律的“诅咒”，就要有坚定的自信，稳定的心态，积极的心理暗示，以肯定式的语言做表述，对自卑感等负面情绪或不良念头采取零容忍策略，一旦察觉立即打消。即便遭遇挫折，也要有“尽人事听天命”的觉悟，充分发挥自身潜力勇敢应对，始终以正面、阳光的心态面对生活。
-预防方法#1.尽量避免感情用事。控制情绪，抵制烦恼。在处理烦恼问题时可以遵循以下四个要诀: （1）照着正确的解决方法去做; （2）尽量收集资料，找出让你烦恼的原因; （3）衡量资料的重要性，并找出对付的方法; （4）观察事情进行得是否顺利。 2.不要冲动地去做一件事，把问题和其他有关系的事情再慎重考虑一遍，如果没有比立刻行动更重要的事，那就立刻去实行。 3.压力太大的时候，稍微休息一下。 4.为了切合实际，不要嫌麻烦，再检查一遍。 5.按部就班地从事情发生的过程中找出解决办法，不要妄下断言。 6.和自己的意愿对照一下，看看自己所做的决定是否违背心意。
-衍生版本# 别试图教猫唱歌，这样不但不会有结果，还会惹猫不高兴。 别跟傻瓜吵架，不然旁人会搞不清楚，到底谁是傻瓜。 不要以为自己很重要，因为没有你，太阳明天还是一样从东方升上来。 笑一笑，明天未必比今天好。 好的开始，未必就有好结果；坏的开始，结果往往会更糟。 东西久久都派不上用场，就可以丢掉；东西一丢掉，往往就必须要用它。 你丢掉了东西时，最先去找的地方，往往也是可能找到的最后一个地方。 你往往会找到不是你正想找的东西。 你出去买爆米花的时候，银幕上偏偏就出现了精彩镜头。 另一排总是动的比较快；你换到另一排，你原来站的那一排，就开始动的比较快了；你站的越久，越有可能是站错了排。 一分钟有多长？ 这要看你是蹲在厕所里面，还是等在厕所外面  </description>
+      <description>如果有两种或两种以上的方式去做某件事情，而其中一种选择方式将导致灾难，则必定有人会做出这种选择。根本内容是：如果事情有变坏的可能，不管这种可能性有多小，它总会发生</description>
     </item>
     
     <item>
@@ -1625,8 +1400,7 @@ Three days from now, after half century in the service of our country, I shall l
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/literature/%E5%A4%A7%E5%AD%A6%E4%B9%8B%E9%81%93/</guid>
-      <description>大学之道，在明明德，在亲民，在止于至善。 知止而后有定；定而后能静；静而后能安；安而后能虑；虑而后能得。 物有本末，事有终始。知所先后，则近道矣。 古之欲明明德于天下者，先治其国；欲治其国者，先齐其家； 欲齐其家者，先修其身；欲修其身者，先正其心；欲正其心者， 先诚其意；欲诚其意者，先致其知；致知在格物。 物格而后知至；知至而后意诚；意诚而后心正；心正而后身 修；身修而后家齐；家齐而后国治；国治而后天下平。 自天子以至于庶人，壹是皆以修身为本。其本乱而末治者 否矣。其所厚者薄，而其所薄者厚，未之有也
-大学的宗旨在于弘扬光明正大的品德，学习和应用于生活，使人达到最完善的境界。 知道应达到的境界才能够志向坚定；志向坚定才能够镇静不躁；镇静不躁才能够心安理得；心安理得才能够思虑周详；思虑周详才能够有所收获。每样东西都有根本有枝末，每件事情都有开始有终结。明白了这本末始终的道理，就接近事物发展的规律了。 古代那些要想在天下弘扬光明正大品德的人，先要治理好自己的国家；要想治理好自己的国家，先要管理好自己的家庭和家族；要想管理好自己的家庭和家族，先要修养自身的品性；要想修养自身的品性，先要端正自己的心思；要想端正自己的心思，先要使自己的意念真诚；要想使自己的意念真诚，先要使自己革除不好的思想；认识最真的本心。 通过伏灭革除内心不好的私欲、物欲，而彰显明德，认识本心，表里如一。意念才能真诚；意念真诚后心思才能端正；心思端正后才能修养品性；品性修养后才能管理好家庭和家族；管理好家庭和家族后才能治理好国家；治理好国家后天下才能太平。上自国家元首，下至平民百姓，人人都要以修养品性为根本。若这个根本被扰乱了，家庭、家族、国家、天下要治理好是不可能的。不分轻重缓急，本末倒置却想做好事情，这也同样是不可 能的。</description>
+      <description>自天子以至于庶人，壹是皆以修身为本。其本乱而末治者 否矣。其所厚者薄，而其所薄者厚，未之有也</description>
     </item>
     
     <item>
@@ -1635,8 +1409,7 @@ Three days from now, after half century in the service of our country, I shall l
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/literature/%E5%A4%A9%E4%B8%8B/</guid>
-      <description>天下之治方术者多矣，皆以其有为不可加矣！古之所谓道术者，果恶乎在？曰：“无乎不在。”曰：神何由降？明何由出？&amp;ldquo;&amp;ldquo;圣有所生，王有所成，皆原于一。&amp;ldquo;不离于宗，谓之天人；不离于精，谓之神人；不离于真，谓之至人。以天为宗，以德为本，以道为门，兆于变化，谓之圣人；以仁为恩，以义为理，以礼为行，以乐为和，熏然慈仁，谓之君子；以法为分，以名为表，以参为验，以稽为决，其数一二三四是也，百官以此相齿；以事为常，以衣食为主，蕃息畜藏，老弱孤寡为意，皆有以养，民之理也。古之人其备乎！配神明，醇天地，育万物，和天下，泽及百姓，明于本数，系于末度，六通四辟，小大精粗，其运无乎不在。其明而在数度者，旧法、世传之史尚多有之；其在于《诗》、《书》、《礼》、《乐》者，邹鲁之士、缙绅先生多能明之。《诗》以道志，《书》以道事，《礼》以道行，《乐》以道和，《易》以道阴阳，《春秋》以道名分。其数散于天下而设于中国者，百家之学时或称而道之。 天下大乱，贤圣不明，道德不一。天下多得一察焉以自好。譬如耳目鼻口，皆有所明，不能相通。犹百家众技也，皆有所长，时有所用。虽然，不该不遍，一曲之士也。判天地之美，析万物之理，察古人之全。寡能备于天地之美，称神明之容。是故内圣外王之道，暗而不明，郁而不发，天下之人各为其所欲焉以自为方。悲夫！百家往而不反，必不合矣！后世之学者，不幸不见天地之纯，古人之大体。道术将为天下裂。 不侈于后世，不靡于万物，不晖于数度，以绳墨自矫，而备世之急。古之道术有在于是者，墨翟、禽滑厘闻其风而说之。为之大过，已之大顺。作为《非乐》，命之曰《节用》。生不歌，死无服。墨子泛爱兼利而非斗，其道不怒。又好学而博，不异，不与先王同，毁古之礼乐。黄帝有《咸池》，尧有《大章》，舜有《大韶》，禹有《大夏》，汤有《大濩》，文王有辟雍之乐，武王、周公作《武》。古之丧礼，贵贱有仪，上下有等。天子棺椁七重，诸侯五重，大夫三重，士再重。今墨子独生不歌，死不服，桐棺三寸而无椁，以为法式。以此教人，恐不爱人；以此自行，固不爱己。未败墨子道。虽然，歌而非歌，哭而非哭，乐而非乐，是果类乎？其生也勤，其死也薄，其道大闇觳。使人忧，使人悲，其行难为也。恐其不可以为圣人之道，反天下之心。天下不堪。墨子虽独能任，奈天下何！离于天下，其去王也远矣！墨子称道曰：“昔禹之湮洪水，决江河而通四夷九州也。名山三百，支川三千，小者无数。禹亲自操橐耜而九杂天下之川。腓无胈，胫无毛，沐甚雨，栉疾风，置万国。禹大圣也，而形劳天下也如此。”使后世之墨者，多以裘褐为衣，以屐蹻为服，日夜不休，以自苦为极，曰：“不能如此，非禹之道也，不足谓墨。”相里勤之弟子，五侯之徒，南方之墨者若获、已齿、邓陵子之属，俱诵《墨经》，而倍谲不同，相谓别墨。以坚白同异之辩相訾，以奇偶不仵之辞相应，以巨子为圣人。皆愿为之尸，冀得为其后世，至今不决。墨翟、禽滑厘之意则是，其行则非也。将使后世之墨者，必以自苦腓无胈、胫无毛相进而已矣。乱之上也，治之下也。虽然，墨子真天下之好也，将求之不得也，虽枯槁不舍也，才士也夫！ 不累于俗，不饰于物，不苟于人，不忮于众，愿天下之安宁以活民命，人我之养，毕足而止，以此白心。古之道术有在于是者，宋銒、尹文闻其风而悦之。作为华山之冠以自表，接万物以别宥为始。语心之容，命之曰“心之行”。以聏合欢，以调海内。请欲置之以为主。见侮不辱，救民之斗，禁攻寝兵，救世之战。以此周行天下，上说下教。虽天下不取，强聒而不舍者也。故曰：上下见厌而强见也。虽然，其为人太多，其自为太少，曰：“请欲固置五升之饭足矣。”先生恐不得饱，弟子虽饥，不忘天下，日夜不休。曰：“我必得活哉！”图傲乎救世之士哉！曰：“君子不为苛察，不以身假物。”以为无益于天下者，明之不如己也。以禁攻寝兵为外，以情欲寡浅为内。其小大精粗，其行适至是而止。 公而不党，易而无私，决然无主，趣物而不两，不顾于虑，不谋于知，于物无择，与之俱往。古之道术有在于是者，彭蒙、田骈、慎到闻其风而悦之。齐万物以为首，曰：&amp;ldquo;天能覆之而不能载之，地能载之而不能覆之，大道能包之而不能辩之。&amp;ldquo;知万物皆有所可，有所不可。故曰：&amp;ldquo;选则不遍，教则不至，道则无遗者矣。&amp;ldquo;是故慎到弃知去己，而缘不得已。泠汰于物，以为道理。曰：&amp;ldquo;知不知，将薄知而后邻伤之者也。&amp;ldquo;奚髁无任，而笑天下之尚贤也；纵脱无行，而非天下之大圣；椎拍輐断，与物宛转；舍是与非，苟可以免。不师知虑，不知前后，魏然而已矣。推而后行，曳而后往。若飘风之还，若羽之旋，若磨石之隧，全而无非，动静无过，未尝有罪。是何故？夫无知之物，无建己之患，无用知之累，动静不离于理，是以终身无誉。故曰：“至于若无知之物而已，无用贤圣。夫块不失道。”豪桀相与笑之曰：“慎到之道，非生人之行，而至死人之理。”适得怪焉。田骈亦然，学于彭蒙，得不教焉。彭蒙之师曰：“古之道人，至于莫之是、莫之非而已矣。其风囗窢然，恶可而言。”常反人，不见观，而不免于魭断。其所谓道非道，而所言之韪不免于非。彭蒙、田骈、慎到不知道。虽然，概乎皆尝有闻者也。 以本为精，以物为粗，以有积为不足，澹然独与神明居。古之道术有在于是者，关尹、老聃闻其风而悦之。建之以常无有，主之以太一。以濡弱谦下为表，以空虚不毁万物为实。关尹曰：“在己无居，形物自著。”其动若水，其静若镜，其应若响。芴乎若亡，寂乎若清。同焉者和，得焉者失。未尝先人而常随人。老聃曰：“知其雄，守其雌，为天下溪；知其白，守其辱，为天下谷。”人皆取先，己独取后。曰：“受天下之垢”。人皆取实，己独取虚。“无藏也故有余”。岿然而有余。其行身也，徐而不费，无为也而笑巧。人皆求福，己独曲全。曰：“苟免于咎”。以深为根，以约为纪。曰：“坚则毁矣，锐则挫矣”。常宽容于物，不削于人。虽未至于极，关尹、老聃乎，古之博大真人哉！ 寂漠无形，变化无常，死与？生与？天地并与？神明往与？芒乎何之？忽乎何适？万物毕罗，莫足以归。古之道术有在于是者，庄周闻其风而悦之。以谬悠之说，荒唐之言，无端崖之辞，时恣纵而不傥，不奇见之也。以天下为沈浊，不可与庄语。以卮言为曼衍，以重言为真，以寓言为广。独与天地精神往来，而不敖倪于万物。不谴是非，以与世俗处。其书虽环玮，而连犿无伤也。其辞虽参差，而諔诡可观。彼其充实，不可以已。上与造物者游，而下与外死生、无终始者为友。其于本也，弘大而辟，深闳而肆；其于宗也，可谓稠适而上遂矣。虽然，其应于化而解于物也，其理不竭，其来不蜕，芒乎昧乎，未之尽者。 惠施多方，其书五车，其道舛驳，其言也不中。历物之意，曰：“至大无外，谓之大一；至小无内，谓之小一。无厚，不可积也，其大千里。天与地卑，山与泽平。日方中方睨，物方生方死。大同而与小同异，此之谓‘小同异’；万物毕同毕异，此之谓‘大同异’。南方无穷而有穷。今日适越而昔来。连环可解也。我知天之中央，燕之北、越之南是也。泛爱万物，天地一体也。”惠施以此为大，观于天下而晓辩者，天下之辩者相与乐之。卵有毛。鸡有三足。郢有天下。犬可以为羊。马有卵。丁子有尾。火不热。山出口。轮不蹍地。目不见。指不至，至不绝。龟长于蛇。矩不方，规不可以为圆。凿不围枘。飞鸟之景未尝动也。镞矢之疾，而有不行、不止之时。狗非犬。黄马骊牛三。白狗黑。孤驹未尝有母。一尺之棰，日取其半，万世不竭。辩者以此与惠施相应，终身无穷。桓团、公孙龙辩者之徒，饰人之心，易人之意，能胜人之口，不能服人之心，辩者之囿也。惠施日以其知与之辩，特与天下之辩者为怪，此其柢也。然惠施之口谈，自以为最贤，曰：“天地其壮乎，施存雄而无术。”南方有倚人焉，曰黄缭，问天地所以不坠不陷，风雨雷霆之故。惠施不辞而应，不虑而对，遍为万物说。说而不休，多而无已，犹以为寡，益之以怪，以反人为实，而欲以胜人为名，是以与众不适也。弱于德，强于物，其涂袄矣。由天地之道观惠施之能，其犹一蚊一虻之劳者也。其于物也何庸！夫充一尚可，曰愈贵，道几矣！惠施不能以此自宁，散于万物而不厌，卒以善辩为名。惜乎！惠施之才，骀荡而不得，逐万物而不反，是穷响以声，形与影竞走也，悲夫！
-译文 天下搞学术的人很多，都认为自己的学问达到了顶峰。古代所谓的道术，究意在哪里？回答说：“无所不在。”问：“神由何而降？明从何而生？”回答说：“神圣自有其由来，王业自有其成因，都渊源于一。” 不离根本，称为天人。不离精纯，称为神人。不离本真，称为至人。以天为宰，以德为根本，以道为门径，能够预示变化，称为圣人。以仁布施恩惠，以义作为道理，以礼规范行为，以乐调和性情，温和慈爱，称为君子。以法律为尺度，以名号为标志，以比较为验证，以考核来判断，等级之数像一二三四那样明白，百官以此为序列，以职事为常务，以衣食为主旨，生产储藏，关心老弱孤寡，使其皆有所意养，这是养民的常理。 古代的圣人是很完备的啊！合于神明，效法自然，养育万物，泽及百姓，以天道为根本，以法度为末节，六合通达而四时顺畅，无论小大精粗，其作用无所不在。古时候的道术和法规制度，很多还保存在传世的史书中。保存《诗》《书》《礼》《乐》中的，邹鲁一带的学者和缙绅先生们大都知晓。《诗》用来表达志，《书》用来记载事情，《礼》用来规范行为。《乐》用来调和，《易》用来说明阴阳，《春秋》用来正名分。其散布于天下百设立于中国的，百家之学还常常引用它。 天下大乱，贤王不显，道德分岐，天下人多各得一孔之见而自我欣赏。譬如耳目鼻口，它们各有其功能，但却不能互相通用。犹如百家众技，各有所长，时有所用。虽然如此，但不完备和全面，都是孤陋寡闻的人。割裂天地的完美，离析万物之理，把古人完美的道德弄得支离破碎，很少能具备天地的完美，相称于神明之容。所以，内圣外王之道暗而不明，抑郁而不发挥，天下的人各尽所欲而自为方术。可悲啊！百家各行其道而不回头，必定不能相合。后世的学者，不幸不能见到天地的纯真和古人的全貌，道术将被天下所割裂！ 不以奢侈影响后世，不糜费万物，不炫耀礼法，用规矩自我勉励，以应付社会的危难，这是古代道术的内涵之一。墨翟、禽滑厘对这种道术很喜欢，但他们实行得太过分，局限性太大。提倡非乐，主张节用，生不作乐，死不眼丧。墨子倡导博爱兼利而反对战争，主张和睦相处；又好学而渊博，不立异，不与先王相同，毁弃古代的礼乐。 黄帝有《大韶》之乐，尧有《大章》之乐，禹有《大夏》之乐，汤有《大蓡》之乐，文王有《辟雍》武王、周公作《武》乐。古代的丧礼，贵贱有仪法，上下有等级，天子的棺椁七层，诸候五层，大夫三层，士两层。现在墨子独自主张生不歌乐，死不服丧，只用3寸厚的桐木棺而没有椁，作为标准。以此来教导人，恐怕不是爱人之道；自己去实行，实在是不爱惜自己。墨子的学说尽管是成立的，然而应该歌唱而不歌唱，应该哭泣而不哭泣，应该作乐而不作乐，这合乎人情常理吗？生前辛勤劳苦，实行起来简单薄葬，这种主张太苛刻了。使人忧劳，使人悲苦，实行起来是很困难的，恐怕不能够成为圣人之道，违反了天下人的心愿，天下人是不堪忍受的。墨子虽然独自能够做到，但对天下的人却无可奈何！背离了天下的人，也就远离了王道。 墨子称道说：“从前禹治理洪水，疏异江河而沟通四夷九州，大川300，支流3000，小河无数。禹亲自持筐操铲劳作，汇合天下的河川，辛苦得连腿上的汗毛都磨光了，风里来雨里去，终于安定了天下。禹是大圣人，为了天下还如此劳苦。”从而使后世的墨者，多用兽皮粗布为衣，穿着木屐草鞋，白天黑夜都不休息，以自苦为准则，并说：“不能这样，就不是禹之道，不足以称为墨者。” 墨翟、禽滑厘的用意是很好的，具体做法却太过分。这将使后世的墨者，以极端劳苦的方式互相竞进。这种做法乱国有余，治国不足。尽管如此，墨子还是真心爱天下的，这样的人实在是难以求得，即使辛苦得形容枯槁也不舍弃自己的主张，真是有才之士啊！ 不为世俗牵累，不用外物矫饰，不苛求于人，不与众人发生矛盾，希望天下安宁使人民活命，生活上以饱暖为满足，以此来表白心愿，这是古代道术的内涵之一。宋鈃、尹文对这种道术很喜欢，制作了形状像华山一样的帽子以表示上下均平主张，应接万物以不带偏见为先；谈论内心的思维，称之为心理活动，以柔和的态度投合别人的喜欢，以调和天下，希望树立上述主张作为行动的主导思想。受到欺侮不以为耻辱，调解人民的争斗，禁止攻伐平息干戈，将天下从战火中拯救出来。用这种主张周行天下，但他们仍然不停地对劝说，所以说人们都讨厌而他们还是硬要宣扬自己的主张。 尽管如此，他们还是替别人考虑得太多，为自己打算得太少，说：“我们只想要5升米的饭就够了。”不仅先生们吃不饱，弟子们也常常处在饥饿之中，但他们仍然不忘天下，日夜不休，说：“君子不苛刻计较，不使自身被外物所利用。”认为对天下没有益处的，与其提示它不如禁止它。以禁攻息兵为外在活动，以清心寡欲为内在修养，无论从大的方面说还是从细微的方面说，他们的所为也就到些为止了。 公正而不阿党，平易而无偏私，排除主观的先入之见，随物变化而不三心二意，没有顾虑，不求智谋，对万物毫无选择地随顺，和它一起变化，这是古代道术的内涵之一。彭蒙、田骈、慎到对这种道术很喜欢，以齐同万物为首要，说：“天能覆盖万物却不能承载，地能承载万物却不能覆盖，大道能包容万物却不能分辨。”知道万物都有所能，有所不能，所以说：“选择则不普遍，教导则有所不及，大道则无所遗漏。” 所以慎到抛弃智慧去除己见而随任于不得已，听任于物作为道理，他说：“强求知其所不知，就会为知所迫而受到损伤。”随便任用人，而讥笑天下推崇贤人；放任不羁不拘形迹，而非议天下的大圣。刑罚之轻重，随着事态的发展而相应地变化，抛弃了是非，才可以免于刑罚。不依赖智巧谋虑，不瞻前顾后，巍然独立。推动而往前走，拖拉而向后退，像飘风的往返，像羽毛的飞旋，像磨石的转动，完美而无错，动静适度而无过失，未曾有罪。这是什么原因，没有知觉的东西，就不会有标榜自己的忧患，不会有运用智谋的牵累，动静合于自然之理，所以终生不会受到毁誉。所以说：“达到像没有知觉的东西就行了，不需要圣贤，土块不会失于道。”豪杰们相互嘲笑他说：“慎到的道对活人没有用而只适用于死人，实在怪异。” 田骈也是这样，受学于彭蒙，得到不言之教。彭蒙的老师说：“古时候得道的人，达到了无所谓是非的境界。他们的道术像风吹过一样迅速，怎么能够用语言表达出来呢？”常常违反人意，不受人们所尊敬，仍不免于随物变化。他们所说的道并不是直正的道。然而，他们都还大概地听闻过一点道。 以无形无为的道为精微，以有形有为的物为粗鄙，以积蓄为不足，恬谈地独自与神明共处，这是古代道术的内涵之一。关尹、老聃对这种道术很喜欢，主张建立在常无与常有的基础上，以太一为核心，以柔弱谦下为外表， 以空虚不毁伤万物为实质。 关尹说：“自己不存私意，有形之物各自彰显。动如流水，静如平镜，反应如回响。忽然如无有，寂静如清虚。相同则和谐，有得则有失。未曾争先而常常随顺别人。” 老聃说：“知道雄强，持守雌柔，愿成为天下的沟壑；知道明亮，持守暗昧，愿成为天下的山谷。”人人都争先，独自甘愿居后，说承受天下的垢辱；人人都务实，独自甘愿守虚，不使敛藏所以有余，多如高山堆积。他立身行事，从容不迫，无为而嘲笑机巧；人人都求福，独自甘愿委曲求全，说姑且免于受罪。以深藏为根本，以俭约为纲纪，说坚硬的易于毁坏，锐利的易于挫折。常常宽容待物，从不侵削别人，可以说达到了顶点。 关尹、老聃啊！真是古代的博大真人！ 寂寞无形，变化无常，死死生生，与天地并存，与神明同往！茫然何往，忽然何去，包罗万物，不知归属，这是古代道术的内涵之一。庄子对这种道术很喜欢，以虚远不可捉模的理论，广大不可测度的言论，不着边际的言辞，放纵而不拘执，不持一端之见。认为天下沉浊，不能讲庄重的话，以危言肆意推衍，以重言体现真实，以寓言阐发道理。独自与天地精神往来而不傲视万物，不拘泥于是非，与世俗相处。他的书虽然奇伟却宛转随和，言辞虽然变化多端却奇异可观。他内心充实而思想奔放，上与造物者同游，下与忘却死生不分终始的人为友。他论述道的根本，博大而通达，深广而畅达；他论述道的宗旨，和谐妥贴而上达天意。然而，他对于事物变化的反应和解释，没有止境，不离于道，茫然暗昧，未能穷尽。 惠施的学问广博，他的书多达五车，道术杂乱无章，言辞多有不当。他分析事物之一，说：“大到极点而没有边际的，称为‘大一’；小到极点而没有内核的，称为‘小一’。没有厚度，不可累积，但能扩大到千里。天和地一样低，山和泽一样平。太阳刚刚正中的时候就偏斜，万物刚刚生出就向死亡转化。大同和小同相差异，这叫‘小同异’；万物完全相同也完全相异，这叫‘大同异’。南方既没有穷尽也有穷尽，今天到越国去而昨天已来到。连环可以解开。我所知的天下的中央，在燕国之北越国之南。泛爱万物，天地合为一体。” 惠施认为这些是大道理，炫耀于天下而引导辩士，天下的辩士也乐于和他辩论。鸡蛋有毛；鸡有三只脚；郢都包有天下；犬可以变为羊；马有卵；青蛙有尾巴；火不热；山有口；车轮不着地；眼睛看不见东西；物指的概念不相称，相称也没有止境；龟比蛇长；矩不方，规划出的不圆；凿孔不能围住榫头；飞鸟的影子未曾移动；疾飞的箭头有不走也有不停的时候；狗不是犬；黄马、骊牛是三个；白狗是黑的；孤驹不曾有母；一尺长的木棍，每天截掉一半，永远也截不完。辩士们用这些辩题与惠施相辩论，终身无穷。 桓团、公孙龙这些好辩之徒，迷惑人心，改变人意，能够用口舌战胜人，却不能服人之心，这是辩者的局限。惠旆每天靠他的智慧与人辩论，专门和天下的辩士一起制造怪异之说，这就是他们的根本。 然而惠施口若悬河，自认为最能干，说天地果真就伟大吗！惠施有雄心而没有道术。南方有个名叫黄缭的怪异之人，问天地为什么不坠不陷，风雨雷霆是怎么回事。惠施毫不推辞地接受提问，不加思索地应对，广泛解说天地万物，滔滔不绝，没完没了，还嫌说得太少，又增加了一些怪异的说法。把违反人之常情的事说成是真实的，想通过辩赢别人而获取名声，所以与众不合。轻视道德修养，努力追逐外物，他走的是歪门邪道。从天地之道来看惠施的才能，他就像一只蚊虫那样徒劳。对于万物有什么用处！做为一家之说还可以，如果能进一步奠崇大道，那就差不多了！惠施不安于道，分散心思于万物而乐上不疲，终于以善辩出名。可惜啊！惠施的才能，放荡而不行于正道，追逐万物而不知回头，这就像用声音去追逐回响，用形体和影子况走一样。可悲啊</description>
+      <description>天下大乱，贤王不显，道德分岐，天下人多各得一孔之见而自我欣赏。譬如耳目鼻口，它们各有其功能，但却不能互相通用。犹如百家众技，各有所长，时有所用。虽然如此，但不完备和全面，都是孤陋寡闻的人。割裂天地的完美，离析万物之理，把古人完美的道德弄得支离破碎，很少能具备天地的完美，相称于神明之容。所以，内圣外王之道暗而不明，抑郁而不发挥，天下的人各尽所欲而自为方术。可悲啊！百家各行其道而不回头，必定不能相合。后世的学者，不幸不能见到天地的纯真和古人的全貌，道术将被天下所割裂</description>
     </item>
     
     <item>
@@ -1645,14 +1418,7 @@ Three days from now, after half century in the service of our country, I shall l
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/literature/%E5%A5%BD%E5%AD%A6/</guid>
-      <description>学习是儒家的一大话题，这里收集了《论语》关于好学的论述。
-【原文】子曰：“君子食无求饱，居无求安，敏于事而慎于言，就有道而正焉，可谓好学也已。”《学而》 【翻译】孔子说：“君子不追求饮食的饱足，不追求居住的安逸，做事勤敏而说话谨慎，亲近有德之人来匡正自己，这就算得上是好学了
-【原文】子曰：“笃信好学，守死善道。危邦不入，乱邦不居。天下有道则见，无道则隐。邦有道，贫且贱焉，耻也；邦无道，富且贵焉，耻也。”（《泰伯》） 【翻译】孔子说：“坚定信念并努力学习，誓死守卫并完善治国与为人的大道。不进入政局不稳的国家，不居住在动乱的国家。天下有道就出来做官；天下无道就隐居不出。国家有道而自己贫贱，是耻辱；国家无道而自己富贵，也是耻辱。”
-【原文】子贡问曰：“孔文子何以谓之文也？”子曰：“敏而好学，不耻下问，是以谓之文也。”（《公冶长》） 【翻译】子贡问道：“为什么给孔文子一个‘文’的谥号呢?”孔子说：“他聪敏勤勉而好学,不以向他地位卑下的人请教为耻,所以给他谥号叫‘文&#39;。”
-【原文】哀公问：“弟子孰为好学？”孔子对曰：“有颜回者好学，不迁怒，不贰过。不幸短命死矣！今也则亡，未闻好学者也。”（《雍也》） 【翻译】鲁国国君问孔子：“你的学生中谁是最爱学习的?”孔子回答说：“有个叫颜回的学生最爱学习,他从不把脾气发到别人的身上,也不重犯同样的错误。不幸年纪轻轻死了,现在没有像颜回那样好学的人了。”
-【原文】季康子问：“弟子孰为好学？”孔子对曰：“有颜回者好学，不幸短命死矣！今也则亡。”（《先进》） 【翻译】季康子问孔子：“你的学生中谁是好学的?”孔子回答说：“有一个叫颜回的学生很好学，不幸短命死了。现在再也没有像他那样爱学习的了。”
-【原文】子曰：“由也，女闻六言六蔽矣乎？”对曰：“未也。”“居！吾语女。好仁不好学，其蔽也愚；好知不好学，其蔽也荡；好信不好学，其蔽也贼；好直不好学，其蔽也绞；好勇不好学，其蔽也乱；好刚不好学，其蔽也狂。”（《阳货》） 【翻译】孔子说：“由呀，你听说过六种品德和六种弊病了吗?”子路回答说：“没有。”孔子说：“坐下，我告诉你。爱好仁德而不爱好学习，它的弊病是受人愚弄；爱好智慧而不爱好学习，它的弊病是行为放荡；爱好诚信而不爱好学习，它的弊病是危害亲人；爱好直率却不爱好学习，它的弊病是说话尖刻；爱好勇敢却不爱好学习，它的弊病是犯上作乱；爱好刚强却不爱好学习，它的弊病是狂妄自大。”
-【原文】子夏曰：“日知其所亡，月无忘其所能，可谓好学也已矣。”（《子张》） 【翻译】子夏说:“每天都能懂得以前不懂的知识，每月都能不忘掉已经学会的东西，这就可以说是好学的了。”</description>
+      <description>君子食无求饱，居无求安，敏于事而慎于言，就有道而正焉，可谓好学也已</description>
     </item>
     
     <item>
@@ -1661,7 +1427,7 @@ Three days from now, after half century in the service of our country, I shall l
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/literature/%E5%AD%94%E5%AD%90/</guid>
-      <description>孔子出生在鲁国昌平乡的陬（ｚōｕ,邹）邑。他的祖先是宋国人，叫孔防叔。防叔生伯夏，伯夏生了叔梁纥（ｈé，禾）。叔梁纥年老时娶颜姓少女才生了孔子，那是他们到尼丘山向神明祷告后而得孔子的。鲁襄公二十二年（前551）孔子诞生。他刚出生时头顶是凹下去的，所以就给他取名叫丘。字仲尼，姓孔氏。 孔子出生不久叔梁纥就死了，埋葬在防山。防山在鲁国东部，因此孔子无法确知父亲的坟墓在何处，是母亲没有把父亲埋葬的地方告诉他。孔子小时候做游戏，常常摆起各种祭器，学做祭祀的礼仪动作。孔子的母亲死后，就把灵柩暂且停放在五父之衢，这是出于慎重没有马上埋葬。陬邑人輓父的母亲把孔子父亲的葬地告诉了他，然后孔子才把母亲迁去防山同父亲葬在一起。 孔子腰间还系着孝麻带守丧时，季孙氏举行宴会款待名土，孔子前往参加。季孙氏的家臣阳虎阻挠说：“季氏招待名士，没有请你啊。”孔子因此而退了回来。 孔子十七岁那年，鲁国大夫釐子病危，临终前告诫儿子懿子说：“孔丘这个人，是圣人的后代，他的祖先在宋国灭败。他的先祖弗父何本来继位做宋国国君，却让位于他的弟弟厉公。到他的另一个先祖正考父时，历佐宋戴公、宋武公、宋宣公三朝，三次受命一次比一次恭敬，所以正考父鼎的铭文说：‘第一次任命鞠躬而受，第二次任命时弯腰而受，第三次任命时俯首而受。走路时避开道路中央，靠墙而行，也没人敢欺侮我；我就在这个鼎中做些面糊粥以糊口度日。’他就是这般恭谨节俭。我听说圣人的后代，虽不一定做国君执政，但必定会有才德显达的人出现。如今孔子年少而好礼，他不就是才德显达的人吗？如果我死了，你一定要以他为师。等到孟釐子死后，孟懿子和鲁国人南宫敬叔便前往孔子处学礼。这一年，季武子死了，由平子继承了卿位。 孔子家境贫穷，社会地位低下。到长大之后，曾给季氏做过管理仓库的小吏，出纳钱粮算得公平准确；也曾提任过管理牧场的小吏，牲畜蕃息。因此他又升任主管营建工程的司空。过了不多久，他离开了鲁国，在齐国受到排斥，在宋国、卫国遭遇到驱逐，又在陈国和蔡国之间被围困，最后又返回了鲁国。孔子身高九尺六寸，人们都称他为“长人”，觉得他与一般人不一样。鲁国后来对他好了，所以他终于返回了鲁国。 鲁国人南宫敬叔对鲁昭公说：“请让我与孔子一起到周去。”鲁昭公就给了他一辆车子、两匹马，一名童仆，随他出发，到周去学礼，据说是见到了老子。告辞时，老子送他们时说：“我听说富贵的人是用财物送人，品德高尚的人是用言辞送人。我不是富贵的人，只能窃用品德高尚人的名号，用言辞为您送行。这几句话是：‘聪明深察的人常常受到死亡的威胁，那是因为他喜欢议论别人的缘故；博学善辩识见广大的人常遭困厄危及自身，那是因为他好揭发别人罪恶的缘故。做子女的忘掉自己而心想父母，做臣下的要忘掉自己而心存君主。’孔子从周回到鲁国之后，跟从他学习的弟子就渐渐多起来了。 在这个时候，晋平公yín乱无道，韩氏、赵氏、魏氏、中行氏、范氏、知氏六家大臣把持国政，不断出兵攻打东边的侯国，楚灵王军队强大，也时常侵犯中原各国；齐是大国又靠近鲁国。鲁国既小又弱，归附楚国就惹怒晋国；归附晋国就招致楚国来讨伐；对于齐国如果奉事不周到，齐国的军队就侵犯鲁国。 鲁昭公二十年（前522），这时孔子大是三十岁了。齐景公带着婴来到鲁国，景公问孔子说：“从衣秦公国家小而又处于偏僻的地方，他能够称霸，这是什么原因呢？”孔子回答说：“秦国虽小，志向却很大；所处地方虽然偏僻，但施政却很恰当。秦穆公亲自拔用五张黑公羊皮赎来的百里奚，授给他大夫的官爵，把他从拘禁中一解救出来，就与他一连谈了三天的话，随后就把执政大权交给他了。用这种精神来治理国家，就是统治整个天下也是可以的，他当个霸主还算是小的呢。”景公听了很高兴。 孔子三十五岁的时候，季平子因为与郈昭伯斗鸡怨的事得罪了鲁昭公，昭公率军队攻打平了，平子和孟孙氏、叔孙氏三家联合攻打昭公，昭公的军队吃了败仗，逃奔到齐国，齐国把昭公安置在乾侯这个地方。其后过了不久，鲁国发生了变乱。孔子来到齐国，做了高昭子的家臣，想借高昭子的关系接近景公。他与齐国的乐官谈论音乐，听到了舜时的《韶》乐，就学习了起来，有三个月的时间竟尝不出肉的味道，齐国人都称赞他。 齐景公向孔子请教如何为政，孔子说：“国君要像国君的样子，臣子要像臣子的样子，父亲要像父亲的样子，儿子要像儿子的样子。”景公听了后说：“对极了！假如国君不像个国君，臣子不像个臣子，父亲不像个父亲，儿子不像个儿子，即使有很多的粮食，我怎么能吃得着呢！”改日景公又向孔子请教为政的道理，孔子说：“管理国家最重要的是节约开支，杜绝浪费。”景公听了很高兴，打算把尼谿的田地封赏给孔子。晏婴劝阻说：儒者这种人，能说会道，是不能用法来约束他们的；他们高傲任性自以为是，不能任为下臣使用；他们重视丧事，竭尽哀情，为了葬隆重而不惜倾家荡产，不能让这种做法形成风气；他们四处游说乞求官禄，不能用他们来治理国家。自从那些圣贤相继下世以后，周王室也随之衰微下去，礼崩乐坏已有好化时间了。现在孔子讲究仪容服饰，详定繁琐的上朝下朝礼节，刻意于快步行走的规矩，这些繁文缛节，就是几代人也学习不完，毕生也搞不清楚。您如果想用这套东西来改变齐国的风俗，恐怕这不是引导老百姓的好办法。”之后，齐景公虽然很有礼貌地接见孔子，可不再问起有关礼的问题了。有一天，景公慰留孔子说：“用给季氏那样高的待遇给您，我做不到。”所以就用上卿季孙氏、下卿孟孙氏之间的待遇给孔子。齐国的大夫中有人想害孔子，孔子听到了这个消息。景公对孔子说：“我已年老了，不能作用你了。”孔子于是就离开齐国，返回了鲁国。 孔子四十二岁那年，鲁昭公死在齐国的乾侯，鲁定公继位。定公继位的第五年夏天，季平子死了，季恒子继立为上卿。季桓子气掘井时掘得一个腹大口小的陶器，里面有个像羊的东西，告诉孔子时却谎称“得到一只狗”。孔子说：“据我所知，那里面是羊。我听说，山林中的怪物是一种叫‘夔’的单足兽和会学人声的山精‘罔阆’，水中的怪物是神龙和叫‘罔象’的水怪，泥土中的怪物是一种雌雄未明的‘坟羊’。” 吴国攻打越国，把越国的国都会稽摧毁了，得到一节骨头，有一辆车长。吴国派使者来问孔子：“什么骨头最大？”孔子说：“大禹召集群神到会稽山，防风氏迟到，大禹就把他杀死并陈尸示众，他的骨头一节就有一车长，这就是最大的骨头了。”吴国的使者又问：“那神又是谁呢？”孔子说：“山川的神灵能兴云致雨足可造福天下，负责监守山川按时祭祀的就是神。守土地和谷物的就是公侯，他们都隶属于王者”。吴使又问：“防风氏是监守什么的？”孔子说：“汪罔氏的君长监守封山和禺山一带的祭祀，是釐姓。在虞、夏、商三叫汪罔，在周叫长翟，现在叫做大人。”吴使问：“人的身高有多少？”孔子回答说：“僬侥氏身高三尺，是最矮的了；高的不过三丈，数得上是最高的了。”吴国使者听了之后说：“了不起呀圣人！” 季桓子有个宠臣叫仲梁怀，与阳虎有怨仇。阳虎想要驱逐仲梁怀，季氏家臣公山不狃阻止了他。这年秋天，仲梁怀更加骄横了，阳虎把捉了起来。季桓子对此很恼怒，阳虎就把季桓子也囚禁了起来，直到季桓认输订立了盟约才把他释放出来。阳虎从此以后更加看不起季氏。季氏办事也竟然凌驾于鲁君之上，鲁国出现了大臣专权的局面。因此鲁国自大夫以下都不守礼分，超越职权违背了正道。所以孔子不愿意再在鲁国做官了，退闲在家，专心研究整理《诗》、《书》、《礼》、《乐》这些典籍，学生们越来越多，有的甚至来自远方，无不虚心向孔子求教。 鲁定公八年（前502），公山不狃在季桓子手下感到不如意，就利用阳虎作乱，打算废掉季孙氏、孟孙氏、叔孙氏三家的嫡生嗣子，另立平日为阳虎所喜欢的庶子，于是就把季桓子抓了起来。桓子用计骗子他，才得以逃脱出来。鲁定公九年（前501），阳虎作乱失败，逃奔到了齐国。这时，孔子五十岁。 公山不狃凭借费城反叛季氏，他派人来召请孔子去帮忙。孔子探索所依循的治国之道已经很久了，但抑郁不得志，无处可以施展，没有人能任用自己，就说：“当初周文王、周武王兴起于丰、镐而建立了王业，现在费城虽然小，该也差不多吧！”想要应召前去，子路不高兴，阻止孔子。孔子说：“他们请我去，难道会让我白白跑一趟吗？如果重用了我，我将在东方建立一个像周那样的王朝！”然而最终也没能成行。 以后鲁定公任命孔子做了中都长官，一年后，各地都效法他的治理办法。孔子便由中都长官提升为司空，又由司空提升为大司寇。 鲁定公十年（前500）的春天，鲁国与齐国和解。到了夏天，齐国大夫黎对景公说：“鲁国起用了孔丘，势必危及齐国”。于是齐景公就派使者告诉鲁国，说要与鲁定公行友好会晤，约定会晤的地点在夹谷。鲁定公准备好车辆随从，毫无戒备地前去赴约。孔子以大司寇的身份，兼办会晤典礼事宜，他对定公说：“我听说办理外交必须要有武装准备，办理武事也必须有外交配合。从前侯出了自己的疆界，一定要带齐必要的官员随从。请求您安排左、右司马一起去。”定公说：“好的。”就带了左、右司马一道去。定公在夹谷与齐侯相会。在那里修筑了盟坛，坛上备好席位，设置了三级登坛的台阶，用国君相遇的简略节相见，拱手揖让登坛。彼此馈赠应酬的仪式行过之后，齐国管事的官员快步上前请示说：“请开始演奏四方各族的舞乐”。齐景公说：“好的。”于是齐国的乐队以旌旗为先导，有的头戴羽冠，射披皮衣，有的手执矛、戟、剑、楯等武器也跟着上台了，喧闹着一涌而上。孔子见状赶忙跑过来，一步一阶快步登台，还差一级台阶时，便扬起衣袖一挥，说道：“我们两国国君为和好而来相会，为什么在这里演奏夷狄的舞乐，请命令管事官员叫他们下去！”主管官员叫乐队退下，他们却不肯动，左右看看婴与齐景公的眼色。齐景公心里很惭愧，挥手叫乐队退下去。过了一会儿，齐国的管事官员又跑来说道：“请演奏宫中的乐曲”。景公说：“好的。”于是一些歌舞杂技艺人和身材矮小的侏儒都前来表演了。孔子看了又急跑过来。一步一阶往台上走，最后一阶还没有迈上就说：“普通人敢来胡闹迷惑诸侯，论罪当杀！请命令主事官员去执行！”于是主事官员依法将他们处以腰斩，叫他们来个手足异处。齐景公大为恐惧，深深触动，知道自己道理上不如他，回国之后很是慌恐，告诉他的大臣们说：“鲁国是用君子的道理来辅佐他们的国君，而你们却仅拿夷狄的办法教我，使我得罪了鲁国国君，这该怎办呢？”主管官员上前回答说：“君子有了过错，就用实际行动来向人家道歉认错；小人有了过错，就用花言巧语来谢罪。您如果痛心，就用具体行动来表示道歉吧。”于是齐景公就退还了从前所侵夺的鲁国郓、汶阳、龟阴的土地，以此来向鲁国道歉并悔过。 鲁定公十三年（前497）的夏天，孔子对定公说：“臣下的家中不能收藏武器，大夫的封邑不能筑起高一丈长三百丈的城墙。”于是就派仲由去当季氏的管家，打算拆毁季孙、孟孙、叔孙三家封邑的城墙。这时，叔孙氏首先把郈邑的城墙拆了。季孙氏也准备拆费邑的城墙，公山不狃和叔孙辄就带领费邑的人袭击鲁国。鲁定公和季孙、孟孙、叔孙三人就躲进了季孙的住宅，登上了季孙武子的高坛。公山不狃率领的费邑人进攻他们，没有能打进去，但有的人已经突入鲁定公所登高坛的近侧。孔子命令申句须、乐颀下台来攻打他们，费邑人失败逃走，鲁国人乘胜追击，在姑蔑把他们彻底击溃。公山不狃、叔孙辄两人逃到了齐国，费邑的城墙终于被拆毁了。接着准备拆成城，孟孙氏的家臣公敛处父告诉孟孙说：“拆除了成邑的城墙，齐国人必将进逼到我们的北大门。且成城又是你们孟氏的屏障，没有成城也就等于没有孟氏。我不打算拆毁”。十二月，鲁定公率兵包围了成城，没有攻下来。 鲁定公十四年（前496），孔子五十六岁，他由大司寇理国相职务，脸上露出喜悦神色。他的弟子说：“听说郡子大祸临头不恐惧，大福到来也不喜形于色”。孔子说：“有这句话，但不是还有一句‘乐在身居高位而礼贤下士’的话吗？”于是就把扰乱国政的大夫少正卯杀了。孔子参预国政三个月，贩卖猪、羊的商人就不敢漫天要价了；男女行人都分开走路；掉在路上的东西也没人捡走；各地的旅客来到鲁国的城邑，用不着向官员们求情送礼，都能得到满意的照顾，好像回到了家中一样。 齐国听到了这个消息就害怕了起来，说：“孔子在鲁国执政下去，一定会称霸，一旦鲁国称霸，我们靠它最近，必然会首先来吞并我们。何不先送一些土地给他们呢？”黎说：“我们先试着阻止他们一下，如果不成，再送给他们土地，这难道还算迟吗！”于是就从齐国挑选了八十个美貌女子，都穿上华丽的衣服，教她他学会跳《康乐》的舞蹈，身上有花纹的马一百二十匹，一起送给鲁君。先把女乐和纹马彩车安置在鲁城南面的高门外。季桓子身着便服前往观看再三，打算接受下来，就告诉鲁君以外出到各地周游视察为名，乘机整天到南门观齐国的美女和骏马，连国家的政事也懒得去管理了，子路看到这种情形便对孔子说：“老师，我们可以离开这里了吧。”孔子说：“鲁国现在就要在郊外祭祀，如果能按照法把典礼后的烤肉分给大夫们，那么我还可以留下不走”。季桓子终于接了齐国送来的女子乐团，一连三天不过问政务；在郊外祭祀束后，又违背常礼，没把烤肉分给大夫们。孔子于是离开了鲁国，当天就在屯地住宿过夜。鲁国一个名叫师己的乐师来为他送行，说道：“先生您是没有过错的。”孔子说：“我唱一首歌，好不好？”于是唱道：“那些妇人的口，可以把大臣和亲信撵走；接近那些妇女，可以使人败事亡身。悠闲啊悠闲，我只有这样安度岁月！”师己返回后，桓子问他说：“孔子说了些什么？”师己如实相告。桓子长叹一声，说“先生是怪罪我们接受了齐国那一群女乐的缘故啊！” 孔子于是到了卫国，寄住在子路妻子的兄长颜浊邹家中。卫灵公问孔子：“你在鲁国得到的俸禄是多少？”孔子回答说：“俸米六斗。”卫国也照样给了他俸米六万斗。过了不多久，有人向卫灵公说了孔子的坏话，卫灵公就派公孙余假用兵仗监视孔子的出入。孔子害怕在这里获罪，居住了十个月，就离开了卫国。 孔子将要到陈国去，经过一个叫匡的地方，弟子颜刻替他赶车，颜刻用马鞭子指着说：“从前我进入过这个城，就是由那缺口进去的”。匡人听说，误以为是鲁国的阳虎来了，阳虎曾经残害过匡人，于是匡人就围困了孔子。孔子的模样很像阳虎，所以被困在那里整整五天。颜渊后来赶到，孔子说：“我还以为你死了。”颜渊说：“老师您活着，我怎么敢死！”匡人围攻孔子越来越急，弟子们都很害怕。孔子说：“周文王已经死去，周代的礼乐制度不就在我们这里吗？上天如果要毁灭这些礼乐制度的话，就不会让我们这些后死的人承提起维护它的责任。上天并没有要消灭周代的这些礼乐，匡人又能把我怎么样呢！”孔子派子一个跟从他的人到宁武子那里称臣，然后才得以离开匡地。 孔子离开匡地之后就到了一个叫蒲的地方，过了一多月，又返回了卫国，寄住在蘧伯玉家。卫灵公有个叫南子的夫人，派人对孔子说：“各国的君子，凡是看得起我们国君，愿意与我们国君建立像兄弟一样交情的，必定会来见见我们南子夫人的，我们南子夫人也愿意见见您”。孔子开始还推辞谢绝一番，最后不得已才去见她。南子夫人坐在葛布做的帷帐中等待。孔子进门后，面朝北叩头行礼。南子夫人在帷帐中拜了两拜，她披戴的环佩玉器首饰发出了叮当撞击的清声响。事后孔子说：“我来就不愿见她，现在既然不得已见了，就得还她以礼。”子路不高兴。孔子发誓说：“我假若不对的话，上天一定厌弃我！上天一定厌弃我！”在卫国住了一个多月，灵公与夫人南同坐了一辆车子，宦官雍渠陪待车右，出宫后，让孔子坐在第二辆车子上跟从，大摇大摆地从市上走过。孔子说：“我没有见过喜好道德像这样喜欢美色的人啊。”于是对卫灵公的所作所为感到厌恶，就离开卫国，往曹国去了。这一年，鲁定公死了。 孔子离开曹国到达宋国，与弟子们在大树下演习礼仪。宋国的司马桓魋想杀死孔子，就把树砍掉了。孔子只得离开这个地方。弟子们催促说：“我们可以快点走了。”孔子说：“上天既然把传道德的使命赋予我，桓魋他又能把我怎么样！” 孔子到了郑国，与弟子们走失散了，孔子一个人站在外城的东门。郑国人有看见了就对子贡说：“东门有个人，他的额头像唐尧，脖子像皋陶，肩膀像郑子产，可是从腰部以下比禹短子三寸，一副狼狈不堪、没精打采的样子，真像一条丧家狗。”子贡见面把原话如实地告诉了孔子。孔子高兴地说道：“他形容我的相貌，不一定对，但说我像条丧家狗，对极了！对极了。” 孔子于是到达陈国，寄住在司城贞子家里。过了一年多，吴王夫差来攻打陈国，夺取了三个城邑才退兵。赵鞅攻打朝歌。楚国包围了蔡国，蔡国迁移到吴地。吴国在会稽打败了越王勾践。 有一天，许多只隼（ｓǔｎ，损）落在陈国的宫廷中死了，有隼（ｈù,户）木做的箭穿在身上，箭头是石头制做的，箭长一尺八寸。陈湣公派使者向孔子请教，孔子说：“这些隼是从很远的地方飞来的，这是肃慎部族的箭。从前周武王伐纣灭商，沟通了与各少数民族的民族的联系，让九夷百蛮各族都贡献各自的地方特产，叫他们不能忘记自己的职责和义务。于是肃慎部族献来楛木做的箭和石头制作的箭头，长一尺八寸。周武王为了显示他的美德，就把肃慎部族的箭分给长女太姬，后来太姬嫁给了虞胡公，虞胡公又封在陈国。当初王室分珍宝玉器给同姓诸侯，是为了表示重视亲族；把远方的贡品分赠给姓诸侯，是为了表示重视亲族；把远方的贡品分赠给姓诸侯，是为了让他们不要忘服从周王朝。所以把肃慎部族的箭分给陈国。”陈湣公听了叫人到过去收藏各方贡物的仓库中去找一找，果然找到了这种箭。 孔子在陈国居住了三年，正好遇上晋国、楚国争霸，两国轮番攻打陈国，直到吴国攻打陈国为止，陈国常常遭受侵犯。孔子说：“回去吧，回去吧！我家乡的那些弟子，志气很大，只是行事阔一些，他们都很有进取心，也没有忘记自己的初衷。”于是孔子就离开了陈国。 孔子路过一个叫蒲的地方，正好遇上公叔氏据蒲反叛卫国，蒲人扣留了孔子。弟子中有个叫公良孺的，自己带了五辆车子跟随孔子周游各地。他这个人身材高大，有才德，且有勇力，对孔子说：“我从前跟随老师周游在匡地遇到危难，如今又在这里遇到危难，这是命里注定的吧。我和老师一再遭难，可搏斗而死。”公良孺跟蒲人打得很激烈，蒲人害怕了，对孔子说：“如果你不到卫国去，我就放你们走。”孔子与他们订立了盟约，这才放孔子他们从东门出去。孔子是到了卫国。子贡说：“盟约可以违背吗？”孔子说：“在要挟下订立的盟约，神是不会认可的。” 卫灵公听说孔子到来，很高兴，亲自赶到郊外迎接。灵公问孔子说：“蒲这个地方可以讨伐吗？”孔子回答说：“可以。”灵公说：“我的大夫却认为不可以讨伐，因为现在的蒲是防御晋，楚的屏障，用我们卫国的军队去攻打，恐怕是不可以的吧？”孔子说：“蒲地的男子有誓死效忠卫国的决心，妇女有守卫西河这块地方的愿望。我所说要讨伐的，只是四、五个领头叛乱的人罢了。”卫灵公说：“很好。”但是没有出兵去讨伐的叛乱。 卫灵公年纪老了，懒得处理政务，也不起用孔子。孔子长叹了一声说：“如果有人起用我，一年时间就差不多了，三年就会在大见成效。”孔子只好离开。 佛肸（ｘī，西)做中牟的长官。晋国的赵简子攻打范氏、中行氏，讨伐中牟。佛肸就占据中牟，反叛赵简子，并派人招请孔子孔子打算去。子路说：“我听老师说过：‘亲自做坏事的人那里，君子是不去的’。现在佛肸自己占据中牟反叛，您想前去，这是为什么呢？”孔子说：“我是说过这句话。但我不也说过，坚硬的东西是磨不薄的；不也说过洁白的东西，是染不黑的。我难道是只中看不能吃的匏瓜吗，怎么可以老是挂着却不给人吃呢？” 有一次孔子正敲着磬，有个背着草筐的人路过门口，说道：“有心思啊，这个击磬人，磬敲得又响又急，既然人家不赏识自己，那就算了吧！” 孔子向师襄子学习弹琴，一连学了十天，也没增学新曲子。师襄子说：“可以学些新曲了。”孔子说：“我已经熟习乐曲了，但还没有熟练地掌握弹琴的技法。”过了些时候，师襄子又说：“你已熟习弹琴的技法了，可以学些新曲子了。”孔子说：“我还没有领会乐曲的感意蕴，可以学些新曲了。”孔子说：“我还没有体会出作曲者是怎样的一个人。”过了些时候，孔子肃穆沉静，深思着什么，接着又心旷神怡，显出志向远大的样子。说：“我体会出作曲者是个什么样的人了，他的肤色黝黑，身材高大，目光明亮而深邃，好像一个统治四方侯的王者，除了周文王又有谁能够如此呢！”师襄子恭敬地离开位给孔子拜了两拜，说：“我老师原来说过，这是《文王操》呀”。 孔子既然得不到卫国的重用，打算西游去见赵简子。到了黄河边，听到窦鸣犊、舜华被杀的消息。就面对着黄河感慨地叹气说：“壮美啊黄河水，浩浩荡荡多么盛大，我所以不能渡过黄河，也是命运的安排吧！”子贡赶上前去问：“冒 昧地请问老师，这话是什么意思？”孔子说：“窦鸣犊、舜华两个人，都是晋国有才德的大夫。当赵简子还没有得志的时候，是依靠这两个人才得以从政的；等到他得志了，却杀了他们来执掌政权。我听说过，一个地方剖腹取胎杀害幼兽，麒麟就不来到它的郊野，排干了池塘水抓鱼，那么龙就不调合阴阳来兴致雨了，倾覆鸟巢毁坏鸟卵，凤凰就不愿来这里飞翔。这是为什么呢？君子忌讳伤害他的同类。那些鸟兽对于不义的行为尚且知道避开，何况是我孔丘呢！”于是便回到老家陬乡休息，创作了《陬操》的琴曲来哀掉窦鸣犊、舜华两们贤人。随后又回到卫国，寄住在蘧伯玉家。 有一天，卫灵公向孔子问起军队列阵作战的事。孔子回答说：“祭祀的事我倒曾经听说过，排兵布阵的事，我还不曾学过呢。”第二天，卫灵公与孔子谈话的时候，看见空中飞来大雁，就只顾抬头仰望，神色不在孔了身上。孔子于是就离开了卫国，再往陈国。 这年夏天，卫灵公死了，他的孙子辄立为国君，这就是卫出公。六月间，赵鞅把流亡在外的姨灵公太子蒯聩接纳到戚地。阳虎让太子蒯聩穿上孝服，又让八个人空麻带孝，装扮成是从卫国来接太子回去奔丧的样子，器着进了戚城，就在那里住了下来。冬天，蔡国迁都到州来。这一年是鲁哀公三年，孔子已六十岁了。齐国帮助卫国包围了戚城，是因为卫太子蒯聩在那儿的缘故。 还是这一年夏天，鲁桓公、釐公的庙堂起火烧了起来。南宫敬叔去救火。孔子在陈国听到了这个消息，就说：“火灾一定在桓公、釐公的庙堂吧？”不久证实，果然如他所言。 这年秋天，季桓子病重乘着辇车望见鲁城，感慨地长叹一声说：“从前这个国家几乎兴旺了，因为我得罪了孔子，所以没有兴旺起来。”回头又对他的嗣子季康子说：“我要是死了，你一定会接掌鲁国的政权佐国君；你佐国君之后，一定要召回孔子。”过了几天，季桓子死了，季康子继承了他的职位。丧事办完之后，想如回了孔子。大夫公之鱼说：“从前我们的国鲁定公曾经任用过他，没能有始有终，最后被诸侯耻笑。现在你再任用他，如果也不能善终，这会再次招来诸侯的耻笑。”季康子说：“那么召谁才好呢？”公之鱼说：“一定要召冉求。”于是就派人召回了冉求。冉求准备起身前往，孔子说：“这次鲁国召冉求回去，不会小用，该会重用他。”就在这一天，孔子说：“回去吧，回去吧！我家乡的那些弟子志向高远而行事疏阔，为文富有文采，我真不知从何下手来教育他们才好。”子贡知道孔子思念家乡想回去，在送冉求时，叮嘱过他“你要是被重用了，要想着把老师请回去”之类的话。 冉求离去之后，第二年，孔子从陈国移居蔡国。蔡昭公准备到吴国去，是吴国召他去的。从前昭公欺骗他的大臣，把国都迁到了州来，这次将要前往，大夫们提心他又要迁都，公孙翩就在路上把蔡昭公射死了。接着，楚军就来侵犯蔡国。同年秋天，齐景公死了。 第二年，孔子从蔡国前往叶地。叶公问孔子为政的道理，孔子说：“为政的道理在于招纳远方的贤能，使近处的人归服”。有一天。叶公向子路问孔子的情况，子路不回答。孔子听说这件事后就对子路说：“仲由，你为什么不对他说：‘他这个人呀，学习起道理来不知疲倦，教导人全不厌烦，发愤学习时忘记了吃饭，快乐时忘记了忧愁，以致于连衰老就将到来也不知道’。” 孔子离开楚国的叶地回到蔡国。在路上遇见长沮、桀溺两人并肩耕田，孔子以为他们是隐士，就叫子路前去打听渡口在什么地方。长沮说：“那个拉着马缰强的人是谁？”子路回答说：“是孔丘。”长沮又问：“是鲁国的孔丘吧？”子路说：“是的。”长沮说：“那他应该知道渡口在哪儿了。”桀溺又问子路：“你是谁？”子路说：“我是仲由。”桀溺说：“你是孔丘的门徒吗？”子路说：“是的。”桀溺说：“天下到处都在动荡不安，而谁能改变这种现状呢？况且你与跟着那逃避暴乱臣的人四处奔走，还不如跟着我们这些躲避乱世的人呢？”说完，就继续不停地耕田。子路把此话告诉了孔子，孔子失望地说：“我们不能居住在山林里与鸟兽同群，要是天下太平，我也用不着到处奔走想改变这个局面了”。 有一天，子路一个人行走的时候，路遇一位肩扛除草工具的老人。子路问他：“您看见过我的老师吗？”老人说：“你们这些人四肢不勤劳，五谷分辨不清，谁是你的老师我怎么会知道？”说完就拄着拐杖拔草去了。事后子路把这些经过告诉了孔子，孔子说：“这是位隐士。”叫子路再到那里看看，老人已经走了。 孔子迁居到蔡国三年，吴国攻打陈国。楚国救援陈国，军队驻扎在城父。听说孔子住在陈国和蔡国的边境上，楚国便派人去聘请孔子。孔子正要前往拜见接受聘礼，陈国、蔡国的大夫商议说：“孔子是位有才德的贤人，他所指责讽刺的都切中诸侯的弊病。如今长久地停留在我们陈国和蔡国之间，大夫们的施政施、所做所为都不合仲尼的意思。如今的楚国，是个大国，却来聘请孔子。如果孔子在楚国被重用，那么我们陈蔡两国掌权的大夫们就危险了。”于是他们双方就派了一些服劳役的人把孔子围困在野外。孔子和他的弟子无法行动，粮食也断绝了。跟从的弟子饿病了，站都站不起来。孔子却还在不停地给大家讲学，朗诵诗歌、歌唱、弹琴。子路很生气地来见孔子：“君子也有困究的时候吗？”孔子说：“君子在困窘面前能坚节操不动摇，人小遇到困窘就会不加节制，什么过火的事情都做得出来。” 这时子贡的脸色也变了。孔子说：“赐啊，你认为我是博学强记的人吗？”子贡回答说：“是的。难道不对吗？”孔子说：“不是的。我是用一种基本原则贯穿于全部知识之中的。” 孔子知道弟子们心中不高兴。便叫来子路问道：“《诗经》上说‘不是犀牛也不是老虎，然而它却排徊在旷野上’，难道是我们学说有什么不对吗？我们为什么会落到这种地步呢？”子路说：“大概是我们的德还不够吧？所以人家不信任我们；想必是我们的智谋还不够吧？所以人家不放我们通行。”孔子说：“有这样的话吗？仲由啊，假使有仁德的人必定能使人信任，哪里还会有伯夷、叔齐饿死在首阳山呢？假使有智谋的人就能早行无阻，哪里会有王子比干被剖心呢？” 子路退出，子贡进来见孔子。孔子对子贡说：“赐啊，《诗经》上说‘不是犀牛也不是老虎，然而它却徘徊在旷野上’。难道是我们的学说有有什么不对吗？我们为什么落到这种地步呢？“子贡说：“老师的学说博大到极点了，所以天下没有一个国家能容纳老师。老师何不稍微降低一些您的要求呢？”孔子说：“赐啊，好的农夫虽然善于耕种，但他却不一定有好的收获；好的工匠虽然不精巧的手艺，但他的所作却未必能使人们都称心如意。有修养的人能研修自己的学说，就像网一样，先构出基本的大纳统绪，然后再依疏理扎，但不一定被世人所接受。现在你不去研修自己的学说，反而想降格来敬合取容。赐啊，你的志向太不远大了。” 子贡出去之后，颜回进来见孔子。孔子说：“回啊，《诗经》说‘不是犀牛也不是老虎，然而它却徘徊在旷野上’。难道是我们的说学有什么不对吗？我们为什么落到这种地步呢？”颜回说：“老师的学说博大到极点了，所以天下没有一个国家能容纳老师。虽然是这样，老师还是要推行自己的学说，不被天下接受又有什么关系呢？不被接受，这样才能出君子的色！一个人不研修自己的学说，那才是自己的耻辱。至于已下大力研修的学说不被人所用，那是当权者的耻辱了。不被天下接又有什么关系呢？不被接受，这样才能显出君子的本色！”孔子听了欣慰地笑着说：“是这样的啊，姓颜的小伙子！假使你有很多钱财，我愿意给你做管家。” 于是派子贡到楚国去。楚昭王调动军队来迎接孔子，这才除了这场灾祸。 楚昭王想把有户籍登记的七百里地方封给孔子。楚国的令尹子西阻止说：“大王派往各侯国的使臣，有像子贡这样的吗？”昭王说：“没有。”子西又问：“大王的左右辅佐大臣，有像颜回这样的吗？”昭王说：“没有。”子西又问：“大王的将帅，有像子路这样的吗？”昭王回答说：“没有。”子西还问：“大王的各部主事官员，有像宰予这样的吗？”昭王回答说：“没有。”子西接着说：“况且我们楚国的祖先在受周天子分封时，封号是子爵，土地跟男爵相等，方圆五十里。现在孔丘讲述三皇五帝的治国方法，申明周公旦、召公奭辅佐周天子的事业，大王如果任用了他，那么楚国还能世世代代保有方圆几千里的土地吗？想当年文王在丰邑、武王在镐京，作为只有百里之地的主，最终能统治天下。现在如让孔丘拥有那七百城土地，再加上那些有才能的弟子辅佐，这不是楚国的福音啊。“昭王听了就打消了原来的想法。这年秋天，楚昭死在城父。 楚国的狂人接舆有一天唱着歌走过孔子的车子，说：“凤凰呀，凤凰呀，你的美德为什么这么不景气？过去的不能再挽回，未来的还可以再赶得上，算了吧，算了吧！现在从政的人都是很危险的啊！”孔子下了车，想和他谈谈，但他却快步走开了，没能跟他说上话。 于是孔子从楚国返回了卫国。这一年，孔子六十三岁，是鲁哀公六年（前489）。 第二年，吴国和鲁国在一个叫缯的地方会盟，吴国要求鲁国提供百牢的祭品。吴国的太宰嚭（ｐǐ,匹）召见季康子。季康子就派子贡前往交涉，然后鲁国才纳百牢祭品。 孔子说：“鲁国、卫国的政治情况，如同兄弟一般相似。”这个时候，卫出公辄的父亲蒯聩没有继位做国君，流亡在外，诸侯对此事屡加指责。而孔子的弟子很多在卫国做官，卫出公辄也想请孔子出来执政。子路问孔子说：“卫国国想请您出来执政，您打算首先做什么呢？”孔子回答说：“那我一定首先正名分！”子路说：“有这样的事吗，老师您太迂阔了！为什么要首先正名份呢？”孔子说：“鲁莽啊，仲田！要知道，名分不正，说出的话来就不顺当；说话不顺当，那么事情就办不成；辐情办不成，那么礼乐教化就不能兴盛；乐教化不兴盛，那么刑罚不准确适度，那么老百姓就年足无措，不知怎么办才好。所以君子办事必须符合名分，说出来的话，一定要切实可行。君子对于他所说出来的话，应该毫不苟且随便才行啊。” 第二年（前484），冉有为季氏统率军队，在郎地同齐国作战，打败了齐国的军队。季康子对冉求说：“您的军事才能，是学来的呢？还是天生的呢？”冉有回答说：“我是从孔子那里学来的。”季康子又问：“孔子是怎样的一个人呢？”冉有回答说：“任用他要符合名分，他的学说不论是传布到百姓中，还是对质于鬼神前，都是没有遗憾的。我对于军事，虽然有功而累计封到二千五百户人家，而孔子却会毫不动心的。”康子说：“我想召请他回来，可以吗？”冉有说：“你想召请他回来，只要不让小人从中阻碍他，就可以了。”当时，卫国大夫孔文子准备攻打太叔，向孔子问计策。孔子推辞说不知道，他回到住处便立即吩咐备车离开了卫国，说道：“鸟能选择树木栖息，树木怎能选择鸟呢？”孔文子坚决拘留他。恰好季康子派来公华、公宾、公林，带着礼物迎接迎孔子，孔子就回鲁国去了。 孔子离开鲁国一共经过十四年又回到鲁国。 鲁哀公向孔子问为政的道理，孔子回答说：“为政最重要的是选择好大臣。”季康子也向孔子问为政的道理，孔子说：“要举用正直的人，抛弃邪曲的人，那样就使邪曲的人变为正直的人了。”季康子忧虚盗窃，孔子说：“如果你自己没有欲的话，就是给奖赏，人们也是不会去偷窃的。”但是鲁国最终也不能重用孔子，孔子也不要求出来做官。 孔子的时代，周王衰微，礼崩乐坏，《诗》、《书》也殊缺不全了。孔子探究夏、商、西周三代的礼仪制度，编定了《书传》的篇次，上起唐尧、虞舜之时，下至秦穆公，依照事情的先后，加以整理编排。孔子说：“夏代的礼仪制度我还能讲出来，只是夏的后代杞国没有留下足够证明这些的文献了。殷商的礼仪制度我也能讲出来，只是殷商的后宋国没有留下足够证明这些制度的文献了。如果杞、宋两国有足够的文献，我就能证明这些制度了。”孔子考察了殷代继承夏代对礼仪制度所作的增减之后说：“将来即使经过一百，那增减的也是可以预知的，因为一种是重视文采，另一种是重视朴实。周代的礼仪制度是在参照了夏代和殷代的基础上制定的，多么丰富多采呀，我主张用周代的礼仪”所以《书传》、《礼记》都是孔子编定的。 孔子曾对鲁国的乐官太师说：“音乐是可以通晓的。刚开始演奏的时候要互相配合一致，继续下去是节奏和谐，声音清晰，连续不断，这样直到整首乐曲演奏完成。”孔子又说：“我从卫国返回鲁国之后，就开始订正诗乐，使《雅》、《颂》都恢复了原来的曲调。” 古代留传下来的《诗》有三千多篇，到孔子时，他把重复的删掉了，选 取中合于义的用于礼义教化，最早的是追述殷始祖契、周始祖后稷，其次是叙述殷、周两代的兴盛，直到周幽王、周厉王的政治缺失，而开头的则是叙述男女夫妇关系和感情的诗篇，所以说：“《关睢》这一乐章作为《国风》的第一篇，《鹿鸣》作为《小雅》的第一篇；《文王》作为《大雅》的第一篇；《清庙》作为《颂》的第一篇”。三百零五篇诗孔子都能将演奏歌唱，以求合于《韶》、《武》、《雅》《颂》这些乐曲的音调。先王的乐制度从此才恢复旧观而得以称述，王道 完备了，孔子也完成了被称为“六艺”的《诗》、《书》、《乐》、《易》、《春秋》的编修。 孔子晚年喜欢钻研《周易》，他详细解释了《彖辞》、《锡辞》、《卦》、《文言》等。孔子读《周易》刻苦勤奋，以致把编穿书简的牛皮绳子也弄断了多次。他还说：“再让我多活几年，这样的话，我对《周易》的文辞和义理就能够充分掌握理解了。” 孔子用《诗》、《书》、《礼》、《乐》作教材教育弟子，就学的弟子大约在三千人，中能精通礼、乐、射、御、数、术这六种技艺的有七十二人。至于像颜浊邹那样的人，多方面受到孔子的教诲却没有正式入籍的弟子就更多了。 孔子教育弟子有四个方面：学问、言行、忠恕、信义。为弟子订四条禁律：不揣测、不武断、不固执、不自以为是。他认为应当特别谨慎处理的是：斋戒、战争、疾病。孔子很少谈到利，如果谈到，就与命运、仁德联系起来。他教育弟子的时候，不到人家真正遇到困难，烦闷发急的时候，不去启发开导他。他出一个道理，弟子不能触类旁通地推演出似的道理，他就不再重复讲述了。 孔子在自己的乡里，谦恭得像个不善言谈的人。他在宗庙祭祀和朝廷议政这些场合，却能言善辩，言辞明晰而又通达，然而又很恭谨小心。上朝时，与上大夫交谈，态度和悦，中正自然；与下大夫交谈，就显得和乐安详了了。 孔子进入国君的公门，低头弯腰，恭敬谨慎，进门后急行而前，恭有礼。国命他迎接宾客，容色庄重认真。国君召见他，不等待车驾备好，就动身起行。 鱼不新鲜，肉有变味，或不按规矩切割，孔子不吃。席位不正，不就坐。在有丧事的人旁边吃饭，从来没有吃饱过。 在一天内哭泣过，就不会再歌唱。看见穿孝服的人和盲人，即使是是个小孩，也必定改变面容以示同情。 孔子说：“三个人同行，中心有可做我老师的。”又说：“不去修明道德，不去探求学业，听到正直的道理又不前往学习，对缺点错误又不能改正，这些是我是忧虑提心的问题。”孔子请人唱歌，要是唱得好，就请人再唱一遍，然后自己也和唱起来。 孔子不谈论怪异、暴力、鬼神的事情。 子贡说：“老师在文献方面的成绩很显著，我们是知道的。老师讲论有关天道与人的命运的深微见解我们就不知道了。”颜渊感慨地长叹一声说：“我越是仰慕老师的学问，越得它无比崇高，越是钻研探讨，越觉得它坚实深厚。看见它是在前面，忽然间又在后面了。老师善于循序渐进地诱导人，用典籍来丰富我的知识，用礼仪来规范我的言行，使我想停止学习都不可能。已经竭尽了我的才力，我现在也好像有所建树，但老师的学问却依然高立在我的面前。虽然我也想追赶上去，但是不可能追得上。”达巷这个地方的人对我说：“伟大啊孔子，他博学多才却不专一名家。”孔子听了这话之后说：“我要专于什么呢？是专于驾车？还是专于射箭？我看还是专于驾车吧。”子牢说：“老师曾说：‘我没有被世所用，所以才学会了这许多的技艺’。” 鲁哀公十四年（前481）的春天，在大野这个地方狩猎。给叔孙氏驾车的商猎获了一头怪兽，他们以为这是不祥之兆。孔子看了后说：“这是麒麟。”于是便将它取走了。孔子说：“黄河上再不见神龙负图出现，洛水上再不见神龟负洛书出现，我也就快要完啦！”渊死了，孔子说：“这是老天要我死呀！”等到他西去大野狩猎见到麒麟，说：“我的主张到尽头了！”感慨地说：“没有人能了解我了！”子贡说：“为什么说没有人了解您？”孔子回答说：“我不抱怨天，也不怪罪人，下学人事，上通天理，能了解我的，只有上天了吧！” 孔子说：“不降低自己的志向，不使自己的人格受到侮辱，只有伯夷、叔齐丙人吧！”又说：“柳下惠、少连降低了自己的志向，使人格受到了侮辱”。又说“虞仲、夷逸隐居，不言世务，行为合干清高纯洁，自我废弃合于权变“。又说：”我就跟他们不同了，既不降志辱身以求进取，也不隐居避世脱离尘俗，没有绝对的可以，也没有绝对的不可以”。 孔子说：“不成啊，不成啊！君子最提忧的就是死后没有留下好的名声。我的主张不能实行，我用什么贡献给社会留下好名呢？”于是就根据鲁国的史书作了《春秋》，上起鲁隐公元年（前722），下止鲁哀公十四年（前481），共包 括鲁国十二个国君。以鲁国为中心记述，尊奉周王室为正统，以殷商的旧为借鉴，推而上承夏、商、周在法统，文辞简约而旨意广博。所以吴、楚的国自称为王的，在《春秋》中仍贬称为子爵；晋文公在践土与诸侯会盟，实际上是召周襄王入会的，而《春秋》中却避讳说“周天子巡狩来到到河阳”。依此类推，《春秋》就是用这一原则，来褒贬当时的各种事件，后有的国君加以称推广开来，使《春秋》的义法在天下通行，天下那些乱臣奸贼就都害怕起来了。 孔子任司寇审理诉讼案件时，文辞上有可与别人商的时候，他从不独自决断。到了写《春秋》时就不同了，应该写的一定写上去，应当删的一定删掉，就连子夏这些长于文字的弟子，一句话也不能给他增删。弟子们学习《春秋》， 孔子说：“后人了解我将因为《春秋》，后人怪罪我也将因为《春秋》。” 第二天，子路死在卫国。孔子生病了，子贡请求看望他。孔子正拄着拐杖在口修闲散步，说：“赐，你为什么来得这样迟啊？”孔子于是就叹息，随即唱道：“泰山要倒了！梁柱要断了，哲人要死了！”他边唱边流下了眼泪。对子贡说：“天下失去常道已经很久了，没有人能奉我的主张。夏人死了停棺在东厢的台阶，周人死了停棺在西厢的台阶，殷人死了停棺在堂屋的两柱之间。昨天晚上我梦见自己坐在两柱之间受人祭奠，我原本就是殷商人啊。”过了七天孔子就死了。 孔子享年七十三岁，死在鲁哀公十六年（前479）四月的己丑日。 鲁哀公为他作了一篇悼词说：“老天爷不仁慈，不肯留下这位老人，使他扔下我，孤零零一人在位，我孤独而又伤痛。啊！多么痛！尼父啊，没有人可以作为我学习的楷模了！”子贡说：“鲁君他难道不能终老在鲁国吗？老师的话说：‘法丧失就会昏乱，名分丧失就会产生过失。丧失了意志就会昏乱，失去所宜就会出现过错。’老师活着的时候不能用他，死了作祭文哀悼他，这是不合礼的。以诸侯身份称‘余一人’，是不合名分的啊。” 孔子死后葬在鲁城北面的泗水岸边，弟子们都在心里为他服丧三年。三年心丧完毕，大家道别离去时，都相对而哭，又各尽哀；有的就又留了下来。只有子贡在墓旁搭子一间小房住下，守墓总共六年，然后才离去。弟子及鲁国他人，相率前往墓旁居住的一百多家。因而就把这里命名为“孔里”。鲁国世世代代相传，每年都定时到孔子墓前祭拜，而儒生们也在这时来这里讲习礼仪，行乡学业考校的饮酒礼，以及比射等仪式。孔子的墓地有一顷大。孔子故居的堂屋以及弟子们所居住的内室，后来就改成庙，借以收藏孔子生前穿过的衣服，戴过的帽子，使用过的琴、车子、书籍等，直到汉代，二百多年间没有废弃。高皇帝高皇帝刘邦经过鲁地，用牛羊猪三牲俱全的太牢祭祀孔子。诸侯、卿大夫、宰相一到任，常是先去拜谒孔子墓，然后才去就职处理政务。 孔子生了鲤，字伯鱼。伯鱼享年五十岁，死在孔子之前。 伯鱼生了伋，字子思，郭年六十二岁。曾经受困于宋国。子思作了《中庸》。 子思生了白，字子上，享年四十七岁。子上生了求，字子家，享年四十五岁。子家生了箕，字子京，享年四十六岁。子京生了穿，字子高，享年五十一岁。子高生了慎，享年五十七岁，曾经做过魏国的相。 子慎生了鲋，享年五十七岁，做过陈胜王的博士，死在陈这个地方。 鲋的弟弟叫子襄，享年五十七岁。曾经做过汉孝惠皇帝的博士，后被提升为长沙郡的太守。身高九尺六寸。 子襄生了忠，享年五十七岁。忠生了武，武生了延年和安国。安国做了当今孝武皇帝的博士，官至临淮郡太守，寿短早死。安国生了卬，卬了生。 太史公说：《诗》中有这样的话：“像高山一般令人瞻仰，像大道一般让人遵循。”虽然我不能达到这种境地，但是心里却向往着他。我读孔子的著作，可以想见到他的为人。到了鲁地，参观了孔子的庙堂、车辆、衣服、礼器，目睹了读书的学生们按时到孔子旧宅中演习礼仪的情景。我怀着崇敬的心情徘徊留恋不愿离去。自古以来，天下的君王直到贤人也够多的了，当活着的时候都显贵荣耀，可是一死什么也就没有了。孔子是一个平民，他的名声和学说已经传了十几，读书的人仍然崇他为宗师。从天子王侯一直到全国谈六艺的人，都把孔子的学说来做为判断衡的最高准则，可以说孔子是至高无上的圣人了。</description>
+      <description>不降低自己的志向，不使自己的人格受到侮辱，只有伯夷、叔齐两人吧！”又说：“柳下惠、少连降低了自己的志向，使人格受到了侮辱”。又说“虞仲、夷逸隐居，不言世务，行为合干清高纯洁，自我废弃合于权变“。又说：”我就跟他们不同了，既不降志辱身以求进取，也不隐居避世脱离尘俗，没有绝对的可以，也没有绝对的不可以</description>
     </item>
     
     <item>
@@ -1680,7 +1446,7 @@ Three days from now, after half century in the service of our country, I shall l
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/literature/%E5%B1%B1%E6%9C%A8/</guid>
-      <description>庄子行走于山中，看见一棵大树枝叶十分茂盛，伐木的人停留在树旁却不去动手砍伐。问他们是什么原因，说：“没有什么用处。”庄子说：“这棵树就是因为不成材而能够终享天年啊！”庄子走出山来，留宿在朋友家中。朋友高兴，叫童仆杀鹅款待他。童仆问主人：“一只能叫，一只不能叫，请问杀哪一只呢？”主人说：“杀那只不能叫的。”第二天，弟子问庄子：“昨日遇见山中的大树，因为不成材而能终享天年，如今主人的鹅，因为不成材而被杀掉；先生你将怎样对待呢？” 庄子笑道：“我将处于成材与不成材之间。处于成材与不成材之间，好像合于大道却并非真正与大道相合，所以这样不能免于拘束与劳累。假如能顺应自然而自由自在地游乐也就不是这样。没有赞誉没有诋毁，时而像龙一样腾飞时而像蛇一样蜇伏，跟随时间的推移而变化，而不愿偏滞于某一方面；时而进取时而退缩，一切以顺和作为度量，优游自得地生活在万物的初始状态，役使外物，却不被外物所役使，那么，怎么会受到外物的拘束和劳累呢？这就是神农、黄帝的处世原则。至于说到万物的真情，人类的传习，就不是这样的。有聚合也就有离析，有成功也就有毁败；棱角锐利就会受到挫折，尊显就会受到倾覆，有为就会受到亏损，贤能就会受到谋算，而无能也会受到欺侮，怎么可以一定要偏滞于某一方面呢！可悲啊！弟子们记住了，恐怕还只有归向于自然吧！” 市南宜僚拜见鲁侯，鲁诸正面带忧色。市南宜僚说：“国君面呈忧色，为什么呢？”鲁侯说：“我学习先王治国的办法，承继先君的事业；我敬仰鬼神尊重贤能，身体力行，没有短暂的止息，可是仍不能免除祸患，我因为这个缘故而忧虑。” 市南宜僚说：“你消除忧患的办法太浅薄了！皮毛丰厚的大狐和斑斑花纹的豹子，栖息于深山老林，潜伏于岩穴山洞，这是静心；夜里行动，白天居息，这是警惕；即使饥渴也隐形潜踪，还要远离各种足迹到江湖上觅求食物，这又是稳定；然而还是不能免于罗网和机关的灾祸。这两种动物有什么罪过呢？是它们自身的皮毛给它们带来灾祸。如今的鲁国不就是为你鲁君带来灾祸的皮毛吗？我希望你能剖空身形舍弃皮毛，荡涤心智摈除欲念，进而逍遥于没有人迹的原野。遥远的南方有个城邑，名字叫做建德之国。那里的人民纯厚而又质朴，很少有私欲；知道耕作而不知道储备，给与别人什么从不希图酬报；不明白义的归宿，不懂得礼的去向；随心所欲任意而为，竟能各自行于大道；他们生时自得而乐，他们死时安然而葬。我希望国君你也能舍去国政捐弃世俗，从而跟大道相辅而行。” 鲁侯说：“那里道路遥远而又艰险，又有江河山岭阻隔，我没有可用的船和车，怎么办呢？”市南宜僚说：“国君不要容颜高傲，不要墨守滞留，便可以此作为你的车子。”鲁侯说：“那里道路幽暗遥远而又无人居住，我跟谁是邻居？我没有粮，我没有食物，怎么能够到达那里呢？” 市南宜僚说：“减少你的耗费，节制你的欲念，虽然没有粮食也是充足的。你渡过江河浮游大海，一眼望去看不到涯岸，越向前行便越发不知道它的穷尽。送行的人都从河岸边回去，你也就从此离得越来越远了！所以说统治他人的人必定受劳累，受制于别人的人必定会忧心。而唐尧从不役使他人，也从不受制于人。我希望能减除你的劳累，除去你的忧患，而独自跟大道一块儿遨游于太虚的王国。并合两条船来渡河，突然有条空船碰撞过来，即使心地最偏狭、性子最火急的人也不会发怒；倘若有一个人在那条船上，那就会人人大声呼喊喝斥来船后退；呼喊一次没有回应，呼喊第二次也没有回应，于是喊第三次，那就必定会骂声不绝。刚才不发脾气而现在发起怒来，那是因为刚才船是空的而今却有人在船上。一个人倘能听任外物、处世无心而自由自在地遨游于世，谁能够伤害他！” 北宫奢替卫灵公征集捐款铸造钟器，在外城门设下祭坛，三个月就造好了钟并编组在上下两层钟架上。王子庆忌见到这种情况便向他问道：“你用的是什么样的办法呀？” 北宫奢说：“精诚专一而又顺其自然，不敢假设有其他什么好办法。我曾听说，‘既然已细细雕刻细细琢磨，而又要返归事物的本真。’纯朴无心是那样无知无识，忘却心智是那样从容不疑；财物汇聚而自己却茫然无知，或者分发而去或者收聚而来；送来的不去禁绝，分发的不去阻留；强横不讲理的就从其自便，隐委顺和的加以随应，依照各自的情况而竭尽力量，所以早晚征集捐款而丝毫不损伤他人，何况是遵循大道的人呢！” 孔子被围困在陈国、蔡国之间，七天七夜不能生火煮饭。太公任前去看望他，说：“你快要饿死了吧？”孔子说：“是的。”太公任又问：“你讨厌死吗？”孔子回答：“是的。” 太公任说：“我来谈谈不死的方法。东海里生活着一种鸟，它的名字叫意怠。意怠作为一种鸟啊，飞得很慢，好像不能飞行似的；它们总是要有其他鸟引领而飞，栖息时又都跟别的鸟挤在一起；前进时不敢飞在最前面，后退时不敢落在最后面；吃食时不敢先动嘴，总是吃别的鸟所剩下的，所以它们在鸟群中从不受排斥，人们也终究不会去伤害它，因此能够免除祸患。长得很直的树木总是先被砍伐，甘甜的井水总是先遭枯竭。你的用心是装扮得很有才干以便惊吓普通的人，注重修养以便彰明别人的浊秽，毫不掩饰地炫耀自己就像是举着太阳和月亮走路，所以总不能免除灾祸。从前我听圣德宏博的老子说过：‘自吹自擂的人不会成就功业；功业成就了而不知退隐的人必定会毁败，名声彰显而不知韬光隐晦的必定会遭到损伤。’谁能够摈弃功名而还原跟普通人一样！大道广为流传而个人则韬光隐居，道德盛行于世而个人则藏誉匿耀不处其名；纯朴而又平常，竟跟愚狂的人一样；削除形迹捐弃权势，不求取功名。因此不会去谴责他人，别人也不会责备自己。道德修养极高的人不求闻名于世，你为什么偏偏喜好名声呢？” 孔子说：“说得实在好啊！”于是辞别朋友故交，离开众多弟子，逃到山泽旷野；穿兽皮麻布做成的衣服，吃柞树和栗树的果实；进入兽群兽不乱群，进入鸟群鸟不乱行。鸟兽都不讨厌他，何况是人呢！ 孔子问桑雽道：“我两次在鲁国被驱逐，在宋国受到伐树的惊辱，在卫国被人铲除足迹，在商、周之地穷愁潦倒，在陈国和蔡国间受到围困。我遭逢这么多的灾祸，亲朋故交越发疏远了，弟子友人更加离散了，这是为什么呢？” 桑雽回答说：“你没有听说过那假国人的逃亡吗？林回舍弃了价值千金的璧玉，背着婴儿就跑。有人议论：‘他是为了钱财吗？初生婴儿的价值太少太少了；他是为了怕拖累吗？初生婴儿的拖累太多太多了。舍弃价值千金的璧玉，背着婴儿就跑，为了什么呢？’林回说：‘价值千金的璧玉跟我是以利益相合，这个孩子跟我则是以天性相连。’以利益相合的，遇上困厄、灾祸、忧患与伤害就会相互抛弃；以天性相连的，遇上困厄、灾祸、忧患与伤害就会相互包容。相互收容与相互抛弃差别也就太远了。而且君子的交谊淡得像清水一样，小人的交情甜得像甜酒一样；君子淡泊却心地亲近，小人甘甜却利断义绝。大凡无缘无故而接近相合的，那么也会无缘无故地离散。”孔子说：“我会由衷地听取你的指教！”于是慢慢地离去，闲放自得地走了回来，终止了学业丢弃了书简，弟子没有一个侍学于前，可是他们对老师的敬爱反而更加深厚了。 有一天，桑雽又说：“舜将死的时候，用真道晓谕夏禹说：‘你要警惕啊！身形不如顺应，情感不如率真。顺应就不会背离，率真就不会劳苦；不背离不劳神，那么也就不需要用纹饰来装扮身形；无须纹饰来矫造身形，当然也就不必有求于外物。’” 庄子身穿粗布衣并打上补钉，工整地用麻丝系好鞋子走过魏王身边。魏王见了说：“先生为什么如此疲惫呢？” 庄子说：“是贫穷，不是疲惫。士人身怀道德而不能够推行，这是疲惫；衣服坏了鞋子破了，这是贫穷，而不是疲惫。这种情况就是所谓生不逢时。大王没有看见过那跳跃的猿猴吗？它们生活在楠、梓、豫、章等高大乔木的树林里，抓住藤蔓似的小树枝自由自在地跳跃而称王称霸，即使是神箭手羿和逢蒙也不敢小看它们。等到生活在柘、棘、枳、枸等刺蓬灌木丛中，小心翼翼地行走而且不时地左顾右盼，内心震颤恐惧发抖；这并不是筋骨紧缩有了变化而不再灵活，而是所处的生活环境很不方便，不能充分施展才能。如今处于昏君乱臣的时代，要想不疲惫，怎么可能呢？这种情况比干遭剖心刑戮就是最好的证明啊！” 孔子受困于陈国、蔡国之间，整整七天不能生火就食，左手靠着枯树，右手敲击枯枝，而且还唱起了神农时代的歌谣，不过敲击的东西并不能合符音乐的节奏，有了敲击的声响却没有符合五音的音阶，敲木声和咏歌声分得清清楚楚，而且恰如其分地表达了唱歌人的心意。 颜回恭敬地在一旁侍立，掉过脸去偷偷地看了看。孔子真担心他把自己的道德看得过于高远而达到最了不起的境界，爱惜自己因而至于哀伤，便说：“颜回，不受自然的损害容易，不接受他人的利禄则较困难。世上的事没有什么开始不同时又是终了的，人与自然原本也是同一的。至于现在唱歌的人又将是谁呢？” 颜回说：“我冒昧地请教什么叫做不受自然的损害容易。”孔子说：“饥饿、干渴、严寒、酷暑，穷困的束缚使人事事不能通达，这是天地的运行，万物的变迁，说的是要随着天地、万物一块儿变化流逝。做臣子的，不敢违拗国君的旨意。做臣子的道理尚且如此，何况是用这样的办法来对待自然呢！” 颜回又问：“什么叫做不接收他人的利禄则较困难呢？”孔子说：“初被任用办什么事都觉得顺利，爵位和俸禄一齐到来没有穷尽，外物带来的好处，本不属于自己，只不过是我的机遇一时存在于外物。君子不会做劫盗，贤人也不会去偷窃。我若要获取外物的利益，为了什么呢？所以说，鸟没有比燕子更聪明的，看见不适宜停歇的地方，绝不投出第二次目光，即使掉落了食物，也舍弃不顾而飞走。燕子很害怕人，却进入到人的生活圈子，不过只是将它们的巢窠暂寄于人的房舍罢了。” 颜回又问：“什么叫做没有什么开始不同时又是终了的？”孔子说：“变化无穷的万物不可能知道是谁替代了谁而谁又为谁所替代，这怎么能知道它们的终了？又怎么能知道它们的开始？只不过谨守正道随应变化而已。” 颜回又问：“什么叫做人与自然原本也是同一的？”孔子说：“人类的出现，是由于自然；自然的出现，也是由于自然。人不可能具有自然的本性，也是人固有的天性所决定的，圣人安然体解，随着自然变化而告终！” 庄子在雕陵栗树林里游玩，看见一只奇异的怪鹊从南方飞来，翅膀宽达七尺，眼睛大若一寸，碰着庄子的额头而停歇在果树林里。庄子说：“这是什么鸟呀，翅膀大却不能远飞，眼睛大视力却不敏锐？”于是提起衣裳快步上前，拿着弹弓静静地等待着时机。这时突然看见一只蝉，正在浓密的树荫里美美地休息而忘记了自身的安危；一只螳螂用树叶作隐蔽打算见机扑上去捕捉蝉，螳螂眼看即将得手而忘掉了自己形体的存在；那只怪鹊紧随其后认为那是极好的时机，眼看即将捕到螳螂而又丧失了自身的真性。庄子惊恐而警惕地说：“啊，世上的物类原本就是这样相互牵累、相互争夺的，两种物类之间也总是以利相召引！”庄子于是扔掉弹弓转身快步而去，看守栗园的人大惑不解地在后面追着责问。 庄子返回家中，整整三天心情很不好。弟子蔺且跟随一旁问道：“先生为什么这几天来一直很不高兴呢？”庄子说：“我留意外物的形体却忘记了自身的安危，观赏于混浊的流水却迷惑于清澈的水潭。而且我从老聃老师那里听说：‘每到一个地方，就要遵从那里的习惯与禁忌。’如今我来到雕陵栗园便忘却了自身的安危，奇异的怪鹊碰上了我的额头，游玩于果林时又丧失了自身的真性，管园的人不理解我又进而侮辱我，因此我感到很不愉快。” 阳朱到宋国去，住在旅店里。旅店主人有两个妾，其中一个漂亮，一个丑陋，可是长得丑陋的受到宠爱而长得漂亮的却受到冷淡。阳朱问他的缘故，年青的店主回答：“那个长得漂亮的自以为漂亮，但是我却不觉得她漂亮；那个长得丑陋的自以为丑陋，但是我却不觉得他丑陋。”阳子转对弟子说：“弟子们记住！品行贤良但却不自以为具有了贤良的品行，去到哪里不会受到敬重和爱戴啊！”</description>
+      <description>世上的物类原本就是这样相互牵累、相互争夺的，两种物类之间也总是以利相召引</description>
     </item>
     
     <item>
@@ -1689,8 +1455,7 @@ Three days from now, after half century in the service of our country, I shall l
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/literature/%E5%B7%A7%E8%A8%80/</guid>
-      <description>悠悠昊天，曰父母且。无罪无辜，乱如此幠。昊天已威，予慎无罪。昊天大幠，予慎无辜。 乱之初生，僭始既涵。乱之又生，君子信谗。君子如怒，乱庶遄沮。君子如祉，乱庶遄已。 君子屡盟，乱是用长。君子信盗，乱是用暴。盗言孔甘，乱是用餤。匪其止共，维王之邛。 奕奕寝庙，君子作之。秩秩大猷，圣人莫之。他人有心，予忖度之。跃跃毚兔，遇犬获之。 荏染柔木，君子树之。往来行言，心焉数之。蛇蛇硕言，出自口矣。巧言如簧，颜之厚矣。 彼何人斯？居河之麋。无拳无勇，职为乱阶。既微且尰，尔勇伊何？为犹将多，尔居徒几何？
-译文： 高高远远那苍天，如同人之父与母。没有罪也没有过，竟遇大祸难免除。苍天已经大发威，但我确实没错处。苍天不察太疏忽，但我确实是无辜。 祸乱当初刚生时，谗言已经受宽容。祸乱再次发生时，君子居然也听从。君子闻谗如怒责，祸乱速止不严重；君子如能任贤明，祸乱难成早已终。 君子屡次立新盟，祸乱因此便增长。君子相信那盗贼，祸乱因此势暴狂。盗贼谗人话甜蜜，祸乱因此得滋养。谗人哪能尽职守，只能为王酿灾殃。 巍然宫室与宗庙，君子将它来建起。典章制度有条理，圣人将它来订立。他人有心想谗毁，我能揣测能料及。蹦跳窜行那狡兔，遇上猎狗被击毙。 娇柔袅娜好树木，君子自己所栽培。往来流传那谣言，心中辨别识真伪。夸夸其谈说大话，口中吐出力不费。巧言动听如鼓簧，厚颜无耻行为卑。 究竟那是何等人？居住河岸水草边。没有勇力与勇气，只为祸乱造机缘。腿上生疮脚浮肿，你的勇气哪里见？诡计总有那么多，你的同伙剩几员？</description>
+      <description>高高远远那苍天，如同人之父与母。没有罪也没有过，竟遇大祸难免除。苍天已经大发威，但我确实没错处。苍天不察太疏忽，但我确实是无辜</description>
     </item>
     
     <item>
@@ -1699,34 +1464,7 @@ Three days from now, after half century in the service of our country, I shall l
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/literature/%E5%B8%95%E9%87%91%E6%A3%AE%E5%AE%9A%E5%BE%8B/</guid>
-      <description>帕金森定律（Parkinson&amp;rsquo;s Law）是官僚主义或官僚主义现象, 官场病、组织麻痹病、大企业病的一种别称，被称为二十世纪西方文化三大发现之一。也可称之为“官场病”、“组织麻痹病”或者“大企业病”，源于英国著名历史学家诺斯古德·帕金森1958年出版的《帕金森定律》一书的标题。帕金森定律常常被人们转载传诵，用来解释官场的形形色色。帕金森在书中阐述了机构人员膨胀的原因及后果：一个不称职的官员，可能有三条出路，第一是申请退职，把位子让给能干的人；第二是让一位能干的人来协助自己工作；第三是任用两个水平比自己更低的人当助手。这第一条路是万万走不得的，因为那样会丧失许多权利；第二条路也不能走，因为那个能干的人会成为自己的对手；看来只有第三条路最适宜。于是，两个平庸的助手分担了他的工作，他自己则高高在上发号施令，他们不会对自己的权利构成威胁。两个助手既然无能，他们就上行下效，再为自己找两个更加无能的助手。如此类推，就形成了一个机构臃肿，人浮于事，相互扯皮，效率低下的领导体系。帕金森得出结论：在行政管理中，行政机构会像金字塔一样不断增多，行政人员会不断膨胀，每个人都很忙，但组织效率越来越低下。这条定律又被称为“金字塔上升”现象。
-出现背景#诺斯古德·帕金森，英国历史学博士，曾在哈佛大学担任教授。1957年，他在马来西亚一个海滨度假时，悟出了一个定律，后来他将自己思考的结果发表在伦敦的《经济学家》期刊上，一举成名。《帕金森定律》一书出版以后，被翻译成多国语言，在美国更是长踞畅销书排行榜榜首
-产生条件#帕金森定律要发生作用，必须同时满足下面四个缺一不可条件： 第一：必须要有一个组织，这个组织必须有其内部运作的活动方式，其官员人浮于事，节后不能进入状态 官员人浮于事，节后不能进入状态 中管理要在这个组织中占有一定的地位。这样的组织很多，大的来讲，各种行政部门；小的来讲，只有一个老板和一个雇员的小公司，都存在着管理的组织。
-第二：寻找助手以达到自己目的的不称职的管理者本身不具有对权力的垄断性。这就是说权力对这个管理者而言，可能会因为做错某件事情或者其他人事的原因而轻易丧失。这个条件是不可少的，否则就不能解释何以要找两个不如自己的人做助手而不选择一个比自己强的人，这样也就不会产生“鲜花”插在 “牛粪”上的现象。
-第三：这个管理者能力极其平庸，他在组织中的角色扮演不称职，如果称职就不必寻找助手，否则就不能解释他何以要找几个助手来协助。
-第四：这个组织一定是一个不断自我要求完善的组织，正因为如此，才能不断地吸收新人来补充管理队伍，也才能符合帕金森关于人员编制增长的公式。
-可见帕金森定律，必须在一个拥有管理职能，不断追求完善的组织中，担负着和自身能力不相匹配的平庸的管理角色]，且不具备权力垄断的人群中才起作用。那么反弹琵琶，一个没有管理职能的组织，比如网络虚拟学术组织，兴趣小组之类，不存在帕金森定律阐释的可怕顽症。一个不思进取，抱守陈规的组织，不必要引进新人，自然也没有帕金森定律的困扰。一个拥有绝对权力的人，他不害怕别人攫取权力，也不会去找比他平庸的人做助手。一个能够承担他的管理角色的人，没有必要找一个助手，也不存在帕金森定律的情况。
-具体定律#定律一 冗员增加原理：官员数量增加与工作量并无关系，而是由两个源动因帕金森定律中反映的官僚主义现象造成的。每一个官员都希望增加部属而不是对手（如“投票”）；官员们彼此为对方制造工作（如行政审批，工商、税务、审计、公安，既得利益驱使）
-定律二 中间派决定原理：中间派是指对决定的内容不十分清楚的、意志薄弱、耳朵不大灵光的人，他们在组织的“票决制”议程中具有举足轻重的作用。为了争取中间派的支持，双方颇费心机进行争取，特别是双方势均力敌的情况下。所以，不是竞争对手而是中间派成了主角。
-定律三 鸡毛蒜皮定律：大部分官员由不懂得百万、千万元而只懂得千元的人组成，以至于讨论各种财政议案所费的时间与涉及的金额呈反比，即涉及的金额越大，讨论的时间越短，反之时间则越长，越是鸡毛蒜皮的事情越花费很多时间。
-定律四 无效率系数：由于复杂的利益关系，决策性委员会多的非必要成员愈来愈多，以至于会议开始变质，变得效率低下。于是，不得不在委员会重新设立核心决策委员会或核心决策团体。[6]定律五 人事遴选庸才：人们设计了许多的人事遴选方法，但大部分测试都是徒劳无功的，最终不得不靠偶然性标准遴选。
-定律六
-办公场合的豪华程度与机关的事业和效率呈反比：事业处于成长期的机关一般没有足够的兴趣和时间设计完美无缺的总部。所以，“设计完美乃是凋零的象征”，“完美就是结局，结局就是死亡”。[5]定律七 鸡尾酒会公式：会议与鸡尾酒会（饭局）同在，不同重要性的人物参加鸡尾酒会，会在不同的时间出现，并站在不同的位置上。把会场从左到右分为A-F六段，从进门处到最远端分为1-8八段，则可划分出48个区域；在假定酒会开始的时间为H，且最后一名客人离开的时间是最初一名客人进场后2小时20分钟，则，重要人物都会在H+75至H+90的时间在E/7区域集合，最重要的人物自然会在其中。
-定律八 嫉妒症（分三个时期）：在嫉妒症流行的机关里，高级主管辛苦而迟钝，中层干部勾心斗角，底层人员垂头丧气而不务正业。 第一阶段，出现了既无能又好嫉妒的人物，即患上了“庸妒症（平庸而嫉妒）”； 第二阶段，这些庸妒症患者不幸进入或原本就在高层，尽一切可能手段排斥比自己强的人，拒绝提升能力强的人；“愚蠢比赛”； 第三阶段，机关仿佛被喷了DDT，凡才智者一概不得入内，机关病入膏肓，此时的机关已经无药可救了。[5]定律九 财不外露。
-定律十 退休混乱（50岁现象）：一般退休的年龄是R，在前3年（R-3）人的精力会开始减退；问题在于如何挑选合适的接替者，工作表现越优秀，任职时间越长，越难寻得合适的接替者，而在位者总会设法阻止职位较低的人接近自己的职位，以至不得不延长自己的退休时间。
-举例分析 帕金森还发现，在一个组织中，机构和人员的增加并不完全来自现实工作的需要，而是有它自身的需要，有它自身的法则。管理活动本身会制造工作，增加人手会制造出功能重叠、互相扯皮的管理体系，从而使工作目标不明确、不紧凑、进而导致工作效率低下。这是帕金森定律中最著名的阐述，概括为： “雇员的数量和实际工作量之间根本不存在任何联系。”[8]帕金森举例说：当官的A君感到工作很累很忙时，一定要找比他级别和能力都低的C先生和D先生当他的助手，把自己的工作分成两份分给C、D，自己掌握全面。C 和D还要互相制约，不能和自己竞争。当C工作也累也忙时，A就要考虑给C配二名助手；为了平衡，也要给D配两名助手，于是一个人的工作就变成七个人干，A 君的地位也随之抬高。当然，七个人会给彼此制造许多工作，比如一份文件需要七个人共同起草圈阅，每个人的意见都要考虑、平衡，绝不能敷衍塞责，下属们产生了矛盾，他要想方设法解决；升级调任、会议出差、恋爱插足、工资住房、培养接班人……哪一项不需要认真研究，工作愈来愈忙，甚至七个人也不够了……
-至上而下，一级比一级庸人多，产生出机构臃肿的庞大管理机构。由于对于一个组织而言，管理人员或多或少是注定要增长的。那么这个帕金森定律，注定要起作用。也就是有这样一个公式：X=[100(2K^M+L)/yn]100%，其中K表示一个要求派助手从而达到个人目的人。从这个人被任命一直到他退休，这期间的年龄差别用L来表示。M是部门内部行文通气而耗费的劳动时数。N是被管理的单位。用这个公式求出的X就是每年需要补充的新职工人数。数学家们当然懂得，要找出百分比只要用X乘100,再除以上一年的总数Y就可以了。不论工作量有无变化，用这个公式求出来的得数总是处在5.17-6.56%之间。显然，如此类推，就形成了一个机构重叠、人浮于事、互相扯皮、效率低下的领导体系。
-作用意义#1.帕金森定律是[时间管理中的一个概念。
-2.帕金森定律表明：只要还有时间，工作就会不断扩展，直到用完所有的时间。
-3.帕金森定律是帕金森为揭露和嘲讽英国政治社会制度中官僚主义组织结构的弊端而提出的。
-4.帕金森定律是帕金森在对组织机构的无效活动进行调查和分析中提出的关于组织机构臃肿低效的形成原因的定律。
-警示作用#帕金森定律说明这样一个道理：不称职的行政首长一旦占据领导岗位，庞杂的机构和过多的冗杂便不可避免，庸人占据着高位的现象也不可避免，整个行政管理系统就会形成恶性膨胀，陷入难以自拔的泥潭。
-宁夏西海固地区同心县，曾经是以“苦甲天下”而闻名的，但就是在那里，这种帕金森现象十分常见，在同心县部分干部违法乱纪，有能力的人才得不到重用，而那些能力平庸的人又大量超编进入行政机构，致使这个国家级贫困县吃“ 皇粮”的人数畸形膨胀。冗员吃空了财政预算、补贴，就连专项资金也被挪用……这种“贫困的腐败”，引发了一连串的咄咄怪事——在这个仅有33万人口的贫困县里，吃“皇粮”者高达1.1万人，全县超编人员高达2800多人。让人匪夷所思的是，在这支超编大军中，有大批“拿着俸禄不上朝”的”挂职干部”，轮流上班的“轮岗干部”， 10来岁的“娃娃干部”，四五岁的“学龄前儿童干部”。县烈士陵园只有3座墓碑，但却供养着20名管理人员。机构、人员过多过滥而造成的效率低下，几乎成了一些地方的通病，而少数“懒和尚”当住持而产生的“食客者众”，更成了这些部门的“痼疾”。
-在历史上，朱元璋以疯狂屠杀功臣元勋著称。对于这种疯狂，后世最有代表性的解释是，朱元璋看到皇太子懦弱，担心自己死后强臣压主，所以事先消除隐患。有一则轶闻可为佐证：有一天，皇太子劝说父亲不要杀人太多，朱元璋把一根长满了刺的棍子丢在地上，命皇太子用手拾起来。皇太子一把抓住刺棍，结果给扎破了手掌，并连声呼痛。朱元璋说：“我事先为你拔除棍上的毒刺，你难道不明白我的苦心吗?”朱元璋的逻辑很简单：作为管理者，如果自己强，就成为所有分工的权威；如果自己弱，那就让所有分工都没有权威。看得出来，他根本没有意识到协作权威的存在和价值。 许多管理者赞同朱元璋逻辑。他们要么投入巨大精力以获取和维持分工权威，要么只欢迎对他的分工权威构不成挑战的人。帕金森定律，就是朱元璋逻辑的一个西方残缺版本。在我看来，一个管理者，如果不明白协作权威的存在和价值，那么，无论他是“不称职的官员”还是“能干的人”，都算不上真正的管理者。因为，他发挥不出分工协作的力量。 朱元璋逻辑的本质是什么？一元思维。所谓“一元思维”，就是在一个组织内，权威有且只能有一个。一元思维的人深信“一山不容二虎”。他们相信组织需要且只需要一个权威。当没有自信时，他们会相信并拥护他人成为那个唯一。当自信满满时，他们会理所应当地将自己视为那个唯一。
-帕金森详细研究了1914年到1954年间英国海军舰艇、官兵数量与海军部官员人数间的逆向变化，发现行政机构的膨胀与海军事业的发展没有必然联系，因此讥讽这种“宏伟的陆地海军”现象。而在“委员和委员会”一节中，帕金森归纳数十个国家内阁组成情况，得出5人内阁最为理想，9人内阁必然有人仅是点缀，20人内阁难免派系之争，超过20人则阁员人数再难控制（会议本来就是浪费时间，与人数多少无关）的结论。帕金森同时提出一个非常有趣的“低效能系数”，即一个委员会的成员超过20人或21人，组织的工作效率开始降低。这一观点对许多官方的、半官方的、民间的委员会、理事会、研究会、学会等组织应该有所借鉴。
-权力的危机感，是产生帕金森现象的根源。恩格斯曾经说过：“自从阶级社会产生以来，人的恶劣的情欲、贪欲和权势欲就成为历史发展的杠杆。”人作为社会性和动物性的复合体，因利而为，是很正常的行为。假设他的既有利益受到威胁，那么本能会告诉他，一定不能丧失这个既得利益，这也正是帕金森定律起作用的内因。一个既得权力的拥有者，假如存在着权力危机，不会轻易让渡自己的权力，也不会轻易的给自己树立一个对手。在不害人为标准的良心监督下，会选择两个不如自己的人作为助手，这种行为是自然而然，无可谴责。
-帕金森定律并非是老调重弹，缺乏新意，这个定律把一些行政机关用人现状刻画得入木三分。一些心术不正的首长，以权谋私，“举贤不避亲”，竟把那些缺乏基本业务素质的亲属故旧，或欺上瞒下，或弄虚作假，或交换提携弄到自己所任职把掌的部门。于是乎，“七姑八舅”一个个执掌了“帅印”，亲属嫡系一个个占据着要害岗位，而一个个有能力的干才，或因有些“野心”，或因有些真本领“气焰”有点“嚣张”，而受到轻用、不用，甚至倍受压制，其结果，干的不如看的，看的不如捣蛋的。一个私欲膨胀的行政首长，为一个个低能儿开启了大门，却把一批批有为之人拒之门外，于是平庸战胜了才俊，“牛粪”得到了“鲜花”。
-概念定性#管理学者孙继滨在《卓有成效：管理者的职业习惯》一书中认为，**“帕金森定律”是一元思维的表现方式之一，其本质是管理者对分工和协作这两种权威的混淆。**他对帕金森定律做出了如下阐述： 对于管理来说，权威是必须的。权威又可以分为两种，分工权威和协作权威。我们知道，协作是建立在多分工基础上的。这就是说，一个协作权威，总会对应多个分工权威。举例来说，在刘邦团队中，刘邦就是协作权威，萧何张良韩信就是分工权威。 本书以为，管理者可以不是分工权威，但是，管理者一定要是协作权威。对于管理者来说，权威认同是必须的。同时，需要明确指出的是，真正必须的权威认同，是协作权威认同。真正的管理者，应该行使的是协作权威，而不是分工权威。在这方面，刘邦是值得效仿的光辉榜样。 令人不安的是，绝大多数人分不清协作权威和分工权威的不同。他们常常将两种权威混为一谈，或者严重低估协作权威的价值，或者试图鱼和熊掌兼得。 在职场上，相当多的管理者具有突出的一元思维行为特征。他们或者投入巨大精力以维持自己的技术优势，或者只欢迎对他的技术权威构不成挑战的团队成员。这似乎不难理解。管理者的前身是技术者。成为技术权威是他们有所作为的最好证明，是他们建立自尊形象的必然要求。多年的专业奋斗之下，“分工权威”的自我认同便瓜熟蒂落水到渠成了。幸运的是，多年的专业奋斗，让他们走到了管理者的位置；不幸的是，“分工权威”的自我认同，让他们迟迟进入不了“协作权威”的角色。</description>
+      <description>一个不称职的官员，可能有三条出路，第一是申请退职，把位子让给能干的人；第二是让一位能干的人来协助自己工作；第三是任用两个水平比自己更低的人当助手。这第一条路是万万走不得的，因为那样会丧失许多权利；第二条路也不能走，因为那个能干的人会成为自己的对手；看来只有第三条路最适宜。于是，两个平庸的助手分担了他的工作，他自己则高高在上发号施令，他们不会对自己的权利构成威胁。两个助手既然无能，他们就上行下效，再为自己找两个更加无能的助手。如此类推，就形成了一个机构臃肿，人浮于事，相互扯皮，效率低下的领导体系。帕金森得出结论：在行政管理中，行政机构会像金字塔一样不断增多，行政人员会不断膨胀，每个人都很忙，但组织效率越来越低下。</description>
     </item>
     
     <item>
@@ -1735,7 +1473,7 @@ Three days from now, after half century in the service of our country, I shall l
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/literature/%E5%B9%B8%E5%AD%98%E8%80%85%E5%81%8F%E5%B7%AE/</guid>
-      <description>幸存者偏差（Survivor bias），另译为 “生存者偏差” 或 “存活者偏差”，是一种常见的逻辑谬误。指的是只能看到经过某种筛选而产生的结果，而没有意识到筛选的过程，因此忽略了被筛选掉的关键信息。日常表达为 “沉默的数据”、“死人不会说话” 等。可以用对照试验和贝叶斯公式来消除幸存者偏差。</description>
+      <description>指的是只能看到经过某种筛选而产生的结果，而没有意识到筛选的过程，因此忽略了被筛选掉的关键信息。日常表达为 “沉默的数据”、“死人不会说话” 等</description>
     </item>
     
     <item>
@@ -1744,7 +1482,7 @@ Three days from now, after half century in the service of our country, I shall l
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/literature/%E5%BD%BC%E5%BE%B7%E5%8E%9F%E7%90%86/</guid>
-      <description>《彼得原理》劳伦斯·彼得的著作。为我们清楚地描绘了职业晋升的瓶颈问题，他指出，每个人在层级组织里都会得到晋升，直到不能胜任为止。换句话说，一个人，无论你有多大的聪明才智，也无论你如何努力进取，总会有一个你胜任不了的职位在等待着你，并且你一定会达到那个位置 在各种组织中，雇员总是趋向于晋升到其不称职的地位。彼得原理有时也被称为“向上爬”原理。 这种现象在现实生活中无处不在：一名称职的教授被提升为大学校长后，却无法胜任；一个优秀的运动员被提升为主管体育的官员，而无所作为。 对一个组织而言，一旦相当部分人员被推到其不称职的级别，就会造成组织的人浮于事，效率低下，导致平庸者出人头地，发展停滞。 因此，这就要求改变单纯的“根据贡献决定晋升”的企业员工晋升机制，不能因某人在某个岗位上干得很出色，就推断此人一定能够胜任更高一级的职务。将一名职工晋升到一个无法很好发挥才能的岗位，不仅不是对本人的奖励，反而使其无法很好发挥才能，也给企业带来损失。</description>
+      <description>一个人，无论你有多大的聪明才智，也无论你如何努力进取，总会有一个你胜任不了的职位在等待着你，并且你一定会达到那个位置</description>
     </item>
     
     <item>
@@ -1753,8 +1491,7 @@ Three days from now, after half century in the service of our country, I shall l
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/literature/%E6%88%B4%E6%98%8E%E7%8E%AF%E7%90%86%E8%AE%BApdca/</guid>
-      <description>美国质量管理专家戴明博士首先提出的，它是全面质量管理所应遵循的科学程序。全面质量管理活动的全部过程，就是质量计划的制订和组织实现的过程，这个过程就是按照PDCA循环，不停顿地周而复始地运转的。
-PDCA是英语单词Plan(计划)、Do(执行)、Check(检查)和Act(纠正)的第一个字母</description>
+      <description>PDCA是英语单词Plan(计划)、Do(执行)、Check(检查)和Act(纠正)的第一个字母</description>
     </item>
     
     <item>
@@ -1763,8 +1500,7 @@ PDCA是英语单词Plan(计划)、Do(执行)、Check(检查)和Act(纠正)的第
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/literature/%E6%94%AF%E5%85%AC%E5%A5%BD%E9%B9%A4/</guid>
-      <description>支公好鹤，住剡东峁山，有人遗其双鹤，少时翅长欲飞。支意惜之，乃铩其翮。鹤轩翥不复能飞，乃反顾翅，垂头视之，如有懊丧意。林曰：“既有凌霄之姿，何肯为人作耳目近玩？”养令翮成，置使飞去。
-支道林特别喜欢养鹤。他在浙江东部的峁山住的时候，有人送了他一对小鹤。过了一些时候，小鹤渐渐长出羽翼，时时想起飞。支公舍不得鹤飞走，就剪断了鹤的羽根。鹤想举翅高飞却没办法再飞，于是回头看自己的翅膀，然后低下头来，看上去就像人一样沮丧。支道林说：“鹤生来是应该翱翔在天空的，哪里会甘心当人的宠物被眷养玩耍！”经过一段时间调养，等到鹤的羽毛重新长出来，让它们飞走了</description>
+      <description>支公好鹤，住剡东峁山，有人遗其双鹤，少时翅长欲飞。支意惜之，乃铩其翮。鹤轩翥不复能飞，乃反顾翅，垂头视之，如有懊丧意。林曰：“既有凌霄之姿，何肯为人作耳目近玩？”养令翮成，置使飞去</description>
     </item>
     
     <item>
@@ -1773,9 +1509,7 @@ PDCA是英语单词Plan(计划)、Do(执行)、Check(检查)和Act(纠正)的第
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/literature/%E6%95%8C%E6%88%92/</guid>
-      <description>皆知敌之仇，而不知为益之尤；皆知敌之害，而不知为利之大。 秦有六国，兢兢以强；六国既除，訑訑乃亡。晋败楚鄢，范文为患；厉之不图，举国造怨。孟孙恶臧，孟死臧恤，“药石去矣，吾亡无日”。智能知之，犹卒以危，矧今之人，曾不是思。 敌存而惧，敌去而舞，废备自盈，祗益为愈。敌存灭祸，敌去召过。有能知此，道大名播。惩病克寿，矜壮死暴；纵欲不戒，匪愚伊耄。我作戒诗，思者无咎
-人人都知道敌人有作为自己仇敌的一面，却不一定懂得对自己还有有益的一面；人人都知道敌人对自己有危害的一面，却不一定懂得对自己还有有利的一面。 秦国有六国为敌，因此能够兢兢业业，使国家强盛起来；六国已经除灭之后，秦朝骄傲自得，不久就灭亡了。晋国军队大败楚军于鄢陵，晋国大夫范文子感到忧虑。晋厉公不考虑范文子应知戒惕的意见，越发骄横，搞得全国上下冤声沸腾，最后被人杀死。鲁国大夫孟孙速憎恨大夫臧孙纥，孟孙速死后，臧孙纥感到忧虑；臧孙纥去孟孙速家里吊丧，哭得很悲伤，说孟孙速憎恶我，这就好像是能够帮助我治病的良药，现在孟孙速死了，没有了药物，我也活不长了。明智的人懂得这个道理，最终还可能遇到危害；何况当今某些人根本不去思量这个道理呢！ 敌人存在就害怕，敌人没了就得意忘形，解除戒备，自满自足，这恰恰会造成更大的祸患。敌人存在，能够提高自己的警惕，可以免除祸患；敌人不存在了，思想懈怠，反而会招致错误。能够懂得这个道理的人，他的德行就会光大，名声就会远扬。能够预防疾病的人，才能够长寿；自恃强壮的人，容易死于暴病；纵情逞欲而不知警戒的人，不是傻瓜就是混蛋。我写下这篇《敌戒》诗，能够思考其中道理的人可以免除过错和灾祸。
-有道是：祸兮福之所倚；福兮祸之所伏</description>
+      <description>皆知敌之仇，而不知为益之尤；皆知敌之害，而不知为利之大</description>
     </item>
     
     <item>
@@ -1784,7 +1518,7 @@ PDCA是英语单词Plan(计划)、Do(执行)、Check(检查)和Act(纠正)的第
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/literature/%E6%97%A0%E5%BF%83%E4%B9%8B%E5%AD%A6/</guid>
-      <description>之所以很多学习不能持续太久，我猜测是学习的时候人太想把东西记住，感觉当时没理解和记忆的总想反复使其记住，越是重要更是如此，给大脑过多压力，大脑的本能遇到压力就会抗拒，体现为人的烦躁，昏昏欲睡。我尝试了几次看东西不想着记住，一遍过去不回头，如此我看了很久也不觉得压抑。 可以把这种状态称为无心之学，人在生活中很多事物我们并没有刻意去记忆，遭遇多了自然而然的熟悉，人也不至于讨厌生活，感觉有压力多半是强求的东西过多了，心力承受不了。 跑步跑的越快，坚持的时间越短，最好的状态是和自身能量输出的平衡，行的最远的还是步行。 强求记住，劳心伤神，坚持困难也打击信心，学不成是必然的，经过磨练的人可以比常人更有耐力，大概就是这样的。</description>
+      <description>人在生活中很多事物我们并没有刻意去记忆，遭遇多了自然而然的熟悉，人也不至于讨厌生活，感觉有压力多半是强求的东西过多了，心力承受不</description>
     </item>
     
     <item>
@@ -1793,7 +1527,7 @@ PDCA是英语单词Plan(计划)、Do(执行)、Check(检查)和Act(纠正)的第
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/literature/%E6%B4%AA%E8%8C%83/</guid>
-      <description>武王胜殷，杀受，立武庚，以箕子归。作《洪范》。 惟十有三祀，王访于箕子。王乃言曰：“呜呼！箕子。惟天阴骘下民，相协厥居，我不知其彝伦攸叙。” 箕子乃言曰：“我闻在昔，鲧堙洪水，汩陈其五行。帝乃震怒，不畀洪范九畴，彝伦攸斁。鲧则殛死，禹乃嗣兴，天乃锡禹洪范九畴，彝伦攸叙。 初一曰五行，次二曰敬用五事，次三曰农用八政，次四曰协用五纪，次五曰建用皇极，次六曰乂用三德，次七曰明用稽疑，次八曰念用庶征，次九曰向用五福，威用六极。 一、五行：一曰水，二曰火，三曰木，四曰金，五曰土。水曰润下，火曰炎上，木曰曲直，金曰従革，土爰稼穑。润下作咸，炎上作苦，曲直作酸，従革作辛，稼穑作甘。 二、五事：一曰貌，二曰言，三曰视，四曰听，五曰思。貌曰恭，言曰从，视曰明，听曰聪，思曰睿。恭作肃，从作乂，明作晢，聪作谋，睿作圣。 三、八政：一曰食，二曰货，三曰祀，四曰司空，五曰司徒，六曰司寇，七曰宾，八曰师。 四、五纪：一曰岁，二曰月，三曰日，四曰星辰，五曰历数。 五、皇极：皇建其有极。敛时五福，用敷锡厥庶民。惟时厥庶民于汝极。锡汝保极：凡厥庶民，无有淫朋，人无有比德，惟皇作极。凡厥庶民，有猷有为有守，汝则念之。不协于极，不罹于咎，皇则受之。而康而色，曰：‘予攸好德。’汝则锡之福。时人斯其惟皇之极。无虐茕独而畏高明，人之有能有为，使羞其行，而邦其昌。凡厥正人，既富方谷，汝弗能使有好于而家，时人斯其辜。于其无好德，汝虽锡之福，其作汝用咎。无偏无陂，遵王之义；无有作好，遵王之道；无有作恶，尊王之路。无偏无党，王道荡荡；无党无偏，王道平平；无反无侧，王道正直。会其有极，归其有极。曰：皇极之敷言，是彝是训，于帝其训，凡厥庶民，极之敷言，是训是行，以近天子之光。曰：天子作民父母，以为天下王。 六、三德：一曰正直，二曰刚克，三曰柔克。平康，正直；强弗友，刚克；燮友，柔克。沈潜刚克；高明柔克。惟辟作福，惟辟作威，惟辟玉食。臣无有作福、作威、玉食。臣之有作福、作威、玉食，其害于而家，凶于而国。人用侧颇僻，民用僭忒。 七、稽疑：择建立卜筮人，乃命卜筮。曰雨，曰霁，曰蒙，曰驿，曰克，曰贞，曰悔，凡七。卜五，占用二，衍忒。立时人作卜筮，三人占，则従二人之言。汝则有大疑，谋及乃心，谋及卿士，谋及庶人，谋及卜筮。汝则従，龟従，筮従，卿士従，庶民従，是之谓大同。身其康强，子孙其逢吉，汝则従，龟従，筮従，卿士逆，庶民逆，吉。卿士従，龟従，筮従，汝则逆，庶民逆，吉。庶民従，龟従，筮従，汝则逆，卿士逆，吉。汝则従，龟従，筮逆，卿士逆，庶民逆，作内吉，作外凶。龟筮共违于人，用静吉，用作凶。 八、庶征：曰雨，曰旸，曰燠，曰寒，曰风。曰时五者来备，各以其叙，庶草蕃庑。一极备，凶；一极无，凶。曰休征：曰肃，时雨若；曰乂，时旸若；曰晰，时燠若；曰谋，时寒若；曰圣，时风若。曰咎征：曰狂，恒雨若；曰僭，恒旸若；曰豫，恒燠若；曰急，恒寒若；曰蒙，恒风若。曰王省惟岁，卿士惟月，师尹惟日。岁月日时无易，百谷用成，乂用明，俊民用章，家用平康。日月岁时既易，百谷用不成，乂用昏不明，俊民用微，家用不宁。庶民惟星，星有好风，星有好雨。日月之行，则有冬有夏。月之従星，则以风雨。 九、五福：一曰寿，二曰富，三曰康宁，四曰攸好德，五曰考终命。六极：一曰凶、短、折，二曰疾，三曰忧，四曰贫，五曰恶，六曰弱。”</description>
+      <description>武王胜殷，杀受，立武庚，以箕子归。作《洪范》</description>
     </item>
     
     <item>
@@ -1802,7 +1536,7 @@ PDCA是英语单词Plan(计划)、Do(执行)、Check(检查)和Act(纠正)的第
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/literature/%E6%B8%85%E5%B8%9D%E9%80%80%E4%BD%8D%E8%AF%8F%E4%B9%A6/</guid>
-      <description>奉旨朕钦奉隆裕皇太后懿旨： 前因民军起事，各省相应，九夏沸腾，生灵涂炭，特命袁世凯遣员与民军代表讨论大局，议开国会，公决政体。两月以来，尚无确当办法，南北暌隔，彼此相持，商辍於途，士露於野，徒以国体一日不决，故民生一日不安。今全国人民心理，多倾向共和，南中各省既倡议于前，北方诸将亦主张于后，人心所向，天命可知，予亦何忍因一姓之尊荣，拂兆民之好恶？是用外观大势，内审舆情，特率皇帝，将统治权公诸全国，定为共和立宪国体，近慰海内厌乱望治之心，远协古圣天下为公之义 。袁世凯前经资政院选举为总理大臣，当兹新旧代谢之际，宜有南北统一之方，即由袁世凯以全权组织临时共和政府，与民军协商统一办法，总期人民安堵，海宇乂安，仍合满、汉、蒙、回、藏五族完全领土，为一大中华民国，予与皇帝得以退处宽闲，优游岁月，长受国民之优礼，亲见郅治之告成，岂不懿欤？钦此。</description>
+      <description>今全国人民心理，多倾向共和，南中各省既倡议于前，北方诸将亦主张于后，人心所向，天命可知，予亦何忍因一姓之尊荣，拂兆民之好恶？是用外观大势，内审舆情，特率皇帝，将统治权公诸全国，定为共和立宪国体，近慰海内厌乱望治之心，远协古圣天下为公之义</description>
     </item>
     
     <item>
@@ -1811,7 +1545,7 @@ PDCA是英语单词Plan(计划)、Do(执行)、Check(检查)和Act(纠正)的第
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/literature/%E7%9C%81%E5%BF%83%E5%BD%95/</guid>
-      <description>礼义廉耻，可以律己，不可以绳人。 律己则寡过，绳人则寡合，寡合则非涉世之道。故君子责己，小人责人。 为善易，避为善之名难；不犯人易，犯而不校难。涉世应物，有以横逆加我者，譬犹行草莽中，荆棘之在衣，徐行缓解而已，所谓荆棘者，亦何心哉！如是则方寸不劳，而怨可释。 责人者不全交，自恕者不改过。自满者败，自矜者愚，自贼者害。多言获利，不如默而无害。 务名者害其身，多财者祸其后。善恶报缓者非天网疏，是欲成君子而灭小人也。祸福者天地所以爱人也，如雷雨雪霜，皆欲生成万物。故君子恐惧而畏，小人侥幸而忽。畏其祸则福生，忽其福则祸至，《传》所谓「祸福无门，惟人所召」也。 必出世者，方能入世，不则世缘易堕；必入世者，方能出世，不则空趣难持。 士君子尽心利济，使海内少他不得，则天亦少他不得，即此便是立命。 如今休去便休去，若觅了时了无时。 事有急之不白者，宽之或自明，毋躁急以速其忿；人有切之不从者，纵之或自化，毋操切以益其顽。 人胜我无害，彼无蓄怨之心；我胜人非福，恐有不测之祸。 士君子贫不能济物者，遇人痴迷处，出一言提醒之；遇人急难处，出一言解救之，亦是无量功德。 情尘既尽，心镜遂明，外影何如内照；幻泡一消，性珠自朗，世瑶原是家珍。 凡夫迷真而逐妄，智慧化为识神，譬之水涌为波，不离此水；圣人悟妄而归真，识神转为智慧，譬之波平为水，当体无波。 常有小不快事，是好消息。若事事称心，即有大不称心者在其后，知此理可免怨尤。 勿以人负我而隳为善之心，当其施德，第自行吾心所不忍耳，未尝责报也。纵遇险徒，止付一笑。 正人之言，明知其为我也，感而未必悦；邪人之言，明知其佞我也，笑而未必怒。于此知从善之难。 面有点污，人人匿笑，而已不知，有告之者，无不忙忙拭去。若曰：点污在我，何与若事？必无此人情。至告以过者，何独不然？ 事后论人，局外论人，是学者大病。事后论人，每将智人说得极愚；局外论人，每将难事说得极易，二者旨从不忠不恕生出。 读古人书，与贤人交游，最不可苟为同，又不可苟为异。二者之失，总是胸无定力，学问中便有时势趋附，非谄即矫耳。 人于横逆来时，愤怒如火，忽一思及自己原有不是，不觉怒情燥火涣然冰消。乃知自反二字真是省事、养气、讨便宜、求快乐最上法门，切莫认作道学家虚笼头语看过。 人作事极不可迂滞，不可反复，不可烦碎；代人作事又极要耐得迂滞，耐得反复，耐得烦碎。 己所有者，可以望人，而不敢责人也；己所无者，可以规人，而不敢怒人也。故恕者推己以及人，不执己以量人。 能知足者，天不能贫；能无求者，天不能贱；能外形骸者，天不能病；能不贪生者，天不能死；能随遇而安者，天不能困；能造就人才者，天不能孤；能以身任天下后世者，天不能绝。</description>
+      <description>礼义廉耻，可以律己，不可以绳人</description>
     </item>
     
     <item>
@@ -1820,7 +1554,7 @@ PDCA是英语单词Plan(计划)、Do(执行)、Check(检查)和Act(纠正)的第
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/literature/%E7%A8%B7%E4%B8%8B%E5%AD%A6%E5%AE%AB/</guid>
-      <description>稷下学宫是世界上最早的官办高等学府和我国最早的社会科学院、政府智库。 始建于齐桓公田午。位于齐国国都临淄(今山东省淄博市)稷门附近。 “稷”是齐国国都临淄城(今山东省淄博市)一处城门的名称。“稷下”即齐都临淄城的稷门附近，齐国君主在此设立学宫。故因学宫地处稷门附近而得名为“稷下学宫”(这与东汉时期的“鸿都门学”得名由来相同)。 稷下学宫是世界上第一所由官方举办、私家主持的特殊形式的高等学府。中国学术思想史上这场不可多见、蔚为壮观的“百家争鸣”，是以齐国稷下学宫为中心的，官学为黄老之学。它作为当时百家学术争鸣的中心园地，有力地促成了天下学术争鸣局面的形成。 在此期间，学术著作相继问世。有《宋子》、《田子》、《蜗子》、《捷子》等，今已亡佚。另《管子》、《晏子春秋》、《司马法》、《周官》等书之编撰，亦有稷下之士的参与。由于不少人是善于把学术和政治结合起来游说当权者的能手，故在宣王时受上大夫称号之稷下士多达七十六人。稷下学宫的存在，曾为当时百家争鸣开创了良好的社会环境，促进了先秦时期学术文化的繁荣。</description>
+      <description>由于不少人是善于把学术和政治结合起来游说当权者的能手，故在宣王时受上大夫称号之稷下士多达七十六人。稷下学宫的存在，曾为当时百家争鸣开创了良好的社会环境，促进了先秦时期学术文化的繁荣</description>
     </item>
     
     <item>
@@ -1829,8 +1563,7 @@ PDCA是英语单词Plan(计划)、Do(执行)、Check(检查)和Act(纠正)的第
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/literature/%E7%BA%AF%E7%99%BD%E4%B9%8B%E9%81%93/</guid>
-      <description>有机械者必有机事，有机事者必有机心。机心存于胸中则纯白不备。纯白不备，则神生不定；神生不定者，道之所不载也。 执道者德全，德全者形全，形全者神全。神全者，圣人之道也。托生与民并行而不知其所之，汒乎淳备哉！功利机巧必忘夫人之心。若夫人者，非其志不之，非其心不为。虽以天下誉之，得其所谓，謷然不顾；以天下非之，失其所谓，傥然不受。天下之非誉，无益损焉，是谓全德之人哉！ 识其一，不知其二；治其内，而不治其外。夫明白太素，无为复朴，体性抱神，以游世俗。
-有了机械之类的东西必定会出现机巧之类的事，有了机巧之类的事必定会出现机变之类的心思。机变的心思存留在胸中，那么不曾受到世俗沾染的纯洁空明的心境就不完整齐备；纯洁空明的心境不完备，那么精神就不会专一安定；精神不能专一安定的人，大道也就不会充实他的心田。 持守大道的人德行才完备，德行完备的人形体才健全，形体健全的人精神才饱满。精神饱满方才是圣人之道。这样的人他们寄托形骸于世间，悠游自在而不知所往，淳和真朴，功利机巧必定不会放在他们这种人的心上。像那样的人，不同于自己的心志不会去追求，不符合自己的思想不会去做。即使让天下人都称誉他，称誉的言词合乎他的德行，他也孤高而不顾；即使让天下人都非议他，非议使其名声丧失，他也无动于衷不予理睬。天下人的非议和赞誉，对于他们既无增益又无损害，这就叫做德行完备的人啊！ 持守内心的纯一，心神不外分；修养内心，而不求治外在。那明澈白静到如此素洁，清虚无为回返原始的朴质，体悟真性持守精神，优游自得地生活在世俗之中。</description>
+      <description>有机械者必有机事，有机事者必有机心。机心存于胸中则纯白不备。纯白不备，则神生不定；神生不定者，道之所不载也</description>
     </item>
     
     <item>
@@ -1839,7 +1572,7 @@ PDCA是英语单词Plan(计划)、Do(执行)、Check(检查)和Act(纠正)的第
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/literature/%E8%83%86%E5%B0%8F%E9%AC%BC%E5%8D%9A%E5%BC%88/</guid>
-      <description>胆小鬼博弈#斗鸡博弈(Chicken Game)其实是一种误译。Chicken在美国口语中是“懦夫”之意，Chicken Game本应译成懦夫博弈。不过这个错误并不算太严重，非要把chicken game叫作斗鸡博弈，也不是不可以。 模型中，两名车手向对方驱车而行，谁最先让开的一方被耻笑为“胆小鬼”（chicken），让另一方胜出，因此这博弈模型在英文中称为The Game of Chicken，但如果两人拒绝收掣，任由两车相撞，最终谁得无法得益。</description>
+      <description>两名车手向对方驱车而行，谁最先让开的一方被耻笑为“胆小鬼”（chicken），让另一方胜出，因此这博弈模型在英文中称为The Game of Chicken，但如果两人拒绝收掣，任由两车相撞，最终谁得无法得益。</description>
     </item>
     
     <item>
@@ -1857,29 +1590,7 @@ PDCA是英语单词Plan(计划)、Do(执行)、Check(检查)和Act(纠正)的第
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/literature/%E8%89%BE%E6%A3%AE%E8%B1%AA%E5%A8%81%E5%B0%94%E5%91%8A%E5%88%AB%E6%BC%94%E8%AF%B4/</guid>
-      <description>晚上好，我的美国同胞们。
-首先，我谨感谢电台和电视网络多年来给我的机会，将报道和信息带给我们的国家。我特别感谢他们今晚有机会向你们讲话。
-再过三天，在我爲我国服务半个世纪之后，随着总统的权威按传统的隆重仪式归属我的继任者，本人将卸下公职。……
-我们现在的日期距本世纪中点已过十年，这个世纪经历了大国之间四次大的战争，我们自己的国家卷入其中三次。尽管发生了这些大规模的战祸，当今美国乃是世界上最强大、最有影响、生産力最高的国家。我们自然爲此卓越成就感到自豪，但我们也意识到，美国的领导地位和威信不仅取决于我们举世无双的物质进步、财富和军事力量，而且取决于我们如何爲世界和平与人类福利使用我们的力量。
-&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;
-纵观美国在自由政府体制上的探索历程，我们的基本目的始终是维护和平，促进人类进步，在人民中和国家之间增进自由权，提高尊严，宏扬正直的品质。追求较低的目标会辱没一个自由、有虔诚宗教信仰的民族。任何由于骄傲自大或理解力不强或缺乏奉献精神的失败都将在国内外给我们带来严重损害。
-走向这些崇高目标的进程一直受到现在正席卷全球的冲突的威胁。这种冲突迫使我们全神贯注，全力以赴。我们面对一种敌对的意识形态──具有世界性规模和无神论性质，目标残忍，手段阴险。不幸的是，它所造成的危险将长期存在。欲成功地对付它，所要求的与其说是危急关头感情上短暂的痛苦，毋宁说是作出牺牲以使我们能坚定踏实、任劳任怨地承担一场长期复杂斗争的重任──与自由共存亡。只有这样我们才能战胜一次又一次的挑衅，始终朝着世界持久和平和人类美好未来的方向前进。……
-我们的军队是维护和平必不可少的要素。我们的武装力量必须强大，随时准备投入行动，以使任何潜在的侵略者都不敢贸然以卵击石。
-我们今天的军事组织与我的任何一位和平时期前任所了解的，与第二次世界大战或朝鲜战争中的军人所了解的军事组织大相径庭。
-直至最近的一次世界性冲突之前、美国仍没有军事工业。美国的犁铧制造商们在必要时也能制造剑。但是现在我们不能再以临阵磨枪的方式承担国防上的风险；我们已被迫创建一个规模宏大的永久性军事工业。此外，350万男人和妇女直接服务于国防机构。我们每年在军事安全上的开支超过了美国所有的公司的纯收入。
-一支庞大的军队和一个大规模军事工业相结合，在美国是史无前例的。它的全部影响──经济的、政治的，甚至精神的──在每个城市、每座州议会大楼、每一联邦政府机构内都能感觉到。我们承认这种发展绝对必要，但我们不应忽视其重大的影响。它涉及我们的人力、资源、生活，乃至我们社会的结构。
-在政府各部门，我们必须警惕军事─工业联合体取得无法证明是正当的影响力，不论它这样追求与否。极不适当的权力恶性增长的可能性目前已经存在并将继续存在。
-我们决不能让这一联合体的势力危害我们的自由或民主进程。我们不应心存侥幸。只有警觉而明智的美国公民才能强迫庞大的工业和军事的国防机构与我们和平的手段和目标恰当配合，以使安全和自由并驾齐驱，同获成功。
-近几十年的技术革命与我们的工业─军事状况的巨大变化有相似之处，而且对这种巨大变化起了很大作用。
-在这场技术革命中，研究工作已趋于集中；它也变得更正规，更复杂，更昂贵。爲联邦政府而实施，由联邦政府实施，或在联邦政府指导下实施的研究工作份额正逐步增加。
-由联邦政府雇用而形成支配全国学者的局面，以及统一分配项目，统一控制财力，这种前景一直存在，而且应当引起严重关注。
-我们应该尊重科学研究和探索，但与此同时我们必须对这一同样严重的负面危险保持警惕，即政府政策本身可能沦爲一个科学──技术精英阶层的俘虏。
-治国之才的任务，是在我们民主制度的原则范畴内，塑造、平衡和融合这些和其它新旧力量──始终以实现我们自由社会的最高目标爲目的。
-另一个保持平衡的因素涉及时间这一要素。当我们展望社会的未来时，我们──你、我和我国政府──必须避免一种只顾今日生活的冲动，不应爲了我们自己的舒适和便利巧取豪夺明天的宝贵资源。我们不可能以孙儿辈的物质财富作抵押，而又不冒使他们丧失政治和精神遗産的风险。我们要让民主代代相传，它不该成爲明天无力还债的鬼魂。
-展望有待书写的未来历史长卷，美国深知我们这个越来越小的世界决不应变成一个充满恐惧和仇恨的可怕的群体，相反，它应成爲一个相互信任、相互尊重的光辉的联盟。
-这样一个联盟必定是平等国家间的联盟。最弱小的国家一定以与我们相同的自信心来到会议桌旁，和我们一样受到我们的道德、经济和军事力量的保护。那会议桌虽然留下历史坎坷的累累伤痕，但我们不能将它抛弃以换来战场的惨剧。
-以相互尊敬和信任实行裁军仍是一项迫切任务。我们必须一起学习怎样不用武力，而是以理智和公正的意图去解决纷争。因爲裁军的紧迫性如此明显突出，我承认我是怀着某种失望的心情卸下我的总统职责的。作爲一个目睹过战争的恐怖及其难以愈合的创伤的人──深知另一场战争会彻底毁掉历经数千年缓慢而又艰苦地建成的人类文明──我但愿自己今晚能说：持久和平已遥遥在望。
-幸好我可以说，已经避免发生战争了。朝我们的终极目标已迈开坚实的步伐。但是任重而道远。作爲一个普通公民，我将始终不渝地爲推动世界沿着这条道路前进贡献一份绵薄。</description>
+      <description>纵观美国在自由政府体制上的探索历程，我们的基本目的始终是维护和平，促进人类进步，在人民中和国家之间增进自由权，提高尊严，宏扬正直的品质。追求较低的目标会辱没一个自由、有虔诚宗教信仰的民族。任何由于骄傲自大或理解力不强或缺乏奉献精神的失败都将在国内外给我们带来严重损害。</description>
     </item>
     
     <item>
@@ -1888,12 +1599,7 @@ PDCA是英语单词Plan(计划)、Do(执行)、Check(检查)和Act(纠正)的第
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/literature/%E8%A1%8C%E6%94%BF%E5%8C%BA%E5%9F%9F%E7%94%B1%E6%9D%A5/</guid>
-      <description>我们看电视，学历史，听过各种地域名字，各种郡，州 中华四个个地域划分方式的背景：
- 宗法分封制度（汉之前） 郡县制（郡是秦朝至唐朝的行政区划名） 州县制（至清） 省，市，县 九州：豫州、青州、徐州、扬州、荆州、梁州、雍州、冀州、兖州。 东南为扬州，越也。南方为荆州，楚也。西方为雍州，秦也。北方为幽州，燕也  西汉十三州的范围等同於九州：#冀州∶河东郡、河内郡、魏郡、巨鹿郡、常山郡、清河郡、赵国、广平国、真定国、中山国、信都国、河间国 及涿郡、勃海郡、代郡、上谷郡、渔阳郡、右北平郡、辽西郡、辽东郡、玄菟郡、乐浪郡、广阳国 及太原郡、上党郡、云中郡、定襄郡、鴈门郡 兖州∶东郡、陈留郡、山阳郡、济阴郡、泰山郡、城阳国、淮阳国、东平国 青州∶平原郡、千乘郡、济南郡、齐郡、北海郡、东莱郡、菑川国、高密国、胶东国 徐州∶楚国、泗水国、广陵国、临淮郡、琅邪郡、东海郡 扬州∶庐江郡、九江郡、会稽郡、丹扬郡、豫章郡、六安国 及南海郡、郁林郡、苍梧郡、交趾郡、合浦郡、九真郡、日南郡 荆州∶南阳郡、南郡、江夏郡、桂阳郡、武陵郡、零陵郡、长沙国 豫州∶弘农郡、河南郡、颍川郡、汝南郡、沛郡、梁国、鲁国 梁州∶汉中郡、广汉郡、蜀郡、犍为郡、越嶲郡、益州郡、牂柯郡、巴郡、武都郡 雍州∶朔方郡、五原郡、上郡、西河郡、北地郡、及京兆尹、冯翊郡、扶风郡、 及陇西郡、金城郡、天水郡、安定郡、武威郡、张掖郡、酒泉郡、敦煌郡
-晋朝：#冀州：冀州、平州、幽州、并州 兖州：兖州 青州：青州 徐州：徐州 扬州：扬州、交州、广州 荆州：荆州 豫州：司州、豫州 梁州：梁州、益州、宁州 雍州：雍州、凉州、秦州
-隋朝：#冀州：信都郡、清河郡、魏郡、汲郡、河内郡、长平郡、上党郡、河东郡、绛郡、文城郡、临汾郡、龙泉郡、西河郡、离石郡、雁门郡、马邑郡、定襄郡、楼烦郡、太原郡、襄国郡、武安郡、赵郡、恒山郡、博陵郡、涿郡、上谷郡、渔阳郡、北平郡、安乐郡、辽西郡 兖州：东郡、东平郡、济北郡、武阳郡、渤海郡、平原郡 青州：北海郡、齐郡、东莱郡、高密郡 徐州：彭城郡、下邳郡、鲁郡、琅邪郡、东海郡 扬州：江都郡、钟离郡、淮南郡、弋阳郡、蕲春郡、庐江郡、同安郡、历阳郡、丹阳郡、宣城郡、毗陵郡、吴郡、会稽郡、馀杭郡、新安郡、东阳郡、永嘉郡、建安郡、遂安郡、鄱阳郡、临川郡、庐陵郡、南康郡、宜春郡、豫章郡、南海郡、龙川郡、义安郡、高凉郡、信安郡、永熙郡、苍梧郡、始安郡、永平郡、郁林郡、合浦郡、珠崖郡、宁越郡、交趾郡、九真郡、日南郡、比景郡、海阴郡、林邑郡 荆州：南郡、夷陵郡、竟陵郡、沔阳郡、沅陵郡、武陵郡、清江郡、襄阳郡、舂陵郡、汉东郡、安陆郡、永安郡、义阳郡、九江郡、江夏郡、澧阳郡、巴陵郡、长沙郡、衡山郡、桂阳郡、零陵郡、熙平郡 豫州：河南郡、荥阳郡、梁郡、谯郡、济阴郡、襄城郡、颍川郡、汝南郡、淮阳郡、汝阴郡、上洛郡、弘农郡、淅阳郡、南阳郡、淯阳郡、淮安郡 梁州：汉川郡、西城郡、房陵郡、清化郡、通川郡、宕渠郡、汉阳郡、临洮郡、宕昌郡、武都郡、同昌郡、河池郡、顺政郡、义城郡、平武郡、汶山郡、普安郡、金山郡、新城郡、巴西郡、遂宁郡、涪陵郡、巴郡、巴东郡、蜀郡、临邛郡、眉山郡、隆山郡、资阳郡、泸川郡、犍为郡、越巂郡、牂柯郡、黔安郡 雍州：京兆郡、冯翊郡、扶风郡、安定郡、北地郡、上郡、凋阴郡、延安郡、弘化郡、平凉郡、朔方郡、盐川郡、灵武郡、榆林郡、五原郡、天水郡、陇西郡、金城郡、枹罕郡、浇河郡、西平郡、武威郡、张掖郡、敦煌郡、鄯善郡、且末郡、西海郡、河源郡 西汉有十三州：冀州、幽州、并州、青州、徐州、兑州、豫州、扬州、交州、荆州、益州、朔方及凉州
-唐朝：#河南道：分属豫、徐、青、兖四州之域 河北道：分属冀州之域、兖州之北境 河东道：分属冀州之域 关内道：分属雍州之域 陇右道：分属雍州之域 剑南道：分属梁州之域 山南道：分属荆、梁二州之域 淮南道：分属扬州之域、荆州之东境 江南道：分属扬州之域、荆州之南境 岭南道：分属扬州之南境
-宋朝：#开封府：分属兖、豫、青、徐之域 京东东路：分属兖、豫、青、徐之域 京东西路：分属兖、豫、青、徐之域 京西南路：分属冀、豫、荆、兖、梁五州之域 京西北路：分属冀、豫、荆、兖、梁五州之域 河北路（河北东路、河北西路）：分属兖、冀、青三州之域 河东路：分属冀、雍二州之域 陕西路（永兴军路、秦凤路）：分属雍、梁、冀、豫四州之域 两浙路：分属扬州之域 淮南东路：分属荆、徐、扬、豫四州之域 淮南西路：分属荆、徐、扬、豫四州之域 江南东路：分属扬州之域 江南西路：分属扬州之域 荆湖北路：分属荆州之域 荆湖南路：分属荆州之域 福建路：分属扬州之域 川峡四路（成都府路、梓州路、利州路、夔州路）：分属梁、雍、荆三州之地 广南东路：分属荆、扬二州之域 广南西路：分属荆、扬二州之域</description>
+      <description>我们看电视，学历史，听过各种地域名字，各种郡，州;中华四个个地域划分方式的背景</description>
     </item>
     
     <item>
@@ -1902,12 +1608,7 @@ PDCA是英语单词Plan(计划)、Do(执行)、Check(检查)和Act(纠正)的第
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/literature/%E8%AE%BA%E5%96%84%E6%81%B6/</guid>
-      <description>为何人有善恶之分？ 人本无善恶，所谓善恶，存乎一心尔。
-善恶有报，但实际上却并非如此，世间诸多行善之人，家里却过的穷困潦倒，尔有的作恶多端，却逍遥快活，这是为何？ 何为善，何为恶，皆不是从表面就能轻易判断的，只要有益于他人，有益于世间，就算打人骂人也都是善，反之，若只是为了达到自己目的，即便爱人助人，也变成了巴结讨好，也成了恶。一人行善积德，即便生活贫穷一些，子孙后代往往发迹，而一人投机取巧，纵然得了一时富贵，总归没有好下场。
-何为善，何为恶？ 对己对人皆有利可称为善，对己不利但对他人有利则是大善，相反是恶
-但凡做了利于他人之举，皆可称为善吗？ 不可，有心为善，虽善不赏，带着目的去行善，仅是伪善，发自内心的为善，并不寻求回报，才是真善。
-人善没人欺，为何？ 此等事确实有，然而只是少数，并非常态，以开阔的胸怀包容这些许不公，如此才能证道，若然因而生怨，便会落了下乘。
-世间人，说起道理夸夸其谈，行动时却眼高手低的甚多，具体应该如何应对？ 于一切法，无取无舍，于一切事，无染无执，于一切境，不动不摇，于一切时，常行方便，随顺众生，令皆欢喜。</description>
+      <description>于一切法，无取无舍，于一切事，无染无执，于一切境，不动不摇，于一切时，常行方便，随顺众生，令皆欢喜</description>
     </item>
     
     <item>
@@ -1916,8 +1617,7 @@ PDCA是英语单词Plan(计划)、Do(执行)、Check(检查)和Act(纠正)的第
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/literature/%E8%AF%92%E9%83%91%E5%AD%90%E4%BA%A7%E4%B9%A6/</guid>
-      <description>郑人铸刑书。叔向使诒子产书，曰：始吾有虞于子，今则已矣。昔先王议事以制，不为刑辟，惧民之有争心也。犹不可禁御，是故闲之以义，纠之以政，行之以礼，守之以信，奉之以仁，制为禄位以劝其从，严断刑罚以威其淫。惧其未也，故诲之以忠，耸之以行，教之以务，使之以和，临之以敬，莅之以强，断之以刚。犹求圣哲之上，明察之官，忠信之长，慈惠之师，民于是乎可任使也，而不生祸乱。民知有辟，则不忌于上，并有争心，以征于书，而徼幸以成之，弗可为矣。夏有乱政而作《禹刑》，商有乱政而作《汤刑》，周有乱政而作《九刑》，三辟之兴，皆叔世也。今吾子相郑国，作封洫，立谤政，制参辟，铸刑书，将以靖民，不亦难乎？《诗》曰：『仪式刑文王之德，日靖四方。』又曰：『仪刑文王，万邦作孚。』如是，何辟之有？民知争端矣，将弃礼而征于书。锥刀之末，将尽争之。乱狱滋丰，贿赂并行，终子之世，郑其败乎！肸闻之，国将亡，必多制，其此之谓乎！」复书曰：「若吾子之言，侨不才，不能及子孙，吾以救世也。既不承命，敢忘大惠？」
-郑国把刑法铸在鼎上。叔向派人送给子产一封信，说：“开始我对您寄予希望，现在完了。从前先王衡量事情的轻重来断定罪行，不制定刑法，这是害怕百姓有争夺之心。还是不能防止犯罪，因此用道义来防范，用政令来约束，用礼仪来奉行，用信用来保持，用仁爱来奉养。制定禄位，以勉励服从的人，严厉地判罪，以威胁放纵的人。还恐怕不能收效，所以用忠诚来教诲他们，根据行为来奖励他们，用专业知识技艺教导他们，用和悦的态度使用他们，用严肃认真对待他们，用威严监临他们，用坚决的态度判断他们的罪行。还要访求聪明贤能的卿相、明白事理的官员、忠诚守信的乡长、慈祥和蔼的老师，百姓在这种情况下才可以使用，而不致于发生祸乱。百姓知道有法律，就对上面不恭敬。大家都有争夺之心，用刑法作为根据，而且侥幸得到成功，就不能治理了。夏朝有违犯政令的人，就制定禹刑。商朝有触犯政令的人，就制定汤刑。周朝有触犯政令的人，就制定九刑。三种法律的产生，都处于末世了。现在您辅佐郑国，划定田界水沟，设置毁谤政事的条例，制定三种法规，把刑法铸在鼎上，准备用这样的办法安定百姓，不也是很难的吗？诗说：‘效法文王的德行，每天抚定四方。’又说：‘效法文王，万邦信赖。’像这样，何必要有法律？百姓知道了争夺的依据，将会丢弃礼仪而征用刑书。刑书的一字一句，都要争个明白。触犯法律的案件更加繁多，贿赂到处使用。在您活着的时候，郑国恐怕要衰败吧！肸听说，‘国家将要灭亡，必然多订法律’，恐怕说的就是这个吧！”子产复信说：“像您所说的这样。侨没有才能，不能考虑到子孙，我是用来挽救当前的世界。既然不能接受您的命令，又岂敢忘了您的恩惠？</description>
+      <description>从前先王衡量事情的轻重来断定罪行，不制定刑法，这是害怕百姓有争夺之心。还是不能防止犯罪，因此用道义来防范，用政令来约束，用礼仪来奉行，用信用来保持，用仁爱来奉养。制定禄位，以勉励服从的人，严厉地判罪，以威胁放纵的人。还恐怕不能收效，所以用忠诚来教诲他们，根据行为来奖励他们，用专业知识技艺教导他们，用和悦的态度使用他们，用严肃认真对待他们，用威严监临他们，用坚决的态度判断他们的罪行。还要访求聪明贤能的卿相、明白事理的官员、忠诚守信的乡长、慈祥和蔼的老师，百姓在这种情况下才可以使用，而不致于发生祸乱。百姓知道有法律，就对上面不恭敬。大家都有争夺之心，用刑法作为根据，而且侥幸得到成功，就不能治理了</description>
     </item>
     
     <item>
@@ -1926,33 +1626,7 @@ PDCA是英语单词Plan(计划)、Do(执行)、Check(检查)和Act(纠正)的第
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/literature/%E8%BE%BE%E7%94%9F/</guid>
-      <description>通晓生命实情的人，不会去努力追求对于生命没有什么好处的东西；通晓命运实情的人，不会去努力追求命运无可奈何的事情。养育身形必定先得备足各种物品，可是物资充裕有余而身体却不能很好保养的情况是有的；保全生命必定先得使生命不脱离形体，可是形体没有死去而生命却已死亡的情况也是有的。生命的到来不能推却，生命的离去不能留止。可悲啊！世俗的人认为养育身形便足以保存生命；然而养育身形果真不足以保存生命，那么，世间还有什么事情值得去做呢！虽然不值得去做却不得不去做，内中的操劳或勤苦也就不可避免。
-想要免除操劳形体的情况，不如忘却世事。忘却世事就没有劳苦和拘累，没有劳苦和拘累就算走上了正确的道路，走上了正确的道路就能跟随自然一道生存与变化，跟自然一道生存与变化也就接近于大道了。世俗之事为什么须得舍弃而生命途中的痕迹为什么须得遗忘？舍弃了世俗之事身形就不会劳累，遗忘了生命的涯际精神就不会亏损。身形得以保全而精神得以复本还原，就跟自然融合为一体。天和地，乃是万物（生长、繁育）的父体和母体，（阴阳二气）一旦结合便形成物体，物体一旦离散又成为新的物体产生的开始。形体保全精神不亏损，这就叫做能够随自然的变化而变化；精神汇集达到高度凝聚的程度，返回过来又将跟自然相辅相成。
-列子问[关尹]说：“道德修养臻于完善的至人潜行水中却不会感到阻塞，跳入火中却不会感到灼热，行走于万物之上也不会感到恐惧。请问为什么会达到这样的境界？”
-关尹回答说：“这是因为持守住纯和之气，并不是智巧、果敢所能做到的。坐下，我告诉给你。大凡具有面貌、形象、声音、颜色的东西，都是物体，那么物与物之间又为什么差异很大，区别甚多？又是什么东西最有能耐足以居于他物之先的地位？这都只不过是有形状和颜色罢了。大凡一个有形之物却不显露形色而留足于无所变化之中，懂得这个道理而且深明内中的奥秘，他物又怎么能控制或阻遏住他呢！那样的人处在本能所为的限度内，藏身于无端无绪的混沌中，游乐于万物或灭或生的变化环境里，本性专一不二，元气保全涵养，德行相融相合，从而使自身与自然相通。像这样，他的禀性持守保全，他的精神没有亏损，外物又从什么地方能够侵入呢！
-“醉酒的人坠落车下，虽然满身是伤却没有死去。骨骼关节跟旁人一样而受到的伤害却跟别人不同，因为他的神思高度集中，乘坐在车子上也没有感觉，即使坠落地上也不知道，死、生、惊、惧全都不能进入到他的思想中，所以遭遇外物的伤害却全没有惧怕之感。那个人从醉酒中获得保全完整的心态尚且能够如此忘却外物，何况从[自然之道]中忘却外物而保全完整的心态呢？圣人藏身于自然，所以没有什么能够伤害他。复仇的人并不会去折断曾经伤害过他的宝剑，即使常存忌恨之心的人也不会怨恨那偶然飘来、无心地伤害到他的瓦片，这样一来天下也就太平安宁。没有攻城野战的祸乱，没有残杀戮割的刑罚，全因为遵循了这个道理。
-“不要开启人为的思想与智巧，而要开发自然的真性。开发了自然的真性则随遇而安，获得生存；开启人为的思想与智巧，就会处处使生命受到残害。不要厌恶自然的禀赋，也不忽视人为的才智，人们也就几近纯真无伪了！”
-孔子到楚国去，走出树林，看见一个驼背老人正用竿子粘蝉，就好像在地上拾取一样。
-孔子说：“先生真是巧啊！有门道吗？”驼背老人说：“我有我的办法。经过五、六个月的练习，在竿头累迭起两个丸子而不会坠落，那么失手的情况已经很少了；迭起三个丸子而不坠落，那么失手的情况十次不会超过一次了；迭起五个丸子而不坠落，也就会像在地面上拾取一样容易。我立定身子，犹如临近地面的断木，我举竿的手臂，就像枯木的树枝；虽然天地很大，万物品类很多，我一心只注意蝉的翅膀，从不思前想后左顾右盼，绝不因纷繁的万物而改变对蝉翼的注意，为什么不能成功呢！”
-孔子转身对弟子们说：“运用心志不分散，就是高度凝聚精神，恐怕说的就是这位驼背的老人吧！”
-颜渊问孔子说：“我曾经在觞深过渡，摆渡人驾船的技巧实在神妙。我问他：‘驾船可以学习吗？’摆渡人说：‘可以的。善于游泳的人很快就能驾船。假如是善于潜水的人，那他不曾见到船也会熟练地驾驶船。’我进而问他怎样学习驾船而他却不再回答我。请问他的话说的是什么意思呢？”
-孔子回答说：“善于游泳的人很快就能学会驾船，这是因为他们习以成性适应于水而处之自然。至于那善于潜水的人不曾见到过船就能熟练地驾驶船，是因为他们眼里的深渊就像是陆地上的小丘，看待船翻犹如车子倒退一样。船的覆没和车的倒退以及各种景象展现在他们眼前却都不能扰乱他们的内心，他们到哪里不从容自得！用瓦器作为赌注的人心地坦然而格外技高，用金属带钩作为赌注的人而心存疑惧，用黄金作为赌注的人则头脑发昏内心迷乱。各种赌注的赌博技巧本是一样的，而有所顾惜，那就是以身外之物为重了。大凡对外物看得过重的人其内心世界一定笨拙。”
-田开之拜见周威公。周威公说：“我听说祝肾在学习养生，你跟祝肾交游，从他那儿听到过什么呢？”田开之说：“我只不过拿起扫帚来打扫门庭，又能从先生那里听到什么！”周威公说：“先生不必谦虚，我希望能听到这方面的道理。”田开之说：“听先生说：‘善于养生的人，就像是牧放羊群似的，瞅到落后的便用鞭子赶一赶。’”周威公问：这话说的是什么意思呢？”
-田开之说：“鲁国有个叫单豹的，在岩穴里居住在山泉边饮水，不跟任何人争利，活了七十岁还有婴儿一样的面容；不幸遇上了饿虎，饿虎扑杀并吃掉了他。另有一个叫张毅的，高门甲第、朱户垂帘的富贵人家，无不趋走参谒，活到四十岁便患内热病而死去。单豹注重内心世界的修养可是老虎却吞食了他的身体，张毅注重身体的调养可是疾病侵扰了他的内心世界，这两个人，都不是能够鞭策落后而取其适宜的人。”
-孔子说：“不要进入荒山野岭把自己深藏起来，也不要投进世俗而使自己处处显露，要像槁木一样站立在两者中间。倘若以上三种情况都能具备，他的名声必定最高。使人可畏的道路，十个行人有一个人被杀害，于是父子兄弟相互提醒和戒备，必定要使随行的徒众多起来方才敢于外出，这不是很聪明吗！人所最可怕的，还是枕席上的姿意，还有在饮食间的失度；却不知道为此提醒和戒备，这实在是过错。”
-主持宗庙祭祀的官吏穿好礼服戴上礼帽来到猪圈边，对着栅栏里的猪说：“你为什么要讨厌死呢？我将喂养你三个月，用十天为你上戒，用三天为你作斋，铺垫上白茅，然后把你的肩胛和臀部放在雕有花纹的祭器上，你愿意这样吗？”为猪打算，说是仍不如吃糠咽糟而关在猪圈里，为自己打算，就希望活在世上有高贵荣华的地位，死后则能盛装在绘有文采的柩车上和棺椁中。为猪打算就会舍弃白茅、雕俎之类的东西，为自己打算却想求取这些东西，所不同于猪的原因究竟是什么呢？”
-[齐桓公]在草泽中打猎，[管仲]替他驾车，突然桓公见到了鬼。桓公拉住管仲的手说：“仲父，你见到了什么？”管仲回答：“我没有见到什么。”桓公打猎回来，疲惫困怠而生了病，好几天不出门。
-齐国有个士人叫皇子告敖的对齐桓公说：“你是自己伤害了自己，鬼怎么能伤害你呢？身体内部郁结着气，精魂就会离散而不返归于身，对于来自外界的骚扰也就缺乏足够的精神力量。郁结着的气上通而不能下达，就会使人易怒；下达而不能上通，就会使人健忘；不上通又不下达，郁结内心而不离散，那就会生病。”桓公说：“这样，那么还有鬼吗？”告敖回答：“有。水中污泥里有叫履的鬼，灶里有叫髻的鬼。门户内的各种烦攘，名叫雷霆的鬼在处置；东北的墙下，名叫倍阿鲑蠪的鬼在跳跃；西北方的墙下，名叫攻入阳的鬼住在那里。水里有水鬼罔象，丘陵里有山鬼峷，大山里有山鬼夔，郊野里有野鬼彷徨，草泽里还有一种名叫委蛇的鬼。”桓公接着问：“请问，委蛇的形状怎么样？”告敖回答：“委蛇，身躯大如车轮，长如车辕，穿着紫衣戴着红帽。他作为鬼神，最讨厌听到雷车的声音，一听见就两手捧着头站着。见到了他的人恐怕也就成了霸主了。”
-桓公听了后开怀大笑，说：“这就是我所见到的鬼。”于是整理好衣帽跟皇子告敖坐着谈话，不到一天时间病也就不知不觉地消失了。
-纪渻子为周宣王驯养斗鸡。过了十天周宣王问：“鸡驯好了吗？”纪渻子回答说：“不行，正虚浮骄矜自恃意气哩。”十天后周宣王又问，回答说：“不行，还是听见响声就叫，看见影子就跳。”十天后周宣王又问，回答说：“还是那么顾看迅疾，意气强盛。”又过了十天周宣王问，回答说：“差不多了。别的鸡即使打鸣，它已不会有什么变化，看上去像木鸡一样，它的德行真可说是完备了，别的鸡没有敢于应战的，掉头就逃跑了。”
-孔子在吕梁观赏，瀑布高悬二三十丈，冲刷而起的激流和水花远达四十里，鼋、鼍、鱼、鳖都不敢在这一带游水。只见一个壮年男子游在水中，还以为是有痛苦而想寻死的，派弟子顺着水流去拯救他。忽见那壮年男子游出数百步远而后露出水面，还披着头发边唱边游在堤岸下。孔子紧跟在他身后而问他，说：“我还以为你是鬼，仔细观察你却是个人。请问，游水也有什么特别的门道吗？”那人回答：“没有，我并没有什么特别的方法。我起初是故常，长大是习性，有所成就在于自然。我跟水里的漩涡一块儿下到水底，又跟向上的涌流一道游出水面，顺着水势而不作任何违拗。这就是我游水的方法。”孔子说：“什么叫做‘起初是故常，长大是习性，有所成就在于自然’呢？”那人又回答：“我出生于山地就安于山地的生活，这就叫做故常；长大了又生活在水边就安于水边的生活，这就叫做习性；不知道为什么会这样而这样生活着，这就叫做自然。”
-梓庆能削刻木头做鐻，鐻做成以后，看见的人无不惊叹好像是鬼神的工夫。鲁侯见到便问他，说：“你用什么办法做成的呢？”梓庆回答道：“我是个做工的人，会有什么特别高明的技术！虽说如此，我还是有一种本事。我准备做鐻时，从不敢随便耗费精神，必定斋戒来静养心思。斋戒三天，不再怀有庆贺、赏赐、获取爵位和俸禄的思想；斋戒五天，不再心存非议、夸誉、技巧或笨拙的杂念；斋戒七天，已不为外物所动仿佛忘掉了自己的四肢和形体。正当这个时候，我的眼里已不存在公室和朝廷，智巧专一而外界的扰乱全都消失。然后我便进入山林，观察各种木料的质地；选择好外形与体态最与鐻相合的，这时业已形成的鐻的形象便呈现于我的眼前，然后动手加工制作；不是这样我就停止不做。这就是用我木工的纯真本性融合木料的自然天性，制成的器物疑为神鬼工夫的原因，恐怕也就出于这一点吧！”
-东野稷因为善于驾车而得见鲁庄公，他驾车时进退能够在一条直线上，左右转弯形成规整的弧形。庄公认为就是编织花纹图案也未必赶得上，于是要他转上一百圈后再回来。颜阖遇上了这件事，入内会见庄公，说：“东野稷的马一定会失败的。”庄公默不作声。不多久，东野稷果然失败而回。庄公问：“你为什么事先就知道定会失败呢？”颜阖回答说：“东野稷的马力气已经用尽，可是还要它转圈奔走，所以说必定会失败的。”
-工倕随手画来就胜过用圆规与矩尺画出的，手指跟随事物一道变化而不须用心留意，所以他心灵深处专一凝聚而不曾受过拘束。忘掉了脚，便是鞋子的舒适；忘掉了腰，便是带子的舒适；知道忘掉是非，便是内心的安适；不改变内心的持守，不顺从外物的影响，便是遇事的安适。本性常适而从未有过不适，也就是忘掉了安适的安适。
-有个名叫孙休的人，走到门前就惊叹不已地询问他的老师扁庆子，说：“我安居乡里不曾受人说过道德修养差，面临危难也没有人说过不勇敢；然而我的田地里却从未遇上过好年成，为国家出力也未遇上圣明的国君，被乡里所摈弃，受地方官放逐，而我对于上天有什么罪过呢？我怎么会遇上如此的命运？”
-扁子说：“你不曾听说过那道德修养极高的人的身体力行吗？忘却自己的肝胆，也遗弃了自己的耳目，无心地纵放于世俗尘垢之外，自由自在地生活在不求建树的环境中，这就叫做有所作为而不自恃，有所建树而不自得。如今你把自己打扮得很有才干用以惊吓众人，用修养自己的办法来突出他人的污秽，毫不掩饰地炫耀自己就像在举着太阳和月亮走路。你得以保全形体和身躯，具备了九窍，没有中道上夭折于聋、瞎、跛、瘸而处于寻常人的行列，也真是万幸了，又有什么闲暇抱怨上天呢！你还是走吧！”
-孙休走出屋子，扁子回到房里。不多一会儿，扁子仰天长叹，弟子问道：“先生为什么长叹呢？”扁子说：“刚才孙休进来，我把道德修养极高的人的德行告诉给他，我真担心他会吃惊以至迷惑更深。”弟子说：“不对哩。孙休所说的话是正确的吗？先生所说的话是错误的吗？错误的本来就不可能迷惑正确的。孙休所说的话是不对的吗？先生所说的话是正确的吗？他本来就因迷惑而来请教，又有什么过错呀！”
-扁子说：“不是这样的。从前有只海鸟飞到鲁国都城郊外，鲁国国君很喜欢它，用‘[太牢]来宴请它，奏‘[九韶]，乐来让它快乐，海鸟竟忧愁悲伤，眼花缭乱，不敢吃喝。这叫做按自己的生活习性来养鸟。假若是按鸟的习性来养鸟，就应当让它栖息于幽深的树林，浮游于大江大湖，让它吃泥鳅和小鱼，这本是极为普通的道理而已。如今的孙休，乃是管窥之见、孤陋寡闻的人，我告诉给他道德修养极高的人的德行，就好像用马车来托载小老鼠，用钟鼓的乐声来取悦小鴳雀一样。他又怎么会不感到吃惊啊！</description>
+      <description>通晓生命实情的人，不会去努力追求对于生命没有什么好处的东西；通晓命运实情的人，不会去努力追求命运无可奈何的事情</description>
     </item>
     
     <item>
@@ -1961,10 +1635,7 @@ PDCA是英语单词Plan(计划)、Do(执行)、Check(检查)和Act(纠正)的第
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/literature/%E9%81%93%E8%B7%AF%E4%BB%A5%E7%9B%AE/</guid>
-      <description>周朝的土地基本制度是“井田制”，将大块的田地分割成九块，排成“井”字形。中央一块田地由大家合耕，收获归国家所有，为公田；其余八块收获物归各家所有，为私田。井田制下受田的人，平时向授予者交纳贡赋，战时有服兵役的义务。天子是最高的土地所有者，有权向每一位生活在土地上的贵族和庶民取得贡赋，有权向接收土地者收回土地。 朝廷获得税赋的方法有两种，其一，庶民助耕公田；其二，诸侯的朝觐贡献。到周夷王时，已有诸侯不朝。同时，随着私田的不断开发，使西周的井田制度遭到破坏。国人不断依靠从山林湖泽捕鱼、打猎营利，这都对西周朝廷的经济收入造成了巨大的威胁。 西周自周成王、周康王之后，社会矛盾开始激化。到周昭王、周穆王时期，由于贵族内部的分化现象越来越严重，许多失势的贵族和贫困的士阶层，社会地位不断下降，也在城中与一般平民杂处。
-周夷王死后，其子周厉王姬胡继位。为了改变朝廷的经济状况，周厉王任用荣夷公为卿士，实行“专利”政策，将山林湖泽改由天子直接控制，不准国人进入谋生。 周都镐京的国人因不满周厉王的政策，怨声载道。大臣召穆公进谏说：人们已经受不了了，都在议论纷纷。周厉王又命令卫巫监谤，禁止国人谈论国事，违者杀戮。 在周厉王的高压政策下，国人不敢在公开场合议论朝政。人们在路上碰到熟人，也不敢交谈招呼，只用眼色示意一下，然后匆匆地走开，这就是“道路以目”。 周厉王得知后十分满意。对召穆公说：“我有能力制止人们的非议，他们再也不敢议论了！”
-召穆公劝谏周厉王道：“这是用强制的手段来堵住民众的嘴啊！这样堵住人们的嘴，就像堵住了一条河。河一旦决口，要造成灭顶之灾；人们的嘴被堵住了，带来的危害远甚于河水！治水要采用疏导的办法，治民要让天下人畅所欲言。“周厉王对此却置若罔闻。
-公元前841年，因不满周厉王的暴政，镐京的国人集结起来，手持棍棒、农具，围攻王宫，要杀周厉王。周厉王下令调兵遣将。臣下回答说：“我们周朝寓兵于国人，国人就是兵，兵就是国人。国人都暴动了，还能调集谁呢？”周厉王带领亲信逃离镐京，沿渭水河岸，一直逃到彘， 并于公元前828年病死于该地。 国人攻进王宫，没有找到周厉王，便转而寻找太子姬静。召穆公将姬静藏了起来，国人围住召穆公家，要召穆公交出太子，召穆公以其子代王太子，国人把召穆公之子杀之。 在大臣周定公、召穆公的劝解下，国人平息了一些怨恨，纷纷离去。此时宗周无主，周公和召公根据贵族们的推举，暂时代理政事，重要政务由六卿合议。这种政体称为共和。</description>
+      <description>这是用强制的手段来堵住民众的嘴啊！这样堵住人们的嘴，就像堵住了一条河。河一旦决口，要造成灭顶之灾；人们的嘴被堵住了，带来的危害远甚于河水！治水要采用疏导的办法，治民要让天下人畅所欲言</description>
     </item>
     
     <item>
@@ -1973,8 +1644,7 @@ PDCA是英语单词Plan(计划)、Do(执行)、Check(检查)和Act(纠正)的第
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/literature/%E9%97%AE%E8%AF%B4/</guid>
-      <description>原文： 君子之学必好问。问与学，相辅而行者也。非学无以致疑，非问无以广识；好学而不勤问，非真能好学者也。理明矣，而或不达于事；识其大矣，而或不知其细，舍问，其奚决焉？ 贤于己者，问焉以破其疑，所谓“就有道而正”也。不如己者，问焉以求一得，所谓“以能问于不能，以多问于寡”也。等于己者，问焉以资切磋，所谓交相问难，审问而明辨之也。《书》不云乎？“好问则裕。”孟子论：“求放心”，而并称曰“学问之道”，学即继以问也。子思言“尊德性”，而归于“道问学”，问且先于学也。 古之人虚中乐善，不择事而问焉，不择人而问焉，取其有益于身而已。是故狂夫之言，圣人择之，刍荛之微，先民询之，舜以天子而询于匹夫，以大知而察及迩言，非苟为谦，诚取善之弘也。三代而下，有学而无问，朋友之交，至于劝善规过足矣，其以义理相咨访，孜孜焉唯进修是急，未之多见也，况流俗乎？ 是己而非人，俗之同病。学有未达，强以为知；理有未安，妄以臆度。如是，则终身几无可问之事。贤于己者，忌之而不愿问焉；不如己者，轻之而不屑问焉；等于己者，狎之而不甘问焉，如是，则天下几无可问之人。人不足服矣，事无可疑矣，此唯师心自用耳。夫自用，其小者也；自知其陋而谨护其失，宁使学终不进，不欲虚以下人，此为害于心术者大，而蹈之者常十之八九。 不然，则所问非所学焉：询天下之异文鄙事以快言论；甚且心之所已明者，问之人以试其能，事之至难解者，问之人以穷其短。而非是者，虽有切于身心性命之事，可以收取善之益，求一屈己焉而不可得也。嗟乎！学之所以不能几于古者，非此之由乎？ 且夫不好问者，由心不能虚也；心之不虚，由好学之不诚也。亦非不潜心专力之敌，其学非古人之学，其好亦非古人之好也，不能问宜也。 智者千虑，必有一失。圣人所不知，未必不为愚人之所知也；愚人之所能，未必非圣人之所不能也。理无专在，而学无止境也，然则问可少耶？《周礼》，外朝以询万民，国之政事尚问及庶人，是故贵可以问贱，贤可以问不肖，而老可以问幼，唯道之所成而已矣。 孔文子不耻下问，夫子贤之。古人以问为美德，而并不见其有可耻也，后之君子反争以问为耻，然则古人所深耻者，后世且行之而不以为耻者多矣，悲夫！
-译文： 君子学习必定喜爱问。“问”与“学”是相辅相成地进行的，不“学”就不会发现疑问，不“问”就不能增长知识。喜爱学习却不多问，不是真的喜爱学习的人。道理明白了，但或许还不能应用于实际，认识了那些大的原则、纲领、总体，可是还可能不了解那些细节，对于这些问题除了问，怎么能解决问题呢？ 对于比自己道德才能高的人，向他们问，借以破除那疑问，所说的到有道德有学问的人那里去匡正自己。对于不如自己的人，向他们问，借以求得一点正确的见解，这就是曾子所说的以高才能向低才能的人问，以道德高知识多向道德低知识少的人问。对同自己水平相等的人，向他们问，借以共同研究，这就是《中庸》所说的互相诘问，详细地考察，明确地分辨它。《尚书》不是说吗？“喜爱问的人，学问知识就丰富。”孟子论述：“找回自己的放纵散漫的心”的时候，并提“学问之道”，“学”之后就紧跟着“问”。子思谈“重视品德修养”时，归结到要好问勤学，在他的提法中“问”并且在“学”的前面。 古代的人虚心采纳善言善事，不挑选事情地问，不挑选人地问，只要能求取那有益于自己修养和学业的就可以了。因此，狂妄的普通人的话，圣人也采纳它，地位低微的樵夫，古圣先王也询问他，舜帝有天子的身份都向平民询问，以他们的大智却注意到浅近平常的意见，不是偶然的谦虚，实在是要从多方面听取有益的意见。三代以后，有“学”而没有“问”，朋友间的交往，能做到规劝做好事，不做坏事就不错了，那种在大是大非问题上互相请教，勤勉地只是以进修为急务的人未多见，更何况世俗的人呢？ 认为自己对，别人不对，这是世俗人的共同毛病，学习有未贯通不理解的地方，却偏偏以为理解，所持的道理有不稳妥的地方，却胡乱地凭主观猜测，像这样，就终生几乎都没有什么可问的事了。对比自己道德才能高的人，就妒忌他，不愿意向他问，对不如自己的人，就轻视他，认为不值得向他问，对同自己水平相同的人，抱着嬉戏的态度而不敬重他，不甘愿向他问，像这样，就天下几乎没有可以问的人了。什么人都不值得佩服了，什么事都没有可疑的了，这只是自以为是罢了。自以为是，那错误还是小的；自己知道自己的浅薄却严密地掩盖自己的过错，宁愿让学习最终不进步，也不愿意虚心向别人请教，这样危害自己的内心修养，错误可就大了，而陷入这种大错误的人常常占十分之八九。 不这样的话，就所问的也不是他所学的：如问一些天下的奇字僻典和琐屑事物来说说好玩；甚至自己心里所已经明白的问题，却故意拿它，问别人，来试试那人的才能；或者非常难解答的事情问别人，来逼使那人难堪。如果不是这样，或者即使有与自己思想品德修养有密切关系的事情，可以收到得到教益的效果的，要压低一下自己的尊严虚心向别人请教也不能做到。唉！学习之所以不能接近古人，不是正由于这原因吗？ 而且不喜爱问的人，是由于不能虚心；不能虚心是由于不诚心实意喜爱学习。也不是不专心用功的缘故，他学习的不是古代儒家学习的东西，他喜爱的也不是古代儒家喜爱的东西，不善于问是理所当然的。 聪明的人考虑一千次，也一定会出现一次错误。圣人所不了解的事物，普通的人不一定也不了解；普通的人所能做的，圣人不一定能做。真理不专门存在于某人，学习是没有止境的，那么，“问”可以少得了吗？《周礼》说，朝堂之外要询问百姓对朝政的意见，国家的大事还问到平民。所以贵人可以问身份低的人，道德才能高的人可以问道德才能低的人，老人可以问年轻的人，只考虑道德学问方面的成就罢了。 孔子不以向比他低下的人请教为耻辱，孔子认为他道德学问高。古人把“问”作为美德，而并不认为它是可耻的，后代的君子反而争先把“问”当作耻辱，那么古人所深深地感到羞耻的事，后代人却做着而不以为耻的就多了，可悲啊！ 真实可信的话不漂亮，漂亮的话不真实。善良的人不巧说，巧说的人不善良。真正有知识的人不卖弄，卖弄自己懂得多的人不是真有知识。圣人是不存占有之心的，而是尽力照顾别人，他自己也更为充足；他尽力给予别人，自己反而更丰富。自然的规律是让万事万物都得到好处，而不伤害它们。圣人的行为准则是，做什么事都不跟别人争夺。</description>
+      <description>真实可信的话不漂亮，漂亮的话不真实。善良的人不巧说，巧说的人不善良。真正有知识的人不卖弄，卖弄自己懂得多的人不是真有知识。圣人是不存占有之心的，而是尽力照顾别人，他自己也更为充足；他尽力给予别人，自己反而更丰富。自然的规律是让万事万物都得到好处，而不伤害它们。圣人的行为准则是，做什么事都不跟别人争夺</description>
     </item>
     
     <item>
@@ -1983,19 +1653,7 @@ PDCA是英语单词Plan(计划)、Do(执行)、Check(检查)和Act(纠正)的第
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/literature/%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86%E4%B9%9D%E5%A4%A7%E4%BD%93%E7%B3%BB/</guid>
-      <description>项目管理九大体系内容：
-一、项目综合管理：项目计划制订，项目计划执行，总体变更控制。
-二、项目范围管理：项目内容的制定和控制。
-三、项目时间管理：定义活动，活动安排，活动工期设计，进度计划制定，进度计划控制。
-四、项目成本管理：谋划、跟踪、财务数据分析。
-五、项目风险定理：客户风险、技术风险、业务管理风险、项目管理风险、估计险、个人风险、项目环境风险、流程风险。
-六、项目人力资源的管理：通过组织计划，人员获取，团队建设，达到高效利用人力资源。
-七、项目沟通管理：沟通计划编制，信息发布，绩效报告，管理收尾。这项目工作占项目经理工作时间的75%-90。
-八、项目质量管理：项目本身质量管理，产品或服务的质量管理。
-质量计划：识别适用于项目和产品的质量标准。
-质量保证：整个项目中执行的计划和系统活动。以保项目符合相关质量标准。
-质量控制：即在项目的过程中进行监视，以保证质量。
-九、项目采购管理：采购计划编制，编制询价计划，询价，供应商选择，合同管理，合同收尾</description>
+      <description>一、项目综合管理：项目计划制订，项目计划执行，总体变更控制。</description>
     </item>
     
     <item>
@@ -2004,52 +1662,7 @@ PDCA是英语单词Plan(计划)、Do(执行)、Check(检查)和Act(纠正)的第
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/literature/%E9%AD%94%E5%9F%9F%E4%BC%A0%E8%AF%B4/</guid>
-      <description>引：谜#亚特大陆的中央，有一座石门，门上有锁，锁上有字，写着：“解开此锁者，将成四海之王。”
-据说四海之王阿格里斯曾长久矗立门前，最终，他拔出剑，仰天高呼：“这就是钥匙，让整个世界在我剑下发抖吧！！”
-剑落锁断，门开，绝代英雄昂然走入石门，一去不返！……
-从那时起，在这片大陆上开始流行一个谜语：“正午的阳光下，在狮子留下的鹰的影子里，即为众神之国。”
-有人说，这也许仅仅是天神对人类的戏弄，但更多的人坚信，拥有他的人，必须是相信他的人。
-一 创始#万神之父是最初者，乃无中之有 乱中之治，一瞬中之永恒，极暗中之明光。
-万神之父是最高者，其所想必现 所言必信，目之所及，世界创生，行之所止，万物齐歌&amp;hellip;..
-——《万物之书》第1章第3页
-据说，创世神、众神之父科洛诺斯创造了亚特兰迪斯大陆上的一切和它的管理者——众神.他是整个世界的根源。
-“科洛诺斯苏醒于是便有了白昼
-科洛诺斯沉睡于是便有了黑夜
-科洛诺斯愤怒于是便有了火焰
-科洛诺斯哭泣于是便有了海洋
-&amp;hellip;&amp;hellip;
-科洛诺斯乃初始之始 原因之因&amp;hellip;&amp;hellip;.”
-——《圣诗 创始》
-从一些古老经典的残卷中，我们还能依稀看到创始神当年创世的痕迹。
-“如水流向低处，实在不断流向空无….”
-——《圣诗 有无》
-有得到便有失去，万神之父从“虚”中产生了世界，被提走的那部分“虚”便成为了“无”。如同饥饿渴求食肴，“无&amp;quot;贪婪地将这个世界牵引向毁灭，就是创始神也感到威胁。
-他将自身能量凝成“魔魂水晶”阻挡空无，让世界保持稳定。
-“是长生，是真母，让我们高呼盖亚之名。
-是崇光，是秩序，让我们高呼撒拉之名。
-是智慧，是神秘，让我们高呼欧斯之名。
-是混沌，是消逝，让我们高呼奈落之名。
-是伟力，是争战，让我们高呼寇德之名&amp;hellip;&amp;hellip; ”
-——《圣诗 诸天》
-万神之父最终创造诸神保护水晶，要求他们不得离开圣山。而自身沉沉睡去&amp;hellip;&amp;hellip;.
-二 魔族#“在各个种族的历史记载中，远古时期几乎毫无例外的指向无边黑暗，只有魔族例外，他们在火中诞生。”
-—— 人类历史学者 拉克利
-年复一年，时光如流水般消逝，万物众生在轮回中建立文明，苦守于神山希律斯的神族却渐渐感到了不安与躁动，尽管他们作为生命的最顶端，享受其他生命的供奉，但空有力量却无法使用的痛苦却让每个神族的欲望日渐扭曲，享乐之风逐渐盛行。
-不知从何时开始，便有神偷偷下山去世间寻欢作乐——魔族据说就是一次神人婚姻的产物——虽然混沌之神奈落总是装作什么也不知道，但是其他神族还是一眼看出那种生物的血色瞳孔缘自何方。
-拥有神的血统和近于人类的繁殖能力，魔族迅速地在竞争中确立了自己的地位。尽管后世的学者们对创始神是否早已预见魔族产生争论不休，但正如大精灵学者徨菲所说：“从创始神让诸神管理世界的名义和力量却不给任何权力开始，这个失衡世界的悲剧便已成定局。”
-约北历前1000年，魔族的伟大君主斯卡鲁发动了第一次灭世战争。庞大的魔族军队从魔族首都巴尔索伦出发，穿越黑月峡谷，很快便占领了谷口的“斯卡鲁地”（今杰明省西芙河流域）并以此为根基，征讨四方。传说，魔族指挥曾经在此地拜见斯卡鲁，询问皇帝意欲征服何处，“所见之处。”正在用餐的皇帝只是淡淡一语，甚至没有抬头&amp;hellip;&amp;hellip;.
-魔族忠实的履行了他们皇帝的命令，从那一年春天开始，大批的部队呈辐射状高歌猛进，指向四方，每到一地便继续辐射开去，如同在池塘中荡漾的波光。这种情况一直持续到约北历前950年，一队魔族率先回到魔都声明他们看到了“极北飘满白色石头的大海”（雪狼冰湖）”。
-第一次灭世战争因此结束。
-出发时的数百万魔族军队最终只有不到十万人归来，更多的魔族已经因为行军过于遥远而在50年后彻底没有音讯。这次战争并不惨烈却影响深远。一方面大部分的种族几乎不知道战争为何物，轻易便被集体屠杀或沦为奴隶，为魔族赢得了大批疆土（实际控制区域在开始时甚至超过了整个亚特大陆的一半）；另一方面魔族无法返乡的部队几乎散布于亚特大陆的每个角落，和当地生物相互融合，衍生出各种各样的魔物部落来。
-三 黑暗#“人类总是说，在最黑的暗夜过后，光明就要来到，但我认为这不过是文字游戏而已，因为你永远也无从得知，何时最为黑暗。”
-——魔族大帝斯卡鲁
-对于魔族来说北历前1000年到前790年这段日子是彻头彻尾的辉煌，但对于其他占领区的种族来说，无疑是遭遇了一场百年的梦魇。混沌的后代们根本不在意其奴隶的存活，只是单纯的把他们看成工具而已，他们甚至剥夺人类睡觉和精灵冥想的权利，让他们在无穷的劳作中倒下，所幸的是魔族监工用餐的时段多且长，那些没有被相中的肉食们可以借机生活和休息，以维系其生命的存在。
-但是最吃苦耐劳的种族也不能容忍的是，魔族让奴隶工作不是为了建设，不是为了财富和物欲，甚至不是为了某种娱乐，只是单纯而机械执行让他们成为奴隶的命令而已。今天建成的宏伟宫殿可能明天就被下令拆掉，最卖力强壮的奴隶可能最早成为肉食，人类可能被命令去点火，而精灵可能被指使去伐木&amp;hellip;&amp;hellip;而魔族似乎也没有灭绝他们的打算，他们鼓励每个种族生育。这些让人啼笑皆非的行为暴露的正是魔族的混沌本性——越是底层的魔族行为越混沌，越是伟大的魔族反而越象人类。
-百年间，各族的反抗此起彼伏，不过反抗和屠杀如影随形，实力之悬殊让奴隶们看不到任何希望。不知是因为特别愚蠢还是特别聪明，人类忍受了奴役和折磨，竟然从未大规模反抗过&amp;hellip;&amp;hellip;这种忍耐的直接后果就是人类的数量不断增加（因为各地都没有被大规模屠灭）。成为亚特大陆上如老鼠一般常见的动物。
-人类的后代不断歌颂他们祖先的忍辱负重，认为他们未卜先知甘愿牺牲。而精灵学者长期分析的结果是：“人类寿命最短，往往还没有来得及形成反抗精神就死去了。反是那些长命或早熟的种族无法容忍无穷的折磨。”这个论调让人类和精灵后来相互仇视了数年之久。
-北历前790年，如太阳的光芒刺破黑暗，先驱者赫尔基里诞生于亚特大陆东部阿诺萨城的奴隶营中，据说他在曾在迁徙中拣到了一本通用语的圣诗（大部分圣诗都用只有祭祀懂得的圣言写成，通用语版本十分罕见）这极大的影响了他的信仰并促成了他的成熟。最终，他逃出了奴隶营。
-“诸神保佑，我甚至不敢相信我已经脱逃。背后依稀传来火光和惨呼声，我知道我所在的奴隶营已遭遇报复,我能想象朋友们临死前对我的诅咒&amp;hellip;.愿我不幸的母亲能原谅我，她已经老了&amp;hellip;&amp;hellip;.
-我拖着颤抖的双腿，踉踉跄跄地迎向无边黑暗。魔族卫兵的鲜血正在我的手上逐渐凝结，原来魔族也会被杀死，这个事实令人鼓舞。黑夜的清风吹拂我的脸庞，仿佛自由之神的呼吸，总有一天，魔族鲜血将变成人类光明的自由。而我，赫尔基里，就是转化者……”。</description>
+      <description>如水流向低处，实在不断流向空无</description>
     </item>
     
     <item>
@@ -2457,6 +2070,20 @@ SELINUX 介绍以及如何在 CENTOS 7 中使用#Security Enhanced Linux 可�
       
       <guid>https://wangyijie.store/posts/posts/</guid>
       <description>article is in the sub direcotry#</description>
+    </item>
+    
+    <item>
+      <title>代码覆盖率</title>
+      <link>https://wangyijie.store/posts/angluar/%E4%BB%A3%E7%A0%81%E8%A6%86%E7%9B%96%E7%8E%87/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/angluar/%E4%BB%A3%E7%A0%81%E8%A6%86%E7%9B%96%E7%8E%87/</guid>
+      <description>&lt;h1 id=&#34;代码覆盖率&#34;&gt;
+  代码覆盖率
+  &lt;a class=&#34;anchor&#34; href=&#34;#%e4%bb%a3%e7%a0%81%e8%a6%86%e7%9b%96%e7%8e%87&#34;&gt;#&lt;/a&gt;
+&lt;/h1&gt;
+&lt;p&gt;With the Angular CLI we can run unit tests as well as create code coverage reports. Code coverage reports allow us to see any parts of our code base that may not be properly tested by our unit tests.&lt;br&gt;
+用Angular CLI我们能运行单元测试并创建代码覆盖率报告。代码覆盖率报告允许我们看到我们的代码库中的任何部分可能无法通过我们的单元测试。&lt;/p&gt;</description>
     </item>
     
   </channel>

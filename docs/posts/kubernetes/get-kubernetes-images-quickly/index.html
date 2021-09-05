@@ -3,13 +3,9 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="open:#https://katacoda.com/courses/kubernetes/playground
-check images#kubeadm config images list W0601 03:36:09.535740 16500 configset.go:202] WARNING: kubeadm cannot validate component configs for API groups [kubelet.config.k8s.io kubeproxy.config.k8s.io] k8s.gcr.io/kube-apiserver:v1.18.3 k8s.gcr.io/kube-controller-manager:v1.18.3 k8s.gcr.io/kube-scheduler:v1.18.3 k8s.gcr.io/kube-proxy:v1.18.3 k8s.gcr.io/pause:3.2 k8s.gcr.io/etcd:3.4.3-0 k8s.gcr.io/coredns:1.6.7
-exceute script#docker login --username=hi30567721@aliyun.com --password=youpass registry.cn-shenzhen.aliyuncs.com for i in `kubeadm config images list | grep k8s.gcr.io` do echo $i; docker pull $i docker tag $i registry.cn-shenzhen.aliyuncs.com/wangyijie/${i##*/} docker push registry.cn-shenzhen.aliyuncs.com/wangyijie/${i##*/} done ">
+<meta name="description" content="https://katacoda.com/courses/kubernetes/playground">
 <meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="" />
-<meta property="og:description" content="open:#https://katacoda.com/courses/kubernetes/playground
-check images#kubeadm config images list W0601 03:36:09.535740 16500 configset.go:202] WARNING: kubeadm cannot validate component configs for API groups [kubelet.config.k8s.io kubeproxy.config.k8s.io] k8s.gcr.io/kube-apiserver:v1.18.3 k8s.gcr.io/kube-controller-manager:v1.18.3 k8s.gcr.io/kube-scheduler:v1.18.3 k8s.gcr.io/kube-proxy:v1.18.3 k8s.gcr.io/pause:3.2 k8s.gcr.io/etcd:3.4.3-0 k8s.gcr.io/coredns:1.6.7
-exceute script#docker login --username=hi30567721@aliyun.com --password=youpass registry.cn-shenzhen.aliyuncs.com for i in `kubeadm config images list | grep k8s.gcr.io` do echo $i; docker pull $i docker tag $i registry.cn-shenzhen.aliyuncs.com/wangyijie/${i##*/} docker push registry.cn-shenzhen.aliyuncs.com/wangyijie/${i##*/} done " />
+<meta property="og:description" content="https://katacoda.com/courses/kubernetes/playground" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://wangyijie.store/posts/kubernetes/get-kubernetes-images-quickly/" /><meta property="article:section" content="posts" />
 
@@ -20,7 +16,7 @@ exceute script#docker login --username=hi30567721@aliyun.com --password=youpa
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.46181bc93375ba932026e753b37c40e6ff8bb16a9ef770c78bcc663e4577b1ba.css" integrity="sha256-RhgbyTN1upMgJudTs3xA5v&#43;LsWqe93DHi8xmPkV3sbo=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.a070b2dd452cb474e30248358b5ef77b98384931c60a9e827b5a4dac3fefed89.js" integrity="sha256-oHCy3UUstHTjAkg1i173e5g4STHGCp6Ce1pNrD/v7Yk=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.e03f7285907974dc7344f2e5e1442ed3b50de4dfa5bcf431ba1efb67489bd5fc.js" integrity="sha256-4D9yhZB5dNxzRPLl4UQu07UN5N&#43;lvPQxuh77Z0ib1fw=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -301,7 +297,19 @@ https://github.com/alex-shpak/hugo-book
 
 
   
+  <div>
+    
+      <a href="/categories/development/">Development</a>, 
+      <a href="/categories/opetration/">Opetration</a>
+  </div>
+  
 
+  
+  <div>
+    
+      <a href="/tags/wangyijie/">wangyijie</a>, 
+      <a href="/tags/kubernetes/">Kubernetes</a>
+  </div>
   
 
 

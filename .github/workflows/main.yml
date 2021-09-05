@@ -47,9 +47,14 @@ jobs:
           ls
           hugo version
           hugo -d docs
-          git remote -v
-          git config user.email "785471184@qq.com"
-          git config user.name "wangyijie"
+      - name: Commit files
+        run: |
+          git config --local user.email "785471184@qq.com"
+          git config --local user.name "github-action-bot"
           git add docs
-          git commit -m "$(date)"
-          git push wangyijie master
+          git commit -m "$(date)" -a
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ github.ref }}

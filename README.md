@@ -9,4 +9,10 @@
 # build:
 hugo -d .\docs
 git add .\docs
+git commit -m "$(date)"
+ git commit --amend
+
+
+# convert by pandoc
+ pandoc.exe .\docker-overlay-networks.html -f html -t markdown -o docker-overlay-networks.md
 

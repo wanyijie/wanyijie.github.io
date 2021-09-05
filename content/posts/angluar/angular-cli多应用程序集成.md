@@ -1,3 +1,12 @@
+---
+summary: "Angular CLI 支持多应用程序在一个项目中，您可以使用 `.angular-cli.json` 中的应用程序数组来列出要用于不同应用程序的文件和文件夹。"
+tags:
+    - wangyijie
+    - angular
+categories:
+    - Development
+    - Opetration
+---
 # Multiple Apps integration
 # 多应用程序集成
 

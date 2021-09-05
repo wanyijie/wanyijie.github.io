@@ -1,3 +1,12 @@
+---
+summary: "GCR Proxy Cache服务器相当于一台GCR镜像服务器，国内用户可以经由该服务器从[gcr.io](http://gcr.io/)下载镜像"
+tags:
+    - wangyijie
+    - kubernetes
+categories:
+    - Development
+    - Opetration
+---
 # GCR Proxy Cache 帮助
 
 GCR Proxy Cache服务器相当于一台GCR镜像服务器，国内用户可以经由该服务器从[gcr.io](http://gcr.io/)下载镜像。

@@ -1,3 +1,12 @@
+---
+summary: "保持项目缺陷肃清的最好方法之一是通过测试套件，但忘记随时运行测试很容易。这就是持续集成（CI）服务器的用武之地。您可以设置您的项目存储库，以便您的测试可以在每次提交和提交请求时运行。"
+tags:
+    - wangyijie
+    - angular
+categories:
+    - Development
+    - Opetration
+---
 # Continuous Integration
 # 持续集成
 

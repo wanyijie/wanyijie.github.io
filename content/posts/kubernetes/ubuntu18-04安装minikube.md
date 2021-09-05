@@ -1,3 +1,12 @@
+---
+summary: "设置minikube使用的虚拟化环境， 启动miniKube环境"
+tags:
+    - wangyijie
+    - kubernetes
+categories:
+    - Development
+    - Opetration
+---
 1. 使用kvm2 ,检查命令看到关键字即可：
 ```egrep --color 'vmx|svm' /proc/cpuinfo```
 2. 安装kvm依赖：

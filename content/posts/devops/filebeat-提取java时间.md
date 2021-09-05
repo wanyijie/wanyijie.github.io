@@ -1,3 +1,12 @@
+---
+summary: ""
+tags:
+    - wangyijie
+    - DevOps
+categories:
+    - Development
+    - Opetration
+---
 日志收集可能因机器性能而产生延迟，filebeat默认10秒扫描一次文件，收集时间集中也会导致日志按时间排序混乱，container处理器会降低日志写入时间的精度，所以提取java输出日志的时间有利于排序查看日志，java日志的写入时间大多精确到微秒，可能不足以正确排序，还可以借助filebeat 记录的offset排序.
 
 <!--more-->

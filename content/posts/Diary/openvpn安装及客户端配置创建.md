@@ -1,3 +1,12 @@
+---
+summary: "install openvpn"
+tags:
+    - wangyijie
+    - vpn
+categories:
+    - Development
+    - Opetration
+---
 # 文档即命令行 
 ```
 OVPN_DATA="vpn-data"

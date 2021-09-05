@@ -1,3 +1,12 @@
+---
+summary: "使用 webpacks 开发服务器中的[代理支持], 我们可以劫持某些 url 并将它们发送到后端服务器。我们这样做是通过传递一个文件给 --proxy-config 选项。"
+tags:
+    - wangyijie
+    - angular
+categories:
+    - Development
+    - Opetration
+---
 # Proxy To Backend 
 # 代理后端 
 

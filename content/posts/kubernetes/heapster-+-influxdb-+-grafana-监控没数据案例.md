@@ -1,3 +1,12 @@
+---
+summary: "influxdb没有图形界面了，命令工具也不易安装，curl最方便，不过格式需要注意，我参照了许多才找到合适的"
+tags:
+    - wangyijie
+    - kubernetes
+categories:
+    - Development
+    - Opetration
+---
 ## 现象
 通过grafana查看部分容器没有监控数据
 ## 关键信息

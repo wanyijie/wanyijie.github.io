@@ -1,3 +1,12 @@
+---
+summary: "Java 8u131及以上版本开始支持了Docker的cpu和memory限制。"
+tags:
+    - wangyijie
+    - container
+categories:
+    - Development
+    - Opetration
+---
 ## java8及java9
 
 Java 8u131及以上版本开始支持了Docker的cpu和memory限制。

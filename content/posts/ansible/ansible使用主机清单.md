@@ -1,3 +1,11 @@
+---
+tags:
+    - wangyijie
+    - ansible
+categories:
+    - Development
+    - Opetration
+---
 Ansible同时针对基础架构中的多个系统。它通过选择Ansible库存中列出的系统部分来实现这一点，默认情况下将保存在该位置`/etc/ansible/hosts`。您可以使用命令行上的选项指定不同的清单文件。
 <!--more-->
 `-i <path>`

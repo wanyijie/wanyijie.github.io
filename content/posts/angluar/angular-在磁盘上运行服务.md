@@ -1,3 +1,11 @@
+---
+summary: "CLI支持通过运行 `ng serve` 来为用户运行实时浏览器重新加载体验。这将在文件保存时编译应用程序，并用新编译的应用程序重新载入浏览器。"
+tags:
+    - wangyijie
+categories:
+    - Development
+    - Opetration
+---
 # Serve from Disk
 # 在磁盘上运行服务
 

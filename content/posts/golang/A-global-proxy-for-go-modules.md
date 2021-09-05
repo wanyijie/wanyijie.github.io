@@ -1,4 +1,12 @@
-
+---
+summary: "export GOPROXY=https://goproxy.io"
+tags:
+    - wangyijie
+    - golang
+categories:
+    - Development
+    - Opetration
+---
 First, you will need to enable the Go Modules feature and configure Go to use the proxy.
 bash:
 ```

@@ -1,3 +1,12 @@
+---
+summary: "ip netns, docker 把容器网络命名空间隐藏起来了，查看容器网络需要把对应的网络命名空间显示出来"
+tags:
+    - wangyijie
+    - kubernetes
+categories:
+    - Development
+    - Opetration
+---
 1. pod IP 
 docker 把容器网络命名空间隐藏起来了，查看容器网络需要把对应的网络命名空间显示出来：
 容器Id:10316  

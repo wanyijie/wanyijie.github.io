@@ -1,5 +1,5 @@
 ---
-summary: ""
+summary: "使用工具kubeadm安装kubernetes集群是需要的镜像默认放在google容器仓库中，国内不便直接下载，这里记录通过hub.docker加git获取kubernetes镜像："
 ---
 
 使用工具kubeadm安装kubernetes集群是需要的镜像默认放在google容器仓库中，国内不便直接下载，这里记录通过hub.docker加git获取kubernetes镜像：

@@ -1,3 +1,11 @@
+---
+summary: "部署Angular应用的一个简单方法是使用GitHub Pages. 如果自己做一个单页网站可以不需要自购web服务器"
+tags:
+    - Kubernetes
+categories:
+    - Development
+    - Opetration
+---
 # Deploy to GitHub Pages
 # 部署到 Github
 

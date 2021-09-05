@@ -1,3 +1,12 @@
+---
+summary: "kubeadm 默认证书为一年，一年过期后，会导致api service不可用，使用过程中会出现：x509: certificate has expired or is not yet valid"
+tags:
+    - wangyijie
+    - kubernetes
+categories:
+    - Development
+    - Opetration
+---
 kubeadm 默认证书为一年，一年过期后，会导致api service不可用，使用过程中会出现：x509: certificate has expired or is not yet valid.
 
 方案一 通过修改kubeadm 调整证书过期时间

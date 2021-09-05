@@ -1,3 +1,11 @@
+---
+summary: "Usage: BE"
+tags:
+    - wangyijie
+    - English
+categories:
+    - leaning
+---
 ##Be(am/is/are)
 Usage: BE
 >be + noun

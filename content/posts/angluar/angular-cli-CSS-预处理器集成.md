@@ -1,3 +1,12 @@
+---
+summary: "Angular CLI 支持所有anjor css 预处理器,要使用这些预处理器只需将文件添加到组件的 styleUrls"
+tags:
+    - wangyijie
+    - angular
+categories:
+    - Development
+    - Opetration
+---
 # CSS Preprocessor integration
 # CSS 预处理器集成
 

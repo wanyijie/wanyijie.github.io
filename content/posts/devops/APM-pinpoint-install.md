@@ -1,3 +1,12 @@
+---
+summary: ""
+tags:
+    - wangyijie
+    - DevOps
+categories:
+    - Development
+    - Opetration
+---
 通过docker安装APM系统pinpoint
 <!--more-->
 # install docker 

@@ -1,3 +1,12 @@
+---
+summary: "调试可用的配置，花了不少时间踩坑，拿走不谢"
+tags:
+    - wangyijie
+    - kubernetes
+categories:
+    - Development
+    - Opetration
+---
 # 调试可用的配置，花了不少时间踩坑，拿走不谢！
 ```
 apiVersion: skaffold/v1beta8

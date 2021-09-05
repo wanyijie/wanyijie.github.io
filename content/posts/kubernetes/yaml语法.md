@@ -1,3 +1,12 @@
+---
+summary: "YAML语言接受整个Unicode字符集。所有可接受的字符都可以在YAML文档中使用"
+tags:
+    - wangyijie
+    - kubernetes
+categories:
+    - Development
+    - Opetration
+---
 ### 语法
 
 

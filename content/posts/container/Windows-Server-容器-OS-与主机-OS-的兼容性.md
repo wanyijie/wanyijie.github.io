@@ -1,3 +1,12 @@
+---
+summary: "Windows Server 容器并非在所有主机 OS 版本间都兼容"
+tags:
+    - wangyijie
+    - container
+categories:
+    - Development
+    - Opetration
+---
 Windows Server 容器并非在所有主机 OS 版本间都兼容。 例如：
 使用 Windows Server 1709 版本生成的 Windows Server 容器在运行 Windows Server 2016 版本的主机上无效。
 使用 Windows Server 2016 生成的 Windows Server 容器仅在运行 Windows Server 1709 版本的主机上以 Hyper-V 隔离模式工作。

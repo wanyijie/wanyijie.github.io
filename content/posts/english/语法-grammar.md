@@ -1,3 +1,11 @@
+---
+summary: "主语--动作的发出者"
+tags:
+    - wangyijie
+    - English
+categories:
+    - leaning
+---
 主语--动作的发出者
 谓语--动词，有实意动词和系动词
 宾语--动作指向的对象是宾语

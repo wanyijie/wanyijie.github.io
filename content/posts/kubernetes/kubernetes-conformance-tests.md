@@ -1,3 +1,12 @@
+---
+summary: "./sonobuoy images pull --e2e-repo-config custom-repos.yaml -dry-run"
+tags:
+    - wangyijie
+    - kubernetes
+categories:
+    - Development
+    - Opetration
+---
 ## 大概步骤
 1. 获取镜像
 ./sonobuoy images pull --e2e-repo-config custom-repos.yaml -dry-run

@@ -1,3 +1,11 @@
+---
+summary: "have got + noun = possess noun/have noun/own noun"
+tags:
+    - wangyijie
+    - English
+categories:
+    - leaning
+---
 ## Have Got
 **Usage: have got**
 >have got + noun = possess noun/have noun/own noun

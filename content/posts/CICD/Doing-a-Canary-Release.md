@@ -1,3 +1,11 @@
+---
+tags:
+    - wangyijie
+    - ansible
+categories:
+    - Development
+    - Opetration
+---
 Sometimes it’s safest to test the new version of an application on a small set of users to see how it performs in production, then gradually ramp up the proportion of traffic to the new servers until eventually all traffic is going to them. 
 <!--more-->
 This method is commonly called a *canary release* or a *dark launch*. (“Canary release” refers to the [old mining practice](https://www.smithsonianmag.com/smart-news/story-real-canary-coal-mine-180961570/) of taking a canary down into a coal mine to detect the presence of dangerous gases before the miners were affected. In this context the users directed to the new servers are the canaries.).The split‑clients feature in NGINX Plus (and NGINX) is perfect for it.

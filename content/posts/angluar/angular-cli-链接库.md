@@ -1,3 +1,12 @@
+---
+summary: "在库工作时，它通常使用 [npm link] 避免在每次构建时重复安装库。"
+tags:
+    - wangyijie
+    - angular
+categories:
+    - Development
+    - Opetration
+---
 # Linked libraries
 # 链接库
 

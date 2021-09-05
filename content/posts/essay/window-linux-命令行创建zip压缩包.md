@@ -1,3 +1,11 @@
+---
+summary: "linuz zip create compress package"
+tags:
+    - wangyijie
+    - knowledge
+categories:
+    - leaning
+---
 # linux
 **zip -r test.zip ./**
 ```bash

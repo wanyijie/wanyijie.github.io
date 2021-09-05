@@ -1,3 +1,11 @@
+---
+summary: "在英语里，because 用在主句前面"
+tags:
+    - wangyijie
+    - English
+categories:
+    - leaning
+---
 ## 在英语里，because 用在主句前面。
 
 I can't see because it is so foggy.

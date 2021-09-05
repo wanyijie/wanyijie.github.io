@@ -1,3 +1,12 @@
+---
+summary: "Angular CLI v6通过插入到我们在Angular CLI中使用的构建系统中的ng-packagr提供库支持，以及用于生成库的原理图。"
+tags:
+    - wangyijie
+    - angular
+categories:
+    - Development
+    - Opetration
+---
 # Library support in Angular CLI 6
 # 库支持在 Angular CLI 6
 

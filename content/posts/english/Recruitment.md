@@ -1,3 +1,11 @@
+---
+summary: "My international client 客户 is currently looking to hire 聘用 an Operations Engineer to join their Desktop Operations Department to be responsible负责 for providing mainly 3rd tier support"
+tags:
+    - wangyijie
+    - English
+categories:
+    - leaning
+---
 #Operations Engineer
 
 *Be among the first 25 applicants 应聘者*

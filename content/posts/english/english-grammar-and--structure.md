@@ -1,3 +1,11 @@
+---
+summary: "too + adjective; adjective + enough"
+tags:
+    - wangyijie
+    - English
+categories:
+    - leaning
+---
 1.  too + adjective; adjective + enough
 2.  We can use this structure; adjective { comparative form } + than ... For example: he's older than me
 3. as adjective as; like something

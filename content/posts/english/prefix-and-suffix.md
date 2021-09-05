@@ -1,3 +1,11 @@
+---
+summary: "suffixes prefix"
+tags:
+    - wangyijie
+    - English
+categories:
+    - leaning
+---
 Anti-  against(反对) Anticlimatic(虎头蛇尾)，anti-inflammotory(抗炎)，antiway(反对战争)
 De- opposite(相反的) Devalue(贬值)，destruction(破坏)
 Dis- not or the opposite of something(与某事不同或相反)，discover(发现)，disagree(不同意)，disproportionate(不成比例).

@@ -1,3 +1,12 @@
+---
+summary: "deploy elasticsearch persistent volume"
+tags:
+    - wangyijie
+    - kubernetes
+categories:
+    - Development
+    - Opetration
+---
 ## deploy elasticsearch persistent volume
 ```
 cat pv-master.yaml

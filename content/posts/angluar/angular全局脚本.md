@@ -1,3 +1,12 @@
+---
+summary: "您可以通过angular.json中项目的构建目标选项中的脚本选项将JavaScript文件添加到全局范围。这些将被加载，就像您将它们添加到 index.html 中的 <script> 标记中一样"
+tags:
+    - wangyijie
+    - angular
+categories:
+    - Development
+    - Opetration
+---
 # Global scripts
 # 全局脚本
 

@@ -1,4 +1,11 @@
-不说废话
+---
+summary: "windows + 上下左右即可任意分屏，最多四屏幕，还可以左右移动窗口的位置"
+tags:
+    - wangyijie
+    - knowledge
+categories:
+    - leaning
+---
 windows + 上下左右即可任意分屏，最多四屏幕，还可以左右移动窗口的位置
 
 还有些程序不支持四分之一显示，二分一应该都可以

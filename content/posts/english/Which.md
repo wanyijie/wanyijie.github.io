@@ -1,4 +1,11 @@
-
+---
+summary: "如何用 which 来提问"
+tags:
+    - wangyijie
+    - English
+categories:
+    - leaning
+---
 ##  我们已经学过如何用 which 来提问。
 
 Which team has more fans?

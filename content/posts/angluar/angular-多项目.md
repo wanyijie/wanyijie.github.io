@@ -1,3 +1,11 @@
+---
+summary: "Angular CLI支持多个应用在一个工作空间"
+tags:
+    - wangyijie
+categories:
+    - Development
+    - Opetration
+---
 # Multiple Projects
 # 多项目
 

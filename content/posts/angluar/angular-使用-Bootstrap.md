@@ -1,3 +1,11 @@
+---
+summary: "Bootstrap是一个流行的CSS框架，可以在Angular项目中使用。本指南将引导您为Angular CLI项目添加引导程序并将其配置为使用引导程序。"
+tags:
+    - wangyijie
+categories:
+    - Development
+    - Opetration
+---
 # Include [Bootstrap](http://getbootstrap.com/)
 # 包括 [Bootstrap](http://getbootstrap.com/)
 

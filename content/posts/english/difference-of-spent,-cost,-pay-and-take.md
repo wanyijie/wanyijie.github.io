@@ -1,3 +1,11 @@
+---
+summary: "spend，cost，take和pay的区别是历年中考试题的必考内容之一，虽然它们都可以表示“花费”，但用法却不尽相同"
+tags:
+    - wangyijie
+    - English
+categories:
+    - leaning
+---
 spend，cost，take和pay的区别是历年中考试题的必考内容之一，虽然它们都可以表示“花费”，但用法却不尽相同。
 
 spend的主语必须是人， 常用于以下结构：(1) spend time ／money on sth. 在……上花费时间（金钱）。例：I spent two hours on this maths problem. 这道数学题花了我两个小时。(2) spend time ／ money (in) doing sth. 花费时间（金钱）做某事。例：They spent two years (in) building this bridge. 造这座桥花了他们两年时间。(3)spend money for sth. 花钱买……。例：His money was spent for books. 他的钱用来买书了。

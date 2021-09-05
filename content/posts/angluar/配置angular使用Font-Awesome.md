@@ -1,3 +1,11 @@
+---
+summary: "Font Awesome为您提供可立即定制的可缩放矢量图标 - 尺寸，颜色，阴影以及任何可以通过CSS强大功能进行定制的图标。"
+tags:
+    - wangyijie
+categories:
+    - Development
+    - Opetration
+---
 # Include [Font Awesome](http://fontawesome.io/)
 # 包含 [Font Awesome](http://fontawesome.io/)
 

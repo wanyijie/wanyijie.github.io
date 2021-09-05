@@ -1,3 +1,11 @@
+---
+summary: "合并的表格表格列数相同"
+tags:
+    - wangyijie
+    - knowledge
+categories:
+    - leaning
+---
 1. 前提： 要合并的表格表格列数相同
 2. 在要合并的表格放一个文件内，建一个新的空表格：
 ![image.png](https://upload-images.jianshu.io/upload_images/6000429-d52aac8db46c333c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)

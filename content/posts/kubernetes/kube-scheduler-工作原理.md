@@ -1,3 +1,12 @@
+---
+summary: "kube-scheduler 调度分为两个阶段，predicate 和 priority"
+tags:
+    - wangyijie
+    - kubernetes
+categories:
+    - Development
+    - Opetration
+---
 kube-scheduler 调度分为两个阶段，predicate 和 priority:
 > predicate：过滤不符合条件的节点
 > priority：优先级排序，选择优先级最高的节点

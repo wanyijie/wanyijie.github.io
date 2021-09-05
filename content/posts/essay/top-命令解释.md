@@ -1,3 +1,11 @@
+---
+summary: "VIRT：virtual memory usage 虚拟内存"
+tags:
+    - wangyijie
+    - knowledge
+categories:
+    - leaning
+---
 VIRT：virtual memory usage 虚拟内存
 1、进程“需要的”虚拟内存大小，包括进程使用的库、代码、数据等
 2、假如进程申请100m的内存，但实际只使用了10m，那么它会增长100m，而不是实际的使用量

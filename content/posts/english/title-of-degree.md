@@ -1,3 +1,11 @@
+---
+summary: "title of degree/学位的程度，是指学士/硕士/博士"
+tags:
+    - wangyijie
+    - English
+categories:
+    - leaning
+---
 title of degree/学位的程度，是指学士/硕士/博士
 
 1、bachelor（学士）分为：BSc ：bachelor of science（理科）；B.A ：bachelor of Art（文科）BSc(Eng)： bachelor of science(engineering)工科

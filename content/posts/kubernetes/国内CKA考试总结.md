@@ -1,5 +1,5 @@
 ---
-summary: ""
+summary: "这里没用透露考题，签有保密协议的，君子慎独，不欺暗室"
 tags:
     - Kubernetes
 categories:

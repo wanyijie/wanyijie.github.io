@@ -1,3 +1,12 @@
+---
+summary: "考cka需要整理kubernetes的知识，看了linux基金会的课程，感觉有点贵，赚钱不容易得到刀刃上，所以看下目录帮助熟悉学习目标即可"
+tags:
+    - wangyijie
+    - kubernetes
+categories:
+    - Development
+    - Opetration
+---
 考cka需要整理kubernetes的知识，看了linux基金会的课程，感觉有点贵，赚钱不容易得到刀刃上，所以看下目录帮助熟悉学习目标即可
 
 Kubernetes 基础课程 （LFS258)

@@ -1,3 +1,11 @@
+---
+summary: "PDCA是英语单词Plan(计划)、Do(执行)、Check(检查)和Act(纠正)的第一个字母"
+tags:
+    - wangyijie
+    - literature
+categories:
+    - literature
+---
 美国质量管理专家戴明博士首先提出的，它是全面质量管理所应遵循的科学程序。全面质量管理活动的全部过程，就是质量计划的制订和组织实现的过程，这个过程就是按照PDCA循环，不停顿地周而复始地运转的。
 
 PDCA是英语单词Plan(计划)、Do(执行)、Check(检查)和Act(纠正)的第一个字母

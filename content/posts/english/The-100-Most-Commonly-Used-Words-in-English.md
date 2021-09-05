@@ -1,3 +1,11 @@
+---
+summary: "Listed here, according to the 100-million-word British National Corpus, are the 100 most commonly used words in English. Many of these words are function words: they glue pieces of sentences together into longer syntactic units."
+tags:
+    - wangyijie
+    - English
+categories:
+    - leaning
+---
 Listed here, according to the 100-million-word British National Corpus, are the 100 most commonly used words in English. Many of these words are function words: they glue pieces of sentences together into longer syntactic units. 
 
 

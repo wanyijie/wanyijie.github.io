@@ -1,3 +1,12 @@
+---
+summary: "我们在编写kubernetes资源清单的时候有很多细节不易记住，特别对于还不熟练的同学，寻找参考摸板是一件麻烦的事，下面介绍两种获取参考帮助的手段，足够大家无往不利"
+tags:
+    - wangyijie
+    - kubernetes
+categories:
+    - Development
+    - Opetration
+---
 我们在编写kubernetes资源清单的时候有很多细节不易记住，特别对于还不熟练的同学，寻找参考摸板是一件麻烦的事，下面介绍两种获取参考帮助的手段，足够大家无往不利
 1.  kubectl get --export
 kubectl get -o yaml --export

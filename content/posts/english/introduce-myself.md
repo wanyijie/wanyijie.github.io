@@ -1,3 +1,0 @@
-Hello, eveyone. Very glad to be here. My name is WangYiJie, and i am twenty eight years old. Now i am a operation enginner of wangushengshi. My favourite subject is english, and i like sports very much, English is an ability that is very helpful for me, and sports make me health. I like this sentence: "nothing is impossible.", so i always try me best to do everything well, and never give up easily, so this is me, i hope to make friends with you all, Thank you for listening!
-
-大家好。很高兴来到这里。我叫王义杰, 我二十八岁了。现在我是万古盛世的一个运维工程。我最喜欢的科目是英语, 我非常喜欢运动, 英语是一种对我很有帮助的能力, 运动让我健康。我喜欢这句话: "没什么不可能的", 所以我总是尽力把一切都做好, 从不轻易放弃, 这就是我, 希望能和大家交朋友, 谢谢大家的倾听 

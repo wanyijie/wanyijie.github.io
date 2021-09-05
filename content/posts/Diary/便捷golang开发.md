@@ -1,3 +1,12 @@
+---
+summary: "go语言之旅, go mod 代理地址"
+tags:
+    - wangyijie
+    - golang
+categories:
+    - Development
+    - Opetration
+---
 go语言之旅：[https://tour.go-zh.org/](https://tour.go-zh.org/)
 如何使用go编程：[https://go-zh.org/doc/code.html](https://go-zh.org/doc/code.html)
 时效go编程：[https://go-zh.org/doc/effective_go.html](https://go-zh.org/doc/effective_go.html)

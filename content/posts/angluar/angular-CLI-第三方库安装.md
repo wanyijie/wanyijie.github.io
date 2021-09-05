@@ -1,3 +1,11 @@
+---
+summary: "只需通过 npm install lib-name --save 安装你的库并将其导入到你的代码中"
+tags:
+    - wangyijie
+categories:
+    - Development
+    - Opetration
+---
 # 3rd Party Library Installation
 # 第三方库安装
 

@@ -1,4 +1,12 @@
-Good evening, my fellow Americans.
+---
+summary: "Like every other -- Like every other citizen, I wish the new President, and all who will labor with him, Godspeed. I pray that the coming years will be blessed with peace and prosperity for all"
+tags:
+    - wangyijie
+    - literature
+categories:
+    - literature
+---
+ood evening, my fellow Americans.
 
 First, I should like to express my gratitude to the radio and television networks for the opportunities they have given me over the years to bring reports and messages to our nation. My special thanks go to them for the opportunity of addressing you this evening.
 

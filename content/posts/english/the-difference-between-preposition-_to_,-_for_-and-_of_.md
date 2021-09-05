@@ -1,3 +1,11 @@
+---
+summary: "to、for和of的区别"
+tags:
+    - wangyijie
+    - English
+categories:
+    - leaning
+---
 to、for和of的区别：
 For，of都是介词，所以跟在后面的词动词要加ing，这是他们共有的特性。
 for，to，of后都跟人称代词的宾格，这是他们共有的特性。

@@ -1,3 +1,11 @@
+---
+summary: "如果您正在致力于国际化，CLI可以通过以下步骤为您提供帮助"
+tags:
+    - wangyijie
+categories:
+    - Development
+    - Opetration
+---
 # Internationalization (i18n)
 # 国际化 (i18n)
 

@@ -1,3 +1,11 @@
+---
+summary: "If you're an English learner, knowing which words are most commonly used in the language can help you to improve your vocabulary skills and gain confidence in casual conversations. "
+tags:
+    - wangyijie
+    - English
+categories:
+    - leaning
+---
 If you're an English learner, knowing which words are most commonly used in the language can help you to improve your vocabulary skills and gain confidence in casual conversations. 
 
 

@@ -1,4 +1,11 @@
-
+---
+summary: "用 at 来表示在某一段时刻,用 on 来表示在星期几/某日,用in来表示一天中的早中晚，月份，季节或年份"
+tags:
+    - wangyijie
+    - English
+categories:
+    - leaning
+---
 ## 用 at 来表示在某一段时刻：
 　　atdawn/daybreak： 在黎明
 　　at six ：在6点钟

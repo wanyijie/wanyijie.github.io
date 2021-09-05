@@ -1,3 +1,12 @@
+---
+summary: "接触golang有些时间了，以前磕磕碰碰的勉强写过几个小程序，最近工作又亲近golang，就想着再回头巩固一下，曾经遇到过几次的问题又再次遇到了，golang的函数定义格式是这样的："
+tags:
+    - wangyijie
+    - golang
+categories:
+    - Development
+    - Opetration
+---
 接触golang有些时间了，以前磕磕碰碰的勉强写过几个小程序，最近工作又亲近golang，就想着再回头巩固一下，曾经遇到过几次的问题又再次遇到了，golang的函数定义格式是这样的：
 ```
 func function_name( [parameter list] ) [return_types] {

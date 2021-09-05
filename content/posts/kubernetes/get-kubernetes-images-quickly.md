@@ -1,3 +1,12 @@
+---
+summary: "https://katacoda.com/courses/kubernetes/playground"
+tags:
+    - wangyijie
+    - kubernetes
+categories:
+    - Development
+    - Opetration
+---
 ## open:
 https://katacoda.com/courses/kubernetes/playground
 ## check images

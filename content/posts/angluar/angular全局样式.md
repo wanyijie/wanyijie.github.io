@@ -1,3 +1,12 @@
+---
+summary: "您可以通过 angular.json 中项目的构建目标选项中的 styles 选项添加更多全局样式。这些将被加载，就像您将它们添加到index.html中的<link>标记中一样。"
+tags:
+    - wangyijie
+    - angular
+categories:
+    - Development
+    - Opetration
+---
 # Global styles
 # 全局样式
 

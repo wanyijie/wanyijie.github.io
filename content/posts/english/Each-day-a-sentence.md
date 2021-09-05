@@ -1,3 +1,11 @@
+---
+summary: "Every man dies, not every man really lives"
+tags:
+    - wangyijie
+    - English
+categories:
+    - leaning
+---
 Every man dies, not every man really lives
 Yesterday is history, tomorrow is a mystery, and today is a gift
 There are two sides to every story, at least

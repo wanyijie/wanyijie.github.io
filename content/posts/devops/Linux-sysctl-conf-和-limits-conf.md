@@ -1,8 +1,15 @@
-【sysctl.conf工作原理】
-
+---
+summary: "sysctl命令被用于在内核运行时动态地修改内核的运行参数，可用的内核参数在目录/proc/sys中。它包含一些TCP/IP堆栈和虚拟内存系统的高级选项， 这可以让有经验的管理员提高引人注目的系统性能。用sysctl可以读取设置超过五百个系统变量"
+tags:
+    - wangyijie
+    - DevOps
+categories:
+    - Development
+    - Opetration
+---
+# 【sysctl.conf工作原理】
 sysctl命令被用于在内核运行时动态地修改内核的运行参数，可用的内核参数在目录/proc/sys中。它包含一些TCP/IP堆栈和虚拟内存系统的高级选项， 这可以让有经验的管理员提高引人注目的系统性能。用sysctl可以读取设置超过五百个系统变量。
-<!--more-->
-【sysctl.conf设置】
+# 【sysctl.conf设置】
 
 #优化TCP
 vi /etc/sysctl.conf

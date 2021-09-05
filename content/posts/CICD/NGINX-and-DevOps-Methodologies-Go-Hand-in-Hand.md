@@ -1,3 +1,11 @@
+---
+tags:
+    - wangyijie
+    - ansible
+categories:
+    - Development
+    - Opetration
+---
 DevOps has seen explosive growth recently, as organizations look to deliver releases and features faster by automating operations with an Infrastructure as Code approach. This shift in the industry is making for some very interesting transformations, both in how organizations deploy applications and what is expected from IT operations.
 <!--more-->
 DevOps plays a big role, not just in the delivery of infrastructure, but in the application deployment process itself. Many times, DevOps and development go hand in hand, with infrastructure deployed for the sole purpose of developing an application pipeline. The lifecycle of an application has become nimbler with the adoption of modern deployment methodologies, and NGINX can provide flexibility to enhance this process.

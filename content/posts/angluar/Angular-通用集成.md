@@ -1,3 +1,11 @@
+---
+summary: "Angular CLI 支持为应用程序生成通用集成。这是一个 CommonJS 格式的包, 可以通过 `require()` 进入节点应用程序 , 并与`@angular/platform-server` 的 api 一起使用以预渲染应用程序。"
+tags:
+    - wangyijie
+categories:
+    - Development
+    - Opetration
+---
 # Angular Universal Integration
 # Angular 通用集成
 

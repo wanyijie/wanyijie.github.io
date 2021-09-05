@@ -1,3 +1,12 @@
+---
+summary: "install upgrade tool kubeadm"
+tags:
+    - wangyijie
+    - kubernetes
+categories:
+    - Development
+    - Opetration
+---
 # install upgrade tool kubeadm
 ```
 apt install -y kubeadm

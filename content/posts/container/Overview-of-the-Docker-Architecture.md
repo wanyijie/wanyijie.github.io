@@ -1,3 +1,12 @@
+---
+summary: "In this text we're going to be talking about Docker architecture. And Docker is the container implementationthat is supported by Red Hat and is used by OpenShift."
+tags:
+    - wangyijie
+    - container
+categories:
+    - Development
+    - Opetration
+---
 In this text we're going to be talking about Docker architecture.
 And Docker is the container implementation
 that is supported by Red Hat and is used by OpenShift.

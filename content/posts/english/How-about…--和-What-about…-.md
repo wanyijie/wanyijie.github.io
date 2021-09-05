@@ -1,3 +1,11 @@
+---
+summary: "How about…? 和 What about…? 基本上意思是一样的！"
+tags:
+    - wangyijie
+    - English
+categories:
+    - leaning
+---
 How about…? 和 What about…? 基本上意思是一样的！
 
 What about bringing some ice cream?

@@ -1,3 +1,12 @@
+---
+summary: "将Angular Flex布局NgModule导入您的应用程序模块"
+tags:
+    - wangyijie
+    - angular
+categories:
+    - Development
+    - Opetration
+---
 ## Include [Flex Layout](https://github.com/angular/flex-layout) in your CLI application
 ## 在您的CLI应用程序中包含[Flex布局](https://github.com/angular/flex-layout)
 

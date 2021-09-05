@@ -1,3 +1,11 @@
+---
+summary: "git push origin master --force"
+tags:
+    - wangyijie
+    - knowledge
+categories:
+    - leaning
+---
 # 使用 *git push origin master --force*
 
 ```

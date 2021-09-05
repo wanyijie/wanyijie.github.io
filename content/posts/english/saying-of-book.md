@@ -1,3 +1,11 @@
+---
+summary: "书籍是人类知识的总结"
+tags:
+    - wangyijie
+    - English
+categories:
+    - leaning
+---
 1、书籍是人类知识的总结。
 
 Books are the summary of human knowledge.

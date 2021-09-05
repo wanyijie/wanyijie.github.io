@@ -22,7 +22,7 @@
       <pubDate>Mon, 30 Aug 2021 21:25:26 +0800</pubDate>
       
       <guid>https://wangyijie.store/posts/python/django-%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</guid>
-      <description>安装 Django#先安装 PIP，再通过 PIP 安装 Django#安装 PIP
+      <description>安装 Django #  先安装 PIP，再通过 PIP 安装 Django #  安装 PIP
 cd /data;
 mkdir tmp;
 cd tmp;
@@ -405,7 +405,7 @@ mysql -uroot -ptest</description>
       <guid>https://wangyijie.store/posts/container/%E9%95%9C%E5%83%8F%E5%86%85%E5%AE%B9%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD%E5%B7%A5%E5%85%B7-reg/</guid>
       <description>Docker registry v2 command line client and repo listing generator with security checks.
 Table of Contents
- Installation  Binaries Via Go   Usage  Auth List Repositories and Tags Get a Manifest Get the Digest Download a Layer Delete an Image Vulnerability Reports Generating Static Website for a Registry Using Self-Signed Certs with a Registry   Contributing  Installation#Binaries#For installation instructions from binaries please visit the Releases Page.</description>
+ Installation  Binaries Via Go   Usage  Auth List Repositories and Tags Get a Manifest Get the Digest Download a Layer Delete an Image Vulnerability Reports Generating Static Website for a Registry Using Self-Signed Certs with a Registry   Contributing  Installation #  Binaries #  For installation instructions from binaries please visit the Releases Page.</description>
     </item>
     
     <item>
@@ -1693,9 +1693,9 @@ workaround to install azure-cli:&lt;/p&gt;</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/material2/angular-material-%E4%B8%BB%E4%BD%93%E5%8C%96%E8%87%AA%E5%AE%9A%E4%B9%89%E7%BB%84%E4%BB%B6/</guid>
-      <description>Theming your custom components#主体化自定义的组件#In order to style your own components with Angular Material&amp;rsquo;s tooling, the component&amp;rsquo;s styles must be defined with Sass.
+      <description>Theming your custom components #  主体化自定义的组件 #  In order to style your own components with Angular Material&amp;rsquo;s tooling, the component&amp;rsquo;s styles must be defined with Sass.
 为了使用Angular Material的工具设计自己的组件，组件的样式必须用Sass定义。
-Using @mixin to automatically apply a theme#使用@mixin自动应用主题#Why using @mixin#The advantage of using a @mixin function is that when you change your theme, every file that uses it will be automatically updated. Calling the @mixin with a different theme argument allows multiple themes within the app or component.</description>
+Using @mixin to automatically apply a theme #  使用@mixin自动应用主题 #  Why using @mixin #  The advantage of using a @mixin function is that when you change your theme, every file that uses it will be automatically updated. Calling the @mixin with a different theme argument allows multiple themes within the app or component.</description>
     </item>
     
     <item>
@@ -1704,7 +1704,7 @@ Using @mixin to automatically apply a theme#使用@mixin自动应用主题#
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/material2/angular-material%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E4%B8%BB%E9%A2%98%E5%8C%96/</guid>
-      <description>Theming your Angular Material app#将您的Angular Material应用程序主题化#What is a theme?#什么是主题？#A theme is the set of colors that will be applied to the Angular Material components. The library&amp;rsquo;s approach to theming is based on the guidance from the Material Design spec.
+      <description>Theming your Angular Material app #  将您的Angular Material应用程序主题化 #  What is a theme? #  什么是主题？ #  A theme is the set of colors that will be applied to the Angular Material components. The library&amp;rsquo;s approach to theming is based on the guidance from the Material Design spec.
 主题是将应用于 Angular Material 组件的一组颜色。库的主题化方法基于Material设计规范的指导。
 In Angular Material, a theme is created by composing multiple palettes. In particular, a theme consists of:</description>
     </item>
@@ -1717,7 +1717,7 @@ In Angular Material, a theme is created by composing multiple palettes. In parti
       <guid>https://wangyijie.store/posts/material2/material-%E5%8E%9F%E7%90%86%E5%9B%BE/</guid>
       <description>Angular Material comes packaged with Angular CLI schematics to make creating Material applications easier.
 Angular Material附带Angular CLI原理图，使创建Material应用程序变得更加简单。
-Install Schematics#安装原理图#Schematics come packaged with Angular Material, so once you have installed the npm package, they will be available via the Angular CLI.
+Install Schematics #  安装原理图 #  Schematics come packaged with Angular Material, so once you have installed the npm package, they will be available via the Angular CLI.
 原理图与Angular Material一起打包，所以一旦安装了npm软件包，它们将通过Angular CLI提供。
 If you run it will automatically install Angular Material for you and run the install schematic.
 如果您运行下面的命令，它会自动为您安装Angular Material并运行安装原理图。
@@ -1810,11 +1810,11 @@ ng add @angular/material The install schematic will help you quickly add Materia
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/network/wifi%E5%B8%B8%E8%AF%86/</guid>
-      <description>频段带宽#频段带宽指的是你的路由器的发射频率宽度：
+      <description>频段带宽 #  频段带宽指的是你的路由器的发射频率宽度：
   20MHz对应的是65M带宽穿透性好传输距离远（100米左右）。 40MHz对应的是150M带宽穿透性差传输距离近（50米左右）。   　而你路由器的300M是指的你的路由器的传输速率（最大传输速率）：300Mbps，也就是俗称网速, 40MHZ双通道能达到300M。
-频段标准#无线路由工作根据频段的不同分好几种标准，分别是11a，11b，11g，11n。其中工作频段不同也导致传输速度不同。11n的可以在11b和11g之间用，自动转换。 频段带宽是路由频段带宽的选择
+频段标准 #  无线路由工作根据频段的不同分好几种标准，分别是11a，11b，11g，11n。其中工作频段不同也导致传输速度不同。11n的可以在11b和11g之间用，自动转换。 频段带宽是路由频段带宽的选择
  20MHz对应的是65M带宽，穿透性相对较好 40MHz对应的是150M带宽，穿透性不如20MHz
- 5g#5G Wi-Fi的诞生很好解决现在WiFi面临的问题，首先它运行在5GHz以上的高频段，宽带能提高到40MHz甚至80MHz或更高，传输速度最高提升到了1Gbps，每秒可以传输约125MB的内容。</description>
+ 5g #  5G Wi-Fi的诞生很好解决现在WiFi面临的问题，首先它运行在5GHz以上的高频段，宽带能提高到40MHz甚至80MHz或更高，传输速度最高提升到了1Gbps，每秒可以传输约125MB的内容。</description>
     </item>
     
     <item>
@@ -1823,7 +1823,7 @@ ng add @angular/material The install schematic will help you quickly add Materia
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/network/windows-powershell-%E6%9F%A5%E7%9C%8B%E7%AB%AF%E5%8F%A3%E5%92%8C%E9%A1%BE%E8%99%91%E6%96%87%E6%9C%AC%E4%B8%8A%E4%B8%8B%E6%96%87/</guid>
-      <description>example#NETSTAT.EXE -abno | Select-String -Pattern Sangfor -Context 1,2  windows netstat使用-abno显示的信息最完善，建议常用 select-string 匹配文本，使用-context指定匹配文本的前后行数，例子是前面一行后面两行 谢谢！  </description>
+      <description>example #  NETSTAT.EXE -abno | Select-String -Pattern Sangfor -Context 1,2  windows netstat使用-abno显示的信息最完善，建议常用 select-string 匹配文本，使用-context指定匹配文本的前后行数，例子是前面一行后面两行 谢谢！  </description>
     </item>
     
     <item>
@@ -1841,8 +1841,8 @@ ng add @angular/material The install schematic will help you quickly add Materia
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/network/windows%E4%BD%BF%E7%94%A8netsh%E5%81%9A%E7%AB%AF%E5%8F%A3%E4%BB%A3%E7%90%86%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91/</guid>
-      <description>example#netsh interface portproxy add v4tov4 listenaddress=172.20.0.2 listenport=1521 connectaddress=172.16.100.74 connectport=1521 netsh interface portproxy add v4tov4 listenaddress=172.20.0.2 listenport=1433 connectaddress=172.16.100.73 connectport=1433 删除#netsh interface portproxy delete v4tov4 listenport=3340 listenaddress=10.1.1.110 netsh.exe interface portproxy delete v4tov4 listenport=1521 listenaddress=172.20.0.2
-清除所有当前的端口转发规则：#netsh interface portproxy reset</description>
+      <description>example #  netsh interface portproxy add v4tov4 listenaddress=172.20.0.2 listenport=1521 connectaddress=172.16.100.74 connectport=1521 netsh interface portproxy add v4tov4 listenaddress=172.20.0.2 listenport=1433 connectaddress=172.16.100.73 connectport=1433 删除 #  netsh interface portproxy delete v4tov4 listenport=3340 listenaddress=10.1.1.110 netsh.exe interface portproxy delete v4tov4 listenport=1521 listenaddress=172.20.0.2
+清除所有当前的端口转发规则： #  netsh interface portproxy reset</description>
     </item>
     
     <item>
@@ -1874,13 +1874,13 @@ iptables -A INPUT --src 1.2.3.4 -p tcp --dport 1080 -j ACCEPT iptables -A INPUT 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/network/%E9%98%B2%E7%81%AB%E5%A2%99%E6%8A%80%E6%9C%AF%E6%A6%82%E8%BF%B0/</guid>
-      <description>一、防火墙技术概述#随着互联网的普及和发展，尤其是Internet的广泛使用，使计算机应用更加广泛与深入。同时，我们不得不注意到，网络虽然功能强大，也有其脆弱易受到攻击的一面。据美国FBI统计，美国每年因网络安全问题所造成的经济损失高达75亿美元，而全求平均每20秒钟就发生一起Internet计算机侵入事件。在我国，每年因黑客入侵、计算机病毒的破坏也造成了巨大的经济损失。人们在利用网络的优越性的同时，对网络安全问题也决不能忽视。如何建立比较安全的网络体系，值得我们关注研究。
-二、防火墙的概念# 防火墙是设置在被保护网络和外部网络之间的一道屏障，以防止发生不可预测的、潜在破坏性的侵入。防火墙是指设置在不同网络(如可信任的企业内部网和不可信的公共网)或网络安全域之间的一系列部件的组合。它是不同网络或网络安全域之间信息的唯一出入口，能根据企业的安全政策控制(允许、拒绝、监测)出入网络的信息流，且本身具有较强的抗攻击能力。防火墙提供信息安全服务，是实现网络和信息安全的基础设施。在逻辑上，防火墙是一个分离器，一个限制器，也是一个分析器，它有效地监控了内部网络和互联网之间的任何活动，保证了内部网络的安全。目前的防火墙技术无论从技术上还是从产品发展历程上，都经历了五个发展历程。
+      <description>一、防火墙技术概述 #  随着互联网的普及和发展，尤其是Internet的广泛使用，使计算机应用更加广泛与深入。同时，我们不得不注意到，网络虽然功能强大，也有其脆弱易受到攻击的一面。据美国FBI统计，美国每年因网络安全问题所造成的经济损失高达75亿美元，而全求平均每20秒钟就发生一起Internet计算机侵入事件。在我国，每年因黑客入侵、计算机病毒的破坏也造成了巨大的经济损失。人们在利用网络的优越性的同时，对网络安全问题也决不能忽视。如何建立比较安全的网络体系，值得我们关注研究。
+二、防火墙的概念 #   防火墙是设置在被保护网络和外部网络之间的一道屏障，以防止发生不可预测的、潜在破坏性的侵入。防火墙是指设置在不同网络(如可信任的企业内部网和不可信的公共网)或网络安全域之间的一系列部件的组合。它是不同网络或网络安全域之间信息的唯一出入口，能根据企业的安全政策控制(允许、拒绝、监测)出入网络的信息流，且本身具有较强的抗攻击能力。防火墙提供信息安全服务，是实现网络和信息安全的基础设施。在逻辑上，防火墙是一个分离器，一个限制器，也是一个分析器，它有效地监控了内部网络和互联网之间的任何活动，保证了内部网络的安全。目前的防火墙技术无论从技术上还是从产品发展历程上，都经历了五个发展历程。
 第一代防火墙技术几乎与路由器同时出现，采用了包过滤（ Packet filter）技术。由贝尔实验室的 Dave Presotto 和 Howard Trickey 推出了第二代防火墙，即电路层防火墙，同时提出了第三代防火墙— 应用层防火墙（代理防火墙）的初步结构。 1992 年，USC 信息科学院的 BobBraden 开发出了基于动态包过滤（Dynamic packet filter）技术的第四代防火墙 ，后来演变为目前所说的状态监视（Stateful inspection）技术。1994 年，以色列的 CheckPoint 公司开发出了第一个采用这种技术的商业化的产品。 1998年，NAI 公司推出了一种自适应代理（Adaptive proxy）技术，并在其产品 Gauntlet Firewall for NT 中得以实现，给代理类型的防火墙赋予了全 新的意义，可以称之为第五代防火墙。但传统的防火墙并没有解决目前网络中主要的安全问题。目前网络安全的三大主要问题是:以拒绝访问(DDOS)为主要代表的网络攻击，以蠕虫(Worm)为主要代表的病毒传播和以垃圾电子邮件(SPAM)为代表的内容控制。这三大安全问题占据网络安全问题九成以上。而这三大问题，传统防火墙都无能为力。主要有以下三个原因: 一是传统防火墙的计算能力的限制。传统的防火墙是以高强度的检查为代价，检查的强度越高，计算的代价越大。二是传统防火墙的访问控制机制是一个简单的过滤机制。它是一个简单的条件过滤器，不具有智能功能，无法检测复杂的攻击。三是传统的防火墙无法区分识别善意和恶意的行为。该特征决定了传统的防火墙无法解决恶意的攻击行为。现在防火墙正在向分布、智能的方向发展，其中智能防火墙可以很好的解决上面的问题。智能防火墙是相对传统的防火墙而言的，从技术特征上智能防火墙是利用统计、记忆、概率和决策的智能方法来对数据进行识别，并达到访问控制的目的。新的数学方法，消除了匹配检查所需要的海量计算，高效发现网络行为的特征值，直接进行访问控制。由于这些方法多是人工智能学科采用的方法，因此，又称为智能防火墙。
-三、防火墙的功能#防火墙的主要功能主要为：
-** 1．包过滤**# 包过滤是一种网络的数据安全保护机制，它可用来控制流出和流入网络的数据，它通常由定义的各条数据安全规则所组成，防火墙设置可基于源地址、源端口、目的地址、目的端口、协议和时间;可根据地址簿进行设置规则。
-2．地址转换#网络地址变换是将内部网络或外部网络的IP地址转换，可分为源地址转换SourceNAT(SNAT)和目的地址转换 Destination NAT(DNAT)。SNAT 用于对内部网络地址进行转换，对外部网络隐藏起内部网络的结构，避免受到来自外部其他网络的非授权访问或恶意攻击。并将有限的 IP 地址动态或静态的与内部 IP 地址对应起来，用来缓解地址空间的短缺问题，节省资源，降低成本。DNAT 主要用于外网主机访问内网主机。
-3．认证和应用代理# 认证指防火墙对访问网络者合法身分的确定。代理指防火墙内置用户认证数据库;提供 HTTP、FTP和 SMTP代理功能，并可对这三种协议进行访问控制；同时支持 URL 过滤功能。</description>
+三、防火墙的功能 #  防火墙的主要功能主要为：
+** 1．包过滤** #   包过滤是一种网络的数据安全保护机制，它可用来控制流出和流入网络的数据，它通常由定义的各条数据安全规则所组成，防火墙设置可基于源地址、源端口、目的地址、目的端口、协议和时间;可根据地址簿进行设置规则。
+2．地址转换 #  网络地址变换是将内部网络或外部网络的IP地址转换，可分为源地址转换SourceNAT(SNAT)和目的地址转换 Destination NAT(DNAT)。SNAT 用于对内部网络地址进行转换，对外部网络隐藏起内部网络的结构，避免受到来自外部其他网络的非授权访问或恶意攻击。并将有限的 IP 地址动态或静态的与内部 IP 地址对应起来，用来缓解地址空间的短缺问题，节省资源，降低成本。DNAT 主要用于外网主机访问内网主机。
+3．认证和应用代理 #   认证指防火墙对访问网络者合法身分的确定。代理指防火墙内置用户认证数据库;提供 HTTP、FTP和 SMTP代理功能，并可对这三种协议进行访问控制；同时支持 URL 过滤功能。</description>
     </item>
     
     <item>
@@ -1928,8 +1928,8 @@ iptables -A INPUT --src 1.2.3.4 -p tcp --dport 1080 -j ACCEPT iptables -A INPUT 
       <description>在本文中，我们将演示如何使用OPA执行最细粒度的安全策略。请注意，本文是一个系列的一部分，我们将基于“OPA作为代码介绍”和“集成OPA到Kubernetes”中获得的知识进行。如果你还没有这样做，请浏览本系列中已发表的文章。
 https://www.magalix.com/blog/introducing-policy-as-code-the-open-policy-agent-opa https://www.magalix.com/blog/integrating-open-policy-agent-opa-with-kubernetes-a-deep-dive-tutorial
 你可能已经熟悉Pod安全策略，可以在其中对Pod应用非常特定的安全控制。例如，使用Linux内核功能，使用主机命名空间、网络、端口或文件系统，以及其他许多功能。使用OPA，你还可以对pods施加类似的控制，在本实验室中，我们将创建一个OPA策略，不允许在pods中创建有特权的容器。特权容器对主机的访问级别比非特权容器高。
-为什么使用OPA而不是原生的Pod安全策略？#使用Pod安全策略来执行我们的安全策略并没有什么问题。然而，根据定义，PSP只能应用于pods。它们不能处理其他Kubernetes资源，如Ingresses、Deployments、Services等。OPA的强大之处在于它可以应用于任何Kubernetes资源。OPA作为一个许可控制器部署到Kubernetes，它拦截发送到API服务器的API调用，并验证和/或修改它们。相应地，你可以有一个统一的OPA策略，适用于系统的不同组件，而不仅仅是pods。例如，有一种策略，强制用户在其服务中使用公司的域，并确保用户只从公司的镜像存储库中提取镜像。请注意，我们使用的OPA是使用kube-mgmt部署的，而不是OPA Gatekeeper。
-Rego的策略代码#在本文中，我们假设你已经熟悉了OPA和Rego语言。我们还假设你有一个正在运行的Kubernetes集群，该集群部署了OPA和kube-mgmt容器。有关安装说明，请参阅我们的前一篇文章。我们的no-priv-pod.rego文件如下所示：
+为什么使用OPA而不是原生的Pod安全策略？ #  使用Pod安全策略来执行我们的安全策略并没有什么问题。然而，根据定义，PSP只能应用于pods。它们不能处理其他Kubernetes资源，如Ingresses、Deployments、Services等。OPA的强大之处在于它可以应用于任何Kubernetes资源。OPA作为一个许可控制器部署到Kubernetes，它拦截发送到API服务器的API调用，并验证和/或修改它们。相应地，你可以有一个统一的OPA策略，适用于系统的不同组件，而不仅仅是pods。例如，有一种策略，强制用户在其服务中使用公司的域，并确保用户只从公司的镜像存储库中提取镜像。请注意，我们使用的OPA是使用kube-mgmt部署的，而不是OPA Gatekeeper。
+Rego的策略代码 #  在本文中，我们假设你已经熟悉了OPA和Rego语言。我们还假设你有一个正在运行的Kubernetes集群，该集群部署了OPA和kube-mgmt容器。有关安装说明，请参阅我们的前一篇文章。我们的no-priv-pod.rego文件如下所示：
 package kubernetes.admission deny[msg] { c := input_containers[_] c.securityContext.privileged msg := sprintf(&amp;quot;Privileged container is not allowed: %v, securityContext: %v&amp;quot;, [c.name, c.securityContext]) } input_containers[c] { c := input.request.object.spec.containers[_] } input_containers[c] { c := input.request.object.spec.initContainers[_] } 让我们简要地浏览一下这个文件：
 第1行：包含package。注意，你必须使用kubernetes.admission让政策工作。
 第2行：Deny是默认对象，它将包含我们需要执行的策略。如果所包含的代码计算结果为true，则将违反策略。
@@ -1938,7 +1938,7 @@ package kubernetes.admission deny[msg] { c := input_containers[_] c.securityCont
 第5行：当用户尝试运行特权容器时显示给他们的消息。它包括容器名称和违规的安全上下文。
 第7-9行：input_containers[c]函数从请求对象中提取容器。注意，使用了_字符来遍历数组中的所有容器。在Rego中，你不需要定义循环—下划线字符将自动为你完成此操作。
 第10-12行：我们再次为init容器定义函数。请注意，在Rego中，可以多次定义同一个函数。这样做是为了克服Rego函数中不能返回多个输出的限制。当调用函数名时，将执行两个函数，并使用AND操作符组合输出。因此，在我们的例子中，在一个或多个位置中存在一个有特权的容器将违反策略。
-部署策略#OPA会在opa命名空间的ConfigMaps中找到它的策略。要将我们的代码应用到ConfigMap中，我们运行以下命令：
+部署策略 #  OPA会在opa命名空间的ConfigMaps中找到它的策略。要将我们的代码应用到ConfigMap中，我们运行以下命令：
 kubectl create configmap no-priv-pods &amp;ndash;from-file=no-priv-pod.rego kube-mgmt边车（sidecar）容器在opa命名空间中持续监视API服务器，以便你只需创建ConfigMap就可以部署策略。
 运行策略
 让我们通过尝试部署一个特权容器来确保我们的策略是有效的：
@@ -1964,7 +1964,7 @@ PodSecurityPolicy 已经添加到上面的列表中了，现在 PSP 的控制器
       <guid>https://wangyijie.store/posts/security/linux-%E7%9A%84%E5%BC%80%E6%BA%90%E6%95%B0%E6%8D%AE%E6%81%A2%E5%A4%8D%E8%BD%AF%E4%BB%B6extundelete/</guid>
       <description>Extundelete工具简介 Extundelete 是基于 linux 的开源数据恢复软件。如果您不小心误删除数据，并且 Linux 系统也没有与 Windows 系统下回收站类似的功能，您可以方便快速安装此工具。
 在利用 extundelete 恢复文件时并不依赖特定文件格式，首先extundelete会通过文件系统的inode信息（根目录的inode一般为2）来获得当前文件系统下所有文件的信息，包括存在的和已经删除的文件，这些信息包括文件名和inode。然后利用inode信息结合日志去查询该inode所在的block位置，包括直接块，间接块等信息。最后利用dd命令将这些信息备份出来，从而恢复数据文件。该工具最给力的一点就是支持ext3/ext4双格式分区恢复，基于整个磁盘的恢复功能较为强大。 注意：在实际线上恢复过程中，切勿将extundelete安装到你误删的文件所在硬盘，这样会有一定几率将需要恢复的数据彻底覆盖
-src/extundelete &amp;ndash;help#A typical usage scenario is presented below. Note that some of the commands below require special permissions to complete. Adding &amp;lsquo;sudo &#39; before the command is one way to ensure you have the necessary permissions. Assume you have deleted a file called /home/user/an/important/file. Also assume the output of the &amp;lsquo;mount&amp;rsquo; command shows this line (among others): /dev/sda3 on /home type ext3 (rw) This line shows that the /home directory is on the partition named /dev/sda3, so then run: umount /dev/sda3 and check that it is now unmounted by running the mount command again and seeing it is not listed.</description>
+src/extundelete &amp;ndash;help #  A typical usage scenario is presented below. Note that some of the commands below require special permissions to complete. Adding &amp;lsquo;sudo &#39; before the command is one way to ensure you have the necessary permissions. Assume you have deleted a file called /home/user/an/important/file. Also assume the output of the &amp;lsquo;mount&amp;rsquo; command shows this line (among others): /dev/sda3 on /home type ext3 (rw) This line shows that the /home directory is on the partition named /dev/sda3, so then run: umount /dev/sda3 and check that it is now unmounted by running the mount command again and seeing it is not listed.</description>
     </item>
     
     <item>
@@ -1973,14 +1973,14 @@ src/extundelete &amp;ndash;help#A typical usage scenario is presented below. 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/security/openssl-%E8%87%AA%E7%AD%BE%E5%90%8Dca%E9%A2%81%E5%8F%91%E5%A4%9A%E5%9F%9F%E5%90%8D%E8%AF%81%E4%B9%A6/</guid>
-      <description>概述#HTTPS服务是工作在SSL/TLS上的HTTP。 首先简单区分一下HTTPS，SSL ，TLS ，OpenSSL这四者的关系： SSL：（Secure Socket Layer，安全套接字层）是在客户端和服务器之间建立一条SSL安全通道的安全协议； TLS：（Transport Layer Security，传输层安全协议），用于两个应用程序之间提供保密性和数据完整性； TLS的前身是SSL； OpenSSL是TLS/SSL协议的开源实现，提供开发库和命令行程序； HTTPS是HTTP的加密版，底层使用的加密协议是TLS。 结论：SSL/TLS 是协议，OpenSSL是协议的代码实现。
+      <description>概述 #  HTTPS服务是工作在SSL/TLS上的HTTP。 首先简单区分一下HTTPS，SSL ，TLS ，OpenSSL这四者的关系： SSL：（Secure Socket Layer，安全套接字层）是在客户端和服务器之间建立一条SSL安全通道的安全协议； TLS：（Transport Layer Security，传输层安全协议），用于两个应用程序之间提供保密性和数据完整性； TLS的前身是SSL； OpenSSL是TLS/SSL协议的开源实现，提供开发库和命令行程序； HTTPS是HTTP的加密版，底层使用的加密协议是TLS。 结论：SSL/TLS 是协议，OpenSSL是协议的代码实现。
 用OpenSSL配置带有SubjectAltName的ssl请求 对于多域名，只需要一个证书就可以保护非常多的域名。 SubjectAltName是X509 Version 3 (RFC 2459)的扩展，允许ssl证书指定多个可以匹配的名称。
 SubjectAltName 可以包含email 地址，ip地址，正则匹配DNS主机名，等等。 ssl这样的一个特性叫做：SubjectAlternativeName（简称：san）
-生成证书请求文件#对于一个通用的ssl证书请求文件（CSR），openssl不需要很多操作。 因为我们可能需要添加一个或者两个SAN到我们CSR，我们需要在openssl配置文件中添加一些东西：你需要告诉openssl创建一个包含x509 V3扩展的CSR，并且你也需要告诉openssl在你的CSR中包含subject alternative names列表。
+生成证书请求文件 #  对于一个通用的ssl证书请求文件（CSR），openssl不需要很多操作。 因为我们可能需要添加一个或者两个SAN到我们CSR，我们需要在openssl配置文件中添加一些东西：你需要告诉openssl创建一个包含x509 V3扩展的CSR，并且你也需要告诉openssl在你的CSR中包含subject alternative names列表。
 创建一个openssl配置文件（openssl.cnf），并启用subject alternative names：
 找到req段落。这段落的内容将会告诉openssl如何去处理证书请求（CSR）。 在req段落中应该要包含一个以req_extensions开始的行。如下： [req] distinguished_name = req_distinguished_name req_extensions = v3_req
 这个配置是告诉openssl在CSR中要包含v3_req段落的部分。 现在我们来配置v3_req，如下：
-[req_distinguished_name]countryName = Country Name (2 letter code)countryName_default = USstateOrProvinceName = State or Province Name (full name)stateOrProvinceName_default = MNlocalityName = Locality Name (eg, city)localityName_default = MinneapolisorganizationalUnitName = Organizational Unit Name (eg, section)organizationalUnitName_default = Domain Control ValidatedcommonName = Internet Widgits LtdcommonName_max = 64[ v3_req ]# Extensions to add to a certificate requestbasicConstraints = CA:FALSEkeyUsage = nonRepudiation, digitalSignature, keyEnciphermentsubjectAltName = @alt_names[alt_names]DNS.</description>
+[req_distinguished_name] countryName = Country Name (2 letter code) countryName_default = US stateOrProvinceName = State or Province Name (full name) stateOrProvinceName_default = MN localityName = Locality Name (eg, city) localityName_default = Minneapolis organizationalUnitName = Organizational Unit Name (eg, section) organizationalUnitName_default = Domain Control Validated commonName = Internet Widgits Ltd commonName_max = 64 [ v3_req ] # Extensions to add to a certificate request basicConstraints = CA:FALSE keyUsage = nonRepudiation, digitalSignature, keyEncipherment subjectAltName = @alt_names [alt_names] DNS.</description>
     </item>
     
     <item>
@@ -1990,7 +1990,7 @@ SubjectAltName 可以包含email 地址，ip地址，正则匹配DNS主机名，
       
       <guid>https://wangyijie.store/posts/security/openssl%E5%8A%A0%E5%AF%86%E6%96%87%E4%BB%B6/</guid>
       <description>openssl是个密码工具集，提供多端接口调用方式 组成:
-  代码库 libcryto ,libssl(ssl/tls) 工具集 openssl   对称加密#对称加密主要是用aes，des算法 usage:
+  代码库 libcryto ,libssl(ssl/tls) 工具集 openssl   对称加密 #  对称加密主要是用aes，des算法 usage:
 -in &amp;lt;file&amp;gt; input file -out &amp;lt;file&amp;gt; output file 加密后的文件存放位置 -pass &amp;lt;arg&amp;gt; pass phrase source -e encrypt 指定加密算法 -d decrypt 指定解密算法 -a/-base64 base64 encode/decode, depending on encryption flag #使用base64编/解码 -k passphrase is the next argument 指定密码 -kfile passphrase is the first line of the file argument -md the next argument is the md to use to create a key from a passphrase.</description>
     </item>
     
@@ -2000,15 +2000,15 @@ SubjectAltName 可以包含email 地址，ip地址，正则匹配DNS主机名，
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/security/%E4%BB%80%E4%B9%88%E6%98%AF-devsecops-/</guid>
-      <description>DevSecOps 和 DevOps 有什么区别 ?#我们知道，DevOps 不仅仅涉及开发和运维团队。而如果您想充分发挥出 DevOps 的敏捷性和响应力，就必须将IT 安全防护融入应用的整个生命周期中 。
+      <description>DevSecOps 和 DevOps 有什么区别 ? #  我们知道，DevOps 不仅仅涉及开发和运维团队。而如果您想充分发挥出 DevOps 的敏捷性和响应力，就必须将IT 安全防护融入应用的整个生命周期中 。
 为什么呢？从前，安全防护只是特定团队的责任，在开发的最后阶段才会介入。当开发周期长达数月、甚至数年时，这样做没什么问题；但是现在，这种做法现在已经行不通了。采用 DevOps 可以有效推进快速频繁的开发周期（有时全程只有数周或数天），但是过时的安全措施则可能会拖累整个流程，即使最高效的 DevOps 计划也可能会放慢速度。
 DevOps安全防护DevOps安全防护
 如今，在 DevOps 协作框架下，安全防护是整个 IT 团队的共同责任，需要贯穿至整个生命周期的每一个环节。这个理念非常重要，因此催生出了“DevSecOps”一词，强调必须为 DevOps 计划打下扎实的安全基础。
 DevSecOps 意味着从一开始就要考虑应用和基础架构的安全性；同时还要让某些安全网关实现自动化，以防止 DevOps 工作流程变慢。选择合适的工具来持续集成安全防护（比如在集成开发环境（IDE）中集成安全防护功能）有助于实现这些目标。但是高效的 DevOps 安防需要的不仅是新工具。它更需要整个公司实现 DevOps 文化变革，从而尽早集成安全团队的工作。
- 从 DevOps 到 DevSecOps 内置安全防护#无论您习惯叫它“DevOps”还是“DevSecOps”，最好确保安全防护融入了软件的整个生命周期中。DevSecOps 就是要内置安全防护，而不是仅仅在应用和数据层面做文章。如果把安全问题留到开发流程的最后再考虑，那么企业即便是采用了 DevOps 方法，也会重回冗长开发周期的老路，而这就是大家从一开始就想要避免的情况。
+ 从 DevOps 到 DevSecOps 内置安全防护 #  无论您习惯叫它“DevOps”还是“DevSecOps”，最好确保安全防护融入了软件的整个生命周期中。DevSecOps 就是要内置安全防护，而不是仅仅在应用和数据层面做文章。如果把安全问题留到开发流程的最后再考虑，那么企业即便是采用了 DevOps 方法，也会重回冗长开发周期的老路，而这就是大家从一开始就想要避免的情况。
 DevSecOps 强调，在 DevOps 计划刚启动时就要邀请安全团队来确保信息的安全性，并制定自动安全防护计划，实现持续 IT 防护。它还强调，要帮助开发人员从代码层面确保安全性；在这个过程中，安全团队需要针对已知的威胁共享掌握的全局信息、提供反馈并进行智能分析。由于 DevSecOps 并非始终着眼于较为传统的应用开发模式，所以这可能还包括为开发人员提供新的安全培训。
 那么，怎样才算是真正地实现了安全防护一体化？对于新手而言，优良的 DevSecOps 策略应能确定风险承受能力并进行风险/收益分析。在一个特定的应用中，需要配备多少个安全控制功能？对于不同的应用，上市速度又有多重要？由于在管道中运行手动安全检查可能会非常耗时，所以自动执行重复任务是 DevSecOps 的关键所在。
- DevOps 安全防护自动化#要推行 DevOps，企业需要：确保采用时间短、频率高的开发周期；采取安全措施，最大限度地缩短运维中断时间；及时应用创新技术，如容器和微服务；同时，还要促使以往各自为阵的团队加强合作——这一切对所有企业来说都是艰巨的任务。上述所有措施都是以人员为根本，都需要企业内部协同合作；但是，要想在 DevSecOps 框架中实现这些人员的变革，自动化是关键所在（点击查看自动化的带来的优势）。
+ DevOps 安全防护自动化 #  要推行 DevOps，企业需要：确保采用时间短、频率高的开发周期；采取安全措施，最大限度地缩短运维中断时间；及时应用创新技术，如容器和微服务；同时，还要促使以往各自为阵的团队加强合作——这一切对所有企业来说都是艰巨的任务。上述所有措施都是以人员为根本，都需要企业内部协同合作；但是，要想在 DevSecOps 框架中实现这些人员的变革，自动化是关键所在（点击查看自动化的带来的优势）。
 那么，企业应该在哪些方面实现自动化？具体又该怎么做呢？这份的企业自动化检查清单也许能够为您提供答案。企业应该退后一步，以全局视角，着眼整个开发和运维环境。其中涉及：源控制存储库；容器注册表；持续集成和持续部署（CI/CD）管道；应用编程接口（API）的管理、编排和发布自动化；以及运维管理和监控。
 全新的自动化技术已帮助企业应用了更敏捷的开发实践，也在促进新的安全措施方面起到了重要作用。但是，自动化并不是近年来 IT 领域发生的唯一变化。现在，对于大多数 DevOps 计划而言，容器和微服务等云原生技术也是一个非常重要的组成部分。所以，企业必须及时调整 DevOps 安全措施。</description>
     </item>
@@ -2025,7 +2025,7 @@ SELinux 和 AppArmor 加固 Linux 安全
 另一个流行并且被广泛使用的 MAC 是 AppArmor，相比于 SELinux 它提供更多的特性，包括一个学习模式，可以让系统“学习”一个特定应用的行为，以及通过配置文件设置限制实现安全的应用使用。
 在 CentOS 7 中，SELinux 合并进了内核并且默认启用强制模式（下一节会介绍这方面更多的内容），与之不同的是，openSUSE 和 Ubuntu 使用的是 AppArmor 。
 在这篇文章中我们会解释 SELinux 和 AppArmor 的本质，以及如何在你选择的发行版上使用这两个工具之一并从中获益。
-SELINUX 介绍以及如何在 CENTOS 7 中使用#Security Enhanced Linux 可以以两种不同模式运行：
+SELINUX 介绍以及如何在 CENTOS 7 中使用 #  Security Enhanced Linux 可以以两种不同模式运行：
  强制：这种情况下，SELinux 基于 SELinux 策略规则拒绝访问，策略规则是一套控制安全引擎的规则。 宽容：这种情况下，SELinux 不拒绝访问，但如果在强制模式下会被拒绝的操作会被记录下来。  SELinux 也能被禁用。尽管这不是它的一个操作模式，不过也是一种选择。但学习如何使用这个工具强过只是忽略它。时刻牢记这一点！
 使用 getenforce 命令来显示 SELinux 的当前模式。如果你想要更改模式，使用 setenforce 0（设置为宽容模式）或 setenforce 1（强制模式）。
 因为这些设置重启后就失效了，你需要编辑 /etc/selinux/config 配置文件并设置 SELINUX 变量为 enforcing、permissive 或 disabled ，保存设置让其重启后也有效：</description>
@@ -2037,9 +2037,9 @@ SELINUX 介绍以及如何在 CENTOS 7 中使用#Security Enhanced Linux 可�
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/security/%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6/</guid>
-      <description>数字证书（Certificate）#在HTTPS的传输过程中，有一个非常关键的角色——数字证书，所谓数字证书，是一种用于电脑的身份识别机制。由数字证书颁发机构（CA）对使用私钥创建的签名请求文件做的签名（盖章），表示CA结构对证书持有者的认可。数字证书拥有以下几个优点：
+      <description>数字证书（Certificate） #  在HTTPS的传输过程中，有一个非常关键的角色——数字证书，所谓数字证书，是一种用于电脑的身份识别机制。由数字证书颁发机构（CA）对使用私钥创建的签名请求文件做的签名（盖章），表示CA结构对证书持有者的认可。数字证书拥有以下几个优点：
  使用数字证书能够提高用户的可信度 数字证书中的公钥，能够与服务端的私钥配对使用，实现数据传输过程中的加密和解密 在证认使用者身份期间，使用者的敏感个人数据并不会被传输至证书持有者的网络系统上 X.509证书包含三个文件：key，csr，crt。 key是服务器上的私钥文件，用于对发送给客户端数据的加密，以及对从客户端接收到数据的解密 csr是证书签名请求文件，用于提交给证书颁发机构（CA）对证书签名 crt是由证书颁发机构（CA）签名后的证书，或者是开发者自签名的证书，包含证书持有人的信息，持有人的公钥，以及签署者的签名等信息 备注：在密码学中，X.509是一个标准，规范了公开秘钥认证、证书吊销列表、授权凭证、凭证路径验证算法等
- 使用Openssl生成自签名证书#openssl是个密码工具集，提供多端接口调用方式 组成:
+ 使用Openssl生成自签名证书 #  openssl是个密码工具集，提供多端接口调用方式 组成:
  代码库 libcryto ,libssl(ssl/tls) 工具集 openssl 1 生成服务器端的私钥(key文件) openssl genrsa -des3 -out server.key 2048 说明：生成rsa私钥，des3算法，2048位强度，server.key是秘钥文件名。 注意：生成私钥，需要提供一个至少4位的密码，,此密码用于加密key文件(参数des3是加密算法,也可以选用其他安全的算法),以后每当需读取此文件(通过openssl提供的命令或API)都需输入口令.如果不要口令,则可用以下命令去除口令:openssl rsa -in server.key -out server.key  </description>
     </item>
     
@@ -2049,8 +2049,8 @@ SELINUX 介绍以及如何在 CENTOS 7 中使用#Security Enhanced Linux 可�
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/sre/ningx%E5%AE%9E%E7%8E%B0%E9%87%8D%E8%BD%BD%E9%85%8D%E7%BD%AE%E4%B8%8D%E4%B8%A2%E5%A4%B1%E8%AF%B7%E6%B1%82%E7%9A%84%E5%8E%9F%E7%90%86/</guid>
-      <description>前言#nginx启动时，会启动两个进程： 一个是Master进程和worker进程。
-改变配置后nginx做的事#1）改变了nginx配置之后，HUP signal的信号需要发送给主进程。 2）主进程首先会检测新配置的语法有效性。 3）尝试应用新的配置 1.打开日志文件，并且新分配一个socket来监听。 2.如果1失败，则回滚改变，还是会使用原有的配置。 3.如果1成功，则使用新的配置，新建一个线程。新建成功后发送一个关闭消息给旧的进程。要求旧线程优雅的关闭。 4.旧的线程 受到信号后会继续服务，当所有请求的客户端被服务后，旧线程关闭。 ———————————————— 修改配置后使用如下命令生效配置 nginx -s reload </description>
+      <description>前言 #  nginx启动时，会启动两个进程： 一个是Master进程和worker进程。
+改变配置后nginx做的事 #  1）改变了nginx配置之后，HUP signal的信号需要发送给主进程。 2）主进程首先会检测新配置的语法有效性。 3）尝试应用新的配置 1.打开日志文件，并且新分配一个socket来监听。 2.如果1失败，则回滚改变，还是会使用原有的配置。 3.如果1成功，则使用新的配置，新建一个线程。新建成功后发送一个关闭消息给旧的进程。要求旧线程优雅的关闭。 4.旧的线程 受到信号后会继续服务，当所有请求的客户端被服务后，旧线程关闭。 ———————————————— 修改配置后使用如下命令生效配置 nginx -s reload </description>
     </item>
     
     <item>
@@ -2078,7 +2078,7 @@ SELINUX 介绍以及如何在 CENTOS 7 中使用#Security Enhanced Linux 可�
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/posts/posts/</guid>
-      <description>article is in the sub direcotry#</description>
+      <description>article is in the sub direcotry #  </description>
     </item>
     
     <item>

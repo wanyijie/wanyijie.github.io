@@ -3,23 +3,23 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="概述#HTTPS服务是工作在SSL/TLS上的HTTP。 首先简单区分一下HTTPS，SSL ，TLS ，OpenSSL这四者的关系： SSL：（Secure Socket Layer，安全套接字层）是在客户端和服务器之间建立一条SSL安全通道的安全协议； TLS：（Transport Layer Security，传输层安全协议），用于两个应用程序之间提供保密性和数据完整性； TLS的前身是SSL； OpenSSL是TLS/SSL协议的开源实现，提供开发库和命令行程序； HTTPS是HTTP的加密版，底层使用的加密协议是TLS。 结论：SSL/TLS 是协议，OpenSSL是协议的代码实现。
+<meta name="description" content="概述 #  HTTPS服务是工作在SSL/TLS上的HTTP。 首先简单区分一下HTTPS，SSL ，TLS ，OpenSSL这四者的关系： SSL：（Secure Socket Layer，安全套接字层）是在客户端和服务器之间建立一条SSL安全通道的安全协议； TLS：（Transport Layer Security，传输层安全协议），用于两个应用程序之间提供保密性和数据完整性； TLS的前身是SSL； OpenSSL是TLS/SSL协议的开源实现，提供开发库和命令行程序； HTTPS是HTTP的加密版，底层使用的加密协议是TLS。 结论：SSL/TLS 是协议，OpenSSL是协议的代码实现。
 用OpenSSL配置带有SubjectAltName的ssl请求 对于多域名，只需要一个证书就可以保护非常多的域名。 SubjectAltName是X509 Version 3 (RFC 2459)的扩展，允许ssl证书指定多个可以匹配的名称。
 SubjectAltName 可以包含email 地址，ip地址，正则匹配DNS主机名，等等。 ssl这样的一个特性叫做：SubjectAlternativeName（简称：san）
-生成证书请求文件#对于一个通用的ssl证书请求文件（CSR），openssl不需要很多操作。 因为我们可能需要添加一个或者两个SAN到我们CSR，我们需要在openssl配置文件中添加一些东西：你需要告诉openssl创建一个包含x509 V3扩展的CSR，并且你也需要告诉openssl在你的CSR中包含subject alternative names列表。
+生成证书请求文件 #  对于一个通用的ssl证书请求文件（CSR），openssl不需要很多操作。 因为我们可能需要添加一个或者两个SAN到我们CSR，我们需要在openssl配置文件中添加一些东西：你需要告诉openssl创建一个包含x509 V3扩展的CSR，并且你也需要告诉openssl在你的CSR中包含subject alternative names列表。
 创建一个openssl配置文件（openssl.cnf），并启用subject alternative names：
 找到req段落。这段落的内容将会告诉openssl如何去处理证书请求（CSR）。 在req段落中应该要包含一个以req_extensions开始的行。如下： [req] distinguished_name = req_distinguished_name req_extensions = v3_req
 这个配置是告诉openssl在CSR中要包含v3_req段落的部分。 现在我们来配置v3_req，如下：
-[req_distinguished_name]countryName = Country Name (2 letter code)countryName_default = USstateOrProvinceName = State or Province Name (full name)stateOrProvinceName_default = MNlocalityName = Locality Name (eg, city)localityName_default = MinneapolisorganizationalUnitName = Organizational Unit Name (eg, section)organizationalUnitName_default = Domain Control ValidatedcommonName = Internet Widgits LtdcommonName_max = 64[ v3_req ]# Extensions to add to a certificate requestbasicConstraints = CA:FALSEkeyUsage = nonRepudiation, digitalSignature, keyEnciphermentsubjectAltName = @alt_names[alt_names]DNS.">
+[req_distinguished_name] countryName = Country Name (2 letter code) countryName_default = US stateOrProvinceName = State or Province Name (full name) stateOrProvinceName_default = MN localityName = Locality Name (eg, city) localityName_default = Minneapolis organizationalUnitName = Organizational Unit Name (eg, section) organizationalUnitName_default = Domain Control Validated commonName = Internet Widgits Ltd commonName_max = 64 [ v3_req ] # Extensions to add to a certificate request basicConstraints = CA:FALSE keyUsage = nonRepudiation, digitalSignature, keyEncipherment subjectAltName = @alt_names [alt_names] DNS.">
 <meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="" />
-<meta property="og:description" content="概述#HTTPS服务是工作在SSL/TLS上的HTTP。 首先简单区分一下HTTPS，SSL ，TLS ，OpenSSL这四者的关系： SSL：（Secure Socket Layer，安全套接字层）是在客户端和服务器之间建立一条SSL安全通道的安全协议； TLS：（Transport Layer Security，传输层安全协议），用于两个应用程序之间提供保密性和数据完整性； TLS的前身是SSL； OpenSSL是TLS/SSL协议的开源实现，提供开发库和命令行程序； HTTPS是HTTP的加密版，底层使用的加密协议是TLS。 结论：SSL/TLS 是协议，OpenSSL是协议的代码实现。
+<meta property="og:description" content="概述 #  HTTPS服务是工作在SSL/TLS上的HTTP。 首先简单区分一下HTTPS，SSL ，TLS ，OpenSSL这四者的关系： SSL：（Secure Socket Layer，安全套接字层）是在客户端和服务器之间建立一条SSL安全通道的安全协议； TLS：（Transport Layer Security，传输层安全协议），用于两个应用程序之间提供保密性和数据完整性； TLS的前身是SSL； OpenSSL是TLS/SSL协议的开源实现，提供开发库和命令行程序； HTTPS是HTTP的加密版，底层使用的加密协议是TLS。 结论：SSL/TLS 是协议，OpenSSL是协议的代码实现。
 用OpenSSL配置带有SubjectAltName的ssl请求 对于多域名，只需要一个证书就可以保护非常多的域名。 SubjectAltName是X509 Version 3 (RFC 2459)的扩展，允许ssl证书指定多个可以匹配的名称。
 SubjectAltName 可以包含email 地址，ip地址，正则匹配DNS主机名，等等。 ssl这样的一个特性叫做：SubjectAlternativeName（简称：san）
-生成证书请求文件#对于一个通用的ssl证书请求文件（CSR），openssl不需要很多操作。 因为我们可能需要添加一个或者两个SAN到我们CSR，我们需要在openssl配置文件中添加一些东西：你需要告诉openssl创建一个包含x509 V3扩展的CSR，并且你也需要告诉openssl在你的CSR中包含subject alternative names列表。
+生成证书请求文件 #  对于一个通用的ssl证书请求文件（CSR），openssl不需要很多操作。 因为我们可能需要添加一个或者两个SAN到我们CSR，我们需要在openssl配置文件中添加一些东西：你需要告诉openssl创建一个包含x509 V3扩展的CSR，并且你也需要告诉openssl在你的CSR中包含subject alternative names列表。
 创建一个openssl配置文件（openssl.cnf），并启用subject alternative names：
 找到req段落。这段落的内容将会告诉openssl如何去处理证书请求（CSR）。 在req段落中应该要包含一个以req_extensions开始的行。如下： [req] distinguished_name = req_distinguished_name req_extensions = v3_req
 这个配置是告诉openssl在CSR中要包含v3_req段落的部分。 现在我们来配置v3_req，如下：
-[req_distinguished_name]countryName = Country Name (2 letter code)countryName_default = USstateOrProvinceName = State or Province Name (full name)stateOrProvinceName_default = MNlocalityName = Locality Name (eg, city)localityName_default = MinneapolisorganizationalUnitName = Organizational Unit Name (eg, section)organizationalUnitName_default = Domain Control ValidatedcommonName = Internet Widgits LtdcommonName_max = 64[ v3_req ]# Extensions to add to a certificate requestbasicConstraints = CA:FALSEkeyUsage = nonRepudiation, digitalSignature, keyEnciphermentsubjectAltName = @alt_names[alt_names]DNS." />
+[req_distinguished_name] countryName = Country Name (2 letter code) countryName_default = US stateOrProvinceName = State or Province Name (full name) stateOrProvinceName_default = MN localityName = Locality Name (eg, city) localityName_default = Minneapolis organizationalUnitName = Organizational Unit Name (eg, section) organizationalUnitName_default = Domain Control Validated commonName = Internet Widgits Ltd commonName_max = 64 [ v3_req ] # Extensions to add to a certificate request basicConstraints = CA:FALSE keyUsage = nonRepudiation, digitalSignature, keyEncipherment subjectAltName = @alt_names [alt_names] DNS." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://wangyijie.store/posts/security/openssl-%E8%87%AA%E7%AD%BE%E5%90%8Dca%E9%A2%81%E5%8F%91%E5%A4%9A%E5%9F%9F%E5%90%8D%E8%AF%81%E4%B9%A6/" /><meta property="article:section" content="posts" />
 
@@ -30,18 +30,12 @@ SubjectAltName 可以包含email 地址，ip地址，正则匹配DNS主机名，
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.46181bc93375ba932026e753b37c40e6ff8bb16a9ef770c78bcc663e4577b1ba.css" integrity="sha256-RhgbyTN1upMgJudTs3xA5v&#43;LsWqe93DHi8xmPkV3sbo=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.da6f142f9700c1e161dce3303f8df9c416812270fc73d2d587e78ffeb1c533aa.js" integrity="sha256-2m8UL5cAweFh3OMwP435xBaBInD8c9LVh&#43;eP/rHFM6o=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.8f5caacc8bdf45c85597b9a1cb95e79c3e6a709ffb03822fb341f9fda311266f.js" integrity="sha256-j1yqzIvfRchVl7mhy5XnnD5qcJ/7A4Ivs0H5/aMRJm8=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
 -->
   
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-NBRSWPN');</script>
-    
 </head>
 <body dir="ltr">
   <input type="checkbox" class="hidden toggle" id="menu-control" />
@@ -319,7 +313,7 @@ https://github.com/alex-shpak/hugo-book
   概述
   <a class="anchor" href="#%e6%a6%82%e8%bf%b0">#</a>
 </h2>
-<p>HTTPS服务是工作在SSL/TLS上的HTTP。 
+<p>HTTPS服务是工作在SSL/TLS上的HTTP。
 首先简单区分一下HTTPS，SSL ，TLS ，OpenSSL这四者的关系：
 SSL：（Secure Socket Layer，安全套接字层）是在客户端和服务器之间建立一条SSL安全通道的安全协议；
 TLS：（Transport Layer Security，传输层安全协议），用于两个应用程序之间提供保密性和数据完整性；
@@ -328,23 +322,23 @@ OpenSSL是TLS/SSL协议的开源实现，提供开发库和命令行程序；
 HTTPS是HTTP的加密版，底层使用的加密协议是TLS。
 结论：SSL/TLS 是协议，OpenSSL是协议的代码实现。</p>
 <p>用OpenSSL配置带有SubjectAltName的ssl请求
-对于多域名，只需要一个证书就可以保护非常多的域名。 
+对于多域名，只需要一个证书就可以保护非常多的域名。
 SubjectAltName是X509 Version 3 (RFC 2459)的扩展，允许ssl证书指定多个可以匹配的名称。</p>
-<p>SubjectAltName 可以包含email 地址，ip地址，正则匹配DNS主机名，等等。 
+<p>SubjectAltName 可以包含email 地址，ip地址，正则匹配DNS主机名，等等。
 ssl这样的一个特性叫做：SubjectAlternativeName（简称：san）</p>
 <h2 id="生成证书请求文件">
   生成证书请求文件
   <a class="anchor" href="#%e7%94%9f%e6%88%90%e8%af%81%e4%b9%a6%e8%af%b7%e6%b1%82%e6%96%87%e4%bb%b6">#</a>
 </h2>
-<p>对于一个通用的ssl证书请求文件（CSR），openssl不需要很多操作。 
+<p>对于一个通用的ssl证书请求文件（CSR），openssl不需要很多操作。
 因为我们可能需要添加一个或者两个SAN到我们CSR，我们需要在openssl配置文件中添加一些东西：你需要告诉openssl创建一个包含x509 V3扩展的CSR，并且你也需要告诉openssl在你的CSR中包含subject alternative names列表。</p>
 <p>创建一个openssl配置文件（openssl.cnf），并启用subject alternative names：</p>
-<p>找到req段落。这段落的内容将会告诉openssl如何去处理证书请求（CSR）。 
+<p>找到req段落。这段落的内容将会告诉openssl如何去处理证书请求（CSR）。
 在req段落中应该要包含一个以req_extensions开始的行。如下：
 [req]
 distinguished_name = req_distinguished_name
 req_extensions = v3_req</p>
-<p>这个配置是告诉openssl在CSR中要包含v3_req段落的部分。 
+<p>这个配置是告诉openssl在CSR中要包含v3_req段落的部分。
 现在我们来配置v3_req，如下：</p>
 <pre tabindex="0"><code>[req_distinguished_name]
 countryName = Country Name (2 letter code)
@@ -456,10 +450,6 @@ openssl x509 -req -days 3650 -in ca.csr -signkey ca.key
 
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6266541561533854"
      crossorigin="anonymous"></script>
-     
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NBRSWPN"
-     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-     
 </body>
 </html>
 

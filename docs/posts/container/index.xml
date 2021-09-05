@@ -77,7 +77,7 @@
       <guid>https://wangyijie.store/posts/container/%E9%95%9C%E5%83%8F%E5%86%85%E5%AE%B9%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD%E5%B7%A5%E5%85%B7-reg/</guid>
       <description>Docker registry v2 command line client and repo listing generator with security checks.
 Table of Contents
- Installation  Binaries Via Go   Usage  Auth List Repositories and Tags Get a Manifest Get the Digest Download a Layer Delete an Image Vulnerability Reports Generating Static Website for a Registry Using Self-Signed Certs with a Registry   Contributing  Installation#Binaries#For installation instructions from binaries please visit the Releases Page.</description>
+ Installation  Binaries Via Go   Usage  Auth List Repositories and Tags Get a Manifest Get the Digest Download a Layer Delete an Image Vulnerability Reports Generating Static Website for a Registry Using Self-Signed Certs with a Registry   Contributing  Installation #  Binaries #  For installation instructions from binaries please visit the Releases Page.</description>
     </item>
     
   </channel>

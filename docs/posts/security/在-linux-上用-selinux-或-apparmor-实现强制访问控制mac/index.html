@@ -9,7 +9,7 @@ SELinux 和 AppArmor 加固 Linux 安全
 另一个流行并且被广泛使用的 MAC 是 AppArmor，相比于 SELinux 它提供更多的特性，包括一个学习模式，可以让系统“学习”一个特定应用的行为，以及通过配置文件设置限制实现安全的应用使用。
 在 CentOS 7 中，SELinux 合并进了内核并且默认启用强制模式（下一节会介绍这方面更多的内容），与之不同的是，openSUSE 和 Ubuntu 使用的是 AppArmor 。
 在这篇文章中我们会解释 SELinux 和 AppArmor 的本质，以及如何在你选择的发行版上使用这两个工具之一并从中获益。
-SELINUX 介绍以及如何在 CENTOS 7 中使用#Security Enhanced Linux 可以以两种不同模式运行：
+SELINUX 介绍以及如何在 CENTOS 7 中使用 #  Security Enhanced Linux 可以以两种不同模式运行：
  强制：这种情况下，SELinux 基于 SELinux 策略规则拒绝访问，策略规则是一套控制安全引擎的规则。 宽容：这种情况下，SELinux 不拒绝访问，但如果在强制模式下会被拒绝的操作会被记录下来。  SELinux 也能被禁用。尽管这不是它的一个操作模式，不过也是一种选择。但学习如何使用这个工具强过只是忽略它。时刻牢记这一点！
 使用 getenforce 命令来显示 SELinux 的当前模式。如果你想要更改模式，使用 setenforce 0（设置为宽容模式）或 setenforce 1（强制模式）。
 因为这些设置重启后就失效了，你需要编辑 /etc/selinux/config 配置文件并设置 SELINUX 变量为 enforcing、permissive 或 disabled ，保存设置让其重启后也有效：">
@@ -20,7 +20,7 @@ SELinux 和 AppArmor 加固 Linux 安全
 另一个流行并且被广泛使用的 MAC 是 AppArmor，相比于 SELinux 它提供更多的特性，包括一个学习模式，可以让系统“学习”一个特定应用的行为，以及通过配置文件设置限制实现安全的应用使用。
 在 CentOS 7 中，SELinux 合并进了内核并且默认启用强制模式（下一节会介绍这方面更多的内容），与之不同的是，openSUSE 和 Ubuntu 使用的是 AppArmor 。
 在这篇文章中我们会解释 SELinux 和 AppArmor 的本质，以及如何在你选择的发行版上使用这两个工具之一并从中获益。
-SELINUX 介绍以及如何在 CENTOS 7 中使用#Security Enhanced Linux 可以以两种不同模式运行：
+SELINUX 介绍以及如何在 CENTOS 7 中使用 #  Security Enhanced Linux 可以以两种不同模式运行：
  强制：这种情况下，SELinux 基于 SELinux 策略规则拒绝访问，策略规则是一套控制安全引擎的规则。 宽容：这种情况下，SELinux 不拒绝访问，但如果在强制模式下会被拒绝的操作会被记录下来。  SELinux 也能被禁用。尽管这不是它的一个操作模式，不过也是一种选择。但学习如何使用这个工具强过只是忽略它。时刻牢记这一点！
 使用 getenforce 命令来显示 SELinux 的当前模式。如果你想要更改模式，使用 setenforce 0（设置为宽容模式）或 setenforce 1（强制模式）。
 因为这些设置重启后就失效了，你需要编辑 /etc/selinux/config 配置文件并设置 SELINUX 变量为 enforcing、permissive 或 disabled ，保存设置让其重启后也有效：" />
@@ -34,18 +34,12 @@ SELINUX 介绍以及如何在 CENTOS 7 中使用#Security Enhanced Linux 可�
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.46181bc93375ba932026e753b37c40e6ff8bb16a9ef770c78bcc663e4577b1ba.css" integrity="sha256-RhgbyTN1upMgJudTs3xA5v&#43;LsWqe93DHi8xmPkV3sbo=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.da6f142f9700c1e161dce3303f8df9c416812270fc73d2d587e78ffeb1c533aa.js" integrity="sha256-2m8UL5cAweFh3OMwP435xBaBInD8c9LVh&#43;eP/rHFM6o=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.8f5caacc8bdf45c85597b9a1cb95e79c3e6a709ffb03822fb341f9fda311266f.js" integrity="sha256-j1yqzIvfRchVl7mhy5XnnD5qcJ/7A4Ivs0H5/aMRJm8=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
 -->
   
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-NBRSWPN');</script>
-    
 </head>
 <body dir="ltr">
   <input type="checkbox" class="hidden toggle" id="menu-control" />
@@ -508,10 +502,6 @@ Apache 会拒绝提供内容，因为 <code>index.html</code> 已经被标记�
 
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6266541561533854"
      crossorigin="anonymous"></script>
-     
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NBRSWPN"
-     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-     
 </body>
 </html>
 

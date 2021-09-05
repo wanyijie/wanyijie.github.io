@@ -13,7 +13,7 @@
       <pubDate>Mon, 30 Aug 2021 21:25:26 +0800</pubDate>
       
       <guid>https://wangyijie.store/posts/python/django-%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</guid>
-      <description>安装 Django#先安装 PIP，再通过 PIP 安装 Django#安装 PIP
+      <description>安装 Django #  先安装 PIP，再通过 PIP 安装 Django #  安装 PIP
 cd /data;
 mkdir tmp;
 cd tmp;

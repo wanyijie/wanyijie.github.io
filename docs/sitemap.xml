@@ -3,30 +3,42 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://wangyijie.store/categories/</loc>
-    <lastmod>2021-08-30T21:25:26+08:00</lastmod>
+    <lastmod>2021-09-05T11:58:13+08:00</lastmod>
   </url><url>
     <loc>https://wangyijie.store/categories/development/</loc>
-    <lastmod>2021-08-30T21:25:26+08:00</lastmod>
+    <lastmod>2021-09-05T11:58:13+08:00</lastmod>
+  </url><url>
+    <loc>https://wangyijie.store/posts/network/git-proxy/</loc>
+    <lastmod>2021-09-05T11:58:13+08:00</lastmod>
+  </url><url>
+    <loc>https://wangyijie.store/</loc>
+    <lastmod>2021-09-05T11:58:13+08:00</lastmod>
+  </url><url>
+    <loc>https://wangyijie.store/tags/knowledge/</loc>
+    <lastmod>2021-09-05T11:58:13+08:00</lastmod>
+  </url><url>
+    <loc>https://wangyijie.store/tags/network/</loc>
+    <lastmod>2021-09-05T11:58:13+08:00</lastmod>
+  </url><url>
+    <loc>https://wangyijie.store/categories/opetration/</loc>
+    <lastmod>2021-09-05T11:58:13+08:00</lastmod>
+  </url><url>
+    <loc>https://wangyijie.store/posts/</loc>
+    <lastmod>2021-09-05T11:58:13+08:00</lastmod>
+  </url><url>
+    <loc>https://wangyijie.store/tags/</loc>
+    <lastmod>2021-09-05T11:58:13+08:00</lastmod>
+  </url><url>
+    <loc>https://wangyijie.store/tags/wangyijie/</loc>
+    <lastmod>2021-09-05T11:58:13+08:00</lastmod>
+  </url><url>
+    <loc>https://wangyijie.store/posts/network/</loc>
+    <lastmod>2021-09-05T11:58:13+08:00</lastmod>
   </url><url>
     <loc>https://wangyijie.store/posts/python/django-%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</loc>
     <lastmod>2021-08-30T21:25:26+08:00</lastmod>
   </url><url>
-    <loc>https://wangyijie.store/</loc>
-    <lastmod>2021-08-30T21:25:26+08:00</lastmod>
-  </url><url>
-    <loc>https://wangyijie.store/categories/opetration/</loc>
-    <lastmod>2021-08-30T21:25:26+08:00</lastmod>
-  </url><url>
-    <loc>https://wangyijie.store/posts/</loc>
-    <lastmod>2021-08-30T21:25:26+08:00</lastmod>
-  </url><url>
     <loc>https://wangyijie.store/posts/python/</loc>
-    <lastmod>2021-08-30T21:25:26+08:00</lastmod>
-  </url><url>
-    <loc>https://wangyijie.store/tags/</loc>
-    <lastmod>2021-08-30T21:25:26+08:00</lastmod>
-  </url><url>
-    <loc>https://wangyijie.store/tags/wangyijie/</loc>
     <lastmod>2021-08-30T21:25:26+08:00</lastmod>
   </url><url>
     <loc>https://wangyijie.store/posts/postgresql/</loc>
@@ -483,8 +495,6 @@
   </url><url>
     <loc>https://wangyijie.store/posts/istio/</loc>
   </url><url>
-    <loc>https://wangyijie.store/tags/knowledge/</loc>
-  </url><url>
     <loc>https://wangyijie.store/tags/kubernetes/</loc>
   </url><url>
     <loc>https://wangyijie.store/posts/kubernetes/</loc>
@@ -526,8 +536,6 @@
     <loc>https://wangyijie.store/posts/monitor/</loc>
   </url><url>
     <loc>https://wangyijie.store/posts/sre/</loc>
-  </url><url>
-    <loc>https://wangyijie.store/posts/network/</loc>
   </url><url>
     <loc>https://wangyijie.store/posts/poetry/</loc>
   </url><url>

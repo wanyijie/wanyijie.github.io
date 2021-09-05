@@ -1,7 +1,6 @@
 ---
 title: "Git Proxy"
 date: 2021-09-05T11:58:13+08:00
-draft: true
 summary: "git 仓库配置使用 shadowsocks 代理, git config https.proxy 'socks5://127.0.0.1:1080'"
 tags:
     - wangyijie

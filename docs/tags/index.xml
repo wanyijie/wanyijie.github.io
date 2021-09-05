@@ -6,11 +6,29 @@
     <description>Recent content in Tags on hope to be a great computer technology Site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 30 Aug 2021 21:25:26 +0800</lastBuildDate><atom:link href="https://wangyijie.store/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 05 Sep 2021 11:58:13 +0800</lastBuildDate><atom:link href="https://wangyijie.store/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>knowledge</title>
+      <link>https://wangyijie.store/tags/knowledge/</link>
+      <pubDate>Sun, 05 Sep 2021 11:58:13 +0800</pubDate>
+      
+      <guid>https://wangyijie.store/tags/knowledge/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>network</title>
+      <link>https://wangyijie.store/tags/network/</link>
+      <pubDate>Sun, 05 Sep 2021 11:58:13 +0800</pubDate>
+      
+      <guid>https://wangyijie.store/tags/network/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>wangyijie</title>
       <link>https://wangyijie.store/tags/wangyijie/</link>
-      <pubDate>Mon, 30 Aug 2021 21:25:26 +0800</pubDate>
+      <pubDate>Sun, 05 Sep 2021 11:58:13 +0800</pubDate>
       
       <guid>https://wangyijie.store/tags/wangyijie/</guid>
       <description></description>
@@ -76,15 +94,6 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangyijie.store/tags/golang/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>knowledge</title>
-      <link>https://wangyijie.store/tags/knowledge/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://wangyijie.store/tags/knowledge/</guid>
       <description></description>
     </item>
     

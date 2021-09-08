@@ -3,7 +3,6 @@ title: "Postgresql Dr Config"
 date: 2021-08-30T21:25:26+08:00
 # bookComments: false
 # bookSearchExclude: false
-draft: true
 summary: ""
 tags:
     - wangyijie

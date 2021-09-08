@@ -1,3 +1,13 @@
+---
+summary: "Kubernetes Pod 安全策略(PSP)配置,默认情况下，Kubernetes 允许创建一个有特权容器的 Pod，这些容器很可能会危机系统安全，而 Pod 安全策略（PSP）则通过确保请求者有权限按配置来创建 Pod，从而来保护集群免受特权 Pod 的影响"
+tags:
+    - wangyijie
+    - security
+categories:
+    - security
+    - Development
+    - Opetration
+---
 Kubernetes Pod 安全策略(PSP)配置
     默认情况下，Kubernetes 允许创建一个有特权容器的 Pod，这些容器很可能会危机系统安全，而 Pod 安全策略（PSP）则通过确保请求者有权限按配置来创建 Pod，从而来保护集群免受特权 Pod 的影响。
 

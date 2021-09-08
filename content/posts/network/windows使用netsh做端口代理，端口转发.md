@@ -1,3 +1,11 @@
+---
+summary: "netsh interface portproxy add v4tov4 listenaddress=172.20.0.2 listenport=1521 connectaddress=172.16.100.74 connectport=1521"
+tags:
+    - wangyijie
+    - network
+categories:
+    - Opetration
+---
 ## example 
 ```
 netsh interface portproxy add v4tov4 listenaddress=172.20.0.2 listenport=1521 connectaddress=172.16.100.74 connectport=1521

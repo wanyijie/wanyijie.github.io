@@ -1,3 +1,13 @@
+---
+summary: "HTTPS服务是工作在SSL/TLS上的HTTP。 首先简单区分一下HTTPS，SSL ，TLS ，OpenSSL这四者的关系：SSL：（Secure Socket Layer，安全套接字层）是在客户端和服务器之间建立一条SSL安全通道的安全协议；TLS：（Transport Layer Security，传输层安全协议），用于两个应用程序之间提供保密性和数据完整性；"
+tags:
+    - wangyijie
+    - security
+categories:
+    - security
+    - Development
+    - Opetration
+---
 ## 概述
 HTTPS服务是工作在SSL/TLS上的HTTP。 
 首先简单区分一下HTTPS，SSL ，TLS ，OpenSSL这四者的关系：

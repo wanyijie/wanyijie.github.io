@@ -1,3 +1,14 @@
+---
+summary: "为了解决标准的“用户-组-其他/读-写-执行”权限以及访问控制列表的限制以及加强安全机制，美国国家安全局（NSA）设计出一个灵活的<ruby>强制访问控制（MAC）方法 SELinux（Security Enhanced Linux
+的缩写），来限制标准的权限之外的种种权限，在仍然允许对这个控制模型后续修改的情况下，让进程尽可能以最小权限访问或在系统对象（如文件，文件夹，网络端口等）上执行其他操作"
+tags:
+    - wangyijie
+    - security
+categories:
+    - security
+    - Development
+    - Opetration
+---
 为了解决标准的“用户-组-其他/读-写-执行”权限以及[访问控制列表](http://www.tecmint.com/secure-files-using-acls-in-linux/)[1]的限制以及加强安全机制，美国国家安全局（NSA）设计出一个灵活的<ruby>强制访问控制（MAC）方法 SELinux（Security Enhanced Linux
 的缩写），来限制标准的权限之外的种种权限，在仍然允许对这个控制模型后续修改的情况下，让进程尽可能以最小权限访问或在系统对象（如文件，文件夹，网络端口等）上执行其他操作。
 

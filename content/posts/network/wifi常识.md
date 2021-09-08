@@ -1,3 +1,11 @@
+---
+summary: "而你路由器的300M是指的你的路由器的传输速率（最大传输速率）：300Mbps，也就是俗称网速, 40MHZ双通道能达到300M。"
+tags:
+    - wangyijie
+    - network
+categories:
+    - Opetration
+---
 # 频段带宽
 
 频段带宽指的是你的路由器的发射频率宽度：

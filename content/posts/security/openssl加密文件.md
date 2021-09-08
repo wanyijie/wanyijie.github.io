@@ -1,3 +1,13 @@
+---
+summary: "openssl是个密码工具集，提供多端接口调用方式"
+tags:
+    - wangyijie
+    - security
+categories:
+    - security
+    - Development
+    - Opetration
+---
 openssl是个密码工具集，提供多端接口调用方式
 组成: 
 >  1. 代码库 libcryto ,libssl(ssl/tls)

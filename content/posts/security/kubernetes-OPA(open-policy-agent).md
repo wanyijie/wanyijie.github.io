@@ -1,3 +1,13 @@
+---
+summary: "在本文中，我们将演示如何使用OPA执行最细粒度的安全策略。请注意，本文是一个系列的一部分，我们将基于“OPA作为代码介绍”和“集成OPA到Kubernetes”中获得的知识进行。如果你还没有这样做，请浏览本系列中已发表的文章"
+tags:
+    - wangyijie
+    - security
+categories:
+    - security
+    - Development
+    - Opetration
+---
 在本文中，我们将演示如何使用OPA执行最细粒度的安全策略。请注意，本文是一个系列的一部分，我们将基于“OPA作为代码介绍”和“集成OPA到Kubernetes”中获得的知识进行。如果你还没有这样做，请浏览本系列中已发表的文章。
 
 https://www.magalix.com/blog/introducing-policy-as-code-the-open-policy-agent-opa

@@ -1,3 +1,13 @@
+---
+summary: "Angular Material附带Angular CLI原理图，使创建Material应用程序变得更加简单。"
+tags:
+    - wangyijie
+    - angular
+    - material
+categories:
+    - Development
+    - Opetration
+---
 Angular Material comes packaged with Angular CLI schematics to make
 creating Material applications easier.  
 Angular Material附带Angular CLI原理图，使创建Material应用程序变得更加简单。

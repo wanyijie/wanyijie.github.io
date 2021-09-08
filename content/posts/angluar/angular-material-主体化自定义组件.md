@@ -1,3 +1,13 @@
+---
+summary: "为了使用Angular Material的工具设计自己的组件，组件的样式必须用Sass定义"
+tags:
+    - wangyijie
+    - angular
+    - material
+categories:
+    - Development
+    - Opetration
+---
 # Theming your custom components
 # 主体化自定义的组件
 In order to style your own components with Angular Material's tooling, the component's styles must be defined with Sass.  

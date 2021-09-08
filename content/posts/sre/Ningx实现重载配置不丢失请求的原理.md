@@ -1,3 +1,11 @@
+---
+summary: "nginx启动时，会启动两个进程： 一个是Master进程和worker进程。改变了nginx配置之后，HUP signal的信号需要发送给主进程"
+tags:
+    - wangyijie
+    - develop
+categories:
+    - SRE
+---
 ## 前言
 nginx启动时，会启动两个进程： 一个是Master进程和worker进程。
 ## 改变配置后nginx做的事

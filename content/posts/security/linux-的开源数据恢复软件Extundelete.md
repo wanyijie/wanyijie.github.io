@@ -1,3 +1,13 @@
+---
+summary: "Extundelete 是基于 linux 的开源数据恢复软件。如果您不小心误删除数据，并且 Linux 系统也没有与 Windows 系统下回收站类似的功能，您可以方便快速安装此工具"
+tags:
+    - wangyijie
+    - security
+categories:
+    - security
+    - Development
+    - Opetration
+---
 Extundelete工具简介
 Extundelete 是基于 linux 的开源数据恢复软件。如果您不小心误删除数据，并且 Linux 系统也没有与 Windows 系统下回收站类似的功能，您可以方便快速安装此工具。
 

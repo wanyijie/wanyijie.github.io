@@ -1,3 +1,11 @@
+---
+summary: "NETSTAT.EXE -abno | Select-String -Pattern Sangfor -Context 1,2"
+tags:
+    - wangyijie
+    - network
+categories:
+    - Opetration
+---
 ## example
 ```
 NETSTAT.EXE -abno | Select-String -Pattern Sangfor -Context 1,2

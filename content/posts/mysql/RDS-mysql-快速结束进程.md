@@ -1,3 +1,13 @@
+---
+summary: "RDS 默认管理员也没有super权限，数据库在执行DDL语句时没有super权限是不能结束进程会报异常"
+tags:
+    - wangyijie
+    - database
+categories:
+    - Development
+    - Opetration
+    - database
+---
 RDS 默认管理员也没有super权限，数据库在执行DDL语句时没有super权限是不能结束进程会报异常：
 ```   
  you are not owner for thread *******

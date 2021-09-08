@@ -1,4 +1,13 @@
-
+---
+summary: "DevSecOps 意味着从一开始就要考虑应用和基础架构的安全性；同时还要让某些安全网关实现自动化，以防止 DevOps 工作流程变慢。选择合适的工具来持续集成安全防护中集成安全防护功能有助于实现这些目标"
+tags:
+    - wangyijie
+    - security
+categories:
+    - security
+    - Development
+    - Opetration
+---
 ## **DevSecOps 和 DevOps 有什么区别 ?**
 
 我们知道，DevOps 不仅仅涉及开发和运维团队。而如果您想充分发挥出 DevOps 的敏捷性和响应力，就必须将[IT 安全防护](https://www.redhat.com/zh/topics/security)融入应用的整个生命周期中 。

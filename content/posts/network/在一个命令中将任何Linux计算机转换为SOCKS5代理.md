@@ -1,3 +1,11 @@
+---
+summary: "对于那些想上网的人来说这很方便 - 你可以在一个命令中将任何Linux计算机变成SOCKS5（和SOCKS4）代理"
+tags:
+    - wangyijie
+    - network
+categories:
+    - Opetration
+---
 对于那些想上网的人来说这很方便 - 你可以在一个命令中将任何Linux计算机变成SOCKS5（和SOCKS4）代理：  
 ```
 ssh -N -D 0.0.0.0:1080 user@ip

@@ -1,3 +1,11 @@
+---
+summary: "inotify可以对linux 文件系统进行高效性、细粒度、异步的监控，用于通知用户控件程序的文件系统变化。inotify可以监控文件，也可以监控目录，配合rsync实现文件的实时同步功能"
+tags:
+    - wangyijie
+    - monitor
+categories:
+    - Opetration
+---
 　inotify可以对linux 文件系统进行高效性、细粒度、异步的监控，用于通知用户控件程序的文件系统变化。inotify可以监控文件，也可以监控目录，配合rsync实现文件的实时同步功能。
 
 　　首先安装inotify软件，先检查自己的系统版本（uname -r），我的是centos 7的系统，我的步骤是

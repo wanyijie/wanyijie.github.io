@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="pg_dump -h 192.168.0.100 -d postgres -U postgres  -W  -t pg_database &ndash;inserts -a &ndash;column-inserts  &ndash;encoding=UTF8 -f /test1.sql">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="pg_dump 示例" />
+<meta property="og:description" content="pg_dump -h 192.168.0.100 -d postgres -U postgres  -W  -t pg_database &ndash;inserts -a &ndash;column-inserts  &ndash;encoding=UTF8 -f /test1.sql" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://wangyijie.store/posts/postgresql/pg_dump_example/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-09-08T17:07:33+08:00" />
+<meta property="article:modified_time" content="2021-09-08T17:07:33+08:00" />
+
+<title>pg_dump 示例 | hope to be a great computer technology Site</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.46181bc93375ba932026e753b37c40e6ff8bb16a9ef770c78bcc663e4577b1ba.css" integrity="sha256-RhgbyTN1upMgJudTs3xA5v&#43;LsWqe93DHi8xmPkV3sbo=" crossorigin="anonymous">
+  <script defer src="/flexsearch.min.js"></script>
+  <script defer src="/en.search.min.facf3dcb1bf4c9e399ec403a27025940af3dfa2911cf8be3863a89cdf4afb6cf.js" integrity="sha256-&#43;s89yxv0yeOZ7EA6JwJZQK89&#43;ikRz4vjhjqJzfSvts8=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6266541561533854"
+     crossorigin="anonymous"></script>
+
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-NBRSWPN');</script>
+    
+
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>hope to be a great computer technology Site</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/posts/" >
+        Posts
+      </a>
+      
+<ul>
+  
+  <li>
+    <a href="/posts/angluar/" >
+        angular
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/ansible/" >
+        ansible
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/cicd/" >
+        CICD
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/devops/" >
+        DevOps
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/english/" >
+        English
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/golang/" >
+        golang
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/istio/" >
+        istio
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/kubernetes/" >
+        Kubernetes
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/mysql/" >
+        mysql
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/postgresql/" >
+        postgresql
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/python/" >
+        python
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/cloud/" >
+        云服务
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/security/" >
+        安全
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/container/" >
+        容器
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/literature/" >
+        文学
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/diary/" >
+        日记
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/machine_learning/" >
+        机器学习
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/monitor/" >
+        监控
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/sre/" >
+        站点可靠性工程
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/network/" >
+        网络
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/poetry/" >
+        诗歌
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/essay/" >
+        随笔
+      </a>
+  </li>
+  
+</ul>
+
+  </li>
+  
+  <li>
+    <a href="/about/" >
+        关于作者
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var a=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(b){localStorage.setItem("menu.scrollTop",a.scrollTop)}),a.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>pg_dump 示例</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents"></nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+<article class="markdown">
+  <h1>
+    <a href="/posts/postgresql/pg_dump_example/">pg_dump 示例</a>
+  </h1>
+  
+  <h5>September 8, 2021</h5>
+
+
+
+  
+  <div>
+    
+      <a href="/categories/development/">Development</a>, 
+      <a href="/categories/opetration/">Opetration</a>
+  </div>
+  
+
+  
+  <div>
+    
+      <a href="/tags/wangyijie/">wangyijie</a>, 
+      <a href="/tags/database/">database</a>, 
+      <a href="/tags/postgresql/">postgresql</a>
+  </div>
+  
+
+
+
+<h1 id="示例">
+  示例
+  <a class="anchor" href="#%e7%a4%ba%e4%be%8b">#</a>
+</h1>
+<pre><code>pg_dump -h 192.168.0.100 -d postgres -U postgres  -W  -t pg_database --inserts -a --column-inserts  --encoding=UTF8 -f /test1.sql
+</code></pre>
+<h1 id="参数用法">
+  参数用法:
+  <a class="anchor" href="#%e5%8f%82%e6%95%b0%e7%94%a8%e6%b3%95">#</a>
+</h1>
+<pre><code>pg_dump [选项]... [数据库名字]
+一般选项:
+-f, --file=FILENAME          输出文件或目录名
+-F, --format=c|d|t|p         输出文件格式 (定制, 目录, tar)
+                            明文 (默认值))
+-j, --jobs=NUM               执行多个并行任务进行备份转储工作
+-v, --verbose                详细模式
+-V, --version                输出版本信息，然后退出
+-Z, --compress=0-9           被压缩格式的压缩级别
+--lock-wait-timeout=TIMEOUT  在等待表锁超时后操作失败
+-?, --help                   显示此帮助, 然后退出
+
+控制输出内容选项:
+-a, --data-only              只转储数据,不包括模式
+-b, --blobs                  在转储中包括大对象
+-c, --clean                  在重新创建之前，先清除（删除）数据库对象
+-C, --create                 在转储中包括命令,以便创建数据库
+-E, --encoding=ENCODING      转储以ENCODING形式编码的数据
+-n, --schema=SCHEMA          只转储指定名称的模式
+-N, --exclude-schema=SCHEMA  不转储已命名的模式
+-o, --oids                   在转储中包括 OID
+-O, --no-owner               在明文格式中, 忽略恢复对象所属者
+
+-s, --schema-only            只转储模式, 不包括数据
+-S, --superuser=NAME         在明文格式中使用指定的超级用户名
+-t, --table=TABLE            只转储指定名称的表
+-T, --exclude-table=TABLE    不转储指定名称的表
+-x, --no-privileges          不要转储权限 (grant/revoke)
+--binary-upgrade             只能由升级工具使用
+--column-inserts             以带有列名的INSERT命令形式转储数据
+--disable-dollar-quoting     取消美元 (符号) 引号, 使用 SQL 标准引号
+--disable-triggers           在只恢复数据的过程中禁用触发器
+--enable-row-security        启用行安全性（只转储用户能够访问的内容）
+--exclude-table-data=TABLE   不转储指定名称的表中的数据
+--if-exists              当删除对象时使用IF EXISTS
+--inserts                    以INSERT命令，而不是COPY命令的形式转储数据
+--no-security-labels         不转储安全标签的分配
+--no-synchronized-snapshots  在并行工作集中不使用同步快照
+--no-tablespaces             不转储表空间分配信息
+--no-unlogged-table-data     不转储没有日志的表数据
+--quote-all-identifiers      所有标识符加引号，即使不是关键字
+--section=SECTION            备份命名的节 (数据前, 数据, 及 数据后)
+--serializable-deferrable   等到备份可以无异常运行
+--snapshot=SNAPSHOT          为转储使用给定的快照
+--strict-names               要求每个表和/或schema包括模式以匹配至少一个实体
+--use-set-session-authorization
+                            使用 SESSION AUTHORIZATION 命令代替
+                ALTER OWNER 命令来设置所有权
+
+联接选项:
+-d, --dbname=DBNAME       对数据库 DBNAME备份
+-h, --host=主机名        数据库服务器的主机名或套接字目录
+-p, --port=端口号        数据库服务器的端口号
+-U, --username=名字      以指定的数据库用户联接
+-w, --no-password        永远不提示输入口令
+-W, --password           强制口令提示 (自动)
+--role=ROLENAME          在转储前运行SET ROLE
+
+如果没有提供数据库名字, 那么使用 PGDATABASE 环境变量
+的数值.</code></pre>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+  
+
+  
+
+  <script src="https://utteranc.es/client.js" repo="wanyijie/blog" issue-term="pathname" label="web"
+    theme="github-light" crossorigin="anonymous" async>
+    </script>
+</div>
+
+
+
+<script>{ { . | safeJS } }</script>
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents"></nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+       
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NBRSWPN"
+     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+     
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

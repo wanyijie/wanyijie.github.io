@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>datababse on hope to be a great computer technology Site</title>
+    <link>https://wangyijie.store/tags/datababse/</link>
+    <description>Recent content in datababse on hope to be a great computer technology Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 08 Sep 2021 15:55:13 +0800</lastBuildDate><atom:link href="https://wangyijie.store/tags/datababse/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>预写日志归档相关问题</title>
+      <link>https://wangyijie.store/posts/postgresql/%E9%A2%84%E5%86%99%E6%97%A5%E5%BF%97%E5%BD%92%E6%A1%A3%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Wed, 08 Sep 2021 15:55:13 +0800</pubDate>
+      
+      <guid>https://wangyijie.store/posts/postgresql/%E9%A2%84%E5%86%99%E6%97%A5%E5%BF%97%E5%BD%92%E6%A1%A3%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/</guid>
+      <description>数据日志什么时候归档? PG_WAL 目录中的文件为什么不清理?</description>
+    </item>
+    
+  </channel>
+</rss>

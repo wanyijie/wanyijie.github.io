@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>dadabase on hope to be a great computer technology Site</title>
+    <link>https://wangyijie.store/tags/dadabase/</link>
+    <description>Recent content in dadabase on hope to be a great computer technology Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 08 Sep 2021 15:17:00 +0800</lastBuildDate><atom:link href="https://wangyijie.store/tags/dadabase/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>关键术语记解释</title>
+      <link>https://wangyijie.store/posts/postgresql/%E5%85%B3%E9%94%AE%E6%9C%AF%E8%AF%AD%E8%AE%B0%E8%A7%A3%E9%87%8A/</link>
+      <pubDate>Wed, 08 Sep 2021 15:17:00 +0800</pubDate>
+      
+      <guid>https://wangyijie.store/posts/postgresql/%E5%85%B3%E9%94%AE%E6%9C%AF%E8%AF%AD%E8%AE%B0%E8%A7%A3%E9%87%8A/</guid>
+      <description>wal lsn checkpiont timeline</description>
+    </item>
+    
+  </channel>
+</rss>

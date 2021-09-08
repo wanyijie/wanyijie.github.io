@@ -3,11 +3,9 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="前言 #  nginx启动时，会启动两个进程： 一个是Master进程和worker进程。
-改变配置后nginx做的事 #  1）改变了nginx配置之后，HUP signal的信号需要发送给主进程。 2）主进程首先会检测新配置的语法有效性。 3）尝试应用新的配置 1.打开日志文件，并且新分配一个socket来监听。 2.如果1失败，则回滚改变，还是会使用原有的配置。 3.如果1成功，则使用新的配置，新建一个线程。新建成功后发送一个关闭消息给旧的进程。要求旧线程优雅的关闭。 4.旧的线程 受到信号后会继续服务，当所有请求的客户端被服务后，旧线程关闭。 ———————————————— 修改配置后使用如下命令生效配置 nginx -s reload ">
+<meta name="description" content="nginx启动时，会启动两个进程： 一个是Master进程和worker进程。改变了nginx配置之后，HUP signal的信号需要发送给主进程">
 <meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="" />
-<meta property="og:description" content="前言 #  nginx启动时，会启动两个进程： 一个是Master进程和worker进程。
-改变配置后nginx做的事 #  1）改变了nginx配置之后，HUP signal的信号需要发送给主进程。 2）主进程首先会检测新配置的语法有效性。 3）尝试应用新的配置 1.打开日志文件，并且新分配一个socket来监听。 2.如果1失败，则回滚改变，还是会使用原有的配置。 3.如果1成功，则使用新的配置，新建一个线程。新建成功后发送一个关闭消息给旧的进程。要求旧线程优雅的关闭。 4.旧的线程 受到信号后会继续服务，当所有请求的客户端被服务后，旧线程关闭。 ———————————————— 修改配置后使用如下命令生效配置 nginx -s reload " />
+<meta property="og:description" content="nginx启动时，会启动两个进程： 一个是Master进程和worker进程。改变了nginx配置之后，HUP signal的信号需要发送给主进程" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://wangyijie.store/posts/sre/ningx%E5%AE%9E%E7%8E%B0%E9%87%8D%E8%BD%BD%E9%85%8D%E7%BD%AE%E4%B8%8D%E4%B8%A2%E5%A4%B1%E8%AF%B7%E6%B1%82%E7%9A%84%E5%8E%9F%E7%90%86/" /><meta property="article:section" content="posts" />
 
@@ -18,7 +16,7 @@
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.46181bc93375ba932026e753b37c40e6ff8bb16a9ef770c78bcc663e4577b1ba.css" integrity="sha256-RhgbyTN1upMgJudTs3xA5v&#43;LsWqe93DHi8xmPkV3sbo=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.8f5caacc8bdf45c85597b9a1cb95e79c3e6a709ffb03822fb341f9fda311266f.js" integrity="sha256-j1yqzIvfRchVl7mhy5XnnD5qcJ/7A4Ivs0H5/aMRJm8=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.b03ad29f64e0836809250d62ac56686bf57f0eb5217499f86df132a876390b44.js" integrity="sha256-sDrSn2Tgg2gJJQ1irFZoa/V/DrUhdJn4bfEyqHY5C0Q=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -133,12 +131,6 @@ https://github.com/alex-shpak/hugo-book
   <li>
     <a href="/posts/kubernetes/" >
         Kubernetes
-      </a>
-  </li>
-  
-  <li>
-    <a href="/posts/material2/" >
-        mererial2
       </a>
   </li>
   
@@ -301,7 +293,18 @@ https://github.com/alex-shpak/hugo-book
 
 
   
+  <div>
+    
+      <a href="/categories/sre/">SRE</a>
+  </div>
+  
 
+  
+  <div>
+    
+      <a href="/tags/wangyijie/">wangyijie</a>, 
+      <a href="/tags/develop/">develop</a>
+  </div>
   
 
 

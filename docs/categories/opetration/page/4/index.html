@@ -14,7 +14,7 @@
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.46181bc93375ba932026e753b37c40e6ff8bb16a9ef770c78bcc663e4577b1ba.css" integrity="sha256-RhgbyTN1upMgJudTs3xA5v&#43;LsWqe93DHi8xmPkV3sbo=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.8f5caacc8bdf45c85597b9a1cb95e79c3e6a709ffb03822fb341f9fda311266f.js" integrity="sha256-j1yqzIvfRchVl7mhy5XnnD5qcJ/7A4Ivs0H5/aMRJm8=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.b03ad29f64e0836809250d62ac56686bf57f0eb5217499f86df132a876390b44.js" integrity="sha256-sDrSn2Tgg2gJJQ1irFZoa/V/DrUhdJn4bfEyqHY5C0Q=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://wangyijie.store/categories/opetration/index.xml" title="hope to be a great computer technology Site" />
 <!--
 Made with Book Theme
@@ -130,12 +130,6 @@ https://github.com/alex-shpak/hugo-book
   <li>
     <a href="/posts/kubernetes/" >
         Kubernetes
-      </a>
-  </li>
-  
-  <li>
-    <a href="/posts/material2/" >
-        mererial2
       </a>
   </li>
   
@@ -283,12 +277,17 @@ https://github.com/alex-shpak/hugo-book
       
         <li class="flex justify-between">
           <a href="/categories/development/">Development</a>
-          <span>89</span>
+          <span>102</span>
         </li>
       
         <li class="flex justify-between">
           <a href="/categories/opetration/">Opetration</a>
-          <span>89</span>
+          <span>115</span>
+        </li>
+      
+        <li class="flex justify-between">
+          <a href="/categories/database/">database</a>
+          <span>1</span>
         </li>
       
         <li class="flex justify-between">
@@ -298,7 +297,17 @@ https://github.com/alex-shpak/hugo-book
       
         <li class="flex justify-between">
           <a href="/categories/literature/">literature</a>
-          <span>43</span>
+          <span>47</span>
+        </li>
+      
+        <li class="flex justify-between">
+          <a href="/categories/security/">security</a>
+          <span>8</span>
+        </li>
+      
+        <li class="flex justify-between">
+          <a href="/categories/sre/">SRE</a>
+          <span>3</span>
         </li>
       
       </ul>
@@ -317,17 +326,17 @@ https://github.com/alex-shpak/hugo-book
       
         <li class="flex justify-between">
           <a href="/tags/network/">network</a>
-          <span>1</span>
+          <span>9</span>
         </li>
       
         <li class="flex justify-between">
           <a href="/tags/wangyijie/">wangyijie</a>
-          <span>172</span>
+          <span>205</span>
         </li>
       
         <li class="flex justify-between">
           <a href="/tags/angular/">angular</a>
-          <span>9</span>
+          <span>12</span>
         </li>
       
         <li class="flex justify-between">
@@ -343,6 +352,16 @@ https://github.com/alex-shpak/hugo-book
         <li class="flex justify-between">
           <a href="/tags/container/">container</a>
           <span>8</span>
+        </li>
+      
+        <li class="flex justify-between">
+          <a href="/tags/database/">database</a>
+          <span>1</span>
+        </li>
+      
+        <li class="flex justify-between">
+          <a href="/tags/develop/">develop</a>
+          <span>3</span>
         </li>
       
         <li class="flex justify-between">
@@ -376,6 +395,26 @@ https://github.com/alex-shpak/hugo-book
         </li>
       
         <li class="flex justify-between">
+          <a href="/tags/material/">material</a>
+          <span>3</span>
+        </li>
+      
+        <li class="flex justify-between">
+          <a href="/tags/monitor/">monitor</a>
+          <span>5</span>
+        </li>
+      
+        <li class="flex justify-between">
+          <a href="/tags/poetry/">poetry</a>
+          <span>4</span>
+        </li>
+      
+        <li class="flex justify-between">
+          <a href="/tags/security/">security</a>
+          <span>8</span>
+        </li>
+      
+        <li class="flex justify-between">
           <a href="/tags/vpn/">vpn</a>
           <span>1</span>
         </li>
@@ -400,6 +439,134 @@ https://github.com/alex-shpak/hugo-book
 
       
       
+  
+  <article class="markdown book-post">
+    <h2>
+      <a href="/posts/cicd/doing-a-canary-release/">Doing a Canary Release</a>
+    </h2>
+    
+
+
+  
+  <div>
+    
+      <a href="/categories/development/">Development</a>, 
+      <a href="/categories/opetration/">Opetration</a>
+  </div>
+  
+
+  
+  <div>
+    
+      <a href="/tags/wangyijie/">wangyijie</a>, 
+      <a href="/tags/ansible/">ansible</a>
+  </div>
+  
+
+
+
+
+    <p><p>Sometimes it’s safest to test the new version of an application on a small set of users to see how it performs in production, then gradually ramp up the proportion of traffic to the new servers until eventually all traffic is going to them.</p>
+        <a href="/posts/cicd/doing-a-canary-release/">...</a>
+      
+    </p>
+  </article>
+  
+  <article class="markdown book-post">
+    <h2>
+      <a href="/posts/cicd/gitlab%E4%B8%80%E4%B8%AA%E6%8E%A8%E9%80%81%E8%A7%A6%E5%8F%91%E9%87%8D%E5%A4%8D%E6%88%96%E5%A4%9A%E4%B8%AAwebhook%E4%BA%8B%E4%BB%B6/">Gitlab一个推送触发重复或多个 Webhook事件</a>
+    </h2>
+    
+
+
+  
+  <div>
+    
+      <a href="/categories/development/">Development</a>, 
+      <a href="/categories/opetration/">Opetration</a>
+  </div>
+  
+
+  
+  <div>
+    
+      <a href="/tags/wangyijie/">wangyijie</a>, 
+      <a href="/tags/ansible/">ansible</a>
+  </div>
+  
+
+
+
+
+    <p><p>当GitLab发送webhook时，它需要10秒内的响应（设置默认值）。如果它没有收到，它将重试webhook。如果端点在这10秒内没有发送HTTP响应，GitLab可能会决定挂钩失败并重试。</p>
+        <a href="/posts/cicd/gitlab%E4%B8%80%E4%B8%AA%E6%8E%A8%E9%80%81%E8%A7%A6%E5%8F%91%E9%87%8D%E5%A4%8D%E6%88%96%E5%A4%9A%E4%B8%AAwebhook%E4%BA%8B%E4%BB%B6/">...</a>
+      
+    </p>
+  </article>
+  
+  <article class="markdown book-post">
+    <h2>
+      <a href="/posts/cicd/nginx-and-devops-methodologies-go-hand-in-hand/">Nginx and Dev Ops Methodologies Go Hand in Hand</a>
+    </h2>
+    
+
+
+  
+  <div>
+    
+      <a href="/categories/development/">Development</a>, 
+      <a href="/categories/opetration/">Opetration</a>
+  </div>
+  
+
+  
+  <div>
+    
+      <a href="/tags/wangyijie/">wangyijie</a>, 
+      <a href="/tags/ansible/">ansible</a>
+  </div>
+  
+
+
+
+
+    <p><p>DevOps has seen explosive growth recently, as organizations look to deliver releases and features faster by automating operations with an Infrastructure as Code approach. This shift in the industry is making for some very interesting transformations, both in how organizations deploy applications and what is expected from IT operations.</p>
+        <a href="/posts/cicd/nginx-and-devops-methodologies-go-hand-in-hand/">...</a>
+      
+    </p>
+  </article>
+  
+  <article class="markdown book-post">
+    <h2>
+      <a href="/posts/cicd/performing-a-b-testing/">Performing a B Testing</a>
+    </h2>
+    
+
+
+  
+  <div>
+    
+      <a href="/categories/development/">Development</a>, 
+      <a href="/categories/opetration/">Opetration</a>
+  </div>
+  
+
+  
+  <div>
+    
+      <a href="/tags/wangyijie/">wangyijie</a>, 
+      <a href="/tags/ansible/">ansible</a>
+  </div>
+  
+
+
+
+
+    <p><p>When you are testing changes to an application, there are some factors you can measure only in a production environment rather than a development test bed. Examples include the effect of UI changes on user behavior and the impact on overall performance. A common testing method is <em>A/B testing</em> – also known as <em>split testing</em> – in which a (usually small) proportion of users is directed to the new version of an application while most users continue to use the current version.</p>
+        <a href="/posts/cicd/performing-a-b-testing/">...</a>
+      
+    </p>
+  </article>
   
   <article class="markdown book-post">
     <h2>
@@ -583,130 +750,6 @@ https://github.com/alex-shpak/hugo-book
     </p>
   </article>
   
-  <article class="markdown book-post">
-    <h2>
-      <a href="/posts/container/overview-of-the-docker-architecture/">Overview of the Docker Architecture</a>
-    </h2>
-    
-
-
-  
-  <div>
-    
-      <a href="/categories/development/">Development</a>, 
-      <a href="/categories/opetration/">Opetration</a>
-  </div>
-  
-
-  
-  <div>
-    
-      <a href="/tags/wangyijie/">wangyijie</a>, 
-      <a href="/tags/container/">container</a>
-  </div>
-  
-
-
-
-
-    <p>In this text we&rsquo;re going to be talking about Docker architecture. And Docker is the container implementationthat is supported by Red Hat and is used by OpenShift.
-    </p>
-  </article>
-  
-  <article class="markdown book-post">
-    <h2>
-      <a href="/posts/container/podman-error-with-centos7/">Podman Error With Centos7</a>
-    </h2>
-    
-
-
-  
-  <div>
-    
-      <a href="/categories/development/">Development</a>, 
-      <a href="/categories/opetration/">Opetration</a>
-  </div>
-  
-
-  
-  <div>
-    
-      <a href="/tags/wangyijie/">wangyijie</a>, 
-      <a href="/tags/container/">container</a>
-  </div>
-  
-
-
-
-
-    <p>Error: error creating libpod runtime: failed to mount overlay for metacopy check: invalid argument
-    </p>
-  </article>
-  
-  <article class="markdown book-post">
-    <h2>
-      <a href="/posts/container/windows-server-%E5%AE%B9%E5%99%A8-os-%E4%B8%8E%E4%B8%BB%E6%9C%BA-os-%E7%9A%84%E5%85%BC%E5%AE%B9%E6%80%A7/">Windows Server 容器 Os 与主机 Os 的兼容性</a>
-    </h2>
-    
-
-
-  
-  <div>
-    
-      <a href="/categories/development/">Development</a>, 
-      <a href="/categories/opetration/">Opetration</a>
-  </div>
-  
-
-  
-  <div>
-    
-      <a href="/tags/wangyijie/">wangyijie</a>, 
-      <a href="/tags/container/">container</a>
-  </div>
-  
-
-
-
-
-    <p>Windows Server 容器并非在所有主机 OS 版本间都兼容
-    </p>
-  </article>
-  
-  <article class="markdown book-post">
-    <h2>
-      <a href="/posts/container/%E9%95%9C%E5%83%8F%E5%86%85%E5%AE%B9%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD%E5%B7%A5%E5%85%B7-reg/">镜像内容文件下载工具 Reg</a>
-    </h2>
-    
-
-
-  
-  <div>
-    
-      <a href="/categories/development/">Development</a>, 
-      <a href="/categories/opetration/">Opetration</a>
-  </div>
-  
-
-  
-  <div>
-    
-      <a href="/tags/wangyijie/">wangyijie</a>, 
-      <a href="/tags/container/">container</a>
-  </div>
-  
-
-
-
-
-    <p>Docker registry v2 command line client and repo listing generator with security checks.
-Table of Contents
- Installation  Binaries Via Go   Usage  Auth List Repositories and Tags Get a Manifest Get the Digest Download a Layer Delete an Image Vulnerability Reports Generating Static Website for a Registry Using Self-Signed Certs with a Registry   Contributing  Installation #  Binaries #  For installation instructions from binaries please visit the Releases Page.
-        <a href="/posts/container/%E9%95%9C%E5%83%8F%E5%86%85%E5%AE%B9%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD%E5%B7%A5%E5%85%B7-reg/">...</a>
-      
-    </p>
-  </article>
-  
 
   
     <ul class="pagination pagination-default">
@@ -735,7 +778,7 @@ Table of Contents
         <a href="/categories/opetration/page/5/" aria-label="Next" class="page-link" role="button"><span aria-hidden="true">&raquo;</span></a>
       </li>
       <li class="page-item">
-        <a href="/categories/opetration/page/9/" aria-label="Last" class="page-link" role="button"><span aria-hidden="true">&raquo;&raquo;</span></a>
+        <a href="/categories/opetration/page/12/" aria-label="Last" class="page-link" role="button"><span aria-hidden="true">&raquo;&raquo;</span></a>
       </li>
     </ul>
  
@@ -783,12 +826,17 @@ Table of Contents
       
         <li class="flex justify-between">
           <a href="/categories/development/">Development</a>
-          <span>89</span>
+          <span>102</span>
         </li>
       
         <li class="flex justify-between">
           <a href="/categories/opetration/">Opetration</a>
-          <span>89</span>
+          <span>115</span>
+        </li>
+      
+        <li class="flex justify-between">
+          <a href="/categories/database/">database</a>
+          <span>1</span>
         </li>
       
         <li class="flex justify-between">
@@ -798,7 +846,17 @@ Table of Contents
       
         <li class="flex justify-between">
           <a href="/categories/literature/">literature</a>
-          <span>43</span>
+          <span>47</span>
+        </li>
+      
+        <li class="flex justify-between">
+          <a href="/categories/security/">security</a>
+          <span>8</span>
+        </li>
+      
+        <li class="flex justify-between">
+          <a href="/categories/sre/">SRE</a>
+          <span>3</span>
         </li>
       
       </ul>
@@ -817,17 +875,17 @@ Table of Contents
       
         <li class="flex justify-between">
           <a href="/tags/network/">network</a>
-          <span>1</span>
+          <span>9</span>
         </li>
       
         <li class="flex justify-between">
           <a href="/tags/wangyijie/">wangyijie</a>
-          <span>172</span>
+          <span>205</span>
         </li>
       
         <li class="flex justify-between">
           <a href="/tags/angular/">angular</a>
-          <span>9</span>
+          <span>12</span>
         </li>
       
         <li class="flex justify-between">
@@ -843,6 +901,16 @@ Table of Contents
         <li class="flex justify-between">
           <a href="/tags/container/">container</a>
           <span>8</span>
+        </li>
+      
+        <li class="flex justify-between">
+          <a href="/tags/database/">database</a>
+          <span>1</span>
+        </li>
+      
+        <li class="flex justify-between">
+          <a href="/tags/develop/">develop</a>
+          <span>3</span>
         </li>
       
         <li class="flex justify-between">
@@ -873,6 +941,26 @@ Table of Contents
         <li class="flex justify-between">
           <a href="/tags/literature/">literature</a>
           <span>43</span>
+        </li>
+      
+        <li class="flex justify-between">
+          <a href="/tags/material/">material</a>
+          <span>3</span>
+        </li>
+      
+        <li class="flex justify-between">
+          <a href="/tags/monitor/">monitor</a>
+          <span>5</span>
+        </li>
+      
+        <li class="flex justify-between">
+          <a href="/tags/poetry/">poetry</a>
+          <span>4</span>
+        </li>
+      
+        <li class="flex justify-between">
+          <a href="/tags/security/">security</a>
+          <span>8</span>
         </li>
       
         <li class="flex justify-between">

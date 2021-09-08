@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>monitor on hope to be a great computer technology Site</title>
+    <link>https://wangyijie.store/tags/monitor/</link>
+    <description>Recent content in monitor on hope to be a great computer technology Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="https://wangyijie.store/tags/monitor/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/monitor/inotifywait%E5%91%BD%E4%BB%A4%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E7%9B%91%E6%8E%A7/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/monitor/inotifywait%E5%91%BD%E4%BB%A4%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E7%9B%91%E6%8E%A7/</guid>
+      <description>inotify可以对linux 文件系统进行高效性、细粒度、异步的监控，用于通知用户控件程序的文件系统变化。inotify可以监控文件，也可以监控目录，配合rsync实现文件的实时同步功能</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/monitor/p50p90-%E5%92%8C-p99/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/monitor/p50p90-%E5%92%8C-p99/</guid>
+      <description>监控指标种常以最大值，最小值，平均数来衡量，另外还有一种简单的分布表示， 如：每秒总请求数、错误率以及请求延迟等可以使用分布临界值做为参考。 P50表示中位数。 P75表示包含百分之七十五的值值。 P90表示包含90%的值。 P99表示包含99%的值。</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/monitor/use%E6%96%B9%E6%B3%95/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/monitor/use%E6%96%B9%E6%B3%95/</guid>
+      <description>USE方法全称Utilization Saturation and Errors Method，主要用于分析系统性能问题，可以指导用户快速识别资源瓶颈以及错误的方法。正如USE方法的名字所表示的含义，USE方法主要关注与资源的：使用率(Utilization)、饱和度(Saturation)以及错误(Errors)</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/monitor/%E4%B8%9A%E5%8A%A1%E7%9B%91%E6%8E%A74%E4%B8%AA%E9%BB%84%E9%87%91%E6%8C%87%E6%A0%87/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/monitor/%E4%B8%9A%E5%8A%A1%E7%9B%91%E6%8E%A74%E4%B8%AA%E9%BB%84%E9%87%91%E6%8C%87%E6%A0%87/</guid>
+      <description>Four Golden Signals是Google针对大量分布式监控的经验总结，4个黄金指标可以在服务级别帮助衡量终端用户体验、服务中断、业务影响等层面的问题。主要关注与以下四种类型的指标：延迟，通讯量，错误以及饱和度</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/monitor/%E7%9B%91%E6%8E%A7red%E6%96%B9%E6%B3%95/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/monitor/%E7%9B%91%E6%8E%A7red%E6%96%B9%E6%B3%95/</guid>
+      <description>RED方法是Weave Cloud在基于Google的“4个黄金指标”的原则下结合Prometheus以及Kubernetes容器实践，细化和总结的方法论，特别适合于云原生应用以及微服务架构应用的监控和度量。主要关注以下三种关键指标</description>
+    </item>
+    
+  </channel>
+</rss>

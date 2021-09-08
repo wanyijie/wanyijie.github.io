@@ -6,7 +6,16 @@
     <description>Recent content in postgresql on hope to be a great computer technology Site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 30 Aug 2021 16:42:47 +0800</lastBuildDate><atom:link href="https://wangyijie.store/posts/postgresql/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 30 Aug 2021 21:25:26 +0800</lastBuildDate><atom:link href="https://wangyijie.store/posts/postgresql/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Postgresql Dr Config</title>
+      <link>https://wangyijie.store/posts/postgresql/postgresql_dr_config/</link>
+      <pubDate>Mon, 30 Aug 2021 21:25:26 +0800</pubDate>
+      
+      <guid>https://wangyijie.store/posts/postgresql/postgresql_dr_config/</guid>
+      <description>   </description>
+    </item>
+    
     <item>
       <title>Postgresql Wal Expalin in Detail</title>
       <link>https://wangyijie.store/posts/postgresql/postgresql_wal_expalin_in_detail/</link>

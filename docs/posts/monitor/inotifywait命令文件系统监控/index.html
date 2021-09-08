@@ -3,31 +3,9 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="inotify可以对linux 文件系统进行高效性、细粒度、异步的监控，用于通知用户控件程序的文件系统变化。inotify可以监控文件，也可以监控目录，配合rsync实现文件的实时同步功能。
-　首先安装inotify软件，先检查自己的系统版本（uname -r），我的是centos 7的系统，我的步骤是
-　1、首先检查自己的电脑是否已经安装了这个软件。 rpm -qa inotify-tools
-　2、检查仓库中是否有这个软件。 yum search inotify-tools
-　3、发现这个软件不在yum仓库中，安装对应的epel源。
-　wget -O /etc/yum.repos.d/epel-7.repo http://mirrors.aliyun.com/repo/epel-7.repo
-　yum clean all
-　yum makecache
-　4、安装inotify-tools软件
-　yum install inotify-tools -y
-　5、查看inotifywait的简单用法
-[root@nfs01 data]# inotifywait -mrq -e &lsquo;create,delete,close_write,attrib,moved_to&rsquo; &ndash;timefmt &lsquo;%Y-%m-%d %H:%M&rsquo; &ndash;format &lsquo;%T %w%f %e&rsquo; /backup/ 2019-06-04 10:46 /backup/test.txt CREATE 2019-06-04 10:46 /backup/test.txt ATTRIB 2019-06-04 10:46 /backup/test.txt CLOSE_WRITE,CLOSE 2019-06-04 10:47 /backup/test.txt CLOSE_WRITE,CLOSE 2019-06-04 10:47 /backup/isr DELETE 2019-06-04 10:47 /backup/me MOVED_TO">
+<meta name="description" content="inotify可以对linux 文件系统进行高效性、细粒度、异步的监控，用于通知用户控件程序的文件系统变化。inotify可以监控文件，也可以监控目录，配合rsync实现文件的实时同步功能">
 <meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="" />
-<meta property="og:description" content="inotify可以对linux 文件系统进行高效性、细粒度、异步的监控，用于通知用户控件程序的文件系统变化。inotify可以监控文件，也可以监控目录，配合rsync实现文件的实时同步功能。
-　首先安装inotify软件，先检查自己的系统版本（uname -r），我的是centos 7的系统，我的步骤是
-　1、首先检查自己的电脑是否已经安装了这个软件。 rpm -qa inotify-tools
-　2、检查仓库中是否有这个软件。 yum search inotify-tools
-　3、发现这个软件不在yum仓库中，安装对应的epel源。
-　wget -O /etc/yum.repos.d/epel-7.repo http://mirrors.aliyun.com/repo/epel-7.repo
-　yum clean all
-　yum makecache
-　4、安装inotify-tools软件
-　yum install inotify-tools -y
-　5、查看inotifywait的简单用法
-[root@nfs01 data]# inotifywait -mrq -e &lsquo;create,delete,close_write,attrib,moved_to&rsquo; &ndash;timefmt &lsquo;%Y-%m-%d %H:%M&rsquo; &ndash;format &lsquo;%T %w%f %e&rsquo; /backup/ 2019-06-04 10:46 /backup/test.txt CREATE 2019-06-04 10:46 /backup/test.txt ATTRIB 2019-06-04 10:46 /backup/test.txt CLOSE_WRITE,CLOSE 2019-06-04 10:47 /backup/test.txt CLOSE_WRITE,CLOSE 2019-06-04 10:47 /backup/isr DELETE 2019-06-04 10:47 /backup/me MOVED_TO" />
+<meta property="og:description" content="inotify可以对linux 文件系统进行高效性、细粒度、异步的监控，用于通知用户控件程序的文件系统变化。inotify可以监控文件，也可以监控目录，配合rsync实现文件的实时同步功能" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://wangyijie.store/posts/monitor/inotifywait%E5%91%BD%E4%BB%A4%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E7%9B%91%E6%8E%A7/" /><meta property="article:section" content="posts" />
 
@@ -38,7 +16,7 @@
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.46181bc93375ba932026e753b37c40e6ff8bb16a9ef770c78bcc663e4577b1ba.css" integrity="sha256-RhgbyTN1upMgJudTs3xA5v&#43;LsWqe93DHi8xmPkV3sbo=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.8f5caacc8bdf45c85597b9a1cb95e79c3e6a709ffb03822fb341f9fda311266f.js" integrity="sha256-j1yqzIvfRchVl7mhy5XnnD5qcJ/7A4Ivs0H5/aMRJm8=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.b03ad29f64e0836809250d62ac56686bf57f0eb5217499f86df132a876390b44.js" integrity="sha256-sDrSn2Tgg2gJJQ1irFZoa/V/DrUhdJn4bfEyqHY5C0Q=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -153,12 +131,6 @@ https://github.com/alex-shpak/hugo-book
   <li>
     <a href="/posts/kubernetes/" >
         Kubernetes
-      </a>
-  </li>
-  
-  <li>
-    <a href="/posts/material2/" >
-        mererial2
       </a>
   </li>
   
@@ -316,7 +288,18 @@ https://github.com/alex-shpak/hugo-book
 
 
   
+  <div>
+    
+      <a href="/categories/opetration/">Opetration</a>
+  </div>
+  
 
+  
+  <div>
+    
+      <a href="/tags/wangyijie/">wangyijie</a>, 
+      <a href="/tags/monitor/">monitor</a>
+  </div>
   
 
 

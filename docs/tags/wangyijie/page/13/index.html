@@ -14,7 +14,7 @@
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.46181bc93375ba932026e753b37c40e6ff8bb16a9ef770c78bcc663e4577b1ba.css" integrity="sha256-RhgbyTN1upMgJudTs3xA5v&#43;LsWqe93DHi8xmPkV3sbo=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.8f5caacc8bdf45c85597b9a1cb95e79c3e6a709ffb03822fb341f9fda311266f.js" integrity="sha256-j1yqzIvfRchVl7mhy5XnnD5qcJ/7A4Ivs0H5/aMRJm8=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.b03ad29f64e0836809250d62ac56686bf57f0eb5217499f86df132a876390b44.js" integrity="sha256-sDrSn2Tgg2gJJQ1irFZoa/V/DrUhdJn4bfEyqHY5C0Q=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://wangyijie.store/tags/wangyijie/index.xml" title="hope to be a great computer technology Site" />
 <!--
 Made with Book Theme
@@ -130,12 +130,6 @@ https://github.com/alex-shpak/hugo-book
   <li>
     <a href="/posts/kubernetes/" >
         Kubernetes
-      </a>
-  </li>
-  
-  <li>
-    <a href="/posts/material2/" >
-        mererial2
       </a>
   </li>
   
@@ -283,12 +277,17 @@ https://github.com/alex-shpak/hugo-book
       
         <li class="flex justify-between">
           <a href="/categories/development/">Development</a>
-          <span>89</span>
+          <span>102</span>
         </li>
       
         <li class="flex justify-between">
           <a href="/categories/opetration/">Opetration</a>
-          <span>89</span>
+          <span>115</span>
+        </li>
+      
+        <li class="flex justify-between">
+          <a href="/categories/database/">database</a>
+          <span>1</span>
         </li>
       
         <li class="flex justify-between">
@@ -298,7 +297,17 @@ https://github.com/alex-shpak/hugo-book
       
         <li class="flex justify-between">
           <a href="/categories/literature/">literature</a>
-          <span>43</span>
+          <span>47</span>
+        </li>
+      
+        <li class="flex justify-between">
+          <a href="/categories/security/">security</a>
+          <span>8</span>
+        </li>
+      
+        <li class="flex justify-between">
+          <a href="/categories/sre/">SRE</a>
+          <span>3</span>
         </li>
       
       </ul>
@@ -317,17 +326,17 @@ https://github.com/alex-shpak/hugo-book
       
         <li class="flex justify-between">
           <a href="/tags/network/">network</a>
-          <span>1</span>
+          <span>9</span>
         </li>
       
         <li class="flex justify-between">
           <a href="/tags/wangyijie/">wangyijie</a>
-          <span>172</span>
+          <span>205</span>
         </li>
       
         <li class="flex justify-between">
           <a href="/tags/angular/">angular</a>
-          <span>9</span>
+          <span>12</span>
         </li>
       
         <li class="flex justify-between">
@@ -343,6 +352,16 @@ https://github.com/alex-shpak/hugo-book
         <li class="flex justify-between">
           <a href="/tags/container/">container</a>
           <span>8</span>
+        </li>
+      
+        <li class="flex justify-between">
+          <a href="/tags/database/">database</a>
+          <span>1</span>
+        </li>
+      
+        <li class="flex justify-between">
+          <a href="/tags/develop/">develop</a>
+          <span>3</span>
         </li>
       
         <li class="flex justify-between">
@@ -376,6 +395,26 @@ https://github.com/alex-shpak/hugo-book
         </li>
       
         <li class="flex justify-between">
+          <a href="/tags/material/">material</a>
+          <span>3</span>
+        </li>
+      
+        <li class="flex justify-between">
+          <a href="/tags/monitor/">monitor</a>
+          <span>5</span>
+        </li>
+      
+        <li class="flex justify-between">
+          <a href="/tags/poetry/">poetry</a>
+          <span>4</span>
+        </li>
+      
+        <li class="flex justify-between">
+          <a href="/tags/security/">security</a>
+          <span>8</span>
+        </li>
+      
+        <li class="flex justify-between">
           <a href="/tags/vpn/">vpn</a>
           <span>1</span>
         </li>
@@ -400,6 +439,126 @@ https://github.com/alex-shpak/hugo-book
 
       
       
+  
+  <article class="markdown book-post">
+    <h2>
+      <a href="/posts/kubernetes/kubernetes-pause-role/">Kubernetes Pause Role</a>
+    </h2>
+    
+
+
+  
+  <div>
+    
+      <a href="/categories/development/">Development</a>, 
+      <a href="/categories/opetration/">Opetration</a>
+  </div>
+  
+
+  
+  <div>
+    
+      <a href="/tags/wangyijie/">wangyijie</a>, 
+      <a href="/tags/kubernetes/">Kubernetes</a>
+  </div>
+  
+
+
+
+
+    <p>相信熟悉kubernetes的朋友都知道，kubernetes启动 Pod 里定义的容器之前，kubelet 会先启动一个 infra 容器，并执行 /pause 让 infra 容器的主进程永远挂起。
+    </p>
+  </article>
+  
+  <article class="markdown book-post">
+    <h2>
+      <a href="/posts/kubernetes/kubernetes-%E7%BD%91%E7%BB%9C%E6%96%B9%E6%A1%88%E5%8F%8A-lvs%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86/">Kubernetes 网络方案及 Lvs实现原理</a>
+    </h2>
+    
+
+
+  
+  <div>
+    
+      <a href="/categories/development/">Development</a>, 
+      <a href="/categories/opetration/">Opetration</a>
+  </div>
+  
+
+  
+  <div>
+    
+      <a href="/tags/wangyijie/">wangyijie</a>, 
+      <a href="/tags/kubernetes/">Kubernetes</a>
+  </div>
+  
+
+
+
+
+    <p>kubernetes network solution
+    </p>
+  </article>
+  
+  <article class="markdown book-post">
+    <h2>
+      <a href="/posts/kubernetes/kubernetes-%E8%B5%84%E6%BA%90%E7%BC%96%E6%8E%92%E5%B8%AE%E5%8A%A9/">Kubernetes 资源编排帮助</a>
+    </h2>
+    
+
+
+  
+  <div>
+    
+      <a href="/categories/development/">Development</a>, 
+      <a href="/categories/opetration/">Opetration</a>
+  </div>
+  
+
+  
+  <div>
+    
+      <a href="/tags/wangyijie/">wangyijie</a>, 
+      <a href="/tags/kubernetes/">Kubernetes</a>
+  </div>
+  
+
+
+
+
+    <p>我们在编写kubernetes资源清单的时候有很多细节不易记住，特别对于还不熟练的同学，寻找参考摸板是一件麻烦的事，下面介绍两种获取参考帮助的手段，足够大家无往不利
+    </p>
+  </article>
+  
+  <article class="markdown book-post">
+    <h2>
+      <a href="/posts/kubernetes/kubernetes%E4%BC%98%E5%85%88%E7%BA%A7%E8%B0%83%E5%BA%A6/">Kubernetes优先级调度</a>
+    </h2>
+    
+
+
+  
+  <div>
+    
+      <a href="/categories/development/">Development</a>, 
+      <a href="/categories/opetration/">Opetration</a>
+  </div>
+  
+
+  
+  <div>
+    
+      <a href="/tags/wangyijie/">wangyijie</a>, 
+      <a href="/tags/kubernetes/">Kubernetes</a>
+  </div>
+  
+
+
+
+
+    <p>从 v1.8 开始，kube-scheduler 支持定义 Pod 的优先级，从而保证高优先级的 Pod 优先调度。并从 v1.11 开始默认开启
+    </p>
+  </article>
   
   <article class="markdown book-post">
     <h2>
@@ -581,124 +740,6 @@ https://github.com/alex-shpak/hugo-book
     </p>
   </article>
   
-  <article class="markdown book-post">
-    <h2>
-      <a href="/posts/kubernetes/yaml%E8%AF%AD%E6%B3%95/">Yaml语法</a>
-    </h2>
-    
-
-
-  
-  <div>
-    
-      <a href="/categories/development/">Development</a>, 
-      <a href="/categories/opetration/">Opetration</a>
-  </div>
-  
-
-  
-  <div>
-    
-      <a href="/tags/wangyijie/">wangyijie</a>, 
-      <a href="/tags/kubernetes/">Kubernetes</a>
-  </div>
-  
-
-
-
-
-    <p>YAML语言接受整个Unicode字符集。所有可接受的字符都可以在YAML文档中使用
-    </p>
-  </article>
-  
-  <article class="markdown book-post">
-    <h2>
-      <a href="/posts/kubernetes/%E9%87%8D%E5%A4%B4%E6%9E%84%E5%BB%BAkubernetes%E9%9B%86%E7%BE%A4v1-81/">重头构建kubernetes集群v1 81</a>
-    </h2>
-    
-
-
-  
-  <div>
-    
-      <a href="/categories/development/">Development</a>, 
-      <a href="/categories/opetration/">Opetration</a>
-  </div>
-  
-
-  
-  <div>
-    
-      <a href="/tags/wangyijie/">wangyijie</a>, 
-      <a href="/tags/kubernetes/">Kubernetes</a>
-  </div>
-  
-
-
-
-
-    <p>重头构建kubernetes集群v1.81 {#重头构建kubernetes集群v1.81 .title}
-    </p>
-  </article>
-  
-  <article class="markdown book-post">
-    <h2>
-      <a href="/posts/literature/dwight-d-eisenhowerfarewell-address/">Dwight D Eisenhower： Farewell Address</a>
-    </h2>
-    
-
-
-  
-  <div>
-    
-      <a href="/categories/literature/">literature</a>
-  </div>
-  
-
-  
-  <div>
-    
-      <a href="/tags/wangyijie/">wangyijie</a>, 
-      <a href="/tags/literature/">literature</a>
-  </div>
-  
-
-
-
-
-    <p>Like every other &ndash; Like every other citizen, I wish the new President, and all who will labor with him, Godspeed. I pray that the coming years will be blessed with peace and prosperity for all
-    </p>
-  </article>
-  
-  <article class="markdown book-post">
-    <h2>
-      <a href="/posts/literature/%E4%B8%8E%E5%B1%B1%E5%B7%A8%E6%BA%90%E7%BB%9D%E4%BA%A4%E4%B9%A6/">与山巨源绝交书</a>
-    </h2>
-    
-
-
-  
-  <div>
-    
-      <a href="/categories/literature/">literature</a>
-  </div>
-  
-
-  
-  <div>
-    
-      <a href="/tags/wangyijie/">wangyijie</a>, 
-      <a href="/tags/literature/">literature</a>
-  </div>
-  
-
-
-
-
-    <p>人与人之间相互成为好朋友，重要的是要了解彼此天生的本性，然后成全他。夏禹不强迫伯成子高出来做官，是为了成全他的节操；孔子不向子夏借伞，是为了掩饰子夏的缺点；近时诸葛亮不逼迫徐庶投奔蜀汉，华歆不硬要管宁接受卿相的位子，以上这些人才可以说始终如一，是真正相互了解的好朋友。您看直木不可以做车轮，曲木不能够当椽子，这是因为人们不想委屈它们原来的本性，而让它们各得其所。所以士、农、工、商都各有自己的专业，都能以达到自己的志向为快乐，这一点只有通达的人才能理解，它应该是在您意料之中的。不能够因为自己喜爱华丽的帽子，而勉强越地的人也要去戴它；自己嗜好腐烂发臭的食物，而把死了的老鼠来喂养鸳雏。
-    </p>
-  </article>
-  
 
   
     <ul class="pagination pagination-default">
@@ -727,7 +768,7 @@ https://github.com/alex-shpak/hugo-book
         <a href="/tags/wangyijie/page/14/" aria-label="Next" class="page-link" role="button"><span aria-hidden="true">&raquo;</span></a>
       </li>
       <li class="page-item">
-        <a href="/tags/wangyijie/page/18/" aria-label="Last" class="page-link" role="button"><span aria-hidden="true">&raquo;&raquo;</span></a>
+        <a href="/tags/wangyijie/page/21/" aria-label="Last" class="page-link" role="button"><span aria-hidden="true">&raquo;&raquo;</span></a>
       </li>
     </ul>
  
@@ -775,12 +816,17 @@ https://github.com/alex-shpak/hugo-book
       
         <li class="flex justify-between">
           <a href="/categories/development/">Development</a>
-          <span>89</span>
+          <span>102</span>
         </li>
       
         <li class="flex justify-between">
           <a href="/categories/opetration/">Opetration</a>
-          <span>89</span>
+          <span>115</span>
+        </li>
+      
+        <li class="flex justify-between">
+          <a href="/categories/database/">database</a>
+          <span>1</span>
         </li>
       
         <li class="flex justify-between">
@@ -790,7 +836,17 @@ https://github.com/alex-shpak/hugo-book
       
         <li class="flex justify-between">
           <a href="/categories/literature/">literature</a>
-          <span>43</span>
+          <span>47</span>
+        </li>
+      
+        <li class="flex justify-between">
+          <a href="/categories/security/">security</a>
+          <span>8</span>
+        </li>
+      
+        <li class="flex justify-between">
+          <a href="/categories/sre/">SRE</a>
+          <span>3</span>
         </li>
       
       </ul>
@@ -809,17 +865,17 @@ https://github.com/alex-shpak/hugo-book
       
         <li class="flex justify-between">
           <a href="/tags/network/">network</a>
-          <span>1</span>
+          <span>9</span>
         </li>
       
         <li class="flex justify-between">
           <a href="/tags/wangyijie/">wangyijie</a>
-          <span>172</span>
+          <span>205</span>
         </li>
       
         <li class="flex justify-between">
           <a href="/tags/angular/">angular</a>
-          <span>9</span>
+          <span>12</span>
         </li>
       
         <li class="flex justify-between">
@@ -835,6 +891,16 @@ https://github.com/alex-shpak/hugo-book
         <li class="flex justify-between">
           <a href="/tags/container/">container</a>
           <span>8</span>
+        </li>
+      
+        <li class="flex justify-between">
+          <a href="/tags/database/">database</a>
+          <span>1</span>
+        </li>
+      
+        <li class="flex justify-between">
+          <a href="/tags/develop/">develop</a>
+          <span>3</span>
         </li>
       
         <li class="flex justify-between">
@@ -865,6 +931,26 @@ https://github.com/alex-shpak/hugo-book
         <li class="flex justify-between">
           <a href="/tags/literature/">literature</a>
           <span>43</span>
+        </li>
+      
+        <li class="flex justify-between">
+          <a href="/tags/material/">material</a>
+          <span>3</span>
+        </li>
+      
+        <li class="flex justify-between">
+          <a href="/tags/monitor/">monitor</a>
+          <span>5</span>
+        </li>
+      
+        <li class="flex justify-between">
+          <a href="/tags/poetry/">poetry</a>
+          <span>4</span>
+        </li>
+      
+        <li class="flex justify-between">
+          <a href="/tags/security/">security</a>
+          <span>8</span>
         </li>
       
         <li class="flex justify-between">

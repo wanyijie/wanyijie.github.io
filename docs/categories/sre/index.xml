@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>SRE on hope to be a great computer technology Site</title>
+    <link>https://wangyijie.store/categories/sre/</link>
+    <description>Recent content in SRE on hope to be a great computer technology Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="https://wangyijie.store/categories/sre/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/sre/ningx%E5%AE%9E%E7%8E%B0%E9%87%8D%E8%BD%BD%E9%85%8D%E7%BD%AE%E4%B8%8D%E4%B8%A2%E5%A4%B1%E8%AF%B7%E6%B1%82%E7%9A%84%E5%8E%9F%E7%90%86/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/sre/ningx%E5%AE%9E%E7%8E%B0%E9%87%8D%E8%BD%BD%E9%85%8D%E7%BD%AE%E4%B8%8D%E4%B8%A2%E5%A4%B1%E8%AF%B7%E6%B1%82%E7%9A%84%E5%8E%9F%E7%90%86/</guid>
+      <description>nginx启动时，会启动两个进程： 一个是Master进程和worker进程。改变了nginx配置之后，HUP signal的信号需要发送给主进程</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/sre/site-reliability-engineering%E4%B9%A6%E8%AF%84/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/sre/site-reliability-engineering%E4%B9%A6%E8%AF%84/</guid>
+      <description>你有责任为自己和你的组织读这本书，为自己尝试这些想法。</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/sre/%E7%AB%99%E7%82%B9%E5%8F%AF%E9%9D%A0%E6%80%A7%E5%B7%A5%E7%A8%8B/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/sre/%E7%AB%99%E7%82%B9%E5%8F%AF%E9%9D%A0%E6%80%A7%E5%B7%A5%E7%A8%8B/</guid>
+      <description>在这一些列的文章和论文中谷歌站点可靠性工程团队的关键成员们说明了怎样和为什么他们整个生命周期的投入能使公司成功构建、部署、监控和维护一些世界上最大的软件系统。你将学习谷歌工程师创造系统更高可扩展性，可靠性和高效的理论和实践课程，直接应用到你的组织</description>
+    </item>
+    
+  </channel>
+</rss>

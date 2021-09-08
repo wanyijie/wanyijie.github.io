@@ -38,11 +38,14 @@
     <loc>https://wangyijie.store/posts/python/django-%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</loc>
     <lastmod>2021-08-30T21:25:26+08:00</lastmod>
   </url><url>
-    <loc>https://wangyijie.store/posts/python/</loc>
+    <loc>https://wangyijie.store/posts/postgresql/</loc>
     <lastmod>2021-08-30T21:25:26+08:00</lastmod>
   </url><url>
-    <loc>https://wangyijie.store/posts/postgresql/</loc>
-    <lastmod>2021-08-30T16:42:47+08:00</lastmod>
+    <loc>https://wangyijie.store/posts/postgresql/postgresql_dr_config/</loc>
+    <lastmod>2021-08-30T21:25:26+08:00</lastmod>
+  </url><url>
+    <loc>https://wangyijie.store/posts/python/</loc>
+    <lastmod>2021-08-30T21:25:26+08:00</lastmod>
   </url><url>
     <loc>https://wangyijie.store/posts/postgresql/postgresql_wal_expalin_in_detail/</loc>
     <lastmod>2021-08-30T16:42:47+08:00</lastmod>
@@ -63,6 +66,10 @@
   </url><url>
     <loc>https://wangyijie.store/posts/angluar/angular-flex%E5%B8%83%E5%B1%80/</loc>
   </url><url>
+    <loc>https://wangyijie.store/posts/angluar/angular-material-%E4%B8%BB%E4%BD%93%E5%8C%96%E8%87%AA%E5%AE%9A%E4%B9%89%E7%BB%84%E4%BB%B6/</loc>
+  </url><url>
+    <loc>https://wangyijie.store/posts/angluar/angular-material%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E4%B8%BB%E9%A2%98%E5%8C%96/</loc>
+  </url><url>
     <loc>https://wangyijie.store/posts/angluar/angular-%E4%BD%BF%E7%94%A8-bootstrap/</loc>
   </url><url>
     <loc>https://wangyijie.store/posts/angluar/angular-%E5%9B%BD%E9%99%85%E5%8C%96-i18n/</loc>
@@ -78,6 +85,8 @@
     <loc>https://wangyijie.store/posts/angluar/angular%E5%85%A8%E5%B1%80%E6%A0%B7%E5%BC%8F/</loc>
   </url><url>
     <loc>https://wangyijie.store/posts/angluar/angular%E5%85%A8%E5%B1%80%E8%84%9A%E6%9C%AC/</loc>
+  </url><url>
+    <loc>https://wangyijie.store/posts/angluar/material-%E5%8E%9F%E7%90%86%E5%9B%BE/</loc>
   </url><url>
     <loc>https://wangyijie.store/posts/angluar/%E5%85%A8%E5%B1%80%E5%BA%93%E5%AE%89%E8%A3%85/</loc>
   </url><url>
@@ -405,12 +414,6 @@
   </url><url>
     <loc>https://wangyijie.store/posts/machine_learning/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E6%9C%AF%E8%AF%AD/</loc>
   </url><url>
-    <loc>https://wangyijie.store/posts/material2/angular-material-%E4%B8%BB%E4%BD%93%E5%8C%96%E8%87%AA%E5%AE%9A%E4%B9%89%E7%BB%84%E4%BB%B6/</loc>
-  </url><url>
-    <loc>https://wangyijie.store/posts/material2/angular-material%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E4%B8%BB%E9%A2%98%E5%8C%96/</loc>
-  </url><url>
-    <loc>https://wangyijie.store/posts/material2/material-%E5%8E%9F%E7%90%86%E5%9B%BE/</loc>
-  </url><url>
     <loc>https://wangyijie.store/posts/monitor/inotifywait%E5%91%BD%E4%BB%A4%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E7%9B%91%E6%8E%A7/</loc>
   </url><url>
     <loc>https://wangyijie.store/posts/monitor/p50p90-%E5%92%8C-p99/</loc>
@@ -437,11 +440,13 @@
   </url><url>
     <loc>https://wangyijie.store/posts/network/%E9%98%B2%E7%81%AB%E5%A2%99%E6%8A%80%E6%9C%AF%E6%A6%82%E8%BF%B0/</loc>
   </url><url>
-    <loc>https://wangyijie.store/posts/poetry/2018-10-09/</loc>
-  </url><url>
     <loc>https://wangyijie.store/posts/poetry/%E6%B1%82%E4%BB%81%E5%BE%97%E4%BB%81/</loc>
   </url><url>
     <loc>https://wangyijie.store/posts/poetry/%E7%9B%9B%E5%90%8D%E4%B9%8B%E4%B8%8B%E5%85%B6%E5%AE%9E%E9%9A%BE%E5%89%AF/</loc>
+  </url><url>
+    <loc>https://wangyijie.store/posts/poetry/%E8%B5%A0%E5%8D%AB%E5%85%AB%E5%A4%84%E5%A3%AB/</loc>
+  </url><url>
+    <loc>https://wangyijie.store/posts/poetry/%E9%B8%B3%E9%B8%AF%E9%94%A6/</loc>
   </url><url>
     <loc>https://wangyijie.store/posts/postgresql/postgresql-%E7%81%BE%E5%A4%87%E8%87%AA%E5%8A%A8%E9%85%8D%E7%BD%AE%E8%84%9A%E6%9C%AC-barman/</loc>
   </url><url>
@@ -481,6 +486,12 @@
   </url><url>
     <loc>https://wangyijie.store/tags/container/</loc>
   </url><url>
+    <loc>https://wangyijie.store/tags/database/</loc>
+  </url><url>
+    <loc>https://wangyijie.store/categories/database/</loc>
+  </url><url>
+    <loc>https://wangyijie.store/tags/develop/</loc>
+  </url><url>
     <loc>https://wangyijie.store/tags/devops/</loc>
   </url><url>
     <loc>https://wangyijie.store/posts/devops/</loc>
@@ -507,17 +518,29 @@
   </url><url>
     <loc>https://wangyijie.store/categories/literature/</loc>
   </url><url>
-    <loc>https://wangyijie.store/posts/material2/</loc>
+    <loc>https://wangyijie.store/tags/material/</loc>
+  </url><url>
+    <loc>https://wangyijie.store/tags/monitor/</loc>
   </url><url>
     <loc>https://wangyijie.store/posts/mysql/</loc>
   </url><url>
+    <loc>https://wangyijie.store/tags/poetry/</loc>
+  </url><url>
     <loc>https://wangyijie.store/posts/posts/</loc>
+  </url><url>
+    <loc>https://wangyijie.store/tags/security/</loc>
+  </url><url>
+    <loc>https://wangyijie.store/categories/security/</loc>
+  </url><url>
+    <loc>https://wangyijie.store/categories/sre/</loc>
   </url><url>
     <loc>https://wangyijie.store/tags/vpn/</loc>
   </url><url>
     <loc>https://wangyijie.store/tags/vr/</loc>
   </url><url>
     <loc>https://wangyijie.store/posts/cloud/</loc>
+  </url><url>
+    <loc>https://wangyijie.store/posts/network/%E4%BB%A3%E7%90%86%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/</loc>
   </url><url>
     <loc>https://wangyijie.store/posts/angluar/%E4%BB%A3%E7%A0%81%E8%A6%86%E7%9B%96%E7%8E%87/</loc>
   </url><url>

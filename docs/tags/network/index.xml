@@ -16,5 +16,77 @@
       <description>git 仓库配置使用 shadowsocks 代理, git config https.proxy &amp;lsquo;socks5://127.0.0.1:1080&amp;rsquo;</description>
     </item>
     
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/network/wifi%E5%B8%B8%E8%AF%86/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/network/wifi%E5%B8%B8%E8%AF%86/</guid>
+      <description>而你路由器的300M是指的你的路由器的传输速率（最大传输速率）：300Mbps，也就是俗称网速, 40MHZ双通道能达到300M。</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/network/windows-powershell-%E6%9F%A5%E7%9C%8B%E7%AB%AF%E5%8F%A3%E5%92%8C%E9%A1%BE%E8%99%91%E6%96%87%E6%9C%AC%E4%B8%8A%E4%B8%8B%E6%96%87/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/network/windows-powershell-%E6%9F%A5%E7%9C%8B%E7%AB%AF%E5%8F%A3%E5%92%8C%E9%A1%BE%E8%99%91%E6%96%87%E6%9C%AC%E4%B8%8A%E4%B8%8B%E6%96%87/</guid>
+      <description>NETSTAT.EXE -abno | Select-String -Pattern Sangfor -Context 1,2</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/network/windows-powershell%E5%85%B3%E9%97%AD%E9%98%B2%E7%81%AB%E5%A2%99/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/network/windows-powershell%E5%85%B3%E9%97%AD%E9%98%B2%E7%81%AB%E5%A2%99/</guid>
+      <description>Set-NetFirewallProfile -Profile Private -Enabled False</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/network/windows%E4%BD%BF%E7%94%A8netsh%E5%81%9A%E7%AB%AF%E5%8F%A3%E4%BB%A3%E7%90%86%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/network/windows%E4%BD%BF%E7%94%A8netsh%E5%81%9A%E7%AB%AF%E5%8F%A3%E4%BB%A3%E7%90%86%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91/</guid>
+      <description>netsh interface portproxy add v4tov4 listenaddress=172.20.0.2 listenport=1521 connectaddress=172.16.100.74 connectport=1521</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/network/%E4%BD%BF%E7%94%A8ssh%E5%81%9A%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/network/%E4%BD%BF%E7%94%A8ssh%E5%81%9A%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91/</guid>
+      <description>ssh -L 5500:10.240.0.4:3389   remoteserver</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/network/%E5%9C%A8%E4%B8%80%E4%B8%AA%E5%91%BD%E4%BB%A4%E4%B8%AD%E5%B0%86%E4%BB%BB%E4%BD%95linux%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%BD%AC%E6%8D%A2%E4%B8%BAsocks5%E4%BB%A3%E7%90%86/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/network/%E5%9C%A8%E4%B8%80%E4%B8%AA%E5%91%BD%E4%BB%A4%E4%B8%AD%E5%B0%86%E4%BB%BB%E4%BD%95linux%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%BD%AC%E6%8D%A2%E4%B8%BAsocks5%E4%BB%A3%E7%90%86/</guid>
+      <description>对于那些想上网的人来说这很方便 - 你可以在一个命令中将任何Linux计算机变成SOCKS5（和SOCKS4）代理</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wangyijie.store/posts/network/%E9%98%B2%E7%81%AB%E5%A2%99%E6%8A%80%E6%9C%AF%E6%A6%82%E8%BF%B0/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/network/%E9%98%B2%E7%81%AB%E5%A2%99%E6%8A%80%E6%9C%AF%E6%A6%82%E8%BF%B0/</guid>
+      <description>随着互联网的普及和发展，尤其是Internet的广泛使用，使计算机应用更加广泛与深入。同时，我们不得不注意到，网络虽然功能强大，也有其脆弱易受到攻击的一面。据美国FBI统计，美国每年因网络安全问题所造成的经济损失高达75亿美元，而全求平均每20秒钟就发生一起Internet计算机侵入事件。在我国，每年因黑客入侵、计算机病毒的破坏也造成了巨大的经济损失。人们在利用网络的优越性的同时，对网络安全问题也决不能忽视。如何建立比较安全的网络体系，值得我们关注研究</description>
+    </item>
+    
+    <item>
+      <title>代理科学上网</title>
+      <link>https://wangyijie.store/posts/network/%E4%BB%A3%E7%90%86%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangyijie.store/posts/network/%E4%BB%A3%E7%90%86%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/</guid>
+      <description>说到科学上网，就要使用上面的重点socks代理，还有ssh隧道</description>
+    </item>
+    
   </channel>
 </rss>

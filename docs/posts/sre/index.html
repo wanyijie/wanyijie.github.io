@@ -14,7 +14,7 @@
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.46181bc93375ba932026e753b37c40e6ff8bb16a9ef770c78bcc663e4577b1ba.css" integrity="sha256-RhgbyTN1upMgJudTs3xA5v&#43;LsWqe93DHi8xmPkV3sbo=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.8f5caacc8bdf45c85597b9a1cb95e79c3e6a709ffb03822fb341f9fda311266f.js" integrity="sha256-j1yqzIvfRchVl7mhy5XnnD5qcJ/7A4Ivs0H5/aMRJm8=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.b03ad29f64e0836809250d62ac56686bf57f0eb5217499f86df132a876390b44.js" integrity="sha256-sDrSn2Tgg2gJJQ1irFZoa/V/DrUhdJn4bfEyqHY5C0Q=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://wangyijie.store/posts/sre/index.xml" title="hope to be a great computer technology Site" />
 <!--
 Made with Book Theme
@@ -130,12 +130,6 @@ https://github.com/alex-shpak/hugo-book
   <li>
     <a href="/posts/kubernetes/" >
         Kubernetes
-      </a>
-  </li>
-  
-  <li>
-    <a href="/posts/material2/" >
-        mererial2
       </a>
   </li>
   
@@ -283,12 +277,17 @@ https://github.com/alex-shpak/hugo-book
       
         <li class="flex justify-between">
           <a href="/categories/development/">Development</a>
-          <span>89</span>
+          <span>102</span>
         </li>
       
         <li class="flex justify-between">
           <a href="/categories/opetration/">Opetration</a>
-          <span>89</span>
+          <span>115</span>
+        </li>
+      
+        <li class="flex justify-between">
+          <a href="/categories/database/">database</a>
+          <span>1</span>
         </li>
       
         <li class="flex justify-between">
@@ -298,7 +297,17 @@ https://github.com/alex-shpak/hugo-book
       
         <li class="flex justify-between">
           <a href="/categories/literature/">literature</a>
-          <span>43</span>
+          <span>47</span>
+        </li>
+      
+        <li class="flex justify-between">
+          <a href="/categories/security/">security</a>
+          <span>8</span>
+        </li>
+      
+        <li class="flex justify-between">
+          <a href="/categories/sre/">SRE</a>
+          <span>3</span>
         </li>
       
       </ul>
@@ -317,17 +326,17 @@ https://github.com/alex-shpak/hugo-book
       
         <li class="flex justify-between">
           <a href="/tags/network/">network</a>
-          <span>1</span>
+          <span>9</span>
         </li>
       
         <li class="flex justify-between">
           <a href="/tags/wangyijie/">wangyijie</a>
-          <span>172</span>
+          <span>205</span>
         </li>
       
         <li class="flex justify-between">
           <a href="/tags/angular/">angular</a>
-          <span>9</span>
+          <span>12</span>
         </li>
       
         <li class="flex justify-between">
@@ -343,6 +352,16 @@ https://github.com/alex-shpak/hugo-book
         <li class="flex justify-between">
           <a href="/tags/container/">container</a>
           <span>8</span>
+        </li>
+      
+        <li class="flex justify-between">
+          <a href="/tags/database/">database</a>
+          <span>1</span>
+        </li>
+      
+        <li class="flex justify-between">
+          <a href="/tags/develop/">develop</a>
+          <span>3</span>
         </li>
       
         <li class="flex justify-between">
@@ -373,6 +392,26 @@ https://github.com/alex-shpak/hugo-book
         <li class="flex justify-between">
           <a href="/tags/literature/">literature</a>
           <span>43</span>
+        </li>
+      
+        <li class="flex justify-between">
+          <a href="/tags/material/">material</a>
+          <span>3</span>
+        </li>
+      
+        <li class="flex justify-between">
+          <a href="/tags/monitor/">monitor</a>
+          <span>5</span>
+        </li>
+      
+        <li class="flex justify-between">
+          <a href="/tags/poetry/">poetry</a>
+          <span>4</span>
+        </li>
+      
+        <li class="flex justify-between">
+          <a href="/tags/security/">security</a>
+          <span>8</span>
         </li>
       
         <li class="flex justify-between">
@@ -409,14 +448,24 @@ https://github.com/alex-shpak/hugo-book
 
 
   
+  <div>
+    
+      <a href="/categories/sre/">SRE</a>
+  </div>
+  
 
+  
+  <div>
+    
+      <a href="/tags/wangyijie/">wangyijie</a>, 
+      <a href="/tags/develop/">develop</a>
+  </div>
   
 
 
 
 
-    <p>前言 #  nginx启动时，会启动两个进程： 一个是Master进程和worker进程。
-改变配置后nginx做的事 #  1）改变了nginx配置之后，HUP signal的信号需要发送给主进程。 2）主进程首先会检测新配置的语法有效性。 3）尝试应用新的配置 1.打开日志文件，并且新分配一个socket来监听。 2.如果1失败，则回滚改变，还是会使用原有的配置。 3.如果1成功，则使用新的配置，新建一个线程。新建成功后发送一个关闭消息给旧的进程。要求旧线程优雅的关闭。 4.旧的线程 受到信号后会继续服务，当所有请求的客户端被服务后，旧线程关闭。 ———————————————— 修改配置后使用如下命令生效配置 nginx -s reload 
+    <p>nginx启动时，会启动两个进程： 一个是Master进程和worker进程。改变了nginx配置之后，HUP signal的信号需要发送给主进程
     </p>
   </article>
   
@@ -428,13 +477,24 @@ https://github.com/alex-shpak/hugo-book
 
 
   
+  <div>
+    
+      <a href="/categories/sre/">SRE</a>
+  </div>
+  
 
+  
+  <div>
+    
+      <a href="/tags/wangyijie/">wangyijie</a>, 
+      <a href="/tags/develop/">develop</a>
+  </div>
   
 
 
 
 
-    <p> 深入的技术和管理实践每个公司都可以使用，但只有谷歌能发明。 对于任何大规模运行高可用性web服务的人来说都是必须阅读的。 你有责任为自己和你的组织读这本书，为自己尝试这些想法。  
+    <p>你有责任为自己和你的组织读这本书，为自己尝试这些想法。
     </p>
   </article>
   
@@ -446,14 +506,24 @@ https://github.com/alex-shpak/hugo-book
 
 
   
+  <div>
+    
+      <a href="/categories/sre/">SRE</a>
+  </div>
+  
 
+  
+  <div>
+    
+      <a href="/tags/wangyijie/">wangyijie</a>, 
+      <a href="/tags/develop/">develop</a>
+  </div>
   
 
 
 
 
-    <p>绝大多数软件系统的生命周期花费在使用上，不在设计和实现上。如此，为什么普遍的理论坚持软件工程师主要关注大规模计算系统的设计和实现。 在这一些列的文章和论文中谷歌站点可靠性工程团队的关键成员们说明了怎样和为什么他们整个生命周期的投入能使公司成功构建、部署、监控和维护一些世界上最大的软件系统。你将学习谷歌工程师创造系统更高可扩展性，可靠性和高效的理论和实践课程，直接应用到你的组织。
- 简介：学习什么是站点可靠性工程和为什么它不同于传统信息技术行业的做法 理论：研究公司的模式，行为和区域对一个站点可靠性工程师（SRE）的工作的影响 实践：理解站点可靠性工程师日常工作中构建和维护大型分部署系统的理论和实践 管理：探索你的组织可以使用的谷歌培训，沟通和会议的最佳实践  有兴趣和我一起实践网站可靠性工程的朋友请加微信群，特别对于新参加工作的同学，力所能及的地方我保证会提供帮助 
+    <p>在这一些列的文章和论文中谷歌站点可靠性工程团队的关键成员们说明了怎样和为什么他们整个生命周期的投入能使公司成功构建、部署、监控和维护一些世界上最大的软件系统。你将学习谷歌工程师创造系统更高可扩展性，可靠性和高效的理论和实践课程，直接应用到你的组织
     </p>
   </article>
   
@@ -504,12 +574,17 @@ https://github.com/alex-shpak/hugo-book
       
         <li class="flex justify-between">
           <a href="/categories/development/">Development</a>
-          <span>89</span>
+          <span>102</span>
         </li>
       
         <li class="flex justify-between">
           <a href="/categories/opetration/">Opetration</a>
-          <span>89</span>
+          <span>115</span>
+        </li>
+      
+        <li class="flex justify-between">
+          <a href="/categories/database/">database</a>
+          <span>1</span>
         </li>
       
         <li class="flex justify-between">
@@ -519,7 +594,17 @@ https://github.com/alex-shpak/hugo-book
       
         <li class="flex justify-between">
           <a href="/categories/literature/">literature</a>
-          <span>43</span>
+          <span>47</span>
+        </li>
+      
+        <li class="flex justify-between">
+          <a href="/categories/security/">security</a>
+          <span>8</span>
+        </li>
+      
+        <li class="flex justify-between">
+          <a href="/categories/sre/">SRE</a>
+          <span>3</span>
         </li>
       
       </ul>
@@ -538,17 +623,17 @@ https://github.com/alex-shpak/hugo-book
       
         <li class="flex justify-between">
           <a href="/tags/network/">network</a>
-          <span>1</span>
+          <span>9</span>
         </li>
       
         <li class="flex justify-between">
           <a href="/tags/wangyijie/">wangyijie</a>
-          <span>172</span>
+          <span>205</span>
         </li>
       
         <li class="flex justify-between">
           <a href="/tags/angular/">angular</a>
-          <span>9</span>
+          <span>12</span>
         </li>
       
         <li class="flex justify-between">
@@ -564,6 +649,16 @@ https://github.com/alex-shpak/hugo-book
         <li class="flex justify-between">
           <a href="/tags/container/">container</a>
           <span>8</span>
+        </li>
+      
+        <li class="flex justify-between">
+          <a href="/tags/database/">database</a>
+          <span>1</span>
+        </li>
+      
+        <li class="flex justify-between">
+          <a href="/tags/develop/">develop</a>
+          <span>3</span>
         </li>
       
         <li class="flex justify-between">
@@ -594,6 +689,26 @@ https://github.com/alex-shpak/hugo-book
         <li class="flex justify-between">
           <a href="/tags/literature/">literature</a>
           <span>43</span>
+        </li>
+      
+        <li class="flex justify-between">
+          <a href="/tags/material/">material</a>
+          <span>3</span>
+        </li>
+      
+        <li class="flex justify-between">
+          <a href="/tags/monitor/">monitor</a>
+          <span>5</span>
+        </li>
+      
+        <li class="flex justify-between">
+          <a href="/tags/poetry/">poetry</a>
+          <span>4</span>
+        </li>
+      
+        <li class="flex justify-between">
+          <a href="/tags/security/">security</a>
+          <span>8</span>
         </li>
       
         <li class="flex justify-between">

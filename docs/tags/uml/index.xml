@@ -6,7 +6,16 @@
     <description>Recent content in UML on hope to be a great computer technology Site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 13 Sep 2021 14:32:47 +0800</lastBuildDate><atom:link href="https://wangyijie.store/tags/uml/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 17 Sep 2021 16:41:50 +0800</lastBuildDate><atom:link href="https://wangyijie.store/tags/uml/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>使用Mermaid语法创建图表</title>
+      <link>https://wangyijie.store/posts/uml/%E4%BD%BF%E7%94%A8mermaid%E8%AF%AD%E6%B3%95%E5%88%9B%E5%BB%BA%E5%9B%BE%E8%A1%A8/</link>
+      <pubDate>Fri, 17 Sep 2021 16:41:50 +0800</pubDate>
+      
+      <guid>https://wangyijie.store/posts/uml/%E4%BD%BF%E7%94%A8mermaid%E8%AF%AD%E6%B3%95%E5%88%9B%E5%BB%BA%E5%9B%BE%E8%A1%A8/</guid>
+      <description>Mermaid 是一种类似于 Markdown 的语法，您可以在其中使用文本来描述和自动生成图表。使用 Mermaid 的受 Markdown 启发的语法，您可以生成流程图、UML 图、饼图、甘特图等。</description>
+    </item>
+    
     <item>
       <title>UML快速学习</title>
       <link>https://wangyijie.store/posts/devops/uml%E5%BF%AB%E9%80%9F%E5%AD%A6%E4%B9%A0/</link>
